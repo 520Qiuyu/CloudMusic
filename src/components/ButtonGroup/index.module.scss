@@ -1,25 +1,67 @@
 .button-group {
   position: fixed;
-  bottom: 20px;
   right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-  height: 400px;
-  overflow: auto;
-  padding: 10px;
+  bottom: 100px;
+  width: 44px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  z-index: 999;
 
+  // 自定义滚动条样式
   &::-webkit-scrollbar {
-    width: 6px;
+    width: 0;
+    background: transparent;
   }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-  }
+  :global {
+    .ant-btn {
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 4px auto;
+      transition: all 0.3s;
 
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
+      &:hover {
+        background: rgba(194, 12, 12, 0.1);
+        color: #c20c0c;
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      .anticon {
+        font-size: 20px;
+        color: #666;
+      }
+
+      &:hover .anticon {
+        color: #c20c0c;
+      }
+    }
+
+    // 工具提示样式
+    .ant-tooltip {
+      .ant-tooltip-inner {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 4px;
+        font-size: 12px;
+        padding: 4px 8px;
+      }
+
+      .ant-tooltip-arrow-content {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    }
   }
 }

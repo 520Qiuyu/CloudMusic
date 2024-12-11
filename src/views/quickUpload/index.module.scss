@@ -4,6 +4,27 @@
       width: 100%;
       height: 400px;
     }
+
+    // Modal按钮样式
+    .ant-modal-footer {
+      .ant-btn-default {
+        border-color: #d9d9d9;
+        color: #333;
+        &:hover {
+          border-color: #c20c0c;
+          color: #c20c0c;
+        }
+      }
+
+      .ant-btn-primary {
+        background: #c20c0c;
+        border-color: #c20c0c;
+        &:hover {
+          background: #a40a0a;
+          border-color: #a40a0a;
+        }
+      }
+    }
   }
 
   .select {
