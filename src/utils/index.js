@@ -1,3 +1,5 @@
+import forge from "node-forge";
+
 // #region ================ 工具函数 ================
 
 /**
@@ -5,7 +7,7 @@
  * @param {number} size 文件大小(字节)
  * @returns {string} 格式化后的大小
  */
-const formatFileSize = (size) => {
+export const formatFileSize = (size) => {
   const units = ["B", "KB", "MB", "GB", "TB"];
   let index = 0;
   while (size >= 1024 && index < units.length - 1) {
@@ -20,7 +22,7 @@ const formatFileSize = (size) => {
  * @param {number} ms 毫秒数
  * @returns {string} 格式化后的时长(mm:ss)
  */
-const formatDuration = (ms) => {
+export const formatDuration = (ms) => {
   const totalSeconds = Math.floor(ms / 1000);
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
@@ -34,17 +36,55 @@ const formatDuration = (ms) => {
  * @param {string} level 音质等级
  * @returns {string} 音质描述
  */
-const getQualityDesc = (level) => {
+export const getQualityDesc = (level) => {
   return QUALITY_LEVELS[level] || level;
 };
+
+/**
+ * 将数组分割成多个小数组
+ * @param {Array} array - 被分割的数组
+ * @param {number} size - 小数组的大小
+ * @returns {Array} - 一个包含小数组的数组
+ */
+export function chunkArray(array, size) {
+  if (size <= 0) {
+    throw new Error("Size must be greater than 0");
+  }
+  const result = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+  return result;
+}
+
+/**
+ * 获取歌曲的艺术家
+ * @param {Object} song 歌曲信息
+ * @returns {string} 艺术家名称
+ */
+export const getArtistTextInSongDetail = (song) => {
+  return song.ar ? song.ar.map((ar) => ar.name).join() : song.pc?.ar || "";
+};
+
+/**
+ * 获取歌曲的专辑
+ * @param {Object} song 歌曲信息
+ * @returns {string} 专辑名称
+ */
+export const getAlbumTextInSongDetail = (song) => {
+  return song.al ? song.al.name : song.pc?.alb || "";
+};
+
+
 
 // #endregion ================ 工具函数 ================
 
 // #region ================ 加密相关 ================
 
-const IV = "0102030405060708";
-const PRESET_KEY = "0CoJUm6Qyw8W8jud";
-const PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
+export const IV = "0102030405060708";
+export const PRESET_KEY = "0CoJUm6Qyw8W8jud";
+export const BASE62 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+export const PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
     MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7clFSs6sXqHauqKWqdtLkF2KexO40H1YTX8z2lSgBBOAxLsvaklV8k4cBFK9snQXE9/DDaFt6Rr7iVZMldczhC0JNgTz+SHXT6CBHuX3e9SdB1Ua44oncaTWz7OBGLbCiK45wIDAQAB
     -----END PUBLIC KEY-----`;
 
@@ -55,7 +95,7 @@ const PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
  * @param {string} iv 向量
  * @returns {string} 加密后的Base64字符串
  */
-const aesEncrypt = (text, key, iv) => {
+export const aesEncrypt = (text, key, iv) => {
   const cipher = forge.cipher.createCipher("AES-CBC", key);
   cipher.start({ iv: iv });
   cipher.update(forge.util.createBuffer(forge.util.encodeUtf8(text)));
@@ -69,10 +109,26 @@ const aesEncrypt = (text, key, iv) => {
  * @param {string} key 公钥
  * @returns {string} 加密后的十六进制字符串
  */
-const rsaEncrypt = (text, key) => {
+export const rsaEncrypt = (text, key) => {
   const publicKey = forge.pki.publicKeyFromPem(key);
   const encrypted = publicKey.encrypt(text, "NONE");
   return forge.util.bytesToHex(encrypted);
+};
+
+/**
+ * 生成加密请求参数
+ * @param {Object} object 请求数据
+ * @returns {Object} 加密请求参数
+ * @property {string} params 加密后的请求数据
+ * @property {string} encSecKey 加密后的密钥
+ */
+const weapi = (object) => {
+  const text = JSON.stringify(object);
+  const secretKey = Array.from({ length: 16 }, () => BASE62.charAt(Math.floor(Math.random() * 62))).join("");
+  return {
+    params: aesEncrypt(aesEncrypt(text, PRESET_KEY, IV), secretKey, IV),
+    encSecKey: rsaEncrypt(secretKey.split("").reverse().join(""), PUBLIC_KEY),
+  };
 };
 
 // #endregion ================ 加密相关 ================
@@ -80,7 +136,7 @@ const rsaEncrypt = (text, key) => {
 // #region ================ 网络请求相关 ================
 
 // 客户端类型配置
-const CLIENT_CONFIG = {
+export const CLIENT_CONFIG = {
   web: {
     cookie: true,
     userAgent: undefined,
@@ -109,7 +165,7 @@ const CLIENT_CONFIG = {
  * @param {Function} config.onload 成功回调
  * @param {Function} config.onerror 错误回调
  */
-const weapiRequest = (url, config) => {
+export const weapiRequest = (url, config) => {
   // 准备请求数据
   const data = config.data || {};
   const clientType = config.clientType || "pc";
@@ -157,7 +213,7 @@ const weapiRequest = (url, config) => {
  * @param {Object} song 歌曲信息对象
  * @returns {string} 艺术家名称(多个用逗号分隔)
  */
-const getArtistInfo = (song) => {
+export const getArtistInfo = (song) => {
   if (song.ar && song.ar[0].name && song.ar[0].name.length > 0) {
     return song.ar.map((ar) => ar.name).join(",");
   }
@@ -172,7 +228,7 @@ const getArtistInfo = (song) => {
  * @param {Object} song 歌曲信息对象
  * @returns {string} 专辑名称
  */
-const getAlbumInfo = (song) => {
+export const getAlbumInfo = (song) => {
   if (song.al && song.al.name && song.al.name.length > 0) {
     return song.al.name;
   }
@@ -189,7 +245,7 @@ const getAlbumInfo = (song) => {
  * @param {string} format 文件名格式('title'|'artist-title'|'title-artist')
  * @returns {string} 格式化后的文件名
  */
-const generateFileName = (title, artist, format = "artist-title") => {
+export const generateFileName = (title, artist, format = "artist-title") => {
   if (format === "title" || !artist || artist.length === 0) {
     return title;
   }
@@ -211,7 +267,7 @@ const generateFileName = (title, artist, format = "artist-title") => {
  * @param {string} text 需要转义的文本
  * @returns {string} 转义后的文本
  */
-const escapeHTML = (text) => {
+export const escapeHTML = (text) => {
   const escapeMap = {
     "&": "&amp;",
     "<": "&lt;",
@@ -227,7 +283,7 @@ const escapeHTML = (text) => {
  * @param {string} message 提示信息
  * @returns {Promise<boolean>} 用户确认结果
  */
-const showConfirm = async (message) => {
+export const showConfirm = async (message) => {
   const result = await Swal.fire({
     title: "确认",
     text: message,
@@ -244,7 +300,7 @@ const showConfirm = async (message) => {
  * @param {string} message 提示信息
  * @param {'success'|'error'|'info'|'warning'} type 提示类型
  */
-const showTip = (message, type = "info") => {
+export const showTip = (message, type = "info") => {
   Swal.fire({
     text: message,
     icon: type,
@@ -264,7 +320,7 @@ const showTip = (message, type = "info") => {
  * @param {Array} songList 歌曲列表
  * @param {Object} config 下载配置
  */
-async function batchDownloadSongs(songList, config) {
+export async function batchDownloadSongs(songList, config) {
   const downloadQueue = [];
 
   // 准备下载队列

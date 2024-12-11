@@ -1,13 +1,11 @@
-import { Modal } from "antd";
+import { Modal, Tabs } from "antd";
 import React, { forwardRef, useImperativeHandle, useState } from "react";
-import { useEffect } from "react";
 import { getArtists } from "../../api";
-import { Spin } from "antd";
-import { Form } from "antd";
-import { Select } from "antd";
-import { useMemo } from "react";
-import { Tag } from "antd";
+import SingerChoose from "./components/SingerChoose";
+import UploadList from "./components/UploadList";
 import styles from "./index.module.scss";
+
+const { TabPane } = Tabs;
 
 function QuickUpload(props, ref) {
   const [visible, setVisible] = useState(false);
@@ -21,30 +19,11 @@ function QuickUpload(props, ref) {
     setSingerList([]);
   };
 
+  // 当前tab
+  const [currentTab, setCurrentTab] = useState("1");
+
   // 歌手列表
   const [singerList, setSingerList] = useState([]);
-  const renderSingerList = useMemo(() => {
-    return singerList.map((item) => {
-      const { id, name, count, size, sizeDesc } = item;
-      return {
-        ...item,
-        label: (
-          <div className={styles["option-label"]}>
-            <span className={styles["singer-name"]}>{name}</span>
-            <div className={styles["tag-group"]}>
-              <Tag color="blue" className={styles["tag"]}>
-                {count}首
-              </Tag>
-              <Tag color="green" className={styles["tag"]}>
-                {sizeDesc}
-              </Tag>
-            </div>
-          </div>
-        ),
-        value: id,
-      };
-    });
-  }, [singerList]);
   const [loading, setLoading] = useState(false);
   // 获取歌手
   const getSingerList = async () => {
@@ -59,16 +38,12 @@ function QuickUpload(props, ref) {
     }
   };
 
-  const [formRef] = Form.useForm();
-  const handleOk = async () => {
-    try {
-      const values = await formRef.validateFields();
-      console.log("values", values);
-      const { singer } = values;
-      console.log("singer", singer);
-    } catch (error) {
-      console.log("error", error);
-    }
+  // 已选择列表
+  const [chooseList, setChooseList] = useState([]);
+  const handleChoose = (value) => {
+    console.log(value);
+    setChooseList(value);
+    setCurrentTab("2");
   };
 
   useImperativeHandle(ref, () => ({
@@ -80,37 +55,31 @@ function QuickUpload(props, ref) {
   return (
     <Modal
       title="云盘快速上传"
-      width={600}
+      width={800}
       centered
       open={visible}
+      footer={null}
       onCancel={close}
-      onOk={handleOk}
-      okText="确认"
-      cancelText="取消"
     >
-      <div className={styles["quick-upload"]}>
-        {loading ? (
-          <Spin tip="正在加载中" />
-        ) : (
-          <Form form={formRef}>
-            {/* 歌手 */}
-            <Form.Item name="singer" label="歌手">
-              <Select
-                mode="multiple"
-                placeholder="请选择歌手"
-                allowClear
-                labelInValue
-                className={styles["select"]}
-                filterOption={(input, option) =>
-                  option.name?.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                }
-                options={renderSingerList}
-                getPopupContainer={(trigger) => trigger.parentNode}
-              />
-            </Form.Item>
-          </Form>
-        )}
-      </div>
+      <Tabs
+        defaultActiveKey="1"
+        activeKey={currentTab}
+        className={styles["quick-upload-tabs"]}
+        onTabClick={({ key }) => setCurrentTab(key)}
+      >
+        {/* 歌手选择 */}
+        <TabPane tab="歌曲选择" key="1">
+          <SingerChoose
+            singerList={singerList}
+            loading={loading}
+            onChoose={handleChoose}
+          />
+        </TabPane>
+        {/* 上传列表 */}
+        <TabPane tab="上传列表" key="2">
+          <UploadList singerList={chooseList} />
+        </TabPane>
+      </Tabs>
     </Modal>
   );
 }
