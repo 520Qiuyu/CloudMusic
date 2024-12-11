@@ -1,758 +1,8 @@
-// ==UserScript==
-// @name         网易云音乐增强脚本
-// @namespace    https://github.com/Cinvin/myuserscripts
-// @version      4.2.3
-// @author       cinvin
-// @description  网易云音乐功能增强：云盘快传、歌曲下载、云盘匹配纠正、高音质试听等功能
-// @license      MIT
-// @match        https://music.163.com/*
-// @require      https://fastly.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js
-// @require      https://fastly.jsdelivr.net/npm/ajax-hook@3.0.3/dist/ajaxhook.min.js
-// @require      https://fastly.jsdelivr.net/npm/jsmediatags@3.9.7/dist/jsmediatags.min.js
-// @require      https://fastly.jsdelivr.net/npm/node-forge@1.3.1/dist/forge.min.js
-// @grant        GM_addStyle
-// @grant        GM_download
-// @grant        GM_getValue
-// @grant        GM_setValue
-// @grant        GM_xmlhttpRequest
-// @grant        unsafeWindow
-// @run-at       document-start
-// ==/UserScript==
-
 (function () {
   "use strict";
 
-  // ================ 常量定义 ================
-
-  // 音质等级选项
-  const QUALITY_LEVELS = {
-    jymaster: "超清母带",
-    dolby: "杜比全景声",
-    sky: "沉浸环绕声",
-    jyeffect: "高清环绕声",
-    hires: "Hi-Res",
-    lossless: "无损",
-    exhigh: "极高",
-    higher: "较高",
-    standard: "标准",
-  };
-
-  // 音质权重(用于排序)
-  const QUALITY_WEIGHTS = {
-    jymaster: 9,
-    dolby: 8,
-    sky: 7,
-    jyeffect: 6,
-    hires: 5,
-    lossless: 4,
-    exhigh: 3,
-    higher: 2,
-    standard: 1,
-    none: 0,
-  };
-
-  // API相关常量
-  const UPLOAD_CHUNK_SIZE = 8 * 1024 * 1024; // 8MB
-  const PLAY_API_LIMIT = 1000;
-  const CHECK_API_LIMIT = 100;
-  const IMPORT_API_LIMIT = 10;
-
-  // ================ 工具函数 ================
-
-  /**
-   * 格式化文件大小
-   * @param {number} size 文件大小(字节)
-   * @returns {string} 格式化后的大小
-   */
-  const formatFileSize = size => {
-    const units = ["B", "KB", "MB", "GB", "TB"];
-    let index = 0;
-    while (size >= 1024 && index < units.length - 1) {
-      size /= 1024;
-      index++;
-    }
-    return size.toFixed(index > 0 ? 1 : 0) + units[index];
-  };
-
-  /**
-   * 格式化时长
-   * @param {number} ms 毫秒数
-   * @returns {string} 格式化后的时长(mm:ss)
-   */
-  const formatDuration = ms => {
-    const totalSeconds = Math.floor(ms / 1000);
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = totalSeconds % 60;
-    return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-  };
-
-  /**
-   * 获取音质描述
-   * @param {string} level 音质等级
-   * @returns {string} 音质描述
-   */
-  const getQualityDesc = level => {
-    return QUALITY_LEVELS[level] || level;
-  };
-
-  // ================ 加密相关 ================
-
-  const IV = "0102030405060708";
-  const PRESET_KEY = "0CoJUm6Qyw8W8jud";
-  const PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7clFSs6sXqHauqKWqdtLkF2KexO40H1YTX8z2lSgBBOAxLsvaklV8k4cBFK9snQXE9/DDaFt6Rr7iVZMldczhC0JNgTz+SHXT6CBHuX3e9SdB1Ua44oncaTWz7OBGLbCiK45wIDAQAB
------END PUBLIC KEY-----`;
-
-  /**
-   * AES加密
-   * @param {string} text 待加密文本
-   * @param {string} key 密钥
-   * @param {string} iv 向量
-   * @returns {string} 加密后的Base64字符串
-   */
-  const aesEncrypt = (text, key, iv) => {
-    const cipher = forge.cipher.createCipher("AES-CBC", key);
-    cipher.start({ iv: iv });
-    cipher.update(forge.util.createBuffer(forge.util.encodeUtf8(text)));
-    cipher.finish();
-    return forge.util.encode64(cipher.output.getBytes());
-  };
-
-  /**
-   * RSA加密
-   * @param {string} text 待加密文本
-   * @param {string} key 公钥
-   * @returns {string} 加密后的十六进制字符串
-   */
-  const rsaEncrypt = (text, key) => {
-    const publicKey = forge.pki.publicKeyFromPem(key);
-    const encrypted = publicKey.encrypt(text, "NONE");
-    return forge.util.bytesToHex(encrypted);
-  };
-
-  // ================ 网络请求相关 ================
-
-  // 客户端类型配置
-  const CLIENT_CONFIG = {
-    web: {
-      cookie: true,
-      userAgent: undefined,
-    },
-    android: {
-      cookie: "os=android;appver=9.1.78;channel=netease;osver=14;buildver=241009150147;",
-      userAgent:
-        "NeteaseMusic/9.1.78.241009150147(9001078);Dalvik/2.1.0 (Linux; U; Android 14; V2318A Build/TP1A.220624.014)",
-    },
-    pc: {
-      cookie:
-        "os=pc;appver=3.0.18.203152;channel=netease;osver=Microsoft-Windows-10-Professional-build-19045-64bit;",
-      userAgent:
-        "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36 Chrome/91.0.4472.164 NeteaseMusicDesktop/3.0.18.203152",
-    },
-  };
-
-  /**
-   * 网易云API加密请求
-   * @param {string} url 请求URL
-   * @param {Object} config 请求配置
-   * @param {Object} config.data 请求数据
-   * @param {string} config.clientType 客户端类型
-   * @param {string} config.ip IP地址
-   * @param {Function} config.onload 成功回调
-   * @param {Function} config.onerror 错误回调
-   */
-  const weapiRequest = (url, config) => {
-    // 准备请求数据
-    const data = config.data || {};
-    const clientType = config.clientType || "pc";
-
-    // 获取CSRF Token
-    const csrfToken = document.cookie.match(/_csrf=([^(;|$)]+)/);
-    data.csrf_token = csrfToken ? csrfToken[1] : "";
-
-    // 加密请求数据
-    const encryptedData = weapi(data);
-
-    // 准备请求头
-    const headers = {
-      "content-type": "application/x-www-form-urlencoded",
-      "user-agent": CLIENT_CONFIG[clientType].userAgent,
-    };
-
-    // 添加IP相关头(如果需要)
-    if (config.ip) {
-      headers["X-Real-IP"] = config.ip;
-      headers["X-Forwarded-For"] = config.ip;
-    }
-
-    // 发送请求
-    GM_xmlhttpRequest({
-      url: url.replace("api", "weapi") + `?csrf_token=${data.csrf_token}`,
-      method: "POST",
-      responseType: "json",
-      headers,
-      cookie: CLIENT_CONFIG[clientType].cookie,
-      data: `params=${encodeURIComponent(encryptedData.params)}&encSecKey=${encodeURIComponent(
-        encryptedData.encSecKey
-      )}`,
-      onload: res => config.onload(res.response),
-      onerror: config.onerror,
-    });
-  };
-
-  // ================ 歌曲信息相关 ================
-
-  /**
-   * 获取歌曲艺术家信息
-   * @param {Object} song 歌曲信息对象
-   * @returns {string} 艺术家名称(多个用逗号分隔)
-   */
-  const getArtistInfo = song => {
-    if (song.ar && song.ar[0].name && song.ar[0].name.length > 0) {
-      return song.ar.map(ar => ar.name).join(",");
-    }
-    if (song.pc && song.pc.ar && song.pc.ar.length > 0) {
-      return song.pc.ar;
-    }
-    return "";
-  };
-
-  /**
-   * 获取歌曲专辑信息
-   * @param {Object} song 歌曲信息对象
-   * @returns {string} 专辑名称
-   */
-  const getAlbumInfo = song => {
-    if (song.al && song.al.name && song.al.name.length > 0) {
-      return song.al.name;
-    }
-    if (song.pc && song.pc.alb && song.pc.alb.length > 0) {
-      return song.pc.alb;
-    }
-    return "";
-  };
-
-  /**
-   * 生成文件名(不含扩展名)
-   * @param {string} title 歌曲标题
-   * @param {string} artist 艺术家
-   * @param {string} format 文件名格式('title'|'artist-title'|'title-artist')
-   * @returns {string} 格式化后的文件名
-   */
-  const generateFileName = (title, artist, format = "artist-title") => {
-    if (format === "title" || !artist || artist.length === 0) {
-      return title;
-    }
-    if (format === "artist-title") {
-      return `${artist} - ${title}`;
-    }
-    if (format === "title-artist") {
-      return `${title} - ${artist}`;
-    }
-    return title;
-  };
-
-  // ================ UI工具函数 ================
-
-  /**
-   * HTML转义
-   * @param {string} text 需要转义的文本
-   * @returns {string} 转义后的文本
-   */
-  const escapeHTML = text => {
-    const escapeMap = {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      "'": "&#39;",
-      '"': "&quot;",
-    };
-    return text.replace(/[&<>'"]/g, char => escapeMap[char] || char);
-  };
-
-  /**
-   * 显示确认对话框
-   * @param {string} message 提示信息
-   * @returns {Promise<boolean>} 用户确认结果
-   */
-  const showConfirm = async message => {
-    const result = await Swal.fire({
-      title: "确认",
-      text: message,
-      icon: "question",
-      showCancelButton: true,
-      confirmButtonText: "确定",
-      cancelButtonText: "取消",
-    });
-    return result.isConfirmed;
-  };
-
-  /**
-   * 显示提示信息
-   * @param {string} message 提示信息
-   * @param {'success'|'error'|'info'|'warning'} type 提示类型
-   */
-  const showTip = (message, type = "info") => {
-    Swal.fire({
-      text: message,
-      icon: type,
-      toast: true,
-      position: "top-end",
-      showConfirmButton: false,
-      timer: 3000,
-    });
-  };
-
-  // ================ 上传下载核心功能 ================
-
-  /**
-   * 上传管理器类
-   */
-  class Uploader {
-    /**
-     * @param {Object} config 上传配置
-     * @param {boolean} showAll 是否显示所有歌曲
-     */
-    constructor(config, showAll = false) {
-      this.songs = [];
-      this.config = config;
-
-      // 过滤器配置
-      this.filter = {
-        text: "",
-        noCopyright: true,
-        vip: true,
-        pay: true,
-        lossless: false,
-        all: showAll,
-        songIndexs: [],
-      };
-
-      // 分页配置
-      this.page = {
-        current: 1,
-        max: 1,
-        limitCount: 50,
-      };
-
-      // 批量上传配置
-      this.batchUpload = {
-        threadMax: 2,
-        threadCount: 2,
-        working: false,
-        finnishThread: 0,
-        songIndexs: [],
-      };
-    }
-
-    /**
-     * 开始上传流程
-     */
-    async start() {
-      // 显示上传对话框
-      const result = await Swal.fire({
-        title: "云盘上传",
-        html: this.createUploadDialog(),
-        showCancelButton: true,
-        confirmButtonText: "开始上传",
-        cancelButtonText: "关闭",
-        width: "800px",
-        didOpen: () => this.onDialogOpen(),
-      });
-
-      if (result.isConfirmed) {
-        await this.startUpload();
-      }
-    }
-
-    /**
-     * 创建上传对话框HTML
-     */
-    createUploadDialog() {
-      return `
-                <div class="upload-dialog">
-                    <div class="filter-section">
-                        <input type="text" placeholder="搜索歌曲..." id="search-input">
-                        <div class="filter-options">
-                            <label><input type="checkbox" id="filter-copyright"> 包含无版权歌曲</label>
-                            <label><input type="checkbox" id="filter-vip"> 包含VIP歌曲</label>
-                            <label><input type="checkbox" id="filter-pay"> 包含付费歌曲</label>
-                            <label><input type="checkbox" id="filter-lossless"> 仅无损音质</label>
-                        </div>
-                    </div>
-                    <div class="song-list">
-                        <table id="song-table">
-                            <thead>
-                                <tr>
-                                    <th><input type="checkbox" id="select-all"></th>
-                                    <th>歌曲名</th>
-                                    <th>艺术家</th>
-                                    <th>专辑</th>
-                                    <th>音质</th>
-                                    <th>状态</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                    <div class="pagination">
-                        <button id="prev-page">上一页</button>
-                        <span id="page-info"></span>
-                        <button id="next-page">下一页</button>
-                    </div>
-                </div>`;
-    }
-
-    /**
-     * 对话框打开后的处理
-     */
-    async onDialogOpen() {
-      // 绑定事件处理
-      this.bindEvents();
-
-      // 获取歌曲信息
-      await this.fetchSongInfo();
-
-      // 渲染数据
-      this.renderData();
-    }
-
-    /**
-     * 绑定事件处理
-     */
-    bindEvents() {
-      // 搜索输入框
-      document.getElementById("search-input").addEventListener("input", e => {
-        this.filter.text = e.target.value;
-        this.renderData();
-      });
-
-      // 过滤选项
-      document.getElementById("filter-copyright").addEventListener("change", e => {
-        this.filter.noCopyright = e.target.checked;
-        this.renderData();
-      });
-      // ... 其他过滤选项事件绑定 ...
-
-      // 分页按钮
-      document.getElementById("prev-page").addEventListener("click", () => {
-        if (this.page.current > 1) {
-          this.page.current--;
-          this.renderData();
-        }
-      });
-
-      document.getElementById("next-page").addEventListener("click", () => {
-        if (this.page.current < this.page.max) {
-          this.page.current++;
-          this.renderData();
-        }
-      });
-    }
-
-    /**
-     * 获取歌曲信息
-     */
-    async fetchSongInfo() {
-      try {
-        const response = await new Promise((resolve, reject) => {
-          weapiRequest("/api/v1/playlist/detail", {
-            data: { id: this.config.playlistId },
-            onload: resolve,
-            onerror: reject,
-          });
-        });
-
-        if (response.code === 200) {
-          this.songs = response.playlist.tracks;
-          this.page.max = Math.ceil(this.songs.length / this.page.limitCount);
-        }
-      } catch (error) {
-        showTip("获取歌曲信息失败", "error");
-      }
-    }
-
-    /**
-     * 渲染歌曲列表
-     */
-    renderData() {
-      const tbody = document.querySelector("#song-table tbody");
-      tbody.innerHTML = "";
-
-      // 应用过滤和分页
-      const filteredSongs = this.filterSongs();
-      const startIndex = (this.page.current - 1) * this.page.limitCount;
-      const endIndex = Math.min(startIndex + this.page.limitCount, filteredSongs.length);
-
-      // 渲染当前页的歌曲
-      for (let i = startIndex; i < endIndex; i++) {
-        const song = filteredSongs[i];
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-                    <td><input type="checkbox" data-index="${i}"></td>
-                    <td>${escapeHTML(song.name)}</td>
-                    <td>${escapeHTML(getArtistInfo(song))}</td>
-                    <td>${escapeHTML(getAlbumInfo(song))}</td>
-                    <td>${getQualityDesc(song.quality)}</td>
-                    <td class="status">待上传</td>
-                `;
-        tbody.appendChild(tr);
-      }
-
-      // 更新分页信息
-      document.getElementById(
-        "page-info"
-      ).textContent = `${this.page.current}/${this.page.max}页 共${filteredSongs.length}首`;
-    }
-
-    /**
-     * 过滤歌曲
-     */
-    filterSongs() {
-      return this.songs.filter(song => {
-        if (!this.filter.all) {
-          if (!this.filter.noCopyright && !song.copyright) return false;
-          if (!this.filter.vip && song.fee === 1) return false;
-          if (!this.filter.pay && song.fee === 4) return false;
-          if (this.filter.lossless && song.quality !== "lossless") return false;
-        }
-
-        if (this.filter.text) {
-          const searchText = this.filter.text.toLowerCase();
-          const songName = song.name.toLowerCase();
-          const artistName = getArtistInfo(song).toLowerCase();
-          const albumName = getAlbumInfo(song).toLowerCase();
-
-          return (
-            songName.includes(searchText) ||
-            artistName.includes(searchText) ||
-            albumName.includes(searchText)
-          );
-        }
-
-        return true;
-      });
-    }
-
-    /**
-     * 开始上传选中的歌曲
-     */
-    async startUpload() {
-      const selectedIndexes = Array.from(
-        document.querySelectorAll('#song-table input[type="checkbox"]:checked')
-      ).map(checkbox => parseInt(checkbox.dataset.index));
-
-      if (selectedIndexes.length === 0) {
-        showTip("请选择要上传的歌曲", "warning");
-        return;
-      }
-
-      this.batchUpload.songIndexs = selectedIndexes;
-      this.batchUpload.working = true;
-      this.batchUpload.finnishThread = 0;
-
-      // 创建上传线程
-      for (let i = 0; i < this.batchUpload.threadCount; i++) {
-        this.uploadThread(i);
-      }
-    }
-
-    /**
-     * 上传线程
-     */
-    async uploadThread(threadIndex) {
-      while (this.batchUpload.working && this.batchUpload.songIndexs.length > 0) {
-        const songIndex = this.batchUpload.songIndexs.shift();
-        if (songIndex === undefined) break;
-
-        try {
-          await this.uploadSong(songIndex);
-        } catch (error) {
-          console.error("Upload failed:", error);
-          this.updateSongStatus(songIndex, "上传失败", "error");
-        }
-      }
-
-      this.batchUpload.finnishThread++;
-      if (this.batchUpload.finnishThread === this.batchUpload.threadCount) {
-        this.batchUpload.working = false;
-        showTip("批���上传完成", "success");
-      }
-    }
-
-    /**
-     * 上传单首歌曲
-     */
-    async uploadSong(songIndex) {
-      const song = this.songs[songIndex];
-      this.updateSongStatus(songIndex, "正在上传...", "info");
-
-      // 获取音乐URL
-      const urlRes = await new Promise((resolve, reject) => {
-        weapiRequest("/api/song/enhance/player/url/v1", {
-          data: {
-            ids: [song.id],
-            level: this.config.level || "standard",
-          },
-          onload: resolve,
-          onerror: reject,
-        });
-      });
-
-      if (!urlRes.data?.[0]?.url) {
-        throw new Error("获取音乐URL失败");
-      }
-
-      // 上传到云盘
-      const uploadRes = await this.uploadToCloud(song, urlRes.data[0].url);
-
-      // 匹配云盘歌曲
-      await this.matchCloudSong(song, uploadRes.songId);
-
-      this.updateSongStatus(songIndex, "上传成功", "success");
-    }
-
-    /**
-     * 更新歌曲状态显示
-     */
-    updateSongStatus(songIndex, status, type = "info") {
-      const statusCell = document.querySelector(
-        `#song-table tr:nth-child(${songIndex + 1}) .status`
-      );
-      if (statusCell) {
-        statusCell.textContent = status;
-        statusCell.className = `status ${type}`;
-      }
-    }
-
-    // ... 更多上传相关方法 ...
-  }
-
-  // ================ 下载功能 ================
-
-  /**
-   * 批量下载歌曲
-   * @param {Array} songList 歌曲列表
-   * @param {Object} config 下载配置
-   */
-  async function batchDownloadSongs(songList, config) {
-    const downloadQueue = [];
-
-    // 准备下载队列
-    for (const song of songList) {
-      if (config.filter && !config.filter(song)) continue;
-
-      downloadQueue.push({
-        song,
-        status: "pending",
-      });
-    }
-
-    // 创建进度提示
-    const progressBox = await Swal.fire({
-      title: "批量下载中",
-      html: `
-                <div class="download-progress">
-                    <div id="download-status">准备下载 ${downloadQueue.length} 首歌曲...</div>
-                    <div class="progress-bar">
-                        <div id="progress-inner" style="width: 0%"></div>
-                    </div>
-                </div>
-            `,
-      showConfirmButton: false,
-      allowOutsideClick: false,
-    });
-
-    // 开始下载
-    const threads = [];
-    const threadCount = config.threadCount || 3;
-
-    for (let i = 0; i < threadCount; i++) {
-      threads.push(downloadThread(i));
-    }
-
-    // 下载线程
-    async function downloadThread(threadIndex) {
-      while (true) {
-        // 获取待下载任务
-        const task = downloadQueue.find(t => t.status === "pending");
-        if (!task) break;
-
-        // 标记为进行中
-        task.status = "downloading";
-
-        try {
-          // 获取下载链接
-          const urlRes = await new Promise((resolve, reject) => {
-            weapiRequest("/api/song/enhance/player/url/v1", {
-              data: {
-                ids: [task.song.id],
-                level: config.level || "standard",
-              },
-              onload: resolve,
-              onerror: reject,
-            });
-          });
-
-          if (!urlRes.data?.[0]?.url) {
-            throw new Error("获取下载链接失败");
-          }
-
-          // 开始下载
-          await new Promise((resolve, reject) => {
-            const fileName =
-              generateFileName(task.song.name, getArtistInfo(task.song), config.fileNameFormat) +
-              ".mp3";
-
-            GM_download({
-              url: urlRes.data[0].url,
-              name: fileName,
-              onload: resolve,
-              onerror: reject,
-            });
-          });
-
-          task.status = "success";
-        } catch (error) {
-          console.error("Download failed:", error);
-          task.status = "error";
-        }
-
-        // 更新进度
-        updateProgress();
-      }
-    }
-
-    // 更新进度显示
-    function updateProgress() {
-      const finished = downloadQueue.filter(
-        t => t.status === "success" || t.status === "error"
-      ).length;
-      const progress = ((finished / downloadQueue.length) * 100).toFixed(1);
-      const successful = downloadQueue.filter(t => t.status === "success").length;
-      const failed = downloadQueue.filter(t => t.status === "error").length;
-
-      document.getElementById("progress-inner").style.width = `${progress}%`;
-      document.getElementById(
-        "download-status"
-      ).textContent = `已完成: ${finished}/${downloadQueue.length} (成功: ${successful}, 失败: ${failed})`;
-
-      if (finished === downloadQueue.length) {
-        setTimeout(() => {
-          Swal.close();
-          showTip(
-            `下载完成 成功: ${successful}, 失败: ${failed}`,
-            failed > 0 ? "warning" : "success"
-          );
-        }, 1000);
-      }
-    }
-
-    // 等待所有线程完成
-    await Promise.all(threads);
-  }
-
-  // ================ 云盘管理功能 ================
+ 
+  // #region ================ 云盘管理功能 ================
 
   /**
    * 云盘管理器类
@@ -846,21 +96,31 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     bindEvents() {
       // 搜索和过滤
-      document.getElementById("cloud-search").addEventListener("input", e => {
+      document.getElementById("cloud-search").addEventListener("input", (e) => {
         this.filter.text = e.target.value;
         this.renderSongList();
       });
 
-      document.getElementById("quality-filter").addEventListener("change", e => {
-        this.filter.quality = e.target.value;
-        this.renderSongList();
-      });
+      document
+        .getElementById("quality-filter")
+        .addEventListener("change", (e) => {
+          this.filter.quality = e.target.value;
+          this.renderSongList();
+        });
 
       // 批量操作按钮
-      document.getElementById("batch-match").addEventListener("click", () => this.batchMatch());
-      document.getElementById("batch-delete").addEventListener("click", () => this.batchDelete());
-      document.getElementById("export-list").addEventListener("click", () => this.exportList());
-      document.getElementById("import-songs").addEventListener("click", () => this.importSongs());
+      document
+        .getElementById("batch-match")
+        .addEventListener("click", () => this.batchMatch());
+      document
+        .getElementById("batch-delete")
+        .addEventListener("click", () => this.batchDelete());
+      document
+        .getElementById("export-list")
+        .addEventListener("click", () => this.exportList());
+      document
+        .getElementById("import-songs")
+        .addEventListener("click", () => this.importSongs());
 
       // 分页按钮
       document.getElementById("prev-page").addEventListener("click", () => {
@@ -921,23 +181,32 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
                     <td>${getQualityDesc(song.quality)}</td>
                     <td>${formatFileSize(song.fileSize)}</td>
                     <td>
-                        <button class="match-btn" data-id="${song.songId}">匹配</button>
-                        <button class="delete-btn" data-id="${song.songId}">删除</button>
+                        <button class="match-btn" data-id="${
+                          song.songId
+                        }">匹配</button>
+                        <button class="delete-btn" data-id="${
+                          song.songId
+                        }">删除</button>
                     </td>
                 `;
         tbody.appendChild(tr);
       }
 
       // 更新分页信息
-      document.getElementById("page-info").textContent = `${this.page.current}/${this.page.max}页`;
+      document.getElementById(
+        "page-info"
+      ).textContent = `${this.page.current}/${this.page.max}页`;
     }
 
     /**
      * 过滤歌曲
      */
     filterSongs() {
-      return this.songs.filter(song => {
-        if (this.filter.quality !== "all" && song.quality !== this.filter.quality) {
+      return this.songs.filter((song) => {
+        if (
+          this.filter.quality !== "all" &&
+          song.quality !== this.filter.quality
+        ) {
           return false;
         }
 
@@ -964,7 +233,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         return;
       }
 
-      const result = await showConfirm(`确定要匹配中的 ${selectedIds.length} 首歌曲吗？`);
+      const result = await showConfirm(
+        `确定要匹配中的 ${selectedIds.length} 首歌曲吗？`
+      );
       if (!result) return;
 
       let success = 0;
@@ -980,7 +251,10 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         }
       }
 
-      showTip(`匹配完成 成功: ${success}, 失败: ${failed}`, failed > 0 ? "warning" : "success");
+      showTip(
+        `匹配完成 成功: ${success}, 失败: ${failed}`,
+        failed > 0 ? "warning" : "success"
+      );
 
       // 重新加载列表
       await this.loadCloudSongs();
@@ -1027,7 +301,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      * 导出歌曲列表
      */
     async exportList() {
-      const exportData = this.songs.map(song => ({
+      const exportData = this.songs.map((song) => ({
         name: song.songName,
         artist: song.artist,
         album: song.album,
@@ -1035,12 +309,16 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         size: song.fileSize,
       }));
 
-      const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: "application/json" });
+      const blob = new Blob([JSON.stringify(exportData, null, 2)], {
+        type: "application/json",
+      });
       const url = URL.createObjectURL(blob);
 
       const a = document.createElement("a");
       a.href = url;
-      a.download = `网易云音乐云盘导出_${new Date().toISOString().split("T")[0]}.json`;
+      a.download = `网易云音乐云盘导出_${
+        new Date().toISOString().split("T")[0]
+      }.json`;
       a.click();
 
       URL.revokeObjectURL(url);
@@ -1054,7 +332,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       input.type = "file";
       input.accept = ".json";
 
-      input.onchange = async e => {
+      input.onchange = async (e) => {
         const file = e.target.files[0];
         if (!file) return;
 
@@ -1082,10 +360,12 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     getSelectedSongIds() {
       return Array.from(
-        document.querySelectorAll('#cloud-song-table input[type="checkbox"]:checked')
+        document.querySelectorAll(
+          '#cloud-song-table input[type="checkbox"]:checked'
+        )
       )
-        .map(checkbox => checkbox.dataset.id)
-        .filter(id => id);
+        .map((checkbox) => checkbox.dataset.id)
+        .filter((id) => id);
     }
 
     /**
@@ -1108,7 +388,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 播放列表处理功能 ================
+  // #endregion ================ 云盘管理功能 ================
+
+  // #region ================ 播放列表处理功能 ================
 
   /**
    * 播放列表排序器类
@@ -1144,8 +426,12 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       });
 
       if (result.isConfirmed) {
-        const sortType = document.querySelector('input[name="sort-type"]:checked').value;
-        const sortOrder = document.querySelector('input[name="sort-order"]:checked').value;
+        const sortType = document.querySelector(
+          'input[name="sort-type"]:checked'
+        ).value;
+        const sortOrder = document.querySelector(
+          'input[name="sort-order"]:checked'
+        ).value;
         await this.sortPlaylist(sortType, sortOrder);
       }
     }
@@ -1190,7 +476,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         });
 
         // 更新播放列表顺序
-        const songIds = this.songs.map(song => song.id);
+        const songIds = this.songs.map((song) => song.id);
         await this.updatePlaylistOrder(songIds);
 
         showTip("排序完成", "success");
@@ -1221,7 +507,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 评论功能增强 ================
+  // #endregion ================ 播放列表处理功能 ================
+
+  // #region ================ 评论功能增强 ================
 
   /**
    * 评论功能增强器类
@@ -1236,14 +524,14 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     init() {
       // 处理已有评论
-      document.querySelectorAll(".itm").forEach(item => {
+      document.querySelectorAll(".itm").forEach((item) => {
         this.processCommentItem(item);
       });
 
       // 监听新评论
       const commentList = document.querySelector(".m-cmmt");
       if (commentList) {
-        this.observer = new MutationObserver(mutations => {
+        this.observer = new MutationObserver((mutations) => {
           for (const mutation of mutations) {
             for (const node of mutation.addedNodes) {
               if (node.classList?.contains("itm")) {
@@ -1405,7 +693,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 歌词处理功能 ================
+  // #endregion ================ 评论功能增强 ================
+
+  // #region ================ 歌词处理功能 ================
 
   /**
    * 歌词处理器类
@@ -1414,7 +704,8 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     constructor() {
       // 歌词时间戳正则
       this.timestampRegex = /\[(?<min>\d+):(?<sec>\d+)(?:\.|:)*(?<ms>\d+)*\]/g;
-      this.lyricLineRegex = /^(?<timestamps>(?:\[.+?\])+)(?!\[)(?<content>.+)$/gm;
+      this.lyricLineRegex =
+        /^(?<timestamps>(?:\[.+?\])+)(?!\[)(?<content>.+)$/gm;
     }
 
     /**
@@ -1454,7 +745,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       while ((match = this.timestampRegex.exec(timestamps)) !== null) {
         const { min, sec, ms } = match.groups;
         const totalMs =
-          parseInt(min) * 60000 + parseInt(sec) * 1000 + (ms ? parseInt(ms.padEnd(3, "0")) : 0);
+          parseInt(min) * 60000 +
+          parseInt(sec) * 1000 +
+          (ms ? parseInt(ms.padEnd(3, "0")) : 0);
         times.push(totalMs);
       }
 
@@ -1484,7 +777,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       const subLines = this.parse(subLyric);
 
       // 使用二分查找匹配最近的歌词
-      const combined = mainLines.map(main => {
+      const combined = mainLines.map((main) => {
         const nearest = this.findNearestLyric(main.time, subLines);
         if (nearest && Math.abs(nearest.time - main.time) < 1000) {
           // 1秒内视为同步
@@ -1539,7 +832,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     convertToLRC(lyrics) {
       return lyrics
-        .map(lyric => {
+        .map((lyric) => {
           const time = lyric.time;
           const min = Math.floor(time / 60000);
           const sec = Math.floor((time % 60000) / 1000);
@@ -1608,7 +901,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 设置面板功能 ================
+  // #endregion ================ 歌词处理功能 ================
+
+  // #region ================ 设置面板功能 ================
 
   /**
    * 设置管理器类
@@ -1713,7 +1008,8 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
                                 <select id="setting-quality">
                                     ${Object.entries(QUALITY_LEVELS)
                                       .map(
-                                        ([key, name]) => `<option value="${key}">${name}</option>`
+                                        ([key, name]) =>
+                                          `<option value="${key}">${name}</option>`
                                       )
                                       .join("")}
                                 </select>
@@ -1800,13 +1096,19 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     initPanelValues() {
       // 绑定标签切换
-      document.querySelectorAll(".tab-btn").forEach(btn => {
-        btn.addEventListener("click", e => {
-          document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-          document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          document
+            .querySelectorAll(".tab-btn")
+            .forEach((b) => b.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-content")
+            .forEach((c) => c.classList.remove("active"));
 
           e.target.classList.add("active");
-          document.getElementById(`${e.target.dataset.tab}-settings`).classList.add("active");
+          document
+            .getElementById(`${e.target.dataset.tab}-settings`)
+            .classList.add("active");
         });
       });
 
@@ -1820,8 +1122,10 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
 
       // 上传设置
       document.getElementById("setting-automatch").checked = s.upload.autoMatch;
-      document.getElementById("setting-skipexists").checked = s.upload.skipExists;
-      document.getElementById("setting-upload-threads").value = s.upload.threads;
+      document.getElementById("setting-skipexists").checked =
+        s.upload.skipExists;
+      document.getElementById("setting-upload-threads").value =
+        s.upload.threads;
 
       // 云盘设置
       document.getElementById("setting-autoclean").checked = s.cloud.autoClean;
@@ -1834,9 +1138,12 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       document.getElementById("setting-showip").checked = s.ui.showIpLocation;
 
       // 功能开关
-      document.getElementById("setting-enhance-comment").checked = s.features.enhanceComment;
-      document.getElementById("setting-enhance-lyric").checked = s.features.enhanceLyric;
-      document.getElementById("setting-enhance-playlist").checked = s.features.enhancePlaylist;
+      document.getElementById("setting-enhance-comment").checked =
+        s.features.enhanceComment;
+      document.getElementById("setting-enhance-lyric").checked =
+        s.features.enhanceLyric;
+      document.getElementById("setting-enhance-playlist").checked =
+        s.features.enhancePlaylist;
     }
 
     /**
@@ -1844,32 +1151,47 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     saveSettingsFromPanel() {
       // 下载设置
-      this.settings.download.quality = document.getElementById("setting-quality").value;
-      this.settings.download.format = document.getElementById("setting-filename").value;
-      this.settings.download.threads = parseInt(document.getElementById("setting-threads").value);
+      this.settings.download.quality =
+        document.getElementById("setting-quality").value;
+      this.settings.download.format =
+        document.getElementById("setting-filename").value;
+      this.settings.download.threads = parseInt(
+        document.getElementById("setting-threads").value
+      );
 
       // 上传设置
-      this.settings.upload.autoMatch = document.getElementById("setting-automatch").checked;
-      this.settings.upload.skipExists = document.getElementById("setting-skipexists").checked;
+      this.settings.upload.autoMatch =
+        document.getElementById("setting-automatch").checked;
+      this.settings.upload.skipExists =
+        document.getElementById("setting-skipexists").checked;
       this.settings.upload.threads = parseInt(
         document.getElementById("setting-upload-threads").value
       );
 
       // 云盘设置
-      this.settings.cloud.autoClean = document.getElementById("setting-autoclean").checked;
-      this.settings.cloud.cleanSize = parseInt(document.getElementById("setting-cleansize").value);
-      this.settings.cloud.backupList = document.getElementById("setting-backup").checked;
+      this.settings.cloud.autoClean =
+        document.getElementById("setting-autoclean").checked;
+      this.settings.cloud.cleanSize = parseInt(
+        document.getElementById("setting-cleansize").value
+      );
+      this.settings.cloud.backupList =
+        document.getElementById("setting-backup").checked;
 
       // 界面设置
       this.settings.ui.theme = document.getElementById("setting-theme").value;
-      this.settings.ui.fontSize = parseInt(document.getElementById("setting-fontsize").value);
-      this.settings.ui.showIpLocation = document.getElementById("setting-showip").checked;
+      this.settings.ui.fontSize = parseInt(
+        document.getElementById("setting-fontsize").value
+      );
+      this.settings.ui.showIpLocation =
+        document.getElementById("setting-showip").checked;
 
       // 功能开关
-      this.settings.features.enhanceComment =
-        document.getElementById("setting-enhance-comment").checked;
-      this.settings.features.enhanceLyric =
-        document.getElementById("setting-enhance-lyric").checked;
+      this.settings.features.enhanceComment = document.getElementById(
+        "setting-enhance-comment"
+      ).checked;
+      this.settings.features.enhanceLyric = document.getElementById(
+        "setting-enhance-lyric"
+      ).checked;
       this.settings.features.enhancePlaylist = document.getElementById(
         "setting-enhance-playlist"
       ).checked;
@@ -1878,156 +1200,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 样式注入 ================
+  // #endregion ================ 设置面板功能 ================
 
-  // 注入自定义样式
-  GM_addStyle(`
-        /* 通用样式 */
-        .custom-btn {
-            padding: 6px 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
-            background: #ec4141;
-            color: white;
-        }
-        .custom-btn:hover {
-            opacity: 0.9;
-        }
-
-        /* 设置面板样式 */
-        .settings-panel {
-            display: flex;
-            height: 400px;
-        }
-        .settings-tabs {
-            width: 150px;
-            border-right: 1px solid #eee;
-            padding: 10px 0;
-        }
-        .settings-content {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .tab-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            text-align: left;
-            border: none;
-            background: none;
-            cursor: pointer;
-        }
-        .tab-btn.active {
-            background: #f5f5f5;
-            color: #ec4141;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .setting-item {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        .setting-item label {
-            width: 100px;
-            margin-right: 10px;
-        }
-
-        /* 上传对话框样式 */
-        .upload-dialog {
-            max-height: 500px;
-            overflow-y: auto;
-        }
-        .filter-section {
-            margin-bottom: 15px;
-            padding: 10px;
-            background: #f5f5f5;
-            border-radius: 4px;
-        }
-        .song-list table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .song-list th, .song-list td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        .song-list tr:hover {
-            background: #f5f5f5;
-        }
-
-        /* 云盘管理样式 */
-        .cloud-manager {
-            max-height: 600px;
-            overflow-y: auto;
-        }
-        .toolbar {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            padding: 10px;
-            background: #f5f5f5;
-            border-radius: 4px;
-        }
-        .search-box {
-            display: flex;
-            gap: 10px;
-        }
-        .actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        /* IP信息样式 */
-        .ip-info {
-            margin-left: 10px;
-            color: #666;
-            font-size: 12px;
-        }
-        .ip-selector {
-            margin: 10px 0;
-        }
-
-        /* 进度条样式 */
-        .progress-bar {
-            width: 100%;
-            height: 4px;
-            background: #eee;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-        #progress-inner {
-            height: 100%;
-            background: #ec4141;
-            transition: width 0.3s;
-        }
-
-        /* 深色主题 */
-        @media (prefers-color-scheme: dark) {
-            .tab-btn.active {
-                background: #333;
-            }
-            .filter-section, .toolbar {
-                background: #333;
-            }
-            .song-list tr:hover {
-                background: #333;
-            }
-            .progress-bar {
-                background: #333;
-            }
-        }
-    `);
-
-  // ================ 主程序类 ================
+  // #region ================ 主程序类 ================
 
   /**
    * 主程序类
@@ -2035,6 +1210,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
    */
   class MainProgram {
     constructor() {
+      console.log("MainProgram start ====================================");
       // 初始化各功能模块
       this.settings = new SettingsManager();
       this.uploader = null;
@@ -2070,8 +1246,10 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
 
       // 绑定事件
       document.getElementById("uploadBtn").onclick = () => this.showUploader();
-      document.getElementById("cloudBtn").onclick = () => this.cloudManager.init();
-      document.getElementById("settingsBtn").onclick = () => this.settings.showPanel();
+      document.getElementById("cloudBtn").onclick = () =>
+        this.cloudManager.init();
+      document.getElementById("settingsBtn").onclick = () =>
+        this.settings.showPanel();
     }
 
     /**
@@ -2112,7 +1290,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      * 监听播放器变化
      */
     observePlayer() {
-      const observer = new MutationObserver(mutations => {
+      const observer = new MutationObserver((mutations) => {
         for (const mutation of mutations) {
           if (mutation.type === "childList") {
             const player = document.querySelector(".m-player");
@@ -2172,7 +1350,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     enhancePlaylist() {
       // 监听播放列表页面
-      const observer = new MutationObserver(mutations => {
+      const observer = new MutationObserver((mutations) => {
         for (const mutation of mutations) {
           if (mutation.type === "childList") {
             const playlist = document.querySelector(".m-playlist");
@@ -2213,7 +1391,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 初始化 ================
+  // #endregion ================ 主程序类 ================
+
+  // #region ================ 初始化 ================
 
   // 等待DOM加载完成
   window.addEventListener("DOMContentLoaded", () => {
@@ -2221,7 +1401,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     window.cloudMusicEnhancer = new MainProgram();
   });
 
-  // ================ 批量处理功能 ================
+  // #endregion ================ 初始化 ================
+
+  // #region ================ 批量处理功能 ================
 
   /**
    * 批量下载上传类
@@ -2278,14 +1460,22 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
 
     // 获取云盘ID
     async fetchCloudId() {
-      for (let offset = 0; offset < this.songs.length; offset += CHECK_API_LIMIT) {
+      for (
+        let offset = 0;
+        offset < this.songs.length;
+        offset += CHECK_API_LIMIT
+      ) {
         await this.fetchCloudIdSub(offset);
       }
     }
 
     // 导入歌曲
     async importSongs() {
-      for (let offset = 0; offset < this.songs.length; offset += IMPORT_API_LIMIT) {
+      for (
+        let offset = 0;
+        offset < this.songs.length;
+        offset += IMPORT_API_LIMIT
+      ) {
         await this.importSongsSub(offset);
       }
     }
@@ -2307,7 +1497,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 专辑详情功能 ================
+  // #endregion ================ 批量处理功能 ================
+
+  // #region ================ 专辑详情功能 ================
 
   /**
    * 专辑详情类
@@ -2383,7 +1575,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 播放列表详情功能 ================
+  // #endregion ================ 专辑详情功能 ================
+
+  // #region ================ 播放列表详情功能 ================
 
   /**
    * 播放列表详情类
@@ -2419,7 +1613,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     // 获取播放列表所有歌曲
     async getPlaylistAllSongs(trackIds) {
       for (let i = 0; i < trackIds.length; i += 1000) {
-        const ids = trackIds.slice(i, i + 1000).map(t => t.id);
+        const ids = trackIds.slice(i, i + 1000).map((t) => t.id);
         await this.getPlaylistAllSongsSub(ids, i);
       }
     }
@@ -2458,7 +1652,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       // 修改播放按钮点击事件
       playAllBtn.onclick = () => {
         // 过滤可播放歌曲
-        this.playableSongList = this.playlistSongList.filter(song => !song.noCopyrightRcmd);
+        this.playableSongList = this.playlistSongList.filter(
+          (song) => !song.noCopyrightRcmd
+        );
 
         // 播放第一首歌
         if (this.playableSongList.length > 0) {
@@ -2467,7 +1663,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
               ids: [this.playableSongList[0].id],
               level: this.settings.download.quality,
             },
-            onload: res => {
+            onload: (res) => {
               if (res.code === 200 && res.data[0]) {
                 // 播放歌曲
                 this.playSong(res.data[0]);
@@ -2506,7 +1702,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 评论功能增强 ================
+  // #endregion ================ 播放列表详情功能 ================
+
+  // #region ================ 评论功能增强 ================
 
   /**
    * 评论功能增强器类
@@ -2521,14 +1719,14 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     init() {
       // 处理已有评论
-      document.querySelectorAll(".itm").forEach(item => {
+      document.querySelectorAll(".itm").forEach((item) => {
         this.processCommentItem(item);
       });
 
       // 监听新评论
       const commentList = document.querySelector(".m-cmmt");
       if (commentList) {
-        this.observer = new MutationObserver(mutations => {
+        this.observer = new MutationObserver((mutations) => {
           for (const mutation of mutations) {
             for (const node of mutation.addedNodes) {
               if (node.classList?.contains("itm")) {
@@ -2690,7 +1888,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 歌词处理功能 ================
+  // #endregion ================ 评论功能增强 ================
+
+  // #region ================ 歌词处理功能 ================
 
   /**
    * 歌词处理器类
@@ -2699,7 +1899,8 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     constructor() {
       // 歌词时间戳正则
       this.timestampRegex = /\[(?<min>\d+):(?<sec>\d+)(?:\.|:)*(?<ms>\d+)*\]/g;
-      this.lyricLineRegex = /^(?<timestamps>(?:\[.+?\])+)(?!\[)(?<content>.+)$/gm;
+      this.lyricLineRegex =
+        /^(?<timestamps>(?:\[.+?\])+)(?!\[)(?<content>.+)$/gm;
     }
 
     /**
@@ -2739,7 +1940,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       while ((match = this.timestampRegex.exec(timestamps)) !== null) {
         const { min, sec, ms } = match.groups;
         const totalMs =
-          parseInt(min) * 60000 + parseInt(sec) * 1000 + (ms ? parseInt(ms.padEnd(3, "0")) : 0);
+          parseInt(min) * 60000 +
+          parseInt(sec) * 1000 +
+          (ms ? parseInt(ms.padEnd(3, "0")) : 0);
         times.push(totalMs);
       }
 
@@ -2769,7 +1972,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       const subLines = this.parse(subLyric);
 
       // 使用二分查找匹配最近的歌词
-      const combined = mainLines.map(main => {
+      const combined = mainLines.map((main) => {
         const nearest = this.findNearestLyric(main.time, subLines);
         if (nearest && Math.abs(nearest.time - main.time) < 1000) {
           // 1秒内视为同步
@@ -2824,7 +2027,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     convertToLRC(lyrics) {
       return lyrics
-        .map(lyric => {
+        .map((lyric) => {
           const time = lyric.time;
           const min = Math.floor(time / 60000);
           const sec = Math.floor((time % 60000) / 1000);
@@ -2893,7 +2096,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 设置面板功能 ================
+  // #endregion ================ 歌词处理功能 ================
+
+  // #region ================ 设置面板功能 ================
 
   /**
    * 设置管理器类
@@ -2997,7 +2202,10 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
                             <label>默认音质</label>
                             <select id="setting-quality">
                                 ${Object.entries(QUALITY_LEVELS)
-                                  .map(([key, name]) => `<option value="${key}">${name}</option>`)
+                                  .map(
+                                    ([key, name]) =>
+                                      `<option value="${key}">${name}</option>`
+                                  )
                                   .join("")}
                             </select>
                         </div>
@@ -3083,13 +2291,19 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     initPanelValues() {
       // 绑定标签切换
-      document.querySelectorAll(".tab-btn").forEach(btn => {
-        btn.addEventListener("click", e => {
-          document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-          document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          document
+            .querySelectorAll(".tab-btn")
+            .forEach((b) => b.classList.remove("active"));
+          document
+            .querySelectorAll(".tab-content")
+            .forEach((c) => c.classList.remove("active"));
 
           e.target.classList.add("active");
-          document.getElementById(`${e.target.dataset.tab}-settings`).classList.add("active");
+          document
+            .getElementById(`${e.target.dataset.tab}-settings`)
+            .classList.add("active");
         });
       });
 
@@ -3103,8 +2317,10 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
 
       // 上传设置
       document.getElementById("setting-automatch").checked = s.upload.autoMatch;
-      document.getElementById("setting-skipexists").checked = s.upload.skipExists;
-      document.getElementById("setting-upload-threads").value = s.upload.threads;
+      document.getElementById("setting-skipexists").checked =
+        s.upload.skipExists;
+      document.getElementById("setting-upload-threads").value =
+        s.upload.threads;
 
       // 云盘设置
       document.getElementById("setting-autoclean").checked = s.cloud.autoClean;
@@ -3117,9 +2333,12 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       document.getElementById("setting-showip").checked = s.ui.showIpLocation;
 
       // 功能开关
-      document.getElementById("setting-enhance-comment").checked = s.features.enhanceComment;
-      document.getElementById("setting-enhance-lyric").checked = s.features.enhanceLyric;
-      document.getElementById("setting-enhance-playlist").checked = s.features.enhancePlaylist;
+      document.getElementById("setting-enhance-comment").checked =
+        s.features.enhanceComment;
+      document.getElementById("setting-enhance-lyric").checked =
+        s.features.enhanceLyric;
+      document.getElementById("setting-enhance-playlist").checked =
+        s.features.enhancePlaylist;
     }
 
     /**
@@ -3127,32 +2346,47 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     saveSettingsFromPanel() {
       // 下载设置
-      this.settings.download.quality = document.getElementById("setting-quality").value;
-      this.settings.download.format = document.getElementById("setting-filename").value;
-      this.settings.download.threads = parseInt(document.getElementById("setting-threads").value);
+      this.settings.download.quality =
+        document.getElementById("setting-quality").value;
+      this.settings.download.format =
+        document.getElementById("setting-filename").value;
+      this.settings.download.threads = parseInt(
+        document.getElementById("setting-threads").value
+      );
 
       // 上传设置
-      this.settings.upload.autoMatch = document.getElementById("setting-automatch").checked;
-      this.settings.upload.skipExists = document.getElementById("setting-skipexists").checked;
+      this.settings.upload.autoMatch =
+        document.getElementById("setting-automatch").checked;
+      this.settings.upload.skipExists =
+        document.getElementById("setting-skipexists").checked;
       this.settings.upload.threads = parseInt(
         document.getElementById("setting-upload-threads").value
       );
 
       // 云盘设置
-      this.settings.cloud.autoClean = document.getElementById("setting-autoclean").checked;
-      this.settings.cloud.cleanSize = parseInt(document.getElementById("setting-cleansize").value);
-      this.settings.cloud.backupList = document.getElementById("setting-backup").checked;
+      this.settings.cloud.autoClean =
+        document.getElementById("setting-autoclean").checked;
+      this.settings.cloud.cleanSize = parseInt(
+        document.getElementById("setting-cleansize").value
+      );
+      this.settings.cloud.backupList =
+        document.getElementById("setting-backup").checked;
 
       // 界面设置
       this.settings.ui.theme = document.getElementById("setting-theme").value;
-      this.settings.ui.fontSize = parseInt(document.getElementById("setting-fontsize").value);
-      this.settings.ui.showIpLocation = document.getElementById("setting-showip").checked;
+      this.settings.ui.fontSize = parseInt(
+        document.getElementById("setting-fontsize").value
+      );
+      this.settings.ui.showIpLocation =
+        document.getElementById("setting-showip").checked;
 
       // 功能开关
-      this.settings.features.enhanceComment =
-        document.getElementById("setting-enhance-comment").checked;
-      this.settings.features.enhanceLyric =
-        document.getElementById("setting-enhance-lyric").checked;
+      this.settings.features.enhanceComment = document.getElementById(
+        "setting-enhance-comment"
+      ).checked;
+      this.settings.features.enhanceLyric = document.getElementById(
+        "setting-enhance-lyric"
+      ).checked;
       this.settings.features.enhancePlaylist = document.getElementById(
         "setting-enhance-playlist"
       ).checked;
@@ -3161,72 +2395,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 样式注入 ================
+  // #endregion ================ 设置面板功能 ================
 
-  // 注入自定义样式
-  GM_addStyle(`
-    /* 通用样式 */
-    .custom-btn {
-        padding: 6px 12px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.3s;
-        background: #ec4141;
-        color: white;
-    }
-    .custom-btn:hover {
-        opacity: 0.9;
-    }
-
-    /* 上传/下载对话框样式 */
-    .upload-dialog,
-    .download-dialog {
-        max-height: 500px;
-        overflow-y: auto;
-    }
-
-    .filter-section {
-        margin-bottom: 15px;
-        padding: 10px;
-        background: #f5f5f5;
-        border-radius: 4px;
-    }
-
-    /* 进度条样式 */
-    .progress-bar {
-        width: 100%;
-        height: 4px;
-        background: #eee;
-        border-radius: 2px;
-        overflow: hidden;
-    }
-
-    #progress {
-        height: 100%;
-        background: #ec4141;
-        transition: width 0.3s;
-    }
-
-    /* IP信息样式 */
-    .ip-info {
-        margin-left: 10px;
-        color: #666;
-        font-size: 12px;
-    }
-
-    /* 深色主题 */
-    @media (prefers-color-scheme: dark) {
-        .filter-section {
-            background: #333;
-        }
-        .progress-bar {
-            background: #333;
-        }
-    }
-`);
-
-  // ================ 云盘匹配纠正功能 ================
+  // #region ================ 云盘匹配纠正功能 ================
 
   /**
    * 云盘匹配纠正类
@@ -3370,7 +2541,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
           limit: 1000,
           offset,
         },
-        onload: res => {
+        onload: (res) => {
           if (res.code === 200) {
             this.popupObj.tbody.innerHTML = `正在获取${offset + 1}到${Math.min(
               offset + 1000,
@@ -3378,7 +2549,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
             )}首云盘歌曲`;
 
             // 处理歌曲数据
-            res.data.forEach(song => {
+            res.data.forEach((song) => {
               if (!song.simpleSong.privilege.cs) {
                 let songItem = {
                   id: song.songId,
@@ -3426,18 +2597,24 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         tr.innerHTML = `
                 <td><button type="button" class="swal2-styled">匹配</button></td>
                 <td>
-                    <a href="https://music.163.com/album?id=${song.albumid}" target="_blank">
-                        <img src="${song.picUrl}?param=50y50&quality=100" title="${song.album}">
+                    <a href="https://music.163.com/album?id=${
+                      song.albumid
+                    }" target="_blank">
+                        <img src="${
+                          song.picUrl
+                        }?param=50y50&quality=100" title="${song.album}">
                     </a>
                 </td>
                 <td>
-                    <a href="https://music.163.com/song?id=${song.id}" target="_blank">${
-          song.name
-        }</a>
+                    <a href="https://music.163.com/song?id=${
+                      song.id
+                    }" target="_blank">${song.name}</a>
                 </td>
                 <td>${song.artists}</td>
                 <td>${song.dt}</td>
-                <td>${fileSizeDesc(song.fileSize)} ${song.ext ? song.ext.toUpperCase() : ""}</td>
+                <td>${fileSizeDesc(song.fileSize)} ${
+          song.ext ? song.ext.toUpperCase() : ""
+        }</td>
                 <td>${song.addTime}</td>
             `;
 
@@ -3482,7 +2659,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
 
       // 更新分页
       this.page.current = 1;
-      this.page.max = Math.ceil(this.filter.songIndexs.length / this.page.limitCount);
+      this.page.max = Math.ceil(
+        this.filter.songIndexs.length / this.page.limitCount
+      );
 
       // 渲染数据
       this.renderData();
@@ -3501,11 +2680,16 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
 
       this.popupObj.tbody.innerHTML = "";
       const songBegin = (this.page.current - 1) * this.page.limitCount;
-      const songEnd = Math.min(this.filter.songIndexs.length, songBegin + this.page.limitCount);
+      const songEnd = Math.min(
+        this.filter.songIndexs.length,
+        songBegin + this.page.limitCount
+      );
 
       // 添加当前页的歌曲
       for (let i = songBegin; i < songEnd; i++) {
-        this.popupObj.tbody.appendChild(this.songs[this.filter.songIndexs[i]].tablerow);
+        this.popupObj.tbody.appendChild(
+          this.songs[this.filter.songIndexs[i]].tablerow
+        );
       }
 
       // 生成分页按钮
@@ -3529,7 +2713,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       }
 
       this.popupObj.footer.innerHTML = "";
-      pageIndexs.forEach(pageIndex => {
+      pageIndexs.forEach((pageIndex) => {
         const pageBtn = document.createElement("button");
         pageBtn.setAttribute("type", "button");
         pageBtn.className = "swal2-styled";
@@ -3557,7 +2741,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         input: "number",
         inputLabel: "目标歌曲ID",
         footer: "ID为0时解除匹配 歌曲页面网址里的数字就是ID",
-        inputValidator: value => {
+        inputValidator: (value) => {
           if (!value) {
             return "内容为空";
           }
@@ -3606,7 +2790,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 云盘音质提升功能 ================
+  // #endregion ================ 云盘匹配纠正功能 ================
+
+  // #region ================ 云盘音质提升功能 ================
 
   /**
    * 云盘音质提升类
@@ -3660,7 +2846,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         showCloseButton: true,
         footer:
           "<div>寻找网易云音源比云盘音质好的歌曲,然后进行删除并重新上传</div><div>⚠️可能出现删除了歌曲但上传失败的情况</div><div>部分歌曲无法判断是否能提升</div>",
-        inputValidator: value => {
+        inputValidator: (value) => {
           if (!value) {
             return "请选择目标音质";
           }
@@ -3737,14 +2923,16 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
 
       // 绑定搜索事件
       const filterInput = container.querySelector("#text-filter");
-      filterInput.addEventListener("input", e => {
+      filterInput.addEventListener("input", (e) => {
         this.filter.text = e.target.value.trim();
         this.applyFilter();
       });
 
       // 绑定批量升级按钮
       this.btnUpgradeBatch = container.querySelector("#btn-upgrade-batch");
-      this.btnUpgradeBatch.addEventListener("click", () => this.startBatchUpgrade());
+      this.btnUpgradeBatch.addEventListener("click", () =>
+        this.startBatchUpgrade()
+      );
 
       // 获取云盘歌曲
       this.fetchCloudSongs();
@@ -3780,14 +2968,18 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         )}云盘歌曲`;
 
         // 处理歌曲数据
-        res.data.forEach(song => {
+        res.data.forEach((song) => {
           if (song.simpleSong.privilege.toast) return;
-          if (song.simpleSong.privilege.fee === 0 && song.simpleSong.privilege.flLevel === "none")
+          if (
+            song.simpleSong.privilege.fee === 0 &&
+            song.simpleSong.privilege.flLevel === "none"
+          )
             return;
           if (song.simpleSong.privilege.fee === 4) return;
           if (song.simpleSong.privilege.playMaxBrLevel === "none") return;
 
-          const cloudWeight = levelWeight[song.simpleSong.privilege.plLevel] || 0;
+          const cloudWeight =
+            levelWeight[song.simpleSong.privilege.plLevel] || 0;
           if (cloudWeight >= this.targetWeight) return;
 
           songIds.push({ id: song.simpleSong.id });
@@ -3830,14 +3022,18 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         });
 
         // 处理歌曲数据
-        res.data.forEach(song => {
+        res.data.forEach((song) => {
           if (song.simpleSong.privilege.toast) return;
-          if (song.simpleSong.privilege.fee === 0 && song.simpleSong.privilege.flLevel === "none")
+          if (
+            song.simpleSong.privilege.fee === 0 &&
+            song.simpleSong.privilege.flLevel === "none"
+          )
             return;
           if (song.simpleSong.privilege.fee === 4) return;
           if (song.simpleSong.privilege.playMaxBrLevel === "none") return;
 
-          const cloudWeight = levelWeight[song.simpleSong.privilege.plLevel] || 0;
+          const cloudWeight =
+            levelWeight[song.simpleSong.privilege.plLevel] || 0;
           if (cloudWeight >= this.targetWeight) return;
 
           songIds.push({ id: song.simpleSong.id });
@@ -3906,7 +3102,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
 
       // 更新分页
       this.page.current = 1;
-      this.page.max = Math.ceil(this.filter.songIndexs.length / this.page.limitCount);
+      this.page.max = Math.ceil(
+        this.filter.songIndexs.length / this.page.limitCount
+      );
 
       // 渲染数据
       this.renderData();
@@ -3946,11 +3144,16 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
 
       this.popupObj.tbody.innerHTML = "";
       const songBegin = (this.page.current - 1) * this.page.limitCount;
-      const songEnd = Math.min(this.filter.songIndexs.length, songBegin + this.page.limitCount);
+      const songEnd = Math.min(
+        this.filter.songIndexs.length,
+        songBegin + this.page.limitCount
+      );
 
       // 添加当前页的歌曲
       for (let i = songBegin; i < songEnd; i++) {
-        this.popupObj.tbody.appendChild(this.songs[this.filter.songIndexs[i]].tablerow);
+        this.popupObj.tbody.appendChild(
+          this.songs[this.filter.songIndexs[i]].tablerow
+        );
       }
     }
 
@@ -4145,7 +3348,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 本地文件上传功能 ================
+  // #endregion ================ 云盘音质提升功能 ================
+
+  // #region ================ 本地文件上传功能 ================
 
   /**
    * 本地文件上传管理器类
@@ -4199,7 +3404,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     bindFileInput() {
       const fileInput = document.getElementById("file-input");
-      fileInput.addEventListener("change", e => {
+      fileInput.addEventListener("change", (e) => {
         this.files = Array.from(e.target.files);
         this.renderFileList();
       });
@@ -4293,9 +3498,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     onUploadComplete() {
       let message = "上传完成";
       if (this.failedFiles.length > 0) {
-        message += `\n失败 ${this.failedFiles.length} 个文件:\n${this.failedFiles
-          .map(f => f.name)
-          .join("\n")}`;
+        message += `\n失败 ${
+          this.failedFiles.length
+        } 个文件:\n${this.failedFiles.map((f) => f.name).join("\n")}`;
       }
 
       Swal.fire({
@@ -4412,7 +3617,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     readFileTags(file) {
       return new Promise((resolve, reject) => {
         jsmediatags.read(file, {
-          onSuccess: tag => {
+          onSuccess: (tag) => {
             const tags = {
               title: tag.tags.title || "",
               artist: tag.tags.artist || "",
@@ -4425,7 +3630,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
             };
             resolve(tags);
           },
-          onError: error => {
+          onError: (error) => {
             console.warn("Read tags failed:", error);
             resolve({});
           },
@@ -4452,7 +3657,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      * 更新文件状态
      */
     updateFileStatus(index, status, type = "info") {
-      const statusCell = document.querySelector(`#file-table tr:nth-child(${index + 1}) .status`);
+      const statusCell = document.querySelector(
+        `#file-table tr:nth-child(${index + 1}) .status`
+      );
       if (statusCell) {
         statusCell.textContent = status;
         statusCell.className = `status ${type}`;
@@ -4460,7 +3667,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 云盘导入导出功能 ================
+  // #endregion ================ 本地文件上传功能 ================
+
+  // #region ================ 云盘导入导出功能 ================
 
   /**
    * 云盘导入导出管理器类
@@ -4491,7 +3700,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         this.exportData = {
           version: "1.0",
           timestamp: Date.now(),
-          songs: this.songs.map(song => ({
+          songs: this.songs.map((song) => ({
             id: song.songId,
             name: song.songName,
             artist: song.artist,
@@ -4509,7 +3718,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
           type: "application/json;charset=utf-8",
         });
         const url = URL.createObjectURL(blob);
-        const filename = `cloud_songs_${new Date().toISOString().slice(0, 10)}.json`;
+        const filename = `cloud_songs_${new Date()
+          .toISOString()
+          .slice(0, 10)}.json`;
 
         GM_download({
           url,
@@ -4609,7 +3820,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     readFileContent(file) {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
-        reader.onload = e => resolve(e.target.result);
+        reader.onload = (e) => resolve(e.target.result);
         reader.onerror = reject;
         reader.readAsText(file);
       });
@@ -4624,7 +3835,13 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         data.version &&
         Array.isArray(data.songs) &&
         data.songs.every(
-          song => song.id && song.name && song.artist && song.album && song.fileName && song.md5
+          (song) =>
+            song.id &&
+            song.name &&
+            song.artist &&
+            song.album &&
+            song.fileName &&
+            song.md5
         )
       );
     }
@@ -4747,7 +3964,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 歌单排序功能 ================
+  // #endregion ================ 云盘导入导出功能 ================
+
+  // #region ================ 歌单排序功能 ================
 
   /**
    * 歌单排序管理器类
@@ -4818,7 +4037,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         });
 
         // 更新播放列表顺序
-        const songIds = this.songs.map(song => song.id);
+        const songIds = this.songs.map((song) => song.id);
         await this.updatePlaylistOrder(songIds);
 
         showTip("排序完成", "success");
@@ -4849,7 +4068,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ 专辑页加载 Disc 信息功能 ================
+  // #endregion ================ 歌单排序功能 ================
+
+  // #region ================ 专辑页加载 Disc 信息功能 ================
 
   /**
    * 专辑信息加载器类
@@ -4889,7 +4110,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     processDiscInfo() {
       // 按碟片分组歌曲
-      this.albumInfo.songs.forEach(song => {
+      this.albumInfo.songs.forEach((song) => {
         const discInfos = song.cd ? song.cd.split(" ") : [];
         if (discInfos.length > 0) {
           const discIndex = parseInt(discInfos[0]);
@@ -4942,7 +4163,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
 
         let tbody = tableParent.querySelector(`#ncmextend-disc-${index}`);
         disc.songs.forEach((songItem, songIndex) => {
-          tableRows.forEach(tableRow => {
+          tableRows.forEach((tableRow) => {
             if (Number(tableRow.id.slice(0, -13)) === songItem.id) {
               tableRow.querySelector(".num").innerHTML = songItem.no;
               tableRow.className = songIndex % 2 == 0 ? "even " : "";
@@ -4961,7 +4182,9 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
     }
   }
 
-  // ================ VIP歌曲下载上传功能 ================
+  // #endregion ================ 专辑页加载 Disc 信息功能 ================
+
+  // #region ================ VIP歌曲下载上传功能 ================
 
   /**
    * VIP歌曲处理器类
@@ -5013,10 +4236,12 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
                         <tbody>
                             ${this.vipSongs
                               .map(
-                                song => `
+                                (song) => `
                                 <tr data-id="${song.id}">
                                     <td>${escapeHTML(song.name)}</td>
-                                    <td>${escapeHTML(song.ar.map(a => a.name).join(","))}</td>
+                                    <td>${escapeHTML(
+                                      song.ar.map((a) => a.name).join(",")
+                                    )}</td>
                                     <td>${escapeHTML(song.al.name)}</td>
                                     <td>
                                         <button class="download-btn">下载</button>
@@ -5044,16 +4269,16 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
      */
     bindVIPSongButtons() {
       // 下载按钮
-      document.querySelectorAll(".download-btn").forEach(btn => {
-        btn.addEventListener("click", async e => {
+      document.querySelectorAll(".download-btn").forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
           const songId = e.target.closest("tr").dataset.id;
           await this.downloadVIPSong(songId);
         });
       });
 
       // 上传按钮
-      document.querySelectorAll(".upload-btn").forEach(btn => {
-        btn.addEventListener("click", async e => {
+      document.querySelectorAll(".upload-btn").forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
           const songId = e.target.closest("tr").dataset.id;
           await this.uploadVIPSong(songId);
         });
@@ -5097,7 +4322,11 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
         }
 
         const song = songRes.songs[0];
-        const filename = generateFileName(song.name, getArtistInfo(song), "artist-title");
+        const filename = generateFileName(
+          song.name,
+          getArtistInfo(song),
+          "artist-title"
+        );
 
         // 下载文件
         GM_download({
@@ -5106,7 +4335,7 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
           onload: () => {
             showTips("下载成功", "success");
           },
-          onerror: error => {
+          onerror: (error) => {
             console.error("Download failed:", error);
             showTips("下载失败", "error");
           },
@@ -5157,5 +4386,6 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7cl
       }
     }
   }
-})();
 
+  // #endregion ================ VIP歌曲下载上传功能 ================
+})();

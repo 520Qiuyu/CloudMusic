@@ -1,0 +1,38 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import monkey, { cdn } from "vite-plugin-monkey";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    monkey({
+      entry: "src/main.jsx",
+      userscript: {
+        icon: "https://vitejs.dev/logo.svg",
+        namespace: "https://github.com/520Qiuyu/CloudMusic",
+        match: ["https://music.163.com/**/*"],
+        require: [
+          "https://cdn.jsdelivr.net/npm/antd@5.22.4/dist/reset.min.css",
+        ],
+      },
+      server: {
+        open: false,
+      },
+      build: {
+        externalGlobals: {
+          react: cdn.jsdelivr("React", "umd/react.production.min.js"),
+          "react-dom": cdn.jsdelivr(
+            "ReactDOM",
+            "umd/react-dom.production.min.js"
+          ),
+          antd: cdn.jsdelivr("antd", "dist/antd.min.js"),
+          "@antd-design/icons": cdn.jsdelivr(
+            "@antd-design/icons",
+            "dist/index.umd.min.js"
+          ),
+        },
+      },
+    }),
+  ],
+});
