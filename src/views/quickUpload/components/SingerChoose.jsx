@@ -61,7 +61,7 @@ export default function SingerChoose({ singerList, onChoose, loading }) {
           </Form.Item>
 
           {/* 按钮 */}
-          <Form.Item>
+          <Form.Item style={{ marginBottom: 0 }}>
             <div className={styles["btn-group"]}>
               <Button type="primary" htmlType="submit">
                 选择

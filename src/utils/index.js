@@ -8,13 +8,15 @@ import forge from "node-forge";
  * @returns {string} 格式化后的大小
  */
 export const formatFileSize = (size) => {
+  if (!size || isNaN(size)) return "0 B";
   const units = ["B", "KB", "MB", "GB", "TB"];
+  size = Math.abs(Number(size));
   let index = 0;
   while (size >= 1024 && index < units.length - 1) {
     size /= 1024;
     index++;
   }
-  return size.toFixed(index > 0 ? 1 : 0) + units[index];
+  return `${size.toFixed(index > 0 ? 1 : 0)} ${units[index]}`;
 };
 
 /**
@@ -75,7 +77,29 @@ export const getAlbumTextInSongDetail = (song) => {
   return song.al ? song.al.name : song.pc?.alb || "";
 };
 
+/**
+ * 对象数组去重
+ * @param {Array<Object>} arr - 需要去重的对象数组
+ * @param {string} key - 用于去重的属性名
+ * @returns {Array<Object>} 去重后的数组，保留每个重复值的第一个对象
+ * @example
+ * const arr = [{id: 1, name: 'a'}, {id: 1, name: 'b'}, {id: 2, name: 'c'}];
+ * const result = uniqueArrayByKey(arr, 'id');
+ * // result: [{id: 1, name: 'a'}, {id: 2, name: 'c'}]
+ */
+export const uniqueArrayByKey = (arr, key) => {
+  if (!Array.isArray(arr)) return [];
+  if (!key) return arr;
 
+  const seen = new Map();
+  return arr.filter((item) => {
+    if (!item || typeof item !== "object") return false;
+    const val = item[key];
+    if (seen.has(val)) return false;
+    seen.set(val, true);
+    return true;
+  });
+};
 
 // #endregion ================ 工具函数 ================
 
@@ -83,7 +107,8 @@ export const getAlbumTextInSongDetail = (song) => {
 
 export const IV = "0102030405060708";
 export const PRESET_KEY = "0CoJUm6Qyw8W8jud";
-export const BASE62 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+export const BASE62 =
+  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 export const PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
     MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7clFSs6sXqHauqKWqdtLkF2KexO40H1YTX8z2lSgBBOAxLsvaklV8k4cBFK9snQXE9/DDaFt6Rr7iVZMldczhC0JNgTz+SHXT6CBHuX3e9SdB1Ua44oncaTWz7OBGLbCiK45wIDAQAB
     -----END PUBLIC KEY-----`;
@@ -124,7 +149,9 @@ export const rsaEncrypt = (text, key) => {
  */
 const weapi = (object) => {
   const text = JSON.stringify(object);
-  const secretKey = Array.from({ length: 16 }, () => BASE62.charAt(Math.floor(Math.random() * 62))).join("");
+  const secretKey = Array.from({ length: 16 }, () =>
+    BASE62.charAt(Math.floor(Math.random() * 62))
+  ).join("");
   return {
     params: aesEncrypt(aesEncrypt(text, PRESET_KEY, IV), secretKey, IV),
     encSecKey: rsaEncrypt(secretKey.split("").reverse().join(""), PUBLIC_KEY),

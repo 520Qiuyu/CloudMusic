@@ -1,15 +1,20 @@
+import { Button, Empty, Table, Tag, message, Modal } from "antd";
 import React, { useEffect, useState } from "react";
-import { getCDNConfig } from "../../../api";
-import styles from "../index.module.scss";
-import { Table } from "antd";
+import { getCDNConfig, getSongInfoList, uploadSong } from "../../../api";
 import {
   chunkArray,
+  formatDuration,
+  formatFileSize,
   getAlbumTextInSongDetail,
   getArtistTextInSongDetail,
   weapiRequest,
-  formatDuration,
 } from "../../../utils/index";
-import { UPLOAD_CHUNK_SIZE } from "../../../constant";
+import styles from "../index.module.scss";
+import SearchForm from "./SearchForm";
+import UploadStats from "./UploadStats";
+import { Space } from "antd";
+import { useRef } from "react";
+import { confirm, msgError, msgSuccess } from "../../../utils/modal";
 
 const defaultSearchParams = {
   /* text: "",
@@ -23,7 +28,7 @@ const defaultSearchParams = {
 export default function UploadList({ singerList }) {
   const [searchParams, setSearchParams] = useState({});
 
-  // 歌曲列表
+  // 所有歌曲列表
   const [songList, setSongList] = useState([]);
   // 加载中
   const [loading, setLoading] = useState(false);
@@ -31,95 +36,68 @@ export default function UploadList({ singerList }) {
   const getSongList = async (ids) => {
     try {
       setLoading(true);
-      if (!ids?.length) return;
+      if (!ids?.length) return message.error("请先选择歌手");
 
       // 先获取CDN的歌曲配置信息
       const proArr = ids.map(async (id) => {
         const res = await getCDNConfig(id);
         return res.data;
       });
-      let all = await Promise.all(proArr);
-      all = all.flat();
-      console.log("all", all);
+      let allConfig = await Promise.all(proArr);
+      allConfig = allConfig.flat();
+      const allConfigMap = Object.fromEntries(
+        allConfig.map((item) => [item.id, item])
+      );
+      console.log("allConfig", allConfig);
 
       // 获取歌曲信息
-      // 此处每次最多获取1000条 顾用1000进行切割chunk
-      const proArr2 = chunkArray(all, 1000).map(
-        (chunk) =>
-          new Promise((resolve, reject) => {
-            weapiRequest("/api/v3/song/detail", {
-              data: {
-                c: JSON.stringify(chunk.map((item) => ({ id: item.id }))),
-              },
-              onload: (res) => {
-                console.log("歌曲信息", res);
-                resolve(res);
-              },
-              onerror: (res) => {
-                console.log("歌曲信息", res);
-                reject(res);
-              },
-            });
-          })
-      );
-      let allInfo = await Promise.all(proArr2);
-      allInfo = allInfo.flat();
-      console.log("allSongInfo", allInfo);
+      const allInfo = await getSongInfoList(allConfig.map((item) => item.id));
 
       // 获取上传列表
       // 此处先遍历云盘中是否拥有
       const songList = [];
       allInfo.map(({ privileges, songs }) => {
         privileges.forEach((p) => {
-          //
-          if (!p.cs) {
-            const defaultItem = {
-              id: p.id,
-              name: "未知",
-              album: "未知",
-              albumid: 0,
-              artists: "未知",
-              tns: "",
-              //翻译
-              dt: formatDuration(0),
-              filename: "未知." + p.ext,
-              ext: p.ext,
-              md5: p.md5,
-              size: p.size,
-              bitrate: p.br,
+          const otherInfo = allConfigMap[p.id];
+          const defaultItem = {
+            ...otherInfo,
+            id: p.id,
+            name: "未知",
+            album: "未知",
+            albumid: 0,
+            artists: "未知",
+            tns: "",
+            //翻译
+            dt: formatDuration(0),
+            filename: "未知." + otherInfo?.ext,
+            picUrl:
+              "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
+            isNoCopyright: p.st < 0,
+            isVIP: false,
+            isPay: false,
+            uploaded: p.cs,
+            needMatch: false,
+          };
+          const songsMap = Object.fromEntries(songs.map((s) => [s.id, s]));
+          const song = songsMap[p.id];
+          if (song) {
+            Object.assign(defaultItem, song, {
+              album: getAlbumTextInSongDetail(song),
+              artists: getArtistTextInSongDetail(song),
+              dt: formatDuration(song.dt),
+              filename: `${song.artists}-${song.name}.${song.ext}`,
               picUrl:
+                song.al?.picUrl ||
                 "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
-              isNoCopyright: p.st < 0,
-              isVIP: false,
-              isPay: false,
-              uploaded: false,
-              needMatch: false,
-            };
-            const songsMap = Object.fromEntries(songs.map((s) => [s.id, s]));
-            const song = songsMap[p.id];
-            if (song) {
-              Object.assign(defaultItem, song, {
-                album: getAlbumTextInSongDetail(song),
-                artists: getArtistTextInSongDetail(song),
-                dt: formatDuration(song.dt),
-                filename: `${song.artists}-${song.name}.${song.ext}`,
-                picUrl:
-                  song.al?.picUrl ||
-                  "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
-                isVIP: song.fee === 1,
-                isPay: song.fee === 4,
-              });
-            }
-            songList.push(defaultItem);
+              isVIP: song.fee === 1,
+              isPay: song.fee === 4,
+            });
           }
-          //
-          else {
-            console.log("p", p);
-          }
+          songList.push(defaultItem);
         });
       });
-      console.log("songList", songList);
       setSongList(songList);
+      setFilteredSongList(songList);
     } catch (error) {
       console.log("error", error);
       message.error("获取歌曲信息失败", error.message);
@@ -131,12 +109,78 @@ export default function UploadList({ singerList }) {
     getSongList(singerList);
   }, [singerList]);
 
+  // 筛选后的歌曲列表
+  const [filteredSongList, setFilteredSongList] = useState([]);
+  const handleSearch = (values) => {
+    const { name, artists, album } = values;
+    const filtered = songList.filter((song) => {
+      const nameMatch =
+        !name?.length ||
+        name.some((n) => song.name.toLowerCase().includes(n.toLowerCase()));
+      const artistMatch =
+        !artists?.length ||
+        artists.some((a) =>
+          song.artists.toLowerCase().includes(a.toLowerCase())
+        );
+      const albumMatch =
+        !album?.length ||
+        album.some((a) => song.album.toLowerCase().includes(a.toLowerCase()));
+      return nameMatch && artistMatch && albumMatch;
+    });
+    setFilteredSongList(filtered);
+  };
+
+  /** 选择 */
+  const [selectedRows, setSelectedRows] = useState([]);
+  const rowSelection = {
+    type: "checkbox",
+    fixed: true,
+    getCheckboxProps: (record) => ({
+      disabled: record.uploaded,
+    }),
+    onChange: (selectedRowKeys, selectedRows) => {
+      setSelectedRows(selectedRows);
+    },
+  };
+  /** 上传事件 */
+  const handleUpload = async (record) => {};
+
   const columns = [
+    // 上传状态
+    {
+      title: "上传状态",
+      dataIndex: "uploaded",
+      key: "uploaded",
+      width: 140,
+      align: "center",
+      filters: [
+        { text: "已上传", value: true },
+        { text: "未上传", value: false },
+      ],
+      onFilter: (value, record) => record.uploaded === value,
+      defaultFilterValue: [false],
+      sorter: (a, b) => a.uploaded - b.uploaded,
+      sortDirections: ["ascend", "descend"],
+      render: (_, record) => {
+        if (record.uploaded) return <Tag color="success">已上传</Tag>;
+        return (
+          <Button
+            type="primary"
+            size="small"
+            onclick={() => handleUpload(record)}
+          >
+            上传
+          </Button>
+        );
+      },
+    },
     {
       title: "歌曲",
       dataIndex: "name",
       key: "name",
       width: 200,
+      sorter: (a, b) => a.name.localeCompare(b.name),
+      sortDirections: ["ascend", "descend"],
       render: (text, record) => (
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <img
@@ -160,6 +204,8 @@ export default function UploadList({ singerList }) {
       dataIndex: "artists",
       key: "artists",
       width: 180,
+      sorter: (a, b) => a.artists.localeCompare(b.artists),
+      sortDirections: ["ascend", "descend"],
       ellipsis: true,
     },
     {
@@ -167,6 +213,8 @@ export default function UploadList({ singerList }) {
       dataIndex: "album",
       key: "album",
       width: 160,
+      sorter: (a, b) => a.album.localeCompare(b.album),
+      sortDirections: ["ascend", "descend"],
       ellipsis: true,
     },
     {
@@ -174,6 +222,8 @@ export default function UploadList({ singerList }) {
       dataIndex: "dt",
       key: "dt",
       width: 80,
+      sorter: (a, b) => a.dt.localeCompare(b.dt),
+      sortDirections: ["ascend", "descend"],
     },
     {
       title: "音质",
@@ -187,25 +237,15 @@ export default function UploadList({ singerList }) {
       },
     },
     {
-      title: "状态",
+      title: "备注",
       key: "status",
       width: 120,
       render: (_, record) => {
-        if (record.isNoCopyright)
-          return <span style={{ color: "#ff4d4f" }}>无版权</span>;
-        if (record.isVIP) return <span style={{ color: "#faad14" }}>VIP</span>;
-        if (record.isPay) return <span style={{ color: "#52c41a" }}>付费</span>;
-        if (record.uploaded)
-          return <span style={{ color: "#1890ff" }}>已上传</span>;
-        return "待上传";
+        if (record.isNoCopyright) return <Tag color="error">无版权</Tag>;
+        if (record.isVIP) return <Tag color="warning">VIP</Tag>;
+        if (record.isPay) return <Tag color="success">付费</Tag>;
+        if (record.uploaded) return <Tag color="processing">已上传</Tag>;
       },
-    },
-    // 歌曲id
-    {
-      title: "歌曲ID",
-      dataIndex: "id",
-      key: "id",
-      width: 120,
     },
     // 歌曲大小
     {
@@ -213,6 +253,7 @@ export default function UploadList({ singerList }) {
       dataIndex: "size",
       key: "size",
       width: 120,
+      render: (size) => formatFileSize(size),
     },
     // 歌曲后缀
     {
@@ -220,24 +261,211 @@ export default function UploadList({ singerList }) {
       dataIndex: "ext",
       key: "ext",
       width: 100,
-    },
-    // md5
-    {
-      title: "md5",
-      dataIndex: "md5",
-      key: "md5",
-      width: 200,
+      render: (ext) => <Tag color="blue">{ext}</Tag>,
     },
   ];
 
+  /** 表格change */
+  const handleTableChange = (pagination, filters, sorter) => {
+    setFilteredSongList((songList) => {
+      return songList.sort((a, b) => {
+        const order = sorter.order === "ascend" ? 1 : -1;
+        return order * a[sorter.columnKey].localeCompare(b[sorter.columnKey]);
+      });
+    });
+  };
+
+  // 已上传歌曲
+  const [uploadedSongList, setUploadedSongList] = useState([]);
+  const [uploading, setUploading] = useState(false);
+  /** 全部上传 */
+  const handleUploadAll = async () => {
+    try {
+      if (uploading) return;
+      setUploading(true);
+      console.log("filteredSongList", filteredSongList);
+      // 过滤出待上传的歌曲
+      const uploadSongList = filteredSongList.filter((song) => !song.uploaded);
+      console.log("uploadSongList", uploadSongList);
+      await confirm(
+        <UploadConfirm
+          total={filteredSongList.length}
+          uploaded={filteredSongList.length - uploadSongList.length}
+          toUpload={uploadSongList}
+        />,
+        "上传歌曲"
+      );
+      if (!uploadSongList.length) return msgError("没有可上传的歌曲");
+      const proArr = uploadSongList.map(async (song) => {
+        const res = await uploadSong(song);
+        if (res.code !== 200) {
+          msgError(res.message || res.msg || `${song.name} 上传失败`);
+          return res;
+        }
+        msgSuccess(`${song.name} 上传成功`);
+        song.uploaded = true;
+        setUploadedSongList((list) => {
+          const newList = [...list, song];
+          // 更新上传进度
+          updateUploadProgress(newList, uploadSongList.length);
+          return newList;
+        });
+        return res;
+      });
+      // 打开上传弹窗
+      showUploadProgress(uploadedSongList, uploadSongList.length);
+      const results = await Promise.allSettled(proArr);
+      console.log("results", results);
+      getSongList(singerList);
+    } catch (error) {
+      console.log("error", error);
+    } finally {
+      setUploading(false);
+    }
+  };
+  /** 上传选中的 */
+  const handleBatchUpload = () => {};
+
   return (
-    <div className={styles["upload-list"]}>
-      <Table
-        dataSource={songList}
-        columns={columns}
-        scroll={{ y: 400, x: 1000 }}
-        size="small"
-      />
-    </div>
+    <>
+      {singerList?.length ? (
+        <div className={styles["upload-list"]}>
+          <SearchForm onSearch={handleSearch} songList={songList} />
+          <Table
+            rowSelection={rowSelection}
+            dataSource={filteredSongList}
+            columns={columns}
+            scroll={{ y: 400, x: 1000 }}
+            size="small"
+            loading={loading}
+            rowKey={({ artists, id, name }) => name + artists + id}
+            onChange={handleTableChange}
+          />
+          {/* 底部操作区 */}
+          <div className={styles["upload-footer"]}>
+            <UploadStats
+              selectedRows={selectedRows}
+              filteredSongList={filteredSongList}
+            />
+            {/* 上传选中的 */}
+            <Button
+              type="primary"
+              onClick={() => handleBatchUpload()}
+              disabled={!selectedRows.length}
+              loading={uploading}
+            >
+              批量上传
+            </Button>
+            {/* 全部上传 */}
+            <Button
+              type="primary"
+              onClick={() => handleUploadAll()}
+              loading={uploading}
+            >
+              全部上传
+            </Button>
+          </div>
+        </div>
+      ) : (
+        <Empty
+          description="请先选择歌手"
+          style={{
+            height: 400,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        />
+      )}
+    </>
   );
 }
+
+/** 上传确认框 */
+const UploadConfirm = ({ total, uploaded, toUpload }) => {
+  return (
+    <div className={styles["upload-confirm"]}>
+      <div className={styles["confirm-item"]}>
+        <span className={styles.label}>总计歌曲：</span>
+        <span className={styles.value}>{total} 首</span>
+      </div>
+      <div className={styles["confirm-item"]}>
+        <span className={styles.label}>已上传：</span>
+        <span className={styles.value}>{uploaded} 首</span>
+      </div>
+      <div className={styles["confirm-item"]}>
+        <span className={styles.label}>待上传：</span>
+        <span className={styles.value}>
+          {toUpload.length} 首
+          <span className={styles.size}>
+            （{formatFileSize(toUpload.reduce((acc, cur) => acc + cur.size, 0))}
+            ）
+          </span>
+        </span>
+      </div>
+    </div>
+  );
+};
+
+/** 上传进度 */
+const UploadProgress = ({ uploadedList, total }) => {
+  return (
+    <div className={styles["upload-progress"]}>
+      <div className={styles["progress-header"]}>
+        <div className={styles["progress-info"]}>
+          已上传：{uploadedList.length} / {total}
+        </div>
+        <div className={styles.percentage}>
+          {Math.round((uploadedList.length / total) * 100)}%
+        </div>
+      </div>
+      <div className={styles["progress-list"]}>
+        {uploadedList.map((song) => (
+          <div key={song.id} className={styles["progress-item"]}>
+            <div className={styles["song-info"]}>
+              <span className={styles.name}>{song.name}</span>
+              <span className={styles.artist}>- {song.artists}</span>
+            </div>
+            <Tag color="success">已上传</Tag>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// 存储Modal实例的引用
+let uploadProgressModal = null;
+
+/** 显示上传进度弹窗 */
+const showUploadProgress = (uploadedList, total) => {
+  // 如果已经有弹窗在显示，就更新内容
+  if (uploadProgressModal) {
+    updateUploadProgress(uploadedList, total);
+    return;
+  }
+
+  // 创建新的弹窗
+  uploadProgressModal = Modal.info({
+    title: "上传进度",
+    content: <UploadProgress uploadedList={uploadedList} total={total} />,
+    width: 520,
+    closable: true,
+    maskClosable: false,
+    centered: true,
+    okText: "确定",
+    afterClose: () => {
+      uploadProgressModal = null;
+    },
+  });
+};
+
+/** 更新上传进度 */
+const updateUploadProgress = (uploadedList, total) => {
+  if (uploadProgressModal) {
+    uploadProgressModal.update({
+      content: <UploadProgress uploadedList={uploadedList} total={total} />,
+    });
+  }
+};
