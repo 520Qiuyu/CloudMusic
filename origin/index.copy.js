@@ -489,6 +489,7 @@
                             let config = uploader.config.data.find((item2) => {
                                 return item2.id == content.privileges[i].id;
                             });
+                            debugger;
                             let item = {
                                 id: content.privileges[i].id,
                                 name: "未知",

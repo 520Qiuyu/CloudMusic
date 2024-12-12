@@ -1,20 +1,21 @@
-import { Button, Empty, Table, Tag, message, Modal } from "antd";
-import React, { useEffect, useState } from "react";
+import { Button, Empty, message, Table, Tag } from "antd";
+import React, {
+  useEffect,
+  useRef,
+  useState
+} from "react";
 import { getCDNConfig, getSongInfoList, uploadSong } from "../../../api";
 import {
-  chunkArray,
   formatDuration,
   formatFileSize,
   getAlbumTextInSongDetail,
   getArtistTextInSongDetail,
-  weapiRequest,
 } from "../../../utils/index";
+import { confirm, msgError, msgSuccess } from "../../../utils/modal";
 import styles from "../index.module.scss";
 import SearchForm from "./SearchForm";
+import UploadProgress from "./UploadProgress";
 import UploadStats from "./UploadStats";
-import { Space } from "antd";
-import { useRef } from "react";
-import { confirm, msgError, msgSuccess } from "../../../utils/modal";
 
 const defaultSearchParams = {
   /* text: "",
@@ -85,7 +86,9 @@ export default function UploadList({ singerList }) {
               album: getAlbumTextInSongDetail(song),
               artists: getArtistTextInSongDetail(song),
               dt: formatDuration(song.dt),
-              filename: `${song.artists}-${song.name}.${song.ext}`,
+              filename: `${getAlbumTextInSongDetail(song)}-${song.name}.${
+                song.ext
+              }`,
               picUrl:
                 song.al?.picUrl ||
                 "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
@@ -93,6 +96,7 @@ export default function UploadList({ singerList }) {
               isPay: song.fee === 4,
             });
           }
+          // if()
           songList.push(defaultItem);
         });
       });
@@ -143,7 +147,28 @@ export default function UploadList({ singerList }) {
     },
   };
   /** 上传事件 */
-  const handleUpload = async (record) => {};
+  const handleUpload = async (record) => {
+    try {
+      setFilteredSongList((songList) => {
+        return songList.map((song) => {
+          if (song.id === record.id) song.uploading = true;
+          return song;
+        });
+      });
+      const res = await uploadSong(record);
+      msgSuccess("上传成功");
+      getSongList(singerList);
+    } catch (error) {
+      console.log("error", error);
+    } finally {
+      setFilteredSongList((songList) => {
+        return songList.map((song) => {
+          if (song.id === record.id) song.uploading = false;
+          return song;
+        });
+      });
+    }
+  };
 
   const columns = [
     // 上传状态
@@ -167,7 +192,8 @@ export default function UploadList({ singerList }) {
           <Button
             type="primary"
             size="small"
-            onclick={() => handleUpload(record)}
+            onClick={() => handleUpload(record)}
+            loading={record.uploading}
           >
             上传
           </Button>
@@ -270,52 +296,59 @@ export default function UploadList({ singerList }) {
     setFilteredSongList((songList) => {
       return songList.sort((a, b) => {
         const order = sorter.order === "ascend" ? 1 : -1;
-        return order * a[sorter.columnKey].localeCompare(b[sorter.columnKey]);
+        return order * a[sorter.columnKey]?.localeCompare(b[sorter.columnKey]);
       });
     });
   };
 
+  // 上传进度弹窗实例
+  const uploadProgressRef = useRef(null);
   // 已上传歌曲
   const [uploadedSongList, setUploadedSongList] = useState([]);
+  // 上传失败的歌曲
+  const [uploadFailedSongList, setUploadFailedSongList] = useState([]);
+  // 待上传歌曲
+  const [toUploadingSongList, setToUploadingSongList] = useState([]);
   const [uploading, setUploading] = useState(false);
-  /** 全部上传 */
-  const handleUploadAll = async () => {
+  // 初始化上述数据
+  const resetData = () => {
+    setUploadedSongList([]);
+    setToUploadingSongList([]);
+    setUploadFailedSongList([]);
+  };
+  /** 批量上传 */
+  const handleBatchUpload = async (songs) => {
     try {
       if (uploading) return;
+      resetData();
       setUploading(true);
-      console.log("filteredSongList", filteredSongList);
+      console.log("将要批量上传的选中的歌曲", songs);
       // 过滤出待上传的歌曲
       const uploadSongList = filteredSongList.filter((song) => !song.uploaded);
       console.log("uploadSongList", uploadSongList);
-      await confirm(
-        <UploadConfirm
-          total={filteredSongList.length}
-          uploaded={filteredSongList.length - uploadSongList.length}
-          toUpload={uploadSongList}
-        />,
-        "上传歌曲"
-      );
+      setToUploadingSongList(uploadSongList);
+      await UploadConfirm({
+        total: songs.length,
+        uploaded: 0,
+        toUpload: uploadSongList,
+      });
       if (!uploadSongList.length) return msgError("没有可上传的歌曲");
       const proArr = uploadSongList.map(async (song) => {
-        const res = await uploadSong(song);
-        if (res.code !== 200) {
-          msgError(res.message || res.msg || `${song.name} 上传失败`);
+        try {
+          const res = await uploadSong(song);
+          song.uploaded = true;
+          setUploadedSongList((list) => [...list, song]);
           return res;
+        } catch (error) {
+          song.uploaded = true;
+          setUploadFailedSongList((list) => [...list, song]);
         }
-        msgSuccess(`${song.name} 上传成功`);
-        song.uploaded = true;
-        setUploadedSongList((list) => {
-          const newList = [...list, song];
-          // 更新上传进度
-          updateUploadProgress(newList, uploadSongList.length);
-          return newList;
-        });
-        return res;
       });
-      // 打开上传弹窗
-      showUploadProgress(uploadedSongList, uploadSongList.length);
+      // 显示上传进度
+      uploadProgressRef.current?.open();
       const results = await Promise.allSettled(proArr);
       console.log("results", results);
+      // 刷新列表
       getSongList(singerList);
     } catch (error) {
       console.log("error", error);
@@ -323,8 +356,14 @@ export default function UploadList({ singerList }) {
       setUploading(false);
     }
   };
+  /** 全部上传 */
+  const handleUploadAll = async () => {
+    handleBatchUpload(filteredSongList);
+  };
   /** 上传选中的 */
-  const handleBatchUpload = () => {};
+  const handleUploadSelected = async () => {
+    handleBatchUpload(selectedRows);
+  };
 
   return (
     <>
@@ -350,7 +389,7 @@ export default function UploadList({ singerList }) {
             {/* 上传选中的 */}
             <Button
               type="primary"
-              onClick={() => handleBatchUpload()}
+              onClick={() => handleUploadSelected()}
               disabled={!selectedRows.length}
               loading={uploading}
             >
@@ -378,13 +417,21 @@ export default function UploadList({ singerList }) {
           }}
         />
       )}
+
+      {/* 上传进度弹窗 */}
+      <UploadProgress
+        ref={uploadProgressRef}
+        total={toUploadingSongList.length}
+        uploadedList={uploadedSongList}
+        uploadFailedSongList={uploadFailedSongList}
+      />
     </>
   );
 }
 
 /** 上传确认框 */
 const UploadConfirm = ({ total, uploaded, toUpload }) => {
-  return (
+  return confirm(
     <div className={styles["upload-confirm"]}>
       <div className={styles["confirm-item"]}>
         <span className={styles.label}>总计歌曲：</span>
@@ -404,68 +451,7 @@ const UploadConfirm = ({ total, uploaded, toUpload }) => {
           </span>
         </span>
       </div>
-    </div>
+    </div>,
+    "上传歌曲"
   );
-};
-
-/** 上传进度 */
-const UploadProgress = ({ uploadedList, total }) => {
-  return (
-    <div className={styles["upload-progress"]}>
-      <div className={styles["progress-header"]}>
-        <div className={styles["progress-info"]}>
-          已上传：{uploadedList.length} / {total}
-        </div>
-        <div className={styles.percentage}>
-          {Math.round((uploadedList.length / total) * 100)}%
-        </div>
-      </div>
-      <div className={styles["progress-list"]}>
-        {uploadedList.map((song) => (
-          <div key={song.id} className={styles["progress-item"]}>
-            <div className={styles["song-info"]}>
-              <span className={styles.name}>{song.name}</span>
-              <span className={styles.artist}>- {song.artists}</span>
-            </div>
-            <Tag color="success">已上传</Tag>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-// 存储Modal实例的引用
-let uploadProgressModal = null;
-
-/** 显示上传进度弹窗 */
-const showUploadProgress = (uploadedList, total) => {
-  // 如果已经有弹窗在显示，就更新内容
-  if (uploadProgressModal) {
-    updateUploadProgress(uploadedList, total);
-    return;
-  }
-
-  // 创建新的弹窗
-  uploadProgressModal = Modal.info({
-    title: "上传进度",
-    content: <UploadProgress uploadedList={uploadedList} total={total} />,
-    width: 520,
-    closable: true,
-    maskClosable: false,
-    centered: true,
-    okText: "确定",
-    afterClose: () => {
-      uploadProgressModal = null;
-    },
-  });
-};
-
-/** 更新上传进度 */
-const updateUploadProgress = (uploadedList, total) => {
-  if (uploadProgressModal) {
-    uploadProgressModal.update({
-      content: <UploadProgress uploadedList={uploadedList} total={total} />,
-    });
-  }
 };

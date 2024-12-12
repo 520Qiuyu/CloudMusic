@@ -1,6 +1,4 @@
-import "./App.css";
 import ButtonGroup from "./components/ButtonGroup";
-import Home from "./views/home";
 
 function App() {
   return (

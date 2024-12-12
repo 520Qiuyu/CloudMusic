@@ -1,4 +1,5 @@
 import forge from "node-forge";
+import { GM_xmlhttpRequest } from "vite-plugin-monkey/dist/client"
 
 // #region ================ 工具函数 ================
 
@@ -184,18 +185,16 @@ export const CLIENT_CONFIG = {
 
 /**
  * 网易云API加密请求
- * @param {string} url 请求URL
- * @param {Object} config 请求配置
- * @param {Object} config.data 请求数据
- * @param {string} config.clientType 客户端类型
- * @param {string} config.ip IP地址
- * @param {Function} config.onload 成功回调
- * @param {Function} config.onerror 错误回调
+ * @param {string} url - 请求URL
+ * @param {Object} config - 请求配置
+ * @param {Object} [config.data={}] - 请求数据
+ * @param {string} [config.clientType='pc'] - 客户端类型，默认为'pc'
+ * @param {string} [config.ip] - 可选的IP地址，用于设置X-Real-IP和X-Forwarded-For头
+ * @returns {Promise<any>} 返回一个Promise，resolve时返回响应数据，reject时返回错误信息
  */
 export const weapiRequest = (url, config) => {
   // 准备请求数据
-  const data = config.data || {};
-  const clientType = config.clientType || "pc";
+  const { data = {}, clientType = "pc", ip, onerror, onload, ...rest } = config;
 
   // 获取CSRF Token
   const csrfToken = document.cookie.match(/_csrf=([^(;|$)]+)/);
@@ -211,23 +210,25 @@ export const weapiRequest = (url, config) => {
   };
 
   // 添加IP相关头(如果需要)
-  if (config.ip) {
-    headers["X-Real-IP"] = config.ip;
-    headers["X-Forwarded-For"] = config.ip;
+  if (ip) {
+    headers["X-Real-IP"] = ip;
+    headers["X-Forwarded-For"] = ip;
   }
 
   // 发送请求
-  GM_xmlhttpRequest({
-    url: url.replace("api", "weapi") + `?csrf_token=${data.csrf_token}`,
-    method: "POST",
-    responseType: "json",
-    headers,
-    cookie: CLIENT_CONFIG[clientType].cookie,
-    data: `params=${encodeURIComponent(
-      encryptedData.params
-    )}&encSecKey=${encodeURIComponent(encryptedData.encSecKey)}`,
-    onload: (res) => config.onload(res.response),
-    onerror: config.onerror,
+  return new Promise((resolve, reject) => {
+    GM_xmlhttpRequest({
+      url: url.replace("api", "weapi") + `?csrf_token=${data.csrf_token}`,
+      method: "POST",
+      responseType: "json",
+      headers,
+      cookie: CLIENT_CONFIG[clientType].cookie,
+      data: `params=${encodeURIComponent(
+        encryptedData.params
+      )}&encSecKey=${encodeURIComponent(encryptedData.encSecKey)}`,
+      onload: (res) => resolve(res.response),
+      onerror: reject,
+    });
   });
 };
 
