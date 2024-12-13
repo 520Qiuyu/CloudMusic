@@ -65,7 +65,7 @@ function QuickUpload(props, ref) {
         defaultActiveKey="1"
         activeKey={currentTab}
         className={styles["quick-upload-tabs"]}
-        onTabClick={({ key }) => setCurrentTab(key)}
+        onChange={(key) => setCurrentTab(key)}
       >
         {/* 歌手选择 */}
         <TabPane tab="歌曲选择" key="1">
