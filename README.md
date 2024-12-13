@@ -14,7 +14,7 @@
 ## 🚀 使用方法
 
 1. 安装油猴插件（Tampermonkey）
-2. 安装本脚本 [![安装脚本](https://img.shields.io/badge/-%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-blue)](https://github.com/520Qiuyu/CloudMusic/main/dist/CloudMusic.user.js)
+2. 安装本脚本 [![安装脚本](https://img.shields.io/badge/-%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-blue)](https://raw.githubusercontent.com/520Qiuyu/CloudMusic/main/dist/cloudmusic.user.js)
 3. 打开网易云音乐网页版
 4. 在页面右下角找到功能按钮组 如：云盘快速上传
 5. 在上传界面中选择要上传的音乐文件
@@ -72,6 +72,3 @@ npm run build
 ## 📄 许可证
 
 MIT License
-
-
-
