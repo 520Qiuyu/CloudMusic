@@ -39,13 +39,14 @@ export default defineConfig({
             "umd/react-dom.production.min.js"
           ),
           antd: cdn.jsdelivr("antd", "dist/antd.min.js"),
-          "@antd-design/icons": cdn.jsdelivr(
-            "@antd-design/icons",
+          "@ant-design/icons": cdn.jsdelivr(
+            "@ant-design/icons",
             "dist/index.umd.min.js"
           ),
           "node-forge": cdn.jsdelivr("node-forge", "lib/index.min.js"),
         },
       },
+
     }),
   ],
 });
