@@ -334,7 +334,7 @@ export default function UploadList({ singerList }) {
         } catch (error) {
           song.uploaded = true;
           setUploadFailedSongList((list) => [...list, song]);
-          throw error; // 确保错误被正确传递
+          return error;
         }
       });
       const results = await promiseLimit(tasks);

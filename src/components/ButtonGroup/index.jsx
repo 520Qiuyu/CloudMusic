@@ -82,27 +82,27 @@ const ButtonGroup = () => {
       </Tooltip>
 
       {/* 云盘快速同步 */}
-      <Tooltip title={"云盘快速同步"} placement="left">
+      {/* <Tooltip title={"云盘快速同步"} placement="left">
         <Button
           type="primary"
           icon={<SyncOutlined />}
           onClick={handleMatchCorrect}
           className={styles["button"]}
         />
-      </Tooltip>
+      </Tooltip> */}
 
       {/* 云盘音质提升 */}
-      <Tooltip title={"云盘音质提升"} placement="left">
+      {/* <Tooltip title={"云盘音质提升"} placement="left">
         <Button
           type="primary"
           icon={<CustomerServiceOutlined />}
           onClick={handleQualityUpgrade}
           className={styles["button"]}
         />
-      </Tooltip>
+      </Tooltip> */}
 
       {/* 云盘本地上传 */}
-      <Tooltip title={"云盘本地上传"} placement="left">
+      {/* <Tooltip title={"云盘本地上传"} placement="left">
         <Button
           type="primary"
           icon={<UploadOutlined />}
@@ -110,46 +110,46 @@ const ButtonGroup = () => {
           className={styles["button"]}
         />
       </Tooltip>
-
+ */}
       {/* 网页VIP歌曲A */}
-      <Tooltip title={"网页VIP歌曲A"} placement="left">
+      {/* <Tooltip title={"网页VIP歌曲A"} placement="left">
         <Button
           type="primary"
           icon={<PlayCircleOutlined />}
           onClick={handleVipSongA}
           className={styles["button"]}
         />
-      </Tooltip>
+      </Tooltip> */}
 
       {/* 网页VIP歌曲B */}
-      <Tooltip title={"网页VIP歌曲B"} placement="left">
+      {/* <Tooltip title={"网页VIP歌曲B"} placement="left">
         <Button
           type="primary"
           icon={<PlayCircleOutlined />}
           onClick={handleVipSongB}
           className={styles["button"]}
         />
-      </Tooltip>
+      </Tooltip> */}
 
       {/* 云盘导出 */}
-      <Tooltip title={"云盘导出"} placement="left">
+      {/* <Tooltip title={"云盘导出"} placement="left">
         <Button
           type="primary"
           icon={<ExportOutlined />}
           onClick={handleExport}
           className={styles["button"]}
         />
-      </Tooltip>
+      </Tooltip> */}
 
       {/* 云盘导入 */}
-      <Tooltip title={"云盘导入"} placement="left">
+      {/* <Tooltip title={"云盘导入"} placement="left">
         <Button
           type="primary"
           icon={<ImportOutlined />}
           onClick={handleImport}
           className={styles["button"]}
         />
-      </Tooltip>
+      </Tooltip> */}
 
       {/* 弹窗组件 */}
       <QuickUpload ref={quickUploadRef} />
