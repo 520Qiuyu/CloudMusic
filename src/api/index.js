@@ -152,10 +152,11 @@ export const uploadSong = async (song) => {
           songid: uploadRes.songId,
         },
       });
-      if (pubRes.code != 200) {
+      if (![200, 201].includes(pubRes.code)) {
         msgError(`歌曲： ${song.name} 发布失败`);
         throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
       }
+      song.cloudSongId = pubRes.privateCloud.songId;
       // 匹配
       await matchCloudSong(song);
 

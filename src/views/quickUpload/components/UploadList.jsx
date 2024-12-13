@@ -175,8 +175,6 @@ export default function UploadList({ singerList }) {
       ],
       onFilter: (value, record) => record.uploaded === value,
       defaultFilterValue: [false],
-      sorter: (a, b) => a.uploaded - b.uploaded,
-      sortDirections: ["ascend", "descend"],
       render: (_, record) => {
         if (record.uploaded) return <Tag color="success">已上传</Tag>;
         return (
