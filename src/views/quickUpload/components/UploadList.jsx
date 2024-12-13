@@ -1,15 +1,12 @@
 import { Button, Empty, message, Table, Tag } from "antd";
-import React, {
-  useEffect,
-  useRef,
-  useState
-} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getCDNConfig, getSongInfoList, uploadSong } from "../../../api";
 import {
   formatDuration,
   formatFileSize,
   getAlbumTextInSongDetail,
   getArtistTextInSongDetail,
+  promiseLimit,
 } from "../../../utils/index";
 import { confirm, msgError, msgSuccess } from "../../../utils/modal";
 import styles from "../index.module.scss";
@@ -17,18 +14,7 @@ import SearchForm from "./SearchForm";
 import UploadProgress from "./UploadProgress";
 import UploadStats from "./UploadStats";
 
-const defaultSearchParams = {
-  /* text: "",
-  noCopyright: true,
-  vip: true,
-  pay: true,
-  lossless: false,
-  all: showAll,
-  songIndexs: [], */
-};
 export default function UploadList({ singerList }) {
-  const [searchParams, setSearchParams] = useState({});
-
   // 所有歌曲列表
   const [songList, setSongList] = useState([]);
   // 加载中
@@ -77,7 +63,7 @@ export default function UploadList({ singerList }) {
             isVIP: false,
             isPay: false,
             uploaded: p.cs,
-            needMatch: false,
+            needMatch: otherInfo.name == void 0,
           };
           const songsMap = Object.fromEntries(songs.map((s) => [s.id, s]));
           const song = songsMap[p.id];
@@ -86,8 +72,8 @@ export default function UploadList({ singerList }) {
               album: getAlbumTextInSongDetail(song),
               artists: getArtistTextInSongDetail(song),
               dt: formatDuration(song.dt),
-              filename: `${getAlbumTextInSongDetail(song)}-${song.name}.${
-                song.ext
+              filename: `${getArtistTextInSongDetail(song)} - ${song.name}.${
+                otherInfo.ext
               }`,
               picUrl:
                 song.al?.picUrl ||
@@ -96,7 +82,12 @@ export default function UploadList({ singerList }) {
               isPay: song.fee === 4,
             });
           }
-          // if()
+          if (otherInfo.name) {
+            defaultItem.name = otherInfo.name;
+            defaultItem.album = otherInfo.al;
+            defaultItem.artists = otherInfo.ar;
+            defaultItem.filename = `${defaultItem.artists} - ${defaultItem.name}.${otherInfo.ext}`;
+          }
           songList.push(defaultItem);
         });
       });
@@ -205,7 +196,7 @@ export default function UploadList({ singerList }) {
       dataIndex: "name",
       key: "name",
       width: 200,
-      sorter: (a, b) => a.name.localeCompare(b.name),
+      sorter: (a, b) => a.name?.localeCompare(b.name),
       sortDirections: ["ascend", "descend"],
       render: (text, record) => (
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -230,7 +221,7 @@ export default function UploadList({ singerList }) {
       dataIndex: "artists",
       key: "artists",
       width: 180,
-      sorter: (a, b) => a.artists.localeCompare(b.artists),
+      sorter: (a, b) => a.artists?.localeCompare(b.artists),
       sortDirections: ["ascend", "descend"],
       ellipsis: true,
     },
@@ -239,7 +230,7 @@ export default function UploadList({ singerList }) {
       dataIndex: "album",
       key: "album",
       width: 160,
-      sorter: (a, b) => a.album.localeCompare(b.album),
+      sorter: (a, b) => a.album?.localeCompare(b.album),
       sortDirections: ["ascend", "descend"],
       ellipsis: true,
     },
@@ -248,7 +239,7 @@ export default function UploadList({ singerList }) {
       dataIndex: "dt",
       key: "dt",
       width: 80,
-      sorter: (a, b) => a.dt.localeCompare(b.dt),
+      sorter: (a, b) => a.dt?.localeCompare(b.dt),
       sortDirections: ["ascend", "descend"],
     },
     {
@@ -333,7 +324,10 @@ export default function UploadList({ singerList }) {
         toUpload: uploadSongList,
       });
       if (!uploadSongList.length) return msgError("没有可上传的歌曲");
-      const proArr = uploadSongList.map(async (song) => {
+      // 显示上传进度
+      uploadProgressRef.current?.open();
+      // 并发限制上传
+      const tasks = uploadSongList.map((song) => async () => {
         try {
           const res = await uploadSong(song);
           song.uploaded = true;
@@ -342,14 +336,15 @@ export default function UploadList({ singerList }) {
         } catch (error) {
           song.uploaded = true;
           setUploadFailedSongList((list) => [...list, song]);
+          throw error; // 确保错误被正确传递
         }
       });
-      // 显示上传进度
-      uploadProgressRef.current?.open();
-      const results = await Promise.allSettled(proArr);
-      console.log("results", results);
+      const results = await promiseLimit(tasks);
       // 刷新列表
       getSongList(singerList);
+      const successCount = results.filter((r) => !(r instanceof Error)).length;
+      const failedCount = results.length - successCount;
+      msgSuccess(`上传完成: 成功${successCount}首，失败${failedCount}首`);
     } catch (error) {
       console.log("error", error);
     } finally {

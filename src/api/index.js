@@ -27,20 +27,22 @@ export const getSongInfoList = async (songIds) => {
 
 // 匹配歌曲信息
 export const matchCloudSong = async (song) => {
-  // 满足这个情况不用匹配
-  if (song.cloudSongId != song.id && song.id > 0) return
-  const res = await weapiRequest("/api/cloud/user/song/match", {
-    data: {
-      songId: song.cloudId,
-      adjustSongId: song.id,
+  // 满足这个情况需要匹配信息
+  if (song.cloudSongId != song.id && song.id > 0) {
+    const res = await weapiRequest("/api/cloud/user/song/match", {
+      data: {
+        songId: song.cloudSongId,
+        adjustSongId: song.id,
+      },
+    });
+    if (res.code != 200 || res.data.length < 1) {
+      msgError(`歌曲： ${song.name} 匹配失败`);
+      throw new Error(res.message || res.msg || "歌曲匹配失败");
     }
-  });
-  if (res.code != 200 || res.data.length < 1) {
-    msgError(`歌曲： ${song.name} 匹配失败`);
-    throw new Error(res.message || res.msg || "歌曲匹配失败");
+    return res;
   }
-  return res;
-}
+  return;
+};
 
 // 上传歌曲信息
 export const uploadSong = async (song) => {
@@ -58,7 +60,6 @@ export const uploadSong = async (song) => {
           },
         ]),
       },
-
     });
     if (res.code != 200 || res.data.length < 1) {
       msgError(`资源检查失败,请检查歌曲：${song.name}是否已存在！`);
@@ -67,36 +68,39 @@ export const uploadSong = async (song) => {
 
     song.cloudId = res.data[0].songId;
     // 2、判断状态，有两种上传方式
-    // 2.1 已上传
+    // 2.1 未上传
     if (res.data[0].upload == 1) {
       // 导入
+      debugger; // song.artist?s
       const importRes = await weapiRequest("/api/cloud/user/song/import", {
         data: {
           uploadType: 0,
-          songs: JSON.stringify([{
-            songId: song.cloudId,
-            bitrate: song.bitrate,
-            song: song.filename,
-            artist: song.artists,
-            album: song.album,
-            fileName: song.filename
-          }])
-        }
-      })
+          songs: JSON.stringify([
+            {
+              songId: song.cloudId,
+              bitrate: song.bitrate,
+              song: song.filename,
+              artist: song.artists,
+              album: song.album,
+              fileName: song.filename,
+            },
+          ]),
+        },
+      });
       if (importRes.code != 200 || importRes.data.successSongs.length < 1) {
         msgError(`歌曲： ${song.name} 上传失败`);
         throw new Error(importRes.message || importRes.msg || "歌曲上传失败");
       }
+      song.cloudSongId = importRes.data.successSongs[0].song.songId;
       // 匹配
       await matchCloudSong(song);
 
       return {
         code: 200,
-        dataL: { song }
-      }
-
+        dataL: { song },
+      };
     }
-    // 2.2 未上传
+    // 2.2 已上传
     else {
       // 获取令牌
       const tokenRes = await weapiRequest("/api/nos/token/alloc", {
@@ -105,18 +109,22 @@ export const uploadSong = async (song) => {
           length: song.size,
           ext: song.ext,
           md5: song.md5,
-          type: 'audio',
+          type: "audio",
           bucket: "jd-musicrep-privatecloud-audio-public",
           local: false,
           nos_product: 3,
-        }
-      })
+        },
+      });
 
       if (tokenRes.code != 200) {
         msgError("获取上传token失败");
-        throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
+        throw new Error(
+          tokenRes.message || tokenRes.msg || "获取上传token失败"
+        );
       }
+      song.resourceId = tokenRes.result.resourceId;
       // 提交文件
+      debugger; // song.artist?s    song.name?title
       const uploadRes = await weapiRequest("/api/upload/cloud/info/v2", {
         data: {
           token: tokenRes.result.token,
@@ -130,20 +138,20 @@ export const uploadSong = async (song) => {
           filename: song.filename,
           song: song.name,
           album: song.album,
-          artist: song.artists,
+          artist: song.artist,
           bitrate: String(song.bitrate || 128),
-          resourceId: song.resourceId
-        }
-      })
+          resourceId: song.resourceId,
+        },
+      });
       if (uploadRes.code != 200) {
         msgError(`歌曲： ${song.name} 上传失败`);
       }
       // 发布资源
       const pubRes = await weapiRequest("/api/cloud/pub/v2", {
         data: {
-          songid: uploadRes.songId
-        }
-      })
+          songid: uploadRes.songId,
+        },
+      });
       if (pubRes.code != 200) {
         msgError(`歌曲： ${song.name} 发布失败`);
         throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
@@ -153,13 +161,11 @@ export const uploadSong = async (song) => {
 
       return {
         code: 200,
-        data: { song }
-      }
-
+        data: { song },
+      };
     }
   } catch (error) {
-    console.log('error', error)
+    console.log("error", error);
     throw error;
   }
-
 };
