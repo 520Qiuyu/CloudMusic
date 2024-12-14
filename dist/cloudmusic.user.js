@@ -11,7 +11,7 @@
 // @require      https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js
 // @require      https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js
 // @require      https://cdn.jsdelivr.net/npm/antd@5.22.4/dist/antd.min.js
-// @require      https://cdn.jsdelivr.net/npm/node-forge@1.3.1/dist/forge.min.js
+// @require      https://cdn.jsdelivr.net/npm/node-forge@1.3.1/lib/index.min.js
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==

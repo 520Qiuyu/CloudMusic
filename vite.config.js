@@ -46,7 +46,7 @@ export default defineConfig({
               "AntDesignIcons"
             ),
           ],
-          "node-forge": cdn.jsdelivr("node-forge", "dist/forge.min.js"),
+          "node-forge": cdn.jsdelivr("node-forge", "lib/index.min.js"),
         },
       },
 
