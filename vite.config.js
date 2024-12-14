@@ -32,6 +32,7 @@ export default defineConfig({
         },
       },
       build: {
+        sourcemap: 'inline',
         externalGlobals: {
           react: cdn.jsdelivr("React", "umd/react.production.min.js"),
           "react-dom": cdn.jsdelivr(
@@ -52,4 +53,7 @@ export default defineConfig({
 
     }),
   ],
+  build: {
+    sourcemap: true,
+  },
 });
