@@ -2924,4 +2924,4 @@
     /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.ConfigProvider, { locale: zhCN, theme, children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) }) })
   );
 
-})(React, antd, ReactDOM, node-forge);
+})(React, antd, ReactDOM, forge);
