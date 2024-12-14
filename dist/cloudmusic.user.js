@@ -8,11 +8,12 @@
 // @homepage     https://github.com/520Qiuyu/CloudMusic
 // @homepageURL  https://github.com/520Qiuyu/CloudMusic
 // @match        https://music.163.com/**/*
-// @require      https://cdn.jsdelivr.net/npm/react@18.3.1/cjs/react.production.min.js
-// @require      https://cdn.jsdelivr.net/npm/react-dom@18.3.1/index.min.js
+// @require      https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js
+// @require      https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js
+// @require      https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js
 // @require      https://cdn.jsdelivr.net/npm/antd@5.22.4/dist/antd.min.js
 // @require      https://cdn.jsdelivr.net/npm/@ant-design/icons@5.5.2/dist/index.umd.min.js
-// @require      https://cdn.jsdelivr.net/npm/node-forge@1.3.1/lib/index.min.js
+// @require      https://cdn.jsdelivr.net/npm/node-forge@1.3.1/dist/forge.min.js
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
@@ -1816,4 +1817,4 @@
     /* @__PURE__ */ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.ConfigProvider, { locale: zhCN, theme, children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) }) })
   );
 
-})(React, antd, ReactDOM, AntDesignIcons, forge);
+})(React, antd, ReactDOM, AntDesignIcons, node-forge);

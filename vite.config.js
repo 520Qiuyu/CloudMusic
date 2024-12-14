@@ -21,6 +21,7 @@ export default defineConfig({
         ],
         require: [
           // "https://cdn.jsdelivr.net/npm/antd@5.22.4/dist/reset.min.css",
+          "https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js",
         ],
       },
       server: {
@@ -33,11 +34,11 @@ export default defineConfig({
       },
       build: {
         externalGlobals: [
-          ["react", cdn.jsdelivr("React", "cjs/react.production.min.js")],
-          ["react-dom", cdn.jsdelivr("ReactDOM", "index.min.js")],
+          ["react", cdn.jsdelivr("React", "umd/react.production.min.js")],
+          ["react-dom", cdn.jsdelivr("ReactDOM", "umd/react-dom.production.min.js")],
           ["antd", cdn.jsdelivr("antd", "dist/antd.min.js")],
-          ["@ant-design/icons", cdn.jsdelivr("AntDesignIcons", "dist/index.umd.min.js")],
-          ["node-forge", cdn.jsdelivr("forge", "lib/index.min.js")],
+          ["@ant-design/icons", cdn.jsdelivr("AntDesignIcons", "dist/index.umd.min.js",)],
+          ["node-forge", cdn.jsdelivr("node-forge", "dist/forge.min.js"),],
         ],
       },
     }),
