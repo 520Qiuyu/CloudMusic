@@ -32,7 +32,6 @@ export default defineConfig({
         },
       },
       build: {
-        sourcemap: 'inline',
         externalGlobals: {
           react: cdn.jsdelivr("React", "umd/react.production.min.js"),
           "react-dom": cdn.jsdelivr(
@@ -40,13 +39,12 @@ export default defineConfig({
             "umd/react-dom.production.min.js"
           ),
           antd: cdn.jsdelivr("antd", "dist/antd.min.js"),
-          /* "@ant-design/icons": [
+          "@ant-design/icons": [
             cdn.jsdelivr(
-              "@ant-design/icons",
+              "AntDesignIcons",
               "dist/index.umd.min.js",
-              "AntDesignIcons"
             ),
-          ], */
+          ],
           "node-forge": cdn.jsdelivr("forge", "lib/index.min.js"),
         },
       },
