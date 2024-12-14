@@ -1817,4 +1817,4 @@
     /* @__PURE__ */ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.ConfigProvider, { locale: zhCN, theme, children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) }) })
   );
 
-})(React, antd, ReactDOM, AntDesignIcons, node-forge);
+})(React, antd, ReactDOM, icons, forge);
