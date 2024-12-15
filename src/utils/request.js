@@ -41,6 +41,13 @@ export const weapiRequest = (url, config) => {
     // 加密请求数据
     const encryptedData = weapi(data);
 
+    // 打印请求数据
+    console.log({
+        url,
+        data,
+        encryptedData,
+    });
+
     // 准备请求头
     const headers = {
         "content-type": "application/x-www-form-urlencoded",

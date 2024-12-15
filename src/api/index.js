@@ -171,3 +171,48 @@ export const uploadSong = async (song) => {
     throw error;
   }
 };
+
+// 获取云盘数据
+export const getCloudData = (limit = 200, offset = 0) =>
+  weapiRequest("/api/v1/cloud/get", {
+    data: {
+      limit,
+      offset,
+    },
+  });
+
+// 获取歌单列表
+export const getPlaylistList = (uid = window.GUser.userId, limit = 1001, offset = 0) =>
+  weapiRequest("/api/user/playlist", {
+    data: {
+      limit,
+      offset,
+      uid,
+    },
+  });
+
+// 新建歌单
+export const createPlaylist = (name) =>
+  weapiRequest("/api/playlist/create", {
+    data: {
+      name,
+    },
+  });
+
+// 删除歌单
+export const deletePlaylist = (pid) =>
+  weapiRequest("/api/playlist/delete", {
+    data: {
+      pid,
+    },
+  });
+
+// 添加进入歌单
+export const addSongToPlaylist = (pid, trackIds) =>
+  weapiRequest("/api/playlist/manipulate/tracks", {
+    data: {
+      pid,            // 歌单id
+      trackIds,       // 歌曲 id 数组
+      op: "add",      // 操作类型
+    },
+  });
