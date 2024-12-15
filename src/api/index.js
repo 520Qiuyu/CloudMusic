@@ -1,5 +1,6 @@
 import { BASE_CDN_URL } from "../constant";
 import { chunkArray } from "../utils";
+import { getGUser } from "../utils";
 import { msgError } from "../utils/modal";
 import { weapiRequest } from "../utils/request";
 
@@ -182,7 +183,7 @@ export const getCloudData = (limit = 200, offset = 0) =>
   });
 
 // 获取歌单列表
-export const getPlaylistList = (uid = window.GUser.userId, limit = 1001, offset = 0) =>
+export const getPlaylistList = (uid = getGUser().userId, limit = 1001, offset = 0) =>
   weapiRequest("/api/user/playlist", {
     data: {
       limit,

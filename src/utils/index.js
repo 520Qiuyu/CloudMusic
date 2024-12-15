@@ -1,6 +1,6 @@
-
-
 // #region ================ 工具函数 ================
+
+import { unsafeWindow } from "vite-plugin-monkey/dist/client";
 
 /**
  * 格式化文件大小
@@ -172,6 +172,23 @@ export const promiseLimit = (promiseArray, limit = 6) => {
       }
     }
   });
+};
+
+/**
+ * 获取油猴环境下的全局对象
+ * @returns {Window}
+ */
+export const getGlobalThis = () => {
+  return typeof unsafeWindow !== 'undefined' ? unsafeWindow : window;
+};
+
+/**
+ * 获取网易云用户信息
+ * @returns {Object}
+ */
+export const getGUser = () => {
+  const globalThis = getGlobalThis();
+  return globalThis.GUser || {};
 };
 
 // #endregion ================ 工具函数 ================
