@@ -18,6 +18,7 @@ import {
 } from "../../../utils/modal";
 import styles from "../index.module.scss";
 import { useRef } from "react";
+import { getGUser } from "../../../utils";
 
 const PlayList = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -71,7 +72,7 @@ const PlayList = forwardRef((props, ref) => {
   const handleGetPlayList = async () => {
     setLoading(true);
     try {
-      const user = window.GUser;
+      const user = getGUser();
       if (!user) return message.error("请先登录");
       const res = await getPlaylistList(user.userId);
       console.log("res", res);
