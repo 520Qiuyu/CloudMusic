@@ -191,6 +191,42 @@ export const getGUser = () => {
   return globalThis.GUser || {};
 };
 
+/**
+ * 获取字符串长度（中文算2个字符）
+ * @param {string} str 
+ * @returns {number}
+ */
+export const getStringLength = (str) => {
+  return str.split('').reduce((total, char) => {
+    return total + (char.charCodeAt(0) > 255 ? 2 : 1);
+  }, 0);
+};
+
+/**
+ * 截取字符串（中文算2个字符）
+ * @param {string} str 
+ * @param {number} maxLength 
+ * @returns {string}
+ */
+export const truncateString = (str, maxLength) => {
+  let len = 0;
+  let result = '';
+  for (let char of str) {
+    const charLen = char.charCodeAt(0) > 255 ? 2 : 1;
+    if (len + charLen > maxLength) break;
+    result += char;
+    len += charLen;
+  }
+  return result;
+};
+
+/**
+ * 延迟执行
+ * @param {number} ms 延迟时间（毫秒）
+ * @returns {Promise<void>}
+ */
+export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 // #endregion ================ 工具函数 ================
 
 

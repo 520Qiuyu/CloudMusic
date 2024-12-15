@@ -163,6 +163,18 @@
     const globalThis = getGlobalThis();
     return globalThis.GUser || {};
   };
+  const truncateString = (str, maxLength) => {
+    let len = 0;
+    let result = "";
+    for (let char of str) {
+      const charLen = char.charCodeAt(0) > 255 ? 2 : 1;
+      if (len + charLen > maxLength) break;
+      result += char;
+      len += charLen;
+    }
+    return result;
+  };
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const msgSuccess = (content) => {
     antd.message.success(content);
   };
@@ -1327,7 +1339,7 @@
     const handleGetPlayList = async () => {
       setLoading(true);
       try {
-        const user = window.GUser;
+        const user = getGUser();
         if (!user) return antd.message.error("请先登录");
         const res2 = await getPlaylistList(user.userId);
         console.log("res", res2);
@@ -1838,10 +1850,15 @@
             console.log("playlistName", playlistName, "songs", songs);
             let playlistId = (_a = playlist2.find((p2) => p2.name === playlistName)) == null ? void 0 : _a.id;
             if (!playlistId) {
-              const res3 = await createPlaylist(playlistName);
+              const truncatedName = truncateString(playlistName, 40);
+              const res3 = await createPlaylist(truncatedName);
               if (res3.code === 200) {
                 playlistId = res3.id;
+              } else {
+                console.log("res", res3);
+                debugger;
               }
+              await sleep(1e3);
             }
             const songIds = songs.map((song2) => song2.songId);
             const res2 = await addSongToPlaylist(playlistId, songIds);
@@ -1849,6 +1866,7 @@
             if (res2.code !== 200) {
               console.log("添加歌曲失败", res2.message || res2.msg);
             }
+            await sleep(500);
           } catch (error) {
             console.log("error", error);
           }

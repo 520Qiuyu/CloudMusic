@@ -18,6 +18,7 @@ import PlayList from "./components/PlayList";
 import SearchForm from "./components/SearchForm";
 import Stats from "./components/Stats";
 import styles from "./index.module.scss";
+import { sleep, truncateString } from "../../utils";
 
 const AddToPlayList = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -213,11 +214,16 @@ const AddToPlayList = forwardRef((props, ref) => {
           console.log("playlistName", playlistName, "songs", songs);
           let playlistId = playlist.find((p) => p.name === playlistName)?.id;
           if (!playlistId) {
-            // 创建歌单
-            const res = await createPlaylist(playlistName);
+            // 创建歌单（限制40字符）
+            const truncatedName = truncateString(playlistName, 40);
+            const res = await createPlaylist(truncatedName);
             if (res.code === 200) {
               playlistId = res.id;
+            } else {
+              console.log("res", res);
+              debugger;
             }
+            await sleep(1000);
           }
           // 添加歌曲
           const songIds = songs.map((song) => song.songId);
@@ -226,6 +232,7 @@ const AddToPlayList = forwardRef((props, ref) => {
           if (res.code !== 200) {
             console.log("添加歌曲失败", res.message || res.msg);
           }
+          await sleep(500);
         } catch (error) {
           console.log("error", error);
         }
