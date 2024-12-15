@@ -18,7 +18,7 @@
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
-(o=>{if(typeof GM_addStyle=="function"){GM_addStyle(o);return}const s=document.createElement("style");s.textContent=o,document.head.append(s)})(" ._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c}._quick-upload-tabs_10bds_1 .ant-spin{width:100%;height:100%}._quick-upload-tabs_10bds_1 .ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}._quick-upload-tabs_10bds_1 .ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}._quick-upload-tabs_10bds_1 .ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}._quick-upload-tabs_10bds_1 .ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_10bds_1 ._select_10bds_21{width:100%}._quick-upload-tabs_10bds_1 ._option-label_10bds_24{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._quick-upload-tabs_10bds_1 ._option-label_10bds_24 ._singer-name_10bds_31{font-weight:500}._quick-upload-tabs_10bds_1 ._option-label_10bds_24 ._tag-group_10bds_34 ._tag_10bds_34:not(:last-child){margin-right:8px}._singer-choose_10bds_38 ._singer-choose-form_10bds_38{display:flex;flex-direction:column;justify-content:space-between;height:400px}._singer-choose_10bds_38 ._singer-choose-form_10bds_38 ._btn-group_10bds_44{display:flex;justify-content:flex-end}._upload-list_10bds_49 .ant-table{margin:16px 0}._upload-footer_10bds_53{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_10bds_61{color:#666;font-size:13px;margin-right:auto}._upload-stats_10bds_61 ._size-text_10bds_66{color:#999}._upload-stats_10bds_61 ._divider_10bds_69{margin:0 8px;color:#d9d9d9}._upload-confirm_10bds_74{padding:16px 0;font-size:14px}._upload-confirm_10bds_74 ._confirm-item_10bds_78{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_10bds_74 ._confirm-item_10bds_78:last-child{margin-bottom:0}._upload-confirm_10bds_74 ._confirm-item_10bds_78 ._label_10bds_86{color:#666;width:80px;flex-shrink:0}._upload-confirm_10bds_74 ._confirm-item_10bds_78 ._value_10bds_91{color:#333;font-weight:500}._upload-confirm_10bds_74 ._confirm-item_10bds_78 ._value_10bds_91 ._size_10bds_66{margin-left:4px;color:#999;font-weight:400}._upload-progress_10bds_101 ._progress-header_10bds_101{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_10bds_101 ._progress-header_10bds_101 ._progress-info_10bds_108{font-size:14px;color:#333}._upload-progress_10bds_101 ._progress-header_10bds_101 ._percentage_10bds_112{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_10bds_101 ._progress-list_10bds_117{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_10bds_101 ._progress-list_10bds_117 ._progress-item_10bds_122{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_10bds_101 ._progress-list_10bds_117 ._progress-item_10bds_122:last-child{border-bottom:none}._upload-progress_10bds_101 ._progress-list_10bds_117 ._progress-item_10bds_122 ._song-info_10bds_132{flex:1;min-width:0;padding-right:16px}._upload-progress_10bds_101 ._progress-list_10bds_117 ._progress-item_10bds_122 ._song-info_10bds_132 ._name_10bds_137{font-size:14px;color:#333}._upload-progress_10bds_101 ._progress-list_10bds_117 ._progress-item_10bds_122 ._song-info_10bds_132 ._artist_10bds_141{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_10bds_147 .ant-modal-body{padding:24px}._uploadProgressModal_10bds_147 ._progressContent_10bds_150{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_10bds_147 ._progressInfo_10bds_156{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_10bds_147 ._progressInfo_10bds_156 ._percentage_10bds_112{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_10bds_147 ._progressInfo_10bds_156 ._detail_10bds_166{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_10bds_147 ._statsContainer_10bds_171{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_10bds_147 ._statsContainer_10bds_171 ._statsItem_10bds_179{text-align:center}._uploadProgressModal_10bds_147 ._statsContainer_10bds_171 ._statsItem_10bds_179 ._label_10bds_86{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_10bds_147 ._statsContainer_10bds_171 ._statsItem_10bds_179 ._value_10bds_91 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_10bds_147 ._failedList_10bds_192{width:100%}._uploadProgressModal_10bds_147 ._failedList_10bds_192 ._failedTitle_10bds_195{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_10bds_147 ._failedList_10bds_192 ._failedItem_10bds_201{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_10bds_147 ._failedList_10bds_192 ._failedItem_10bds_201 ._songName_10bds_207{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_10bds_147 ._failedList_10bds_192 ._failedItem_10bds_201 ._errorMsg_10bds_212{font-size:12px;color:#ff4d4f}._uploadModal_10bds_217 .ant-modal-body{padding:24px}._progressSection_10bds_221{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_10bds_156{display:flex;flex-direction:column;align-items:center}._progressInfo_10bds_156 ._percentage_10bds_112{font-size:24px;font-weight:500;color:#333}._progressInfo_10bds_156 ._count_10bds_240{font-size:14px;color:#666;margin-top:4px}._statsContainer_10bds_171{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_10bds_171 ._statsItem_10bds_179{text-align:center}._statsContainer_10bds_171 ._statsTag_10bds_255{padding:4px 12px;font-size:14px}._songList_10bds_260{max-height:300px;overflow-y:auto;padding-right:4px}._songList_10bds_260::-webkit-scrollbar{width:6px}._songList_10bds_260::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_10bds_260::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_10bds_276{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_10bds_276:not(:last-child){margin-bottom:8px}._songItem_10bds_276:hover{background:#f5f5f5}._songInfo_10bds_291{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_10bds_291 ._songName_10bds_207{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_10bds_291 ._artistName_10bds_305{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:transparent;border-radius:6px}::-webkit-scrollbar-thumb{background:#8080804d;border-radius:6px;transition:all .2s ease-in-out}::-webkit-scrollbar-thumb:hover{background:#80808080}*{scrollbar-width:thin;scrollbar-color:rgba(128,128,128,.3) transparent} ");
+(_=>{if(typeof GM_addStyle=="function"){GM_addStyle(_);return}const o=document.createElement("style");o.textContent=_,document.head.append(o)})(" ._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c}._quick-upload-tabs_10bds_1 .ant-spin{width:100%;height:100%}._quick-upload-tabs_10bds_1 .ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}._quick-upload-tabs_10bds_1 .ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}._quick-upload-tabs_10bds_1 .ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}._quick-upload-tabs_10bds_1 .ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_10bds_1 ._select_10bds_21{width:100%}._quick-upload-tabs_10bds_1 ._option-label_10bds_24{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._quick-upload-tabs_10bds_1 ._option-label_10bds_24 ._singer-name_10bds_31{font-weight:500}._quick-upload-tabs_10bds_1 ._option-label_10bds_24 ._tag-group_10bds_34 ._tag_10bds_34:not(:last-child){margin-right:8px}._singer-choose_10bds_38 ._singer-choose-form_10bds_38{display:flex;flex-direction:column;justify-content:space-between;height:400px}._singer-choose_10bds_38 ._singer-choose-form_10bds_38 ._btn-group_10bds_44{display:flex;justify-content:flex-end}._upload-list_10bds_49 .ant-table{margin:16px 0}._upload-footer_10bds_53{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_10bds_61{color:#666;font-size:13px;margin-right:auto}._upload-stats_10bds_61 ._size-text_10bds_66{color:#999}._upload-stats_10bds_61 ._divider_10bds_69{margin:0 8px;color:#d9d9d9}._upload-confirm_10bds_74{padding:16px 0;font-size:14px}._upload-confirm_10bds_74 ._confirm-item_10bds_78{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_10bds_74 ._confirm-item_10bds_78:last-child{margin-bottom:0}._upload-confirm_10bds_74 ._confirm-item_10bds_78 ._label_10bds_86{color:#666;width:80px;flex-shrink:0}._upload-confirm_10bds_74 ._confirm-item_10bds_78 ._value_10bds_91{color:#333;font-weight:500}._upload-confirm_10bds_74 ._confirm-item_10bds_78 ._value_10bds_91 ._size_10bds_66{margin-left:4px;color:#999;font-weight:400}._upload-progress_10bds_101 ._progress-header_10bds_101{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_10bds_101 ._progress-header_10bds_101 ._progress-info_10bds_108{font-size:14px;color:#333}._upload-progress_10bds_101 ._progress-header_10bds_101 ._percentage_10bds_112{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_10bds_101 ._progress-list_10bds_117{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_10bds_101 ._progress-list_10bds_117 ._progress-item_10bds_122{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_10bds_101 ._progress-list_10bds_117 ._progress-item_10bds_122:last-child{border-bottom:none}._upload-progress_10bds_101 ._progress-list_10bds_117 ._progress-item_10bds_122 ._song-info_10bds_132{flex:1;min-width:0;padding-right:16px}._upload-progress_10bds_101 ._progress-list_10bds_117 ._progress-item_10bds_122 ._song-info_10bds_132 ._name_10bds_137{font-size:14px;color:#333}._upload-progress_10bds_101 ._progress-list_10bds_117 ._progress-item_10bds_122 ._song-info_10bds_132 ._artist_10bds_141{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_10bds_147 .ant-modal-body{padding:24px}._uploadProgressModal_10bds_147 ._progressContent_10bds_150{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_10bds_147 ._progressInfo_10bds_156{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_10bds_147 ._progressInfo_10bds_156 ._percentage_10bds_112{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_10bds_147 ._progressInfo_10bds_156 ._detail_10bds_166{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_10bds_147 ._statsContainer_10bds_171{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_10bds_147 ._statsContainer_10bds_171 ._statsItem_10bds_179{text-align:center}._uploadProgressModal_10bds_147 ._statsContainer_10bds_171 ._statsItem_10bds_179 ._label_10bds_86{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_10bds_147 ._statsContainer_10bds_171 ._statsItem_10bds_179 ._value_10bds_91 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_10bds_147 ._failedList_10bds_192{width:100%}._uploadProgressModal_10bds_147 ._failedList_10bds_192 ._failedTitle_10bds_195{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_10bds_147 ._failedList_10bds_192 ._failedItem_10bds_201{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_10bds_147 ._failedList_10bds_192 ._failedItem_10bds_201 ._songName_10bds_207{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_10bds_147 ._failedList_10bds_192 ._failedItem_10bds_201 ._errorMsg_10bds_212{font-size:12px;color:#ff4d4f}._uploadModal_10bds_217 .ant-modal-body{padding:24px}._progressSection_10bds_221{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_10bds_156{display:flex;flex-direction:column;align-items:center}._progressInfo_10bds_156 ._percentage_10bds_112{font-size:24px;font-weight:500;color:#333}._progressInfo_10bds_156 ._count_10bds_240{font-size:14px;color:#666;margin-top:4px}._statsContainer_10bds_171{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_10bds_171 ._statsItem_10bds_179{text-align:center}._statsContainer_10bds_171 ._statsTag_10bds_255{padding:4px 12px;font-size:14px}._songList_10bds_260{max-height:300px;overflow-y:auto;padding-right:4px}._songList_10bds_260::-webkit-scrollbar{width:6px}._songList_10bds_260::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_10bds_260::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_10bds_276{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_10bds_276:not(:last-child){margin-bottom:8px}._songItem_10bds_276:hover{background:#f5f5f5}._songInfo_10bds_291{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_10bds_291 ._songName_10bds_207{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_10bds_291 ._artistName_10bds_305{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._footer_15uk1_1{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_15uk1_1 ._actions_15uk1_9{display:flex;gap:8px}._stats_15uk1_14{display:flex;align-items:center;gap:8px}._stats_15uk1_14 ._size_15uk1_19{color:#666}._stats_15uk1_14 ._divider_15uk1_22{color:#999;margin:0 4px}._stats_15uk1_14 .ant-tag{margin:0}._playlist_15uk1_30 .ant-modal-body{padding-bottom:0}._autoAddContent_15uk1_34 ._title_15uk1_34{font-size:16px;margin-bottom:8px}._autoAddContent_15uk1_34 ._statsWrapper_15uk1_38{margin-bottom:16px}._autoAddContent_15uk1_34 ._statsContent_15uk1_41{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_15uk1_34 ._statsContent_15uk1_41 ._label_15uk1_48{color:#666}._autoAddContent_15uk1_34 ._statsContent_15uk1_41 ._value_15uk1_51{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_15uk1_34 ._listHeader_15uk1_56{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_15uk1_34 ._listWrapper_15uk1_62{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_15uk1_34 ._listWrapper_15uk1_62::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_15uk1_34 ._listWrapper_15uk1_62::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_15uk1_34 ._listWrapper_15uk1_62::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_15uk1_34 ._listItem_15uk1_83{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_15uk1_34 ._listItem_15uk1_83:hover{background:#f5f5f5}._autoAddContent_15uk1_34 ._listItem_15uk1_83:last-child{margin-bottom:0}._autoAddContent_15uk1_34 ._listItem_15uk1_83 ._itemName_15uk1_99{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_15uk1_34 ._listItem_15uk1_83 ._itemCount_15uk1_105{color:#1890ff;margin-left:8px}::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:transparent;border-radius:6px}::-webkit-scrollbar-thumb{background:#8080804d;border-radius:6px;transition:all .2s ease-in-out}::-webkit-scrollbar-thumb:hover{background:#80808080}*{scrollbar-width:thin;scrollbar-color:rgba(128,128,128,.3) transparent} ");
 
 (function (require$$0, antd, require$$0$1, icons, forge) {
   'use strict';
@@ -60,7 +60,7 @@
     client.createRoot = m.createRoot;
     client.hydrateRoot = m.hydrateRoot;
   }
-  const styles$1 = {
+  const styles$2 = {
     "button-group": "_button-group_dcsms_1"
   };
   const BASE_CDN_URL = "https://fastly.jsdelivr.net/gh/Cinvin/cdn@latest/artist/";
@@ -157,17 +157,20 @@
   const msgSuccess = (content) => {
     antd.message.success(content);
   };
+  const msgWarning = (content) => {
+    antd.message.warning(content);
+  };
   const msgError = (content) => {
     antd.message.error(content);
   };
-  const confirm = (content, title, otherOptions = {}) => {
+  const confirm = (content, title2, otherOptions = {}) => {
     return new Promise((resolve, reject) => {
       antd.Modal.confirm({
         centered: true,
         content,
         icon: null,
         closable: true,
-        title,
+        title: title2 || "提示",
         width: 398,
         okButtonProps: {
           shape: "round",
@@ -237,6 +240,11 @@
     const csrfToken = document.cookie.match(/_csrf=([^(;|$)]+)/);
     data.csrf_token = csrfToken ? csrfToken[1] : "";
     const encryptedData = weapi(data);
+    console.log({
+      url,
+      data,
+      encryptedData
+    });
     const headers = {
       "content-type": "application/x-www-form-urlencoded",
       "user-agent": CLIENT_CONFIG[clientType].userAgent
@@ -400,12 +408,45 @@
       throw error;
     }
   };
+  const getCloudData = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
+    data: {
+      limit,
+      offset
+    }
+  });
+  const getPlaylistList = (uid = window.GUser.userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
+    data: {
+      limit,
+      offset,
+      uid
+    }
+  });
+  const createPlaylist = (name2) => weapiRequest("/api/playlist/create", {
+    data: {
+      name: name2
+    }
+  });
+  const deletePlaylist = (pid) => weapiRequest("/api/playlist/delete", {
+    data: {
+      pid
+    }
+  });
+  const addSongToPlaylist = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
+    data: {
+      pid,
+      // 歌单id
+      trackIds,
+      // 歌曲 id 数组
+      op: "add"
+      // 操作类型
+    }
+  });
   const select = "_select_10bds_21";
   const tag = "_tag_10bds_34";
-  const divider = "_divider_10bds_69";
-  const label = "_label_10bds_86";
-  const value = "_value_10bds_91";
-  const size = "_size_10bds_66";
+  const divider$1 = "_divider_10bds_69";
+  const label$1 = "_label_10bds_86";
+  const value$1 = "_value_10bds_91";
+  const size$1 = "_size_10bds_66";
   const percentage = "_percentage_10bds_112";
   const name = "_name_10bds_137";
   const artist = "_artist_10bds_141";
@@ -428,7 +469,7 @@
   const songItem = "_songItem_10bds_276";
   const songInfo = "_songInfo_10bds_291";
   const artistName = "_artistName_10bds_305";
-  const styles = {
+  const styles$1 = {
     "quick-upload-tabs": "_quick-upload-tabs_10bds_1",
     select,
     "option-label": "_option-label_10bds_24",
@@ -442,12 +483,12 @@
     "upload-footer": "_upload-footer_10bds_53",
     "upload-stats": "_upload-stats_10bds_61",
     "size-text": "_size-text_10bds_66",
-    divider,
+    divider: divider$1,
     "upload-confirm": "_upload-confirm_10bds_74",
     "confirm-item": "_confirm-item_10bds_78",
-    label,
-    value,
-    size,
+    label: label$1,
+    value: value$1,
+    size: size$1,
     "upload-progress": "_upload-progress_10bds_101",
     "progress-header": "_progress-header_10bds_101",
     "progress-info": "_progress-info_10bds_108",
@@ -483,14 +524,14 @@
         const { id, name: name2, count: count2, size: size2, sizeDesc } = item;
         return {
           ...item,
-          label: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["option-label"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles["singer-name"], children: name2 }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["tag-group"], children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "blue", className: styles["tag"], children: [
+          label: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["option-label"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1["singer-name"], children: name2 }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["tag-group"], children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "blue", className: styles$1["tag"], children: [
                 count2,
                 "首"
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "green", className: styles["tag"], children: sizeDesc })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "green", className: styles$1["tag"], children: sizeDesc })
             ] })
           ] }),
           value: id
@@ -502,12 +543,12 @@
       const { singer } = values;
       onChoose([...singer]);
     };
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["singer-choose"], children: loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Spin, { tip: "正在加载中" }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-choose"], children: loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Spin, { tip: "正在加载中" }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
       antd.Form,
       {
         form: formRef,
         onFinish: handleChoose,
-        className: styles["singer-choose-form"],
+        className: styles$1["singer-choose-form"],
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { name: "singer", label: "歌手", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Select,
@@ -515,7 +556,7 @@
               mode: "multiple",
               placeholder: "请选择歌手",
               allowClear: true,
-              className: styles["select"],
+              className: styles$1["select"],
               filterOption: (input, option) => {
                 var _a;
                 return ((_a = option.name) == null ? void 0 : _a.toLowerCase().indexOf(input.toLowerCase())) >= 0;
@@ -524,12 +565,12 @@
               getPopupContainer: (trigger) => trigger.parentNode
             }
           ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { style: { marginBottom: 0 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["btn-group"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", htmlType: "submit", children: "选择" }) }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { style: { marginBottom: 0 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["btn-group"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", htmlType: "submit", children: "选择" }) }) })
         ]
       }
     ) });
   }
-  const SearchForm = ({ onSearch, songList: songList2 }) => {
+  const SearchForm$1 = ({ onSearch, songList: songList2 }) => {
     const [form] = antd.Form.useForm();
     const getUniqueOptions = (key) => {
       const uniqueList = uniqueArrayByKey(songList2, key);
@@ -632,21 +673,21 @@
           maskClosable: false,
           footer: null,
           centered: true,
-          className: styles.uploadModal,
+          className: styles$1.uploadModal,
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.progressSection, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1.progressSection, children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 antd.Progress,
                 {
                   type: "circle",
                   percent,
                   status: isCompleted ? failedCount > 0 ? "exception" : "success" : "active",
-                  format: () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.progressInfo, children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles.percentage, children: [
+                  format: () => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1.progressInfo, children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$1.percentage, children: [
                       percent,
                       "%"
                     ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles.count, children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$1.count, children: [
                       uploadedCount + failedCount,
                       "/",
                       total
@@ -654,32 +695,32 @@
                   ] })
                 }
               ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.statsContainer, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.statsItem, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "success", className: styles.statsTag, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1.statsContainer, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1.statsItem, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "success", className: styles$1.statsTag, children: [
                   "成功：",
                   uploadedCount
                 ] }) }),
-                failedCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.statsItem, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "error", className: styles.statsTag, children: [
+                failedCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1.statsItem, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "error", className: styles$1.statsTag, children: [
                   "失败：",
                   failedCount
                 ] }) })
               ] })
             ] }),
-            (uploadedList.length > 0 || uploadFailedSongList.length > 0) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.songList, ref: songListRef, children: [
-              uploadFailedSongList.map((song2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.songItem, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.songInfo, children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.songName, children: song2.name }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles.artistName, children: [
+            (uploadedList.length > 0 || uploadFailedSongList.length > 0) && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1.songList, ref: songListRef, children: [
+              uploadFailedSongList.map((song2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1.songItem, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1.songInfo, children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1.songName, children: song2.name }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$1.artistName, children: [
                     "- ",
                     song2.artists
                   ] })
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "error", children: "上传失败" })
               ] }, song2.id)),
-              uploadedList.map((song2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.songItem, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.songInfo, children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.songName, children: song2.name }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles.artistName, children: [
+              uploadedList.map((song2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1.songItem, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1.songInfo, children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1.songName, children: song2.name }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$1.artistName, children: [
                     "- ",
                     song2.artists
                   ] })
@@ -695,7 +736,7 @@
   const UploadStats = require$$0.memo(({ selectedRows, filteredSongList }) => {
     const selectedSize = selectedRows.reduce((acc, cur) => acc + cur.size, 0);
     const totalSize = filteredSongList.reduce((acc, cur) => acc + cur.size, 0);
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["upload-stats"], children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["upload-stats"], children: [
       "已选择",
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "blue", style: { margin: 0 }, children: [
@@ -703,8 +744,8 @@
         " 首"
       ] }),
       " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles["size-text"], children: +selectedSize && formatFileSize(selectedSize) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.divider, children: "/" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1["size-text"], children: +selectedSize && formatFileSize(selectedSize) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1.divider, children: "/" }),
       "共",
       " ",
       /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "green", style: { margin: 0 }, children: [
@@ -712,7 +753,7 @@
         " 首"
       ] }),
       " ",
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles["size-text"], children: formatFileSize(totalSize) })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1["size-text"], children: formatFileSize(totalSize) })
     ] });
   });
   UploadStats.displayName = "UploadStats";
@@ -1031,8 +1072,8 @@
       handleBatchUpload(selectedRows);
     };
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      (singerList == null ? void 0 : singerList.length) ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["upload-list"], children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SearchForm, { onSearch: handleSearch, songList: songList2 }),
+      (singerList == null ? void 0 : singerList.length) ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["upload-list"], children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(SearchForm$1, { onSearch: handleSearch, songList: songList2 }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           antd.Table,
           {
@@ -1046,7 +1087,7 @@
             onChange: handleTableChange
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["upload-footer"], children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["upload-footer"], children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             UploadStats,
             {
@@ -1100,27 +1141,27 @@
   }
   const UploadConfirm = ({ total, uploaded, toUpload }) => {
     return confirm(
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["upload-confirm"], children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["confirm-item"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.label, children: "总计歌曲：" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles.value, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["upload-confirm"], children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["confirm-item"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1.label, children: "总计歌曲：" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$1.value, children: [
             total,
             " 首"
           ] })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["confirm-item"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.label, children: "已上传：" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles.value, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["confirm-item"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1.label, children: "已上传：" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$1.value, children: [
             uploaded,
             " 首"
           ] })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["confirm-item"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.label, children: "待上传：" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles.value, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["confirm-item"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1.label, children: "待上传：" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$1.value, children: [
             toUpload.length,
             " 首",
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles.size, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
               "（",
               formatFileSize(toUpload.reduce((acc, cur) => acc + cur.size, 0)),
               "）"
@@ -1182,7 +1223,7 @@
           {
             defaultActiveKey: "1",
             activeKey: currentTab,
-            className: styles["quick-upload-tabs"],
+            className: styles$1["quick-upload-tabs"],
             onChange: (key) => setCurrentTab(key),
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(TabPane, { tab: "歌曲选择", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -1201,7 +1242,411 @@
     );
   }
   const QuickUpload$1 = require$$0.forwardRef(QuickUpload);
-  const MatchCorrect = require$$0.forwardRef((props, ref) => {
+  const footer = "_footer_15uk1_1";
+  const actions = "_actions_15uk1_9";
+  const stats = "_stats_15uk1_14";
+  const size = "_size_15uk1_19";
+  const divider = "_divider_15uk1_22";
+  const playlist = "_playlist_15uk1_30";
+  const autoAddContent = "_autoAddContent_15uk1_34";
+  const title = "_title_15uk1_34";
+  const statsWrapper = "_statsWrapper_15uk1_38";
+  const statsContent = "_statsContent_15uk1_41";
+  const label = "_label_15uk1_48";
+  const value = "_value_15uk1_51";
+  const listHeader = "_listHeader_15uk1_56";
+  const listWrapper = "_listWrapper_15uk1_62";
+  const listItem = "_listItem_15uk1_83";
+  const itemName = "_itemName_15uk1_99";
+  const itemCount = "_itemCount_15uk1_105";
+  const styles = {
+    footer,
+    actions,
+    stats,
+    size,
+    divider,
+    playlist,
+    autoAddContent,
+    title,
+    statsWrapper,
+    statsContent,
+    label,
+    value,
+    listHeader,
+    listWrapper,
+    listItem,
+    itemName,
+    itemCount
+  };
+  const PlayList = require$$0.forwardRef((props, ref) => {
+    const [visible, setVisible] = require$$0.useState(false);
+    const [mode, setMode] = require$$0.useState("edit");
+    const isSelect = mode === "select";
+    const open = (mode2) => {
+      reset();
+      if (mode2) {
+        setMode(mode2);
+      }
+      setVisible(true);
+      handleGetPlayList();
+    };
+    const close = () => {
+      setVisible(false);
+      setPlayList([]);
+    };
+    const reset = () => {
+      setPlayList([]);
+      res.current = null;
+      setMode("add");
+      setSelectedRows([]);
+      setName("");
+      setCreateModalVisible(false);
+    };
+    const res = require$$0.useRef(null);
+    const submit = () => {
+      return new Promise((resolve, reject) => {
+        res.current = resolve;
+      });
+    };
+    require$$0.useImperativeHandle(ref, () => ({
+      open,
+      close,
+      submit
+    }));
+    const [loading, setLoading] = require$$0.useState(false);
+    const [playList, setPlayList] = require$$0.useState([]);
+    const handleGetPlayList = async () => {
+      setLoading(true);
+      try {
+        const user = window.GUser;
+        if (!user) return antd.message.error("请先登录");
+        const res2 = await getPlaylistList(user.userId);
+        console.log("res", res2);
+        if (res2.code === 200) {
+          setPlayList(res2.playlist || []);
+        }
+      } catch (error) {
+        console.log("error", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    const columns = [
+      {
+        title: "歌单",
+        dataIndex: "name",
+        key: "name",
+        width: 220,
+        ellipsis: true,
+        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: "8px" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Image,
+            {
+              src: record.coverImgUrl,
+              width: 40,
+              height: 40,
+              style: { borderRadius: "4px" },
+              preview: false
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              style: {
+                fontWeight: 500,
+                flex: 1,
+                minWidth: 0,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap"
+              },
+              children: text
+            }
+          )
+        ] })
+      },
+      {
+        title: "歌曲数",
+        dataIndex: "trackCount",
+        key: "trackCount",
+        width: 100,
+        align: "right",
+        sorter: (a, b) => a.trackCount - b.trackCount,
+        sortDirections: ["descend", "ascend"],
+        render: (text) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "span",
+          {
+            style: {
+              color: "#666",
+              fontSize: "13px"
+            },
+            children: [
+              text,
+              " 首"
+            ]
+          }
+        )
+      },
+      {
+        title: "创建者",
+        dataIndex: ["creator", "nickname"],
+        key: "creator",
+        width: 150,
+        ellipsis: true
+      },
+      {
+        title: "更新时间",
+        dataIndex: "updateTime",
+        key: "updateTime",
+        width: 200,
+        render: (text) => new Date(text).toLocaleString(),
+        sorter: (a, b) => a.updateTime - b.updateTime,
+        sortDirections: ["descend", "ascend"]
+      },
+      {
+        title: "播放量",
+        dataIndex: "playCount",
+        key: "playCount",
+        width: 100,
+        render: (text) => {
+          const count2 = text > 1e4 ? `${(text / 1e4).toFixed(1)}万` : text;
+          return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: count2 });
+        },
+        sorter: (a, b) => a.playCount - b.playCount,
+        sortDirections: ["descend", "ascend"]
+      }
+    ];
+    const [selectedRows, setSelectedRows] = require$$0.useState([]);
+    const rowSelection = {
+      type: isSelect ? "radio" : "checkbox",
+      selectedRowKeys: selectedRows.map((item) => item.id),
+      onChange: (selectedRowKeys, selectedRows2) => {
+        setSelectedRows(selectedRows2);
+      }
+    };
+    const handleConfirm = () => {
+      var _a;
+      if (!selectedRows.length) {
+        msgWarning("请选择歌单");
+        return;
+      }
+      if (selectedRows.length !== 1) return msgWarning("只能选择一个歌单");
+      (_a = res.current) == null ? void 0 : _a.call(res, selectedRows[0]);
+      close();
+    };
+    const [name2, setName] = require$$0.useState("");
+    const [createModalVisible, setCreateModalVisible] = require$$0.useState(false);
+    const handleCreate = async () => {
+      if (!name2.trim()) {
+        msgWarning("请输入歌单名称");
+        return;
+      }
+      try {
+        const res2 = await createPlaylist(name2.trim());
+        if (res2.code === 200) {
+          msgSuccess("新建成功");
+          handleGetPlayList();
+          setName("");
+          setCreateModalVisible(false);
+        } else {
+          msgError("新建失败");
+        }
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    const handleDelete = async () => {
+      if (!selectedRows.length) {
+        msgWarning("请选择要删除的歌单");
+        return;
+      }
+      try {
+        const names = selectedRows.map((item) => item.name).join(",");
+        await confirm(`歌单名称:${names}`, "确定要删除这些歌单吗？");
+        const proArr = selectedRows.map((item) => deletePlaylist(item.id));
+        const res2 = await Promise.all(proArr);
+        console.log("res", res2);
+        msgSuccess("删除成功");
+        handleGetPlayList();
+        setSelectedRows([]);
+      } catch (error) {
+        console.log("error", error);
+        msgError("删除失败");
+      }
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        antd.Modal,
+        {
+          title: "歌单列表",
+          open: visible,
+          onCancel: close,
+          footer: null,
+          centered: true,
+          width: 800,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              antd.Table,
+              {
+                dataSource: playList,
+                columns,
+                rowKey: "id",
+                size: "small",
+                loading,
+                scroll: { y: 400 },
+                rowSelection
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.footer, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                "已选择 ",
+                selectedRows.length,
+                " 个歌单"
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { onClick: () => setCreateModalVisible(true), children: "新建歌单" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  antd.Button,
+                  {
+                    danger: true,
+                    disabled: !selectedRows.length,
+                    onClick: handleDelete,
+                    children: "删除歌单"
+                  }
+                ),
+                isSelect && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  antd.Button,
+                  {
+                    type: "primary",
+                    onClick: handleConfirm,
+                    disabled: selectedRows.length !== 1,
+                    children: [
+                      "选择(",
+                      selectedRows.length,
+                      ")"
+                    ]
+                  }
+                )
+              ] })
+            ] })
+          ]
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        antd.Modal,
+        {
+          title: "新建歌单",
+          open: createModalVisible,
+          onCancel: () => {
+            setCreateModalVisible(false);
+            setName("");
+          },
+          onOk: handleCreate,
+          okText: "确定",
+          cancelText: "取消",
+          centered: true,
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Input,
+            {
+              placeholder: "请输入歌单名称",
+              value: name2,
+              onChange: (e) => setName(e.target.value),
+              onPressEnter: handleCreate,
+              autoFocus: true
+            }
+          )
+        }
+      )
+    ] });
+  });
+  PlayList.displayName = "PlayList";
+  const SearchForm = ({ onSearch, songList: songList2 }) => {
+    const [form] = antd.Form.useForm();
+    const getUniqueOptions = (key) => {
+      const uniqueList = uniqueArrayByKey(
+        songList2.map((item) => ({
+          ...item,
+          name: item.simpleSong.name,
+          singer: item.simpleSong.singer
+        })),
+        key
+      );
+      return uniqueList.map((item) => ({
+        label: item[key],
+        value: item[key]
+      }));
+    };
+    const handleSearch = () => {
+      const values = form.getFieldsValue();
+      onSearch(values);
+    };
+    const handleReset = () => {
+      form.resetFields();
+      onSearch({});
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form, { form, style: { marginBottom: 16 }, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { wrap: true, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { name: "name", style: { marginBottom: 0, minWidth: 200 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        antd.Select,
+        {
+          mode: "multiple",
+          allowClear: true,
+          showSearch: true,
+          placeholder: "歌名",
+          maxTagCount: "responsive",
+          options: getUniqueOptions("name"),
+          filterOption: (input, option) => ((option == null ? void 0 : option.label) ?? "").toLowerCase().includes(input.toLowerCase())
+        }
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { name: "artist", style: { marginBottom: 0, minWidth: 200 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        antd.Select,
+        {
+          mode: "multiple",
+          allowClear: true,
+          showSearch: true,
+          placeholder: "歌手",
+          maxTagCount: "responsive",
+          options: getUniqueOptions("artist"),
+          filterOption: (input, option) => ((option == null ? void 0 : option.label) ?? "").toLowerCase().includes(input.toLowerCase())
+        }
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { name: "album", style: { marginBottom: 0, minWidth: 200 }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        antd.Select,
+        {
+          mode: "multiple",
+          allowClear: true,
+          showSearch: true,
+          placeholder: "专辑",
+          maxTagCount: "responsive",
+          options: getUniqueOptions("album"),
+          filterOption: (input, option) => ((option == null ? void 0 : option.label) ?? "").toLowerCase().includes(input.toLowerCase())
+        }
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleSearch, children: "搜索" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { onClick: handleReset, children: "重置" })
+    ] }) });
+  };
+  const Stats = require$$0.memo(({ selectedRows = [], filteredSongList = [] }) => {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.stats, children: [
+      "已选择 ",
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "blue", children: [
+        selectedRows.length,
+        " 首"
+      ] }),
+      " ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.divider, children: "/" }),
+      "共",
+      " ",
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "green", children: [
+        filteredSongList.length,
+        " 首"
+      ] }),
+      " ",
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
+    ] });
+  });
+  Stats.displayName = "Stats";
+  const AddToPlayList = require$$0.forwardRef((props, ref) => {
     const [visible, setVisible] = require$$0.useState(false);
     const open = () => setVisible(true);
     const close = () => setVisible(false);
@@ -1212,16 +1657,329 @@
       close,
       reset
     }));
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    const [songList2, setSongList] = require$$0.useState([]);
+    const [loading, setLoading] = require$$0.useState(false);
+    const getCloudDataList = async () => {
+      try {
+        setLoading(true);
+        const res = await getCloudData(1e4, 0);
+        if (res.code === 200) {
+          console.log("songList", res.data);
+          setSongList(res.data);
+          setFilteredSongList(res.data);
+        }
+      } catch (error) {
+        console.log("error", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    require$$0.useEffect(() => {
+      if (!visible) return;
+      getCloudDataList();
+    }, [visible]);
+    const [filteredSongList, setFilteredSongList] = require$$0.useState([]);
+    const handleSearch = (values) => {
+      const { name: name2, artists, album } = values;
+      const filtered = songList2.filter((song2) => {
+        const nameMatch = !(name2 == null ? void 0 : name2.length) || name2.some((n2) => song2.name.toLowerCase().includes(n2.toLowerCase()));
+        const artistMatch = !(artists == null ? void 0 : artists.length) || artists.some(
+          (a) => song2.artists.toLowerCase().includes(a.toLowerCase())
+        );
+        const albumMatch = !(album == null ? void 0 : album.length) || album.some((a) => song2.album.toLowerCase().includes(a.toLowerCase()));
+        return nameMatch && artistMatch && albumMatch;
+      });
+      setFilteredSongList(filtered);
+    };
+    const [selectedRows, setSelectedRows] = require$$0.useState([]);
+    const rowSelection = {
+      type: "checkbox",
+      fixed: true,
+      getCheckboxProps: (record) => ({
+        disabled: record.uploaded
+      }),
+      onChange: (selectedRowKeys, selectedRows2) => {
+        setSelectedRows(selectedRows2);
+      }
+    };
+    const handleTableChange = (pagination, filters, sorter) => {
+      setFilteredSongList((songList22) => {
+        return songList22.sort((a, b) => {
+          var _a;
+          const order = sorter.order === "ascend" ? 1 : -1;
+          return order * ((_a = a[sorter.columnKey]) == null ? void 0 : _a.localeCompare(b[sorter.columnKey]));
+        });
+      });
+    };
+    const columns = [
+      {
+        title: "歌名",
+        dataIndex: "simpleSong",
+        key: "name",
+        width: 250,
+        sorter: (a, b) => {
+          var _a;
+          return (_a = a.simpleSong.name) == null ? void 0 : _a.localeCompare(b.simpleSong.name);
+        },
+        sortDirections: ["ascend", "descend"],
+        render: (record) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: "8px" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "img",
+            {
+              src: record.al.picUrl,
+              alt: record.name,
+              style: { width: "40px", height: "40px", borderRadius: "4px" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: record.name }) })
+        ] })
+      },
+      {
+        title: "歌手",
+        dataIndex: "simpleSong",
+        key: "artists",
+        width: 200,
+        sorter: (a, b) => {
+          const aArtists = a.simpleSong.ar.map((a2) => a2.name).join(",");
+          const bArtists = b.simpleSong.ar.map((a2) => a2.name).join(",");
+          return aArtists == null ? void 0 : aArtists.localeCompare(bArtists);
+        },
+        sortDirections: ["ascend", "descend"],
+        ellipsis: true,
+        render: (record) => record.ar.map((a) => a.name).join(",")
+      },
+      {
+        title: "专辑",
+        dataIndex: "simpleSong",
+        key: "album",
+        width: 300,
+        sorter: (a, b) => {
+          var _a;
+          return (_a = a.simpleSong.al.name) == null ? void 0 : _a.localeCompare(b.simpleSong.al.name);
+        },
+        sortDirections: ["ascend", "descend"],
+        ellipsis: true,
+        render: (record) => record.al.name
+      },
+      {
+        title: "大小",
+        dataIndex: "fileSize",
+        key: "fileSize",
+        width: 100,
+        sorter: (a, b) => a.fileSize - b.fileSize,
+        sortDirections: ["ascend", "descend"],
+        render: (size2) => `${(size2 / 1024 / 1024).toFixed(2)}MB`
+      },
+      {
+        title: "比特率",
+        dataIndex: "bitrate",
+        key: "bitrate",
+        width: 100,
+        sorter: (a, b) => a.bitrate - b.bitrate,
+        sortDirections: ["ascend", "descend"],
+        render: (bitrate) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "blue", children: [
+          bitrate,
+          "kbps"
+        ] })
+      },
+      {
+        title: "上传时间",
+        dataIndex: "addTime",
+        key: "addTime",
+        width: 150,
+        sorter: (a, b) => a.addTime - b.addTime,
+        sortDirections: ["ascend", "descend"],
+        render: (time) => new Date(time).toLocaleString()
+      }
+    ];
+    const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] = require$$0.useState(false);
+    const handleAddToPlaylistByAlbum = async () => {
+      var _a;
+      try {
+        setAddToPlayListByAlbumLoading(true);
+        console.log("自动按专辑添加");
+        const albumMap = /* @__PURE__ */ new Map();
+        filteredSongList.forEach((song2) => {
+          var _a2;
+          const { simpleSong } = song2;
+          const album = `${((_a2 = simpleSong.ar[0]) == null ? void 0 : _a2.name) || ""}-${simpleSong.al.name}`;
+          if (!albumMap.has(album)) {
+            albumMap.set(album, []);
+          }
+          albumMap.get(album).push(song2);
+        });
+        const totalSongs = filteredSongList.length;
+        const albums = Array.from(albumMap.entries()).sort(
+          ([, songsA], [, songsB]) => songsB.length - songsA.length
+        );
+        await confirm(
+          /* @__PURE__ */ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
+          "自动按专辑添加",
+          {
+            width: "auto"
+          }
+        );
+        const res = await getPlaylistList();
+        console.log("res", res);
+        if (res.code !== 200) return msgError("获取歌单失败");
+        const playlist2 = res.playlist;
+        for (const [album, songs] of albums) {
+          try {
+            const playlistName = album;
+            console.log("playlistName", playlistName, "songs", songs);
+            let playlistId = (_a = playlist2.find((p2) => p2.name === playlistName)) == null ? void 0 : _a.id;
+            if (!playlistId) {
+              const res3 = await createPlaylist(playlistName);
+              if (res3.code === 200) {
+                playlistId = res3.id;
+              }
+            }
+            const songIds = songs.map((song2) => song2.songId);
+            const res2 = await addSongToPlaylist(playlistId, songIds);
+            console.log("res", res2);
+            if (res2.code !== 200) {
+              console.log("添加歌曲失败", res2.message || res2.msg);
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+        }
+        setSelectedRows([]);
+        msgSuccess("添加成功");
+      } catch (error) {
+        console.log("error", error);
+      } finally {
+        setAddToPlayListByAlbumLoading(false);
+      }
+    };
+    const playListRef = require$$0.useRef(null);
+    const handleAddToPlaylist = async () => {
+      try {
+        console.log("添加到歌单");
+        playListRef.current.open("select");
+        const playlist2 = await playListRef.current.submit();
+        if (!playlist2) return;
+        const songIds = selectedRows.map((item) => item.songId);
+        const res = await addSongToPlaylist(playlist2.id, songIds);
+        console.log("res", res);
+        if (res.code === 200) {
+          setSelectedRows([]);
+          msgSuccess("添加成功");
+        }
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    const handleCreatePlaylist = () => {
+      console.log("新建歌单");
+      playListRef.current.open();
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
       antd.Modal,
       {
-        title: "云盘匹配纠正",
+        title: "云盘歌曲添加歌单",
         open: visible,
         onCancel: close,
-        footer: null
+        footer: null,
+        centered: true,
+        width: 900,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(SearchForm, { onSearch: handleSearch, songList: songList2 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Table,
+            {
+              rowSelection,
+              dataSource: filteredSongList,
+              columns,
+              scroll: { y: 400, x: 1e3 },
+              size: "small",
+              loading,
+              rowKey: ({ songId }) => songId,
+              onChange: handleTableChange
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.footer, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Stats,
+              {
+                selectedRows,
+                filteredSongList
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.actions, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                antd.Button,
+                {
+                  type: "primary",
+                  onClick: handleAddToPlaylistByAlbum,
+                  loading: addToPlayListByAlbumLoading,
+                  children: "自动按专辑添加"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                antd.Button,
+                {
+                  type: "primary",
+                  disabled: !selectedRows.length,
+                  onClick: handleAddToPlaylist,
+                  children: "添加到歌单"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { onClick: handleCreatePlaylist, children: "新建歌单" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(PlayList, { ref: playListRef })
+        ]
       }
     );
   });
+  const AutoAddContent = ({ totalSongs, albums }) => {
+    const handleCopy = () => {
+      const text = albums.map(([name2, songs]) => `${name2}（${songs.length}首）`).join("\n");
+      navigator.clipboard.writeText(text).then(() => {
+        antd.message.success("复制成功");
+      });
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.autoAddContent, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.statsWrapper, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.title, children: "总计：" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.statsContent, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.label, children: "歌曲数：" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.value, children: totalSongs }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.label, children: " 首" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.label, children: "歌单数：" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.value, children: albums.length }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.label, children: " 个" })
+          ] })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.listHeader, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.title, children: "即将创建的歌单：" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Button,
+            {
+              type: "link",
+              size: "small",
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.CopyrightOutlined, {}),
+              onClick: handleCopy,
+              children: "复制列表"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: styles.listWrapper, children: albums.map(([name2, songs]) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: styles.listItem, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles.itemName, children: name2 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles.itemCount, children: [
+            songs.length,
+            "首"
+          ] })
+        ] }, name2)) })
+      ] })
+    ] });
+  };
   const QualityUpgrade = require$$0.forwardRef((props, ref) => {
     const [visible, setVisible] = require$$0.useState(false);
     const open = () => setVisible(true);
@@ -1352,36 +2110,179 @@
       }
     );
   });
+  const TestModal = require$$0.forwardRef((props, ref) => {
+    const [visible, setVisible] = require$$0.useState(false);
+    const open = () => setVisible(true);
+    const close = () => setVisible(false);
+    const reset = () => {
+    };
+    require$$0.useImperativeHandle(ref, () => ({
+      open,
+      close,
+      reset
+    }));
+    const [pageData, setPageData] = require$$0.useState({
+      limit: 500,
+      offset: 0
+    });
+    const handleGetCloudData = async () => {
+      console.log("获取云盘数据");
+      try {
+        const res = await getCloudData(pageData.limit, pageData.offset);
+        console.log("res", res);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    const [songListName, setSongListName] = require$$0.useState("");
+    const handleCreateSongList = async () => {
+      console.log("新建歌单");
+      try {
+        const res = await createPlaylist(songListName);
+        console.log("res", res);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    const [addInfo, setAddInfo] = require$$0.useState({
+      songId: "185620",
+      playlistId: "12999288729"
+    });
+    const handleAddSong = async () => {
+      console.log("添加歌曲");
+      try {
+        const res = await addSongToPlaylist(addInfo.playlistId, [addInfo.songId]);
+        console.log("res", res);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    const [userId, setUserId] = require$$0.useState("12999288729");
+    const handleGetPlaylistList = async () => {
+      console.log("获取歌单列表");
+      try {
+        const res = await getPlaylistList(userId);
+        console.log("res", res);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      antd.Modal,
+      {
+        title: "测试Modal",
+        open: visible,
+        onCancel: close,
+        width: 800,
+        footer: null,
+        centered: true,
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Form, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取云盘数据", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Input, { placeholder: "limit", style: { width: 100 } }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Input, { placeholder: "offset", style: { width: 100 } }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetCloudData, children: "获取云盘数据" })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "新建歌单", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              antd.Input,
+              {
+                placeholder: "请输入歌单名称",
+                value: songListName,
+                onChange: (e) => setSongListName(e.target.value)
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleCreateSongList, children: "新建歌单" })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "添加歌曲", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              antd.Input,
+              {
+                placeholder: "请输入歌单id",
+                value: addInfo.playlistId,
+                onChange: (e) => setAddInfo({ ...addInfo, playlistId: e.target.value })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              antd.Input,
+              {
+                placeholder: "请输入歌曲id",
+                value: addInfo.songId,
+                onChange: (e) => setAddInfo({ ...addInfo, songId: e.target.value })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleAddSong, children: "添加歌曲" })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取歌单列表", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              antd.Input,
+              {
+                placeholder: "请输入用户id",
+                value: userId,
+                onChange: (e) => setUserId(e.target.value)
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetPlaylistList, children: "获取歌单列表" })
+          ] }) })
+        ] })
+      }
+    );
+  });
   const ButtonGroup = () => {
     const quickUploadRef = require$$0.useRef(null);
     const handleQuickUpload = () => {
       quickUploadRef.current.open();
     };
-    const matchCorrectRef = require$$0.useRef(null);
+    const addToPlayListRef = require$$0.useRef(null);
+    const handleAddToPlayList = () => {
+      addToPlayListRef.current.open();
+    };
     const qualityUpgradeRef = require$$0.useRef(null);
     const localUploadRef = require$$0.useRef(null);
     const vipSongARef = require$$0.useRef(null);
     const vipSongBRef = require$$0.useRef(null);
     const cloudExportRef = require$$0.useRef(null);
     const cloudImportRef = require$$0.useRef(null);
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["button-group"], children: [
+    const testModalRef = require$$0.useRef(null);
+    const handleTestModal = () => {
+      testModalRef.current.open();
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["button-group"], children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "云盘快速上传", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         antd.Button,
         {
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.CloudUploadOutlined, {}),
           onClick: handleQuickUpload,
-          className: styles$1["button"]
+          className: styles$2["button"]
+        }
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "云盘歌曲添加歌单", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        antd.Button,
+        {
+          type: "primary",
+          icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.PlusOutlined, {}),
+          onClick: handleAddToPlayList,
+          className: styles$2["button"]
+        }
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "testModal", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        antd.Button,
+        {
+          type: "primary",
+          icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.InfoCircleOutlined, {}),
+          onClick: handleTestModal,
+          className: styles$2["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(QuickUpload$1, { ref: quickUploadRef }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(MatchCorrect, { ref: matchCorrectRef }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(AddToPlayList, { ref: addToPlayListRef }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(QualityUpgrade, { ref: qualityUpgradeRef }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(LocalUpload, { ref: localUploadRef }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(VipSongA, { ref: vipSongARef }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(VipSongB, { ref: vipSongBRef }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(CloudExport, { ref: cloudExportRef }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(TestModal, { ref: testModalRef })
     ] });
   };
   function App() {
