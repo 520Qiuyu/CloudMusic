@@ -1,3 +1,35 @@
+.songInfoColumn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .songCover {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  .songInfo {
+    flex: 1 1 0px;
+    overflow: hidden;
+    .songName {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 4px;
+      // 超出部分显示省略号
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    .songId {
+      font-size: 12px;
+      color: #999;
+    }
+  }
+}
+
 .footer {
   margin-top: 16px;
   display: flex;

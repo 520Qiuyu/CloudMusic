@@ -20,7 +20,7 @@ import styles from "../index.module.scss";
 import { useRef } from "react";
 import { getGUser } from "../../../utils";
 
-const PlayList = forwardRef((props, ref) => {
+const PlayList = (props, ref) => {
   const [visible, setVisible] = useState(false);
   const [mode, setMode] = useState("edit");
 
@@ -77,7 +77,7 @@ const PlayList = forwardRef((props, ref) => {
       const res = await getPlaylistList(user.userId);
       console.log("res", res);
       if (res.code === 200) {
-        setPlayList(res.playlist || []);
+        setPlayList((list) => [...list, ...res.playlist]);
       }
     } catch (error) {
       console.log("error", error);
@@ -171,7 +171,12 @@ const PlayList = forwardRef((props, ref) => {
   const rowSelection = {
     type: isSelect ? "radio" : "checkbox",
     selectedRowKeys: selectedRows.map((item) => item.id),
-    onChange: (selectedRowKeys, selectedRows) => {
+    onSelectAll: () => {
+      setTimeout(() => {
+        setSelectedRows(playList);
+      }, 0);
+    },
+    onChange: (_, selectedRows) => {
       setSelectedRows(selectedRows);
     },
   };
@@ -217,8 +222,10 @@ const PlayList = forwardRef((props, ref) => {
       return;
     }
     try {
-      const names = selectedRows.map((item) => item.name).join(",");
-      await confirm(`歌单名称:${names}`, "确定要删除这些歌单吗？");
+      await confirm(
+        <DeleteConfirmContent playlists={selectedRows} />,
+        "删除歌单"
+      );
       const proArr = selectedRows.map((item) => deletePlaylist(item.id));
       const res = await Promise.all(proArr);
       console.log("res", res);
@@ -300,8 +307,42 @@ const PlayList = forwardRef((props, ref) => {
       </Modal>
     </>
   );
-});
+};
 
-PlayList.displayName = "PlayList";
+// 删除确认内容组件
+const DeleteConfirmContent = ({ playlists }) => {
+  return (
+    <div className={styles.autoAddContent}>
+      {/* 总计信息 */}
+      <div className={styles.statsWrapper}>
+        <div className={styles.title}>总计：</div>
+        <div className={styles.statsContent}>
+          <div>
+            <span className={styles.label}>删除数量：</span>
+            <span className={styles.value}>{playlists.length}</span>
+            <span className={styles.label}> 个歌单</span>
+          </div>
+        </div>
+      </div>
 
-export default PlayList;
+      {/* 歌单列表 */}
+      <div>
+        <div className={styles.listHeader}>
+          <div className={styles.title}>即将删除的歌单：</div>
+        </div>
+        <ul className={styles.listWrapper}>
+          {playlists.map((item) => (
+            <li key={item.id} className={styles.listItem}>
+              <span className={styles.itemName}>{item.name}</span>
+              {item.trackCount > 0 && (
+                <span className={styles.itemCount}>{item.trackCount}首</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default forwardRef(PlayList);

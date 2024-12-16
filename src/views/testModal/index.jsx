@@ -1,14 +1,15 @@
+import { Button, Form, Input, Modal, Space } from "antd";
 import React, { forwardRef, useImperativeHandle, useState } from "react";
-import { Button, Modal } from "antd";
-import { Form } from "antd";
-import { Input } from "antd";
 import {
   addSongToPlaylist,
   createPlaylist,
+  getAlbumSongList,
   getCloudData,
   getPlaylistList,
+  getSongUrl,
 } from "../../api";
-import { Space } from "antd";
+import { msgSuccess } from "../../utils/modal";
+import { aesDecrypt } from "../../utils/encrypt";
 
 const TestModal = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -80,6 +81,36 @@ const TestModal = forwardRef((props, ref) => {
     }
   };
 
+  // 歌曲id
+  const [songId, setSongId] = useState("2608471890");
+  // 获取歌曲URL
+  const handleGetSongUrl = async () => {
+    console.log("获取歌曲URL");
+    try {
+      const res = await getSongUrl([songId]);
+      console.log("res", res);
+      if (res.code === 200) {
+        const url = res.data[0].url;
+        await navigator.clipboard.writeText(url);
+        msgSuccess("获取成功,已复制到剪切板");
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  const [albumId, setAlbumId] = useState("242274622");
+  // 获取专辑歌曲列表
+  const handleGetAlbumSongList = async () => {
+    console.log("获取专辑歌曲列表");
+    try {
+      const res = await getAlbumSongList(albumId);
+      console.log("res", res);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
   return (
     <Modal
       title="测试Modal"
@@ -145,6 +176,32 @@ const TestModal = forwardRef((props, ref) => {
             />
             <Button type="primary" onClick={handleGetPlaylistList}>
               获取歌单列表
+            </Button>
+          </Space>
+        </Form.Item>
+        {/* 测试获取歌曲URL */}
+        <Form.Item label="获取歌曲URL">
+          <Space>
+            <Input
+              placeholder="请输入歌曲id"
+              value={songId}
+              onChange={(e) => setSongId(e.target.value)}
+            />
+            <Button type="primary" onClick={handleGetSongUrl}>
+              获取歌曲URL
+            </Button>
+          </Space>
+        </Form.Item>
+        {/* 测试获取专辑歌曲列表 */}
+        <Form.Item label="获取专辑歌曲列表">
+          <Space>
+            <Input
+              placeholder="请输入专辑id"
+              value={albumId}
+              onChange={(e) => setAlbumId(e.target.value)}
+            />
+            <Button type="primary" onClick={handleGetAlbumSongList}>
+              获取专辑歌曲列表
             </Button>
           </Space>
         </Form.Item>

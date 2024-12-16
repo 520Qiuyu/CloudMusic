@@ -84,6 +84,11 @@ const AddToPlayList = forwardRef((props, ref) => {
     getCheckboxProps: (record) => ({
       disabled: record.uploaded,
     }),
+    onSelectAll: () => {
+      setTimeout(() => {
+        setSelectedRows(filteredSongList);
+      }, 0);
+    },
     onChange: (selectedRowKeys, selectedRows) => {
       setSelectedRows(selectedRows);
     },
@@ -106,14 +111,15 @@ const AddToPlayList = forwardRef((props, ref) => {
       sorter: (a, b) => a.simpleSong.name?.localeCompare(b.simpleSong.name),
       sortDirections: ["ascend", "descend"],
       render: (record) => (
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        <div className={styles.songInfoColumn}>
           <img
             src={record.al.picUrl}
             alt={record.name}
-            style={{ width: "40px", height: "40px", borderRadius: "4px" }}
+            className={styles.songCover}
           />
-          <div>
-            <div>{record.name}</div>
+          <div className={styles.songInfo}>
+            <div className={styles.songName}>{record.name}</div>
+            <div className={styles.songId}>{record.id}</div>
           </div>
         </div>
       ),

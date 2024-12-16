@@ -4,7 +4,6 @@ import { getGUser } from "../utils";
 import { msgError } from "../utils/modal";
 import { weapiRequest } from "../utils/request";
 
-
 // 获取歌手列表
 export const getArtists = () =>
   fetch(`${BASE_CDN_URL}top.json`).then((res) => res.json());
@@ -183,7 +182,11 @@ export const getCloudData = (limit = 200, offset = 0) =>
   });
 
 // 获取歌单列表
-export const getPlaylistList = (uid = getGUser().userId, limit = 1001, offset = 0) =>
+export const getPlaylistList = (
+  uid = getGUser().userId,
+  limit = 1001,
+  offset = 0
+) =>
   weapiRequest("/api/user/playlist", {
     data: {
       limit,
@@ -212,8 +215,32 @@ export const deletePlaylist = (pid) =>
 export const addSongToPlaylist = (pid, trackIds) =>
   weapiRequest("/api/playlist/manipulate/tracks", {
     data: {
-      pid,            // 歌单id
-      trackIds,       // 歌曲 id 数组
-      op: "add",      // 操作类型
+      pid, // 歌单id
+      trackIds, // 歌曲 id 数组
+      op: "add", // 操作类型
     },
+  });
+
+// 获取专辑歌曲列表
+export const getAlbumSongList = (id) =>
+  weapiRequest(`/api/v1/album/${id}`, {
+    data: {},
+  });
+
+// 音质等级 Map
+const QUALITY_LEVEL_MAP = new Map([
+  ["standard", "标准"],
+  ["higher", "较高"],
+  ["exhigh", "极高"],
+  ["lossless", "无损"],
+  ["hires", "Hi-Res"],
+  ["jyeffect", "高清环绕声"],
+  ["sky", "沉浸环绕声"],
+  ["jymaster", "超清母带"],
+]);
+
+// 获取歌曲url
+export const getSongUrl = (ids, encodeType = "flac", level = "lossless") =>
+  weapiRequest("/api/song/enhance/player/url/v1", {
+    data: { ids, level, encodeType },
   });
