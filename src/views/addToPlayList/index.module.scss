@@ -166,3 +166,74 @@
     }
   }
 }
+
+// 删除确认对话框样式
+.deleteConfirmation {
+  font-size: 14px;
+
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+
+    .count {
+      color: #1890ff;
+    }
+  }
+
+  .songs {
+    max-height: 220px;
+    overflow-y: auto;
+    margin: 12px 0;
+    padding: 8px;
+    background: #f8f8f8;
+    border-radius: 6px;
+    border: 1px solid #e8e8e8;
+    line-height: 1.6;
+    color: #666;
+
+    .songItem {
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.3s;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  .warning {
+    background: #fff2f0;
+    border: 1px solid #ffccc7;
+    border-radius: 6px;
+    padding: 5px;
+    margin-top: 12px;
+
+    .text {
+      color: #ff4d4f;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon {
+      flex: 0 0 20px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 50%;
+      background: #ff4d4f;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+}

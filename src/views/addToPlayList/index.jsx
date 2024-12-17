@@ -10,6 +10,7 @@ import React, {
 import {
   addSongToPlaylist,
   createPlaylist,
+  deleteCloudSong,
   getCloudData,
   getPlaylistList,
 } from "../../api";
@@ -62,11 +63,13 @@ const AddToPlayList = forwardRef((props, ref) => {
     const filtered = songList.filter((song) => {
       const nameMatch =
         !name?.length ||
-        name.some((n) => song.name.toLowerCase().includes(n.toLowerCase()));
+        name.some((n) =>
+          song.simpleSong.name?.toLowerCase().includes(n.toLowerCase())
+        );
       const artistMatch =
         !artists?.length ||
         artists.some((a) =>
-          song.artists.toLowerCase().includes(a.toLowerCase())
+          song.simpleSong.artists?.toLowerCase().includes(a.toLowerCase())
         );
       const albumMatch =
         !album?.length ||
@@ -146,6 +149,7 @@ const AddToPlayList = forwardRef((props, ref) => {
       sorter: (a, b) =>
         a.simpleSong.al.name?.localeCompare(b.simpleSong.al.name),
       sortDirections: ["ascend", "descend"],
+      defaultSortOrder: "ascend",
       ellipsis: true,
       render: (record) => record.al.name,
     },
@@ -277,6 +281,28 @@ const AddToPlayList = forwardRef((props, ref) => {
     playListRef.current.open();
   };
 
+  const handleDeleteSong = async () => {
+    try {
+      const confirmContent = (
+        <DeleteConfirmation
+          selectedCount={selectedRows.length}
+          songNames={selectedRows.map((item) => item.simpleSong.name)}
+        />
+      );
+      await confirm(confirmContent, "删除确认");
+      const songIds = selectedRows.map((item) => item.songId);
+      const res = await deleteCloudSong(songIds);
+      console.log("res", res);
+      if (res.code === 200) {
+        msgSuccess("删除成功");
+        reset();
+        getCloudDataList();
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
   return (
     <Modal
       title="云盘歌曲添加歌单"
@@ -319,6 +345,15 @@ const AddToPlayList = forwardRef((props, ref) => {
             添加到歌单
           </Button>
           <Button onClick={handleCreatePlaylist}>新建歌单</Button>
+          {/* 删除歌曲  */}
+          <Button
+            type="primary"
+            danger
+            disabled={!selectedRows.length}
+            onClick={handleDeleteSong}
+          >
+            删除歌曲
+          </Button>
         </div>
       </div>
 
@@ -380,6 +415,30 @@ const AutoAddContent = ({ totalSongs, albums }) => {
             </li>
           ))}
         </ul>
+      </div>
+    </div>
+  );
+};
+
+// 删除确认组件
+const DeleteConfirmation = ({ selectedCount, songNames }) => {
+  return (
+    <div className={styles.deleteConfirmation}>
+      <p className={styles.title}>
+        您确定要删除以下 <span className={styles.count}>{selectedCount}</span> 首歌曲吗？
+      </p>
+      <div className={styles.songs}>
+        {songNames.map((name, index) => (
+          <div key={index} className={styles.songItem}>
+            {name}
+          </div>
+        ))}
+      </div>
+      <div className={styles.warning}>
+        <p className={styles.text}>
+          <span className={styles.icon}>!</span>
+          注意：此操作不可恢复，删除后歌曲将从您的网易云音乐云盘中永久移除。
+        </p>
       </div>
     </div>
   );

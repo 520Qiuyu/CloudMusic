@@ -1,4 +1,4 @@
-import { BASE_CDN_URL } from "../constant";
+import { BASE_CDN_URL, QUALITY_LEVELS } from "../constant";
 import { chunkArray } from "../utils";
 import { getGUser } from "../utils";
 import { msgError } from "../utils/modal";
@@ -8,7 +8,7 @@ import { weapiRequest } from "../utils/request";
 export const getArtists = () =>
   fetch(`${BASE_CDN_URL}top.json`).then((res) => res.json());
 
-// 获取资源配置
+// 获取资源配置 对应歌手的资源
 export const getCDNConfig = (artistId) =>
   fetch(`${BASE_CDN_URL}${artistId}.json`).then((res) => res.json());
 
@@ -181,6 +181,14 @@ export const getCloudData = (limit = 200, offset = 0) =>
     },
   });
 
+// 删除云盘歌曲
+export const deleteCloudSong = (songIds) =>
+  weapiRequest("/api/cloud/del", {
+    data: {
+      songIds,
+    },
+  });
+
 // 获取歌单列表
 export const getPlaylistList = (
   uid = getGUser().userId,
@@ -227,20 +235,43 @@ export const getAlbumSongList = (id) =>
     data: {},
   });
 
-// 音质等级 Map
-const QUALITY_LEVEL_MAP = new Map([
-  ["standard", "标准"],
-  ["higher", "较高"],
-  ["exhigh", "极高"],
-  ["lossless", "无损"],
-  ["hires", "Hi-Res"],
-  ["jyeffect", "高清环绕声"],
-  ["sky", "沉浸环绕声"],
-  ["jymaster", "超清母带"],
-]);
-
 // 获取歌曲url
-export const getSongUrl = (ids, encodeType = "flac", level = "lossless") =>
+export const getSongUrl = (
+  ids,
+  encodeType = "flac",
+  level = QUALITY_LEVELS.无损
+) =>
   weapiRequest("/api/song/enhance/player/url/v1", {
     data: { ids, level, encodeType },
   });
+
+// 获取歌手热门歌曲
+export const getArtistTopSongList = (id) =>
+  weapiRequest("/api/artist/top/song", {
+    data: {
+      id,
+      limit: 1000,
+      offset: 0,
+    },
+  });
+
+// 获取歌手专辑
+export const getArtistAlbumList = async (id, limit = 1000, offset = 0) => {
+  const res = await fetch(
+    `/artist/album?id=${id}&limit=${limit}&offset=${offset}`
+  );
+  console.log("res", res);
+  const html = await res.text();
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, "text/html");
+  const albumList = Array.from(doc.querySelectorAll("#m-song-module li"));
+  return albumList.map((item) => {
+    const cover = item.querySelector("img").getAttribute("src");
+    const id = item
+      .querySelector('a[title="播放"]')
+      .getAttribute("data-res-id");
+    const name = item.querySelector("p.dec a.tit").textContent;
+    const time = item.querySelector("span.s-fc3").textContent;
+    return { cover, id, name, time };
+  });
+};
