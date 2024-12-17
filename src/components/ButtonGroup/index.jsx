@@ -14,7 +14,6 @@ import {
 } from "@ant-design/icons";
 import styles from "./index.module.scss";
 import QuickUpload from "../../views/quickUpload";
-import MatchCorrect from "../../views/addToPlayList";
 import QualityUpgrade from "../../views/qualityUpgrade";
 import LocalUpload from "../../views/localUpload";
 import VipSongA from "../../views/vipSongA";
@@ -22,7 +21,7 @@ import VipSongB from "../../views/vipSongB";
 import CloudExport from "../../views/cloudExport";
 import CloudImport from "../../views/cloudImport";
 import TestModal from "../../views/testModal";
-import AddToPlayList from "../../views/addToPlayList";
+import CloudMusicManager from "../../views/cloudMusicManager";
 
 const ButtonGroup = () => {
   // 云盘快速上传
@@ -31,10 +30,10 @@ const ButtonGroup = () => {
     quickUploadRef.current.open();
   };
 
-  // 云盘歌曲添加歌单
-  const addToPlayListRef = useRef(null);
-  const handleAddToPlayList = () => {
-    addToPlayListRef.current.open();
+  // 云盘歌曲管理
+  const cloudMusicManagerRef = useRef(null);
+  const handleCloudMusicManager = () => {
+    cloudMusicManagerRef.current.open();
   };
 
   // 云盘音质提升
@@ -91,12 +90,12 @@ const ButtonGroup = () => {
         />
       </Tooltip>
 
-      {/* 云盘歌曲添加歌单 */}
-      <Tooltip title={"云盘歌曲添加歌单"} placement="left">
+      {/* 云盘歌曲管理 */}
+      <Tooltip title={"云盘歌曲管理"} placement="left">
         <Button
           type="primary"
-          icon={<PlusOutlined />}
-          onClick={handleAddToPlayList}
+          icon={<CustomerServiceOutlined />}
+          onClick={handleCloudMusicManager}
           className={styles["button"]}
         />
       </Tooltip>
@@ -183,7 +182,7 @@ const ButtonGroup = () => {
 
       {/* 弹窗组件 */}
       <QuickUpload ref={quickUploadRef} />
-      <AddToPlayList ref={addToPlayListRef} />
+      <CloudMusicManager ref={cloudMusicManagerRef} />
       <QualityUpgrade ref={qualityUpgradeRef} />
       <LocalUpload ref={localUploadRef} />
       <VipSongA ref={vipSongARef} />

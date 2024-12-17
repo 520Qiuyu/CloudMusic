@@ -6,6 +6,7 @@ import {
   deleteCloudSong,
   getAlbumSongList,
   getArtistAlbumList,
+  getArtistAllSongList,
   getArtistTopSongList,
   getCloudData,
   getPlaylistList,
@@ -145,6 +146,16 @@ const TestModal = forwardRef((props, ref) => {
       console.log("error", error);
     }
   };
+  // 获取歌手全部歌曲
+  const handleGetArtistAllSongList = async () => {
+    console.log("获取歌手全部歌曲");
+    try {
+      const res = await getArtistAllSongList(artistId);
+      console.log("res", res);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
 
   //
 
@@ -258,6 +269,9 @@ const TestModal = forwardRef((props, ref) => {
             </Button>
             <Button type="primary" onClick={handleGetArtistAlbum}>
               获取歌手专辑
+            </Button>
+            <Button type="primary" onClick={handleGetArtistAllSongList}>
+              获取歌手全部歌曲
             </Button>
           </Space>
         </Form.Item>

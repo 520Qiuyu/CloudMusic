@@ -68,8 +68,8 @@ export const uploadSong = async (song) => {
       throw new Error(res.message || res.msg || "资源检查失败");
     }
     const cloudId = res.data[0].songId;
-    // 2、判断状态，有两种上传方式
-    // 2.1 未上传
+    // 2、判断状态， upload 0:文件可导入,1:文件已在云盘,2:不能导入
+    // 2.1 已在云盘 直接通过云盘id导入
     if (res.data[0].upload == 1) {
       // 导入
       const importRes = await weapiRequest("/api/cloud/user/song/import", {
@@ -101,7 +101,7 @@ export const uploadSong = async (song) => {
         data: { song },
       };
     }
-    // 2.2 已上传
+    // 2.2 可导入
     else {
       // 获取令牌
       const tokenRes = await weapiRequest("/api/nos/token/alloc", {
@@ -251,6 +251,19 @@ export const getArtistTopSongList = (id) =>
     data: {
       id,
       limit: 1000,
+      offset: 0,
+    },
+  });
+
+// 获取歌手全部歌曲 失效
+export const getArtistAllSongList = (id) =>
+  weapiRequest("/api/v1/artist/songs", {
+    data: {
+      id,
+      private_cloud: "true",
+      work_type: 1,
+      order: "hot", //hot,time
+      limit: 10000,
       offset: 0,
     },
   });

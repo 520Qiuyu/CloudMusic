@@ -21,7 +21,7 @@ import Stats from "./components/Stats";
 import styles from "./index.module.scss";
 import { sleep, truncateString } from "../../utils";
 
-const AddToPlayList = forwardRef((props, ref) => {
+const CloudMusicManager = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
   const open = () => setVisible(true);
   const close = () => setVisible(false);
@@ -305,7 +305,7 @@ const AddToPlayList = forwardRef((props, ref) => {
 
   return (
     <Modal
-      title="云盘歌曲添加歌单"
+      title="云盘音乐管理"
       open={visible}
       onCancel={close}
       footer={null}
@@ -444,4 +444,4 @@ const DeleteConfirmation = ({ selectedCount, songNames }) => {
   );
 };
 
-export default AddToPlayList;
+export default CloudMusicManager;
