@@ -162,8 +162,14 @@ const TestModal = forwardRef((props, ref) => {
   const handleQrLogin = async () => {
     console.log("二维码登录");
     try {
-      const res = await qrLogin();
-      console.log("res", res);
+      const { qrcode, key } = await qrLogin();
+      // 显示二维码
+      const qrImg = document.createElement("img");
+      qrImg.src = qrcode;
+      qrImg.style.width = "200px";
+      qrImg.style.height = "200px";
+      document.getElementById("qrcode-container").innerHTML = "";
+      document.getElementById("qrcode-container").appendChild(qrImg);
     } catch (error) {
       console.log("error", error);
     }
@@ -288,7 +294,7 @@ const TestModal = forwardRef((props, ref) => {
       </Form>
       {/* 测试二维码登录 */}
       <Form.Item label="二维码登录">
-        
+        <div id="qrcode-container"></div>
         <Button type="primary" onClick={handleQrLogin}>
           二维码登录
         </Button>
