@@ -4,6 +4,50 @@ import { getGUser } from "../utils";
 import { msgError } from "../utils/modal";
 import { weapiRequest } from "../utils/request";
 
+// 二维码登录
+export const qrLogin = async () => {
+  try {
+    // 1、获取key
+    const keyRes = await weapiRequest("/api/login/qrcode/unikey", {
+      data: {
+        noCheckToken: true,
+        type: 1,
+      },
+    });
+    console.log("keyRes", keyRes);
+    if (keyRes.code != 200) {
+      msgError("获取key失败");
+      throw new Error(keyRes.message || keyRes.msg || "获取key失败");
+    }
+    const key = keyRes.unikey;
+    // 2、获取二维码
+    const qrRes = await fetch(`/login/qr/create?key=${key}&qrimg=true`).then(
+      (res) => res.text()
+    );
+    console.log("qrRes", qrRes);
+
+    /* if (qrRes.code != 200) {
+      msgError("获取二维码失败");
+      throw new Error(qrRes.message || qrRes.msg || "获取二维码失败");
+    }
+    // 3、获取二维码状态
+    const qrStatusRes = await weapiRequest("/api/login/qr/check", {
+      data: {
+        key,
+      },
+    });
+    console.log("qrStatusRes", qrStatusRes);
+    if (qrStatusRes.code != 200) {
+      msgError("二维码状态获取失败");
+      throw new Error(
+        qrStatusRes.message || qrStatusRes.msg || "二维码状态获取失败"
+      );
+    } */
+  } catch (error) {
+    console.log("error", error);
+  }
+};
+
 // 获取歌手列表
 export const getArtists = () =>
   fetch(`${BASE_CDN_URL}top.json`).then((res) => res.json());

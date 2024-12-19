@@ -11,6 +11,7 @@ import {
   getCloudData,
   getPlaylistList,
   getSongUrl,
+  qrLogin,
 } from "../../api";
 import { msgSuccess } from "../../utils/modal";
 
@@ -157,7 +158,16 @@ const TestModal = forwardRef((props, ref) => {
     }
   };
 
-  //
+  // qr登录
+  const handleQrLogin = async () => {
+    console.log("二维码登录");
+    try {
+      const res = await qrLogin();
+      console.log("res", res);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
 
   return (
     <Modal
@@ -276,6 +286,13 @@ const TestModal = forwardRef((props, ref) => {
           </Space>
         </Form.Item>
       </Form>
+      {/* 测试二维码登录 */}
+      <Form.Item label="二维码登录">
+        
+        <Button type="primary" onClick={handleQrLogin}>
+          二维码登录
+        </Button>
+      </Form.Item>
     </Modal>
   );
 });
