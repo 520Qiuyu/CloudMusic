@@ -21,6 +21,10 @@ export default defineConfig({
           // "https://cdn.jsdelivr.net/npm/antd@5.22.4/dist/reset.min.css",
           "https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js",
         ],
+        connect: [
+          "music.163.com",
+          "interface.music.163.com",
+        ],
       },
       server: {
         open: false,

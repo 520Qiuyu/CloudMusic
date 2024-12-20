@@ -10,10 +10,13 @@ import {
   getArtistTopSongList,
   getCloudData,
   getPlaylistList,
+  getQrCode,
+  getQrKey,
+  getQrStatus,
   getSongUrl,
-  qrLogin,
 } from "../../api";
-import { msgSuccess } from "../../utils/modal";
+import { msgError, msgSuccess } from "../../utils/modal";
+import { sleep } from "../../utils";
 
 const TestModal = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -162,7 +165,11 @@ const TestModal = forwardRef((props, ref) => {
   const handleQrLogin = async () => {
     console.log("二维码登录");
     try {
-      const { qrcode, key } = await qrLogin();
+      const keyRes = await getQrKey();
+      if (keyRes.code !== 200) return msgError("获取二维码key失败");
+      const key = keyRes.unikey;
+      console.log("key", key);
+      const qrcode = await getQrCode(key);
       // 显示二维码
       const qrImg = document.createElement("img");
       qrImg.src = qrcode;
@@ -170,6 +177,27 @@ const TestModal = forwardRef((props, ref) => {
       qrImg.style.height = "200px";
       document.getElementById("qrcode-container").innerHTML = "";
       document.getElementById("qrcode-container").appendChild(qrImg);
+      // 检车二维码状态 2分钟
+      const timeOutTime = Date.now() + 2 * 60 * 1000;
+      while (Date.now() < timeOutTime) {
+        const qrStatusRes = await getQrStatus(key);
+        console.log("qrStatus", qrStatusRes);
+        // 801:等待扫码 802:授权中 803:授权成功 800:不存在或失效
+        const { code } = qrStatusRes.response;
+        if (code === 801) {
+          console.log("等待扫码");
+        } else if (code === 802) {
+          console.log("授权中");
+        } else if (code === 803) {
+          console.log("授权成功");
+          console.log("qrStatusRes", qrStatusRes);
+          break;
+        } else if (code === 800) {
+          console.log("不存在或失效");
+          break;
+        }
+        await sleep(1000);
+      }
     } catch (error) {
       console.log("error", error);
     }

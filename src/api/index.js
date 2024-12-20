@@ -2,66 +2,33 @@ import { BASE_CDN_URL, QUALITY_LEVELS } from "../constant";
 import { chunkArray, sleep } from "../utils";
 import { getGUser } from "../utils";
 import { msgError } from "../utils/modal";
-import { weapiRequest } from "../utils/request";
+import { weapiFetch, weapiRequest } from "../utils/request";
 import { generateQRCode } from "../utils/qrcode";
 
-// 二维码登录
-export const qrLogin = async () => {
-  try {
-    // 1、获取key
-    const keyRes = await weapiRequest("/api/login/qrcode/unikey", {
-      data: {
-        noCheckToken: 1,
-        type: 1,
-      },
-    });
-    console.log("keyRes", keyRes);
-    if (keyRes.code != 200) {
-      msgError("获取key失败");
-      throw new Error(keyRes.message || keyRes.msg || "获取key失败");
-    }
-    const key = keyRes.unikey;
-    // 2、生成登录链接
-    const loginUrl = `https://music.163.com/login?codekey=${key}`;
-    console.log("loginUrl", loginUrl);
-    // 用这个链接创建二维码
-    const qrcode = await generateQRCode(loginUrl);
-    // 然后显示出来
-    return { qrcode, key };
-    // 3、检查扫描状态 两分钟，一秒一次
-    const endTime = Date.now() + 120000;
-    while (Date.now() < endTime) {
-      const qrStatusRes = await weapiRequest("/api/login/qrcode/client/login", {
-        data: {
-          key,
-          type: 3,
-        },
-      });
-      console.log("qrStatusRes", qrStatusRes);
-      await sleep(1000);
-    }
+// 获取登录二维码KEY
+export const getQrKey = () =>
+  weapiRequest("/api/login/qrcode/unikey", {
+    data: {
+      noCheckToken: 1,
+      type: 1,
+    },
+  });
 
-    /* if (qrRes.code != 200) {
-      msgError("获取二维码失败");
-      throw new Error(qrRes.message || qrRes.msg || "获取二维码失败");
-    }
-    // 3、获取二维码状态
-    const qrStatusRes = await weapiRequest("/api/login/qr/check", {
-      data: {
-        key,
-      },
-    });
-    console.log("qrStatusRes", qrStatusRes);
-    if (qrStatusRes.code != 200) {
-      msgError("二维码状态获取失败");
-      throw new Error(
-        qrStatusRes.message || qrStatusRes.msg || "二维码状态获取失败"
-      );
-    } */
-  } catch (error) {
-    console.log("error", error);
-  }
+// 获取登录二维码
+export const getQrCode = (key) => {
+  const loginUrl = `https://music.163.com/login?codekey=${key}`;
+  return generateQRCode(loginUrl);
 };
+
+// 获取登录二维码状态
+export const getQrStatus = (key) =>
+  weapiFetch("/api/login/qrcode/client/login", {
+    data: {
+      key,
+      type: 1,
+    },
+    originResponse: true,
+  });
 
 // 获取歌手列表
 export const getArtists = () =>
