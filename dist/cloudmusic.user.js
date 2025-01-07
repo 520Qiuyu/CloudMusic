@@ -4266,7 +4266,8 @@
     }, [visible]);
     const [filteredSongList, setFilteredSongList] = require$$0.useState([]);
     const handleSearch = (values) => {
-      const { name: name2, artists, album } = values;
+      console.log("values", values);
+      const { name: name2, artist: artist2, album } = values;
       const filtered = songList2.filter((song2) => {
         const nameMatch = !(name2 == null ? void 0 : name2.length) || name2.some(
           (n2) => {
@@ -4274,21 +4275,32 @@
             return (_a = song2.simpleSong.name) == null ? void 0 : _a.toLowerCase().includes(n2.toLowerCase());
           }
         );
-        const artistMatch = !(artists == null ? void 0 : artists.length) || artists.some(
-          (a) => {
-            var _a;
-            return (_a = song2.simpleSong.artists) == null ? void 0 : _a.toLowerCase().includes(a.toLowerCase());
-          }
+        const artistMatch = !(artist2 == null ? void 0 : artist2.length) || artist2.some(
+          (a) => song2.artist.toLowerCase().includes(a.toLowerCase())
         );
         const albumMatch = !(album == null ? void 0 : album.length) || album.some((a) => song2.album.toLowerCase().includes(a.toLowerCase()));
-        return nameMatch && artistMatch && albumMatch;
+        const legacy = song2.simpleSong.al && song2.simpleSong.ar;
+        const match = nameMatch && artistMatch && albumMatch && legacy;
+        if (!match) {
+          console.log("song", song2);
+          console.log("nameMatch", nameMatch);
+          console.log("artistMatch", artistMatch);
+          console.log("albumMatch", albumMatch);
+          console.log("legacy", legacy);
+        }
+        return match;
       });
       setFilteredSongList(filtered);
     };
     const [selectedRows, setSelectedRows] = require$$0.useState([]);
+    const selectedRowKeys = require$$0.useMemo(
+      () => selectedRows.map((item) => item.songId),
+      [selectedRows]
+    );
     const rowSelection = {
       type: "checkbox",
       fixed: true,
+      selectedRowKeys,
       getCheckboxProps: (record) => ({
         disabled: record.uploaded
       }),
@@ -4297,7 +4309,7 @@
           setSelectedRows(filteredSongList);
         }, 0);
       },
-      onChange: (selectedRowKeys, selectedRows2) => {
+      onChange: (selectedRowKeys2, selectedRows2) => {
         setSelectedRows(selectedRows2);
       }
     };
@@ -4321,20 +4333,23 @@
           return (_a = a.simpleSong.name) == null ? void 0 : _a.localeCompare(b.simpleSong.name);
         },
         sortDirections: ["ascend", "descend"],
-        render: (record) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.songInfoColumn, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "img",
-            {
-              src: record.al.picUrl,
-              alt: record.name,
-              className: styles.songCover
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.songInfo, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.songName, children: record.name }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.songId, children: record.id })
-          ] })
-        ] })
+        render: (record) => {
+          var _a;
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.songInfoColumn, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "img",
+              {
+                src: (_a = record.al) == null ? void 0 : _a.picUrl,
+                alt: record.name,
+                className: styles.songCover
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.songInfo, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.songName, children: record.name }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles.songId, children: record.id })
+            ] })
+          ] });
+        }
       },
       {
         title: "歌手",
@@ -4342,13 +4357,17 @@
         key: "artists",
         width: 200,
         sorter: (a, b) => {
-          const aArtists = a.simpleSong.ar.map((a2) => a2.name).join(",");
-          const bArtists = b.simpleSong.ar.map((a2) => a2.name).join(",");
+          var _a, _b;
+          const aArtists = (_a = a.simpleSong.ar) == null ? void 0 : _a.map((a2) => a2.name).join(",");
+          const bArtists = (_b = b.simpleSong.ar) == null ? void 0 : _b.map((a2) => a2.name).join(",");
           return aArtists == null ? void 0 : aArtists.localeCompare(bArtists);
         },
         sortDirections: ["ascend", "descend"],
         ellipsis: true,
-        render: (record) => record.ar.map((a) => a.name).join(",")
+        render: (record) => {
+          var _a;
+          return (_a = record.ar) == null ? void 0 : _a.map((a) => a.name).join(",");
+        }
       },
       {
         title: "专辑",
@@ -4356,13 +4375,16 @@
         key: "album",
         width: 300,
         sorter: (a, b) => {
-          var _a;
-          return (_a = a.simpleSong.al.name) == null ? void 0 : _a.localeCompare(b.simpleSong.al.name);
+          var _a, _b, _c;
+          return (_c = (_a = a.simpleSong.al) == null ? void 0 : _a.name) == null ? void 0 : _c.localeCompare((_b = b.simpleSong.al) == null ? void 0 : _b.name);
         },
         sortDirections: ["ascend", "descend"],
         defaultSortOrder: "ascend",
         ellipsis: true,
-        render: (record) => record.al.name
+        render: (record) => {
+          var _a;
+          return (_a = record.al) == null ? void 0 : _a.name;
+        }
       },
       {
         title: "大小",
@@ -4403,9 +4425,9 @@
         console.log("自动按专辑添加");
         const albumMap = /* @__PURE__ */ new Map();
         filteredSongList.forEach((song2) => {
-          var _a2;
+          var _a2, _b, _c;
           const { simpleSong } = song2;
-          const album = `${((_a2 = simpleSong.ar[0]) == null ? void 0 : _a2.name) || ""}-${simpleSong.al.name}`;
+          const album = `${((_b = (_a2 = simpleSong.ar) == null ? void 0 : _a2[0]) == null ? void 0 : _b.name) || ""}-${(_c = simpleSong.al) == null ? void 0 : _c.name}`;
           if (!albumMap.has(album)) {
             albumMap.set(album, []);
           }
@@ -4538,6 +4560,7 @@
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles.actions, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { onClick: () => setSelectedRows(filteredSongList), children: "全部选择" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 antd.Button,
                 {
