@@ -4,6 +4,7 @@ import React, {
   forwardRef,
   useEffect,
   useImperativeHandle,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -14,12 +15,12 @@ import {
   getCloudData,
   getPlaylistList,
 } from "../../api";
+import { sleep, truncateString } from "../../utils";
 import { confirm, msgError, msgSuccess } from "../../utils/modal";
 import PlayList from "./components/PlayList";
 import SearchForm from "./components/SearchForm";
 import Stats from "./components/Stats";
 import styles from "./index.module.scss";
-import { sleep, truncateString } from "../../utils";
 
 const CloudMusicManager = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -59,7 +60,8 @@ const CloudMusicManager = forwardRef((props, ref) => {
   // 筛选后的歌曲列表
   const [filteredSongList, setFilteredSongList] = useState([]);
   const handleSearch = (values) => {
-    const { name, artists, album } = values;
+    console.log("values", values);
+    const { name, artist, album } = values;
     const filtered = songList.filter((song) => {
       const nameMatch =
         !name?.length ||
@@ -67,23 +69,37 @@ const CloudMusicManager = forwardRef((props, ref) => {
           song.simpleSong.name?.toLowerCase().includes(n.toLowerCase())
         );
       const artistMatch =
-        !artists?.length ||
-        artists.some((a) =>
-          song.simpleSong.artists?.toLowerCase().includes(a.toLowerCase())
+        !artist?.length ||
+        artist.some((a) =>
+          song.artist.toLowerCase().includes(a.toLowerCase())
         );
       const albumMatch =
         !album?.length ||
         album.some((a) => song.album.toLowerCase().includes(a.toLowerCase()));
-      return nameMatch && artistMatch && albumMatch;
+      const legacy = song.simpleSong.al && song.simpleSong.ar;
+      const match = nameMatch && artistMatch && albumMatch && legacy;
+      if (!match) {
+        console.log('song',song)
+        console.log("nameMatch", nameMatch);
+        console.log("artistMatch", artistMatch);
+        console.log("albumMatch", albumMatch);
+        console.log("legacy", legacy);
+      }
+      return match;
     });
     setFilteredSongList(filtered);
   };
 
   /** 选择 */
   const [selectedRows, setSelectedRows] = useState([]);
+  const selectedRowKeys = useMemo(
+    () => selectedRows.map((item) => item.songId),
+    [selectedRows]
+  );
   const rowSelection = {
     type: "checkbox",
     fixed: true,
+    selectedRowKeys,
     getCheckboxProps: (record) => ({
       disabled: record.uploaded,
     }),
@@ -116,7 +132,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       render: (record) => (
         <div className={styles.songInfoColumn}>
           <img
-            src={record.al.picUrl}
+            src={record.al?.picUrl}
             alt={record.name}
             className={styles.songCover}
           />
@@ -133,13 +149,13 @@ const CloudMusicManager = forwardRef((props, ref) => {
       key: "artists",
       width: 200,
       sorter: (a, b) => {
-        const aArtists = a.simpleSong.ar.map((a) => a.name).join(",");
-        const bArtists = b.simpleSong.ar.map((a) => a.name).join(",");
+        const aArtists = a.simpleSong.ar?.map((a) => a.name).join(",");
+        const bArtists = b.simpleSong.ar?.map((a) => a.name).join(",");
         return aArtists?.localeCompare(bArtists);
       },
       sortDirections: ["ascend", "descend"],
       ellipsis: true,
-      render: (record) => record.ar.map((a) => a.name).join(","),
+      render: (record) => record.ar?.map((a) => a.name).join(","),
     },
     {
       title: "专辑",
@@ -147,11 +163,11 @@ const CloudMusicManager = forwardRef((props, ref) => {
       key: "album",
       width: 300,
       sorter: (a, b) =>
-        a.simpleSong.al.name?.localeCompare(b.simpleSong.al.name),
+        a.simpleSong.al?.name?.localeCompare(b.simpleSong.al?.name),
       sortDirections: ["ascend", "descend"],
       defaultSortOrder: "ascend",
       ellipsis: true,
-      render: (record) => record.al.name,
+      render: (record) => record.al?.name,
     },
     {
       title: "大小",
@@ -192,7 +208,9 @@ const CloudMusicManager = forwardRef((props, ref) => {
       const albumMap = new Map();
       filteredSongList.forEach((song) => {
         const { simpleSong } = song;
-        const album = `${simpleSong.ar[0]?.name || ""}-${simpleSong.al.name}`;
+        const album = `${simpleSong.ar?.[0]?.name || ""}-${
+          simpleSong.al?.name
+        }`;
         if (!albumMap.has(album)) {
           albumMap.set(album, []);
         }
@@ -329,6 +347,9 @@ const CloudMusicManager = forwardRef((props, ref) => {
           filteredSongList={filteredSongList}
         />
         <div className={styles.actions}>
+          <Button onClick={() => setSelectedRows(filteredSongList)}>
+            全部选择
+          </Button>
           {/* 自动按专辑添加 */}
           <Button
             type="primary"
