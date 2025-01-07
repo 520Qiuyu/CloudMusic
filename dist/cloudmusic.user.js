@@ -7,7 +7,7 @@
 // @icon         https://vitejs.dev/logo.svg
 // @homepage     https://github.com/520Qiuyu/CloudMusic
 // @homepageURL  https://github.com/520Qiuyu/CloudMusic
-// @match        https://music.163.com/*
+// @match        https://music.163.com/**/*
 // @require      https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js
 // @require      https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js
 // @require      https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js
