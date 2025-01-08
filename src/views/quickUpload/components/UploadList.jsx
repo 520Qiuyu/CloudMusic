@@ -230,6 +230,7 @@ export default function UploadList({ singerList }) {
       width: 160,
       sorter: (a, b) => a.album?.localeCompare(b.album),
       sortDirections: ["ascend", "descend"],
+      defaultSortOrder: "descend",
       ellipsis: true,
     },
     {
