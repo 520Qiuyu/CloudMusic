@@ -3098,6 +3098,7 @@
           return (_a = a.album) == null ? void 0 : _a.localeCompare(b.album);
         },
         sortDirections: ["ascend", "descend"],
+        defaultSortOrder: "descend",
         ellipsis: true
       },
       {
