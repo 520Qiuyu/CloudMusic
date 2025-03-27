@@ -8,9 +8,15 @@ dependencies:
   '@ant-design/icons':
     specifier: ^5.5.2
     version: 5.5.2(react-dom@18.3.1)(react@18.3.1)
+  '@unlock-music/crypto':
+    specifier: ^0.1.6
+    version: 0.1.6
   antd:
     specifier: ^5.22.4
     version: 5.22.4(react-dom@18.3.1)(react@18.3.1)
+  nanoid:
+    specifier: ^5.1.5
+    version: 5.1.5
   node-forge:
     specifier: ^1.3.1
     version: 1.3.1
@@ -1079,6 +1085,10 @@ packages:
       csstype: 3.1.3
     dev: true
 
+  /@unlock-music/crypto@0.1.6:
+    resolution: {integrity: sha512-dFIL+25H0lrloGYZzm2ICNar0oGPCzwHDosK54au3rdbFI4XpD0wizOLs9K+huqspnnsXAxeaOQkamtd27fI2Q==, tarball: https://git.unlock-music.dev/api/packages/um/npm/%40unlock-music%2Fcrypto/-/0.1.6/crypto-0.1.6.tgz}
+    dev: false
+
   /@vitejs/plugin-react@4.3.4(vite@5.4.11):
     resolution: {integrity: sha512-SCCPBJtYLdE8PX/7ZQAs1QAZ8Jqwih+0VBLum1EGqmCCQal+MIUqLCzj3ZUy8ufbC0cAM4LRlSTm7IQJwWT4ug==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -1746,6 +1756,12 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /nanoid@5.1.5:
+    resolution: {integrity: sha512-Ir/+ZpE9fDsNH0hQ3C68uyThDXzYcim2EqcZ8zn8Chtt1iylPT9xXJB0kPCnqzgcEGikO9RxSrh63MsmVCU7Fw==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    dev: false
 
   /node-addon-api@7.1.1:
     resolution: {integrity: sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==}

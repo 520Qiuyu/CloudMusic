@@ -11,6 +11,7 @@ import {
   ExportOutlined,
   InfoCircleOutlined,
   PlusOutlined,
+  UnlockOutlined,
 } from "@ant-design/icons";
 import styles from "./index.module.scss";
 import QuickUpload from "../../views/quickUpload";
@@ -22,6 +23,7 @@ import CloudExport from "../../views/cloudExport";
 import CloudImport from "../../views/cloudImport";
 import TestModal from "../../views/testModal";
 import CloudMusicManager from "../../views/cloudMusicManager";
+import UnlockMusic from "../../views/unlockMusic";
 
 const ButtonGroup = () => {
   // 云盘快速上传
@@ -46,6 +48,12 @@ const ButtonGroup = () => {
   const localUploadRef = useRef(null);
   const handleLocalUpload = () => {
     localUploadRef.current.open();
+  };
+
+  // 加密音乐解锁
+  const unlockMusicRef = useRef(null);
+  const handleUnlockMusic = () => {
+    unlockMusicRef.current.open();
   };
 
   // 网页VIP歌曲A
@@ -81,7 +89,10 @@ const ButtonGroup = () => {
   return (
     <div className={styles["button-group"]}>
       {/* 云盘快速上传 */}
-      <Tooltip title={"云盘快速上传"} placement="left">
+      <Tooltip
+        title={"云盘快速上传"}
+        placement="left"
+      >
         <Button
           type="primary"
           icon={<CloudUploadOutlined />}
@@ -91,7 +102,10 @@ const ButtonGroup = () => {
       </Tooltip>
 
       {/* 云盘歌曲管理 */}
-      <Tooltip title={"云盘歌曲管理"} placement="left">
+      <Tooltip
+        title={"云盘歌曲管理"}
+        placement="left"
+      >
         <Button
           type="primary"
           icon={<CustomerServiceOutlined />}
@@ -121,7 +135,10 @@ const ButtonGroup = () => {
       </Tooltip> */}
 
       {/* 云盘本地上传 */}
-      {/* <Tooltip title={"云盘本地上传"} placement="left">
+      <Tooltip
+        title={"云盘本地上传"}
+        placement="left"
+      >
         <Button
           type="primary"
           icon={<UploadOutlined />}
@@ -129,7 +146,7 @@ const ButtonGroup = () => {
           className={styles["button"]}
         />
       </Tooltip>
- */}
+
       {/* 网页VIP歌曲A */}
       {/* <Tooltip title={"网页VIP歌曲A"} placement="left">
         <Button
@@ -170,8 +187,24 @@ const ButtonGroup = () => {
         />
       </Tooltip> */}
 
+      {/* 加密音乐解锁 */}
+      <Tooltip
+        title={"加密音乐解锁"}
+        placement="left"
+      >
+        <Button
+          type="primary"
+          icon={<UnlockOutlined />}
+          onClick={handleUnlockMusic}
+          className={styles["button"]}
+        />
+      </Tooltip>
+
       {/* testModal */}
-      <Tooltip title={"testModal"} placement="left">
+      <Tooltip
+        title={"testModal"}
+        placement="left"
+      >
         <Button
           type="primary"
           icon={<InfoCircleOutlined />}
@@ -189,7 +222,7 @@ const ButtonGroup = () => {
       <VipSongB ref={vipSongBRef} />
       <CloudExport ref={cloudExportRef} />
       <CloudImport ref={cloudImportRef} />
-
+      <UnlockMusic ref={unlockMusicRef} />
       {/* testModal */}
       <TestModal ref={testModalRef} />
     </div>

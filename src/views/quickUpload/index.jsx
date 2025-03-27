@@ -1,6 +1,6 @@
 import { Modal, Tabs } from "antd";
 import React, { forwardRef, useImperativeHandle, useState } from "react";
-import { getArtists } from "../../api";
+import { getArtists, getArtists2 } from "../../api";
 import SingerChoose from "./components/SingerChoose";
 import UploadList from "./components/UploadList";
 import styles from "./index.module.scss";
@@ -30,7 +30,12 @@ function QuickUpload(props, ref) {
     try {
       setLoading(true);
       const res = await getArtists();
-      setSingerList(res);
+      const res2 = await getArtists2();
+      console.log("res2", res2);
+      // 合并两个数组并按照id去重
+      const list = [...new Map([...res2, ...res].map(item => [item.id, item])).values()];
+      console.log('list',list)
+      setSingerList(list);
     } catch (error) {
       console.log("error", error);
     } finally {
@@ -40,7 +45,7 @@ function QuickUpload(props, ref) {
 
   // 已选择列表
   const [chooseList, setChooseList] = useState([]);
-  const handleChoose = (value) => {
+  const handleChoose = value => {
     console.log(value);
     setChooseList(value);
     setCurrentTab("2");
@@ -65,10 +70,13 @@ function QuickUpload(props, ref) {
         defaultActiveKey="1"
         activeKey={currentTab}
         className={styles["quick-upload-tabs"]}
-        onChange={(key) => setCurrentTab(key)}
+        onChange={key => setCurrentTab(key)}
       >
         {/* 歌手选择 */}
-        <TabPane tab="歌曲选择" key="1">
+        <TabPane
+          tab="歌曲选择"
+          key="1"
+        >
           <SingerChoose
             singerList={singerList}
             loading={loading}
@@ -76,7 +84,10 @@ function QuickUpload(props, ref) {
           />
         </TabPane>
         {/* 上传列表 */}
-        <TabPane tab="上传列表" key="2">
+        <TabPane
+          tab="上传列表"
+          key="2"
+        >
           <UploadList singerList={chooseList} />
         </TabPane>
       </Tabs>

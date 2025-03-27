@@ -1,0 +1,311 @@
+.quick-upload-tabs :global .ant-spin {
+  width: 100%;
+  height: 100%;
+}
+.quick-upload-tabs :global .ant-modal-footer .ant-btn-default {
+  border-color: #d9d9d9;
+  color: #333;
+}
+.quick-upload-tabs :global .ant-modal-footer .ant-btn-default:hover {
+  border-color: #c20c0c;
+  color: #c20c0c;
+}
+.quick-upload-tabs :global .ant-modal-footer .ant-btn-primary {
+  background: #c20c0c;
+  border-color: #c20c0c;
+}
+.quick-upload-tabs :global .ant-modal-footer .ant-btn-primary:hover {
+  background: #a40a0a;
+  border-color: #a40a0a;
+}
+.quick-upload-tabs .select {
+  width: 100%;
+}
+.quick-upload-tabs .option-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+  width: 100%;
+}
+.quick-upload-tabs .option-label .singer-name {
+  font-weight: 500;
+}
+.quick-upload-tabs .option-label .tag-group .tag:not(:last-child) {
+  margin-right: 8px;
+}
+
+.singer-choose .singer-choose-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+}
+.singer-choose .singer-choose-form .btn-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.upload-list :global .ant-table {
+  margin: 16px 0;
+}
+
+.upload-footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.upload-stats {
+  color: #666;
+  font-size: 13px;
+  margin-right: auto;
+}
+.upload-stats .size-text {
+  color: #999;
+}
+.upload-stats .divider {
+  margin: 0 8px;
+  color: #d9d9d9;
+}
+
+.upload-confirm {
+  padding: 16px 0;
+  font-size: 14px;
+}
+.upload-confirm .confirm-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.upload-confirm .confirm-item:last-child {
+  margin-bottom: 0;
+}
+.upload-confirm .confirm-item .label {
+  color: #666;
+  width: 80px;
+  flex-shrink: 0;
+}
+.upload-confirm .confirm-item .value {
+  color: #333;
+  font-weight: 500;
+}
+.upload-confirm .confirm-item .value .size {
+  margin-left: 4px;
+  color: #999;
+  font-weight: normal;
+}
+
+.upload-progress .progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+.upload-progress .progress-header .progress-info {
+  font-size: 14px;
+  color: #333;
+}
+.upload-progress .progress-header .percentage {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1890ff;
+}
+.upload-progress .progress-list {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0 4px;
+}
+.upload-progress .progress-list .progress-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.upload-progress .progress-list .progress-item:last-child {
+  border-bottom: none;
+}
+.upload-progress .progress-list .progress-item .song-info {
+  flex: 1;
+  min-width: 0;
+  padding-right: 16px;
+}
+.upload-progress .progress-list .progress-item .song-info .name {
+  font-size: 14px;
+  color: #333;
+}
+.upload-progress .progress-list .progress-item .song-info .artist {
+  font-size: 14px;
+  color: #666;
+  margin-left: 4px;
+}
+
+.uploadProgressModal :global .ant-modal-body {
+  padding: 24px;
+}
+.uploadProgressModal .progressContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.uploadProgressModal .progressInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.uploadProgressModal .progressInfo .percentage {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+.uploadProgressModal .progressInfo .detail {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+.uploadProgressModal .statsContainer {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 16px 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.uploadProgressModal .statsContainer .statsItem {
+  text-align: center;
+}
+.uploadProgressModal .statsContainer .statsItem .label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+.uploadProgressModal .statsContainer .statsItem .value :global(.ant-tag) {
+  margin: 0;
+  font-size: 14px;
+  padding: 4px 12px;
+}
+.uploadProgressModal .failedList {
+  width: 100%;
+}
+.uploadProgressModal .failedList .failedTitle {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.uploadProgressModal .failedList .failedItem {
+  padding: 8px 12px;
+  background: #fff1f0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.uploadProgressModal .failedList .failedItem .songName {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+.uploadProgressModal .failedList .failedItem .errorMsg {
+  font-size: 12px;
+  color: #ff4d4f;
+}
+
+.uploadModal :global .ant-modal-body {
+  padding: 24px;
+}
+
+.progressSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.progressInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.progressInfo .percentage {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+.progressInfo .count {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+.statsContainer .statsItem {
+  text-align: center;
+}
+.statsContainer .statsTag {
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+.songList {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.songList::-webkit-scrollbar {
+  width: 6px;
+}
+.songList::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 3px;
+}
+.songList::-webkit-scrollbar-thumb:hover {
+  background-color: #bfbfbf;
+}
+
+.songItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 4px;
+  background: #fafafa;
+}
+.songItem:not(:last-child) {
+  margin-bottom: 8px;
+}
+.songItem:hover {
+  background: #f5f5f5;
+}
+
+.songInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+.songInfo .songName {
+  font-weight: 500;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.songInfo .artistName {
+  color: #666;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}/*# sourceMappingURL=index.module.css.map */

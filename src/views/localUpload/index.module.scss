@@ -1,0 +1,71 @@
+.local-upload {
+  display: flex;
+  gap: 16px;
+  height: 500px;
+
+  .upload-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .dragger {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px dashed #d9d9d9;
+      border-radius: 8px;
+      background: #fafafa;
+      transition: border-color 0.3s;
+
+      &:hover {
+        border-color: #c20c0c;
+      }
+
+      .upload-icon {
+        font-size: 48px;
+        color: #999;
+      }
+
+      .upload-text {
+        margin-top: 16px;
+        color: #666;
+      }
+
+      .upload-hint {
+        margin-top: 8px;
+        color: #999;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .file-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    :global {
+      .ant-table {
+        flex: 1;
+      }
+    }
+  }
+
+  .upload-stats {
+    color: #666;
+    font-size: 13px;
+
+    .size-text {
+      color: #999;
+    }
+
+    .divider {
+      margin: 0 8px;
+      color: #d9d9d9;
+    }
+  }
+}

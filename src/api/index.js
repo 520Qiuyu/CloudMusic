@@ -33,6 +33,9 @@ export const getQrStatus = (key) =>
 // 获取歌手列表
 export const getArtists = () =>
   fetch(`${BASE_CDN_URL}top.json`).then((res) => res.json());
+// 获取歌手列表2
+export const getArtists2 = () =>
+  fetch(`${BASE_CDN_URL}summary.json`).then((res) => res.json());
 
 // 获取资源配置 对应歌手的资源
 export const getCDNConfig = (artistId) =>
