@@ -1,5 +1,5 @@
 import { BASE_CDN_URL, QUALITY_LEVELS } from "../constant";
-import { chunkArray, getFileMD5, sleep } from "../utils";
+import { chunkArray, getAudioMetadata, getFileMD5, sleep } from "../utils";
 import { getGUser } from "../utils";
 import { msgError } from "../utils/modal";
 import { weapiFetch, weapiRequest } from "../utils/request";
@@ -354,9 +354,7 @@ export const uploadLocalSong = async file => {
     const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
 
     // 3、获取上传信息
-    const metadata = await mm.parseBlob(file);
-    console.log("metadata", metadata);
-    const { album, artist, artists, title } = metadata.common || {};
+    const { album, artist, artists, title } = await getAudioMetadata(file);
     const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
       data: {
         md5: fileMd5,
@@ -399,3 +397,20 @@ export const uploadLocalSong = async file => {
 };
 
 // 本地歌曲匹配网易云歌曲信息
+export const matchLocalSong = async files => {
+  const songs = files.map(async file => {
+    const { title, album, artist, duration } = await getAudioMetadata(file);
+    const md5 = await getFileMD5(file);
+    return {
+      title,
+      album,
+      artist,
+      duration,
+      persistId: md5,
+    };
+  });
+
+  return weapiRequest("/api/search/match/new", {
+    data: songs,
+  });
+};

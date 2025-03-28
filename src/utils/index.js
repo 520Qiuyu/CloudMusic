@@ -2,13 +2,14 @@
 
 import md5 from "md5";
 import { unsafeWindow } from "vite-plugin-monkey/dist/client";
+import * as mm from "music-metadata";
 
 /**
  * 格式化文件大小
  * @param {number} size 文件大小(字节)
  * @returns {string} 格式化后的大小
  */
-export const formatFileSize = (size) => {
+export const formatFileSize = size => {
   if (!size || isNaN(size)) return "0 B";
   const units = ["B", "KB", "MB", "GB", "TB"];
   size = Math.abs(Number(size));
@@ -25,13 +26,11 @@ export const formatFileSize = (size) => {
  * @param {number} ms 毫秒数
  * @returns {string} 格式化后的时长(mm:ss)
  */
-export const formatDuration = (ms) => {
+export const formatDuration = ms => {
   const totalSeconds = Math.floor(ms / 1000);
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
-  return `${minutes.toString().padStart(2, "0")}:${seconds
-    .toString()
-    .padStart(2, "0")}`;
+  return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 };
 
 /**
@@ -39,7 +38,7 @@ export const formatDuration = (ms) => {
  * @param {string} level 音质等级
  * @returns {string} 音质描述
  */
-export const getQualityDesc = (level) => {
+export const getQualityDesc = level => {
   return QUALITY_LEVELS[level] || level;
 };
 
@@ -65,8 +64,8 @@ export function chunkArray(array, size) {
  * @param {Object} song 歌曲信息
  * @returns {string} 艺术家名称
  */
-export const getArtistTextInSongDetail = (song) => {
-  return song.ar ? song.ar.map((ar) => ar.name).join() : song.pc?.ar || "";
+export const getArtistTextInSongDetail = song => {
+  return song.ar ? song.ar.map(ar => ar.name).join() : song.pc?.ar || "";
 };
 
 /**
@@ -74,7 +73,7 @@ export const getArtistTextInSongDetail = (song) => {
  * @param {Object} song 歌曲信息
  * @returns {string} 专辑名称
  */
-export const getAlbumTextInSongDetail = (song) => {
+export const getAlbumTextInSongDetail = song => {
   return song.al ? song.al.name : song.pc?.alb || "";
 };
 
@@ -93,7 +92,7 @@ export const uniqueArrayByKey = (arr, key) => {
   if (!key) return arr;
 
   const seen = new Map();
-  return arr.filter((item) => {
+  return arr.filter(item => {
     if (!item || typeof item !== "object") return false;
     const val = item[key];
     if (seen.has(val)) return false;
@@ -118,10 +117,10 @@ export const uniqueArrayByKey = (arr, key) => {
  */
 export const promiseLimit = (promiseArray, limit = 6) => {
   if (!Array.isArray(promiseArray)) {
-    throw new Error('第一个参数必须是数组');
+    throw new Error("第一个参数必须是数组");
   }
   if (!Number.isInteger(limit) || limit < 1) {
-    throw new Error('并发限制必须是正整数');
+    throw new Error("并发限制必须是正整数");
   }
 
   // 处理空数组情况
@@ -144,7 +143,7 @@ export const promiseLimit = (promiseArray, limit = 6) => {
       }
       try {
         const promise = promiseArray[index];
-        if (typeof promise !== 'function') {
+        if (typeof promise !== "function") {
           throw new Error(`数组中索引为 ${index} 的元素不是函数`);
         }
         results[index] = await promise();
@@ -161,7 +160,6 @@ export const promiseLimit = (promiseArray, limit = 6) => {
         resolve(results);
       }
     };
-
 
     // 启动初始批次的任务
     const tasksToStart = Math.min(limit, promiseArray.length);
@@ -180,7 +178,7 @@ export const promiseLimit = (promiseArray, limit = 6) => {
  * @returns {Window}
  */
 export const getGlobalThis = () => {
-  return typeof unsafeWindow !== 'undefined' ? unsafeWindow : window;
+  return typeof unsafeWindow !== "undefined" ? unsafeWindow : window;
 };
 
 /**
@@ -194,24 +192,24 @@ export const getGUser = () => {
 
 /**
  * 获取字符串长度（中文算2个字符）
- * @param {string} str 
+ * @param {string} str
  * @returns {number}
  */
-export const getStringLength = (str) => {
-  return str.split('').reduce((total, char) => {
+export const getStringLength = str => {
+  return str.split("").reduce((total, char) => {
     return total + (char.charCodeAt(0) > 255 ? 2 : 1);
   }, 0);
 };
 
 /**
  * 截取字符串（中文算2个字符）
- * @param {string} str 
- * @param {number} maxLength 
+ * @param {string} str
+ * @param {number} maxLength
  * @returns {string}
  */
 export const truncateString = (str, maxLength) => {
   let len = 0;
-  let result = '';
+  let result = "";
   for (let char of str) {
     const charLen = char.charCodeAt(0) > 255 ? 2 : 1;
     if (len + charLen > maxLength) break;
@@ -226,7 +224,7 @@ export const truncateString = (str, maxLength) => {
  * @param {number} ms 延迟时间（毫秒）
  * @returns {Promise<void>}
  */
-export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+export const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 /**
  * 计算文件的MD5哈希值
@@ -243,11 +241,45 @@ export async function getFileMD5(file) {
   return md5(uint8Array);
 }
 
+/**
+ * 从音频文件中获取元数据信息
+ * @param {File} file - 音频文件对象
+ * @returns {Promise<Object>} 包含音频元数据的对象
+ * @example
+ * const file = new File(['...'], 'song.mp3');
+ * const metadata = await getAudioMetadata(file);
+ * console.log(metadata.title, metadata.artist, metadata.album);
+ */
+export async function getAudioMetadata(file) {
+  try {
+    const metadata = await mm.parseBlob(file);
+    const { album, artist, artists, title } = metadata.common || {};
+    return {
+      title: title || "",
+      artist: artist || artists?.[0] || "",
+      artists: artists || (artist ? [artist] : []),
+      album: album || "",
+      duration: metadata.format?.duration || 0,
+      bitrate: metadata.format?.bitrate || 0,
+      sampleRate: metadata.format?.sampleRate || 0,
+      format: metadata.format?.container || "",
+    };
+  } catch (error) {
+    console.error("Failed to parse audio metadata:", error);
+    return {
+      title: "",
+      artist: "",
+      artists: [],
+      album: "",
+      duration: 0,
+      bitrate: 0,
+      sampleRate: 0,
+      format: "",
+    };
+  }
+}
+
 // #endregion ================ 工具函数 ================
-
-
-
-
 
 // #region ================ 下载功能 ================
 
@@ -296,7 +328,7 @@ export async function batchDownloadSongs(songList, config) {
   async function downloadThread(threadIndex) {
     while (true) {
       // 获取待下载任务
-      const task = downloadQueue.find((t) => t.status === "pending");
+      const task = downloadQueue.find(t => t.status === "pending");
       if (!task) break;
 
       // 标记为进行中
@@ -322,11 +354,8 @@ export async function batchDownloadSongs(songList, config) {
         // 开始下载
         await new Promise((resolve, reject) => {
           const fileName =
-            generateFileName(
-              task.song.name,
-              getArtistInfo(task.song),
-              config.fileNameFormat
-            ) + ".mp3";
+            generateFileName(task.song.name, getArtistInfo(task.song), config.fileNameFormat) +
+            ".mp3";
 
           GM_download({
             url: urlRes.data[0].url,
@@ -350,18 +379,15 @@ export async function batchDownloadSongs(songList, config) {
   // 更新进度显示
   function updateProgress() {
     const finished = downloadQueue.filter(
-      (t) => t.status === "success" || t.status === "error"
+      t => t.status === "success" || t.status === "error"
     ).length;
     const progress = ((finished / downloadQueue.length) * 100).toFixed(1);
-    const successful = downloadQueue.filter(
-      (t) => t.status === "success"
-    ).length;
-    const failed = downloadQueue.filter((t) => t.status === "error").length;
+    const successful = downloadQueue.filter(t => t.status === "success").length;
+    const failed = downloadQueue.filter(t => t.status === "error").length;
 
     document.getElementById("progress-inner").style.width = `${progress}%`;
-    document.getElementById(
-      "download-status"
-    ).textContent = `已完成: ${finished}/${downloadQueue.length} (成功: ${successful}, 失败: ${failed})`;
+    document.getElementById("download-status").textContent =
+      `已完成: ${finished}/${downloadQueue.length} (成功: ${successful}, 失败: ${failed})`;
 
     if (finished === downloadQueue.length) {
       setTimeout(() => {

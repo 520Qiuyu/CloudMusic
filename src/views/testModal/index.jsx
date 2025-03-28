@@ -14,6 +14,7 @@ import {
   getQrKey,
   getQrStatus,
   getSongUrl,
+  matchLocalSong,
   uploadLocalSong,
 } from "../../api";
 import { msgError, msgSuccess } from "../../utils/modal";
@@ -217,9 +218,17 @@ const TestModal = forwardRef((props, ref) => {
         const file = fileList[i];
         // if (file.status === "done") continue;
         await uploadLocalSong(file);
-/*         file.status = "done";
+        /*         file.status = "done";
         setFileList([...fileList]); */
       }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+  const handleLocalMatch = async () => {
+    try {
+      const res = await matchLocalSong(fileList);
+      console.log("res", res);
     } catch (error) {
       console.log("error", error);
     }
@@ -402,6 +411,13 @@ const TestModal = forwardRef((props, ref) => {
             onClick={handleUploadLocalSong}
           >
             上传本地歌曲到云盘
+          </Button>
+          {/* 测试本地歌曲匹配 */}
+          <Button
+            type="primary"
+            onClick={handleLocalMatch}
+          >
+            测试本地歌曲匹配
           </Button>
         </Space>
       </Form.Item>
