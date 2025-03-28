@@ -1,9 +1,11 @@
 import { BASE_CDN_URL, QUALITY_LEVELS } from "../constant";
-import { chunkArray, sleep } from "../utils";
+import { chunkArray, getFileMD5, sleep } from "../utils";
 import { getGUser } from "../utils";
 import { msgError } from "../utils/modal";
 import { weapiFetch, weapiRequest } from "../utils/request";
 import { generateQRCode } from "../utils/qrcode";
+import md5 from "md5";
+import * as mm from "music-metadata";
 
 // 获取登录二维码KEY
 export const getQrKey = () =>
@@ -15,13 +17,13 @@ export const getQrKey = () =>
   });
 
 // 获取登录二维码
-export const getQrCode = (key) => {
+export const getQrCode = key => {
   const loginUrl = `https://music.163.com/login?codekey=${key}`;
   return generateQRCode(loginUrl);
 };
 
 // 获取登录二维码状态
-export const getQrStatus = (key) =>
+export const getQrStatus = key =>
   weapiFetch("/api/login/qrcode/client/login", {
     data: {
       key,
@@ -31,24 +33,22 @@ export const getQrStatus = (key) =>
   });
 
 // 获取歌手列表
-export const getArtists = () =>
-  fetch(`${BASE_CDN_URL}top.json`).then((res) => res.json());
+export const getArtists = () => fetch(`${BASE_CDN_URL}top.json`).then(res => res.json());
 // 获取歌手列表2
-export const getArtists2 = () =>
-  fetch(`${BASE_CDN_URL}summary.json`).then((res) => res.json());
+export const getArtists2 = () => fetch(`${BASE_CDN_URL}summary.json`).then(res => res.json());
 
 // 获取资源配置 对应歌手的资源
-export const getCDNConfig = (artistId) =>
-  fetch(`${BASE_CDN_URL}${artistId}.json`).then((res) => res.json());
+export const getCDNConfig = artistId =>
+  fetch(`${BASE_CDN_URL}${artistId}.json`).then(res => res.json());
 
 // 获取歌曲信息
-export const getSongInfoList = async (songIds) => {
+export const getSongInfoList = async songIds => {
   // 此处一次最大1000条
   const chunkArr = chunkArray(songIds, 1000);
-  const proArr = chunkArr.map(async (chunk) => {
+  const proArr = chunkArr.map(async chunk => {
     return weapiRequest("/api/v3/song/detail", {
       data: {
-        c: JSON.stringify(chunk.map((item) => ({ id: item }))),
+        c: JSON.stringify(chunk.map(item => ({ id: item }))),
       },
     });
   });
@@ -76,7 +76,7 @@ export const matchCloudSong = async (cloudSongId, id) => {
 };
 
 // 上传歌曲信息
-export const uploadSong = async (song) => {
+export const uploadSong = async song => {
   try {
     // 1、检查资源
     let res = await weapiRequest("/api/cloud/upload/check/v2", {
@@ -148,9 +148,7 @@ export const uploadSong = async (song) => {
 
       if (tokenRes.code != 200) {
         msgError("获取上传token失败");
-        throw new Error(
-          tokenRes.message || tokenRes.msg || "获取上传token失败"
-        );
+        throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
       }
       song.resourceId = tokenRes.result.resourceId;
       // 提交文件
@@ -211,7 +209,7 @@ export const getCloudData = (limit = 200, offset = 0) =>
   });
 
 // 删除云盘歌曲
-export const deleteCloudSong = (songIds) =>
+export const deleteCloudSong = songIds =>
   weapiRequest("/api/cloud/del", {
     data: {
       songIds,
@@ -219,11 +217,7 @@ export const deleteCloudSong = (songIds) =>
   });
 
 // 获取歌单列表
-export const getPlaylistList = (
-  uid = getGUser().userId,
-  limit = 1001,
-  offset = 0
-) =>
+export const getPlaylistList = (uid = getGUser().userId, limit = 1001, offset = 0) =>
   weapiRequest("/api/user/playlist", {
     data: {
       limit,
@@ -233,7 +227,7 @@ export const getPlaylistList = (
   });
 
 // 新建歌单
-export const createPlaylist = (name) =>
+export const createPlaylist = name =>
   weapiRequest("/api/playlist/create", {
     data: {
       name,
@@ -241,7 +235,7 @@ export const createPlaylist = (name) =>
   });
 
 // 删除歌单
-export const deletePlaylist = (pid) =>
+export const deletePlaylist = pid =>
   weapiRequest("/api/playlist/delete", {
     data: {
       pid,
@@ -259,23 +253,19 @@ export const addSongToPlaylist = (pid, trackIds) =>
   });
 
 // 获取专辑歌曲列表
-export const getAlbumSongList = (id) =>
+export const getAlbumSongList = id =>
   weapiRequest(`/api/v1/album/${id}`, {
     data: {},
   });
 
 // 获取歌曲url
-export const getSongUrl = (
-  ids,
-  encodeType = "flac",
-  level = QUALITY_LEVELS.无损
-) =>
+export const getSongUrl = (ids, encodeType = "flac", level = QUALITY_LEVELS.无损) =>
   weapiRequest("/api/song/enhance/player/url/v1", {
     data: { ids, level, encodeType },
   });
 
 // 获取歌手热门歌曲
-export const getArtistTopSongList = (id) =>
+export const getArtistTopSongList = id =>
   weapiRequest("/api/artist/top/song", {
     data: {
       id,
@@ -285,7 +275,7 @@ export const getArtistTopSongList = (id) =>
   });
 
 // 获取歌手全部歌曲 失效
-export const getArtistAllSongList = (id) =>
+export const getArtistAllSongList = id =>
   weapiRequest("/api/v1/artist/songs", {
     data: {
       id,
@@ -299,21 +289,113 @@ export const getArtistAllSongList = (id) =>
 
 // 获取歌手专辑
 export const getArtistAlbumList = async (id, limit = 1000, offset = 0) => {
-  const res = await fetch(
-    `/artist/album?id=${id}&limit=${limit}&offset=${offset}`
-  );
+  const res = await fetch(`/artist/album?id=${id}&limit=${limit}&offset=${offset}`);
   console.log("res", res);
   const html = await res.text();
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, "text/html");
   const albumList = Array.from(doc.querySelectorAll("#m-song-module li"));
-  return albumList.map((item) => {
+  return albumList.map(item => {
     const cover = item.querySelector("img").getAttribute("src");
-    const id = item
-      .querySelector('a[title="播放"]')
-      .getAttribute("data-res-id");
+    const id = item.querySelector('a[title="播放"]').getAttribute("data-res-id");
     const name = item.querySelector("p.dec a.tit").textContent;
     const time = item.querySelector("span.s-fc3").textContent;
     return { cover, id, name, time };
   });
 };
+
+/**
+ * @description: 上传本地歌曲
+ * @param {File} file
+ */
+export const uploadLocalSong = async file => {
+  try {
+    const ext = file.name.split(".").pop();
+    const fileMd5 = await getFileMD5(file);
+    const bitrate = 999000;
+    const filename = file.name
+      .replace("." + ext, "")
+      .replace(/\s/g, "")
+      .replace(/\./g, "_");
+
+    // 1、首选检查文件
+    const checkRes = await weapiRequest("/api/cloud/upload/check", {
+      data: {
+        ext: "",
+        bitrate: String(bitrate),
+        md5: fileMd5,
+        length: file.size,
+        songId: "0",
+        version: 1,
+      },
+    });
+    console.log("checkRes", checkRes);
+    if (checkRes.code != 200) {
+      msgError("文件检查失败");
+    }
+    const { needUpload, songId } = checkRes;
+
+    // 2、申请上传token
+    const tokenRes = await weapiRequest("/api/nos/token/alloc", {
+      data: {
+        bucket: "",
+        ext,
+        filename,
+        local: false,
+        nos_product: 3,
+        type: "audio",
+        md5: fileMd5,
+      },
+    });
+    console.log("tokenRes", tokenRes);
+    if (tokenRes.code != 200) {
+      msgError("获取上传token失败");
+    }
+    const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
+
+    // 3、获取上传信息
+    const metadata = await mm.parseBlob(file);
+    console.log("metadata", metadata);
+    const { album, artist, artists, title } = metadata.common || {};
+    const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
+      data: {
+        md5: fileMd5,
+        songid: songId,
+        filename,
+        song: title || filename,
+        album: album || "未知专辑",
+        artist: artist || artists.join(",") || "未知歌手",
+        bitrate: String(bitrate),
+        resourceId,
+      },
+    });
+    console.log("uploadInfoRes", uploadInfoRes);
+    if (uploadInfoRes.code != 200) {
+      msgError("获取上传信息失败");
+    }
+
+    // 4、上传文件
+    // 发布资源
+    const pubRes = await weapiRequest("/api/cloud/pub/v2", {
+      data: {
+        songid: uploadInfoRes.songId,
+      },
+    });
+    console.log("pubRes", pubRes);
+    if (![200, 201].includes(pubRes.code)) {
+      msgError(`歌曲： ${song.name} 发布失败`);
+    }
+    const { songName, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
+    return {
+      id: uploadInfoRes.songId,
+      size: fileSize,
+      md5: fileMd5,
+      name: songName,
+      ext,
+    };
+  } catch (error) {
+    console.log("error", error);
+  }
+};
+
+// 本地歌曲匹配网易云歌曲信息

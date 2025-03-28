@@ -12,6 +12,9 @@ export const workerParseMusicExMediaName = async ({ blobURI }) => {
   const blob = await fetch(blobURI, { headers: { Range: 'bytes=-1024' } }).then((r) => r.blob());
   const arrayBuffer = await blob.arrayBuffer();
 
+  console.log('blob',blob)
+  console.log('arrayBuffer',arrayBuffer)
+
   try {
     // 截取最后1024字节用于解析
     const buffer = new Uint8Array(arrayBuffer.slice(-1024));

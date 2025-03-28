@@ -14,9 +14,13 @@ import {
   getQrKey,
   getQrStatus,
   getSongUrl,
+  uploadLocalSong,
 } from "../../api";
 import { msgError, msgSuccess } from "../../utils/modal";
-import { sleep } from "../../utils";
+import { getFileMD5, sleep } from "../../utils";
+import { Upload } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
+import md5 from "md5";
 
 const TestModal = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -203,6 +207,24 @@ const TestModal = forwardRef((props, ref) => {
     }
   };
 
+  // 测试上传本地歌曲到云盘
+  const [fileList, setFileList] = useState([]);
+  const handleUploadLocalSong = async () => {
+    try {
+      console.log("fileList", fileList);
+      if (!fileList.length) return msgError("请选择文件");
+      for (let i = 0; i < fileList.length; i++) {
+        const file = fileList[i];
+        // if (file.status === "done") continue;
+        await uploadLocalSong(file);
+/*         file.status = "done";
+        setFileList([...fileList]); */
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
   return (
     <Modal
       title="测试Modal"
@@ -216,9 +238,18 @@ const TestModal = forwardRef((props, ref) => {
         {/* 测试获取云盘数据 */}
         <Form.Item label="获取云盘数据">
           <Space>
-            <Input placeholder="limit" style={{ width: 100 }} />
-            <Input placeholder="offset" style={{ width: 100 }} />
-            <Button type="primary" onClick={handleGetCloudData}>
+            <Input
+              placeholder="limit"
+              style={{ width: 100 }}
+            />
+            <Input
+              placeholder="offset"
+              style={{ width: 100 }}
+            />
+            <Button
+              type="primary"
+              onClick={handleGetCloudData}
+            >
               获取云盘数据
             </Button>
           </Space>
@@ -229,9 +260,12 @@ const TestModal = forwardRef((props, ref) => {
             <Input
               placeholder="请输入歌单名称"
               value={songListName}
-              onChange={(e) => setSongListName(e.target.value)}
+              onChange={e => setSongListName(e.target.value)}
             />
-            <Button type="primary" onClick={handleCreateSongList}>
+            <Button
+              type="primary"
+              onClick={handleCreateSongList}
+            >
               新建歌单
             </Button>
           </Space>
@@ -242,18 +276,17 @@ const TestModal = forwardRef((props, ref) => {
             <Input
               placeholder="请输入歌单id"
               value={addInfo.playlistId}
-              onChange={(e) =>
-                setAddInfo({ ...addInfo, playlistId: e.target.value })
-              }
+              onChange={e => setAddInfo({ ...addInfo, playlistId: e.target.value })}
             />
             <Input
               placeholder="请输入歌曲id"
               value={addInfo.songId}
-              onChange={(e) =>
-                setAddInfo({ ...addInfo, songId: e.target.value })
-              }
+              onChange={e => setAddInfo({ ...addInfo, songId: e.target.value })}
             />
-            <Button type="primary" onClick={handleAddSong}>
+            <Button
+              type="primary"
+              onClick={handleAddSong}
+            >
               添加歌曲
             </Button>
           </Space>
@@ -264,9 +297,12 @@ const TestModal = forwardRef((props, ref) => {
             <Input
               placeholder="请输入用户id"
               value={userId}
-              onChange={(e) => setUserId(e.target.value)}
+              onChange={e => setUserId(e.target.value)}
             />
-            <Button type="primary" onClick={handleGetPlaylistList}>
+            <Button
+              type="primary"
+              onClick={handleGetPlaylistList}
+            >
               获取歌单列表
             </Button>
           </Space>
@@ -277,12 +313,18 @@ const TestModal = forwardRef((props, ref) => {
             <Input
               placeholder="请输入歌曲id"
               value={songId}
-              onChange={(e) => setSongId(e.target.value)}
+              onChange={e => setSongId(e.target.value)}
             />
-            <Button type="primary" onClick={handleGetSongUrl}>
+            <Button
+              type="primary"
+              onClick={handleGetSongUrl}
+            >
               获取歌曲URL
             </Button>
-            <Button type="primary" onClick={handleDeleteCloudSong}>
+            <Button
+              type="primary"
+              onClick={handleDeleteCloudSong}
+            >
               删除云盘歌曲
             </Button>
           </Space>
@@ -293,9 +335,12 @@ const TestModal = forwardRef((props, ref) => {
             <Input
               placeholder="请输入专辑id"
               value={albumId}
-              onChange={(e) => setAlbumId(e.target.value)}
+              onChange={e => setAlbumId(e.target.value)}
             />
-            <Button type="primary" onClick={handleGetAlbumSongList}>
+            <Button
+              type="primary"
+              onClick={handleGetAlbumSongList}
+            >
               获取专辑歌曲列表
             </Button>
           </Space>
@@ -306,15 +351,24 @@ const TestModal = forwardRef((props, ref) => {
             <Input
               placeholder="请输入歌手id"
               value={artistId}
-              onChange={(e) => setArtistId(e.target.value)}
+              onChange={e => setArtistId(e.target.value)}
             />
-            <Button type="primary" onClick={handleGetArtistTopSongList}>
+            <Button
+              type="primary"
+              onClick={handleGetArtistTopSongList}
+            >
               获取歌手热门歌曲列表
             </Button>
-            <Button type="primary" onClick={handleGetArtistAlbum}>
+            <Button
+              type="primary"
+              onClick={handleGetArtistAlbum}
+            >
               获取歌手专辑
             </Button>
-            <Button type="primary" onClick={handleGetArtistAllSongList}>
+            <Button
+              type="primary"
+              onClick={handleGetArtistAllSongList}
+            >
               获取歌手全部歌曲
             </Button>
           </Space>
@@ -323,9 +377,33 @@ const TestModal = forwardRef((props, ref) => {
       {/* 测试二维码登录 */}
       <Form.Item label="二维码登录">
         <div id="qrcode-container"></div>
-        <Button type="primary" onClick={handleQrLogin}>
+        <Button
+          type="primary"
+          onClick={handleQrLogin}
+        >
           二维码登录
         </Button>
+      </Form.Item>
+      {/* 测试上传本地歌曲到云盘 */}
+      <Form.Item label="上传本地歌曲到云盘">
+        <Space>
+          <Upload
+            fileList={fileList}
+            accept=".flac,.mp3,.wav,.aac,.m4a,.ogg,.wma"
+            beforeUpload={file => {
+              setFileList([...fileList, file]);
+              return false;
+            }}
+          >
+            <Button icon={<UploadOutlined />}>Select File</Button>
+          </Upload>
+          <Button
+            type="primary"
+            onClick={handleUploadLocalSong}
+          >
+            上传本地歌曲到云盘
+          </Button>
+        </Space>
       </Form.Item>
     </Modal>
   );

@@ -1,6 +1,7 @@
 import { Button, Progress, Table, Tag } from "antd";
 import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
+import unlock from "./unlock";
 
 const UnlockList = ({ fileList }) => {
   const columns = [
@@ -77,12 +78,13 @@ const UnlockList = ({ fileList }) => {
     console.log("fileList", fileList);
     setList(fileList);
     // 开始解密
-    fileList.forEach(item => {
+    fileList.forEach(async item => {
       if (item.status === "waiting") {
         // 初始化状态
         item.status = "unlocking";
         item.progress = 0;
         // 开始解密
+        const res = await unlock(item.file)
         setTimeout(() => {
           item.status = "success";
           item.progress = 100;

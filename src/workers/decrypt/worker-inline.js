@@ -1,12 +1,9 @@
-import { WorkerClientBus } from "./WorkerEventBus";
-
-const workerCode = `
 import { getUmcVersion } from "@unlock-music/crypto";
 import { DECRYPTION_WORKER_ACTION_NAME } from "./constants";
-import { workerDecryptHandler } from "./parser/decrypt";
-import { workerParseMusicExMediaName } from "./parser/qmcv2_parser";
-import { workerParseKuwoHeader } from "./parser/kuwo_header_parse";
-import { workerParseKugouHeader } from "./parser/kugou_parse_header";
+import { workerDecryptHandler } from "../../utils/parser/decrypt";
+import { workerParseMusicExMediaName } from "../../utils/parser/qmcv2_parser";
+import { workerParseKuwoHeader } from "../../utils/parser/kuwo_header_parse";
+import { workerParseKugouHeader } from "../../utils/parser/kugou_parse_header";
 
 const bus = new WorkerServerBus();
 onmessage = bus.onmessage;
@@ -29,16 +26,3 @@ bus.addEventHandler(
   DECRYPTION_WORKER_ACTION_NAME.QINGTING_FM_GET_DEVICE_KEY,
   workerGetQtfmDeviceKey
 );
-`;
-
-const blob = new Blob([workerCode], { type: 'text/javascript' });
-const worker = new Worker(URL.createObjectURL(blob), {
-  type: "module",
-});
-
-
-// FIXME: report the error so is obvious to the user.
-worker.addEventListener("error", console.error);
-
-export const workerClientBus = new WorkerClientBus(worker);
-// export const decryptionQueue = new decryptionQueue(workerClientBus);

@@ -1,5 +1,6 @@
 // #region ================ 工具函数 ================
 
+import md5 from "md5";
 import { unsafeWindow } from "vite-plugin-monkey/dist/client";
 
 /**
@@ -226,6 +227,21 @@ export const truncateString = (str, maxLength) => {
  * @returns {Promise<void>}
  */
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * 计算文件的MD5哈希值
+ * @param {File} file - 要计算MD5的文件对象
+ * @returns {Promise<string>} 返回文件的MD5哈希值（32位小写十六进制字符串）
+ * @example
+ * const file = new File(['hello'], 'hello.txt');
+ * const md5 = await getFileMD5(file);
+ * console.log(md5); // 5d41402abc4b2a76b9719d911017c592
+ */
+export async function getFileMD5(file) {
+  const arrayBuffer = await file.arrayBuffer(); // 读取文件为 ArrayBuffer
+  const uint8Array = new Uint8Array(arrayBuffer);
+  return md5(uint8Array);
+}
 
 // #endregion ================ 工具函数 ================
 
