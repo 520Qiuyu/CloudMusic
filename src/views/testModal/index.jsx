@@ -15,6 +15,7 @@ import {
   getQrStatus,
   getSongUrl,
   matchLocalSong,
+  searchArtist,
   uploadLocalSong,
 } from "../../api";
 import { msgError, msgSuccess } from "../../utils/modal";
@@ -216,10 +217,12 @@ const TestModal = forwardRef((props, ref) => {
       if (!fileList.length) return msgError("请选择文件");
       for (let i = 0; i < fileList.length; i++) {
         const file = fileList[i];
-        // if (file.status === "done") continue;
-        await uploadLocalSong(file);
-        /*         file.status = "done";
-        setFileList([...fileList]); */
+        const res = await uploadLocalSong(file);
+        console.log("res", res);
+        console.log(JSON.stringify(res, null, 2));
+        if (res.artist) {
+          setSearchValue(res.artist);
+        }
       }
     } catch (error) {
       console.log("error", error);
@@ -228,6 +231,17 @@ const TestModal = forwardRef((props, ref) => {
   const handleLocalMatch = async () => {
     try {
       const res = await matchLocalSong(fileList);
+      console.log("res", res);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  // 测试搜索歌手信息
+  const [searchValue, setSearchValue] = useState("");
+  const handleSearchArtist = async () => {
+    try {
+      const res = await searchArtist(searchValue);
       console.log("res", res);
     } catch (error) {
       console.log("error", error);
@@ -403,6 +417,9 @@ const TestModal = forwardRef((props, ref) => {
               setFileList([...fileList, file]);
               return false;
             }}
+            onRemove={file => {
+              setFileList(fileList.filter(f => f !== file));
+            }}
           >
             <Button icon={<UploadOutlined />}>Select File</Button>
           </Upload>
@@ -418,6 +435,22 @@ const TestModal = forwardRef((props, ref) => {
             onClick={handleLocalMatch}
           >
             测试本地歌曲匹配
+          </Button>
+        </Space>
+      </Form.Item>
+      {/* 测试搜索歌手信息 */}
+      <Form.Item label="测试搜索歌手信息">
+        <Space>
+          <Input
+            placeholder="请输入歌手名称"
+            value={searchValue}
+            onChange={e => setSearchValue(e.target.value)}
+          />
+          <Button
+            type="primary"
+            onClick={handleSearchArtist}
+          >
+            搜索歌手信息
           </Button>
         </Space>
       </Form.Item>

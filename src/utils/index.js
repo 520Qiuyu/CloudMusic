@@ -65,7 +65,15 @@ export function chunkArray(array, size) {
  * @returns {string} 艺术家名称
  */
 export const getArtistTextInSongDetail = song => {
-  return song.ar ? song.ar.map(ar => ar.name).join() : song.pc?.ar || "";
+  return (
+    song.ar
+      ?.map(ar => ar.name)
+      ?.filter(Boolean)
+      .join() ||
+    song.pc?.ar ||
+    song.arartist ||
+    ""
+  );
 };
 
 /**
@@ -74,7 +82,7 @@ export const getArtistTextInSongDetail = song => {
  * @returns {string} 专辑名称
  */
 export const getAlbumTextInSongDetail = song => {
-  return song.al ? song.al.name : song.pc?.alb || "";
+  return song.al?.name || song.pc?.alb || "";
 };
 
 /**
@@ -253,7 +261,9 @@ export async function getFileMD5(file) {
 export async function getAudioMetadata(file) {
   try {
     const metadata = await mm.parseBlob(file);
+    console.log('metadata.common',metadata,metadata.common)
     const { album, artist, artists, title } = metadata.common || {};
+    const {bitrate} = metadata.format || {};
     return {
       title: title || "",
       artist: artist || artists?.[0] || "",
@@ -263,6 +273,7 @@ export async function getAudioMetadata(file) {
       bitrate: metadata.format?.bitrate || 0,
       sampleRate: metadata.format?.sampleRate || 0,
       format: metadata.format?.container || "",
+      bitrate: Math.floor(bitrate / 1000) || 0,
     };
   } catch (error) {
     console.error("Failed to parse audio metadata:", error);
@@ -274,10 +285,34 @@ export async function getAudioMetadata(file) {
       duration: 0,
       bitrate: 0,
       sampleRate: 0,
-      format: "",
+      format: ""
     };
   }
 }
+
+/**
+ * 合并多个对象，只用非空值进行覆盖
+ * @param {...Object} objects - 要合并的对象列表
+ * @returns {Object} 合并后的新对象
+ * @example
+ * const obj1 = { a: 1, b: 2 };
+ * const obj2 = { b: null, c: 3 };
+ * const result = mergeObjects(obj1, obj2);
+ * // result: { a: 1, b: 2, c: 3 }
+ */
+export const mergeObjects = (o1,...objects) => {
+  return objects.reduce((result, current) => {
+    if (!current || typeof current !== 'object') return result;
+    
+    Object.entries(current).forEach(([key, value]) => {
+      if (value !== null && value !== undefined && value !== '') {
+        result[key] = value;
+      }
+    });
+    
+    return result;
+  }, o1);
+};
 
 // #endregion ================ 工具函数 ================
 
@@ -386,8 +421,9 @@ export async function batchDownloadSongs(songList, config) {
     const failed = downloadQueue.filter(t => t.status === "error").length;
 
     document.getElementById("progress-inner").style.width = `${progress}%`;
-    document.getElementById("download-status").textContent =
-      `已完成: ${finished}/${downloadQueue.length} (成功: ${successful}, 失败: ${failed})`;
+    document.getElementById(
+      "download-status"
+    ).textContent = `已完成: ${finished}/${downloadQueue.length} (成功: ${successful}, 失败: ${failed})`;
 
     if (finished === downloadQueue.length) {
       setTimeout(() => {

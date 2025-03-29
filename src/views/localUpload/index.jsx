@@ -3,7 +3,7 @@ import { Modal, Upload, Table, message, Progress } from "antd";
 import { InboxOutlined } from "@ant-design/icons";
 import styles from "./index.module.scss";
 import { uploadLocalSong } from "@/api";
-import { promiseLimit } from "@/utils";
+import { formatFileSize, promiseLimit } from "@/utils";
 
 const { Dragger } = Upload;
 
@@ -11,7 +11,10 @@ const LocalUpload = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
   const [fileList, setFileList] = useState([]);
 
-  const open = () => setVisible(true);
+  const open = () => {
+    reset();
+    setVisible(true);
+  };
   const close = () => setVisible(false);
   const reset = () => setFileList([]);
 
@@ -26,17 +29,38 @@ const LocalUpload = forwardRef((props, ref) => {
     try {
       setLoading(true);
       const uploadPromises = fileList.map(file => async () => {
-        if (file.status === "done") {
-          return;
+        try {
+          if (file.status === "done") {
+            return;
+          }
+          file.status = "uploading";
+          const res = await uploadLocalSong(file);
+          file.status = "done";
+          return res;
+        } catch (e) {
+          file.status = "error";
+          return null;
+        } finally {
+          setFileList(prev => [...prev]);
         }
-        file.status = "uploading";
-        const res = await uploadLocalSong(file);
-        file.status = "done";
-        setFileList(prev => [...prev]);
-        return res;
       });
-      const res = await promiseLimit(uploadPromises, 5);
+      const res = await promiseLimit(uploadPromises, 2);
       console.log("res", res);
+      message.success("上传成功");
+      const info = {
+        list: res.filter(Boolean),
+        count: res.filter(Boolean).length,
+        size: formatFileSize(res.filter(Boolean).reduce((acc, file) => acc + file.size, 0)),
+        artist: res.filter(Boolean)?.[0].artist || "",
+      };
+      // 下载文件
+      const blob = new Blob([JSON.stringify(info, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = info.artist + ".json";
+      link.click();
+      URL.revokeObjectURL(url);
     } catch (error) {
       console.log("error", error);
     } finally {
@@ -73,7 +97,7 @@ const LocalUpload = forwardRef((props, ref) => {
         if (status === "error") {
           return (
             <Progress
-              percent={record.progress || 0}
+              percent={100}
               size="small"
               status="exception"
             />

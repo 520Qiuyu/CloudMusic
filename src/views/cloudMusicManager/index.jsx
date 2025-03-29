@@ -116,7 +116,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
     setFilteredSongList((songList) => {
       return songList.sort((a, b) => {
         const order = sorter.order === "ascend" ? 1 : -1;
-        return order * a[sorter.columnKey]?.localeCompare(b[sorter.columnKey]);
+        return order * a[sorter.columnKey]?.localeCompare?.(b[sorter.columnKey]);
       });
     });
   };

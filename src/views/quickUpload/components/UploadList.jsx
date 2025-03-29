@@ -6,6 +6,7 @@ import {
   formatFileSize,
   getAlbumTextInSongDetail,
   getArtistTextInSongDetail,
+  mergeObjects,
   promiseLimit,
 } from "../../../utils/index";
 import { confirm, msgError, msgSuccess } from "../../../utils/modal";
@@ -20,74 +21,76 @@ export default function UploadList({ singerList }) {
   // 加载中
   const [loading, setLoading] = useState(false);
   // 获取歌曲信息列表
-  const getSongList = async (ids) => {
+  const getSongList = async ids => {
     try {
       setLoading(true);
       if (!ids?.length) return message.error("请先选择歌手");
 
       // 先获取CDN的歌曲配置信息
-      const proArr = ids.map(async (id) => {
+      const proArr = ids.map(async id => {
         const res = await getCDNConfig(id);
         return res.data;
       });
       let allConfig = await Promise.all(proArr);
       allConfig = allConfig.flat();
-      const allConfigMap = Object.fromEntries(
-        allConfig.map((item) => [item.id, item])
-      );
+      const allConfigMap = Object.fromEntries(allConfig.map(item => [item.id, item]));
       console.log("allConfig", allConfig);
 
       // 获取歌曲信息
-      const allInfo = await getSongInfoList(allConfig.map((item) => item.id));
+      const allInfo = await getSongInfoList(allConfig.map(item => item.id));
+      console.log("allInfo", allInfo);
 
       // 获取上传列表
       // 此处先遍历云盘中是否拥有
       const songList = [];
       allInfo.map(({ privileges, songs }) => {
-        privileges.forEach((p) => {
+        privileges.forEach(p => {
           const otherInfo = allConfigMap[p.id];
-          const defaultItem = {
-            ...otherInfo,
-            id: p.id,
-            name: "未知",
-            album: "未知",
-            albumid: 0,
-            artists: "未知",
-            tns: "",
-            //翻译
-            dt: formatDuration(0),
-            filename: "未知." + otherInfo?.ext,
-            picUrl:
-              "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
-            isNoCopyright: p.st < 0,
-            isVIP: false,
-            isPay: false,
-            uploaded: p.cs,
-            needMatch: otherInfo.name == void 0,
-          };
-          const songsMap = Object.fromEntries(songs.map((s) => [s.id, s]));
+          const defaultItem = mergeObjects(
+            { ...otherInfo, artists: undefined },
+            {
+              id: p.id,
+              name: "",
+              album: "",
+              albumid: 0,
+              artists: "",
+              bitrate: 90000,
+              tns: "",
+              //翻译
+              dt: formatDuration(0),
+              filename: "",
+              picUrl: "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
+              isNoCopyright: p.st < 0,
+              isVIP: false,
+              isPay: false,
+              uploaded: p.cs,
+              needMatch: otherInfo.name == void 0,
+            }
+          );
+          const songsMap = Object.fromEntries(songs.map(s => [s.id, s]));
           const song = songsMap[p.id];
           if (song) {
-            Object.assign(defaultItem, song, {
+            const artists = getArtistTextInSongDetail(song);
+            mergeObjects(defaultItem, song, {
               album: getAlbumTextInSongDetail(song),
-              artists: getArtistTextInSongDetail(song),
+              artists,
               dt: formatDuration(song.dt),
-              filename: `${getArtistTextInSongDetail(song)} - ${song.name}.${
-                otherInfo.ext
-              }`,
+              filename: song.name ? `  ${song.name}.${otherInfo.ext}` : undefined,
               picUrl:
                 song.al?.picUrl ||
                 "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
               isVIP: song.fee === 1,
               isPay: song.fee === 4,
             });
+            console.log("song", song);
           }
           if (otherInfo.name) {
             defaultItem.name = otherInfo.name;
-            defaultItem.album = otherInfo.al;
-            defaultItem.artists = otherInfo.ar;
-            defaultItem.filename = `${defaultItem.artists} - ${defaultItem.name}.${otherInfo.ext}`;
+            defaultItem.album ||= otherInfo.al?.name || otherInfo.album || "";
+            defaultItem.artists ||= otherInfo.ar || otherInfo.artists?.join();
+            defaultItem.filename ||= `${defaultItem.name}.${otherInfo.ext}` || "未知.flac";
           }
+          console.log("defaultItem", defaultItem.name, defaultItem);
           songList.push(defaultItem);
         });
       });
@@ -106,20 +109,15 @@ export default function UploadList({ singerList }) {
 
   // 筛选后的歌曲列表
   const [filteredSongList, setFilteredSongList] = useState([]);
-  const handleSearch = (values) => {
+  const handleSearch = values => {
     const { name, artists, album } = values;
-    const filtered = songList.filter((song) => {
+    const filtered = songList.filter(song => {
       const nameMatch =
-        !name?.length ||
-        name.some((n) => song.name.toLowerCase().includes(n.toLowerCase()));
+        !name?.length || name.some(n => song.name.toLowerCase().includes(n.toLowerCase()));
       const artistMatch =
-        !artists?.length ||
-        artists.some((a) =>
-          song.artists.toLowerCase().includes(a.toLowerCase())
-        );
+        !artists?.length || artists.some(a => song.artists.toLowerCase().includes(a.toLowerCase()));
       const albumMatch =
-        !album?.length ||
-        album.some((a) => song.album.toLowerCase().includes(a.toLowerCase()));
+        !album?.length || album.some(a => song.album.toLowerCase().includes(a.toLowerCase()));
       return nameMatch && artistMatch && albumMatch;
     });
     setFilteredSongList(filtered);
@@ -130,7 +128,7 @@ export default function UploadList({ singerList }) {
   const rowSelection = {
     type: "checkbox",
     fixed: true,
-    getCheckboxProps: (record) => ({
+    getCheckboxProps: record => ({
       disabled: record.uploaded,
     }),
     onChange: (selectedRowKeys, selectedRows) => {
@@ -138,10 +136,10 @@ export default function UploadList({ singerList }) {
     },
   };
   /** 上传事件 */
-  const handleUpload = async (record) => {
+  const handleUpload = async record => {
     try {
-      setFilteredSongList((songList) => {
-        return songList.map((song) => {
+      setFilteredSongList(songList => {
+        return songList.map(song => {
           if (song.id === record.id) song.uploading = true;
           return song;
         });
@@ -152,8 +150,8 @@ export default function UploadList({ singerList }) {
     } catch (error) {
       console.log("error", error);
     } finally {
-      setFilteredSongList((songList) => {
-        return songList.map((song) => {
+      setFilteredSongList(songList => {
+        return songList.map(song => {
           if (song.id === record.id) song.uploading = false;
           return song;
         });
@@ -205,11 +203,7 @@ export default function UploadList({ singerList }) {
           />
           <div>
             <div>{text}</div>
-            {record.tns && (
-              <div style={{ color: "#666", fontSize: "12px" }}>
-                {record.tns}
-              </div>
-            )}
+            {record.tns && <div style={{ color: "#666", fontSize: "12px" }}>{record.tns}</div>}
           </div>
         </div>
       ),
@@ -269,7 +263,7 @@ export default function UploadList({ singerList }) {
       dataIndex: "size",
       key: "size",
       width: 120,
-      render: (size) => formatFileSize(size),
+      render: size => formatFileSize(size),
     },
     // 歌曲后缀
     {
@@ -277,13 +271,13 @@ export default function UploadList({ singerList }) {
       dataIndex: "ext",
       key: "ext",
       width: 100,
-      render: (ext) => <Tag color="blue">{ext}</Tag>,
+      render: ext => <Tag color="blue">{ext}</Tag>,
     },
   ];
 
   /** 表格change */
   const handleTableChange = (pagination, filters, sorter) => {
-    setFilteredSongList((songList) => {
+    setFilteredSongList(songList => {
       return songList.sort((a, b) => {
         const order = sorter.order === "ascend" ? 1 : -1;
         return order * a[sorter.columnKey]?.localeCompare(b[sorter.columnKey]);
@@ -307,14 +301,14 @@ export default function UploadList({ singerList }) {
     setUploadFailedSongList([]);
   };
   /** 批量上传 */
-  const handleBatchUpload = async (songs) => {
+  const handleBatchUpload = async songs => {
     try {
       if (uploading) return;
       resetData();
       setUploading(true);
       console.log("将要批量上传的选中的歌曲", songs);
       // 过滤出待上传的歌曲
-      const uploadSongList = filteredSongList.filter((song) => !song.uploaded);
+      const uploadSongList = filteredSongList.filter(song => !song.uploaded);
       console.log("uploadSongList", uploadSongList);
       setToUploadingSongList(uploadSongList);
       await UploadConfirm({
@@ -326,22 +320,22 @@ export default function UploadList({ singerList }) {
       // 显示上传进度
       uploadProgressRef.current?.open();
       // 并发限制上传
-      const tasks = uploadSongList.map((song) => async () => {
+      const tasks = uploadSongList.map(song => async () => {
         try {
           const res = await uploadSong(song);
           song.uploaded = true;
-          setUploadedSongList((list) => [...list, song]);
+          setUploadedSongList(list => [...list, song]);
           return res;
         } catch (error) {
           song.uploaded = true;
-          setUploadFailedSongList((list) => [...list, song]);
+          setUploadFailedSongList(list => [...list, song]);
           return error;
         }
       });
       const results = await promiseLimit(tasks);
       // 刷新列表
       getSongList(singerList);
-      const successCount = results.filter((r) => !(r instanceof Error)).length;
+      const successCount = results.filter(r => !(r instanceof Error)).length;
       const failedCount = results.length - successCount;
       msgSuccess(`上传完成: 成功${successCount}首，失败${failedCount}首`);
     } catch (error) {
@@ -363,7 +357,10 @@ export default function UploadList({ singerList }) {
     <>
       {singerList?.length ? (
         <div className={styles["upload-list"]}>
-          <SearchForm onSearch={handleSearch} songList={songList} />
+          <SearchForm
+            onSearch={handleSearch}
+            songList={songList}
+          />
           <Table
             rowSelection={rowSelection}
             dataSource={filteredSongList}
@@ -440,8 +437,7 @@ const UploadConfirm = ({ total, uploaded, toUpload }) => {
         <span className={styles.value}>
           {toUpload.length} 首
           <span className={styles.size}>
-            （{formatFileSize(toUpload.reduce((acc, cur) => acc + cur.size, 0))}
-            ）
+            （{formatFileSize(toUpload.reduce((acc, cur) => acc + cur.size, 0))}）
           </span>
         </span>
       </div>
