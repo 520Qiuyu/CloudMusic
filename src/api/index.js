@@ -53,6 +53,7 @@ export const getSongInfoList = async songIds => {
     });
   });
   const allInfo = await Promise.all(proArr);
+  console.log("allInfo", allInfo);
   return allInfo.flat();
 };
 
@@ -457,4 +458,27 @@ export const matchLocalSong = async files => {
   return weapiRequest("/api/search/match/new", {
     data: songs,
   });
+};
+
+// 获取歌单所有数据
+export const getPlaylistAllData = async id => {
+  try {
+    const detailRes = await weapiRequest("/api/v6/playlist/detail", {
+      data: {
+        id,
+        offset: 0,
+        total: true,
+      },
+    });
+    console.log("detailRes", detailRes);
+    const trackIds = detailRes.playlist.trackIds.map(item => item.id);
+    const res = await getSongInfoList(trackIds);
+    if (res[0]?.code != 200) {
+      msgError(res[0]?.msg || "获取歌单数据失败");
+      throw new Error(res[0]?.msg || "获取歌单数据失败");
+    }
+    return res[0].songs;
+  } catch (error) {
+    throw error;
+  }
 };

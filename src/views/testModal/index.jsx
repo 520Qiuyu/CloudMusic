@@ -9,6 +9,7 @@ import {
   getArtistAllSongList,
   getArtistTopSongList,
   getCloudData,
+  getPlaylistAllData,
   getPlaylistList,
   getQrCode,
   getQrKey,
@@ -248,6 +249,16 @@ const TestModal = forwardRef((props, ref) => {
     }
   };
 
+  // 测试获取歌单信息
+  const [playlistId, setPlaylistId] = useState("13508631377");
+  const handleGetPlaylist = async () => {
+    try {
+      getPlaylistAllData(playlistId);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
   return (
     <Modal
       title="测试Modal"
@@ -451,6 +462,22 @@ const TestModal = forwardRef((props, ref) => {
             onClick={handleSearchArtist}
           >
             搜索歌手信息
+          </Button>
+        </Space>
+      </Form.Item>
+      {/* 测试获取歌单信息 */}
+      <Form.Item label="测试获取歌单信息">
+        <Space>
+          <Input
+            placeholder="请输入歌单id"
+            value={playlistId}
+            onChange={e => setPlaylistId(e.target.value)}
+          />
+          <Button
+            type="primary"
+            onClick={handleGetPlaylist}
+          >
+            获取歌单信息
           </Button>
         </Space>
       </Form.Item>

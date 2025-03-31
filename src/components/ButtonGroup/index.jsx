@@ -6,12 +6,12 @@ import {
   UploadOutlined,
   DownloadOutlined,
   CustomerServiceOutlined,
-  PlayCircleOutlined,
   ImportOutlined,
   ExportOutlined,
   InfoCircleOutlined,
   PlusOutlined,
   UnlockOutlined,
+  OrderedListOutlined,
   ApiOutlined,
 } from "@ant-design/icons";
 import styles from "./index.module.scss";
@@ -25,6 +25,7 @@ import CloudImport from "../../views/cloudImport";
 import TestModal from "../../views/testModal";
 import CloudMusicManager from "../../views/cloudMusicManager";
 import UnlockMusic from "../../views/unlockMusic";
+import PlayList from "../../views/playList";
 import SongMatchCorrect from "../../views/songMatchCorrect";
 
 const ButtonGroup = () => {
@@ -50,6 +51,12 @@ const ButtonGroup = () => {
   const localUploadRef = useRef(null);
   const handleLocalUpload = () => {
     localUploadRef.current.open();
+  };
+
+  // 查看歌单
+  const playListRef = useRef(null);
+  const handlePlayList = () => {
+    playListRef.current.open();
   };
 
   // 加密音乐解锁
@@ -81,6 +88,8 @@ const ButtonGroup = () => {
   const handleImport = () => {
     cloudImportRef.current.open();
   };
+
+  //
 
   // 歌曲自动尝试匹配
   const songMatchCorrectRef = useRef(null);
@@ -211,6 +220,19 @@ const ButtonGroup = () => {
         />
       </Tooltip>
 
+      {/* 查看歌单 */}
+      <Tooltip
+        title={"查看歌单"}
+        placement="left"
+      >
+        <Button
+          type="primary"
+          icon={<OrderedListOutlined />}
+          onClick={handlePlayList}
+          className={styles["button"]}
+        />
+      </Tooltip>
+
       {/* testModal */}
       <Tooltip
         title={"testModal"}
@@ -236,6 +258,8 @@ const ButtonGroup = () => {
       <UnlockMusic ref={unlockMusicRef} />
       {/* testModal */}
       <TestModal ref={testModalRef} />
+      {/* 查看歌单 */}
+      <PlayList ref={playListRef} />
       <SongMatchCorrect ref={songMatchCorrectRef} />
     </div>
   );
