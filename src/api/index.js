@@ -279,17 +279,39 @@ export const getArtistTopSongList = id =>
   });
 
 // 获取歌手全部歌曲 失效
-export const getArtistAllSongList = id =>
-  weapiRequest("/api/v1/artist/songs", {
-    data: {
-      id,
-      private_cloud: "true",
-      work_type: 1,
-      order: "hot", //hot,time
-      limit: 10000,
-      offset: 0,
-    },
-  });
+export const getArtistAllSongList = async id => {
+  try {
+    let more = true;
+    const songs = [];
+    let offset = 0;
+    while (more) {
+      const res = await weapiRequest("/api/v1/artist/songs", {
+        data: {
+          id,
+          limit: 200,
+          private_cloud: "true",
+          work_type: 1,
+          order: "hot", //hot,time
+          offset,
+        },
+      });
+      if (res.code != 200) {
+        throw new Error(res.message || res.msg || "获取歌手全部歌曲失败");
+      }
+      songs.push(...res.songs);
+      more = res.more;
+      offset += 200;
+    }
+    return {
+      code: 200,
+      msg: "获取歌手全部歌曲成功",
+      songs: songs,
+    };
+  } catch (error) {
+    console.log("error", error);
+    throw error;
+  }
+};
 
 // 获取歌手专辑
 export const getArtistAlbumList = async (id, limit = 1000, offset = 0) => {

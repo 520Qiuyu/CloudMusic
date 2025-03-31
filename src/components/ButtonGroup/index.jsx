@@ -12,6 +12,7 @@ import {
   InfoCircleOutlined,
   PlusOutlined,
   UnlockOutlined,
+  ApiOutlined,
 } from "@ant-design/icons";
 import styles from "./index.module.scss";
 import QuickUpload from "../../views/quickUpload";
@@ -24,6 +25,7 @@ import CloudImport from "../../views/cloudImport";
 import TestModal from "../../views/testModal";
 import CloudMusicManager from "../../views/cloudMusicManager";
 import UnlockMusic from "../../views/unlockMusic";
+import SongMatchCorrect from "../../views/songMatchCorrect";
 
 const ButtonGroup = () => {
   // 云盘快速上传
@@ -80,6 +82,12 @@ const ButtonGroup = () => {
     cloudImportRef.current.open();
   };
 
+  // 歌曲自动尝试匹配
+  const songMatchCorrectRef = useRef(null);
+  const handleMatchCorrect = () => {
+    songMatchCorrectRef.current.open();
+  };
+
   // testModal
   const testModalRef = useRef(null);
   const handleTestModal = () => {
@@ -114,15 +122,18 @@ const ButtonGroup = () => {
         />
       </Tooltip>
 
-      {/* 云盘快速同步 */}
-      {/* <Tooltip title={"云盘快速同步"} placement="left">
+      {/* 歌曲自动匹配 */}
+      <Tooltip
+        title={"歌曲自动匹配"}
+        placement="left"
+      >
         <Button
           type="primary"
-          icon={<SyncOutlined />}
+          icon={<ApiOutlined />}
           onClick={handleMatchCorrect}
           className={styles["button"]}
         />
-      </Tooltip> */}
+      </Tooltip>
 
       {/* 云盘音质提升 */}
       {/* <Tooltip title={"云盘音质提升"} placement="left">
@@ -225,6 +236,7 @@ const ButtonGroup = () => {
       <UnlockMusic ref={unlockMusicRef} />
       {/* testModal */}
       <TestModal ref={testModalRef} />
+      <SongMatchCorrect ref={songMatchCorrectRef} />
     </div>
   );
 };
