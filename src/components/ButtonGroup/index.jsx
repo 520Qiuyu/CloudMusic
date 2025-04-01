@@ -24,7 +24,6 @@ import CloudExport from "../../views/cloudExport";
 import CloudImport from "../../views/cloudImport";
 import TestModal from "../../views/testModal";
 import CloudMusicManager from "../../views/cloudMusicManager";
-import UnlockMusic from "../../views/unlockMusic";
 import PlayList from "../../views/playList";
 import SongMatchCorrect from "../../views/songMatchCorrect";
 
@@ -57,12 +56,6 @@ const ButtonGroup = () => {
   const playListRef = useRef(null);
   const handlePlayList = () => {
     playListRef.current.open();
-  };
-
-  // 加密音乐解锁
-  const unlockMusicRef = useRef(null);
-  const handleUnlockMusic = () => {
-    unlockMusicRef.current.open();
   };
 
   // 网页VIP歌曲A
@@ -207,19 +200,6 @@ const ButtonGroup = () => {
         />
       </Tooltip> */}
 
-      {/* 加密音乐解锁 */}
-      <Tooltip
-        title={"加密音乐解锁"}
-        placement="left"
-      >
-        <Button
-          type="primary"
-          icon={<UnlockOutlined />}
-          onClick={handleUnlockMusic}
-          className={styles["button"]}
-        />
-      </Tooltip>
-
       {/* 查看歌单 */}
       <Tooltip
         title={"查看歌单"}
@@ -255,7 +235,6 @@ const ButtonGroup = () => {
       <VipSongB ref={vipSongBRef} />
       <CloudExport ref={cloudExportRef} />
       <CloudImport ref={cloudImportRef} />
-      <UnlockMusic ref={unlockMusicRef} />
       {/* testModal */}
       <TestModal ref={testModalRef} />
       {/* 查看歌单 */}

@@ -44,13 +44,15 @@ const LocalUpload = forwardRef((props, ref) => {
           setFileList(prev => [...prev]);
         }
       });
-      const res = await promiseLimit(uploadPromises, 2);
+      const res = await promiseLimit(uploadPromises, 1);
       console.log("res", res);
       message.success("上传成功");
+      const size = res.filter(Boolean).reduce((acc, file) => acc + file.size, 0);
       const info = {
         list: res.filter(Boolean),
         count: res.filter(Boolean).length,
-        size: formatFileSize(res.filter(Boolean).reduce((acc, file) => acc + file.size, 0)),
+        size,
+        sizeDesc: formatFileSize(),
         artist: res.filter(Boolean)?.[0].artist || "",
       };
       // 下载文件

@@ -1,13 +1,15 @@
-import { Table, Tag, Select, Button } from "antd";
-import React from "react";
-import styles from "./index.module.scss";
+import { Button, Select, Table, Tag } from "antd";
 import Avatar from "antd/lib/avatar/avatar";
-import { Space } from "antd";
-import { useRef } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useSongMatch } from "../context/SongMatchContext";
+import styles from "./index.module.scss";
+import { Input } from "antd/lib";
 
-export default function SingerMatchArea({ singerInfo, songList, cdnConfig }) {
+export default function SingerMatchArea({ singerId }) {
+  const { singerMap, updateSongMatchInfo } = useSongMatch();
+  const singerInfo = singerMap[singerId]?.singerInfo || {};
+  const songList = singerMap[singerId]?.songList || [];
+  const cdnConfig = singerMap[singerId]?.cdnConfig || [];
+
   const songOptions = songList.map(item => ({
     ...item,
     label: item.name,
@@ -42,10 +44,20 @@ export default function SingerMatchArea({ singerInfo, songList, cdnConfig }) {
       render: size => `${(size / 1024 / 1024).toFixed(2)}MB`,
     },
     {
-      title: "比特率",
-      dataIndex: "bitrate",
-      key: "bitrate",
-      render: bitrate => `${bitrate}kbps`,
+      title: "匹配歌曲ID",
+      dataIndex: "match",
+      key: "match",
+      render: (match, record, index) => {
+        return (
+          <Input
+            placeholder="请输入"
+            value={match}
+            onChange={e => {
+              updateSongMatchInfo(singerId, index, e.target.value);
+            }}
+          />
+        );
+      },
     },
     // 匹配
     {
@@ -55,8 +67,10 @@ export default function SingerMatchArea({ singerInfo, songList, cdnConfig }) {
       width: 230,
       render: (name, record, index) => {
         const value = record?.match || songMap[name]?.id;
-        if (value) {
-          record.match = value;
+        // console.log("value", value, record, songMap[name]);
+        if (value && !record?.match) {
+          updateSongMatchInfo(singerId, index, value);
+          console.log("value", value, record?.match, songMap[name]?.id);
         }
         return (
           <Select
@@ -87,8 +101,7 @@ export default function SingerMatchArea({ singerInfo, songList, cdnConfig }) {
             }}
             value={value}
             onChange={value => {
-              record.match = value;
-              //   newConfig.current[index].id = value;
+              updateSongMatchInfo(singerId, index, value);
             }}
           />
         );
@@ -104,7 +117,7 @@ export default function SingerMatchArea({ singerInfo, songList, cdnConfig }) {
         JSON.stringify(
           cdnConfig.map(item => ({
             ...item,
-            id: item.match,
+            id: item.match || item.id,
           })),
           null,
           2
@@ -130,7 +143,9 @@ export default function SingerMatchArea({ singerInfo, songList, cdnConfig }) {
           shape="circle"
         />
         <div className={styles["singer-detail"]}>
-          <div className={styles["singer-name"]}>{singerInfo?.artistName}</div>
+          <div className={styles["singer-name"]}>
+            {singerInfo?.artistName}({singerInfo?.artistId})
+          </div>
           <div className={styles["singer-music-num"]}>共{songList?.length}首歌曲</div>
         </div>
       </div>

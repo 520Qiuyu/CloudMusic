@@ -113,7 +113,7 @@ export default function UploadList({ singerList }) {
     const { name, artists, album } = values;
     const filtered = songList.filter(song => {
       const nameMatch =
-        !name?.length || name.some(n => song.name.toLowerCase().includes(n.toLowerCase()));
+        !name?.length || name.some(n => song.name?.toLowerCase().includes(n.toLowerCase()));
       const artistMatch =
         !artists?.length || artists.some(a => song.artists.toLowerCase().includes(a.toLowerCase()));
       const albumMatch =
