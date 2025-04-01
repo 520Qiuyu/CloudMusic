@@ -1,8 +1,7 @@
-import { Button, Select, Table, Tag } from "antd";
-import Avatar from "antd/lib/avatar/avatar";
+import { Avatar, Button, Select, Table, Tag } from "antd";
+import { Input } from "antd/lib";
 import { useSongMatch } from "../context/SongMatchContext";
 import styles from "./index.module.scss";
-import { Input } from "antd/lib";
 
 export default function SingerMatchArea({ singerId }) {
   const { singerMap, updateSongMatchInfo } = useSongMatch();
