@@ -1,9 +1,11 @@
-import React, { forwardRef, useImperativeHandle, useState } from "react";
-import { Modal, Upload, Table, message, Progress } from "antd";
-import { InboxOutlined } from "@ant-design/icons";
-import styles from "./index.module.scss";
 import { uploadLocalSong } from "@/api";
 import { formatFileSize, promiseLimit } from "@/utils";
+import { downloadJsonFile } from "@/utils/download";
+import { msgSuccess } from "@/utils/modal";
+import { InboxOutlined } from "@ant-design/icons";
+import { Button, Input, Modal, Progress, Table, Upload } from "antd";
+import { forwardRef, useImperativeHandle, useState } from "react";
+import styles from "./index.module.scss";
 
 const { Dragger } = Upload;
 
@@ -16,7 +18,10 @@ const LocalUpload = forwardRef((props, ref) => {
     setVisible(true);
   };
   const close = () => setVisible(false);
-  const reset = () => setFileList([]);
+  const reset = () => {
+    setLoading(false);
+    setFileList([]);
+  };
 
   useImperativeHandle(ref, () => ({
     open,
@@ -24,7 +29,10 @@ const LocalUpload = forwardRef((props, ref) => {
     reset,
   }));
 
+  // 上传状态
   const [loading, setLoading] = useState(false);
+  // 并发量
+  const [concurrency, setConcurrency] = useState(1);
   const handleUpload = async () => {
     try {
       setLoading(true);
@@ -44,25 +52,19 @@ const LocalUpload = forwardRef((props, ref) => {
           setFileList(prev => [...prev]);
         }
       });
-      const res = await promiseLimit(uploadPromises, 1);
+      const res = await promiseLimit(uploadPromises, concurrency);
       console.log("res", res);
-      message.success("上传成功");
+      msgSuccess("上传成功");
       const size = res.filter(Boolean).reduce((acc, file) => acc + file.size, 0);
       const info = {
         list: res.filter(Boolean),
         count: res.filter(Boolean).length,
         size,
-        sizeDesc: formatFileSize(),
+        sizeDesc: formatFileSize(size),
         artist: res.filter(Boolean)?.[0].artist || "",
       };
       // 下载文件
-      const blob = new Blob([JSON.stringify(info, null, 2)], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = info.artist + ".json";
-      link.click();
-      URL.revokeObjectURL(url);
+      downloadJsonFile(info, info.artist + ".json");
     } catch (error) {
       console.log("error", error);
     } finally {
@@ -136,6 +138,17 @@ const LocalUpload = forwardRef((props, ref) => {
     >
       <div className={styles["local-upload"]}>
         <div className={styles["upload-section"]}>
+          <div className={styles["concurrency-control"]}>
+            <span>并发数量：</span>
+            <Input
+              type="number"
+              min={1}
+              max={6}
+              value={concurrency}
+              onChange={e => setConcurrency(parseInt(e.target.value) || 1)}
+              style={{ width: 80 }}
+            />
+          </div>
           <Dragger
             className={styles.dragger}
             multiple
@@ -145,13 +158,13 @@ const LocalUpload = forwardRef((props, ref) => {
               return false;
             }}
             showUploadList={false}
-            accept=".mp3,.flac,.wav,.m4a"
+            accept=".mp3,.flac,.wav,.m4a,.ogg"
           >
             <p className={styles["upload-icon"]}>
               <InboxOutlined />
             </p>
             <p className={styles["upload-text"]}>点击或拖拽文件到此区域上传</p>
-            <p className={styles["upload-hint"]}>支持 mp3, flac, wav, m4a 格式的音频文件</p>
+            <p className={styles["upload-hint"]}>支持 mp3, flac, wav, m4a, ogg 格式的音频文件</p>
           </Dragger>
         </div>
 
@@ -168,8 +181,15 @@ const LocalUpload = forwardRef((props, ref) => {
             <span className={styles.divider}>|</span>
             <span className={styles["size-text"]}>
               总大小：
-              {(fileList.reduce((acc, file) => acc + file.size, 0) / 1024 / 1024).toFixed(2)} MB
+              {formatFileSize(fileList.reduce((acc, file) => acc + file.size, 0))}
             </span>
+            <Button
+              type="primary"
+              size="small"
+              onClick={() => setFileList([])}
+            >
+              清空列表
+            </Button>
           </div>
         </div>
       </div>

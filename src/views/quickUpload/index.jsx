@@ -17,6 +17,7 @@ function QuickUpload(props, ref) {
   const close = () => setVisible(false);
   const reset = () => {
     setSingerList([]);
+    setCurrentTab("1");
   };
 
   // 当前tab
@@ -34,7 +35,7 @@ function QuickUpload(props, ref) {
       console.log("res2", res2);
       // 合并两个数组并按照id去重
       const list = [...new Map([...res2, ...res].map(item => [item.id, item])).values()];
-      console.log('list',list)
+      console.log("list", list);
       setSingerList(list);
     } catch (error) {
       console.log("error", error);
@@ -88,7 +89,10 @@ function QuickUpload(props, ref) {
           tab="上传列表"
           key="2"
         >
-          <UploadList singerList={chooseList} />
+          <UploadList
+            key={currentTab}
+            singerList={chooseList}
+          />
         </TabPane>
       </Tabs>
     </Modal>

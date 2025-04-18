@@ -4,7 +4,7 @@
   gap: 16px;
 
   .upload-section {
-    flex: 0  0 170px;
+    flex: 0 0 170px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -57,6 +57,8 @@
   }
 
   .upload-stats {
+    display: flex;
+    align-items: center;
     color: #666;
     font-size: 13px;
 
@@ -67,6 +69,10 @@
     .divider {
       margin: 0 8px;
       color: #d9d9d9;
+    }
+
+    button {
+      margin-left: auto;
     }
   }
 }

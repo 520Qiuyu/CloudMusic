@@ -14,6 +14,7 @@ import {
   getQrCode,
   getQrKey,
   getQrStatus,
+  getSongInfoList,
   getSongUrl,
   matchLocalSong,
   searchArtist,
@@ -108,6 +109,16 @@ const TestModal = forwardRef((props, ref) => {
         await navigator.clipboard.writeText(url);
         msgSuccess("获取成功,已复制到剪切板");
       }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+  // 获取歌曲信息
+  const handleGetSongInfo = async () => {
+    console.log("获取歌曲信息");
+    try {
+      const res = await getSongInfoList([songId]);
+      console.log("res", res);
     } catch (error) {
       console.log("error", error);
     }
@@ -354,6 +365,13 @@ const TestModal = forwardRef((props, ref) => {
               onClick={handleGetSongUrl}
             >
               获取歌曲URL
+            </Button>
+            {/* 获取歌曲信息 */}
+            <Button
+              type="primary"
+              onClick={handleGetSongInfo}
+            >
+              获取歌曲信息
             </Button>
             <Button
               type="primary"

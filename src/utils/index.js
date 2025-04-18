@@ -3,6 +3,7 @@
 import md5 from "md5";
 import { unsafeWindow } from "vite-plugin-monkey/dist/client";
 import * as mm from "music-metadata";
+import { QUALITY_LEVELS } from "@/constant";
 
 /**
  * 格式化文件大小
@@ -313,6 +314,8 @@ export const mergeObjects = (o1,...objects) => {
     return result;
   }, o1);
 };
+
+
 
 // #endregion ================ 工具函数 ================
 

@@ -1,4 +1,4 @@
-import { Button, Empty, message, Table, Tag } from "antd";
+import { Button, Empty, message, Table, Tag, Input } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 import { getCDNConfig, getSongInfoList, uploadSong } from "../../../api";
 import {
@@ -293,7 +293,10 @@ export default function UploadList({ singerList }) {
   const [uploadFailedSongList, setUploadFailedSongList] = useState([]);
   // 待上传歌曲
   const [toUploadingSongList, setToUploadingSongList] = useState([]);
+  // 上传中
   const [uploading, setUploading] = useState(false);
+  // 上传并发量
+  const [concurrency, setConcurrency] = useState(10);
   // 初始化上述数据
   const resetData = () => {
     setUploadedSongList([]);
@@ -332,7 +335,7 @@ export default function UploadList({ singerList }) {
           return error;
         }
       });
-      const results = await promiseLimit(tasks);
+      const results = await promiseLimit(tasks, concurrency || 6);
       // 刷新列表
       getSongList(singerList);
       const successCount = results.filter(r => !(r instanceof Error)).length;
@@ -377,6 +380,19 @@ export default function UploadList({ singerList }) {
               selectedRows={selectedRows}
               filteredSongList={filteredSongList}
             />
+            {/* 并发量控制 */}
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span>并发量：</span>
+              <Input
+                type="number"
+                min={1}
+                max={6}
+                defaultValue={3}
+                style={{ width: 80 }}
+                onChange={e => setConcurrency(Number(e.target.value))}
+                placeholder="1-6"
+              />
+            </div>
             {/* 上传选中的 */}
             <Button
               type="primary"

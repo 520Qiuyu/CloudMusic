@@ -4,8 +4,6 @@ import { getGUser } from "../utils";
 import { msgError } from "../utils/modal";
 import { weapiFetch, weapiRequest } from "../utils/request";
 import { generateQRCode } from "../utils/qrcode";
-import md5 from "md5";
-import * as mm from "music-metadata";
 
 // 获取登录二维码KEY
 export const getQrKey = () =>
@@ -482,3 +480,5 @@ export const getPlaylistAllData = async id => {
     throw error;
   }
 };
+
+
