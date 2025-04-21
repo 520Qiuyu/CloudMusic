@@ -8,6 +8,7 @@ import {
   getArtistTextInSongDetail,
   mergeObjects,
   promiseLimit,
+  sleep,
 } from "../../../utils/index";
 import { confirm, msgError, msgSuccess } from "../../../utils/modal";
 import styles from "../index.module.scss";
@@ -82,7 +83,6 @@ export default function UploadList({ singerList }) {
               isVIP: song.fee === 1,
               isPay: song.fee === 4,
             });
-            console.log("song", song);
           }
           if (otherInfo.name) {
             defaultItem.name = otherInfo.name;
@@ -90,7 +90,7 @@ export default function UploadList({ singerList }) {
             defaultItem.artists ||= otherInfo.ar || otherInfo.artists?.join();
             defaultItem.filename ||= `${defaultItem.name}.${otherInfo.ext}` || "未知.flac";
           }
-          console.log("defaultItem", defaultItem.name, defaultItem);
+
           songList.push(defaultItem);
         });
       });
@@ -296,7 +296,7 @@ export default function UploadList({ singerList }) {
   // 上传中
   const [uploading, setUploading] = useState(false);
   // 上传并发量
-  const [concurrency, setConcurrency] = useState(10);
+  const [concurrency, setConcurrency] = useState(6);
   // 初始化上述数据
   const resetData = () => {
     setUploadedSongList([]);
@@ -304,22 +304,24 @@ export default function UploadList({ singerList }) {
     setUploadFailedSongList([]);
   };
   /** 批量上传 */
-  const handleBatchUpload = async songs => {
+  const handleBatchUpload = async (songs, needConfirm = true) => {
     try {
       if (uploading) return;
       resetData();
       setUploading(true);
       console.log("将要批量上传的选中的歌曲", songs);
       // 过滤出待上传的歌曲
-      const uploadSongList = filteredSongList.filter(song => !song.uploaded);
-      console.log("uploadSongList", uploadSongList);
+      const uploadSongList = songs.filter(song => !song.uploaded);
       setToUploadingSongList(uploadSongList);
-      await UploadConfirm({
-        total: songs.length,
-        uploaded: 0,
-        toUpload: uploadSongList,
-      });
       if (!uploadSongList.length) return msgError("没有可上传的歌曲");
+      // 确认上传
+      if (needConfirm) {
+        await UploadConfirm({
+          total: songs.length,
+          uploaded: 0,
+          toUpload: uploadSongList,
+        });
+      }
       // 显示上传进度
       uploadProgressRef.current?.open();
       // 并发限制上传
@@ -355,6 +357,44 @@ export default function UploadList({ singerList }) {
   const handleUploadSelected = async () => {
     handleBatchUpload(selectedRows);
   };
+  /** 按专辑上传 */
+  const handleUploadByAlbum = async () => {
+    try {
+      if (uploading) return;
+      resetData();
+      setUploading(true);
+      console.log("将要批量上传的选中的歌曲", selectedRows);
+      const albumMap = {};
+      filteredSongList.forEach(song => {
+        if (!albumMap[song.album]) albumMap[song.album] = [];
+        albumMap[song.album].push(song);
+      });
+      console.log("albumMap", albumMap);
+      const albumList = Object.values(albumMap);
+      const uploadAlbumList = albumList.map(album => album.filter(song => !song.uploaded));
+      await UploadConfirm({
+        total: filteredSongList?.length,
+        uploaded: 0,
+        toUpload: uploadAlbumList?.flat(),
+      });
+      let index = 1;
+      for (const album of albumList) {
+        msgSuccess(
+          `当前正在上传第${index}/${albumList.length}专辑，开始上传专辑: ${album[0].album}`
+        );
+        console.log(
+          `当前正在上传第${index}/${albumList.length}专辑，开始上传专辑: ${album[0].album}`,
+          album
+        );
+        await handleBatchUpload(album, false);
+        index++;
+      }
+    } catch (error) {
+      console.log("error", error);
+    } finally {
+      setUploading(false);
+    }
+  };
 
   return (
     <>
@@ -387,7 +427,7 @@ export default function UploadList({ singerList }) {
                 type="number"
                 min={1}
                 max={6}
-                defaultValue={3}
+                value={concurrency}
                 style={{ width: 80 }}
                 onChange={e => setConcurrency(Number(e.target.value))}
                 placeholder="1-6"
@@ -409,6 +449,14 @@ export default function UploadList({ singerList }) {
               loading={uploading}
             >
               全部上传
+            </Button>
+            {/* 按专辑上传 */}
+            <Button
+              type="primary"
+              onClick={handleUploadByAlbum}
+              loading={uploading}
+            >
+              按专辑上传
             </Button>
           </div>
         </div>

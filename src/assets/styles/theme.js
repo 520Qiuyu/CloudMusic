@@ -68,6 +68,9 @@ const theme = {
       colorBorder: '#E1E1E1',
       algorithm: true,
     },
+    Table: {
+      
+    },
   },
 };
 

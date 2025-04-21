@@ -7,6 +7,37 @@
     width: 40px;
     height: 40px;
     border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+
+    .songCoverImg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .btnWrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 9;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0;
+      transition: all 0.3s;
+      opacity: 0;
+    }
+    &:hover {
+      .btnWrapper {
+        font-size: 24px;
+        opacity: 1;
+      }
+    }
   }
 
   .songInfo {
@@ -27,6 +58,13 @@
       font-size: 12px;
       color: #999;
     }
+  }
+}
+
+.currentSong {
+  background-color: rgba(#c20c0c, 8%);
+  td{
+    background-color: rgba(#c20c0c, 8%) !important;
   }
 }
 

@@ -77,7 +77,6 @@ export const matchCloudSong = async (cloudSongId, id) => {
 // 上传歌曲信息
 export const uploadSong = async song => {
   try {
-    console.log("song", song);
     // 1、检查资源
     let res = await weapiRequest("/api/cloud/upload/check/v2", {
       data: {
