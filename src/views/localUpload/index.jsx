@@ -1,5 +1,5 @@
 import { uploadLocalSong } from "@/api";
-import { formatFileSize, promiseLimit } from "@/utils";
+import { formatFileSize, promiseLimit, sleep } from "@/utils";
 import { downloadJsonFile } from "@/utils/download";
 import { msgSuccess } from "@/utils/modal";
 import { InboxOutlined } from "@ant-design/icons";
