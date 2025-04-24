@@ -13,6 +13,7 @@ import {
   UnlockOutlined,
   OrderedListOutlined,
   ApiOutlined,
+  ConsoleSqlOutlined,
 } from "@ant-design/icons";
 import styles from "./index.module.scss";
 import QuickUpload from "../../views/quickUpload";
@@ -26,6 +27,7 @@ import TestModal from "../../views/testModal";
 import CloudMusicManager from "../../views/cloudMusicManager";
 import PlayList from "../../views/playList";
 import SongMatchCorrect from "../../views/songMatchCorrect";
+import SongResourceManage from "@/views/SongResourceManage";
 
 const ButtonGroup = () => {
   // 云盘快速上传
@@ -56,6 +58,12 @@ const ButtonGroup = () => {
   const playListRef = useRef(null);
   const handlePlayList = () => {
     playListRef.current.open();
+  };
+
+  // 歌曲资源管理
+  const songResourceRef = useRef(null);
+  const handleSongResource = () => {
+    songResourceRef.current.open();
   };
 
   // 网页VIP歌曲A
@@ -160,6 +168,19 @@ const ButtonGroup = () => {
         />
       </Tooltip>
 
+      {/* 歌曲资源管理 */}
+      <Tooltip
+        title={"歌曲资源管理"}
+        placement="left"
+      >
+        <Button
+          type="primary"
+          icon={<ConsoleSqlOutlined />}
+          onClick={handleSongResource}
+          className={styles["button"]}
+        />
+      </Tooltip>
+
       {/* 网页VIP歌曲A */}
       {/* <Tooltip title={"网页VIP歌曲A"} placement="left">
         <Button
@@ -240,6 +261,8 @@ const ButtonGroup = () => {
       {/* 查看歌单 */}
       <PlayList ref={playListRef} />
       <SongMatchCorrect ref={songMatchCorrectRef} />
+      {/* 歌曲资源管理 */}
+      <SongResourceManage ref={songResourceRef} />
     </div>
   );
 };

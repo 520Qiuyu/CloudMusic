@@ -58,7 +58,7 @@ export const getSongInfoList = async songIds => {
 // 匹配歌曲信息 将云盘歌曲匹配网易的歌，关联起来
 export const matchCloudSong = async (cloudSongId, id) => {
   // 满足这个情况需要匹配信息
-  if (cloudSongId != id && id > 0) {
+  if (cloudSongId != id /* && id > 0 */) {
     const res = await weapiRequest("/api/cloud/user/song/match", {
       data: {
         songId: cloudSongId,

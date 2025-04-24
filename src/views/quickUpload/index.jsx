@@ -4,6 +4,7 @@ import { getArtists, getArtists2 } from "../../api";
 import SingerChoose from "./components/SingerChoose";
 import UploadList from "./components/UploadList";
 import styles from "./index.module.scss";
+import { msgError } from "@/utils/modal";
 
 const { TabPane } = Tabs;
 
@@ -22,6 +23,12 @@ function QuickUpload(props, ref) {
 
   // 当前tab
   const [currentTab, setCurrentTab] = useState("1");
+  const handleTabChange = key => {
+    if (key !== "1" && !chooseList.length) {
+      return msgError("请选择歌手");
+    }
+    setCurrentTab(key);
+  };
 
   // 歌手列表
   const [singerList, setSingerList] = useState([]);
@@ -71,7 +78,7 @@ function QuickUpload(props, ref) {
         defaultActiveKey="1"
         activeKey={currentTab}
         className={styles["quick-upload-tabs"]}
-        onChange={key => setCurrentTab(key)}
+        onChange={handleTabChange}
       >
         {/* 歌手选择 */}
         <TabPane

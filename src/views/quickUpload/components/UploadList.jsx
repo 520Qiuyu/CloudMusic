@@ -25,7 +25,10 @@ export default function UploadList({ singerList }) {
   const getSongList = async ids => {
     try {
       setLoading(true);
-      if (!ids?.length) return message.error("请先选择歌手");
+      if (!ids?.length) {
+        msgError("请先选择歌手");
+        return;
+      }
 
       // 先获取CDN的歌曲配置信息
       const proArr = ids.map(async id => {
@@ -35,11 +38,11 @@ export default function UploadList({ singerList }) {
       let allConfig = await Promise.all(proArr);
       allConfig = allConfig.flat();
       const allConfigMap = Object.fromEntries(allConfig.map(item => [item.id, item]));
-      console.log("allConfig", allConfig);
+      // console.log("allConfig", allConfig);
 
       // 获取歌曲信息
       const allInfo = await getSongInfoList(allConfig.map(item => item.id));
-      console.log("allInfo", allInfo);
+      // console.log("allInfo", allInfo);
 
       // 获取上传列表
       // 此处先遍历云盘中是否拥有
@@ -104,6 +107,7 @@ export default function UploadList({ singerList }) {
     }
   };
   useEffect(() => {
+    console.log('singerList',singerList)
     getSongList(singerList);
   }, [singerList]);
 
