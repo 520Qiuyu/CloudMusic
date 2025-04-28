@@ -25,6 +25,7 @@ import SearchForm from "./components/SearchForm";
 import Stats from "./components/Stats";
 import styles from "./index.module.scss";
 import { Input } from "antd";
+import { downloadJsonFile } from "@/utils/download";
 
 const CloudMusicManager = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -341,6 +342,50 @@ const CloudMusicManager = forwardRef((props, ref) => {
     }
   };
 
+  const handleStoleSong = async () => {
+    /**
+     * {
+      "artist": "筷子兄弟",
+      "artists": ["筷子兄弟"],
+      "album": "父亲",
+      "id": 362996,
+      "size": 32855545,
+      "md5": "e8805543d8b8d66b95567b1d682674bd",
+      "name": "父亲",
+      "ext": "flac",
+      "bitrate": 938,
+      "match": 362996
+    },
+     */
+    console.log("selectedRows", selectedRows);
+    const stolenList = selectedRows.map(item => {
+      const {
+        artist,
+        album,
+        ar,
+        simpleSong,
+        privateCloud,
+        songId,
+        fileSize,
+        songName,
+        fileName,
+        bitrate,
+      } = item;
+      return {
+        artist,
+        artists: ar?.map(a => a.name) || artist,
+        album,
+        id: songId,
+        size: fileSize,
+        md5: privateCloud.md5,
+        name: songName,
+        ext: fileName.split(".").pop(),
+        bitrate,
+      };
+    });
+    downloadJsonFile(stolenList, "stolenList.json");
+  };
+
   const playListRef = useRef(null);
   const handleAddToPlaylist = async () => {
     try {
@@ -426,6 +471,15 @@ const CloudMusicManager = forwardRef((props, ref) => {
           >
             自动按专辑添加
           </Button>
+          {/* 偷取资源 */}
+          <Button
+            type="primary"
+            disabled={!selectedRows.length}
+            onClick={handleStoleSong}
+          >
+            偷取资源
+          </Button>
+          {/* 添加到歌单 */}
           <Button
             type="primary"
             disabled={!selectedRows.length}
