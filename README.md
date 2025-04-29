@@ -19,7 +19,7 @@
 
 1. 安装油猴插件（Tampermonkey）
 2. 安装本脚本 [![安装脚本](https://img.shields.io/badge/-%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-blue)](https://raw.githubusercontent.com/520Qiuyu/CloudMusic/main/dist/cloudmusic.user.js)
-3. 打开网易云音乐网页版
+3. 打开网易云音乐网页版 - 右上角我的主页
 4. 在页面右下角找到功能按钮组 如：云盘快速上传
 5. 在上传界面中选择要上传的音乐文件
 6. 等待上传完成，可以实时查看上传进度
