@@ -1,13 +1,11 @@
-import { Modal, Table, Tag, Tooltip } from "antd";
-import React, { forwardRef, useImperativeHandle, useState } from "react";
-import styles from "./index.module.scss";
-import { useEffect } from "react";
+import { getPlaylistAllData } from "@/api";
+import SearchForm from "@/components/SearchForm";
+import useFilter from "@/hooks/useFilter";
+import { Modal, Table, Tag } from "antd";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
-
+import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
 dayjs.extend(duration);
-import { getPlaylistAllData } from "@/api";
-import SearchForm from "./components/SearchForm";
 
 function SongList(props, ref) {
   const [visible, setVisible] = useState(false);
@@ -45,31 +43,25 @@ function SongList(props, ref) {
     }
   };
 
-  // 处理搜索
-  const [filteredSongList, setFilteredSongList] = useState([]);
-
-  // 处理搜索
-  const handleSearch = values => {
-    const { name, artists, album } = values;
-    const filtered = songList.filter(song => {
-      const nameMatch =
-        !name?.length || name.some(n => song.name.toLowerCase().includes(n.toLowerCase()));
-      const artistMatch =
-        !artists?.length ||
-        artists.some(a =>
-          (song.ar?.map(a => a.name).join(", ") || "").toLowerCase().includes(a.toLowerCase())
-        );
-      const albumMatch =
-        !album?.length ||
-        album.some(a => (song.al?.name || "").toLowerCase().includes(a.toLowerCase()));
-      return nameMatch && artistMatch && albumMatch;
-    });
-    setFilteredSongList(filtered);
+  // 使用useFilter hook处理筛选逻辑
+  const filterConfig = {
+    fields: {
+      name: {
+        getValue: song => song.name,
+      },
+      artists: {
+        getValue: song => song.ar?.map(artist => artist.name).join(", "),
+      },
+      album: {
+        getValue: song => song.al?.name,
+      },
+    },
   };
-
-  useEffect(() => {
-    setFilteredSongList(songList);
-  }, [songList]);
+  const {
+    filteredList: filteredSongList,
+    setFilteredList: setFilteredSongList,
+    handleFilter: handleSearch,
+  } = useFilter(songList, filterConfig);
 
   // 格式化时长
   const formatDuration = ms => {
@@ -263,7 +255,19 @@ function SongList(props, ref) {
       onCancel={close}
     >
       {/* 筛选 */}
-      <SearchForm onSearch={handleSearch} />
+      <SearchForm
+        onSearch={handleSearch}
+        data={songList.map(song => ({
+          ...song,
+          artists: song.ar?.map(artist => artist.name).join(", "),
+          album: song.al?.name,
+        }))}
+        options={[
+          { label: "歌曲", value: "name" },
+          { label: "歌手", value: "artists" },
+          { label: "专辑", value: "album" },
+        ]}
+      />
       <Table
         columns={columns}
         dataSource={filteredSongList}

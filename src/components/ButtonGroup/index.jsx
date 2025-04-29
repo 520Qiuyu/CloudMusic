@@ -14,6 +14,7 @@ import {
   OrderedListOutlined,
   ApiOutlined,
   ConsoleSqlOutlined,
+  CodeOutlined,
 } from "@ant-design/icons";
 import styles from "./index.module.scss";
 import QuickUpload from "../../views/quickUpload";
@@ -212,14 +213,17 @@ const ButtonGroup = () => {
       </Tooltip> */}
 
       {/* 云盘导入 */}
-      {/* <Tooltip title={"云盘导入"} placement="left">
+      <Tooltip
+        title={"云盘JSON导入"}
+        placement="left"
+      >
         <Button
           type="primary"
-          icon={<ImportOutlined />}
+          icon={<CodeOutlined />}
           onClick={handleImport}
           className={styles["button"]}
         />
-      </Tooltip> */}
+      </Tooltip>
 
       {/* 查看歌单 */}
       <Tooltip
@@ -263,6 +267,7 @@ const ButtonGroup = () => {
       <SongMatchCorrect ref={songMatchCorrectRef} />
       {/* 歌曲资源管理 */}
       <SongResourceManage ref={songResourceRef} />
+      <CloudImport ref={cloudImportRef} />
     </div>
   );
 };

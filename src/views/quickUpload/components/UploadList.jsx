@@ -12,9 +12,10 @@ import {
 } from "../../../utils/index";
 import { confirm, msgError, msgSuccess } from "../../../utils/modal";
 import styles from "../index.module.scss";
-import SearchForm from "./SearchForm";
 import UploadProgress from "./UploadProgress";
 import UploadStats from "./UploadStats";
+import SearchForm from "@/components/SearchForm";
+import useFilter from "../../../hooks/useFilter";
 
 export default function UploadList({ singerList }) {
   // 所有歌曲列表
@@ -107,25 +108,29 @@ export default function UploadList({ singerList }) {
     }
   };
   useEffect(() => {
-    console.log('singerList',singerList)
+    console.log("singerList", singerList);
     getSongList(singerList);
   }, [singerList]);
 
-  // 筛选后的歌曲列表
-  const [filteredSongList, setFilteredSongList] = useState([]);
-  const handleSearch = values => {
-    const { name, artists, album } = values;
-    const filtered = songList.filter(song => {
-      const nameMatch =
-        !name?.length || name.some(n => song.name?.toLowerCase().includes(n.toLowerCase()));
-      const artistMatch =
-        !artists?.length || artists.some(a => song.artists.toLowerCase().includes(a.toLowerCase()));
-      const albumMatch =
-        !album?.length || album.some(a => song.album.toLowerCase().includes(a.toLowerCase()));
-      return nameMatch && artistMatch && albumMatch;
-    });
-    setFilteredSongList(filtered);
+  // 使用useFilter hook处理筛选逻辑
+  const filterConfig = {
+    fields: {
+      name: {
+        getValue: song => song.name,
+      },
+      artists: {
+        getValue: song => song.artists,
+      },
+      album: {
+        getValue: song => song.album,
+      },
+    },
   };
+  const {
+    filteredList: filteredSongList,
+    setFilteredList: setFilteredSongList,
+    handleFilter: handleSearch,
+  } = useFilter(songList, filterConfig);
 
   /** 选择 */
   const [selectedRows, setSelectedRows] = useState([]);
@@ -393,6 +398,7 @@ export default function UploadList({ singerList }) {
         await handleBatchUpload(album, false);
         index++;
       }
+      console.log("上传完成");
     } catch (error) {
       console.log("error", error);
     } finally {
@@ -406,7 +412,12 @@ export default function UploadList({ singerList }) {
         <div className={styles["upload-list"]}>
           <SearchForm
             onSearch={handleSearch}
-            songList={songList}
+            data={songList}
+            options={[
+              { label: "歌曲", value: "name" },
+              { label: "歌手", value: "artists" },
+              { label: "专辑", value: "album" },
+            ]}
           />
           <Table
             rowSelection={rowSelection}

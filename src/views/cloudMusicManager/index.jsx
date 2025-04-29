@@ -1,14 +1,8 @@
-import { CopyrightOutlined } from "@ant-design/icons";
-import { Button, Modal, Table, Tag, message } from "antd";
-import { PlayCircleFilled, PauseCircleFilled } from "@ant-design/icons";
-import React, {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import SearchForm from "@/components/SearchForm";
+import { downloadJsonFile } from "@/utils/download";
+import { CopyrightOutlined, PauseCircleFilled, PlayCircleFilled } from "@ant-design/icons";
+import { Button, Input, Modal, Table, Tag, message } from "antd";
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react";
 import {
   addSongToPlaylist,
   createPlaylist,
@@ -21,11 +15,9 @@ import {
 import { sleep, truncateString } from "../../utils";
 import { confirm, msgError, msgSuccess } from "../../utils/modal";
 import PlayList from "./components/PlayList";
-import SearchForm from "./components/SearchForm";
 import Stats from "./components/Stats";
 import styles from "./index.module.scss";
-import { Input } from "antd";
-import { downloadJsonFile } from "@/utils/download";
+import useFilter from "@/hooks/useFilter";
 
 const CloudMusicManager = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -63,31 +55,25 @@ const CloudMusicManager = forwardRef((props, ref) => {
   }, [visible]);
 
   // 筛选后的歌曲列表
-  const [filteredSongList, setFilteredSongList] = useState([]);
-  const handleSearch = values => {
-    console.log("values", values);
-    const { name, artist, album } = values;
-    const filtered = songList.filter(song => {
-      const nameMatch =
-        !name?.length ||
-        name.some(n => song.simpleSong.name?.toLowerCase().includes(n.toLowerCase()));
-      const artistMatch =
-        !artist?.length || artist.some(a => song.artist.toLowerCase().includes(a.toLowerCase()));
-      const albumMatch =
-        !album?.length || album.some(a => song.album.toLowerCase().includes(a.toLowerCase()));
-      const legacy = song.simpleSong.al && song.simpleSong.ar;
-      const match = nameMatch && artistMatch && albumMatch && legacy;
-      if (!match) {
-        console.log("song", song);
-        console.log("nameMatch", nameMatch);
-        console.log("artistMatch", artistMatch);
-        console.log("albumMatch", albumMatch);
-        console.log("legacy", legacy);
-      }
-      return match;
-    });
-    setFilteredSongList(filtered);
+  // 使用useFilter hook处理筛选逻辑
+  const filterConfig = {
+    fields: {
+      name: {
+        getValue: song => song?.simpleSong?.name,
+      },
+      artist: {
+        getValue: song => song.artist,
+      },
+      album: {
+        getValue: song => song.album,
+      },
+    },
   };
+  const {
+    filteredList: filteredSongList,
+    setFilteredList: setFilteredSongList,
+    handleFilter: handleSearch,
+  } = useFilter(songList, filterConfig);
 
   /** 选择 */
   const [selectedRows, setSelectedRows] = useState([]);
@@ -373,7 +359,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       } = item;
       return {
         artist,
-        artists: ar?.map(a => a.name) || artist,
+        artists: ar?.map(a => a.name) || [artist],
         album,
         id: songId,
         size: fileSize,
@@ -443,7 +429,18 @@ const CloudMusicManager = forwardRef((props, ref) => {
     >
       <SearchForm
         onSearch={handleSearch}
-        songList={songList}
+        data={songList.map(item => {
+          return {
+            ...item,
+            name: item.simpleSong.name,
+            artists: item.simpleSong.ar?.map(a => a.name).join(","),
+          };
+        })}
+        options={[
+          { label: "歌曲", value: "name" },
+          { label: "歌手", value: "artist" },
+          { label: "专辑", value: "album" },
+        ]}
       />
       <Table
         rowSelection={rowSelection}
