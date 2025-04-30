@@ -60,7 +60,8 @@ const CloudImport = forwardRef((props, ref) => {
     try {
       setLoading(true);
       const proArr = selectedRows.map(
-        item => () => uploadSong({ ...item, filename: item.name || "未知" })
+        item => () =>
+          uploadSong({ ...item, filename: item.name || "未知", artists: item.artists.join?.(",") })
       );
       const res = await promiseLimit(proArr, concurrent);
       console.log("res", res);

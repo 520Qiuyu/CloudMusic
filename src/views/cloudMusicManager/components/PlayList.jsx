@@ -1,24 +1,12 @@
-import {
-  Button,
-  Image,
-  message,
-  Modal,
-  Popconfirm,
-  Space,
-  Table,
-  Input,
-} from "antd";
+import { Button, Image, message, Modal, Popconfirm, Space, Table, Input } from "antd";
 import React, { forwardRef, useImperativeHandle, useState } from "react";
 import { createPlaylist, deletePlaylist, getPlaylistList } from "../../../api";
-import {
-  confirm,
-  msgWarning,
-  msgSuccess,
-  msgError,
-} from "../../../utils/modal";
+import { confirm, msgWarning, msgSuccess, msgError } from "../../../utils/modal";
 import styles from "../index.module.scss";
 import { useRef } from "react";
 import { getGUser } from "../../../utils";
+import SearchForm from "@/components/SearchForm";
+import useFilter from "@/hooks/useFilter";
 
 const PlayList = (props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -30,7 +18,7 @@ const PlayList = (props, ref) => {
   const isSelect = mode === "select";
 
   // 打开弹窗
-  const open = (mode) => {
+  const open = mode => {
     reset();
     if (mode) {
       setMode(mode);
@@ -77,7 +65,7 @@ const PlayList = (props, ref) => {
       const res = await getPlaylistList(user.userId);
       console.log("res", res);
       if (res.code === 200) {
-        setPlayList((list) => [...list, ...res.playlist]);
+        setPlayList(res.playlist);
       }
     } catch (error) {
       console.log("error", error);
@@ -85,6 +73,17 @@ const PlayList = (props, ref) => {
       setLoading(false);
     }
   };
+
+  const { filteredList, handleFilter, setFilteredList } = useFilter(playList, {
+    fields: {
+      name: {
+        getValue: item => item.name,
+      },
+      creator: {
+        getValue: item => item.creator.nickname,
+      },
+    },
+  });
 
   const columns = [
     {
@@ -125,7 +124,7 @@ const PlayList = (props, ref) => {
       align: "right",
       sorter: (a, b) => a.trackCount - b.trackCount,
       sortDirections: ["descend", "ascend"],
-      render: (text) => (
+      render: text => (
         <span
           style={{
             color: "#666",
@@ -148,7 +147,7 @@ const PlayList = (props, ref) => {
       dataIndex: "updateTime",
       key: "updateTime",
       width: 200,
-      render: (text) => new Date(text).toLocaleString(),
+      render: text => new Date(text).toLocaleString(),
       sorter: (a, b) => a.updateTime - b.updateTime,
       sortDirections: ["descend", "ascend"],
     },
@@ -157,7 +156,7 @@ const PlayList = (props, ref) => {
       dataIndex: "playCount",
       key: "playCount",
       width: 100,
-      render: (text) => {
+      render: text => {
         const count = text > 10000 ? `${(text / 10000).toFixed(1)}万` : text;
         return <span>{count}</span>;
       },
@@ -170,7 +169,7 @@ const PlayList = (props, ref) => {
   // 选择事件
   const rowSelection = {
     type: isSelect ? "radio" : "checkbox",
-    selectedRowKeys: selectedRows.map((item) => item.id),
+    selectedRowKeys: selectedRows.map(item => item.id),
     onSelectAll: () => {
       setTimeout(() => {
         setSelectedRows(playList);
@@ -222,11 +221,8 @@ const PlayList = (props, ref) => {
       return;
     }
     try {
-      await confirm(
-        <DeleteConfirmContent playlists={selectedRows} />,
-        "删除歌单"
-      );
-      const proArr = selectedRows.map((item) => deletePlaylist(item.id));
+      await confirm(<DeleteConfirmContent playlists={selectedRows} />, "删除歌单");
+      const proArr = selectedRows.map(item => deletePlaylist(item.id));
       const res = await Promise.all(proArr);
       console.log("res", res);
       msgSuccess("删除成功");
@@ -246,10 +242,27 @@ const PlayList = (props, ref) => {
         onCancel={close}
         footer={null}
         centered
-        width={800}
+        width={900}
       >
+        <SearchForm
+          data={playList.map(item => ({
+            ...item,
+            creator: item.creator.nickname,
+          }))}
+          options={[
+            {
+              label: "歌单名字",
+              value: "name",
+            },
+            {
+              label: "创建者",
+              value: "creator",
+            },
+          ]}
+          onSearch={handleFilter}
+        />
         <Table
-          dataSource={playList}
+          dataSource={filteredList}
           columns={columns}
           rowKey="id"
           size="small"
@@ -261,9 +274,7 @@ const PlayList = (props, ref) => {
         <div className={styles.footer}>
           <div>已选择 {selectedRows.length} 个歌单</div>
           <Space>
-            <Button onClick={() => setCreateModalVisible(true)}>
-              新建歌单
-            </Button>
+            <Button onClick={() => setCreateModalVisible(true)}>新建歌单</Button>
             <Button
               danger
               disabled={!selectedRows.length}
@@ -300,7 +311,7 @@ const PlayList = (props, ref) => {
         <Input
           placeholder="请输入歌单名称"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={e => setName(e.target.value)}
           onPressEnter={handleCreate}
           autoFocus
         />
@@ -331,12 +342,13 @@ const DeleteConfirmContent = ({ playlists }) => {
           <div className={styles.title}>即将删除的歌单：</div>
         </div>
         <ul className={styles.listWrapper}>
-          {playlists.map((item) => (
-            <li key={item.id} className={styles.listItem}>
+          {playlists.map(item => (
+            <li
+              key={item.id}
+              className={styles.listItem}
+            >
               <span className={styles.itemName}>{item.name}</span>
-              {item.trackCount > 0 && (
-                <span className={styles.itemCount}>{item.trackCount}首</span>
-              )}
+              {item.trackCount > 0 && <span className={styles.itemCount}>{item.trackCount}首</span>}
             </li>
           ))}
         </ul>

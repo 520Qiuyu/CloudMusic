@@ -15,6 +15,7 @@ import {
   ApiOutlined,
   ConsoleSqlOutlined,
   CodeOutlined,
+  GithubOutlined,
 } from "@ant-design/icons";
 import styles from "./index.module.scss";
 import QuickUpload from "../../views/quickUpload";
@@ -29,6 +30,7 @@ import CloudMusicManager from "../../views/cloudMusicManager";
 import PlayList from "../../views/playList";
 import SongMatchCorrect from "../../views/songMatchCorrect";
 import SongResourceManage from "@/views/SongResourceManage";
+import GithubInfo from "../../views/githubInfo";
 
 const ButtonGroup = () => {
   // 云盘快速上传
@@ -103,6 +105,12 @@ const ButtonGroup = () => {
   const testModalRef = useRef(null);
   const handleTestModal = () => {
     testModalRef.current.open();
+  };
+
+  // github
+  const githubInfoRef = useRef(null);
+  const handleGithubInfo = () => {
+    githubInfoRef.current.open();
   };
 
   return (
@@ -251,6 +259,19 @@ const ButtonGroup = () => {
         />
       </Tooltip>
 
+      {/* GitHub信息 */}
+      <Tooltip
+        title={"GitHub信息"}
+        placement="left"
+      >
+        <Button
+          type="primary"
+          icon={<GithubOutlined />}
+          onClick={handleGithubInfo}
+          className={styles["button"]}
+        />
+      </Tooltip>
+
       {/* 弹窗组件 */}
       <QuickUpload ref={quickUploadRef} />
       <CloudMusicManager ref={cloudMusicManagerRef} />
@@ -268,6 +289,7 @@ const ButtonGroup = () => {
       {/* 歌曲资源管理 */}
       <SongResourceManage ref={songResourceRef} />
       <CloudImport ref={cloudImportRef} />
+      <GithubInfo ref={githubInfoRef} />
     </div>
   );
 };

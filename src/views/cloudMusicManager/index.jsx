@@ -365,7 +365,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
         size: fileSize,
         md5: privateCloud.md5,
         name: songName,
-        ext: fileName.split(".").pop(),
+        ext: fileName.split(".")[1] || "mp3",
         bitrate,
       };
     });

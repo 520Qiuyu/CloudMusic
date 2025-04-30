@@ -91,7 +91,7 @@ export default function UploadList({ singerList }) {
           if (otherInfo.name) {
             defaultItem.name = otherInfo.name;
             defaultItem.album ||= otherInfo.al?.name || otherInfo.album || "";
-            defaultItem.artists ||= otherInfo.ar || otherInfo.artists?.join();
+            defaultItem.artists ||= otherInfo.ar || otherInfo.artists?.join?.();
             defaultItem.filename ||= `${defaultItem.name}.${otherInfo.ext}` || "未知.flac";
           }
 

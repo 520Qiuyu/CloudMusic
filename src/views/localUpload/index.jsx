@@ -43,6 +43,7 @@ const LocalUpload = forwardRef((props, ref) => {
           }
           file.status = "uploading";
           const res = await uploadLocalSong(file);
+          console.log('res',res)
           file.status = "done";
           return res;
         } catch (e) {
@@ -70,6 +71,10 @@ const LocalUpload = forwardRef((props, ref) => {
     } finally {
       setLoading(false);
     }
+  };
+  // 失败过滤
+  const handleFilter = async () => {
+    setFileList(prev => prev.filter(file => file.status === "error"));
   };
 
   const columns = [
@@ -187,8 +192,18 @@ const LocalUpload = forwardRef((props, ref) => {
               type="primary"
               size="small"
               onClick={() => setFileList([])}
+              style={{ marginLeft: 'auto' }}
             >
               清空列表
+            </Button>
+            {/* 失败重传 */}
+            <Button
+              type="primary"
+              size="small"
+              onClick={handleFilter}
+              disabled={!fileList.some(file => file.status !== "error")}
+            >
+              失败过滤
             </Button>
           </div>
         </div>

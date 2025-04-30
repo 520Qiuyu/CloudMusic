@@ -77,7 +77,7 @@ export const matchCloudSong = async (cloudSongId, id) => {
 // 上传歌曲信息
 export const uploadSong = async song => {
   try {
-    console.log('song',song)
+    console.log("song", song);
     // 1、检查资源
     let res = await weapiRequest("/api/cloud/upload/check/v2", {
       data: {
@@ -427,6 +427,18 @@ export const uploadLocalSong = async file => {
   } catch (error) {
     console.log("error", error);
     throw error;
+  } finally {
+    return {
+      artist,
+      artists,
+      album,
+      id: uploadInfoRes.songId,
+      size: fileSize,
+      md5: fileMd5,
+      name: songName,
+      ext,
+      bitrate: realBitrate,
+    };
   }
 };
 
@@ -480,5 +492,3 @@ export const getPlaylistAllData = async id => {
     throw error;
   }
 };
-
-
