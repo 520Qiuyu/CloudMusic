@@ -1,12 +1,13 @@
 import { Avatar, Button, Select, Table, Tag } from "antd";
-import { Input } from "antd/lib";
+import { Form, Input } from "antd/lib";
 import { useSongMatch } from "../context/SongMatchContext";
 import styles from "./index.module.scss";
 
 export default function SingerMatchArea({ singerId }) {
-  const { singerMap, updateSongMatchInfo } = useSongMatch();
+  const { singerMap, updateSongMatchInfo, matchSingerList, setMatchSingerList } = useSongMatch();
   const singerInfo = singerMap[singerId]?.singerInfo || {};
-  const songList = singerMap[singerId]?.songList || [];
+  const songList =
+    matchSingerList?.map(singerId => singerMap[singerId]?.songList || [])?.flat() || [];
   const cdnConfig = singerMap[singerId]?.cdnConfig || [];
 
   const songOptions = songList.map(item => ({
@@ -146,6 +147,18 @@ export default function SingerMatchArea({ singerId }) {
             {singerInfo?.artistName}({singerInfo?.artistId})
           </div>
           <div className={styles["singer-music-num"]}>共{songList?.length}首歌曲</div>
+        </div>
+        {/* 要匹配的歌手 */}
+        <div style={{ marginLeft: "auto" }}>
+          <Form.Item label="要匹配的歌手">
+            <Input
+              placeholder="请输入要匹配的歌手，逗号隔开"
+              defaultValue={matchSingerList?.join(",")}
+              onPressEnter={e => {
+                setMatchSingerList(e.target.value?.split(/[,，]/).filter(Boolean));
+              }}
+            />
+          </Form.Item>
         </div>
       </div>
       <Table

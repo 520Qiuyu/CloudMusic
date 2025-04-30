@@ -7,6 +7,8 @@ import {
   getCDNConfig,
 } from "../../../api";
 import { promiseLimit } from "@/utils";
+import { use } from "react";
+import { useEffect } from "react";
 
 const SongMatchContext = createContext();
 
@@ -14,6 +16,7 @@ export const SongMatchProvider = ({ children }) => {
   const [singerList, setSingerList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [chooseList, setChooseList] = useState([]);
+  const [matchSingerList, setMatchSingerList] = useState([]);
   const [singerMap, setSingerMap] = useState({});
   const [currentTab, setCurrentTab] = useState("1");
 
@@ -59,6 +62,7 @@ export const SongMatchProvider = ({ children }) => {
   // 处理选择歌手
   const handleChoose = value => {
     setChooseList(value);
+    setMatchSingerList(value);
     setCurrentTab("2");
 
     const asyncFn = async () => {
@@ -101,9 +105,27 @@ export const SongMatchProvider = ({ children }) => {
     asyncFn();
   };
 
+  useEffect(() => {
+    matchSingerList.forEach(singerId => {
+      if (singerId && !singerMap[singerId]) {
+        // 获取歌手歌曲
+        getSingerAllSongList(singerId).then(res => {
+          setSingerMap(prv => ({
+            ...prv,
+            [singerId]: {
+              ...prv[singerId],
+              songList: res,
+            },
+          }));
+        });
+      }
+    });
+    console.log("singerMap", singerMap);
+  }, [matchSingerList]);
+
   // 更新歌曲匹配信息
   const updateSongMatchInfo = (singerId, index, match) => {
-    console.log("update", singerId, index, match)
+    console.log("update", singerId, index, match);
     setSingerMap(prv => ({
       ...prv,
       [singerId]: {
@@ -127,6 +149,7 @@ export const SongMatchProvider = ({ children }) => {
     setCurrentTab("1");
     setSingerList([]);
     setChooseList([]);
+    setMatchSingerList([]);
     setSingerMap({});
   };
 
@@ -136,11 +159,13 @@ export const SongMatchProvider = ({ children }) => {
         singerList,
         loading,
         chooseList,
+        matchSingerList,
         singerMap,
         currentTab,
         setSingerList,
         setLoading,
         setChooseList,
+        setMatchSingerList,
         setSingerMap,
         getSingerList,
         handleChoose,

@@ -43,6 +43,7 @@ const SongMatchCorrect = forwardRef((props, ref) => {
       onCancel={close}
       width={1000}
       footer={null}
+      centered={true}
     >
       <Tabs
         defaultActiveKey="1"
