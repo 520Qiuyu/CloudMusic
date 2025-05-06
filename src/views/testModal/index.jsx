@@ -1,5 +1,7 @@
-import { Button, Form, Input, Modal, Space } from "antd";
-import React, { forwardRef, useImperativeHandle, useState } from "react";
+import { useVisible } from "@/hooks/useVisible";
+import { UploadOutlined } from "@ant-design/icons";
+import { Button, Form, Input, Modal, Space, Upload } from "antd";
+import { forwardRef, useState } from "react";
 import {
   addSongToPlaylist,
   createPlaylist,
@@ -20,23 +22,11 @@ import {
   searchArtist,
   uploadLocalSong,
 } from "../../api";
+import { sleep } from "../../utils";
 import { msgError, msgSuccess } from "../../utils/modal";
-import { getFileMD5, sleep } from "../../utils";
-import { Upload } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
-import md5 from "md5";
 
 const TestModal = forwardRef((props, ref) => {
-  const [visible, setVisible] = useState(false);
-  const open = () => setVisible(true);
-  const close = () => setVisible(false);
-  const reset = () => {};
-
-  useImperativeHandle(ref, () => ({
-    open,
-    close,
-    reset,
-  }));
+  const { visible, open, close } = useVisible({}, ref);
 
   // 获取云盘输入数据
   const [pageData, setPageData] = useState({

@@ -478,6 +478,8 @@ export const getPlaylistAllData = async id => {
         id,
         offset: 0,
         total: true,
+        n: 100000,
+        s: 8,
       },
     });
     console.log("detailRes", detailRes);

@@ -3,18 +3,10 @@ import { Modal } from "antd";
 import { Tabs } from "antd";
 import ArtistList from "./components/ArtistList";
 import SongList from "./components/SongList";
+import { useVisible } from "@/hooks/useVisible";
 
 const SongResourceManage = forwardRef((props, ref) => {
-  const [visible, setVisible] = useState(false);
-  const open = () => setVisible(true);
-  const close = () => setVisible(false);
-  const reset = () => {};
-
-  useImperativeHandle(ref, () => ({
-    open,
-    close,
-    reset,
-  }));
+  const { visible, open, close } = useVisible({}, ref);
 
   return (
     <Modal

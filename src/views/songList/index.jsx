@@ -1,6 +1,7 @@
 import { getPlaylistAllData } from "@/api";
 import SearchForm from "@/components/SearchForm";
 import useFilter from "@/hooks/useFilter";
+import { useVisible } from "@/hooks/useVisible";
 import { Modal, Table, Tag } from "antd";
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration";
@@ -8,28 +9,26 @@ import { forwardRef, useEffect, useImperativeHandle, useState } from "react";
 dayjs.extend(duration);
 
 function SongList(props, ref) {
-  const [visible, setVisible] = useState(false);
+  const { visible, open, close } = useVisible(
+    {
+      onOpen() {
+        setPlaylistId(id);
+        getSongListData(id);
+      },
+      onReset() {
+        setSongList([]);
+        setPlaylistId(null);
+      },
+    },
+    ref
+  );
   const [loading, setLoading] = useState(false);
   const [songList, setSongList] = useState([]);
   const [playlistId, setPlaylistId] = useState(null);
   const [selectedRows, setSelectedRows] = useState([]);
 
-  const open = async id => {
-    setPlaylistId(id);
-    setVisible(true);
-  };
-  const close = () => setVisible(false);
-  const reset = () => {
-    setSongList([]);
-    setPlaylistId(null);
-  };
-
-  useEffect(() => {
-    getSongListData();
-  }, [playlistId]);
-
   // 获取歌曲列表
-  const getSongListData = async () => {
+  const getSongListData = async playlistId => {
     if (!playlistId) return;
     try {
       setLoading(true);
@@ -238,12 +237,6 @@ function SongList(props, ref) {
       render: pop => formatPopularity(pop),
     },
   ];
-
-  useImperativeHandle(ref, () => ({
-    open,
-    close,
-    reset,
-  }));
 
   return (
     <Modal

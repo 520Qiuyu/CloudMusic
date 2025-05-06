@@ -6,27 +6,32 @@ import SearchForm from "@/components/SearchForm";
 import { uploadSong } from "@/api";
 import { msgSuccess } from "@/utils/modal";
 import useFilter from "@/hooks/useFilter";
+import { useVisible } from "@/hooks/useVisible";
 
 const { Search } = Input;
 
 const CloudImport = forwardRef((props, ref) => {
-  const [visible, setVisible] = useState(false);
+  const { visible, open, close } = useVisible(
+    {
+      onOpen() {
+        getSingerList();
+      },
+      onReset() {
+        setSearchText("");
+        setAudioFormat("all");
+        setBitrate("all");
+        setTableData([]);
+        setSelectedRows([]);
+        setLoading(false);
+      },
+    },
+    ref
+  );
   const [searchText, setSearchText] = useState("");
   const [audioFormat, setAudioFormat] = useState("all");
   const [bitrate, setBitrate] = useState("all");
   const [selectedRows, setSelectedRows] = useState([]);
   const [tableData, setTableData] = useState([]);
-
-  const open = () => setVisible(true);
-  const close = () => setVisible(false);
-  const reset = () => {
-    setSearchText("");
-    setAudioFormat("all");
-    setBitrate("all");
-    setTableData([]);
-    setSelectedRows([]);
-    setLoading(false);
-  };
 
   // 使用useFilter hook处理筛选逻辑
   const filterConfig = {
@@ -81,7 +86,7 @@ const CloudImport = forwardRef((props, ref) => {
       content: (
         <pre style={{ maxHeight: 400, overflow: "auto" }}>
           {`// 必填字段说明：
-// - id: 歌曲ID（必填）
+// - id: 匹配后的歌曲ID（必填）
 // - size: 文件大小，单位字节（必填）
 // - md5: 文件MD5值（必填）
 // - ext: 文件扩展名（必填）
@@ -127,12 +132,6 @@ ${JSON.stringify(
       },
     });
   };
-
-  useImperativeHandle(ref, () => ({
-    open,
-    close,
-    reset,
-  }));
 
   return (
     <Modal

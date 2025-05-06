@@ -6,6 +6,7 @@ import SingerMatchArea from "./components/SingerMatchArea";
 import { Tabs } from "antd";
 import { SongMatchProvider, useSongMatch } from "./context/SongMatchContext";
 import { useState } from "react";
+import { useVisible } from "@/hooks/useVisible";
 
 const { TabPane } = Tabs;
 
@@ -22,19 +23,14 @@ const SongMatchCorrect = forwardRef((props, ref) => {
     reset,
   } = useSongMatch();
 
-  const [visible, setVisible] = useState(false);
-  const open = () => {
-    reset();
-    getSingerList();
-    setVisible(true);
-  };
-  const close = () => setVisible(false);
-
-  useImperativeHandle(ref, () => ({
-    open,
-    close,
-    reset,
-  }));
+  const { visible, open, close } = useVisible(
+    {
+      onOpen() {
+        getSingerList();
+      },
+    },
+    ref
+  );
 
   return (
     <Modal

@@ -1,25 +1,27 @@
+import { useVisible } from "@/hooks/useVisible";
+import { msgError } from "@/utils/modal";
 import { Modal, Tabs } from "antd";
-import React, { forwardRef, useImperativeHandle, useState } from "react";
+import { forwardRef, useState } from "react";
 import { getArtists, getArtists2 } from "../../api";
 import SingerChoose from "./components/SingerChoose";
 import UploadList from "./components/UploadList";
 import styles from "./index.module.scss";
-import { msgError } from "@/utils/modal";
 
 const { TabPane } = Tabs;
 
 function QuickUpload(props, ref) {
-  const [visible, setVisible] = useState(false);
-  const open = () => {
-    reset();
-    getSingerList();
-    setVisible(true);
-  };
-  const close = () => setVisible(false);
-  const reset = () => {
-    setSingerList([]);
-    setCurrentTab("1");
-  };
+  const { visible, open, close } = useVisible(
+    {
+      onOpen() {
+        getSingerList();
+      },
+      onReset() {
+        setSingerList([]);
+        setCurrentTab("1");
+      },
+    },
+    ref
+  );
 
   // 当前tab
   const [currentTab, setCurrentTab] = useState("1");
@@ -58,12 +60,6 @@ function QuickUpload(props, ref) {
     setChooseList(value);
     setCurrentTab("2");
   };
-
-  useImperativeHandle(ref, () => ({
-    open,
-    close,
-    reset,
-  }));
 
   return (
     <Modal

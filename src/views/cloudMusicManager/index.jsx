@@ -18,18 +18,17 @@ import PlayList from "./components/PlayList";
 import Stats from "./components/Stats";
 import styles from "./index.module.scss";
 import useFilter from "@/hooks/useFilter";
+import { useVisible } from "@/hooks/useVisible";
 
 const CloudMusicManager = forwardRef((props, ref) => {
-  const [visible, setVisible] = useState(false);
-  const open = () => setVisible(true);
-  const close = () => setVisible(false);
-  const reset = () => {};
-
-  useImperativeHandle(ref, () => ({
-    open,
-    close,
-    reset,
-  }));
+  const { visible, open, close } = useVisible(
+    {
+      onOpen() {
+        getCloudDataList();
+      },
+    },
+    ref
+  );
 
   const [songList, setSongList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -49,10 +48,6 @@ const CloudMusicManager = forwardRef((props, ref) => {
       setLoading(false);
     }
   };
-  useEffect(() => {
-    if (!visible) return;
-    getCloudDataList();
-  }, [visible]);
 
   // 筛选后的歌曲列表
   // 使用useFilter hook处理筛选逻辑

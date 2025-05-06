@@ -6,29 +6,22 @@ import { InboxOutlined } from "@ant-design/icons";
 import { Button, Input, Modal, Progress, Table, Upload } from "antd";
 import { forwardRef, useImperativeHandle, useState } from "react";
 import styles from "./index.module.scss";
+import { useVisible } from "@/hooks/useVisible";
 
 const { Dragger } = Upload;
 
 const LocalUpload = forwardRef((props, ref) => {
-  const [visible, setVisible] = useState(false);
+  const { visible, open, close } = useVisible(
+    {
+      onReset() {
+        setLoading(false);
+        setFileList([]);
+      },
+    },
+    ref
+  );
+
   const [fileList, setFileList] = useState([]);
-
-  const open = () => {
-    reset();
-    setVisible(true);
-  };
-  const close = () => setVisible(false);
-  const reset = () => {
-    setLoading(false);
-    setFileList([]);
-  };
-
-  useImperativeHandle(ref, () => ({
-    open,
-    close,
-    reset,
-  }));
-
   // 上传状态
   const [loading, setLoading] = useState(false);
   // 并发量
@@ -43,7 +36,7 @@ const LocalUpload = forwardRef((props, ref) => {
           }
           file.status = "uploading";
           const res = await uploadLocalSong(file);
-          console.log('res',res)
+          console.log("res", res);
           file.status = "done";
           return res;
         } catch (e) {
@@ -192,7 +185,7 @@ const LocalUpload = forwardRef((props, ref) => {
               type="primary"
               size="small"
               onClick={() => setFileList([])}
-              style={{ marginLeft: 'auto' }}
+              style={{ marginLeft: "auto" }}
             >
               清空列表
             </Button>

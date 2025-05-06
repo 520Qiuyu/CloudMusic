@@ -36,6 +36,7 @@ const SearchForm = ({ onSearch, data = [], options = [] }) => {
         {options.map(item => {
           return (
             <Form.Item
+              key={item.value}
               name={item.value}
               label={item.label}
               style={{ marginBottom: 0, minWidth: 200 }}

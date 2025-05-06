@@ -1,20 +1,13 @@
-import React, { forwardRef, useImperativeHandle, useState } from "react";
-import { Modal, Avatar, Typography, Button } from "antd";
+import { useVisible } from "@/hooks/useVisible";
 import { GithubOutlined } from "@ant-design/icons";
+import { Avatar, Button, Modal, Typography } from "antd";
+import { forwardRef } from "react";
 import styles from "./index.module.scss";
 
 const { Title, Text } = Typography;
 
 const GithubInfo = forwardRef((props, ref) => {
-  const [visible, setVisible] = useState(false);
-
-  const open = () => setVisible(true);
-  const close = () => setVisible(false);
-
-  useImperativeHandle(ref, () => ({
-    open,
-    close,
-  }));
+  const { visible, open, close } = useVisible({}, ref);
 
   // GitHub个人信息
   const githubInfo = {
@@ -32,7 +25,7 @@ const GithubInfo = forwardRef((props, ref) => {
       "🔄 偷取资源：支持从其他用户的云盘偷取资源，获得导入JSON文件",
       "🎯 手动匹配纠正：支持手动匹配纠正歌曲信息",
       "📤 云盘本地上传：支持将本地音乐文件上传",
-      "📥 云盘JSON文件导入：支持通过JSON文件（偷取资源的JSON）导入到云盘，实现云盘音乐的批量导入"
+      "📥 云盘JSON文件导入：支持通过JSON文件（偷取资源的JSON）导入到云盘，实现云盘音乐的批量导入",
     ],
   };
 
@@ -49,7 +42,6 @@ const GithubInfo = forwardRef((props, ref) => {
       centered
       width={700}
       zIndex={99999}
-      
     >
       <div className={styles.githubContainer}>
         <div className={styles.userInfo}>
