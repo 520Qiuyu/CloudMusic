@@ -11,7 +11,7 @@ dayjs.extend(duration);
 function SongList(props, ref) {
   const { visible, open, close } = useVisible(
     {
-      onOpen() {
+      onOpen(id) {
         setPlaylistId(id);
         getSongListData(id);
       },

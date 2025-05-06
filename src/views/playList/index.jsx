@@ -1,25 +1,27 @@
-import { Modal, Table, Image } from "antd";
-import React, { forwardRef, useImperativeHandle, useState, useRef } from "react";
-import { getPlaylistList } from "../../api";
-import styles from "./index.module.scss";
+import SearchForm from "@/components/SearchForm";
+import useFilter from "@/hooks/useFilter";
+import { useVisible } from "@/hooks/useVisible";
+import { Image, Modal, Table } from "antd";
 import dayjs from "dayjs";
+import { forwardRef, useRef, useState } from "react";
+import { getPlaylistList } from "../../api";
 import SongList from "../songList";
 
 function PlayList(props, ref) {
-  const [visible, setVisible] = useState(false);
+  const { visible, open, close } = useVisible(
+    {
+      onOpen() {
+        getPlayListData();
+      },
+      onReset() {
+        setPlayList([]);
+      },
+    },
+    ref
+  );
   const [loading, setLoading] = useState(false);
   const [playList, setPlayList] = useState([]);
   const songListRef = useRef();
-
-  const open = async () => {
-    reset();
-    setVisible(true);
-    await getPlayListData();
-  };
-  const close = () => setVisible(false);
-  const reset = () => {
-    setPlayList([]);
-  };
 
   // 获取歌单列表
   const getPlayListData = async () => {
@@ -47,6 +49,17 @@ function PlayList(props, ref) {
   const handleRowClick = record => {
     songListRef.current?.open(record.id);
   };
+
+  const { filteredList, handleFilter, setFilteredList } = useFilter(playList, {
+    fields: {
+      name: {
+        getValue: item => item.name,
+      },
+      creator: {
+        getValue: item => item.creator.nickname,
+      },
+    },
+  });
 
   // 表格列配置
   const columns = [
@@ -104,12 +117,6 @@ function PlayList(props, ref) {
     },
   ];
 
-  useImperativeHandle(ref, () => ({
-    open,
-    close,
-    reset,
-  }));
-
   return (
     <>
       <Modal
@@ -120,9 +127,26 @@ function PlayList(props, ref) {
         footer={null}
         onCancel={close}
       >
+        <SearchForm
+          data={playList.map(item => ({
+            ...item,
+            creator: item.creator.nickname,
+          }))}
+          options={[
+            {
+              label: "歌单名字",
+              value: "name",
+            },
+            {
+              label: "创建者",
+              value: "creator",
+            },
+          ]}
+          onSearch={handleFilter}
+        />
         <Table
           columns={columns}
-          dataSource={playList}
+          dataSource={filteredList}
           rowKey="id"
           loading={loading}
           scroll={{ x: 1000, y: 400 }}
