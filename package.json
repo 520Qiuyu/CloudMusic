@@ -6,7 +6,7 @@
     "url": "https://github.com/520Qiuyu"
   },
   "homepage": "https://github.com/520Qiuyu/CloudMusic",
-  "description": "无需文件云盘快传歌曲(含周杰伦)、歌曲下载&转存云盘(可批量)、云盘匹配纠正、高音质试听、完整歌单列表、评论区显示IP属地、使用指定的IP地址发送评论、歌单歌曲排序(时间、红心数、评论数)、专辑页加载Disc信息、限免VIP歌曲下载上传、云盘音质提升、本地文件上传云",
+  "description": "网易云音乐文件快速上传工具，支持批量上传、进度显示、智能匹配歌曲信息、云盘音乐管理、资源偷取导出、手动匹配纠正、本地文件上传、JSON文件导入等功能，让web端也能便捷使用云盘音乐",
   "private": true,
   "version": "0.0.0",
   "type": "module",

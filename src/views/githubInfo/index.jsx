@@ -1,20 +1,71 @@
 import { useVisible } from "@/hooks/useVisible";
 import { GithubOutlined } from "@ant-design/icons";
 import { Avatar, Button, Modal, Typography } from "antd";
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import styles from "./index.module.scss";
+
+// GitHub API请求函数
+const fetchGithubData = async () => {
+  try {
+    const owner = '520Qiuyu';
+    const repo = 'CloudMusic';
+    const [userResponse, repoResponse] = await Promise.all([
+      fetch(`https://api.github.com/users/${owner}`, {
+        headers: {
+          'Accept': 'application/vnd.github.v3+json',
+          'Authorization': 'token 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'
+        }
+      }),
+      fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+        headers: {
+          'Accept': 'application/vnd.github.v3+json',
+          'Authorization': 'token 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'
+        }
+      })
+    ]);
+    
+    if (!userResponse.ok || !repoResponse.ok) {
+      throw new Error('API请求失败');
+    }
+    
+    const userData = await userResponse.json();
+    const repoData = await repoResponse.json();
+    
+    return {
+      avatar_url: userData.avatar_url,
+      stargazers_count: repoData.stargazers_count
+    };
+  } catch (error) {
+    console.error('获取GitHub数据失败:', error);
+    return {
+      avatar_url: '',
+      stargazers_count: 0
+    };
+  }
+};
 
 const { Title, Text } = Typography;
 
 const GithubInfo = forwardRef((props, ref) => {
   const { visible, open, close } = useVisible({}, ref);
+  const [starCount, setStarCount] = useState(0);
+  const [avatarUrl, setAvatarUrl] = useState('');
+
+  useEffect(() => {
+    // 获取GitHub数据
+    fetchGithubData().then(data => {
+      setStarCount(data.stargazers_count);
+      setAvatarUrl(data.avatar_url);
+    });
+  }, []);
 
   // GitHub个人信息
   const githubInfo = {
-    avatar: "https://avatars.githubusercontent.com/u/520Qiuyu",
+    avatar: avatarUrl || "https://avatars.githubusercontent.com/u/520Qiuyu",
     username: "520Qiuyu",
     bio: "网易云音乐快速上传助手",
     profileUrl: "https://github.com/520Qiuyu/CloudMusic",
+    starCount: `⭐ ${starCount}`,
     features: [
       "🚀 云盘快速上传：支持同时选择多个歌手的音乐资源文件按专辑顺序进行上传",
       "📊 进度显示：实时展示上传进度和状态",
@@ -50,12 +101,15 @@ const GithubInfo = forwardRef((props, ref) => {
             src={githubInfo.avatar}
             icon={<GithubOutlined />}
           />
-          <Title
-            level={4}
-            className={styles.username}
-          >
-            {githubInfo.username}
-          </Title>
+          <div>
+            <Title
+              level={4}
+              className={styles.username}
+            >
+              {githubInfo.username}
+            </Title>
+            <Text className={styles.starCount}>{githubInfo.starCount}</Text>
+          </div>
         </div>
         <Title
           level={5}
