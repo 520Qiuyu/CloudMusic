@@ -9,17 +9,18 @@ const fetchGithubData = async () => {
   try {
     const owner = '520Qiuyu';
     const repo = 'CloudMusic';
+    const token = import.meta.env.VITE_GITHUB_TOKEN;
     const [userResponse, repoResponse] = await Promise.all([
       fetch(`https://api.github.com/users/${owner}`, {
         headers: {
           'Accept': 'application/vnd.github.v3+json',
-          'Authorization': 'token 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'
+          'Authorization': `token ${token}`
         }
       }),
       fetch(`https://api.github.com/repos/${owner}/${repo}`, {
         headers: {
           'Accept': 'application/vnd.github.v3+json',
-          'Authorization': 'token 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'
+          'Authorization': `token ${token}`
         }
       })
     ]);
