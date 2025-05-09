@@ -390,7 +390,7 @@ export const uploadLocalSong = async file => {
       album,
       md5: fileMd5,
       ext,
-      bitrate: realBitrate,
+      bitrate,
     };
     const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
       data: {
@@ -431,6 +431,7 @@ export const uploadLocalSong = async file => {
       ...defaultResult,
       name: songName,
       size: fileSize,
+      bitrate: realBitrate,
     };
     return defaultResult;
   } catch (error) {
