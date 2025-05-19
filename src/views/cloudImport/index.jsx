@@ -142,7 +142,7 @@ ${JSON.stringify(
       width={1000}
       onOk={handleOk}
       onClose={close}
-      loading={loading}
+      confirmLoading={loading}
     >
       <SearchForm
         data={tableData}

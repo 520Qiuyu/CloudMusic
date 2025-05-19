@@ -1,6 +1,6 @@
 import { Button, Empty, message, Table, Tag, Input } from "antd";
 import React, { useEffect, useRef, useState } from "react";
-import { getCDNConfig, getSongInfoList, uploadSong } from "../../../api";
+import { getCDNConfig, getSongInfoList, getSongUrl, uploadSong } from "@/api";
 import {
   formatDuration,
   formatFileSize,
@@ -9,13 +9,14 @@ import {
   mergeObjects,
   promiseLimit,
   sleep,
-} from "../../../utils/index";
-import { confirm, msgError, msgSuccess } from "../../../utils/modal";
+} from "@/utils/index";
+import { confirm, msgError, msgSuccess } from "@/utils/modal";
 import styles from "../index.module.scss";
 import UploadProgress from "./UploadProgress";
 import UploadStats from "./UploadStats";
 import SearchForm from "@/components/SearchForm";
-import useFilter from "../../../hooks/useFilter";
+import useFilter from "@/hooks/useFilter";
+import { downloadFile } from "@/utils/download";
 
 export default function UploadList({ singerList }) {
   // 所有歌曲列表
@@ -50,7 +51,7 @@ export default function UploadList({ singerList }) {
       const songList = [];
       allInfo.map(({ privileges, songs }) => {
         privileges.forEach(p => {
-          const otherInfo = allConfigMap[p.id];
+          const otherInfo = allConfigMap[p.id] || {};
           const defaultItem = mergeObjects(
             { ...otherInfo, artists: undefined },
             {
@@ -366,6 +367,41 @@ export default function UploadList({ singerList }) {
   const handleUploadSelected = async () => {
     handleBatchUpload(selectedRows);
   };
+
+  /** 直接下载 */
+  const [downloading, setDownloading] = useState(false);
+  const handleDownloadAll = async () => {
+    try {
+      setDownloading(true);
+      const ids = filteredSongList.map(item => item.id);
+      console.log("ids", ids);
+      const res = await getSongUrl(ids);
+      console.log("res", res);
+      if (res.code === 200) {
+        const songs = res.data
+          .map((item, index) => ({ url: item.url, name: filteredSongList[index]["name"] }))
+          .filter(item => item.url);
+        console.log("songs", songs);
+        let count = 0;
+        // 全部下载
+        const proArr = songs.map(async ({ url, name }) => {
+          const res = await downloadFile(url, name);
+          count++;
+          msgSuccess({
+            content: `下载完成: ${count}/${songs.length}`,
+            key: "batchDownload",
+          });
+          return res;
+        });
+        await promiseLimit(proArr, concurrency || 6);
+      }
+    } catch (error) {
+      console.log("error", error);
+    } finally {
+      setDownloading(false);
+    }
+  };
+
   /** 按专辑上传 */
   const handleUploadByAlbum = async () => {
     try {
@@ -464,6 +500,14 @@ export default function UploadList({ singerList }) {
               loading={uploading}
             >
               全部上传
+            </Button>
+            {/* 直接下载 */}
+            <Button
+              type="primary"
+              onClick={() => handleDownloadAll()}
+              loading={downloading}
+            >
+              直接下载
             </Button>
             {/* 按专辑上传 */}
             <Button
