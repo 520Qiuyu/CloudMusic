@@ -334,6 +334,7 @@ export const getArtistAlbumList = async (id, limit = 1000, offset = 0) => {
  * @param {File} file
  */
 export const uploadLocalSong = async file => {
+  let defaultResult = {};
   try {
     const ext = file.name.split(".").pop() || "mp3";
     const fileMd5 = await getFileMD5(file);
@@ -382,6 +383,15 @@ export const uploadLocalSong = async file => {
 
     // 3、获取上传信息
     const { album, artist, artists, title } = await getAudioMetadata(file);
+    defaultResult = {
+      ...defaultResult,
+      artist,
+      artists,
+      album,
+      md5: fileMd5,
+      ext,
+      bitrate,
+    };
     const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
       data: {
         md5: fileMd5,
@@ -395,6 +405,10 @@ export const uploadLocalSong = async file => {
       },
     });
     console.log("uploadInfoRes", uploadInfoRes);
+    defaultResult = {
+      ...defaultResult,
+      id: uploadInfoRes.songId,
+    };
     if (uploadInfoRes.code != 200) {
       msgError("获取上传信息失败");
       throw new Error(uploadInfoRes.message || uploadInfoRes.msg || "获取上传信息失败");
@@ -413,32 +427,18 @@ export const uploadLocalSong = async file => {
       throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
     }
     const { songName, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
-    return {
-      artist,
-      artists,
-      album,
-      id: uploadInfoRes.songId,
-      size: fileSize,
-      md5: fileMd5,
+    defaultResult = {
+      ...defaultResult,
       name: songName,
-      ext,
+      size: fileSize,
       bitrate: realBitrate,
     };
+    return defaultResult;
   } catch (error) {
     console.log("error", error);
     throw error;
   } finally {
-    return {
-      artist,
-      artists,
-      album,
-      id: uploadInfoRes.songId,
-      size: fileSize,
-      md5: fileMd5,
-      name: songName,
-      ext,
-      bitrate: realBitrate,
-    };
+    return defaultResult;
   }
 };
 

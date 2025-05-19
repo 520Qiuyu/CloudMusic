@@ -1,5 +1,5 @@
 import { uploadLocalSong } from "@/api";
-import { formatFileSize, promiseLimit, sleep } from "@/utils";
+import { formatFileSize, getAudioMetadata, getFileMD5, promiseLimit, sleep } from "@/utils";
 import { downloadJsonFile } from "@/utils/download";
 import { msgSuccess } from "@/utils/modal";
 import { InboxOutlined } from "@ant-design/icons";
@@ -68,6 +68,43 @@ const LocalUpload = forwardRef((props, ref) => {
   // 失败过滤
   const handleFilter = async () => {
     setFileList(prev => prev.filter(file => file.status === "error"));
+  };
+  // 直接获取JSON
+  const [getJsonLoading, setGetJsonLoading] = useState(false);
+  const handleGetJson = async () => {
+    try {
+      setGetJsonLoading(true);
+      const proArr = fileList.map(async file => {
+        const ext = file.name.split(".").pop() || "mp3";
+        const bitrate = 999000;
+        const name = file.name
+          .replace("." + ext, "")
+          .replace(/\s/g, "")
+          .replace(/\./g, "_");
+        const size = file.size;
+        const md5 = await getFileMD5(file);
+        const { album, artist, artists, title } = await getAudioMetadata(file);
+        return {
+          name,
+          size,
+          md5,
+          bitrate,
+          ext,
+          album,
+          artist,
+          artists,
+          name: title,
+        };
+      });
+      const data = await Promise.all(proArr);
+      console.log("data", data);
+      // 下载JSON文件
+      downloadJsonFile(data, data[0].artist + ".json");
+    } catch (e) {
+      console.log("error", e);
+    } finally {
+      setGetJsonLoading(false);
+    }
   };
 
   const columns = [
@@ -197,6 +234,15 @@ const LocalUpload = forwardRef((props, ref) => {
               disabled={!fileList.some(file => file.status !== "error")}
             >
               失败过滤
+            </Button>
+            {/* 直接获取JSON */}
+            <Button
+              type="primary"
+              size="small"
+              onClick={handleGetJson}
+              loading={getJsonLoading}
+            >
+              直接获取JSON
             </Button>
           </div>
         </div>
