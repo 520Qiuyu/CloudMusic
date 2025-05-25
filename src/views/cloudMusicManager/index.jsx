@@ -21,7 +21,7 @@ import useFilter from "@/hooks/useFilter";
 import { useVisible } from "@/hooks/useVisible";
 
 const CloudMusicManager = forwardRef((props, ref) => {
-  const { visible, open, close } = useVisible(
+  const { visible, open, close, reset } = useVisible(
     {
       onOpen() {
         getCloudDataList();

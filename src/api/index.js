@@ -66,7 +66,7 @@ export const matchCloudSong = async (cloudSongId, id) => {
       },
     });
     if (res.code != 200 || res.data.length < 1) {
-      msgError(`歌曲： ${song.name} 匹配失败`);
+      msgError(`歌曲： ${id} 匹配失败`);
       throw new Error(res.message || res.msg || "歌曲匹配失败");
     }
     return res;
@@ -437,9 +437,9 @@ export const uploadLocalSong = async file => {
   } catch (error) {
     console.log("error", error);
     throw error;
-  } finally {
+  }/*  finally {
     return defaultResult;
-  }
+  } */
 };
 
 // 搜索歌手信息 传入关键词
