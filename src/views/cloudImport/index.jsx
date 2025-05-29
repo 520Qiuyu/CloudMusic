@@ -14,7 +14,7 @@ const CloudImport = forwardRef((props, ref) => {
   const { visible, open, close } = useVisible(
     {
       onOpen() {
-        getSingerList();
+        // getSingerList();
       },
       onReset() {
         setSearchText("");

@@ -437,9 +437,9 @@ export const uploadLocalSong = async file => {
   } catch (error) {
     console.log("error", error);
     throw error;
-  } finally {
+  }/*  finally {
     return defaultResult;
-  }
+  } */
 };
 
 // 搜索歌手信息 传入关键词
