@@ -14,7 +14,7 @@ ReactDOM.createRoot(
   })()
 ).render(
   <React.StrictMode>
-    <ConfigProvider locale={zhCN} theme={theme}>
+    <ConfigProvider locale={zhCN} theme={theme} >
       <App />
     </ConfigProvider>
   </React.StrictMode>

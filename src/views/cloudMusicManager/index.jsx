@@ -58,10 +58,10 @@ const CloudMusicManager = forwardRef((props, ref) => {
         getValue: song => song?.simpleSong?.name,
       },
       artist: {
-        getValue: song => song.artist,
+        getValue: getArtistName,
       },
       album: {
-        getValue: song => song.album,
+        getValue: getAlbumName,
       },
     },
   };
@@ -136,19 +136,23 @@ const CloudMusicManager = forwardRef((props, ref) => {
     play();
   }, [playSong]);
 
-  const renderSongInfo = record => {
+  const renderSongInfo = (_, record) => {
     // 是否播放当前歌曲
-    const isCurrentSong = record.id === playSong?.id;
+    const isCurrentSong = record.simpleSong?.id === playSong?.id;
+    const artistName = getArtistName(record);
+    const albumName = getAlbumName(record);
+    const songName = record.simpleSong?.name;
+    const albumPic = record.simpleSong?.al?.picUrl;
     return (
       <div className={styles.songInfoColumn}>
         <div
           className={`${styles.songCover} ${isCurrentSong ? styles.playing : ""}`}
-          onClick={() => handlePlaySong(record)}
+          onClick={() => handlePlaySong(record.simpleSong)}
         >
           {/* 封面 */}
           <img
-            src={record.al?.picUrl}
-            alt={record.name}
+            src={albumPic}
+            alt={albumName}
             className={styles.songCoverImg}
           />
           {/* 播放/暂停按钮 */}
@@ -161,8 +165,16 @@ const CloudMusicManager = forwardRef((props, ref) => {
           </div>
         </div>
         <div className={styles.songInfo}>
-          <div className={styles.songName}>{record.name}</div>
-          <div className={styles.songId}>{record.songId}</div>
+          <div className={styles.songName}>{songName}</div>
+          <div className={styles.subInfo}>
+            {/* 歌手 */}
+            <div className={styles.artist}>{artistName}</div>
+            {/* 专辑 */}
+            <div className={styles.album}>
+              {albumName && " - "}
+              {albumName}
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -173,7 +185,8 @@ const CloudMusicManager = forwardRef((props, ref) => {
       title: "歌名",
       dataIndex: "simpleSong",
       key: "name",
-      width: 250,
+      width: 300,
+      fixed: "left",
       sorter: (a, b) => a.simpleSong.name?.localeCompare(b.simpleSong.name),
       sortDirections: ["ascend", "descend"],
       render: renderSongInfo,
@@ -182,26 +195,28 @@ const CloudMusicManager = forwardRef((props, ref) => {
       title: "歌手",
       dataIndex: "simpleSong",
       key: "artists",
-      width: 200,
+      width: 60,
       sorter: (a, b) => {
         const aArtists = a.simpleSong.ar?.map(a => a.name).join(",");
         const bArtists = b.simpleSong.ar?.map(a => a.name).join(",");
         return aArtists?.localeCompare(bArtists);
       },
+      fixed: "left",
       sortDirections: ["ascend", "descend"],
       ellipsis: true,
-      render: (_, record) => getArtistName(record),
+      render: null,
     },
     {
       title: "专辑",
       dataIndex: "simpleSong",
       key: "album",
-      width: 300,
+      width: 60,
+      fixed: "left",
       sorter: (a, b) => a.simpleSong.al?.name?.localeCompare(b.simpleSong.al?.name),
       sortDirections: ["ascend", "descend"],
       defaultSortOrder: "ascend",
       ellipsis: true,
-      render: (_, record) => getAlbumName(record),
+      render: null,
     },
     // 云盘歌曲匹配
     {
@@ -402,7 +417,6 @@ const CloudMusicManager = forwardRef((props, ref) => {
   };
 
   const handleCreatePlaylist = () => {
-    console.log("新建歌单");
     playListRef.current.open();
   };
 
@@ -435,7 +449,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       onCancel={close}
       footer={null}
       centered
-      width={1300}
+      width={1500}
     >
       <SearchForm
         onSearch={handleSearch}
@@ -456,12 +470,15 @@ const CloudMusicManager = forwardRef((props, ref) => {
         rowSelection={rowSelection}
         dataSource={filteredSongList}
         columns={columns}
-        scroll={{ y: 400, x: 1000 }}
+        scroll={{ y: 600, x: 1000 }}
         size="small"
         loading={loading}
         rowKey={({ songId }) => songId}
         rowClassName={({ songId }) => (songId === playSong?.id ? styles.currentSong : "")}
         onChange={handleTableChange}
+        pagination={{
+          defaultPageSize: 50,
+        }}
       />
       <div className={styles.footer}>
         <Stats
@@ -651,7 +668,14 @@ const MatchItem = ({ data, onUpdate }) => {
 };
 
 export const getArtistName = song => {
-  return song.simpleSong.ar?.map(a => a.name).join(",") || song.artist || "";
+  return (
+    song.simpleSong.ar
+      ?.map(a => a.name)
+      .filter(Boolean)
+      .join(",") ||
+    song.artist ||
+    ""
+  );
 };
 export const getAlbumName = song => {
   return song.simpleSong.al?.name || song.album || "";

@@ -379,7 +379,7 @@ export default function UploadList({ singerList }) {
       console.log("res", res);
       if (res.code === 200) {
         const songs = res.data
-          .map((item, index) => ({ url: item.url, name: filteredSongList[index]["name"] }))
+          .map((item, index) => ({ url: item.url, name: filteredSongList[index]?.["name"] }))
           .filter(item => item.url);
         console.log("songs", songs);
         let count = 0;

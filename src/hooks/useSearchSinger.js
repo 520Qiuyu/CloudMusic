@@ -17,14 +17,16 @@ export const useSearchSinger = options => {
     try {
       setLoading(true);
       if (singerKeywordsMap[keywords]) {
-        setSingerList(singerKeywordsMap[keywords]);
+        const res = await singerKeywordsMap[keywords];
+        const list = (res.data.list || []).sort((a, b) => a.artistId - b.artistId);
+        setSingerList(list);
         return;
       }
-      const res = await searchArtist(keywords);
+      singerKeywordsMap[keywords] = searchArtist(keywords);
+      const res = await singerKeywordsMap[keywords];
       if (res.code === 200) {
-        console.log('res',res)
-        setSingerList(res.data.list);
-        singerKeywordsMap[keywords] = res.data.list;
+        const list = (res.data.list || []).sort((a, b) => a.artistId - b.artistId);
+        setSingerList(list);
       }
     } catch (error) {
       console.log("error", error);

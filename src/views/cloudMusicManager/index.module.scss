@@ -1,14 +1,31 @@
 .songInfoColumn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  padding: 8px 0;
 
   .songCover {
-    width: 40px;
-    height: 40px;
-    border-radius: 4px;
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+
+      .btnWrapper {
+        opacity: 1;
+        backdrop-filter: blur(2px);
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .songCoverImg {
+        filter: brightness(0.85);
+      }
+    }
 
     .songCoverImg {
       position: absolute;
@@ -16,26 +33,26 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 4px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
     }
 
     .btnWrapper {
       position: absolute;
-      top: 50%;
-      left: 50%;
+      inset: 0;
       z-index: 9;
-      transform: translate(-50%, -50%);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0;
-      transition: all 0.3s;
       opacity: 0;
-    }
-    &:hover {
-      .btnWrapper {
-        font-size: 24px;
-        opacity: 1;
+      transition: all 0.3s ease;
+
+      :global {
+        .anticon {
+          font-size: 28px;
+          color: #fff;
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
       }
     }
   }
@@ -43,20 +60,42 @@
   .songInfo {
     flex: 1 1 0px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
     .songName {
-      font-size: 14px;
+      font-size: 15px;
+      font-weight: 500;
       color: #333;
-      margin-bottom: 4px;
-      // 超出部分显示省略号
+      line-height: 1.4;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      max-width: 100%;
     }
 
-    .songId {
-      font-size: 12px;
-      color: #999;
+    .subInfo {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3px;
+      font-size: 13px;
+      color: #666;
+
+      .artist,
+      .album {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .artist {
+        max-width: 160px;
+      }
+
+      .album {
+        position: relative;
+        max-width: 140px;
+      }
     }
   }
 }

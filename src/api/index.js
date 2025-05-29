@@ -66,7 +66,7 @@ export const matchCloudSong = async (cloudSongId, id, song) => {
       },
     });
     if (res.code != 200 || res.data.length < 1) {
-      msgError(`歌曲： ${song?.name} 匹配失败`);
+      msgError(`歌曲“${song?.name}” 匹配失败：${res.message || res.msg}`);
       throw new Error(res.message || res.msg || "歌曲匹配失败");
     }
     return res;
@@ -437,7 +437,7 @@ export const uploadLocalSong = async file => {
   } catch (error) {
     console.log("error", error);
     throw error;
-  }/*  finally {
+  } /*  finally {
     return defaultResult;
   } */
 };
@@ -453,17 +453,19 @@ export const searchArtist = keyword =>
 
 // 本地歌曲匹配网易云歌曲信息
 export const matchLocalSong = async files => {
-  const songs = files.map(async file => {
-    const { title, album, artist, duration } = await getAudioMetadata(file);
-    const md5 = await getFileMD5(file);
-    return {
-      title,
-      album,
-      artist,
-      duration,
-      persistId: md5,
-    };
-  });
+  const songs = await Promise.all(
+    files.map(async file => {
+      const { title, album, artist, duration } = await getAudioMetadata(file);
+      const md5 = await getFileMD5(file);
+      return {
+        title,
+        album,
+        artist,
+        duration,
+        persistId: md5,
+      };
+    })
+  );
 
   return weapiRequest("/api/search/match/new", {
     data: songs,

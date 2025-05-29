@@ -61,7 +61,6 @@ export function useGetSingerSongs(options) {
   // 如果传了singerIds，就提前获取singerInfo和songList
   useEffect(() => {
     if (!singerIds) return;
-    debugger;
     const ids = (singerIds + "").split(",");
     ids.forEach(singerId => {
       getSingerInfoById(singerId);
