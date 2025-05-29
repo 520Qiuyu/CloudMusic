@@ -1,8 +1,10 @@
 import SearchForm from "@/components/SearchForm";
+import useFilter from "@/hooks/useFilter";
+import { useVisible } from "@/hooks/useVisible";
 import { downloadJsonFile } from "@/utils/download";
 import { CopyrightOutlined, PauseCircleFilled, PlayCircleFilled } from "@ant-design/icons";
 import { Button, Input, Modal, Table, Tag, message } from "antd";
-import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react";
+import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
 import {
   addSongToPlaylist,
   createPlaylist,
@@ -14,14 +16,13 @@ import {
 } from "../../api";
 import { sleep, truncateString } from "../../utils";
 import { confirm, msgError, msgSuccess } from "../../utils/modal";
+import CustomMatch from "./components/CustomMatch";
 import PlayList from "./components/PlayList";
 import Stats from "./components/Stats";
 import styles from "./index.module.scss";
-import useFilter from "@/hooks/useFilter";
-import { useVisible } from "@/hooks/useVisible";
 
 const CloudMusicManager = forwardRef((props, ref) => {
-  const { visible, open, close } = useVisible(
+  const { visible, open, close, reset } = useVisible(
     {
       onOpen() {
         getCloudDataList();
@@ -189,7 +190,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       },
       sortDirections: ["ascend", "descend"],
       ellipsis: true,
-      render: record => record.ar?.map(a => a.name).join(","),
+      render: (_, record) => getArtistName(record),
     },
     {
       title: "专辑",
@@ -200,20 +201,11 @@ const CloudMusicManager = forwardRef((props, ref) => {
       sortDirections: ["ascend", "descend"],
       defaultSortOrder: "ascend",
       ellipsis: true,
-      render: record => record.al?.name,
-    },
-    {
-      title: "大小",
-      dataIndex: "fileSize",
-      key: "fileSize",
-      width: 100,
-      sorter: (a, b) => a.fileSize - b.fileSize,
-      sortDirections: ["ascend", "descend"],
-      render: size => `${(size / 1024 / 1024).toFixed(2)}MB`,
+      render: (_, record) => getAlbumName(record),
     },
     // 云盘歌曲匹配
     {
-      title: "匹配",
+      title: "手动id匹配",
       dataIndex: "matchType",
       key: "matchType",
       width: 300,
@@ -226,6 +218,29 @@ const CloudMusicManager = forwardRef((props, ref) => {
         />
       ),
     },
+    // 自定义匹配
+    {
+      title: "自定义匹配",
+      dataIndex: "customMatch",
+      key: "customMatch",
+      width: 500,
+      render: (_, record) => (
+        <CustomMatch
+          data={record}
+          onUpdate={getCloudDataList}
+        />
+      ),
+    },
+    {
+      title: "大小",
+      dataIndex: "fileSize",
+      key: "fileSize",
+      width: 100,
+      sorter: (a, b) => a.fileSize - b.fileSize,
+      sortDirections: ["ascend", "descend"],
+      render: size => `${(size / 1024 / 1024).toFixed(2)}MB`,
+    },
+
     {
       title: "比特率",
       dataIndex: "bitrate",
@@ -633,4 +648,11 @@ const MatchItem = ({ data, onUpdate }) => {
       </Button>
     </div>
   );
+};
+
+export const getArtistName = song => {
+  return song.simpleSong.ar?.map(a => a.name).join(",") || song.artist || "";
+};
+export const getAlbumName = song => {
+  return song.simpleSong.al?.name || song.album || "";
 };

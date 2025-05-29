@@ -72,7 +72,7 @@ export const getArtistTextInSongDetail = song => {
       ?.filter(Boolean)
       .join() ||
     song.pc?.ar ||
-    song.arartist ||
+    song.artist ||
     ""
   );
 };

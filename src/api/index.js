@@ -56,7 +56,7 @@ export const getSongInfoList = async songIds => {
 };
 
 // 匹配歌曲信息 将云盘歌曲匹配网易的歌，关联起来
-export const matchCloudSong = async (cloudSongId, id) => {
+export const matchCloudSong = async (cloudSongId, id, song) => {
   // 满足这个情况需要匹配信息
   if (cloudSongId != id /* && id > 0 */) {
     const res = await weapiRequest("/api/cloud/user/song/match", {
@@ -66,7 +66,7 @@ export const matchCloudSong = async (cloudSongId, id) => {
       },
     });
     if (res.code != 200 || res.data.length < 1) {
-      msgError(`歌曲： ${song.name} 匹配失败`);
+      msgError(`歌曲： ${song?.name} 匹配失败`);
       throw new Error(res.message || res.msg || "歌曲匹配失败");
     }
     return res;
@@ -124,7 +124,7 @@ export const uploadSong = async song => {
       }
       const cloudSongId = importRes.data.successSongs[0].song.songId;
       // 匹配歌曲信息
-      await matchCloudSong(cloudSongId, song.id);
+      await matchCloudSong(cloudSongId, song.id, song);
 
       return {
         code: 200,
@@ -188,7 +188,7 @@ export const uploadSong = async song => {
       }
       const cloudSongId = pubRes.privateCloud.songId;
       // 匹配歌曲信息
-      await matchCloudSong(cloudSongId, song.id);
+      await matchCloudSong(cloudSongId, song.id, song);
 
       return {
         code: 200,

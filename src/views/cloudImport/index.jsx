@@ -157,7 +157,6 @@ ${JSON.stringify(
       <Table
         dataSource={filteredList}
         columns={columns}
-        pagination={{ pageSize: 10 }}
         rowKey="id"
         scroll={{ y: 400 }}
         rowSelection={{

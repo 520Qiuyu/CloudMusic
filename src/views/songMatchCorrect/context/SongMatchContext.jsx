@@ -1,14 +1,12 @@
-import React, { createContext, useContext, useState } from "react";
+import { promiseLimit } from "@/utils";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
+  getArtistAllSongList,
   getArtists,
   getArtists2,
-  getArtistAllSongList,
-  searchArtist,
   getCDNConfig,
+  searchArtist,
 } from "../../../api";
-import { promiseLimit } from "@/utils";
-import { use } from "react";
-import { useEffect } from "react";
 
 const SongMatchContext = createContext();
 
@@ -120,7 +118,6 @@ export const SongMatchProvider = ({ children }) => {
         });
       }
     });
-    console.log("singerMap", singerMap);
   }, [matchSingerList]);
 
   // 更新歌曲匹配信息

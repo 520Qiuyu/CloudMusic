@@ -63,7 +63,7 @@
 
 .currentSong {
   background-color: rgba(#c20c0c, 8%);
-  td{
+  td {
     background-color: rgba(#c20c0c, 8%) !important;
   }
 }
@@ -273,5 +273,30 @@
       font-size: 14px;
       font-weight: bold;
     }
+  }
+}
+
+.singer-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.song-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+
+  .song-name {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .tag-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
   }
 }
