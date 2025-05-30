@@ -4,6 +4,7 @@ import { getGUser } from "../utils";
 import { msgError } from "../utils/modal";
 import { weapiFetch, weapiRequest } from "../utils/request";
 import { generateQRCode } from "../utils/qrcode";
+import md5 from "md5";
 
 // 获取登录二维码KEY
 export const getQrKey = () =>
@@ -357,10 +358,45 @@ export const uploadLocalSong = async file => {
     });
     console.log("checkRes", checkRes);
     if (checkRes.code != 200) {
-      msgError("文件检查失败");
+      msgError("文件检查失败：" + checkRes.message || checkRes.msg || "");
       throw new Error(checkRes.message || checkRes.msg || "文件检查失败");
     }
     const { needUpload, songId } = checkRes;
+
+    // 2.1、 云盘没有该文件，需要上传文件
+    if (needUpload) {
+      const bucket = "jd-musicrep-privatecloud-audio-public";
+      const tokenRes = await weapiRequest("/api/nos/token/alloc", {
+        data: {
+          bucket,
+          ext,
+          filename,
+          local: false,
+          nos_product: 3,
+          type: "audio",
+          md5: fileMd5,
+        },
+      });
+      // 上传
+      const objectKey = tokenRes.body.result.objectKey.replace("/", "%2F");
+      const lbs = await (
+        await fetch(`https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket}`)
+      ).json();
+      const formData = new FormData();
+      formData.append("songFile", file);
+      await fetch(`${lbs.upload[0]}/${bucket}/${objectKey}?offset=0&complete=true&version=1.0`, {
+        method: "post",
+        headers: {
+          "x-nos-token": tokenRes.body.result.token,
+          "Content-MD5": fileMd5,
+          "Content-Type": "audio/mpeg",
+          "Content-Length": String(file.size),
+        },
+        data: formData,
+        maxContentLength: Infinity,
+        maxBodyLength: Infinity,
+      });
+    }
 
     // 2、申请上传token
     const tokenRes = await weapiRequest("/api/nos/token/alloc", {
@@ -437,9 +473,7 @@ export const uploadLocalSong = async file => {
   } catch (error) {
     console.log("error", error);
     throw error;
-  } /*  finally {
-    return defaultResult;
-  } */
+  }
 };
 
 // 搜索歌手信息 传入关键词

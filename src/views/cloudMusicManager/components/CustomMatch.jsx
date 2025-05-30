@@ -48,7 +48,10 @@ const CustomMatch = ({ data, onUpdate }) => {
     }
   };
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+    <div
+      style={{ display: "flex", alignItems: "center", gap: 8 }}
+      onClick={() => console.log(data)}
+    >
       {/* 关键词搜索歌手 输入框 */}
       <Input
         style={{
@@ -68,6 +71,8 @@ const CustomMatch = ({ data, onUpdate }) => {
         onChange={value => {
           setCurrentSelectSinger(value);
         }}
+        // open={data.songId == "1836625685"}
+        popupMatchSelectWidth={300}
         showSearch
         placeholder="请选择歌手"
         filterOption={(input, option) => option?.label?.indexOf(input) >= 0}
@@ -80,8 +85,12 @@ const CustomMatch = ({ data, onUpdate }) => {
         optionRender={option => {
           const { artistAvatarPicUrl, artistName, artistId } = option.data;
           return (
-            <div className={styles["singer-option"]}>
-              <Avatar src={artistAvatarPicUrl} />
+            <div
+              className={styles["singer-option"]}
+              style={{
+                "--avatar-url": `url(${artistAvatarPicUrl})`,
+              }}
+            >
               <div className={styles["singer-option-content"]}>
                 <div className={styles["singer-option-name"]}>{artistName}</div>
                 <div className={styles["singer-option-id"]}>{artistId}</div>

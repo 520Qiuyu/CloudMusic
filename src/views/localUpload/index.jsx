@@ -11,7 +11,7 @@ import { useVisible } from "@/hooks/useVisible";
 const { Dragger } = Upload;
 
 const LocalUpload = forwardRef((props, ref) => {
-  const { visible, open, close } = useVisible(
+  const { visible, open, close, reset } = useVisible(
     {
       onReset() {
         setLoading(false);
@@ -85,7 +85,6 @@ const LocalUpload = forwardRef((props, ref) => {
         const md5 = await getFileMD5(file);
         const { album, artist, artists, title } = await getAudioMetadata(file);
         return {
-          name,
           size,
           md5,
           bitrate,

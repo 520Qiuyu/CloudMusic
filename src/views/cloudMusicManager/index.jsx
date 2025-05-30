@@ -3,7 +3,7 @@ import useFilter from "@/hooks/useFilter";
 import { useVisible } from "@/hooks/useVisible";
 import { downloadJsonFile } from "@/utils/download";
 import { CopyrightOutlined, PauseCircleFilled, PlayCircleFilled } from "@ant-design/icons";
-import { Button, Input, Modal, Table, Tag, message } from "antd";
+import { Button, Modal, Table, Tag, message } from "antd";
 import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
 import {
   addSongToPlaylist,
@@ -12,11 +12,11 @@ import {
   getCloudData,
   getPlaylistList,
   getSongUrl,
-  matchCloudSong,
 } from "../../api";
 import { sleep, truncateString } from "../../utils";
 import { confirm, msgError, msgSuccess } from "../../utils/modal";
 import CustomMatch from "./components/CustomMatch";
+import IdMatch from "./components/IdMatch";
 import PlayList from "./components/PlayList";
 import Stats from "./components/Stats";
 import styles from "./index.module.scss";
@@ -227,7 +227,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       sorter: (a, b) => a.matchType - b.matchType,
       sortDirections: ["ascend", "descend"],
       render: (matchType, r) => (
-        <MatchItem
+        <IdMatch
           data={r}
           onUpdate={getCloudDataList}
         />
@@ -470,14 +470,14 @@ const CloudMusicManager = forwardRef((props, ref) => {
         rowSelection={rowSelection}
         dataSource={filteredSongList}
         columns={columns}
-        scroll={{ y: 600, x: 1000 }}
+        scroll={{ y: 500, x: 1000 }}
         size="small"
         loading={loading}
         rowKey={({ songId }) => songId}
         rowClassName={({ songId }) => (songId === playSong?.id ? styles.currentSong : "")}
         onChange={handleTableChange}
         pagination={{
-          defaultPageSize: 50,
+          defaultPageSize: 20,
         }}
       />
       <div className={styles.footer}>
@@ -486,7 +486,11 @@ const CloudMusicManager = forwardRef((props, ref) => {
           filteredSongList={filteredSongList}
         />
         <div className={styles.actions}>
-          <Button onClick={() => setSelectedRows(filteredSongList)}>全部选择</Button>
+          {filteredSongList?.length > selectedRows?.length ? (
+            <Button onClick={() => setSelectedRows(filteredSongList)}>全部选择</Button>
+          ) : (
+            <Button onClick={() => setSelectedRows([])}>全部取消</Button>
+          )}
           {/* 自动按专辑添加 */}
           <Button
             type="primary"
@@ -616,56 +620,6 @@ const DeleteConfirmation = ({ selectedCount, songNames }) => {
 };
 
 export default CloudMusicManager;
-
-const MatchItem = ({ data, onUpdate }) => {
-  const { matchType, songId } = data;
-  const isMatched = matchType === "matched";
-
-  const [value, setValue] = useState(songId);
-  const [loading, setLoading] = useState(false);
-  const handleUpdate = async () => {
-    try {
-      setLoading(true);
-      const res = await matchCloudSong(songId, value);
-      console.log("res", res);
-      if (res.code === 200) {
-        msgSuccess("更新成功");
-        onUpdate?.();
-      }
-    } catch (error) {
-      console.log("error", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <Tag color={isMatched ? "green" : "red"}>{isMatched ? "已匹配" : "未匹配"}</Tag>
-      <Input
-        value={value}
-        onChange={e => {
-          setValue(e.target.value);
-        }}
-        size="small"
-        onKeyDown={e => {
-          if (e.key === "Enter") {
-            handleUpdate();
-          }
-        }}
-        style={{ flex: 1, marginRight: 8 }}
-      />
-      <Button
-        type="primary"
-        onClick={handleUpdate}
-        loading={loading}
-        size="small"
-      >
-        更新
-      </Button>
-    </div>
-  );
-};
 
 export const getArtistName = song => {
   return (

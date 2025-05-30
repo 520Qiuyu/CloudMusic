@@ -26,7 +26,6 @@ export const useVisible = (props = {}, ref) => {
   };
 
   const reset = () => {
-    setVisible(false);
     onReset();
   };
 

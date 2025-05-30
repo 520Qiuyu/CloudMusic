@@ -91,6 +91,10 @@ const CloudImport = forwardRef((props, ref) => {
 // - md5: 文件MD5值（必填）
 // - ext: 文件扩展名（必填）
 // - bitrate: 比特率（必填）
+// - name: 歌曲名（选填）
+// - artist: 歌手名（选填）
+// - artists: 歌手名列表（选填）
+// - album: 专辑名（选填）
 
 ${JSON.stringify(
   [
