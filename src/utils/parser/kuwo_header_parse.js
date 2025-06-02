@@ -9,7 +9,9 @@ import { KuwoHeader } from '@unlock-music/crypto';
  */
 export const workerParseKuwoHeader = async ({ blobURI }) => {
   // 获取文件头部1024字节的数据
-  const blob = await fetch(blobURI, { headers: { Range: 'bytes=0-1023' } }).then((r) => r.blob());
+  const blob = await fetch(blobURI, {
+    headers: { Range: 'bytes=0-1023' },
+  }).then((r) => r.blob());
   const arrayBuffer = await blob.arrayBuffer();
 
   try {

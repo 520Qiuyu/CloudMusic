@@ -1,1898 +1,1898 @@
 [
-    {
-        "id": 0,
-        "name": "百万红心无版权歌曲合集",
-        "count": 109,
-        "size": 4678656341,
-        "sizeDesc": "4.36G",
-        "categroy": 0
-    },
-    {
-        "id": 2116,
-        "name": "陈奕迅",
-        "count": 1002,
-        "size": 31890036264,
-        "sizeDesc": "29.7G",
-        "categroy": 0
-    },
-    {
-        "id": 3684,
-        "name": "林俊杰",
-        "count": 403,
-        "size": 13731749085,
-        "sizeDesc": "12.79G",
-        "categroy": 0
-    },
-    {
-        "id": 6452,
-        "name": "周杰伦",
-        "count": 439,
-        "size": 16461436696,
-        "sizeDesc": "15.33G",
-        "categroy": 0
-    },
-    {
-        "id": 5781,
-        "name": "薛之谦",
-        "count": 143,
-        "size": 6246405073,
-        "sizeDesc": "5.82G",
-        "categroy": 0
-    },
-    {
-        "id": 12138269,
-        "name": "毛不易",
-        "count": 85,
-        "size": 3781370946,
-        "sizeDesc": "3.52G",
-        "categroy": 0
-    },
-    {
-        "id": 6472,
-        "name": "张杰",
-        "count": 365,
-        "size": 12849137005,
-        "sizeDesc": "11.97G",
-        "categroy": 1
-    },
-    {
-        "id": 5538,
-        "name": "汪苏泷",
-        "count": 238,
-        "size": 6184649069,
-        "sizeDesc": "5.76G",
-        "categroy": 1
-    },
-    {
-        "id": 6731,
-        "name": "赵雷",
-        "count": 64,
-        "size": 3322814462,
-        "sizeDesc": "3.09G",
-        "categroy": 1
-    },
-    {
-        "id": 4292,
-        "name": "李荣浩",
-        "count": 118,
-        "size": 5176321473,
-        "sizeDesc": "4.82G",
-        "categroy": 1
-    },
-    {
-        "id": 5771,
-        "name": "许嵩",
-        "count": 120,
-        "size": 2935370239,
-        "sizeDesc": "2.73G",
-        "categroy": 1
-    },
-    {
-        "id": 2843,
-        "name": "郭顶",
-        "count": 27,
-        "size": 751261446,
-        "sizeDesc": "716.46M",
-        "categroy": 1
-    },
-    {
-        "id": 5346,
-        "name": "王力宏",
-        "count": 291,
-        "size": 9557819678,
-        "sizeDesc": "8.9G",
-        "categroy": 1
-    },
-    {
-        "id": 1030001,
-        "name": "周深",
-        "count": 157,
-        "size": 6388407143,
-        "sizeDesc": "5.95G",
-        "categroy": 1
-    },
-    {
-        "id": 6460,
-        "name": "张学友",
-        "count": 844,
-        "size": 30832584732,
-        "sizeDesc": "28.72G",
-        "categroy": 1
-    },
-    {
-        "id": 861777,
-        "name": "华晨宇",
-        "count": 90,
-        "size": 4007696491,
-        "sizeDesc": "3.73G",
-        "categroy": 1
-    },
-    {
-        "id": 5196,
-        "name": "陶喆",
-        "count": 174,
-        "size": 4925046147,
-        "sizeDesc": "4.59G",
-        "categroy": 1
-    },
-    {
-        "id": 2738,
-        "name": "方大同",
-        "count": 233,
-        "size": 6350969778,
-        "sizeDesc": "5.91G",
-        "categroy": 1
-    },
-    {
-        "id": 3699,
-        "name": "李克勤",
-        "count": 663,
-        "size": 20953360916,
-        "sizeDesc": "19.51G",
-        "categroy": 1
-    },
-    {
-        "id": 3066,
-        "name": "胡彦斌",
-        "count": 195,
-        "size": 6050786748,
-        "sizeDesc": "5.64G",
-        "categroy": 1
-    },
-    {
-        "id": 2849,
-        "name": "古巨基",
-        "count": 463,
-        "size": 13620043307,
-        "sizeDesc": "12.68G",
-        "categroy": 1
-    },
-    {
-        "id": 6454,
-        "name": "张信哲",
-        "count": 339,
-        "size": 9981892626,
-        "sizeDesc": "9.3G",
-        "categroy": 1
-    },
-    {
-        "id": 6457,
-        "name": "张国荣",
-        "count": 635,
-        "size": 18620140664,
-        "sizeDesc": "17.34G",
-        "categroy": 1
-    },
-    {
-        "id": 6652,
-        "name": "周传雄",
-        "count": 210,
-        "size": 7632001214,
-        "sizeDesc": "7.11G",
-        "categroy": 1
-    },
-    {
-        "id": 5770,
-        "name": "许巍",
-        "count": 181,
-        "size": 7175870542,
-        "sizeDesc": "6.68G",
-        "categroy": 1
-    },
-    {
-        "id": 4479,
-        "name": "MC HotDog 热狗",
-        "count": 27,
-        "size": 1050050412,
-        "sizeDesc": "1001.41M",
-        "categroy": 1
-    },
-    {
-        "id": 6453,
-        "name": "张震岳",
-        "count": 162,
-        "size": 4789469110,
-        "sizeDesc": "4.46G",
-        "categroy": 1
-    },
-    {
-        "id": 6479,
-        "name": "周柏豪",
-        "count": 112,
-        "size": 3118450266,
-        "sizeDesc": "2.9G",
-        "categroy": 1
-    },
-    {
-        "id": 5205,
-        "name": "谭咏麟",
-        "count": 644,
-        "size": 17307140833,
-        "sizeDesc": "16.12G",
-        "categroy": 1
-    },
-    {
-        "id": 12932368,
-        "name": "蔡徐坤",
-        "count": 37,
-        "size": 1066016368,
-        "sizeDesc": "1016.63M",
-        "categroy": 1
-    },
-    {
-        "id": 5358,
-        "name": "王杰",
-        "count": 445,
-        "size": 13491738037,
-        "sizeDesc": "12.57G",
-        "categroy": 1
-    },
-    {
-        "id": 3691,
-        "name": "刘德华",
-        "count": 362,
-        "size": 9295933719,
-        "sizeDesc": "8.66G",
-        "categroy": 1
-    },
-    {
-        "id": 4723,
-        "name": "潘玮柏",
-        "count": 114,
-        "size": 3681197009,
-        "sizeDesc": "3.43G",
-        "categroy": 1
-    },
-    {
-        "id": 3683,
-        "name": "李宗盛",
-        "count": 207,
-        "size": 6620272857,
-        "sizeDesc": "6.17G",
-        "categroy": 1
-    },
-    {
-        "id": 6462,
-        "name": "张敬轩",
-        "count": 439,
-        "size": 12650756855,
-        "sizeDesc": "11.78G",
-        "categroy": 1
-    },
-    {
-        "id": 6469,
-        "name": "张宇",
-        "count": 146,
-        "size": 4449054947,
-        "sizeDesc": "4.14G",
-        "categroy": 1
-    },
-    {
-        "id": 2112,
-        "name": "陈小春",
-        "count": 211,
-        "size": 7147728028,
-        "sizeDesc": "6.66G",
-        "categroy": 1
-    },
-    {
-        "id": 3706,
-        "name": "林子祥",
-        "count": 476,
-        "size": 11887400321,
-        "sizeDesc": "11.07G",
-        "categroy": 1
-    },
-    {
-        "id": 5929,
-        "name": "徐良",
-        "count": 91,
-        "size": 1714656317,
-        "sizeDesc": "1.6G",
-        "categroy": 1
-    },
-    {
-        "id": 6456,
-        "name": "周华健",
-        "count": 447,
-        "size": 13602406474,
-        "sizeDesc": "12.67G",
-        "categroy": 1
-    },
-    {
-        "id": 1038093,
-        "name": "鹿晗",
-        "count": 95,
-        "size": 2960980248,
-        "sizeDesc": "2.76G",
-        "categroy": 1
-    },
-    {
-        "id": 3692,
-        "name": "林志炫",
-        "count": 170,
-        "size": 4591914315,
-        "sizeDesc": "4.28G",
-        "categroy": 1
-    },
-    {
-        "id": 5768,
-        "name": "萧敬腾",
-        "count": 173,
-        "size": 5206710344,
-        "sizeDesc": "4.85G",
-        "categroy": 1
-    },
-    {
-        "id": 6473,
-        "name": "郑中基",
-        "count": 251,
-        "size": 6051743582,
-        "sizeDesc": "5.64G",
-        "categroy": 1
-    },
-    {
-        "id": 2127,
-        "name": "陈柏宇",
-        "count": 149,
-        "size": 2858819911,
-        "sizeDesc": "2.66G",
-        "categroy": 1
-    },
-    {
-        "id": 4895,
-        "name": "任贤齐",
-        "count": 248,
-        "size": 7210972191,
-        "sizeDesc": "6.72G",
-        "categroy": 1
-    },
-    {
-        "id": 939088,
-        "name": "易烊千玺",
-        "count": 85,
-        "size": 2988297361,
-        "sizeDesc": "2.78G",
-        "categroy": 1
-    },
-    {
-        "id": 187229,
-        "name": "吴青峰",
-        "count": 78,
-        "size": 3536550544,
-        "sizeDesc": "3.29G",
-        "categroy": 1
-    },
-    {
-        "id": 3685,
-        "name": "林宥嘉",
-        "count": 201,
-        "size": 5354114635,
-        "sizeDesc": "4.99G",
-        "categroy": 1
-    },
-    {
-        "id": 2115,
-        "name": "陈百强",
-        "count": 347,
-        "size": 8433538253,
-        "sizeDesc": "7.85G",
-        "categroy": 1
-    },
-    {
-        "id": 6068,
-        "name": "杨坤",
-        "count": 99,
-        "size": 3112168993,
-        "sizeDesc": "2.9G",
-        "categroy": 1
-    },
-    {
-        "id": 6491,
-        "name": "郑伊健",
-        "count": 154,
-        "size": 3307435957,
-        "sizeDesc": "3.08G",
-        "categroy": 1
-    },
-    {
-        "id": 956386,
-        "name": "王源",
-        "count": 114,
-        "size": 4045545412,
-        "sizeDesc": "3.77G",
-        "categroy": 1
-    },
-    {
-        "id": 6468,
-        "name": "郑智化",
-        "count": 95,
-        "size": 2436621804,
-        "sizeDesc": "2.27G",
-        "categroy": 1
-    },
-    {
-        "id": 3701,
-        "name": "黎明",
-        "count": 419,
-        "size": 12073020188,
-        "sizeDesc": "11.24G",
-        "categroy": 1
-    },
-    {
-        "id": 3722,
-        "name": "梁汉文",
-        "count": 100,
-        "size": 2722890948,
-        "sizeDesc": "2.54G",
-        "categroy": 1
-    },
-    {
-        "id": 6487,
-        "name": "张智霖",
-        "count": 82,
-        "size": 3175132687,
-        "sizeDesc": "2.96G",
-        "categroy": 1
-    },
-    {
-        "id": 2117,
-        "name": "侧田",
-        "count": 192,
-        "size": 3708541303,
-        "sizeDesc": "3.45G",
-        "categroy": 1
-    },
-    {
-        "id": 5347,
-        "name": "汪峰",
-        "count": 140,
-        "size": 5141314509,
-        "sizeDesc": "4.79G",
-        "categroy": 1
-    },
-    {
-        "id": 4084,
-        "name": "林奕匡",
-        "count": 55,
-        "size": 1243369786,
-        "sizeDesc": "1.16G",
-        "categroy": 1
-    },
-    {
-        "id": 3702,
-        "name": "林峯",
-        "count": 118,
-        "size": 3419444423,
-        "sizeDesc": "3.18G",
-        "categroy": 1
-    },
-    {
-        "id": 5773,
-        "name": "谢霆锋",
-        "count": 316,
-        "size": 10579160708,
-        "sizeDesc": "9.85G",
-        "categroy": 1
-    },
-    {
-        "id": 1047015,
-        "name": "张艺兴",
-        "count": 96,
-        "size": 2402958123,
-        "sizeDesc": "2.24G",
-        "categroy": 1
-    },
-    {
-        "id": 2122,
-        "name": "陈冠希",
-        "count": 102,
-        "size": 3113412641,
-        "sizeDesc": "2.9G",
-        "categroy": 1
-    },
-    {
-        "id": 5787,
-        "name": "许志安",
-        "count": 205,
-        "size": 6004878893,
-        "sizeDesc": "5.59G",
-        "categroy": 1
-    },
-    {
-        "id": 2739,
-        "name": "方力申",
-        "count": 58,
-        "size": 1280630979,
-        "sizeDesc": "1.19G",
-        "categroy": 1
-    },
-    {
-        "id": 2852,
-        "name": "郭富城",
-        "count": 412,
-        "size": 9428511914,
-        "sizeDesc": "8.78G",
-        "categroy": 1
-    },
-    {
-        "id": 3084,
-        "name": "洪卓立",
-        "count": 139,
-        "size": 3832547212,
-        "sizeDesc": "3.57G",
-        "categroy": 1
-    },
-    {
-        "id": 3681,
-        "name": "李志",
-        "count": 300,
-        "size": 3148018361,
-        "sizeDesc": "2.93G",
-        "categroy": 1
-    },
-    {
-        "id": 5871,
-        "name": "许廷铿",
-        "count": 110,
-        "size": 2373376310,
-        "sizeDesc": "2.21G",
-        "categroy": 1
-    },
-    {
-        "id": 2125,
-        "name": "陈晓东",
-        "count": 106,
-        "size": 3051301531,
-        "sizeDesc": "2.84G",
-        "categroy": 1
-    },
-    {
-        "id": 3708,
-        "name": "蓝奕邦",
-        "count": 77,
-        "size": 939511397,
-        "sizeDesc": "895.99M",
-        "categroy": 1
-    },
-    {
-        "id": 725039,
-        "name": "冯允谦",
-        "count": 77,
-        "size": 1801451814,
-        "sizeDesc": "1.68G",
-        "categroy": 1
-    },
-    {
-        "id": 6497,
-        "name": "周国贤",
-        "count": 68,
-        "size": 1856933954,
-        "sizeDesc": "1.73G",
-        "categroy": 1
-    },
-    {
-        "id": 2879,
-        "name": "关智斌",
-        "count": 58,
-        "size": 1592367316,
-        "sizeDesc": "1.48G",
-        "categroy": 1
-    },
-    {
-        "id": 7763,
-        "name": "G.E.M.邓紫棋",
-        "count": 199,
-        "size": 6439599301,
-        "sizeDesc": "6.0G",
-        "categroy": 2
-    },
-    {
-        "id": 1024308,
-        "name": "张碧晨",
-        "count": 59,
-        "size": 2082496887,
-        "sizeDesc": "1.94G",
-        "categroy": 2
-    },
-    {
-        "id": 7214,
-        "name": "蔡健雅",
-        "count": 202,
-        "size": 7152326033,
-        "sizeDesc": "6.66G",
-        "categroy": 2
-    },
-    {
-        "id": 8926,
-        "name": "莫文蔚",
-        "count": 266,
-        "size": 8412694931,
-        "sizeDesc": "7.83G",
-        "categroy": 2
-    },
-    {
-        "id": 9269,
-        "name": "容祖儿",
-        "count": 971,
-        "size": 27372916531,
-        "sizeDesc": "25.49G",
-        "categroy": 2
-    },
-    {
-        "id": 9272,
-        "name": "孙燕姿",
-        "count": 225,
-        "size": 8291186811,
-        "sizeDesc": "7.72G",
-        "categroy": 2
-    },
-    {
-        "id": 768208,
-        "name": "AGA",
-        "count": 64,
-        "size": 1850758420,
-        "sizeDesc": "1.72G",
-        "categroy": 2
-    },
-    {
-        "id": 9621,
-        "name": "王菲",
-        "count": 491,
-        "size": 15096102593,
-        "sizeDesc": "14.06G",
-        "categroy": 2
-    },
-    {
-        "id": 7063,
-        "name": "黄丽玲",
-        "count": 163,
-        "size": 6540344317,
-        "sizeDesc": "6.09G",
-        "categroy": 2
-    },
-    {
-        "id": 1007170,
-        "name": "陈粒",
-        "count": 111,
-        "size": 3262173153,
-        "sizeDesc": "3.04G",
-        "categroy": 2
-    },
-    {
-        "id": 10562,
-        "name": "张韶涵",
-        "count": 146,
-        "size": 4818670652,
-        "sizeDesc": "4.49G",
-        "categroy": 2
-    },
-    {
-        "id": 9940,
-        "name": "徐佳莹",
-        "count": 210,
-        "size": 7654733137,
-        "sizeDesc": "7.13G",
-        "categroy": 2
-    },
-    {
-        "id": 10204,
-        "name": "杨千嬅",
-        "count": 445,
-        "size": 11316271938,
-        "sizeDesc": "10.54G",
-        "categroy": 2
-    },
-    {
-        "id": 8329,
-        "name": "梁咏琪",
-        "count": 262,
-        "size": 7008466850,
-        "sizeDesc": "6.53G",
-        "categroy": 2
-    },
-    {
-        "id": 8325,
-        "name": "梁静茹",
-        "count": 260,
-        "size": 9136748514,
-        "sizeDesc": "8.51G",
-        "categroy": 2
-    },
-    {
-        "id": 10199,
-        "name": "杨丞琳",
-        "count": 138,
-        "size": 3696454379,
-        "sizeDesc": "3.44G",
-        "categroy": 2
-    },
-    {
-        "id": 7225,
-        "name": "陈慧娴",
-        "count": 387,
-        "size": 11592207653,
-        "sizeDesc": "10.8G",
-        "categroy": 2
-    },
-    {
-        "id": 7219,
-        "name": "蔡依林",
-        "count": 288,
-        "size": 9972103756,
-        "sizeDesc": "9.29G",
-        "categroy": 2
-    },
-    {
-        "id": 9605,
-        "name": "卫兰",
-        "count": 313,
-        "size": 8084841176,
-        "sizeDesc": "7.53G",
-        "categroy": 2
-    },
-    {
-        "id": 10561,
-        "name": "张靓颖",
-        "count": 243,
-        "size": 8002170218,
-        "sizeDesc": "7.45G",
-        "categroy": 2
-    },
-    {
-        "id": 9606,
-        "name": "王心凌",
-        "count": 157,
-        "size": 5286720590,
-        "sizeDesc": "4.92G",
-        "categroy": 2
-    },
-    {
-        "id": 8334,
-        "name": "刘惜君",
-        "count": 87,
-        "size": 3268062486,
-        "sizeDesc": "3.04G",
-        "categroy": 2
-    },
-    {
-        "id": 8326,
-        "name": "刘若英",
-        "count": 258,
-        "size": 8234463663,
-        "sizeDesc": "7.67G",
-        "categroy": 2
-    },
-    {
-        "id": 10200,
-        "name": "郁可唯",
-        "count": 128,
-        "size": 3516340821,
-        "sizeDesc": "3.27G",
-        "categroy": 2
-    },
-    {
-        "id": 8336,
-        "name": "林忆莲",
-        "count": 531,
-        "size": 16568436801,
-        "sizeDesc": "15.43G",
-        "categroy": 2
-    },
-    {
-        "id": 9945,
-        "name": "萧亚轩",
-        "count": 205,
-        "size": 7193907727,
-        "sizeDesc": "6.7G",
-        "categroy": 2
-    },
-    {
-        "id": 10559,
-        "name": "张惠妹",
-        "count": 296,
-        "size": 9262034311,
-        "sizeDesc": "8.63G",
-        "categroy": 2
-    },
-    {
-        "id": 9952,
-        "name": "谢安琪",
-        "count": 116,
-        "size": 2865113483,
-        "sizeDesc": "2.67G",
-        "categroy": 2
-    },
-    {
-        "id": 9489,
-        "name": "谭维维",
-        "count": 25,
-        "size": 742312420,
-        "sizeDesc": "707.92M",
-        "categroy": 2
-    },
-    {
-        "id": 9615,
-        "name": "吴雨霏",
-        "count": 148,
-        "size": 4261344714,
-        "sizeDesc": "3.97G",
-        "categroy": 2
-    },
-    {
-        "id": 7217,
-        "name": "陈绮贞",
-        "count": 88,
-        "size": 2485611771,
-        "sizeDesc": "2.31G",
-        "categroy": 2
-    },
-    {
-        "id": 10558,
-        "name": "周笔畅",
-        "count": 190,
-        "size": 6521641426,
-        "sizeDesc": "6.07G",
-        "categroy": 2
-    },
-    {
-        "id": 7235,
-        "name": "陈慧琳",
-        "count": 286,
-        "size": 7980863752,
-        "sizeDesc": "7.43G",
-        "categroy": 2
-    },
-    {
-        "id": 10209,
-        "name": "叶蒨文",
-        "count": 224,
-        "size": 6313886964,
-        "sizeDesc": "5.88G",
-        "categroy": 2
-    },
-    {
-        "id": 7652,
-        "name": "范玮琪",
-        "count": 109,
-        "size": 2950170024,
-        "sizeDesc": "2.75G",
-        "categroy": 2
-    },
-    {
-        "id": 10571,
-        "name": "郑秀文",
-        "count": 566,
-        "size": 13817861621,
-        "sizeDesc": "12.87G",
-        "categroy": 2
-    },
-    {
-        "id": 7409,
-        "name": "岑宁儿",
-        "count": 69,
-        "size": 2173385207,
-        "sizeDesc": "2.02G",
-        "categroy": 2
-    },
-    {
-        "id": 8330,
-        "name": "卢巧音",
-        "count": 76,
-        "size": 1688127344,
-        "sizeDesc": "1.57G",
-        "categroy": 2
-    },
-    {
-        "id": 7537,
-        "name": "邓丽欣",
-        "count": 89,
-        "size": 2196324075,
-        "sizeDesc": "2.05G",
-        "categroy": 2
-    },
-    {
-        "id": 7768,
-        "name": "关淑怡",
-        "count": 158,
-        "size": 4049875344,
-        "sizeDesc": "3.77G",
-        "categroy": 2
-    },
-    {
-        "id": 9944,
-        "name": "薛凯琪",
-        "count": 156,
-        "size": 4325438419,
-        "sizeDesc": "4.03G",
-        "categroy": 2
-    },
-    {
-        "id": 8918,
-        "name": "梅艳芳",
-        "count": 303,
-        "size": 7315616318,
-        "sizeDesc": "6.81G",
-        "categroy": 2
-    },
-    {
-        "id": 9612,
-        "name": "温岚",
-        "count": 73,
-        "size": 2203223840,
-        "sizeDesc": "2.05G",
-        "categroy": 2
-    },
-    {
-        "id": 7439,
-        "name": "陈洁仪",
-        "count": 89,
-        "size": 3400102929,
-        "sizeDesc": "3.17G",
-        "categroy": 2
-    },
-    {
-        "id": 9942,
-        "name": "许美静",
-        "count": 66,
-        "size": 2442186221,
-        "sizeDesc": "2.27G",
-        "categroy": 2
-    },
-    {
-        "id": 9106,
-        "name": "彭羚",
-        "count": 141,
-        "size": 5786031859,
-        "sizeDesc": "5.39G",
-        "categroy": 2
-    },
-    {
-        "id": 7227,
-        "name": "蔡卓妍",
-        "count": 75,
-        "size": 2015191676,
-        "sizeDesc": "1.88G",
-        "categroy": 2
-    },
-    {
-        "id": 8653,
-        "name": "李幸倪",
-        "count": 70,
-        "size": 1866870011,
-        "sizeDesc": "1.74G",
-        "categroy": 2
-    },
-    {
-        "id": 9548,
-        "name": "田馥甄",
-        "count": 129,
-        "size": 3424732976,
-        "sizeDesc": "3.19G",
-        "categroy": 2
-    },
-    {
-        "id": 792806,
-        "name": "许靖韵",
-        "count": 77,
-        "size": 2027111057,
-        "sizeDesc": "1.89G",
-        "categroy": 2
-    },
-    {
-        "id": 9608,
-        "name": "王菀之",
-        "count": 154,
-        "size": 2780921081,
-        "sizeDesc": "2.59G",
-        "categroy": 2
-    },
-    {
-        "id": 916007,
-        "name": "Serrini樹妮妮",
-        "count": 104,
-        "size": 1333456124,
-        "sizeDesc": "1.24G",
-        "categroy": 2
-    },
-    {
-        "id": 10773,
-        "name": "钟欣潼",
-        "count": 56,
-        "size": 1941415250,
-        "sizeDesc": "1.81G",
-        "categroy": 2
-    },
-    {
-        "id": 13193,
-        "name": "五月天",
-        "count": 470,
-        "size": 17587587268,
-        "sizeDesc": "16.38G",
-        "categroy": 3
-    },
-    {
-        "id": 12676697,
-        "name": "告五人",
-        "count": 54,
-        "size": 2898627688,
-        "sizeDesc": "2.7G",
-        "categroy": 3
-    },
-    {
-        "id": 11127,
-        "name": "Beyond",
-        "count": 485,
-        "size": 16678285188,
-        "sizeDesc": "15.53G",
-        "categroy": 3
-    },
-    {
-        "id": 1050282,
-        "name": "房东的猫",
-        "count": 94,
-        "size": 3694128611,
-        "sizeDesc": "3.44G",
-        "categroy": 3
-    },
-    {
-        "id": 222871,
-        "name": "伍佰 & China Blue",
-        "count": 234,
-        "size": 7763825535,
-        "sizeDesc": "7.23G",
-        "categroy": 3
-    },
-    {
-        "id": 11097,
-        "name": "By2",
-        "count": 71,
-        "size": 2975948091,
-        "sizeDesc": "2.77G",
-        "categroy": 3
-    },
-    {
-        "id": 12977,
-        "name": "逃跑计划",
-        "count": 43,
-        "size": 1625630266,
-        "sizeDesc": "1.51G",
-        "categroy": 3
-    },
-    {
-        "id": 13282,
-        "name": "新裤子",
-        "count": 109,
-        "size": 4035134455,
-        "sizeDesc": "3.76G",
-        "categroy": 3
-    },
-    {
-        "id": 12971,
-        "name": "痛仰乐队",
-        "count": 71,
-        "size": 2441363482,
-        "sizeDesc": "2.27G",
-        "categroy": 3
-    },
-    {
-        "id": 11265,
-        "name": "草蜢",
-        "count": 169,
-        "size": 4319306821,
-        "sizeDesc": "4.02G",
-        "categroy": 3
-    },
-    {
-        "id": 11109,
-        "name": "八三夭",
-        "count": 70,
-        "size": 2573028424,
-        "sizeDesc": "2.4G",
-        "categroy": 3
-    },
-    {
-        "id": 827728,
-        "name": "TFBOYS",
-        "count": 86,
-        "size": 3422441207,
-        "sizeDesc": "3.19G",
-        "categroy": 3
-    },
-    {
-        "id": 12707,
-        "name": "苏打绿",
-        "count": 144,
-        "size": 3443563405,
-        "sizeDesc": "3.21G",
-        "categroy": 3
-    },
-    {
-        "id": 36301312,
-        "name": "鱼丁糸",
-        "count": 93,
-        "size": 2836259754,
-        "sizeDesc": "2.64G",
-        "categroy": 3
-    },
-    {
-        "id": 33806754,
-        "name": "时代少年团",
-        "count": 69,
-        "size": 2709875359,
-        "sizeDesc": "2.52G",
-        "categroy": 3
-    },
-    {
-        "id": 12985,
-        "name": "Twins",
-        "count": 513,
-        "size": 11743133156,
-        "sizeDesc": "10.94G",
-        "categroy": 3
-    },
-    {
-        "id": 13418,
-        "name": "羽·泉",
-        "count": 146,
-        "size": 4135127330,
-        "sizeDesc": "3.85G",
-        "categroy": 3
-    },
-    {
-        "id": 12709,
-        "name": "S.H.E",
-        "count": 276,
-        "size": 5824273429,
-        "sizeDesc": "5.42G",
-        "categroy": 3
-    },
-    {
-        "id": 11378,
-        "name": "Dear Jane",
-        "count": 92,
-        "size": 2422929740,
-        "sizeDesc": "2.26G",
-        "categroy": 3
-    },
-    {
-        "id": 12266,
-        "name": "Mr.",
-        "count": 68,
-        "size": 2051616552,
-        "sizeDesc": "1.91G",
-        "categroy": 3
-    },
-    {
-        "id": 11001,
-        "name": "at17",
-        "count": 78,
-        "size": 751741592,
-        "sizeDesc": "716.92M",
-        "categroy": 3
-    },
-    {
-        "id": 35531,
-        "name": "Justin Bieber",
-        "count": 274,
-        "size": 5316282329,
-        "sizeDesc": "4.95G",
-        "categroy": 4
-    },
-    {
-        "id": 185858,
-        "name": "The Weeknd",
-        "count": 171,
-        "size": 5255062992,
-        "sizeDesc": "4.89G",
-        "categroy": 4
-    },
-    {
-        "id": 90331,
-        "name": "Charlie Puth",
-        "count": 101,
-        "size": 2231999636,
-        "sizeDesc": "2.08G",
-        "categroy": 4
-    },
-    {
-        "id": 1045123,
-        "name": "Alan Walker",
-        "count": 84,
-        "size": 2450611408,
-        "sizeDesc": "2.28G",
-        "categroy": 4
-    },
-    {
-        "id": 33184,
-        "name": "Ed Sheeran",
-        "count": 184,
-        "size": 4299194701,
-        "sizeDesc": "4.0G",
-        "categroy": 4
-    },
-    {
-        "id": 780003,
-        "name": "Martin Garrix",
-        "count": 67,
-        "size": 1898316480,
-        "sizeDesc": "1.77G",
-        "categroy": 4
-    },
-    {
-        "id": 1115185,
-        "name": "Lulleaux",
-        "count": 37,
-        "size": 843080344,
-        "sizeDesc": "804.02M",
-        "categroy": 4
-    },
-    {
-        "id": 38853,
-        "name": "Michael Jackson",
-        "count": 293,
-        "size": 8622367138,
-        "sizeDesc": "8.03G",
-        "categroy": 4
-    },
-    {
-        "id": 1019952,
-        "name": "TheFatRat",
-        "count": 49,
-        "size": 1174870094,
-        "sizeDesc": "1.09G",
-        "categroy": 4
-    },
-    {
-        "id": 34517,
-        "name": "Hans Zimmer",
-        "count": 195,
-        "size": 4942134459,
-        "sizeDesc": "4.6G",
-        "categroy": 4
-    },
-    {
-        "id": 35332,
-        "name": "Jason Mraz",
-        "count": 139,
-        "size": 3585700783,
-        "sizeDesc": "3.34G",
-        "categroy": 4
-    },
-    {
-        "id": 42938,
-        "name": "Sting",
-        "count": 86,
-        "size": 1718324116,
-        "sizeDesc": "1.6G",
-        "categroy": 4
-    },
-    {
-        "id": 34520,
-        "name": "Howard Shore",
-        "count": 185,
-        "size": 3094095183,
-        "sizeDesc": "2.88G",
-        "categroy": 4
-    },
-    {
-        "id": 44266,
-        "name": "Taylor Swift",
-        "count": 699,
-        "size": 17836822487,
-        "sizeDesc": "16.61G",
-        "categroy": 5
-    },
-    {
-        "id": 62885,
-        "name": "Kelly Clarkson",
-        "count": 139,
-        "size": 3746196932,
-        "sizeDesc": "3.49G",
-        "categroy": 5
-    },
-    {
-        "id": 74625,
-        "name": "Sia",
-        "count": 149,
-        "size": 4010524887,
-        "sizeDesc": "3.74G",
-        "categroy": 5
-    },
-    {
-        "id": 11972054,
-        "name": "Billie Eilish",
-        "count": 63,
-        "size": 1392559367,
-        "sizeDesc": "1.3G",
-        "categroy": 5
-    },
-    {
-        "id": 46487,
-        "name": "Adele",
-        "count": 79,
-        "size": 2226538470,
-        "sizeDesc": "2.07G",
-        "categroy": 5
-    },
-    {
-        "id": 62888,
-        "name": "Katy Perry",
-        "count": 103,
-        "size": 2921718577,
-        "sizeDesc": "2.72G",
-        "categroy": 5
-    },
-    {
-        "id": 62898,
-        "name": "Kate Bush",
-        "count": 182,
-        "size": 3212265033,
-        "sizeDesc": "2.99G",
-        "categroy": 5
-    },
-    {
-        "id": 94779,
-        "name": "Imagine Dragons",
-        "count": 166,
-        "size": 3926728844,
-        "sizeDesc": "3.66G",
-        "categroy": 6
-    },
-    {
-        "id": 893484,
-        "name": "The Chainsmokers",
-        "count": 73,
-        "size": 1962678437,
-        "sizeDesc": "1.83G",
-        "categroy": 6
-    },
-    {
-        "id": 96266,
-        "name": "Maroon 5",
-        "count": 254,
-        "size": 5738170377,
-        "sizeDesc": "5.34G",
-        "categroy": 6
-    },
-    {
-        "id": 89365,
-        "name": "Coldplay",
-        "count": 277,
-        "size": 7304623668,
-        "sizeDesc": "6.8G",
-        "categroy": 6
-    },
-    {
-        "id": 98105,
-        "name": "OneRepublic",
-        "count": 147,
-        "size": 3452544857,
-        "sizeDesc": "3.22G",
-        "categroy": 6
-    },
-    {
-        "id": 95439,
-        "name": "Linkin Park",
-        "count": 346,
-        "size": 8322203444,
-        "sizeDesc": "7.75G",
-        "categroy": 6
-    },
-    {
-        "id": 56782,
-        "name": "Fall Out Boy",
-        "count": 159,
-        "size": 3707079021,
-        "sizeDesc": "3.45G",
-        "categroy": 6
-    },
-    {
-        "id": 45839,
-        "name": "Westlife",
-        "count": 159,
-        "size": 4025288940,
-        "sizeDesc": "3.75G",
-        "categroy": 6
-    },
-    {
-        "id": 41906,
-        "name": "Queen",
-        "count": 369,
-        "size": 8650187223,
-        "sizeDesc": "8.06G",
-        "categroy": 6
-    },
-    {
-        "id": 98351,
-        "name": "One Direction",
-        "count": 106,
-        "size": 2711136390,
-        "sizeDesc": "2.52G",
-        "categroy": 6
-    },
-    {
-        "id": 101988,
-        "name": "The Beatles",
-        "count": 450,
-        "size": 7548314851,
-        "sizeDesc": "7.03G",
-        "categroy": 6
-    },
-    {
-        "id": 98541,
-        "name": "Pink Floyd",
-        "count": 193,
-        "size": 6400007063,
-        "sizeDesc": "5.96G",
-        "categroy": 6
-    },
-    {
-        "id": 105647,
-        "name": "Yes",
-        "count": 174,
-        "size": 5767151403,
-        "sizeDesc": "5.37G",
-        "categroy": 6
-    },
-    {
-        "id": 129526,
-        "name": "Jackson 5",
-        "count": 124,
-        "size": 1598128562,
-        "sizeDesc": "1.49G",
-        "categroy": 6
-    },
-    {
-        "id": 159300,
-        "name": "米津玄師",
-        "count": 91,
-        "size": 2409572404,
-        "sizeDesc": "2.24G",
-        "categroy": 7
-    },
-    {
-        "id": 15289,
-        "name": "坂本龍一",
-        "count": 122,
-        "size": 2429036749,
-        "sizeDesc": "2.26G",
-        "categroy": 7
-    },
-    {
-        "id": 14408,
-        "name": "久石譲",
-        "count": 371,
-        "size": 5324810867,
-        "sizeDesc": "4.96G",
-        "categroy": 7
-    },
-    {
-        "id": 15229,
-        "name": "ピノキオピー",
-        "count": 36,
-        "size": 1313177271,
-        "sizeDesc": "1.22G",
-        "categroy": 7
-    },
-    {
-        "id": 14001,
-        "name": "DECO*27",
-        "count": 81,
-        "size": 2572509390,
-        "sizeDesc": "2.4G",
-        "categroy": 7
-    },
-    {
-        "id": 15102,
-        "name": "折戸伸治",
-        "count": 56,
-        "size": 1234397073,
-        "sizeDesc": "1.15G",
-        "categroy": 7
-    },
-    {
-        "id": 15917,
-        "name": "横山克",
-        "count": 78,
-        "size": 784969775,
-        "sizeDesc": "748.61M",
-        "categroy": 7
-    },
-    {
-        "id": 15823,
-        "name": "wowaka",
-        "count": 28,
-        "size": 962641930,
-        "sizeDesc": "918.05M",
-        "categroy": 7
-    },
-    {
-        "id": 15948,
-        "name": "矢野立美",
-        "count": 23,
-        "size": 356435101,
-        "sizeDesc": "339.92M",
-        "categroy": 7
-    },
-    {
-        "id": 12334348,
-        "name": "菅田将暉",
-        "count": 40,
-        "size": 487779869,
-        "sizeDesc": "465.18M",
-        "categroy": 7
-    },
-    {
-        "id": 14472,
-        "name": "菅野祐悟",
-        "count": 21,
-        "size": 370444509,
-        "sizeDesc": "353.28M",
-        "categroy": 7
-    },
-    {
-        "id": 14242,
-        "name": "星野源",
-        "count": 111,
-        "size": 2036585922,
-        "sizeDesc": "1.9G",
-        "categroy": 7
-    },
-    {
-        "id": 15300,
-        "name": "鷺巣詩郎",
-        "count": 53,
-        "size": 1324786894,
-        "sizeDesc": "1.23G",
-        "categroy": 7
-    },
-    {
-        "id": 12263373,
-        "name": "ナユタン星人",
-        "count": 31,
-        "size": 1101925280,
-        "sizeDesc": "1.03G",
-        "categroy": 7
-    },
-    {
-        "id": 14782,
-        "name": "麻枝准",
-        "count": 38,
-        "size": 1205461661,
-        "sizeDesc": "1.12G",
-        "categroy": 7
-    },
-    {
-        "id": 159692,
-        "name": "初音ミク",
-        "count": 633,
-        "size": 23147121289,
-        "sizeDesc": "21.56G",
-        "categroy": 8
-    },
-    {
-        "id": 16152,
-        "name": "Aimer",
-        "count": 241,
-        "size": 6136908554,
-        "sizeDesc": "5.72G",
-        "categroy": 8
-    },
-    {
-        "id": 18122,
-        "name": "宇多田ヒカル",
-        "count": 240,
-        "size": 8349845097,
-        "sizeDesc": "7.78G",
-        "categroy": 8
-    },
-    {
-        "id": 855508,
-        "name": "Daoko",
-        "count": 89,
-        "size": 2492038016,
-        "sizeDesc": "2.32G",
-        "categroy": 8
-    },
-    {
-        "id": 16995,
-        "name": "LiSA",
-        "count": 98,
-        "size": 2310923215,
-        "sizeDesc": "2.15G",
-        "categroy": 8
-    },
-    {
-        "id": 13059968,
-        "name": "Reol",
-        "count": 82,
-        "size": 2672488802,
-        "sizeDesc": "2.49G",
-        "categroy": 8
-    },
-    {
-        "id": 16906,
-        "name": "茅野愛衣",
-        "count": 75,
-        "size": 2498664828,
-        "sizeDesc": "2.33G",
-        "categroy": 8
-    },
-    {
-        "id": 16823,
-        "name": "小林未郁",
-        "count": 91,
-        "size": 2120494880,
-        "sizeDesc": "1.97G",
-        "categroy": 8
-    },
-    {
-        "id": 160729,
-        "name": "中島美嘉",
-        "count": 160,
-        "size": 5665277951,
-        "sizeDesc": "5.28G",
-        "categroy": 8
-    },
-    {
-        "id": 16456,
-        "name": "花澤香菜",
-        "count": 189,
-        "size": 5245872494,
-        "sizeDesc": "4.89G",
-        "categroy": 8
-    },
-    {
-        "id": 16405,
-        "name": "浜崎あゆみ",
-        "count": 996,
-        "size": 36168668683,
-        "sizeDesc": "33.68G",
-        "categroy": 8
-    },
-    {
-        "id": 191316,
-        "name": "majiko",
-        "count": 82,
-        "size": 2284940715,
-        "sizeDesc": "2.13G",
-        "categroy": 8
-    },
-    {
-        "id": 17307,
-        "name": "中島みゆき",
-        "count": 329,
-        "size": 7858918603,
-        "sizeDesc": "7.32G",
-        "categroy": 8
-    },
-    {
-        "id": 17909,
-        "name": "高橋洋子",
-        "count": 29,
-        "size": 1088302297,
-        "sizeDesc": "1.01G",
-        "categroy": 8
-    },
-    {
-        "id": 18303,
-        "name": "やなぎなぎ",
-        "count": 22,
-        "size": 1197304956,
-        "sizeDesc": "1.12G",
-        "categroy": 8
-    },
-    {
-        "id": 16523,
-        "name": "花たん",
-        "count": 81,
-        "size": 2710410835,
-        "sizeDesc": "2.52G",
-        "categroy": 8
-    },
-    {
-        "id": 1053279,
-        "name": "あいみょん",
-        "count": 76,
-        "size": 2010865971,
-        "sizeDesc": "1.87G",
-        "categroy": 8
-    },
-    {
-        "id": 17881,
-        "name": "鈴木このみ",
-        "count": 49,
-        "size": 1680879079,
-        "sizeDesc": "1.57G",
-        "categroy": 8
-    },
-    {
-        "id": 18349,
-        "name": "ZARD",
-        "count": 170,
-        "size": 5321161789,
-        "sizeDesc": "4.96G",
-        "categroy": 8
-    },
-    {
-        "id": 161545,
-        "name": "倉木麻衣",
-        "count": 333,
-        "size": 8401751017,
-        "sizeDesc": "7.82G",
-        "categroy": 8
-    },
-    {
-        "id": 15996,
-        "name": "愛内里菜",
-        "count": 145,
-        "size": 4300848757,
-        "sizeDesc": "4.01G",
-        "categroy": 8
-    },
-    {
-        "id": 16693,
-        "name": "小松未歩",
-        "count": 134,
-        "size": 3869643309,
-        "sizeDesc": "3.6G",
-        "categroy": 8
-    },
-    {
-        "id": 21307,
-        "name": "三枝夕夏 IN db",
-        "count": 67,
-        "size": 1782313469,
-        "sizeDesc": "1.66G",
-        "categroy": 8
-    },
-    {
-        "id": 33927412,
-        "name": "YOASOBI",
-        "count": 55,
-        "size": 1820875590,
-        "sizeDesc": "1.7G",
-        "categroy": 9
-    },
-    {
-        "id": 21132,
-        "name": "RADWIMPS",
-        "count": 363,
-        "size": 9692492768,
-        "sizeDesc": "9.03G",
-        "categroy": 9
-    },
-    {
-        "id": 12390232,
-        "name": "ヨルシカ",
-        "count": 57,
-        "size": 1376384523,
-        "sizeDesc": "1.28G",
-        "categroy": 9
-    },
-    {
-        "id": 19270,
-        "name": "いきものがかり",
-        "count": 115,
-        "size": 1392419422,
-        "sizeDesc": "1.3G",
-        "categroy": 9
-    },
-    {
-        "id": 22299,
-        "name": "WANDS",
-        "count": 54,
-        "size": 1634299684,
-        "sizeDesc": "1.52G",
-        "categroy": 9
-    },
-    {
-        "id": 21196,
-        "name": "ラムジ",
-        "count": 38,
-        "size": 1290446554,
-        "sizeDesc": "1.2G",
-        "categroy": 9
-    },
-    {
-        "id": 18961,
-        "name": "ClariS",
-        "count": 121,
-        "size": 2871023148,
-        "sizeDesc": "2.67G",
-        "categroy": 9
-    },
-    {
-        "id": 21397,
-        "name": "supercell",
-        "count": 48,
-        "size": 977322623,
-        "sizeDesc": "932.05M",
-        "categroy": 9
-    },
-    {
-        "id": 161782,
-        "name": "放課後ティータイム",
-        "count": 103,
-        "size": 3036092184,
-        "sizeDesc": "2.83G",
-        "categroy": 9
-    },
-    {
-        "id": 21821,
-        "name": "東京事変",
-        "count": 160,
-        "size": 4145598467,
-        "sizeDesc": "3.86G",
-        "categroy": 9
-    },
-    {
-        "id": 21876,
-        "name": "TWO-MIX",
-        "count": 62,
-        "size": 2194788857,
-        "sizeDesc": "2.04G",
-        "categroy": 9
-    },
-    {
-        "id": 123577,
-        "name": "G-DRAGON",
-        "count": 58,
-        "size": 1335630446,
-        "sizeDesc": "1.24G",
-        "categroy": 10
-    },
-    {
-        "id": 160947,
-        "name": "IU",
-        "count": 116,
-        "size": 3937740196,
-        "sizeDesc": "3.67G",
-        "categroy": 11
-    },
-    {
-        "id": 12068017,
-        "name": "BLACKPINK",
-        "count": 75,
-        "size": 1911778165,
-        "sizeDesc": "1.78G",
-        "categroy": 12
-    },
-    {
-        "id": 759509,
-        "name": "EXO",
-        "count": 194,
-        "size": 4437878916,
-        "sizeDesc": "4.13G",
-        "categroy": 12
-    },
-    {
-        "id": 126339,
-        "name": "BIGBANG",
-        "count": 146,
-        "size": 3886642618,
-        "sizeDesc": "3.62G",
-        "categroy": 12
-    }
+  {
+    "id": 0,
+    "name": "百万红心无版权歌曲合集",
+    "count": 109,
+    "size": 4678656341,
+    "sizeDesc": "4.36G",
+    "categroy": 0
+  },
+  {
+    "id": 2116,
+    "name": "陈奕迅",
+    "count": 1002,
+    "size": 31890036264,
+    "sizeDesc": "29.7G",
+    "categroy": 0
+  },
+  {
+    "id": 3684,
+    "name": "林俊杰",
+    "count": 403,
+    "size": 13731749085,
+    "sizeDesc": "12.79G",
+    "categroy": 0
+  },
+  {
+    "id": 6452,
+    "name": "周杰伦",
+    "count": 439,
+    "size": 16461436696,
+    "sizeDesc": "15.33G",
+    "categroy": 0
+  },
+  {
+    "id": 5781,
+    "name": "薛之谦",
+    "count": 143,
+    "size": 6246405073,
+    "sizeDesc": "5.82G",
+    "categroy": 0
+  },
+  {
+    "id": 12138269,
+    "name": "毛不易",
+    "count": 85,
+    "size": 3781370946,
+    "sizeDesc": "3.52G",
+    "categroy": 0
+  },
+  {
+    "id": 6472,
+    "name": "张杰",
+    "count": 365,
+    "size": 12849137005,
+    "sizeDesc": "11.97G",
+    "categroy": 1
+  },
+  {
+    "id": 5538,
+    "name": "汪苏泷",
+    "count": 238,
+    "size": 6184649069,
+    "sizeDesc": "5.76G",
+    "categroy": 1
+  },
+  {
+    "id": 6731,
+    "name": "赵雷",
+    "count": 64,
+    "size": 3322814462,
+    "sizeDesc": "3.09G",
+    "categroy": 1
+  },
+  {
+    "id": 4292,
+    "name": "李荣浩",
+    "count": 118,
+    "size": 5176321473,
+    "sizeDesc": "4.82G",
+    "categroy": 1
+  },
+  {
+    "id": 5771,
+    "name": "许嵩",
+    "count": 120,
+    "size": 2935370239,
+    "sizeDesc": "2.73G",
+    "categroy": 1
+  },
+  {
+    "id": 2843,
+    "name": "郭顶",
+    "count": 27,
+    "size": 751261446,
+    "sizeDesc": "716.46M",
+    "categroy": 1
+  },
+  {
+    "id": 5346,
+    "name": "王力宏",
+    "count": 291,
+    "size": 9557819678,
+    "sizeDesc": "8.9G",
+    "categroy": 1
+  },
+  {
+    "id": 1030001,
+    "name": "周深",
+    "count": 157,
+    "size": 6388407143,
+    "sizeDesc": "5.95G",
+    "categroy": 1
+  },
+  {
+    "id": 6460,
+    "name": "张学友",
+    "count": 844,
+    "size": 30832584732,
+    "sizeDesc": "28.72G",
+    "categroy": 1
+  },
+  {
+    "id": 861777,
+    "name": "华晨宇",
+    "count": 90,
+    "size": 4007696491,
+    "sizeDesc": "3.73G",
+    "categroy": 1
+  },
+  {
+    "id": 5196,
+    "name": "陶喆",
+    "count": 174,
+    "size": 4925046147,
+    "sizeDesc": "4.59G",
+    "categroy": 1
+  },
+  {
+    "id": 2738,
+    "name": "方大同",
+    "count": 233,
+    "size": 6350969778,
+    "sizeDesc": "5.91G",
+    "categroy": 1
+  },
+  {
+    "id": 3699,
+    "name": "李克勤",
+    "count": 663,
+    "size": 20953360916,
+    "sizeDesc": "19.51G",
+    "categroy": 1
+  },
+  {
+    "id": 3066,
+    "name": "胡彦斌",
+    "count": 195,
+    "size": 6050786748,
+    "sizeDesc": "5.64G",
+    "categroy": 1
+  },
+  {
+    "id": 2849,
+    "name": "古巨基",
+    "count": 463,
+    "size": 13620043307,
+    "sizeDesc": "12.68G",
+    "categroy": 1
+  },
+  {
+    "id": 6454,
+    "name": "张信哲",
+    "count": 339,
+    "size": 9981892626,
+    "sizeDesc": "9.3G",
+    "categroy": 1
+  },
+  {
+    "id": 6457,
+    "name": "张国荣",
+    "count": 635,
+    "size": 18620140664,
+    "sizeDesc": "17.34G",
+    "categroy": 1
+  },
+  {
+    "id": 6652,
+    "name": "周传雄",
+    "count": 210,
+    "size": 7632001214,
+    "sizeDesc": "7.11G",
+    "categroy": 1
+  },
+  {
+    "id": 5770,
+    "name": "许巍",
+    "count": 181,
+    "size": 7175870542,
+    "sizeDesc": "6.68G",
+    "categroy": 1
+  },
+  {
+    "id": 4479,
+    "name": "MC HotDog 热狗",
+    "count": 27,
+    "size": 1050050412,
+    "sizeDesc": "1001.41M",
+    "categroy": 1
+  },
+  {
+    "id": 6453,
+    "name": "张震岳",
+    "count": 162,
+    "size": 4789469110,
+    "sizeDesc": "4.46G",
+    "categroy": 1
+  },
+  {
+    "id": 6479,
+    "name": "周柏豪",
+    "count": 112,
+    "size": 3118450266,
+    "sizeDesc": "2.9G",
+    "categroy": 1
+  },
+  {
+    "id": 5205,
+    "name": "谭咏麟",
+    "count": 644,
+    "size": 17307140833,
+    "sizeDesc": "16.12G",
+    "categroy": 1
+  },
+  {
+    "id": 12932368,
+    "name": "蔡徐坤",
+    "count": 37,
+    "size": 1066016368,
+    "sizeDesc": "1016.63M",
+    "categroy": 1
+  },
+  {
+    "id": 5358,
+    "name": "王杰",
+    "count": 445,
+    "size": 13491738037,
+    "sizeDesc": "12.57G",
+    "categroy": 1
+  },
+  {
+    "id": 3691,
+    "name": "刘德华",
+    "count": 362,
+    "size": 9295933719,
+    "sizeDesc": "8.66G",
+    "categroy": 1
+  },
+  {
+    "id": 4723,
+    "name": "潘玮柏",
+    "count": 114,
+    "size": 3681197009,
+    "sizeDesc": "3.43G",
+    "categroy": 1
+  },
+  {
+    "id": 3683,
+    "name": "李宗盛",
+    "count": 207,
+    "size": 6620272857,
+    "sizeDesc": "6.17G",
+    "categroy": 1
+  },
+  {
+    "id": 6462,
+    "name": "张敬轩",
+    "count": 439,
+    "size": 12650756855,
+    "sizeDesc": "11.78G",
+    "categroy": 1
+  },
+  {
+    "id": 6469,
+    "name": "张宇",
+    "count": 146,
+    "size": 4449054947,
+    "sizeDesc": "4.14G",
+    "categroy": 1
+  },
+  {
+    "id": 2112,
+    "name": "陈小春",
+    "count": 211,
+    "size": 7147728028,
+    "sizeDesc": "6.66G",
+    "categroy": 1
+  },
+  {
+    "id": 3706,
+    "name": "林子祥",
+    "count": 476,
+    "size": 11887400321,
+    "sizeDesc": "11.07G",
+    "categroy": 1
+  },
+  {
+    "id": 5929,
+    "name": "徐良",
+    "count": 91,
+    "size": 1714656317,
+    "sizeDesc": "1.6G",
+    "categroy": 1
+  },
+  {
+    "id": 6456,
+    "name": "周华健",
+    "count": 447,
+    "size": 13602406474,
+    "sizeDesc": "12.67G",
+    "categroy": 1
+  },
+  {
+    "id": 1038093,
+    "name": "鹿晗",
+    "count": 95,
+    "size": 2960980248,
+    "sizeDesc": "2.76G",
+    "categroy": 1
+  },
+  {
+    "id": 3692,
+    "name": "林志炫",
+    "count": 170,
+    "size": 4591914315,
+    "sizeDesc": "4.28G",
+    "categroy": 1
+  },
+  {
+    "id": 5768,
+    "name": "萧敬腾",
+    "count": 173,
+    "size": 5206710344,
+    "sizeDesc": "4.85G",
+    "categroy": 1
+  },
+  {
+    "id": 6473,
+    "name": "郑中基",
+    "count": 251,
+    "size": 6051743582,
+    "sizeDesc": "5.64G",
+    "categroy": 1
+  },
+  {
+    "id": 2127,
+    "name": "陈柏宇",
+    "count": 149,
+    "size": 2858819911,
+    "sizeDesc": "2.66G",
+    "categroy": 1
+  },
+  {
+    "id": 4895,
+    "name": "任贤齐",
+    "count": 248,
+    "size": 7210972191,
+    "sizeDesc": "6.72G",
+    "categroy": 1
+  },
+  {
+    "id": 939088,
+    "name": "易烊千玺",
+    "count": 85,
+    "size": 2988297361,
+    "sizeDesc": "2.78G",
+    "categroy": 1
+  },
+  {
+    "id": 187229,
+    "name": "吴青峰",
+    "count": 78,
+    "size": 3536550544,
+    "sizeDesc": "3.29G",
+    "categroy": 1
+  },
+  {
+    "id": 3685,
+    "name": "林宥嘉",
+    "count": 201,
+    "size": 5354114635,
+    "sizeDesc": "4.99G",
+    "categroy": 1
+  },
+  {
+    "id": 2115,
+    "name": "陈百强",
+    "count": 347,
+    "size": 8433538253,
+    "sizeDesc": "7.85G",
+    "categroy": 1
+  },
+  {
+    "id": 6068,
+    "name": "杨坤",
+    "count": 99,
+    "size": 3112168993,
+    "sizeDesc": "2.9G",
+    "categroy": 1
+  },
+  {
+    "id": 6491,
+    "name": "郑伊健",
+    "count": 154,
+    "size": 3307435957,
+    "sizeDesc": "3.08G",
+    "categroy": 1
+  },
+  {
+    "id": 956386,
+    "name": "王源",
+    "count": 114,
+    "size": 4045545412,
+    "sizeDesc": "3.77G",
+    "categroy": 1
+  },
+  {
+    "id": 6468,
+    "name": "郑智化",
+    "count": 95,
+    "size": 2436621804,
+    "sizeDesc": "2.27G",
+    "categroy": 1
+  },
+  {
+    "id": 3701,
+    "name": "黎明",
+    "count": 419,
+    "size": 12073020188,
+    "sizeDesc": "11.24G",
+    "categroy": 1
+  },
+  {
+    "id": 3722,
+    "name": "梁汉文",
+    "count": 100,
+    "size": 2722890948,
+    "sizeDesc": "2.54G",
+    "categroy": 1
+  },
+  {
+    "id": 6487,
+    "name": "张智霖",
+    "count": 82,
+    "size": 3175132687,
+    "sizeDesc": "2.96G",
+    "categroy": 1
+  },
+  {
+    "id": 2117,
+    "name": "侧田",
+    "count": 192,
+    "size": 3708541303,
+    "sizeDesc": "3.45G",
+    "categroy": 1
+  },
+  {
+    "id": 5347,
+    "name": "汪峰",
+    "count": 140,
+    "size": 5141314509,
+    "sizeDesc": "4.79G",
+    "categroy": 1
+  },
+  {
+    "id": 4084,
+    "name": "林奕匡",
+    "count": 55,
+    "size": 1243369786,
+    "sizeDesc": "1.16G",
+    "categroy": 1
+  },
+  {
+    "id": 3702,
+    "name": "林峯",
+    "count": 118,
+    "size": 3419444423,
+    "sizeDesc": "3.18G",
+    "categroy": 1
+  },
+  {
+    "id": 5773,
+    "name": "谢霆锋",
+    "count": 316,
+    "size": 10579160708,
+    "sizeDesc": "9.85G",
+    "categroy": 1
+  },
+  {
+    "id": 1047015,
+    "name": "张艺兴",
+    "count": 96,
+    "size": 2402958123,
+    "sizeDesc": "2.24G",
+    "categroy": 1
+  },
+  {
+    "id": 2122,
+    "name": "陈冠希",
+    "count": 102,
+    "size": 3113412641,
+    "sizeDesc": "2.9G",
+    "categroy": 1
+  },
+  {
+    "id": 5787,
+    "name": "许志安",
+    "count": 205,
+    "size": 6004878893,
+    "sizeDesc": "5.59G",
+    "categroy": 1
+  },
+  {
+    "id": 2739,
+    "name": "方力申",
+    "count": 58,
+    "size": 1280630979,
+    "sizeDesc": "1.19G",
+    "categroy": 1
+  },
+  {
+    "id": 2852,
+    "name": "郭富城",
+    "count": 412,
+    "size": 9428511914,
+    "sizeDesc": "8.78G",
+    "categroy": 1
+  },
+  {
+    "id": 3084,
+    "name": "洪卓立",
+    "count": 139,
+    "size": 3832547212,
+    "sizeDesc": "3.57G",
+    "categroy": 1
+  },
+  {
+    "id": 3681,
+    "name": "李志",
+    "count": 300,
+    "size": 3148018361,
+    "sizeDesc": "2.93G",
+    "categroy": 1
+  },
+  {
+    "id": 5871,
+    "name": "许廷铿",
+    "count": 110,
+    "size": 2373376310,
+    "sizeDesc": "2.21G",
+    "categroy": 1
+  },
+  {
+    "id": 2125,
+    "name": "陈晓东",
+    "count": 106,
+    "size": 3051301531,
+    "sizeDesc": "2.84G",
+    "categroy": 1
+  },
+  {
+    "id": 3708,
+    "name": "蓝奕邦",
+    "count": 77,
+    "size": 939511397,
+    "sizeDesc": "895.99M",
+    "categroy": 1
+  },
+  {
+    "id": 725039,
+    "name": "冯允谦",
+    "count": 77,
+    "size": 1801451814,
+    "sizeDesc": "1.68G",
+    "categroy": 1
+  },
+  {
+    "id": 6497,
+    "name": "周国贤",
+    "count": 68,
+    "size": 1856933954,
+    "sizeDesc": "1.73G",
+    "categroy": 1
+  },
+  {
+    "id": 2879,
+    "name": "关智斌",
+    "count": 58,
+    "size": 1592367316,
+    "sizeDesc": "1.48G",
+    "categroy": 1
+  },
+  {
+    "id": 7763,
+    "name": "G.E.M.邓紫棋",
+    "count": 199,
+    "size": 6439599301,
+    "sizeDesc": "6.0G",
+    "categroy": 2
+  },
+  {
+    "id": 1024308,
+    "name": "张碧晨",
+    "count": 59,
+    "size": 2082496887,
+    "sizeDesc": "1.94G",
+    "categroy": 2
+  },
+  {
+    "id": 7214,
+    "name": "蔡健雅",
+    "count": 202,
+    "size": 7152326033,
+    "sizeDesc": "6.66G",
+    "categroy": 2
+  },
+  {
+    "id": 8926,
+    "name": "莫文蔚",
+    "count": 266,
+    "size": 8412694931,
+    "sizeDesc": "7.83G",
+    "categroy": 2
+  },
+  {
+    "id": 9269,
+    "name": "容祖儿",
+    "count": 971,
+    "size": 27372916531,
+    "sizeDesc": "25.49G",
+    "categroy": 2
+  },
+  {
+    "id": 9272,
+    "name": "孙燕姿",
+    "count": 225,
+    "size": 8291186811,
+    "sizeDesc": "7.72G",
+    "categroy": 2
+  },
+  {
+    "id": 768208,
+    "name": "AGA",
+    "count": 64,
+    "size": 1850758420,
+    "sizeDesc": "1.72G",
+    "categroy": 2
+  },
+  {
+    "id": 9621,
+    "name": "王菲",
+    "count": 491,
+    "size": 15096102593,
+    "sizeDesc": "14.06G",
+    "categroy": 2
+  },
+  {
+    "id": 7063,
+    "name": "黄丽玲",
+    "count": 163,
+    "size": 6540344317,
+    "sizeDesc": "6.09G",
+    "categroy": 2
+  },
+  {
+    "id": 1007170,
+    "name": "陈粒",
+    "count": 111,
+    "size": 3262173153,
+    "sizeDesc": "3.04G",
+    "categroy": 2
+  },
+  {
+    "id": 10562,
+    "name": "张韶涵",
+    "count": 146,
+    "size": 4818670652,
+    "sizeDesc": "4.49G",
+    "categroy": 2
+  },
+  {
+    "id": 9940,
+    "name": "徐佳莹",
+    "count": 210,
+    "size": 7654733137,
+    "sizeDesc": "7.13G",
+    "categroy": 2
+  },
+  {
+    "id": 10204,
+    "name": "杨千嬅",
+    "count": 445,
+    "size": 11316271938,
+    "sizeDesc": "10.54G",
+    "categroy": 2
+  },
+  {
+    "id": 8329,
+    "name": "梁咏琪",
+    "count": 262,
+    "size": 7008466850,
+    "sizeDesc": "6.53G",
+    "categroy": 2
+  },
+  {
+    "id": 8325,
+    "name": "梁静茹",
+    "count": 260,
+    "size": 9136748514,
+    "sizeDesc": "8.51G",
+    "categroy": 2
+  },
+  {
+    "id": 10199,
+    "name": "杨丞琳",
+    "count": 138,
+    "size": 3696454379,
+    "sizeDesc": "3.44G",
+    "categroy": 2
+  },
+  {
+    "id": 7225,
+    "name": "陈慧娴",
+    "count": 387,
+    "size": 11592207653,
+    "sizeDesc": "10.8G",
+    "categroy": 2
+  },
+  {
+    "id": 7219,
+    "name": "蔡依林",
+    "count": 288,
+    "size": 9972103756,
+    "sizeDesc": "9.29G",
+    "categroy": 2
+  },
+  {
+    "id": 9605,
+    "name": "卫兰",
+    "count": 313,
+    "size": 8084841176,
+    "sizeDesc": "7.53G",
+    "categroy": 2
+  },
+  {
+    "id": 10561,
+    "name": "张靓颖",
+    "count": 243,
+    "size": 8002170218,
+    "sizeDesc": "7.45G",
+    "categroy": 2
+  },
+  {
+    "id": 9606,
+    "name": "王心凌",
+    "count": 157,
+    "size": 5286720590,
+    "sizeDesc": "4.92G",
+    "categroy": 2
+  },
+  {
+    "id": 8334,
+    "name": "刘惜君",
+    "count": 87,
+    "size": 3268062486,
+    "sizeDesc": "3.04G",
+    "categroy": 2
+  },
+  {
+    "id": 8326,
+    "name": "刘若英",
+    "count": 258,
+    "size": 8234463663,
+    "sizeDesc": "7.67G",
+    "categroy": 2
+  },
+  {
+    "id": 10200,
+    "name": "郁可唯",
+    "count": 128,
+    "size": 3516340821,
+    "sizeDesc": "3.27G",
+    "categroy": 2
+  },
+  {
+    "id": 8336,
+    "name": "林忆莲",
+    "count": 531,
+    "size": 16568436801,
+    "sizeDesc": "15.43G",
+    "categroy": 2
+  },
+  {
+    "id": 9945,
+    "name": "萧亚轩",
+    "count": 205,
+    "size": 7193907727,
+    "sizeDesc": "6.7G",
+    "categroy": 2
+  },
+  {
+    "id": 10559,
+    "name": "张惠妹",
+    "count": 296,
+    "size": 9262034311,
+    "sizeDesc": "8.63G",
+    "categroy": 2
+  },
+  {
+    "id": 9952,
+    "name": "谢安琪",
+    "count": 116,
+    "size": 2865113483,
+    "sizeDesc": "2.67G",
+    "categroy": 2
+  },
+  {
+    "id": 9489,
+    "name": "谭维维",
+    "count": 25,
+    "size": 742312420,
+    "sizeDesc": "707.92M",
+    "categroy": 2
+  },
+  {
+    "id": 9615,
+    "name": "吴雨霏",
+    "count": 148,
+    "size": 4261344714,
+    "sizeDesc": "3.97G",
+    "categroy": 2
+  },
+  {
+    "id": 7217,
+    "name": "陈绮贞",
+    "count": 88,
+    "size": 2485611771,
+    "sizeDesc": "2.31G",
+    "categroy": 2
+  },
+  {
+    "id": 10558,
+    "name": "周笔畅",
+    "count": 190,
+    "size": 6521641426,
+    "sizeDesc": "6.07G",
+    "categroy": 2
+  },
+  {
+    "id": 7235,
+    "name": "陈慧琳",
+    "count": 286,
+    "size": 7980863752,
+    "sizeDesc": "7.43G",
+    "categroy": 2
+  },
+  {
+    "id": 10209,
+    "name": "叶蒨文",
+    "count": 224,
+    "size": 6313886964,
+    "sizeDesc": "5.88G",
+    "categroy": 2
+  },
+  {
+    "id": 7652,
+    "name": "范玮琪",
+    "count": 109,
+    "size": 2950170024,
+    "sizeDesc": "2.75G",
+    "categroy": 2
+  },
+  {
+    "id": 10571,
+    "name": "郑秀文",
+    "count": 566,
+    "size": 13817861621,
+    "sizeDesc": "12.87G",
+    "categroy": 2
+  },
+  {
+    "id": 7409,
+    "name": "岑宁儿",
+    "count": 69,
+    "size": 2173385207,
+    "sizeDesc": "2.02G",
+    "categroy": 2
+  },
+  {
+    "id": 8330,
+    "name": "卢巧音",
+    "count": 76,
+    "size": 1688127344,
+    "sizeDesc": "1.57G",
+    "categroy": 2
+  },
+  {
+    "id": 7537,
+    "name": "邓丽欣",
+    "count": 89,
+    "size": 2196324075,
+    "sizeDesc": "2.05G",
+    "categroy": 2
+  },
+  {
+    "id": 7768,
+    "name": "关淑怡",
+    "count": 158,
+    "size": 4049875344,
+    "sizeDesc": "3.77G",
+    "categroy": 2
+  },
+  {
+    "id": 9944,
+    "name": "薛凯琪",
+    "count": 156,
+    "size": 4325438419,
+    "sizeDesc": "4.03G",
+    "categroy": 2
+  },
+  {
+    "id": 8918,
+    "name": "梅艳芳",
+    "count": 303,
+    "size": 7315616318,
+    "sizeDesc": "6.81G",
+    "categroy": 2
+  },
+  {
+    "id": 9612,
+    "name": "温岚",
+    "count": 73,
+    "size": 2203223840,
+    "sizeDesc": "2.05G",
+    "categroy": 2
+  },
+  {
+    "id": 7439,
+    "name": "陈洁仪",
+    "count": 89,
+    "size": 3400102929,
+    "sizeDesc": "3.17G",
+    "categroy": 2
+  },
+  {
+    "id": 9942,
+    "name": "许美静",
+    "count": 66,
+    "size": 2442186221,
+    "sizeDesc": "2.27G",
+    "categroy": 2
+  },
+  {
+    "id": 9106,
+    "name": "彭羚",
+    "count": 141,
+    "size": 5786031859,
+    "sizeDesc": "5.39G",
+    "categroy": 2
+  },
+  {
+    "id": 7227,
+    "name": "蔡卓妍",
+    "count": 75,
+    "size": 2015191676,
+    "sizeDesc": "1.88G",
+    "categroy": 2
+  },
+  {
+    "id": 8653,
+    "name": "李幸倪",
+    "count": 70,
+    "size": 1866870011,
+    "sizeDesc": "1.74G",
+    "categroy": 2
+  },
+  {
+    "id": 9548,
+    "name": "田馥甄",
+    "count": 129,
+    "size": 3424732976,
+    "sizeDesc": "3.19G",
+    "categroy": 2
+  },
+  {
+    "id": 792806,
+    "name": "许靖韵",
+    "count": 77,
+    "size": 2027111057,
+    "sizeDesc": "1.89G",
+    "categroy": 2
+  },
+  {
+    "id": 9608,
+    "name": "王菀之",
+    "count": 154,
+    "size": 2780921081,
+    "sizeDesc": "2.59G",
+    "categroy": 2
+  },
+  {
+    "id": 916007,
+    "name": "Serrini樹妮妮",
+    "count": 104,
+    "size": 1333456124,
+    "sizeDesc": "1.24G",
+    "categroy": 2
+  },
+  {
+    "id": 10773,
+    "name": "钟欣潼",
+    "count": 56,
+    "size": 1941415250,
+    "sizeDesc": "1.81G",
+    "categroy": 2
+  },
+  {
+    "id": 13193,
+    "name": "五月天",
+    "count": 470,
+    "size": 17587587268,
+    "sizeDesc": "16.38G",
+    "categroy": 3
+  },
+  {
+    "id": 12676697,
+    "name": "告五人",
+    "count": 54,
+    "size": 2898627688,
+    "sizeDesc": "2.7G",
+    "categroy": 3
+  },
+  {
+    "id": 11127,
+    "name": "Beyond",
+    "count": 485,
+    "size": 16678285188,
+    "sizeDesc": "15.53G",
+    "categroy": 3
+  },
+  {
+    "id": 1050282,
+    "name": "房东的猫",
+    "count": 94,
+    "size": 3694128611,
+    "sizeDesc": "3.44G",
+    "categroy": 3
+  },
+  {
+    "id": 222871,
+    "name": "伍佰 & China Blue",
+    "count": 234,
+    "size": 7763825535,
+    "sizeDesc": "7.23G",
+    "categroy": 3
+  },
+  {
+    "id": 11097,
+    "name": "By2",
+    "count": 71,
+    "size": 2975948091,
+    "sizeDesc": "2.77G",
+    "categroy": 3
+  },
+  {
+    "id": 12977,
+    "name": "逃跑计划",
+    "count": 43,
+    "size": 1625630266,
+    "sizeDesc": "1.51G",
+    "categroy": 3
+  },
+  {
+    "id": 13282,
+    "name": "新裤子",
+    "count": 109,
+    "size": 4035134455,
+    "sizeDesc": "3.76G",
+    "categroy": 3
+  },
+  {
+    "id": 12971,
+    "name": "痛仰乐队",
+    "count": 71,
+    "size": 2441363482,
+    "sizeDesc": "2.27G",
+    "categroy": 3
+  },
+  {
+    "id": 11265,
+    "name": "草蜢",
+    "count": 169,
+    "size": 4319306821,
+    "sizeDesc": "4.02G",
+    "categroy": 3
+  },
+  {
+    "id": 11109,
+    "name": "八三夭",
+    "count": 70,
+    "size": 2573028424,
+    "sizeDesc": "2.4G",
+    "categroy": 3
+  },
+  {
+    "id": 827728,
+    "name": "TFBOYS",
+    "count": 86,
+    "size": 3422441207,
+    "sizeDesc": "3.19G",
+    "categroy": 3
+  },
+  {
+    "id": 12707,
+    "name": "苏打绿",
+    "count": 144,
+    "size": 3443563405,
+    "sizeDesc": "3.21G",
+    "categroy": 3
+  },
+  {
+    "id": 36301312,
+    "name": "鱼丁糸",
+    "count": 93,
+    "size": 2836259754,
+    "sizeDesc": "2.64G",
+    "categroy": 3
+  },
+  {
+    "id": 33806754,
+    "name": "时代少年团",
+    "count": 69,
+    "size": 2709875359,
+    "sizeDesc": "2.52G",
+    "categroy": 3
+  },
+  {
+    "id": 12985,
+    "name": "Twins",
+    "count": 513,
+    "size": 11743133156,
+    "sizeDesc": "10.94G",
+    "categroy": 3
+  },
+  {
+    "id": 13418,
+    "name": "羽·泉",
+    "count": 146,
+    "size": 4135127330,
+    "sizeDesc": "3.85G",
+    "categroy": 3
+  },
+  {
+    "id": 12709,
+    "name": "S.H.E",
+    "count": 276,
+    "size": 5824273429,
+    "sizeDesc": "5.42G",
+    "categroy": 3
+  },
+  {
+    "id": 11378,
+    "name": "Dear Jane",
+    "count": 92,
+    "size": 2422929740,
+    "sizeDesc": "2.26G",
+    "categroy": 3
+  },
+  {
+    "id": 12266,
+    "name": "Mr.",
+    "count": 68,
+    "size": 2051616552,
+    "sizeDesc": "1.91G",
+    "categroy": 3
+  },
+  {
+    "id": 11001,
+    "name": "at17",
+    "count": 78,
+    "size": 751741592,
+    "sizeDesc": "716.92M",
+    "categroy": 3
+  },
+  {
+    "id": 35531,
+    "name": "Justin Bieber",
+    "count": 274,
+    "size": 5316282329,
+    "sizeDesc": "4.95G",
+    "categroy": 4
+  },
+  {
+    "id": 185858,
+    "name": "The Weeknd",
+    "count": 171,
+    "size": 5255062992,
+    "sizeDesc": "4.89G",
+    "categroy": 4
+  },
+  {
+    "id": 90331,
+    "name": "Charlie Puth",
+    "count": 101,
+    "size": 2231999636,
+    "sizeDesc": "2.08G",
+    "categroy": 4
+  },
+  {
+    "id": 1045123,
+    "name": "Alan Walker",
+    "count": 84,
+    "size": 2450611408,
+    "sizeDesc": "2.28G",
+    "categroy": 4
+  },
+  {
+    "id": 33184,
+    "name": "Ed Sheeran",
+    "count": 184,
+    "size": 4299194701,
+    "sizeDesc": "4.0G",
+    "categroy": 4
+  },
+  {
+    "id": 780003,
+    "name": "Martin Garrix",
+    "count": 67,
+    "size": 1898316480,
+    "sizeDesc": "1.77G",
+    "categroy": 4
+  },
+  {
+    "id": 1115185,
+    "name": "Lulleaux",
+    "count": 37,
+    "size": 843080344,
+    "sizeDesc": "804.02M",
+    "categroy": 4
+  },
+  {
+    "id": 38853,
+    "name": "Michael Jackson",
+    "count": 293,
+    "size": 8622367138,
+    "sizeDesc": "8.03G",
+    "categroy": 4
+  },
+  {
+    "id": 1019952,
+    "name": "TheFatRat",
+    "count": 49,
+    "size": 1174870094,
+    "sizeDesc": "1.09G",
+    "categroy": 4
+  },
+  {
+    "id": 34517,
+    "name": "Hans Zimmer",
+    "count": 195,
+    "size": 4942134459,
+    "sizeDesc": "4.6G",
+    "categroy": 4
+  },
+  {
+    "id": 35332,
+    "name": "Jason Mraz",
+    "count": 139,
+    "size": 3585700783,
+    "sizeDesc": "3.34G",
+    "categroy": 4
+  },
+  {
+    "id": 42938,
+    "name": "Sting",
+    "count": 86,
+    "size": 1718324116,
+    "sizeDesc": "1.6G",
+    "categroy": 4
+  },
+  {
+    "id": 34520,
+    "name": "Howard Shore",
+    "count": 185,
+    "size": 3094095183,
+    "sizeDesc": "2.88G",
+    "categroy": 4
+  },
+  {
+    "id": 44266,
+    "name": "Taylor Swift",
+    "count": 699,
+    "size": 17836822487,
+    "sizeDesc": "16.61G",
+    "categroy": 5
+  },
+  {
+    "id": 62885,
+    "name": "Kelly Clarkson",
+    "count": 139,
+    "size": 3746196932,
+    "sizeDesc": "3.49G",
+    "categroy": 5
+  },
+  {
+    "id": 74625,
+    "name": "Sia",
+    "count": 149,
+    "size": 4010524887,
+    "sizeDesc": "3.74G",
+    "categroy": 5
+  },
+  {
+    "id": 11972054,
+    "name": "Billie Eilish",
+    "count": 63,
+    "size": 1392559367,
+    "sizeDesc": "1.3G",
+    "categroy": 5
+  },
+  {
+    "id": 46487,
+    "name": "Adele",
+    "count": 79,
+    "size": 2226538470,
+    "sizeDesc": "2.07G",
+    "categroy": 5
+  },
+  {
+    "id": 62888,
+    "name": "Katy Perry",
+    "count": 103,
+    "size": 2921718577,
+    "sizeDesc": "2.72G",
+    "categroy": 5
+  },
+  {
+    "id": 62898,
+    "name": "Kate Bush",
+    "count": 182,
+    "size": 3212265033,
+    "sizeDesc": "2.99G",
+    "categroy": 5
+  },
+  {
+    "id": 94779,
+    "name": "Imagine Dragons",
+    "count": 166,
+    "size": 3926728844,
+    "sizeDesc": "3.66G",
+    "categroy": 6
+  },
+  {
+    "id": 893484,
+    "name": "The Chainsmokers",
+    "count": 73,
+    "size": 1962678437,
+    "sizeDesc": "1.83G",
+    "categroy": 6
+  },
+  {
+    "id": 96266,
+    "name": "Maroon 5",
+    "count": 254,
+    "size": 5738170377,
+    "sizeDesc": "5.34G",
+    "categroy": 6
+  },
+  {
+    "id": 89365,
+    "name": "Coldplay",
+    "count": 277,
+    "size": 7304623668,
+    "sizeDesc": "6.8G",
+    "categroy": 6
+  },
+  {
+    "id": 98105,
+    "name": "OneRepublic",
+    "count": 147,
+    "size": 3452544857,
+    "sizeDesc": "3.22G",
+    "categroy": 6
+  },
+  {
+    "id": 95439,
+    "name": "Linkin Park",
+    "count": 346,
+    "size": 8322203444,
+    "sizeDesc": "7.75G",
+    "categroy": 6
+  },
+  {
+    "id": 56782,
+    "name": "Fall Out Boy",
+    "count": 159,
+    "size": 3707079021,
+    "sizeDesc": "3.45G",
+    "categroy": 6
+  },
+  {
+    "id": 45839,
+    "name": "Westlife",
+    "count": 159,
+    "size": 4025288940,
+    "sizeDesc": "3.75G",
+    "categroy": 6
+  },
+  {
+    "id": 41906,
+    "name": "Queen",
+    "count": 369,
+    "size": 8650187223,
+    "sizeDesc": "8.06G",
+    "categroy": 6
+  },
+  {
+    "id": 98351,
+    "name": "One Direction",
+    "count": 106,
+    "size": 2711136390,
+    "sizeDesc": "2.52G",
+    "categroy": 6
+  },
+  {
+    "id": 101988,
+    "name": "The Beatles",
+    "count": 450,
+    "size": 7548314851,
+    "sizeDesc": "7.03G",
+    "categroy": 6
+  },
+  {
+    "id": 98541,
+    "name": "Pink Floyd",
+    "count": 193,
+    "size": 6400007063,
+    "sizeDesc": "5.96G",
+    "categroy": 6
+  },
+  {
+    "id": 105647,
+    "name": "Yes",
+    "count": 174,
+    "size": 5767151403,
+    "sizeDesc": "5.37G",
+    "categroy": 6
+  },
+  {
+    "id": 129526,
+    "name": "Jackson 5",
+    "count": 124,
+    "size": 1598128562,
+    "sizeDesc": "1.49G",
+    "categroy": 6
+  },
+  {
+    "id": 159300,
+    "name": "米津玄師",
+    "count": 91,
+    "size": 2409572404,
+    "sizeDesc": "2.24G",
+    "categroy": 7
+  },
+  {
+    "id": 15289,
+    "name": "坂本龍一",
+    "count": 122,
+    "size": 2429036749,
+    "sizeDesc": "2.26G",
+    "categroy": 7
+  },
+  {
+    "id": 14408,
+    "name": "久石譲",
+    "count": 371,
+    "size": 5324810867,
+    "sizeDesc": "4.96G",
+    "categroy": 7
+  },
+  {
+    "id": 15229,
+    "name": "ピノキオピー",
+    "count": 36,
+    "size": 1313177271,
+    "sizeDesc": "1.22G",
+    "categroy": 7
+  },
+  {
+    "id": 14001,
+    "name": "DECO*27",
+    "count": 81,
+    "size": 2572509390,
+    "sizeDesc": "2.4G",
+    "categroy": 7
+  },
+  {
+    "id": 15102,
+    "name": "折戸伸治",
+    "count": 56,
+    "size": 1234397073,
+    "sizeDesc": "1.15G",
+    "categroy": 7
+  },
+  {
+    "id": 15917,
+    "name": "横山克",
+    "count": 78,
+    "size": 784969775,
+    "sizeDesc": "748.61M",
+    "categroy": 7
+  },
+  {
+    "id": 15823,
+    "name": "wowaka",
+    "count": 28,
+    "size": 962641930,
+    "sizeDesc": "918.05M",
+    "categroy": 7
+  },
+  {
+    "id": 15948,
+    "name": "矢野立美",
+    "count": 23,
+    "size": 356435101,
+    "sizeDesc": "339.92M",
+    "categroy": 7
+  },
+  {
+    "id": 12334348,
+    "name": "菅田将暉",
+    "count": 40,
+    "size": 487779869,
+    "sizeDesc": "465.18M",
+    "categroy": 7
+  },
+  {
+    "id": 14472,
+    "name": "菅野祐悟",
+    "count": 21,
+    "size": 370444509,
+    "sizeDesc": "353.28M",
+    "categroy": 7
+  },
+  {
+    "id": 14242,
+    "name": "星野源",
+    "count": 111,
+    "size": 2036585922,
+    "sizeDesc": "1.9G",
+    "categroy": 7
+  },
+  {
+    "id": 15300,
+    "name": "鷺巣詩郎",
+    "count": 53,
+    "size": 1324786894,
+    "sizeDesc": "1.23G",
+    "categroy": 7
+  },
+  {
+    "id": 12263373,
+    "name": "ナユタン星人",
+    "count": 31,
+    "size": 1101925280,
+    "sizeDesc": "1.03G",
+    "categroy": 7
+  },
+  {
+    "id": 14782,
+    "name": "麻枝准",
+    "count": 38,
+    "size": 1205461661,
+    "sizeDesc": "1.12G",
+    "categroy": 7
+  },
+  {
+    "id": 159692,
+    "name": "初音ミク",
+    "count": 633,
+    "size": 23147121289,
+    "sizeDesc": "21.56G",
+    "categroy": 8
+  },
+  {
+    "id": 16152,
+    "name": "Aimer",
+    "count": 241,
+    "size": 6136908554,
+    "sizeDesc": "5.72G",
+    "categroy": 8
+  },
+  {
+    "id": 18122,
+    "name": "宇多田ヒカル",
+    "count": 240,
+    "size": 8349845097,
+    "sizeDesc": "7.78G",
+    "categroy": 8
+  },
+  {
+    "id": 855508,
+    "name": "Daoko",
+    "count": 89,
+    "size": 2492038016,
+    "sizeDesc": "2.32G",
+    "categroy": 8
+  },
+  {
+    "id": 16995,
+    "name": "LiSA",
+    "count": 98,
+    "size": 2310923215,
+    "sizeDesc": "2.15G",
+    "categroy": 8
+  },
+  {
+    "id": 13059968,
+    "name": "Reol",
+    "count": 82,
+    "size": 2672488802,
+    "sizeDesc": "2.49G",
+    "categroy": 8
+  },
+  {
+    "id": 16906,
+    "name": "茅野愛衣",
+    "count": 75,
+    "size": 2498664828,
+    "sizeDesc": "2.33G",
+    "categroy": 8
+  },
+  {
+    "id": 16823,
+    "name": "小林未郁",
+    "count": 91,
+    "size": 2120494880,
+    "sizeDesc": "1.97G",
+    "categroy": 8
+  },
+  {
+    "id": 160729,
+    "name": "中島美嘉",
+    "count": 160,
+    "size": 5665277951,
+    "sizeDesc": "5.28G",
+    "categroy": 8
+  },
+  {
+    "id": 16456,
+    "name": "花澤香菜",
+    "count": 189,
+    "size": 5245872494,
+    "sizeDesc": "4.89G",
+    "categroy": 8
+  },
+  {
+    "id": 16405,
+    "name": "浜崎あゆみ",
+    "count": 996,
+    "size": 36168668683,
+    "sizeDesc": "33.68G",
+    "categroy": 8
+  },
+  {
+    "id": 191316,
+    "name": "majiko",
+    "count": 82,
+    "size": 2284940715,
+    "sizeDesc": "2.13G",
+    "categroy": 8
+  },
+  {
+    "id": 17307,
+    "name": "中島みゆき",
+    "count": 329,
+    "size": 7858918603,
+    "sizeDesc": "7.32G",
+    "categroy": 8
+  },
+  {
+    "id": 17909,
+    "name": "高橋洋子",
+    "count": 29,
+    "size": 1088302297,
+    "sizeDesc": "1.01G",
+    "categroy": 8
+  },
+  {
+    "id": 18303,
+    "name": "やなぎなぎ",
+    "count": 22,
+    "size": 1197304956,
+    "sizeDesc": "1.12G",
+    "categroy": 8
+  },
+  {
+    "id": 16523,
+    "name": "花たん",
+    "count": 81,
+    "size": 2710410835,
+    "sizeDesc": "2.52G",
+    "categroy": 8
+  },
+  {
+    "id": 1053279,
+    "name": "あいみょん",
+    "count": 76,
+    "size": 2010865971,
+    "sizeDesc": "1.87G",
+    "categroy": 8
+  },
+  {
+    "id": 17881,
+    "name": "鈴木このみ",
+    "count": 49,
+    "size": 1680879079,
+    "sizeDesc": "1.57G",
+    "categroy": 8
+  },
+  {
+    "id": 18349,
+    "name": "ZARD",
+    "count": 170,
+    "size": 5321161789,
+    "sizeDesc": "4.96G",
+    "categroy": 8
+  },
+  {
+    "id": 161545,
+    "name": "倉木麻衣",
+    "count": 333,
+    "size": 8401751017,
+    "sizeDesc": "7.82G",
+    "categroy": 8
+  },
+  {
+    "id": 15996,
+    "name": "愛内里菜",
+    "count": 145,
+    "size": 4300848757,
+    "sizeDesc": "4.01G",
+    "categroy": 8
+  },
+  {
+    "id": 16693,
+    "name": "小松未歩",
+    "count": 134,
+    "size": 3869643309,
+    "sizeDesc": "3.6G",
+    "categroy": 8
+  },
+  {
+    "id": 21307,
+    "name": "三枝夕夏 IN db",
+    "count": 67,
+    "size": 1782313469,
+    "sizeDesc": "1.66G",
+    "categroy": 8
+  },
+  {
+    "id": 33927412,
+    "name": "YOASOBI",
+    "count": 55,
+    "size": 1820875590,
+    "sizeDesc": "1.7G",
+    "categroy": 9
+  },
+  {
+    "id": 21132,
+    "name": "RADWIMPS",
+    "count": 363,
+    "size": 9692492768,
+    "sizeDesc": "9.03G",
+    "categroy": 9
+  },
+  {
+    "id": 12390232,
+    "name": "ヨルシカ",
+    "count": 57,
+    "size": 1376384523,
+    "sizeDesc": "1.28G",
+    "categroy": 9
+  },
+  {
+    "id": 19270,
+    "name": "いきものがかり",
+    "count": 115,
+    "size": 1392419422,
+    "sizeDesc": "1.3G",
+    "categroy": 9
+  },
+  {
+    "id": 22299,
+    "name": "WANDS",
+    "count": 54,
+    "size": 1634299684,
+    "sizeDesc": "1.52G",
+    "categroy": 9
+  },
+  {
+    "id": 21196,
+    "name": "ラムジ",
+    "count": 38,
+    "size": 1290446554,
+    "sizeDesc": "1.2G",
+    "categroy": 9
+  },
+  {
+    "id": 18961,
+    "name": "ClariS",
+    "count": 121,
+    "size": 2871023148,
+    "sizeDesc": "2.67G",
+    "categroy": 9
+  },
+  {
+    "id": 21397,
+    "name": "supercell",
+    "count": 48,
+    "size": 977322623,
+    "sizeDesc": "932.05M",
+    "categroy": 9
+  },
+  {
+    "id": 161782,
+    "name": "放課後ティータイム",
+    "count": 103,
+    "size": 3036092184,
+    "sizeDesc": "2.83G",
+    "categroy": 9
+  },
+  {
+    "id": 21821,
+    "name": "東京事変",
+    "count": 160,
+    "size": 4145598467,
+    "sizeDesc": "3.86G",
+    "categroy": 9
+  },
+  {
+    "id": 21876,
+    "name": "TWO-MIX",
+    "count": 62,
+    "size": 2194788857,
+    "sizeDesc": "2.04G",
+    "categroy": 9
+  },
+  {
+    "id": 123577,
+    "name": "G-DRAGON",
+    "count": 58,
+    "size": 1335630446,
+    "sizeDesc": "1.24G",
+    "categroy": 10
+  },
+  {
+    "id": 160947,
+    "name": "IU",
+    "count": 116,
+    "size": 3937740196,
+    "sizeDesc": "3.67G",
+    "categroy": 11
+  },
+  {
+    "id": 12068017,
+    "name": "BLACKPINK",
+    "count": 75,
+    "size": 1911778165,
+    "sizeDesc": "1.78G",
+    "categroy": 12
+  },
+  {
+    "id": 759509,
+    "name": "EXO",
+    "count": 194,
+    "size": 4437878916,
+    "sizeDesc": "4.13G",
+    "categroy": 12
+  },
+  {
+    "id": 126339,
+    "name": "BIGBANG",
+    "count": 146,
+    "size": 3886642618,
+    "sizeDesc": "3.62G",
+    "categroy": 12
+  }
 ]

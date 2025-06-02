@@ -1,15 +1,15 @@
-import React from "react";
-import { Form, Select, Space, Button } from "antd";
-import { uniqueArrayByKey } from "@/utils";
-import styles from "./index.module.scss";
+import React from 'react';
+import { Form, Select, Space, Button } from 'antd';
+import { uniqueArrayByKey } from '@/utils';
+import styles from './index.module.scss';
 
 const SearchForm = ({ onSearch, data = [], options = [] }) => {
   const [form] = Form.useForm();
 
   // 获取去重后的选项列表
-  const getUniqueOptions = key => {
+  const getUniqueOptions = (key) => {
     const uniqueList = uniqueArrayByKey(data, key);
-    const options = uniqueList.map(item => ({
+    const options = uniqueList.map((item) => ({
       label: item[key],
       value: item[key],
     }));
@@ -27,13 +27,9 @@ const SearchForm = ({ onSearch, data = [], options = [] }) => {
   };
 
   return (
-    <Form
-      form={form}
-      layout="inline"
-      className={styles["search-form"]}
-    >
+    <Form form={form} layout='inline' className={styles['search-form']}>
       <Space wrap>
-        {options.map(item => {
+        {options.map((item) => {
           return (
             <Form.Item
               key={item.value}
@@ -42,24 +38,23 @@ const SearchForm = ({ onSearch, data = [], options = [] }) => {
               style={{ marginBottom: 0, minWidth: 200 }}
             >
               <Select
-                mode="multiple"
+                mode='multiple'
                 allowClear
                 showSearch
                 placeholder={item.label}
-                maxTagCount="responsive"
+                maxTagCount='responsive'
                 options={getUniqueOptions(item.value)}
                 filterOption={(input, option) =>
-                  (option?.label ?? "").toLowerCase().includes(input.toLowerCase())
+                  (option?.label ?? '')
+                    .toLowerCase()
+                    .includes(input.toLowerCase())
                 }
               />
             </Form.Item>
           );
         })}
 
-        <Button
-          type="primary"
-          onClick={handleSearch}
-        >
+        <Button type='primary' onClick={handleSearch}>
           搜索
         </Button>
         <Button onClick={handleReset}>重置</Button>

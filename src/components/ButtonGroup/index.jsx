@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Button, Tooltip } from "antd";
+import React, { useRef } from 'react';
+import { Button, Tooltip } from 'antd';
 import {
   CloudUploadOutlined,
   SyncOutlined,
@@ -16,21 +16,21 @@ import {
   ConsoleSqlOutlined,
   CodeOutlined,
   GithubOutlined,
-} from "@ant-design/icons";
-import styles from "./index.module.scss";
-import QuickUpload from "../../views/quickUpload";
-import QualityUpgrade from "../../views/qualityUpgrade";
-import LocalUpload from "../../views/localUpload";
-import VipSongA from "../../views/vipSongA";
-import VipSongB from "../../views/vipSongB";
-import CloudExport from "../../views/cloudExport";
-import CloudImport from "../../views/cloudImport";
-import TestModal from "../../views/testModal";
-import CloudMusicManager from "../../views/cloudMusicManager";
-import PlayList from "../../views/playList";
-import SongMatchCorrect from "../../views/songMatchCorrect";
-import SongResourceManage from "@/views/SongResourceManage";
-import GithubInfo from "../../views/githubInfo";
+} from '@ant-design/icons';
+import styles from './index.module.scss';
+import QuickUpload from '../../views/quickUpload';
+import QualityUpgrade from '../../views/qualityUpgrade';
+import LocalUpload from '../../views/localUpload';
+import VipSongA from '../../views/vipSongA';
+import VipSongB from '../../views/vipSongB';
+import CloudExport from '../../views/cloudExport';
+import CloudImport from '../../views/cloudImport';
+import TestModal from '../../views/testModal';
+import CloudMusicManager from '../../views/cloudMusicManager';
+import PlayList from '../../views/playList';
+import SongMatchCorrect from '../../views/songMatchCorrect';
+import SongResourceManage from '@/views/SongResourceManage';
+import GithubInfo from '../../views/githubInfo';
 
 const ButtonGroup = () => {
   // 云盘快速上传
@@ -114,43 +114,34 @@ const ButtonGroup = () => {
   };
 
   return (
-    <div className={styles["button-group"]}>
+    <div className={styles['button-group']}>
       {/* 云盘快速上传 */}
-      <Tooltip
-        title={"云盘快速上传"}
-        placement="left"
-      >
+      <Tooltip title={'云盘快速上传'} placement='left'>
         <Button
-          type="primary"
+          type='primary'
           icon={<CloudUploadOutlined />}
           onClick={handleQuickUpload}
-          className={styles["button"]}
+          className={styles['button']}
         />
       </Tooltip>
 
       {/* 云盘歌曲管理 */}
-      <Tooltip
-        title={"云盘歌曲管理"}
-        placement="left"
-      >
+      <Tooltip title={'云盘歌曲管理'} placement='left'>
         <Button
-          type="primary"
+          type='primary'
           icon={<CustomerServiceOutlined />}
           onClick={handleCloudMusicManager}
-          className={styles["button"]}
+          className={styles['button']}
         />
       </Tooltip>
 
       {/* 歌曲自动匹配 */}
-      <Tooltip
-        title={"歌曲自动匹配"}
-        placement="left"
-      >
+      <Tooltip title={'歌曲自动匹配'} placement='left'>
         <Button
-          type="primary"
+          type='primary'
           icon={<ApiOutlined />}
           onClick={handleMatchCorrect}
-          className={styles["button"]}
+          className={styles['button']}
         />
       </Tooltip>
 
@@ -165,28 +156,22 @@ const ButtonGroup = () => {
       </Tooltip> */}
 
       {/* 云盘本地上传 */}
-      <Tooltip
-        title={"云盘本地上传"}
-        placement="left"
-      >
+      <Tooltip title={'云盘本地上传'} placement='left'>
         <Button
-          type="primary"
+          type='primary'
           icon={<UploadOutlined />}
           onClick={handleLocalUpload}
-          className={styles["button"]}
+          className={styles['button']}
         />
       </Tooltip>
 
       {/* 歌曲资源管理 */}
-      <Tooltip
-        title={"歌曲资源管理"}
-        placement="left"
-      >
+      <Tooltip title={'歌曲资源管理'} placement='left'>
         <Button
-          type="primary"
+          type='primary'
           icon={<ConsoleSqlOutlined />}
           onClick={handleSongResource}
-          className={styles["button"]}
+          className={styles['button']}
         />
       </Tooltip>
 
@@ -221,54 +206,42 @@ const ButtonGroup = () => {
       </Tooltip> */}
 
       {/* 云盘导入 */}
-      <Tooltip
-        title={"云盘JSON导入"}
-        placement="left"
-      >
+      <Tooltip title={'云盘JSON导入'} placement='left'>
         <Button
-          type="primary"
+          type='primary'
           icon={<CodeOutlined />}
           onClick={handleImport}
-          className={styles["button"]}
+          className={styles['button']}
         />
       </Tooltip>
 
       {/* 查看歌单 */}
-      <Tooltip
-        title={"查看歌单"}
-        placement="left"
-      >
+      <Tooltip title={'查看歌单'} placement='left'>
         <Button
-          type="primary"
+          type='primary'
           icon={<OrderedListOutlined />}
           onClick={handlePlayList}
-          className={styles["button"]}
+          className={styles['button']}
         />
       </Tooltip>
 
       {/* testModal */}
-      <Tooltip
-        title={"testModal"}
-        placement="left"
-      >
+      <Tooltip title={'testModal'} placement='left'>
         <Button
-          type="primary"
+          type='primary'
           icon={<InfoCircleOutlined />}
           onClick={handleTestModal}
-          className={styles["button"]}
+          className={styles['button']}
         />
       </Tooltip>
 
       {/* GitHub信息 */}
-      <Tooltip
-        title={"GitHub信息"}
-        placement="left"
-      >
+      <Tooltip title={'GitHub信息'} placement='left'>
         <Button
-          type="primary"
+          type='primary'
           icon={<GithubOutlined />}
           onClick={handleGithubInfo}
-          className={styles["button"]}
+          className={styles['button']}
         />
       </Tooltip>
 

@@ -1,11 +1,11 @@
-import React, { memo } from "react";
-import { Tag } from "antd";
-import styles from "../index.module.scss";
+import React, { memo } from 'react';
+import { Tag } from 'antd';
+import styles from '../index.module.scss';
 
 const Stats = memo(({ selectedRows = [], filteredSongList = [] }) => {
   return (
     <div className={styles.stats}>
-      已选择 <Tag color="blue">{selectedRows.length} 首</Tag>{" "}
+      已选择 <Tag color='blue'>{selectedRows.length} 首</Tag>{' '}
       <span className={styles.size}>
         {selectedRows.length > 0 &&
           `${(
@@ -14,8 +14,8 @@ const Stats = memo(({ selectedRows = [], filteredSongList = [] }) => {
             1024
           ).toFixed(2)}MB`}
       </span>
-      <span className={styles.divider}>/</span>共{" "}
-      <Tag color="green">{filteredSongList.length} 首</Tag>{" "}
+      <span className={styles.divider}>/</span>共{' '}
+      <Tag color='green'>{filteredSongList.length} 首</Tag>{' '}
       <span className={styles.size}>
         {filteredSongList.length > 0 &&
           `${(
@@ -28,6 +28,6 @@ const Stats = memo(({ selectedRows = [], filteredSongList = [] }) => {
   );
 });
 
-Stats.displayName = "Stats";
+Stats.displayName = 'Stats';
 
 export default Stats;

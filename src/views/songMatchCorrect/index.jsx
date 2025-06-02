@@ -1,12 +1,12 @@
-import { Modal } from "antd";
-import React, { forwardRef, useImperativeHandle } from "react";
-import styles from "./index.module.scss";
-import SingerChoose from "../quickUpload/components/SingerChoose";
-import SingerMatchArea from "./components/SingerMatchArea";
-import { Tabs } from "antd";
-import { SongMatchProvider, useSongMatch } from "./context/SongMatchContext";
-import { useState } from "react";
-import { useVisible } from "@/hooks/useVisible";
+import { Modal } from 'antd';
+import React, { forwardRef, useImperativeHandle } from 'react';
+import styles from './index.module.scss';
+import SingerChoose from '../quickUpload/components/SingerChoose';
+import SingerMatchArea from './components/SingerMatchArea';
+import { Tabs } from 'antd';
+import { SongMatchProvider, useSongMatch } from './context/SongMatchContext';
+import { useState } from 'react';
+import { useVisible } from '@/hooks/useVisible';
 
 const { TabPane } = Tabs;
 
@@ -29,12 +29,12 @@ const SongMatchCorrect = forwardRef((props, ref) => {
         getSingerList();
       },
     },
-    ref
+    ref,
   );
 
   return (
     <Modal
-      title="歌曲自动匹配"
+      title='歌曲自动匹配'
       open={visible}
       onCancel={close}
       width={1000}
@@ -42,16 +42,13 @@ const SongMatchCorrect = forwardRef((props, ref) => {
       centered={true}
     >
       <Tabs
-        defaultActiveKey="1"
+        defaultActiveKey='1'
         activeKey={currentTab}
-        className={styles["quick-upload-tabs"]}
-        onChange={key => setCurrentTab(key)}
+        className={styles['quick-upload-tabs']}
+        onChange={(key) => setCurrentTab(key)}
       >
         {/* 歌手选择 */}
-        <TabPane
-          tab="歌手选择"
-          key="1"
-        >
+        <TabPane tab='歌手选择' key='1'>
           <SingerChoose
             singerList={singerList}
             loading={loading}
@@ -59,18 +56,10 @@ const SongMatchCorrect = forwardRef((props, ref) => {
           />
         </TabPane>
         {/* 歌曲匹配 */}
-        <TabPane
-          tab="歌曲匹配"
-          key="2"
-        >
+        <TabPane tab='歌曲匹配' key='2'>
           {/* 匹配区域 */}
-          {chooseList.map(singerId => {
-            return (
-              <SingerMatchArea
-                key={singerId}
-                singerId={singerId}
-              />
-            );
+          {chooseList.map((singerId) => {
+            return <SingerMatchArea key={singerId} singerId={singerId} />;
           })}
         </TabPane>
       </Tabs>
@@ -80,10 +69,7 @@ const SongMatchCorrect = forwardRef((props, ref) => {
 
 const WrappedSongMatchCorrect = forwardRef((props, ref) => (
   <SongMatchProvider>
-    <SongMatchCorrect
-      {...props}
-      ref={ref}
-    />
+    <SongMatchCorrect {...props} ref={ref} />
   </SongMatchProvider>
 ));
 

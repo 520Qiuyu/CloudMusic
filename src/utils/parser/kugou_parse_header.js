@@ -9,7 +9,9 @@ import { KuGouHeader } from '@unlock-music/crypto';
  */
 export const workerParseKugouHeader = async ({ blobURI }) => {
   // 获取文件头部1024字节的数据
-  const blob = await fetch(blobURI, { headers: { Range: 'bytes=0-1023' } }).then((r) => r.blob());
+  const blob = await fetch(blobURI, {
+    headers: { Range: 'bytes=0-1023' },
+  }).then((r) => r.blob());
   const arrayBuffer = await blob.arrayBuffer();
   // 截取前0x400字节用于解析
   const buffer = new Uint8Array(arrayBuffer.slice(0, 0x400));

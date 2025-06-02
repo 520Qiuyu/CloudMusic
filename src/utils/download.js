@@ -5,9 +5,11 @@
  * @returns {void}
  */
 export const downloadJsonFile = (data, filename) => {
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const blob = new Blob([JSON.stringify(data, null, 2)], {
+    type: 'application/json',
+  });
   const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
+  const link = document.createElement('a');
   link.href = url;
   link.download = filename;
   link.click();
@@ -26,7 +28,7 @@ export const downloadJsonFile = (data, filename) => {
 export const downloadFile = async (url, filename) => {
   try {
     if (!url || !filename) {
-      throw new Error("URL和文件名不能为空");
+      throw new Error('URL和文件名不能为空');
     }
     const response = await fetch(url);
     if (!response.ok) {
@@ -34,13 +36,13 @@ export const downloadFile = async (url, filename) => {
     }
     const blob = await response.blob();
     const objectUrl = URL.createObjectURL(blob);
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = objectUrl;
     link.download = filename;
     link.click();
     URL.revokeObjectURL(objectUrl);
   } catch (error) {
-    console.error("文件下载出错:", error);
+    console.error('文件下载出错:', error);
     throw error;
   }
 };

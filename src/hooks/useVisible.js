@@ -8,7 +8,7 @@ export const useVisible = (props = {}, ref) => {
     resetOnOpen = true,
     resetOnClose = false,
   } = props;
-  
+
   const [visible, setVisible] = useState(false);
   const resolve = useRef();
   const reject = useRef();
@@ -57,4 +57,4 @@ export const useVisible = (props = {}, ref) => {
   };
 };
 
-const NOOP = () => {}; 
+const NOOP = () => {};

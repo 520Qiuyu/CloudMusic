@@ -1,5 +1,5 @@
-import React, { forwardRef, useImperativeHandle, useState } from "react";
-import { Modal } from "antd";
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import { Modal } from 'antd';
 
 const CloudExport = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -12,10 +12,10 @@ const CloudExport = forwardRef((props, ref) => {
     close,
     reset,
   }));
-  
+
   return (
     <Modal
-      title="云盘导出"
+      title='云盘导出'
       open={visible}
       onCancel={close}
       footer={null}

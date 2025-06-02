@@ -1,8 +1,8 @@
-import { Modal, Progress, Tag } from "antd";
-import React, { forwardRef, useImperativeHandle, useState } from "react";
-import styles from "../index.module.scss";
-import { useEffect } from "react";
-import { useRef } from "react";
+import { Modal, Progress, Tag } from 'antd';
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import styles from '../index.module.scss';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 
 const UploadProgress = forwardRef(
   ({ uploadedList, total, uploadFailedSongList, onClose }, ref) => {
@@ -34,7 +34,7 @@ const UploadProgress = forwardRef(
         timeId = setInterval(() => {
           songListRef.current?.scrollTo({
             top: songListRef.current.scrollHeight,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
         }, 500);
       }
@@ -45,7 +45,7 @@ const UploadProgress = forwardRef(
 
     return (
       <Modal
-        title="上传进度"
+        title='上传进度'
         open={visible}
         onCancel={close}
         width={520}
@@ -56,14 +56,14 @@ const UploadProgress = forwardRef(
       >
         <div className={styles.progressSection}>
           <Progress
-            type="circle"
+            type='circle'
             percent={percent}
             status={
               isCompleted
                 ? failedCount > 0
-                  ? "exception"
-                  : "success"
-                : "active"
+                  ? 'exception'
+                  : 'success'
+                : 'active'
             }
             format={() => (
               <div className={styles.progressInfo}>
@@ -77,13 +77,13 @@ const UploadProgress = forwardRef(
 
           <div className={styles.statsContainer}>
             <div className={styles.statsItem}>
-              <Tag color="success" className={styles.statsTag}>
+              <Tag color='success' className={styles.statsTag}>
                 成功：{uploadedCount}
               </Tag>
             </div>
             {failedCount > 0 && (
               <div className={styles.statsItem}>
-                <Tag color="error" className={styles.statsTag}>
+                <Tag color='error' className={styles.statsTag}>
                   失败：{failedCount}
                 </Tag>
               </div>
@@ -99,7 +99,7 @@ const UploadProgress = forwardRef(
                   <span className={styles.songName}>{song.name}</span>
                   <span className={styles.artistName}>- {song.artists}</span>
                 </div>
-                <Tag color="error">上传失败</Tag>
+                <Tag color='error'>上传失败</Tag>
               </div>
             ))}
             {uploadedList.map((song) => (
@@ -108,14 +108,14 @@ const UploadProgress = forwardRef(
                   <span className={styles.songName}>{song.name}</span>
                   <span className={styles.artistName}>- {song.artists}</span>
                 </div>
-                <Tag color="success">已上传</Tag>
+                <Tag color='success'>已上传</Tag>
               </div>
             ))}
           </div>
         )}
       </Modal>
     );
-  }
+  },
 );
 
 export default UploadProgress;

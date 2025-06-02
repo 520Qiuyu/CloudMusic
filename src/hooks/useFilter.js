@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 /**
  * 通用的多字段筛选hook
@@ -70,8 +70,8 @@ export default function useFilter(list, config) {
   }, [list]);
 
   // 处理筛选
-  const handleFilter = values => {
-    const filtered = list.filter(item => {
+  const handleFilter = (values) => {
+    const filtered = list.filter((item) => {
       // 遍历所有配置的筛选字段
       return Object.entries(config.fields).every(([field, fieldConfig]) => {
         const filterValue = values[field];
@@ -83,7 +83,9 @@ export default function useFilter(list, config) {
         if (!itemValue) return false;
 
         // 支持多个关键词匹配
-        return filterValue.some(keyword => itemValue.toLowerCase().includes(keyword.toLowerCase()));
+        return filterValue.some((keyword) =>
+          itemValue.toLowerCase().includes(keyword.toLowerCase()),
+        );
       });
     });
 

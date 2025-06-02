@@ -7,12 +7,12 @@ export function useGetSingerInfo(singerId) {
   const [singerAllSong, setSingerAllSong] = useState([]);
 
   // 获取歌手信息
-  const getSingerInfo = async id => {
+  const getSingerInfo = async (id) => {
     try {
       const res = await searchArtist(searchValue);
-      console.log("res", res);
+      console.log('res', res);
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   };
 }

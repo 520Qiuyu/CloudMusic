@@ -1,5 +1,5 @@
-import React, { forwardRef, useImperativeHandle, useState } from "react";
-import { Modal } from "antd";
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import { Modal } from 'antd';
 
 const VipSongB = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -15,7 +15,7 @@ const VipSongB = forwardRef((props, ref) => {
 
   return (
     <Modal
-      title="网页VIP歌曲B"
+      title='网页VIP歌曲B'
       open={visible}
       onCancel={close}
       width={800}

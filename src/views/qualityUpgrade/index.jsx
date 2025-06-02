@@ -1,5 +1,5 @@
-import React, { forwardRef, useImperativeHandle, useState } from "react";
-import { Modal } from "antd";
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import { Modal } from 'antd';
 
 const QualityUpgrade = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -15,7 +15,7 @@ const QualityUpgrade = forwardRef((props, ref) => {
 
   return (
     <Modal
-      title="云盘音质提升"
+      title='云盘音质提升'
       open={visible}
       onCancel={close}
       width={800}

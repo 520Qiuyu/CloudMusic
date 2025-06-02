@@ -1,8 +1,8 @@
-import ButtonGroup from "./components/ButtonGroup";
+import ButtonGroup from './components/ButtonGroup';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <ButtonGroup />
     </div>
   );

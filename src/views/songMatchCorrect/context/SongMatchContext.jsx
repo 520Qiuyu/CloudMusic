@@ -1,12 +1,12 @@
-import { promiseLimit } from "@/utils";
-import { createContext, useContext, useEffect, useState } from "react";
+import { promiseLimit } from '@/utils';
+import { createContext, useContext, useEffect, useState } from 'react';
 import {
   getArtistAllSongList,
   getArtists,
   getArtists2,
   getCDNConfig,
   searchArtist,
-} from "../../../api";
+} from '../../../api';
 
 const SongMatchContext = createContext();
 
@@ -16,7 +16,7 @@ export const SongMatchProvider = ({ children }) => {
   const [chooseList, setChooseList] = useState([]);
   const [matchSingerList, setMatchSingerList] = useState([]);
   const [singerMap, setSingerMap] = useState({});
-  const [currentTab, setCurrentTab] = useState("1");
+  const [currentTab, setCurrentTab] = useState('1');
 
   // 获取歌手列表
   const getSingerList = async () => {
@@ -24,51 +24,53 @@ export const SongMatchProvider = ({ children }) => {
       setLoading(true);
       const res = await getArtists();
       const res2 = await getArtists2();
-      const list = [...new Map([...res2, ...res].map(item => [item.id, item])).values()];
+      const list = [
+        ...new Map([...res2, ...res].map((item) => [item.id, item])).values(),
+      ];
       setSingerList(list);
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     } finally {
       setLoading(false);
     }
   };
 
   // 获取歌手信息
-  const getSingerInfo = async id => {
+  const getSingerInfo = async (id) => {
     try {
       const res = await searchArtist(id);
       if (res.code === 200) {
         return res.data.list[0];
       }
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   };
 
   // 获取歌手全部歌曲
-  const getSingerAllSongList = async id => {
+  const getSingerAllSongList = async (id) => {
     try {
       const res = await getArtistAllSongList(id);
       if (res.code === 200) {
         return res.songs;
       }
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   };
 
   // 处理选择歌手
-  const handleChoose = value => {
+  const handleChoose = (value) => {
     setChooseList(value);
     setMatchSingerList(value);
-    setCurrentTab("2");
+    setCurrentTab('2');
 
     const asyncFn = async () => {
-      const proArr = value.map(singerId => {
+      const proArr = value.map((singerId) => {
         return async () => {
           // 获取歌手信息
-          getSingerInfo(singerId).then(res => {
-            setSingerMap(prv => ({
+          getSingerInfo(singerId).then((res) => {
+            setSingerMap((prv) => ({
               ...prv,
               [singerId]: {
                 ...prv[singerId],
@@ -77,8 +79,8 @@ export const SongMatchProvider = ({ children }) => {
             }));
           });
           // 获取歌手歌曲
-          getSingerAllSongList(singerId).then(res => {
-            setSingerMap(prv => ({
+          getSingerAllSongList(singerId).then((res) => {
+            setSingerMap((prv) => ({
               ...prv,
               [singerId]: {
                 ...prv[singerId],
@@ -87,8 +89,8 @@ export const SongMatchProvider = ({ children }) => {
             }));
           });
           // 获取歌手所有已上传歌曲
-          getCDNConfig(singerId).then(res => {
-            setSingerMap(prv => ({
+          getCDNConfig(singerId).then((res) => {
+            setSingerMap((prv) => ({
               ...prv,
               [singerId]: {
                 ...prv[singerId],
@@ -104,11 +106,11 @@ export const SongMatchProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    matchSingerList.forEach(singerId => {
+    matchSingerList.forEach((singerId) => {
       if (singerId && !singerMap[singerId]) {
         // 获取歌手歌曲
-        getSingerAllSongList(singerId).then(res => {
-          setSingerMap(prv => ({
+        getSingerAllSongList(singerId).then((res) => {
+          setSingerMap((prv) => ({
             ...prv,
             [singerId]: {
               ...prv[singerId],
@@ -122,8 +124,8 @@ export const SongMatchProvider = ({ children }) => {
 
   // 更新歌曲匹配信息
   const updateSongMatchInfo = (singerId, index, match) => {
-    console.log("update", singerId, index, match);
-    setSingerMap(prv => ({
+    console.log('update', singerId, index, match);
+    setSingerMap((prv) => ({
       ...prv,
       [singerId]: {
         ...prv[singerId],
@@ -143,7 +145,7 @@ export const SongMatchProvider = ({ children }) => {
 
   // 重置状态
   const reset = () => {
-    setCurrentTab("1");
+    setCurrentTab('1');
     setSingerList([]);
     setChooseList([]);
     setMatchSingerList([]);
@@ -179,7 +181,7 @@ export const SongMatchProvider = ({ children }) => {
 export const useSongMatch = () => {
   const context = useContext(SongMatchContext);
   if (!context) {
-    throw new Error("useSongMatch must be used within a SongMatchProvider");
+    throw new Error('useSongMatch must be used within a SongMatchProvider');
   }
   return context;
 };

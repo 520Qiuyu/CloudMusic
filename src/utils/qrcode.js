@@ -1,4 +1,4 @@
-import QRCode from 'qrcode'
+import QRCode from 'qrcode';
 
 /**
  * 生成二维码
@@ -14,13 +14,13 @@ export const generateQRCode = async (text, options = {}) => {
       quality: 0.92,
       margin: 1,
       width: 200,
-      ...options
-    }
-    
-    const qrcode = await QRCode.toDataURL(text, defaultOptions)
-    return qrcode
+      ...options,
+    };
+
+    const qrcode = await QRCode.toDataURL(text, defaultOptions);
+    return qrcode;
   } catch (error) {
-    console.error('生成二维码失败:', error)
-    throw error
+    console.error('生成二维码失败:', error);
+    throw error;
   }
-}
+};

@@ -1,0 +1,18 @@
+# 构建产物
+dist
+
+# 依赖目录
+node_modules
+
+# 日志文件
+*.log
+
+# 锁文件
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 其他无需格式化的文件
+.DS_Store
+.env
+.env.*

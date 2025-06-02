@@ -1,6 +1,6 @@
-import { getArtists, getArtists2 } from "@/api";
-import { useState } from "react";
-import { useEffect } from "react";
+import { getArtists, getArtists2 } from '@/api';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 /**  */
 export const useGetSingerList = () => {
@@ -13,10 +13,12 @@ export const useGetSingerList = () => {
       setLoading(true);
       const res = await getArtists();
       const res2 = await getArtists2();
-      const list = [...new Map([...res2, ...res].map(item => [item.id, item])).values()];
+      const list = [
+        ...new Map([...res2, ...res].map((item) => [item.id, item])).values(),
+      ];
       setSingerList(list);
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     } finally {
       setLoading(false);
     }

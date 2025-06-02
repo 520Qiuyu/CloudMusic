@@ -1,4 +1,7 @@
-import { timedLogger, withGroupedLogs as withTimeGroupedLogs } from '~/util/logUtils.js';
+import {
+  timedLogger,
+  withGroupedLogs as withTimeGroupedLogs,
+} from '~/util/logUtils.js';
 import { allCryptoFactories } from '../Deciphers.js';
 import { toBlob } from '~/decrypt-worker/util/buffer.js';
 import { Status } from '~/decrypt-worker/Deciphers.js';
@@ -47,8 +50,9 @@ class DecryptCommandHandler {
   }
 
   async tryDecryptWith(decipher) {
-    const result = await this.log(`try decrypt with ${decipher.cipherName}`, async () =>
-      decipher.decrypt(this.buffer, this.options),
+    const result = await this.log(
+      `try decrypt with ${decipher.cipherName}`,
+      async () => decipher.decrypt(this.buffer, this.options),
     );
     switch (result.status) {
       case Status.NOT_THIS_CIPHER:
@@ -60,7 +64,8 @@ class DecryptCommandHandler {
     }
 
     // Check if we had a successful decryption
-    let audioExt = result.overrideExtension || detectAudioExtension(result.data);
+    let audioExt =
+      result.overrideExtension || detectAudioExtension(result.data);
     if (!result.overrideExtension && audioExt === 'bin') {
       throw new UnsupportedSourceFile('unable to produce valid audio file');
     }
@@ -70,17 +75,28 @@ class DecryptCommandHandler {
       audioExt = 'm4a';
     }
 
-    return { decrypted: URL.createObjectURL(toBlob(result.data)), ext: audioExt };
+    return {
+      decrypted: URL.createObjectURL(toBlob(result.data)),
+      ext: audioExt,
+    };
   }
 }
 
-export const workerDecryptHandler = async ({ id: payloadId, blobURI, options }) => {
+export const workerDecryptHandler = async ({
+  id: payloadId,
+  blobURI,
+  options,
+}) => {
   await umCryptoReady;
   const id = payloadId.replace('://', ':');
   const label = `decrypt(${id})`;
   return withTimeGroupedLogs(label, async () => {
     const buffer = await fetch(blobURI).then((r) => r.arrayBuffer());
-    const handler = new DecryptCommandHandler(id, new Uint8Array(buffer), options);
+    const handler = new DecryptCommandHandler(
+      id,
+      new Uint8Array(buffer),
+      options,
+    );
     return handler.decrypt(allCryptoFactories);
   });
 };

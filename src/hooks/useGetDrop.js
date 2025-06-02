@@ -6,13 +6,13 @@ export const useGetDrop = (api, params, callback, options) => {
     // 监控项
     monitors,
     // 终止函数，什么条件下不执行
-    returnFunction
+    returnFunction,
   } = options || {};
 
   const [drop, setDrop] = useState([]);
 
   useEffect(() => {
-    if(returnFunction && returnFunction()) return;
+    if (returnFunction && returnFunction()) return;
     api(params)
       .then((res) => {
         if (res.code === 200) {

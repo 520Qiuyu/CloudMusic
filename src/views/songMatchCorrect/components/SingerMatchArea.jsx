@@ -1,16 +1,23 @@
-import { Avatar, Button, Select, Table, Tag } from "antd";
-import { Form, Input } from "antd/lib";
-import { useSongMatch } from "../context/SongMatchContext";
-import styles from "./index.module.scss";
+import { Avatar, Button, Select, Table, Tag } from 'antd';
+import { Form, Input } from 'antd/lib';
+import { useSongMatch } from '../context/SongMatchContext';
+import styles from './index.module.scss';
 
 export default function SingerMatchArea({ singerId }) {
-  const { singerMap, updateSongMatchInfo, matchSingerList, setMatchSingerList } = useSongMatch();
+  const {
+    singerMap,
+    updateSongMatchInfo,
+    matchSingerList,
+    setMatchSingerList,
+  } = useSongMatch();
   const singerInfo = singerMap[singerId]?.singerInfo || {};
   const songList =
-    matchSingerList?.map(singerId => singerMap[singerId]?.songList || [])?.flat() || [];
+    matchSingerList
+      ?.map((singerId) => singerMap[singerId]?.songList || [])
+      ?.flat() || [];
   const cdnConfig = singerMap[singerId]?.cdnConfig || [];
 
-  const songOptions = songList.map(item => ({
+  const songOptions = songList.map((item) => ({
     ...item,
     label: item.name,
     value: item.id,
@@ -22,37 +29,37 @@ export default function SingerMatchArea({ singerId }) {
 
   const columns = [
     {
-      title: "歌曲名称",
-      dataIndex: "name",
-      key: "name",
+      title: '歌曲名称',
+      dataIndex: 'name',
+      key: 'name',
     },
     {
-      title: "专辑",
-      dataIndex: "album",
-      key: "album",
+      title: '专辑',
+      dataIndex: 'album',
+      key: 'album',
     },
     {
-      title: "艺术家",
-      dataIndex: "artists",
-      key: "artists",
-      render: artists => artists?.join(", "),
+      title: '艺术家',
+      dataIndex: 'artists',
+      key: 'artists',
+      render: (artists) => artists?.join(', '),
     },
     {
-      title: "大小",
-      dataIndex: "size",
-      key: "size",
-      render: size => `${(size / 1024 / 1024).toFixed(2)}MB`,
+      title: '大小',
+      dataIndex: 'size',
+      key: 'size',
+      render: (size) => `${(size / 1024 / 1024).toFixed(2)}MB`,
     },
     {
-      title: "匹配歌曲ID",
-      dataIndex: "match",
-      key: "match",
+      title: '匹配歌曲ID',
+      dataIndex: 'match',
+      key: 'match',
       render: (match, record, index) => {
         return (
           <Input
-            placeholder="请输入"
+            placeholder='请输入'
             value={match}
-            onChange={e => {
+            onChange={(e) => {
               updateSongMatchInfo(singerId, index, e.target.value);
             }}
           />
@@ -61,37 +68,34 @@ export default function SingerMatchArea({ singerId }) {
     },
     // 匹配
     {
-      title: "匹配",
-      dataIndex: "name",
-      key: "name",
+      title: '匹配',
+      dataIndex: 'name',
+      key: 'name',
       width: 230,
       render: (name, record, index) => {
         const value = record?.match || songMap[name]?.id;
         // console.log("value", value, record, songMap[name]);
         if (value && !record?.match) {
           updateSongMatchInfo(singerId, index, value);
-          console.log("value", value, record?.match, songMap[name]?.id);
+          console.log('value', value, record?.match, songMap[name]?.id);
         }
         return (
           <Select
             style={{ width: 200 }}
             showSearch
-            placeholder="请选择"
+            placeholder='请选择'
             filterOption={(input, option) => option?.label?.indexOf(input) >= 0}
             options={songOptions}
-            optionRender={option => {
+            optionRender={(option) => {
               const data = option.data;
               return (
-                <div className={styles["option-label"]}>
-                  <span className={styles["song-name"]}>{option.label}</span>
-                  <div className={styles["tag-group"]}>
-                    {data.al?.name && <Tag color="blue">{data.al?.name}</Tag>}
+                <div className={styles['option-label']}>
+                  <span className={styles['song-name']}>{option.label}</span>
+                  <div className={styles['tag-group']}>
+                    {data.al?.name && <Tag color='blue'>{data.al?.name}</Tag>}
                     {data.ar?.length &&
                       data.ar?.map((artist, index) => (
-                        <Tag
-                          key={index}
-                          color="green"
-                        >
+                        <Tag key={index} color='green'>
                           {artist.name}
                         </Tag>
                       ))}
@@ -100,7 +104,7 @@ export default function SingerMatchArea({ singerId }) {
               );
             }}
             value={value}
-            onChange={value => {
+            onChange={(value) => {
               updateSongMatchInfo(singerId, index, value);
             }}
           />
@@ -110,23 +114,23 @@ export default function SingerMatchArea({ singerId }) {
   ];
 
   const handleGetMatchResult = () => {
-    console.log("cdnConfig", cdnConfig);
+    console.log('cdnConfig', cdnConfig);
     // 以json下载
     const blob = new Blob(
       [
         JSON.stringify(
-          cdnConfig.map(item => ({
+          cdnConfig.map((item) => ({
             ...item,
             id: item.match || item.id,
           })),
           null,
-          2
+          2,
         ),
       ],
-      { type: "application/json" }
+      { type: 'application/json' },
     );
     const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = url;
     link.download = `${singerInfo?.artistName}.json`;
     link.click();
@@ -134,28 +138,32 @@ export default function SingerMatchArea({ singerId }) {
   };
 
   return (
-    <div className={styles["singer-match-area"]}>
-      <div className={styles["singer-info"]}>
+    <div className={styles['singer-match-area']}>
+      <div className={styles['singer-info']}>
         <Avatar
           size={80}
           src={singerInfo?.picUrl}
           alt={singerInfo?.artistName}
-          shape="circle"
+          shape='circle'
         />
-        <div className={styles["singer-detail"]}>
-          <div className={styles["singer-name"]}>
+        <div className={styles['singer-detail']}>
+          <div className={styles['singer-name']}>
             {singerInfo?.artistName}({singerInfo?.artistId})
           </div>
-          <div className={styles["singer-music-num"]}>共{songList?.length}首歌曲</div>
+          <div className={styles['singer-music-num']}>
+            共{songList?.length}首歌曲
+          </div>
         </div>
         {/* 要匹配的歌手 */}
-        <div style={{ marginLeft: "auto" }}>
-          <Form.Item label="要匹配的歌手">
+        <div style={{ marginLeft: 'auto' }}>
+          <Form.Item label='要匹配的歌手'>
             <Input
-              placeholder="请输入要匹配的歌手，逗号隔开"
-              defaultValue={matchSingerList?.join(",")}
-              onPressEnter={e => {
-                setMatchSingerList(e.target.value?.split(/[,，]/).filter(Boolean));
+              placeholder='请输入要匹配的歌手，逗号隔开'
+              defaultValue={matchSingerList?.join(',')}
+              onPressEnter={(e) => {
+                setMatchSingerList(
+                  e.target.value?.split(/[,，]/).filter(Boolean),
+                );
               }}
             />
           </Form.Item>
@@ -164,19 +172,16 @@ export default function SingerMatchArea({ singerId }) {
       <Table
         dataSource={cdnConfig}
         columns={columns}
-        rowKey="id"
+        rowKey='id'
         pagination={false}
         scroll={{ y: 300, x: 1000 }}
-        size="small"
-        className={styles["song-table"]}
+        size='small'
+        className={styles['song-table']}
       />
       {/* 按钮层 */}
-      <div className={styles["button-group"]}>
+      <div className={styles['button-group']}>
         {/* 获取匹配结果 */}
-        <Button
-          type="primary"
-          onClick={handleGetMatchResult}
-        >
+        <Button type='primary' onClick={handleGetMatchResult}>
           获取匹配结果
         </Button>
       </div>

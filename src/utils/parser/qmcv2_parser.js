@@ -9,11 +9,13 @@ import { QMCFooter } from '@unlock-music/crypto';
  */
 export const workerParseMusicExMediaName = async ({ blobURI }) => {
   // 获取文件末尾1024字节的数据
-  const blob = await fetch(blobURI, { headers: { Range: 'bytes=-1024' } }).then((r) => r.blob());
+  const blob = await fetch(blobURI, { headers: { Range: 'bytes=-1024' } }).then(
+    (r) => r.blob(),
+  );
   const arrayBuffer = await blob.arrayBuffer();
 
-  console.log('blob',blob)
-  console.log('arrayBuffer',arrayBuffer)
+  console.log('blob', blob);
+  console.log('arrayBuffer', arrayBuffer);
 
   try {
     // 截取最后1024字节用于解析

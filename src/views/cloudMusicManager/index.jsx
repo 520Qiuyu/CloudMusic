@@ -1,10 +1,14 @@
-import SearchForm from "@/components/SearchForm";
-import useFilter from "@/hooks/useFilter";
-import { useVisible } from "@/hooks/useVisible";
-import { downloadJsonFile } from "@/utils/download";
-import { CopyrightOutlined, PauseCircleFilled, PlayCircleFilled } from "@ant-design/icons";
-import { Button, Modal, Table, Tag, message } from "antd";
-import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
+import SearchForm from '@/components/SearchForm';
+import useFilter from '@/hooks/useFilter';
+import { useVisible } from '@/hooks/useVisible';
+import { downloadJsonFile } from '@/utils/download';
+import {
+  CopyrightOutlined,
+  PauseCircleFilled,
+  PlayCircleFilled,
+} from '@ant-design/icons';
+import { Button, Modal, Table, Tag, message } from 'antd';
+import { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import {
   addSongToPlaylist,
   createPlaylist,
@@ -12,14 +16,14 @@ import {
   getCloudData,
   getPlaylistList,
   getSongUrl,
-} from "../../api";
-import { sleep, truncateString } from "../../utils";
-import { confirm, msgError, msgSuccess } from "../../utils/modal";
-import CustomMatch from "./components/CustomMatch";
-import IdMatch from "./components/IdMatch";
-import PlayList from "./components/PlayList";
-import Stats from "./components/Stats";
-import styles from "./index.module.scss";
+} from '../../api';
+import { sleep, truncateString } from '../../utils';
+import { confirm, msgError, msgSuccess } from '../../utils/modal';
+import CustomMatch from './components/CustomMatch';
+import IdMatch from './components/IdMatch';
+import PlayList from './components/PlayList';
+import Stats from './components/Stats';
+import styles from './index.module.scss';
 
 const CloudMusicManager = forwardRef((props, ref) => {
   const { visible, open, close, reset } = useVisible(
@@ -28,7 +32,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
         getCloudDataList();
       },
     },
-    ref
+    ref,
   );
 
   const [songList, setSongList] = useState([]);
@@ -39,12 +43,12 @@ const CloudMusicManager = forwardRef((props, ref) => {
       setLoading(true);
       const res = await getCloudData(10000, 0);
       if (res.code === 200) {
-        console.log("songList", res.data);
+        console.log('songList', res.data);
         setSongList(res.data);
         setFilteredSongList(res.data);
       }
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     } finally {
       setLoading(false);
     }
@@ -55,7 +59,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
   const filterConfig = {
     fields: {
       name: {
-        getValue: song => song?.simpleSong?.name,
+        getValue: (song) => song?.simpleSong?.name,
       },
       artist: {
         getValue: getArtistName,
@@ -73,12 +77,15 @@ const CloudMusicManager = forwardRef((props, ref) => {
 
   /** 选择 */
   const [selectedRows, setSelectedRows] = useState([]);
-  const selectedRowKeys = useMemo(() => selectedRows.map(item => item.songId), [selectedRows]);
+  const selectedRowKeys = useMemo(
+    () => selectedRows.map((item) => item.songId),
+    [selectedRows],
+  );
   const rowSelection = {
-    type: "checkbox",
+    type: 'checkbox',
     fixed: true,
     selectedRowKeys,
-    getCheckboxProps: record => ({
+    getCheckboxProps: (record) => ({
       disabled: record.uploaded,
     }),
     onSelectAll: () => {
@@ -91,10 +98,12 @@ const CloudMusicManager = forwardRef((props, ref) => {
     },
   };
   const handleTableChange = (pagination, filters, sorter) => {
-    setFilteredSongList(songList => {
+    setFilteredSongList((songList) => {
       return songList.sort((a, b) => {
-        const order = sorter.order === "ascend" ? 1 : -1;
-        return order * a[sorter.columnKey]?.localeCompare?.(b[sorter.columnKey]);
+        const order = sorter.order === 'ascend' ? 1 : -1;
+        return (
+          order * a[sorter.columnKey]?.localeCompare?.(b[sorter.columnKey])
+        );
       });
     });
   };
@@ -102,7 +111,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
   const AudioRef = useRef(new Audio());
   const [playSong, setPlaySong] = useState(null);
   const [playing, setPlaying] = useState(false);
-  const handlePlaySong = record => {
+  const handlePlaySong = (record) => {
     // 如果正在播放当前歌曲，则暂停
     if (playSong?.id === record.id) {
       const audio = AudioRef.current;
@@ -116,19 +125,19 @@ const CloudMusicManager = forwardRef((props, ref) => {
   const play = async () => {
     try {
       const res = await getSongUrl([playSong.id]);
-      console.log("res", res);
-      if (res.code !== 200) return msgError("获取歌曲链接失败");
+      console.log('res', res);
+      if (res.code !== 200) return msgError('获取歌曲链接失败');
       const audio = AudioRef.current;
       audio.src = res.data[0].url;
-      audio.addEventListener("ended", () => {
+      audio.addEventListener('ended', () => {
         setPlaySong(null);
       });
-      audio.addEventListener("error", () => {
+      audio.addEventListener('error', () => {
         setPlaySong(null);
       });
       audio.play();
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   };
   useEffect(() => {
@@ -146,21 +155,19 @@ const CloudMusicManager = forwardRef((props, ref) => {
     return (
       <div className={styles.songInfoColumn}>
         <div
-          className={`${styles.songCover} ${isCurrentSong ? styles.playing : ""}`}
+          className={`${styles.songCover} ${
+            isCurrentSong ? styles.playing : ''
+          }`}
           onClick={() => handlePlaySong(record.simpleSong)}
         >
           {/* 封面 */}
-          <img
-            src={albumPic}
-            alt={albumName}
-            className={styles.songCoverImg}
-          />
+          <img src={albumPic} alt={albumName} className={styles.songCoverImg} />
           {/* 播放/暂停按钮 */}
           <div className={styles.btnWrapper}>
             {isCurrentSong && playing ? (
-              <PauseCircleFilled style={{ fontSize: "24px", color: "#fff" }} />
+              <PauseCircleFilled style={{ fontSize: '24px', color: '#fff' }} />
             ) : (
-              <PlayCircleFilled style={{ fontSize: "24px", color: "#fff" }} />
+              <PlayCircleFilled style={{ fontSize: '24px', color: '#fff' }} />
             )}
           </div>
         </div>
@@ -171,7 +178,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
             <div className={styles.artist}>{artistName}</div>
             {/* 专辑 */}
             <div className={styles.album}>
-              {albumName && " - "}
+              {albumName && ' - '}
               {albumName}
             </div>
           </div>
@@ -182,110 +189,108 @@ const CloudMusicManager = forwardRef((props, ref) => {
 
   const columns = [
     {
-      title: "歌名",
-      dataIndex: "simpleSong",
-      key: "name",
+      title: '歌名',
+      dataIndex: 'simpleSong',
+      key: 'name',
       width: 300,
-      fixed: "left",
+      fixed: 'left',
       sorter: (a, b) => a.simpleSong.name?.localeCompare(b.simpleSong.name),
-      sortDirections: ["ascend", "descend"],
+      sortDirections: ['ascend', 'descend'],
       render: renderSongInfo,
     },
     {
-      title: "歌手",
-      dataIndex: "simpleSong",
-      key: "artists",
+      title: '歌手',
+      dataIndex: 'simpleSong',
+      key: 'artists',
       width: 60,
       sorter: (a, b) => {
-        const aArtists = a.simpleSong.ar?.map(a => a.name).join(",");
-        const bArtists = b.simpleSong.ar?.map(a => a.name).join(",");
+        const aArtists = a.simpleSong.ar?.map((a) => a.name).join(',');
+        const bArtists = b.simpleSong.ar?.map((a) => a.name).join(',');
         return aArtists?.localeCompare(bArtists);
       },
-      fixed: "left",
-      sortDirections: ["ascend", "descend"],
+      fixed: 'left',
+      sortDirections: ['ascend', 'descend'],
       ellipsis: true,
       render: null,
     },
     {
-      title: "专辑",
-      dataIndex: "simpleSong",
-      key: "album",
+      title: '专辑',
+      dataIndex: 'simpleSong',
+      key: 'album',
       width: 60,
-      fixed: "left",
-      sorter: (a, b) => a.simpleSong.al?.name?.localeCompare(b.simpleSong.al?.name),
-      sortDirections: ["ascend", "descend"],
-      defaultSortOrder: "ascend",
+      fixed: 'left',
+      sorter: (a, b) =>
+        a.simpleSong.al?.name?.localeCompare(b.simpleSong.al?.name),
+      sortDirections: ['ascend', 'descend'],
+      defaultSortOrder: 'ascend',
       ellipsis: true,
       render: null,
     },
     // 云盘歌曲匹配
     {
-      title: "手动id匹配",
-      dataIndex: "matchType",
-      key: "matchType",
+      title: '手动id匹配',
+      dataIndex: 'matchType',
+      key: 'matchType',
       width: 300,
       sorter: (a, b) => a.matchType - b.matchType,
-      sortDirections: ["ascend", "descend"],
+      sortDirections: ['ascend', 'descend'],
       render: (matchType, r) => (
-        <IdMatch
-          data={r}
-          onUpdate={getCloudDataList}
-        />
+        <IdMatch data={r} onUpdate={getCloudDataList} />
       ),
     },
     // 自定义匹配
     {
-      title: "自定义匹配",
-      dataIndex: "customMatch",
-      key: "customMatch",
+      title: '自定义匹配',
+      dataIndex: 'customMatch',
+      key: 'customMatch',
       width: 500,
       render: (_, record) => (
-        <CustomMatch
-          data={record}
-          onUpdate={getCloudDataList}
-        />
+        <CustomMatch data={record} onUpdate={getCloudDataList} />
       ),
     },
     {
-      title: "大小",
-      dataIndex: "fileSize",
-      key: "fileSize",
+      title: '大小',
+      dataIndex: 'fileSize',
+      key: 'fileSize',
       width: 100,
       sorter: (a, b) => a.fileSize - b.fileSize,
-      sortDirections: ["ascend", "descend"],
-      render: size => `${(size / 1024 / 1024).toFixed(2)}MB`,
+      sortDirections: ['ascend', 'descend'],
+      render: (size) => `${(size / 1024 / 1024).toFixed(2)}MB`,
     },
 
     {
-      title: "比特率",
-      dataIndex: "bitrate",
-      key: "bitrate",
+      title: '比特率',
+      dataIndex: 'bitrate',
+      key: 'bitrate',
       width: 100,
       sorter: (a, b) => a.bitrate - b.bitrate,
-      sortDirections: ["ascend", "descend"],
-      render: bitrate => <Tag color="blue">{bitrate}kbps</Tag>,
+      sortDirections: ['ascend', 'descend'],
+      render: (bitrate) => <Tag color='blue'>{bitrate}kbps</Tag>,
     },
     {
-      title: "上传时间",
-      dataIndex: "addTime",
-      key: "addTime",
+      title: '上传时间',
+      dataIndex: 'addTime',
+      key: 'addTime',
       width: 150,
       sorter: (a, b) => a.addTime - b.addTime,
-      sortDirections: ["ascend", "descend"],
-      render: time => new Date(time).toLocaleString(),
+      sortDirections: ['ascend', 'descend'],
+      render: (time) => new Date(time).toLocaleString(),
     },
   ];
 
-  const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] = useState(false);
+  const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] =
+    useState(false);
   const handleAddToPlaylistByAlbum = async () => {
     try {
       setAddToPlayListByAlbumLoading(true);
-      console.log("自动按专辑添加");
+      console.log('自动按专辑添加');
       // 将歌曲按专辑分类
       const albumMap = new Map();
-      filteredSongList.forEach(song => {
+      filteredSongList.forEach((song) => {
         const { simpleSong } = song;
-        const album = `${simpleSong.ar?.[0]?.name || ""}-${simpleSong.al?.name}`;
+        const album = `${simpleSong.ar?.[0]?.name || ''}-${
+          simpleSong.al?.name
+        }`;
         if (!albumMap.has(album)) {
           albumMap.set(album, []);
         }
@@ -294,31 +299,28 @@ const CloudMusicManager = forwardRef((props, ref) => {
 
       const totalSongs = filteredSongList.length;
       const albums = Array.from(albumMap.entries()).sort(
-        ([, songsA], [, songsB]) => songsB.length - songsA.length
+        ([, songsA], [, songsB]) => songsB.length - songsA.length,
       );
 
       await confirm(
-        <AutoAddContent
-          totalSongs={totalSongs}
-          albums={albums}
-        />,
-        "自动按专辑添加",
+        <AutoAddContent totalSongs={totalSongs} albums={albums} />,
+        '自动按专辑添加',
         {
-          width: "auto",
-        }
+          width: 'auto',
+        },
       );
 
       // 获取歌单信息
       const res = await getPlaylistList();
-      console.log("res", res);
-      if (res.code !== 200) return msgError("获取歌单失败");
+      console.log('res', res);
+      if (res.code !== 200) return msgError('获取歌单失败');
       const playlist = res.playlist;
       // 遍历歌单
       for (const [album, songs] of albums) {
         try {
           const playlistName = album;
-          console.log("playlistName", playlistName, "songs", songs);
-          let playlistId = playlist.find(p => p.name === playlistName)?.id;
+          console.log('playlistName', playlistName, 'songs', songs);
+          let playlistId = playlist.find((p) => p.name === playlistName)?.id;
           if (!playlistId) {
             // 创建歌单（限制40字符）
             const truncatedName = truncateString(playlistName, 40);
@@ -326,28 +328,28 @@ const CloudMusicManager = forwardRef((props, ref) => {
             if (res.code === 200) {
               playlistId = res.id;
             } else {
-              console.log("res", res);
+              console.log('res', res);
               debugger;
             }
             await sleep(1000);
           }
           // 添加歌曲
-          const songIds = songs.map(song => song.songId);
+          const songIds = songs.map((song) => song.songId);
           const res = await addSongToPlaylist(playlistId, songIds);
-          console.log("res", res);
+          console.log('res', res);
           if (res.code !== 200) {
-            console.log("添加歌曲失败", res.message || res.msg);
+            console.log('添加歌曲失败', res.message || res.msg);
           }
           await sleep(500);
         } catch (error) {
-          console.log("error", error);
+          console.log('error', error);
         }
       }
       // 添加成功
       setSelectedRows([]);
-      msgSuccess("添加成功");
+      msgSuccess('添加成功');
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     } finally {
       setAddToPlayListByAlbumLoading(false);
     }
@@ -368,8 +370,8 @@ const CloudMusicManager = forwardRef((props, ref) => {
       "match": 362996
     },
      */
-    console.log("selectedRows", selectedRows);
-    const stolenList = selectedRows.map(item => {
+    console.log('selectedRows', selectedRows);
+    const stolenList = selectedRows.map((item) => {
       const {
         artist,
         album,
@@ -384,35 +386,35 @@ const CloudMusicManager = forwardRef((props, ref) => {
       } = item;
       return {
         artist,
-        artists: ar?.map(a => a.name) || [artist],
+        artists: ar?.map((a) => a.name) || [artist],
         album,
         id: songId,
         size: fileSize,
         md5: privateCloud.md5,
         name: songName,
-        ext: fileName.split(".")[1] || "mp3",
+        ext: fileName.split('.')[1] || 'mp3',
         bitrate,
       };
     });
-    downloadJsonFile(stolenList, "stolenList.json");
+    downloadJsonFile(stolenList, 'stolenList.json');
   };
 
   const playListRef = useRef(null);
   const handleAddToPlaylist = async () => {
     try {
-      console.log("添加到歌单");
-      playListRef.current.open("select");
+      console.log('添加到歌单');
+      playListRef.current.open('select');
       const playlist = await playListRef.current.submit();
       if (!playlist) return;
-      const songIds = selectedRows.map(item => item.songId);
+      const songIds = selectedRows.map((item) => item.songId);
       const res = await addSongToPlaylist(playlist.id, songIds);
-      console.log("res", res);
+      console.log('res', res);
       if (res.code === 200) {
         setSelectedRows([]);
-        msgSuccess("添加成功");
+        msgSuccess('添加成功');
       }
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   };
 
@@ -425,26 +427,26 @@ const CloudMusicManager = forwardRef((props, ref) => {
       const confirmContent = (
         <DeleteConfirmation
           selectedCount={selectedRows.length}
-          songNames={selectedRows.map(item => item.simpleSong.name)}
+          songNames={selectedRows.map((item) => item.simpleSong.name)}
         />
       );
-      await confirm(confirmContent, "删除确认");
-      const songIds = selectedRows.map(item => item.songId);
+      await confirm(confirmContent, '删除确认');
+      const songIds = selectedRows.map((item) => item.songId);
       const res = await deleteCloudSong(songIds);
-      console.log("res", res);
+      console.log('res', res);
       if (res.code === 200) {
-        msgSuccess("删除成功");
+        msgSuccess('删除成功');
         reset();
         getCloudDataList();
       }
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   };
 
   return (
     <Modal
-      title="云盘音乐管理"
+      title='云盘音乐管理'
       open={visible}
       onCancel={close}
       footer={null}
@@ -453,17 +455,17 @@ const CloudMusicManager = forwardRef((props, ref) => {
     >
       <SearchForm
         onSearch={handleSearch}
-        data={songList.map(item => {
+        data={songList.map((item) => {
           return {
             ...item,
             name: item.simpleSong.name,
-            artists: item.simpleSong.ar?.map(a => a.name).join(","),
+            artists: item.simpleSong.ar?.map((a) => a.name).join(','),
           };
         })}
         options={[
-          { label: "歌曲", value: "name" },
-          { label: "歌手", value: "artist" },
-          { label: "专辑", value: "album" },
+          { label: '歌曲', value: 'name' },
+          { label: '歌手', value: 'artist' },
+          { label: '专辑', value: 'album' },
         ]}
       />
       <Table
@@ -471,10 +473,12 @@ const CloudMusicManager = forwardRef((props, ref) => {
         dataSource={filteredSongList}
         columns={columns}
         scroll={{ y: 500, x: 1000 }}
-        size="small"
+        size='small'
         loading={loading}
         rowKey={({ songId }) => songId}
-        rowClassName={({ songId }) => (songId === playSong?.id ? styles.currentSong : "")}
+        rowClassName={({ songId }) =>
+          songId === playSong?.id ? styles.currentSong : ''
+        }
         onChange={handleTableChange}
         pagination={{
           defaultPageSize: 20,
@@ -487,13 +491,15 @@ const CloudMusicManager = forwardRef((props, ref) => {
         />
         <div className={styles.actions}>
           {filteredSongList?.length > selectedRows?.length ? (
-            <Button onClick={() => setSelectedRows(filteredSongList)}>全部选择</Button>
+            <Button onClick={() => setSelectedRows(filteredSongList)}>
+              全部选择
+            </Button>
           ) : (
             <Button onClick={() => setSelectedRows([])}>全部取消</Button>
           )}
           {/* 自动按专辑添加 */}
           <Button
-            type="primary"
+            type='primary'
             onClick={handleAddToPlaylistByAlbum}
             loading={addToPlayListByAlbumLoading}
           >
@@ -501,7 +507,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
           </Button>
           {/* 偷取资源 */}
           <Button
-            type="primary"
+            type='primary'
             disabled={!selectedRows.length}
             onClick={handleStoleSong}
           >
@@ -509,7 +515,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
           </Button>
           {/* 添加到歌单 */}
           <Button
-            type="primary"
+            type='primary'
             disabled={!selectedRows.length}
             onClick={handleAddToPlaylist}
           >
@@ -518,7 +524,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
           <Button onClick={handleCreatePlaylist}>新建歌单</Button>
           {/* 删除歌曲  */}
           <Button
-            type="primary"
+            type='primary'
             danger
             disabled={!selectedRows.length}
             onClick={handleDeleteSong}
@@ -538,9 +544,11 @@ const CloudMusicManager = forwardRef((props, ref) => {
 const AutoAddContent = ({ totalSongs, albums }) => {
   // 复制歌单列表
   const handleCopy = () => {
-    const text = albums.map(([name, songs]) => `${name}（${songs.length}首）`).join("\n");
+    const text = albums
+      .map(([name, songs]) => `${name}（${songs.length}首）`)
+      .join('\n');
     navigator.clipboard.writeText(text).then(() => {
-      message.success("复制成功");
+      message.success('复制成功');
     });
   };
 
@@ -568,8 +576,8 @@ const AutoAddContent = ({ totalSongs, albums }) => {
         <div className={styles.listHeader}>
           <div className={styles.title}>即将创建的歌单：</div>
           <Button
-            type="link"
-            size="small"
+            type='link'
+            size='small'
             icon={<CopyrightOutlined />}
             onClick={handleCopy}
           >
@@ -578,10 +586,7 @@ const AutoAddContent = ({ totalSongs, albums }) => {
         </div>
         <ul className={styles.listWrapper}>
           {albums.map(([name, songs]) => (
-            <li
-              key={name}
-              className={styles.listItem}
-            >
+            <li key={name} className={styles.listItem}>
               <span className={styles.itemName}>{name}</span>
               <span className={styles.itemCount}>{songs.length}首</span>
             </li>
@@ -597,14 +602,12 @@ const DeleteConfirmation = ({ selectedCount, songNames }) => {
   return (
     <div className={styles.deleteConfirmation}>
       <p className={styles.title}>
-        您确定要删除以下 <span className={styles.count}>{selectedCount}</span> 首歌曲吗？
+        您确定要删除以下 <span className={styles.count}>{selectedCount}</span>{' '}
+        首歌曲吗？
       </p>
       <div className={styles.songs}>
         {songNames.map((name, index) => (
-          <div
-            key={index}
-            className={styles.songItem}
-          >
+          <div key={index} className={styles.songItem}>
             {name}
           </div>
         ))}
@@ -621,16 +624,16 @@ const DeleteConfirmation = ({ selectedCount, songNames }) => {
 
 export default CloudMusicManager;
 
-export const getArtistName = song => {
+export const getArtistName = (song) => {
   return (
     song.simpleSong.ar
-      ?.map(a => a.name)
+      ?.map((a) => a.name)
       .filter(Boolean)
-      .join(",") ||
+      .join(',') ||
     song.artist ||
-    ""
+    ''
   );
 };
-export const getAlbumName = song => {
-  return song.simpleSong.al?.name || song.album || "";
+export const getAlbumName = (song) => {
+  return song.simpleSong.al?.name || song.album || '';
 };
