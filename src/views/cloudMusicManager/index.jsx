@@ -7,7 +7,7 @@ import {
   PauseCircleFilled,
   PlayCircleFilled,
 } from '@ant-design/icons';
-import { Button, Modal, Table, Tag, message } from 'antd';
+import { Button, Input, Modal, Table, Tag, message } from 'antd';
 import { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import {
   addSongToPlaylist,
@@ -18,7 +18,7 @@ import {
   getSongUrl,
 } from '../../api';
 import { sleep, truncateString } from '../../utils';
-import { confirm, msgError, msgSuccess } from '../../utils/modal';
+import { confirm, msgError, msgSuccess, msgWarning } from '../../utils/modal';
 import CustomMatch from './components/CustomMatch';
 import IdMatch from './components/IdMatch';
 import PlayList from './components/PlayList';
@@ -88,11 +88,6 @@ const CloudMusicManager = forwardRef((props, ref) => {
     getCheckboxProps: (record) => ({
       disabled: record.uploaded,
     }),
-    onSelectAll: () => {
-      setTimeout(() => {
-        setSelectedRows(filteredSongList);
-      }, 0);
-    },
     onChange: (selectedRowKeys, selectedRows) => {
       setSelectedRows(selectedRows);
     },
@@ -158,8 +153,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
           className={`${styles.songCover} ${
             isCurrentSong ? styles.playing : ''
           }`}
-          onClick={() => handlePlaySong(record.simpleSong)}
-        >
+          onClick={() => handlePlaySong(record.simpleSong)}>
           {/* 封面 */}
           <img src={albumPic} alt={albumName} className={styles.songCoverImg} />
           {/* 播放/暂停按钮 */}
@@ -278,6 +272,21 @@ const CloudMusicManager = forwardRef((props, ref) => {
     },
   ];
 
+  // 区间选择
+  const [range, setRange] = useState([]);
+  const handleRangeChoose = () => {
+    console.log('range', range);
+    if (!range[0] || !range[1]) return msgWarning('请输入区间');
+    if (range[0] > range[1]) return msgWarning('区间错误');
+    console.log(
+      'filteredSongList.slice(range[0] - 1, range[1])',
+      filteredSongList,
+      filteredSongList.slice(range[0] - 1, range[1]),
+    );
+    setSelectedRows(filteredSongList.slice(range[0] - 1, range[1]));
+  };
+
+  // 自动按专辑添加
   const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] =
     useState(false);
   const handleAddToPlaylistByAlbum = async () => {
@@ -355,6 +364,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
     }
   };
 
+  // 偷取资源
   const handleStoleSong = async () => {
     /**
      * {
@@ -399,6 +409,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
     downloadJsonFile(stolenList, 'stolenList.json');
   };
 
+  // 添加到歌单
   const playListRef = useRef(null);
   const handleAddToPlaylist = async () => {
     try {
@@ -418,10 +429,12 @@ const CloudMusicManager = forwardRef((props, ref) => {
     }
   };
 
+  // 新建歌单
   const handleCreatePlaylist = () => {
     playListRef.current.open();
   };
 
+  // 删除歌曲
   const handleDeleteSong = async () => {
     try {
       const confirmContent = (
@@ -451,8 +464,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       onCancel={close}
       footer={null}
       centered
-      width={1500}
-    >
+      width={1500}>
       <SearchForm
         onSearch={handleSearch}
         data={songList.map((item) => {
@@ -490,6 +502,24 @@ const CloudMusicManager = forwardRef((props, ref) => {
           filteredSongList={filteredSongList}
         />
         <div className={styles.actions}>
+          {/* 区间选择 输入两个坐标 选择排序后的其中的歌曲 */}
+          <Input
+            value={range[0]}
+            onChange={(e) => {
+              setRange([+e.target.value || undefined, range[1]]);
+            }}
+            placeholder='起始位置'
+          />
+          <Input
+            value={range[1]}
+            onChange={(e) => setRange([range[0], +e.target.value || undefined])}
+            placeholder='结束位置'
+          />
+          <Button onClick={handleRangeChoose} style={{ marginRight: 10 }}>
+            区间选择
+          </Button>
+
+          {/* 全选 */}
           {filteredSongList?.length > selectedRows?.length ? (
             <Button onClick={() => setSelectedRows(filteredSongList)}>
               全部选择
@@ -501,24 +531,21 @@ const CloudMusicManager = forwardRef((props, ref) => {
           <Button
             type='primary'
             onClick={handleAddToPlaylistByAlbum}
-            loading={addToPlayListByAlbumLoading}
-          >
+            loading={addToPlayListByAlbumLoading}>
             自动按专辑添加
           </Button>
           {/* 偷取资源 */}
           <Button
             type='primary'
             disabled={!selectedRows.length}
-            onClick={handleStoleSong}
-          >
+            onClick={handleStoleSong}>
             偷取资源
           </Button>
           {/* 添加到歌单 */}
           <Button
             type='primary'
             disabled={!selectedRows.length}
-            onClick={handleAddToPlaylist}
-          >
+            onClick={handleAddToPlaylist}>
             添加到歌单
           </Button>
           <Button onClick={handleCreatePlaylist}>新建歌单</Button>
@@ -527,8 +554,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
             type='primary'
             danger
             disabled={!selectedRows.length}
-            onClick={handleDeleteSong}
-          >
+            onClick={handleDeleteSong}>
             删除歌曲
           </Button>
         </div>
@@ -579,8 +605,7 @@ const AutoAddContent = ({ totalSongs, albums }) => {
             type='link'
             size='small'
             icon={<CopyrightOutlined />}
-            onClick={handleCopy}
-          >
+            onClick={handleCopy}>
             复制列表
           </Button>
         </div>
