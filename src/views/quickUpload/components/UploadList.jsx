@@ -85,7 +85,7 @@ export default function UploadList({ singerList }) {
               artists,
               dt: formatDuration(song.dt),
               filename: song.name
-                ? `  ${song.name}.${otherInfo.ext}`
+                ? `${song.name}`
                 : undefined,
               picUrl:
                 song.al?.picUrl ||
