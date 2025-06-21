@@ -140,7 +140,11 @@ const CloudMusicManager = forwardRef((props, ref) => {
     play();
   }, [playSong]);
 
-  const renderSongInfo = (_, record) => {
+  const [pageParams, setPageParams] = useState({
+    page: 1,
+    pageSize: 20,
+  });
+  const renderSongInfo = (_, record, index) => {
     // 是否播放当前歌曲
     const isCurrentSong = record.simpleSong?.id === playSong?.id;
     const artistName = getArtistName(record);
@@ -149,6 +153,9 @@ const CloudMusicManager = forwardRef((props, ref) => {
     const albumPic = record.simpleSong?.al?.picUrl;
     return (
       <div className={styles.songInfoColumn}>
+        <div className={styles.songIndex}>
+          {(pageParams.page - 1) * pageParams.pageSize + index + 1}
+        </div>
         <div
           className={`${styles.songCover} ${
             isCurrentSong ? styles.playing : ''
@@ -494,6 +501,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
         onChange={handleTableChange}
         pagination={{
           defaultPageSize: 20,
+          onChange: (page, pageSize) => setPageParams({ page, pageSize }),
         }}
       />
       <div className={styles.footer}>
