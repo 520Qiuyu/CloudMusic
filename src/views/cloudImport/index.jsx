@@ -82,7 +82,7 @@ const CloudImport = forwardRef((props, ref) => {
           uploadSong({
             ...item,
             filename: item.name || '未知',
-            artists: item.artists.join?.(','),
+            artists: item.artists?.join?.(','),
           }),
       );
       const res = await promiseLimit(proArr, concurrent);
