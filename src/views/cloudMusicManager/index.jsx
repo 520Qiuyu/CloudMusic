@@ -1,7 +1,7 @@
 import SearchForm from '@/components/SearchForm';
 import useFilter from '@/hooks/useFilter';
 import { useVisible } from '@/hooks/useVisible';
-import { downloadJsonFile } from '@/utils/download';
+import { downloadFile, downloadJsonFile } from '@/utils/download';
 import {
   CopyrightOutlined,
   PauseCircleFilled,
@@ -17,7 +17,7 @@ import {
   getPlaylistList,
   getSongUrl,
 } from '../../api';
-import { sleep, truncateString } from '../../utils';
+import { promiseLimit, sleep, truncateString } from '../../utils';
 import { confirm, msgError, msgSuccess, msgWarning } from '../../utils/modal';
 import CustomMatch from './components/CustomMatch';
 import IdMatch from './components/IdMatch';
@@ -94,7 +94,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
   };
   const handleTableChange = (pagination, filters, sorter) => {
     setFilteredSongList((songList) => {
-      return songList.sort((a, b) => {
+      return [...songList].sort((a, b) => {
         const order = sorter.order === 'ascend' ? 1 : -1;
         return (
           order * a[sorter.columnKey]?.localeCompare?.(b[sorter.columnKey])
@@ -404,7 +404,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       return {
         artist,
         artists: ar?.map((a) => a.name) || [artist],
-        album,
+        album: album || getAlbumName(item),
         id: songId,
         size: fileSize,
         md5: privateCloud.md5,
@@ -414,6 +414,23 @@ const CloudMusicManager = forwardRef((props, ref) => {
       };
     });
     downloadJsonFile(stolenList, 'stolenList.json');
+  };
+
+  // 下载资源
+  const handleDownloadSong = async () => {
+    console.log('selectedRows', selectedRows);
+    const ids = selectedRows.map((item) => item.songId);
+    const res = await getSongUrl(ids);
+    if (res.code !== 200) return msgError('获取歌曲url失败');
+    console.log('res', res);
+    const downloadTask = res.data.map(
+      ({ url, type, encodeType }, index) =>
+        () => {
+          const item = selectedRows[index];
+          downloadFile(url, item.songName + '.' + encodeType);
+        },
+    );
+    await promiseLimit(downloadTask, 1);
   };
 
   // 添加到歌单
@@ -471,7 +488,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       onCancel={close}
       footer={null}
       centered
-      width={1500}>
+      width={1700}>
       <SearchForm
         onSearch={handleSearch}
         data={songList.map((item) => {
@@ -548,6 +565,13 @@ const CloudMusicManager = forwardRef((props, ref) => {
             disabled={!selectedRows.length}
             onClick={handleStoleSong}>
             偷取资源
+          </Button>
+          {/* 下载资源 */}
+          <Button
+            type='primary'
+            disabled={!selectedRows.length}
+            onClick={handleDownloadSong}>
+            下载资源
           </Button>
           {/* 添加到歌单 */}
           <Button

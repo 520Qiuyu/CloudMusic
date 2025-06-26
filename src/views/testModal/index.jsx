@@ -22,8 +22,9 @@ import {
   searchArtist,
   uploadLocalSong,
 } from '../../api';
-import { sleep } from '../../utils';
+import { promiseLimit, sleep } from '../../utils';
 import { msgError, msgSuccess } from '../../utils/modal';
+import { downloadFile } from '@/utils/download';
 
 const TestModal = forwardRef((props, ref) => {
   const { visible, open, close } = useVisible({}, ref);
@@ -158,6 +159,21 @@ const TestModal = forwardRef((props, ref) => {
       console.log('error', error);
     }
   };
+  // 下载专辑封面
+  const handleGetArtistAlbumPic = async () => {
+    console.log('下载专辑封面');
+    try {
+      const res = await getArtistAlbumList(artistId);
+      console.log('res', res);
+      const downloadTask = res.map(
+        (item) => () =>
+          downloadFile(item.cover.split('?')[0], item.name + '.jpg'),
+      );
+      await promiseLimit(downloadTask, 1);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
   // 获取歌手全部歌曲
   const handleGetArtistAllSongList = async () => {
     console.log('获取歌手全部歌曲');
@@ -267,8 +283,7 @@ const TestModal = forwardRef((props, ref) => {
       onCancel={close}
       width={800}
       footer={null}
-      centered
-    >
+      centered>
       <Form>
         {/* 测试获取云盘数据 */}
         <Form.Item label='获取云盘数据'>
@@ -375,6 +390,10 @@ const TestModal = forwardRef((props, ref) => {
             <Button type='primary' onClick={handleGetArtistAlbum}>
               获取歌手专辑
             </Button>
+            {/* 下载专辑封面 */}
+            <Button type='primary' onClick={handleGetArtistAlbumPic}>
+              下载专辑封面
+            </Button>
             <Button type='primary' onClick={handleGetArtistAllSongList}>
               获取歌手全部歌曲
             </Button>
@@ -400,8 +419,7 @@ const TestModal = forwardRef((props, ref) => {
             }}
             onRemove={(file) => {
               setFileList(fileList.filter((f) => f !== file));
-            }}
-          >
+            }}>
             <Button icon={<UploadOutlined />}>Select File</Button>
           </Upload>
           <Button type='primary' onClick={handleUploadLocalSong}>
