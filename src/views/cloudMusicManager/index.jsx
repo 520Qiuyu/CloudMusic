@@ -24,6 +24,7 @@ import IdMatch from './components/IdMatch';
 import PlayList from './components/PlayList';
 import Stats from './components/Stats';
 import styles from './index.module.scss';
+import dayjs from 'dayjs';
 
 const CloudMusicManager = forwardRef((props, ref) => {
   const { visible, open, close, reset } = useVisible(
@@ -275,7 +276,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       width: 150,
       sorter: (a, b) => a.addTime - b.addTime,
       sortDirections: ['ascend', 'descend'],
-      render: (time) => new Date(time).toLocaleString(),
+      render: (time) => dayjs(time).format('YYYY-MM-DD HH:mm:ss'),
     },
   ];
 
@@ -495,7 +496,8 @@ const CloudMusicManager = forwardRef((props, ref) => {
           return {
             ...item,
             name: item.simpleSong.name,
-            artists: item.simpleSong.ar?.map((a) => a.name).join(','),
+            artists: getArtistName(item),
+            album: getAlbumName(item),
           };
         })}
         options={[
