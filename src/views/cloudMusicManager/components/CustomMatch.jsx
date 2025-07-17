@@ -4,6 +4,7 @@ import { useSearchSinger } from '@/hooks/useSearchSinger';
 import { useGetSingerSongs } from '@/hooks/useGetSingerSongs';
 import { msgError, msgSuccess } from '@/utils/modal';
 import { matchCloudSong } from '@/api';
+import { on, off, EVENT_TYPES } from '@/utils/eventBus';
 import { Input, Button, Select, Avatar, Spin, Tag } from 'antd';
 import styles from '../index.module.scss';
 
@@ -11,6 +12,7 @@ const CustomMatch = ({ data, onUpdate }) => {
   const [keywords, setKeywords] = useState(getArtistName(data));
   const [currentSelectSinger, setCurrentSelectSinger] = useState();
   const [currentSelectSong, setCurrentSelectSong] = useState();
+  const [songSearchValue, setSongSearchValue] = useState(data.name);
   const [currentSelectSongId, setCurrentSelectSongId] = useState();
   const { loading: searchSingerLoading, singerList } = useSearchSinger({
     keywords,
@@ -18,6 +20,10 @@ const CustomMatch = ({ data, onUpdate }) => {
   const { singerMap, loading: getSongLoading } = useGetSingerSongs({
     singerIds: currentSelectSinger,
   });
+
+  /*  useEffect(() => {
+    setCurrentSelectSinger(singerList?.[0]?.artistId);
+  }, [singerList]); */
 
   /*   useEffect(() => {
     console.log("singerMap", singerMap);
@@ -28,6 +34,29 @@ const CustomMatch = ({ data, onUpdate }) => {
   }, [singerMap, singerList, currentSelectSinger, currentSelectSong, currentSelectSongId]); */
 
   const [updateLoading, setUpdateLoading] = useState(false);
+  const [autoMatchLoading, setAutoMatchLoading] = useState(false);
+  
+  // 监听全部匹配事件
+  useEffect(() => {
+    const handleMatchAll = async (eventData) => {
+      console.log('CustomMatch 收到全部匹配事件', eventData);
+      if (!currentSelectSinger || !currentSelectSongId) {
+        console.log('当前组件未选择歌手或歌曲，跳过自动匹配');
+        return;
+      }
+      
+      handleUpdate()
+    };
+
+    // 订阅全部匹配事件
+    on(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, handleMatchAll);
+
+    // 组件卸载时取消订阅
+    return () => {
+      off(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, handleMatchAll);
+    };
+  }, [currentSelectSinger, currentSelectSongId, data, onUpdate]);
+
   const handleUpdate = async () => {
     try {
       setUpdateLoading(true);
@@ -43,7 +72,7 @@ const CustomMatch = ({ data, onUpdate }) => {
       console.log('res', res);
       if (res.code === 200) {
         msgSuccess('更新成功');
-        onUpdate?.();
+        // onUpdate?.();
       }
     } catch (error) {
       console.log('error', error);
@@ -54,8 +83,7 @@ const CustomMatch = ({ data, onUpdate }) => {
   return (
     <div
       style={{ display: 'flex', alignItems: 'center', gap: 8 }}
-      onClick={() => console.log(data)}
-    >
+      onClick={() => console.log(data)}>
       {/* 关键词搜索歌手 输入框 */}
       <Input
         style={{
@@ -86,6 +114,9 @@ const CustomMatch = ({ data, onUpdate }) => {
           label: item.artistName,
           value: item.artistId,
         }))}
+        onFocus={() => {
+          setCurrentSelectSinger(singerList?.[0]?.artistId);
+        }}
         optionRender={(option) => {
           const { artistAvatarPicUrl, artistName, artistId } = option.data;
           return (
@@ -93,8 +124,7 @@ const CustomMatch = ({ data, onUpdate }) => {
               className={styles['singer-option']}
               style={{
                 '--avatar-url': `url(${artistAvatarPicUrl})`,
-              }}
-            >
+              }}>
               <div className={styles['singer-option-content']}>
                 <div className={styles['singer-option-name']}>{artistName}</div>
                 <div className={styles['singer-option-id']}>{artistId}</div>
@@ -127,6 +157,14 @@ const CustomMatch = ({ data, onUpdate }) => {
           setCurrentSelectSong(option);
         }}
         showSearch
+        searchValue={songSearchValue}
+        onFocus={() => {
+          console.log('data', data);
+          setSongSearchValue(data.songName);
+        }}
+        onSearch={(value) => {
+          setSongSearchValue(value);
+        }}
         placeholder='请选择歌曲'
         filterOption={(input, option) => option?.label?.indexOf(input) >= 0}
         loading={getSongLoading}
@@ -172,11 +210,10 @@ const CustomMatch = ({ data, onUpdate }) => {
       <Button
         type='primary'
         size='small'
-        loading={updateLoading}
+        loading={updateLoading || autoMatchLoading}
         disabled={!currentSelectSinger || !currentSelectSongId}
-        onClick={handleUpdate}
-      >
-        匹配
+        onClick={handleUpdate}>
+        {autoMatchLoading ? '自动匹配中...' : '匹配'}
       </Button>
     </div>
   );

@@ -19,6 +19,7 @@ import {
 } from '../../api';
 import { promiseLimit, sleep, truncateString } from '../../utils';
 import { confirm, msgError, msgSuccess, msgWarning } from '../../utils/modal';
+import { emit, EVENT_TYPES } from '../../utils/eventBus';
 import CustomMatch from './components/CustomMatch';
 import IdMatch from './components/IdMatch';
 import PlayList from './components/PlayList';
@@ -38,6 +39,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
 
   const [songList, setSongList] = useState([]);
   const [loading, setLoading] = useState(false);
+
   // 获取云盘数据
   const getCloudDataList = async () => {
     try {
@@ -55,6 +57,15 @@ const CloudMusicManager = forwardRef((props, ref) => {
     }
   };
 
+  const handleMatch = () => {
+    console.log('触发全部匹配事件');
+    // 发布全部匹配事件，通知所有相关组件
+    emit(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, {
+      songList: filteredSongList,
+      timestamp: Date.now(),
+    });
+  };
+
   // 筛选后的歌曲列表
   // 使用useFilter hook处理筛选逻辑
   const filterConfig = {
@@ -70,11 +81,15 @@ const CloudMusicManager = forwardRef((props, ref) => {
       },
     },
   };
+  const [searchParams, setSearchParams] = useState({});
   const {
     filteredList: filteredSongList,
     setFilteredList: setFilteredSongList,
     handleFilter: handleSearch,
   } = useFilter(songList, filterConfig);
+  useEffect(() => {
+    handleSearch(searchParams);
+  }, [songList]);
 
   /** 选择 */
   const [selectedRows, setSelectedRows] = useState([]);
@@ -491,7 +506,11 @@ const CloudMusicManager = forwardRef((props, ref) => {
       centered
       width={1700}>
       <SearchForm
-        onSearch={handleSearch}
+        onSearch={(values) => {
+          console.log('values', values);
+          setSearchParams(values);
+          handleSearch(values);
+        }}
         data={songList.map((item) => {
           return {
             ...item,
@@ -506,6 +525,20 @@ const CloudMusicManager = forwardRef((props, ref) => {
           { label: '专辑', value: 'album' },
         ]}
       />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          gap: 16,
+          marginBottom: 16,
+        }}>
+        <Button type='primary' onClick={handleMatch}>
+          全部匹配
+        </Button>
+        <Button type='primary' onClick={getCloudDataList}>
+          刷新
+        </Button>
+      </div>
       <Table
         rowSelection={rowSelection}
         dataSource={filteredSongList}
