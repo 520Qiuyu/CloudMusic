@@ -409,6 +409,74 @@
   }
 }
 
+// 歌曲选项样式
+.song-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  .song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0; // 防止flex子元素溢出
+  }
+
+  .song-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #262626;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .tag-group {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    align-items: center;
+
+    :global {
+      .ant-tag {
+        margin: 0;
+        font-size: 11px;
+        line-height: 1.2;
+        padding: 1px 6px;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .album-cover {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid #f0f0f0;
+    margin-left: 12px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
 // 原始专辑信息样式
 .original-album {
   display: flex;

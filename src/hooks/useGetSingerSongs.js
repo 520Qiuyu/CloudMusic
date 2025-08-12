@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useGetSingerList } from './useGetSingerList';
-import { getArtistAllSongList, searchArtist } from '@/api';
+import { getArtistAlbumList, getArtistAllSongList, searchArtist } from '@/api';
 
 export function useGetSingerSongs(options) {
   const {
@@ -59,6 +59,32 @@ export function useGetSingerSongs(options) {
     }
   };
 
+  const getSingerAlbumListById = async (singerId) => {
+    try {
+      setLoading(true);
+      if (singerMap[singerId]?.albumList) return singerMap[singerId]?.albumList;
+      const res = await getArtistAlbumList(singerId);
+      if (res.code === 200) {
+        const albumList = res.data;
+        setSingerMap((prv) => ({
+          ...prv,
+          [singerId]: {
+            ...prv[singerId],
+            albumList,
+            albumMap: Object.fromEntries(
+              albumList.map((item) => [item.id, item]),
+            ),
+          },
+        }));
+        return albumList;
+      }
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // 如果传了singerIds，就提前获取singerInfo和songList
   useEffect(() => {
     if (!singerIds) return;
@@ -66,6 +92,7 @@ export function useGetSingerSongs(options) {
     ids.forEach((singerId) => {
       getSingerInfoById(singerId);
       getSingerAllSongListById(singerId);
+      getSingerAlbumListById(singerId);
     });
   }, [singerIds]);
 
