@@ -166,7 +166,7 @@ const CustomMatch = ({ data, onUpdate }) => {
           setSongSearchValue(value);
         }}
         placeholder='请选择歌曲'
-        filterOption={(input, option) => option?.label?.indexOf(input) >= 0}
+        filterOption={(input, option) => option?.label?.toLowerCase().indexOf(input.toLowerCase()) >= 0}
         loading={getSongLoading}
         options={singerMap[currentSelectSinger]?.songList?.map((item) => ({
           ...item,

@@ -61,7 +61,6 @@ export function useGetSingerSongs(options) {
 
   const getSingerAlbumListById = async (singerId) => {
     try {
-      setLoading(true);
       if (singerMap[singerId]?.albumList) return singerMap[singerId]?.albumList;
       const res = await getArtistAlbumList(singerId);
       if (res.code === 200) {
@@ -80,9 +79,7 @@ export function useGetSingerSongs(options) {
       }
     } catch (error) {
       console.log('error', error);
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
   // 如果传了singerIds，就提前获取singerInfo和songList
