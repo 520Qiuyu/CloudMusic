@@ -479,6 +479,10 @@ export default function UploadList({ singerList }) {
             loading={loading}
             rowKey={({ artists, id, name }) => name + artists + id}
             onChange={handleTableChange}
+            pagination={{
+              showQuickJumper:true,
+              showSizeChanger:true,
+            }}
           />
           {/* 底部操作区 */}
           <div className={styles['upload-footer']}>

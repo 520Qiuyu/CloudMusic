@@ -647,6 +647,8 @@ const CloudMusicManager = forwardRef((props, ref) => {
         onChange={handleTableChange}
         pagination={{
           defaultPageSize: 20,
+          showQuickJumper: true,
+          showSizeChanger: true,
           onChange: (page, pageSize) => setPageParams({ page, pageSize }),
         }}
       />
