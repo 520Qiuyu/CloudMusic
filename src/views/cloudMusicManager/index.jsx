@@ -443,7 +443,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       ({ url, type, encodeType }, index) =>
         () => {
           const item = selectedRows[index];
-          downloadFile(url, item.songName + '.' + encodeType);
+          downloadFile(url.replace('http://', 'https://'), item.songName + '.' + encodeType);
         },
     );
     await promiseLimit(downloadTask, 1);
