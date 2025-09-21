@@ -326,24 +326,31 @@ export const getArtistAllSongList = async (id) => {
 };
 
 // 获取歌手专辑
-export const getArtistAlbumList = async (id, limit = 1000, offset = 0) => {
-  const res = await fetch(
-    `/artist/album?id=${id}&limit=${limit}&offset=${offset}`,
-  );
-  console.log('res', res);
-  const html = await res.text();
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
-  const albumList = Array.from(doc.querySelectorAll('#m-song-module li'));
-  return albumList.map((item) => {
-    const cover = item.querySelector('img').getAttribute('src');
-    const id = item
-      .querySelector('a[title="播放"]')
-      .getAttribute('data-res-id');
-    const name = item.querySelector('p.dec a.tit').textContent;
-    const time = item.querySelector('span.s-fc3').textContent;
-    return { cover, id, name, time };
-  });
+export const getArtistAlbumList = async (id) => {
+  let more = true;
+  let limit = 200;
+  let offset = 0;
+  const albumList = [];
+  while (more) {
+    const res = await weapiRequest(`/api/artist/albums/${id}`, {
+      data: {
+        id,
+        limit,
+        offset,
+      },
+    });
+    if (res.code != 200) {
+      throw new Error(res.message || res.msg || '获取歌手专辑失败');
+    }
+    albumList.push(...res.hotAlbums);
+    more = res.more;
+    offset += limit;
+  }
+  return {
+    code: 200,
+    msg: '获取歌手专辑成功',
+    data: albumList,
+  };
 };
 
 /**

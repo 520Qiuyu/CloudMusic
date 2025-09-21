@@ -13,6 +13,7 @@ const eventBus = mitt();
 export const EVENT_TYPES = {
   // 云盘音乐管理相关事件
   CLOUD_MUSIC_MATCH_ALL: 'cloud_music_match_all', // 全部匹配事件
+  CLOUD_MUSIC_CANCEL_MATCH_ALL: 'cloud_music_cancel_match_all', // 全部取消匹配事件
   CLOUD_MUSIC_UPDATE: 'cloud_music_update', // 云盘数据更新事件
   CLOUD_MUSIC_SONG_SELECTED: 'cloud_music_song_selected', // 歌曲选择事件
   CLOUD_MUSIC_PLAY_SONG: 'cloud_music_play_song', // 播放歌曲事件

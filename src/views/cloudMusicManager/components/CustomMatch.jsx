@@ -35,7 +35,7 @@ const CustomMatch = ({ data, onUpdate }) => {
 
   const [updateLoading, setUpdateLoading] = useState(false);
   const [autoMatchLoading, setAutoMatchLoading] = useState(false);
-  
+
   // 监听全部匹配事件
   useEffect(() => {
     const handleMatchAll = async (eventData) => {
@@ -44,8 +44,8 @@ const CustomMatch = ({ data, onUpdate }) => {
         console.log('当前组件未选择歌手或歌曲，跳过自动匹配');
         return;
       }
-      
-      handleUpdate()
+
+      handleUpdate();
     };
 
     // 订阅全部匹配事件
@@ -166,7 +166,7 @@ const CustomMatch = ({ data, onUpdate }) => {
           setSongSearchValue(value);
         }}
         placeholder='请选择歌曲'
-        filterOption={(input, option) => option?.label?.indexOf(input) >= 0}
+        filterOption={(input, option) => option?.label?.toLowerCase().indexOf(input.toLowerCase()) >= 0}
         loading={getSongLoading}
         options={singerMap[currentSelectSinger]?.songList?.map((item) => ({
           ...item,
@@ -177,17 +177,33 @@ const CustomMatch = ({ data, onUpdate }) => {
         optionRender={(option) => {
           const data = option.data;
           return (
-            <div className={styles['song-option']}>
-              <span className={styles['song-name']}>{option.label}</span>
-              <div className={styles['tag-group']}>
-                {data.al?.name && <Tag color='blue'>{data.al?.name}</Tag>}
-                {data.ar?.length &&
-                  data.ar?.map((artist, index) => (
-                    <Tag key={index} color='green'>
-                      {artist.name}
-                    </Tag>
-                  ))}
+            <div
+              className={styles['song-option']}
+              onClick={() => console.log('option', data, option, singerMap)}>
+              <div className={styles['song-info']}>
+                <span className={styles['song-name']}>{option.label}</span>
+                <div className={styles['tag-group']}>
+                  {data.al?.name && <Tag color='blue'>{data.al?.name}</Tag>}
+                  {data.ar?.length &&
+                    data.ar?.map((artist, index) => (
+                      <Tag key={index} color='green'>
+                        {artist.name}
+                      </Tag>
+                    ))}
+                </div>
               </div>
+              {/* 专辑图片 */}
+              {singerMap[currentSelectSinger]?.albumMap[data.al?.id]
+                ?.picUrl && (
+                <img
+                  className={styles['album-cover']}
+                  src={
+                    singerMap[currentSelectSinger]?.albumMap[data.al?.id]
+                      ?.picUrl
+                  }
+                  alt={data.al?.name}
+                />
+              )}
             </div>
           );
         }}

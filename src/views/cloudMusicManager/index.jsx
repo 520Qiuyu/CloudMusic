@@ -16,6 +16,7 @@ import {
   getCloudData,
   getPlaylistList,
   getSongUrl,
+  matchCloudSong,
 } from '../../api';
 import { promiseLimit, sleep, truncateString } from '../../utils';
 import { confirm, msgError, msgSuccess, msgWarning } from '../../utils/modal';
@@ -66,6 +67,23 @@ const CloudMusicManager = forwardRef((props, ref) => {
     });
   };
 
+  const [cancelMatchLoading, setCancelMatchLoading] = useState(false);
+  const handleCancelMatch = async () => {
+    try {
+      setCancelMatchLoading(true);
+      const promises = selectedRowKeys.map((songId) => {
+        return () => matchCloudSong(songId, '0');
+      });
+      const res = await promiseLimit(promises, 6);
+      console.log('res', res);
+      getCloudDataList();
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setCancelMatchLoading(false);
+    }
+  };
+
   // 筛选后的歌曲列表
   // 使用useFilter hook处理筛选逻辑
   const filterConfig = {
@@ -109,12 +127,11 @@ const CloudMusicManager = forwardRef((props, ref) => {
     },
   };
   const handleTableChange = (pagination, filters, sorter) => {
+    console.log('sorter', sorter);
     setFilteredSongList((songList) => {
       return [...songList].sort((a, b) => {
         const order = sorter.order === 'ascend' ? 1 : -1;
-        return (
-          order * a[sorter.columnKey]?.localeCompare?.(b[sorter.columnKey])
-        );
+        return order * sorter.column?.sorter?.(a, b);
       });
     });
   };
@@ -243,13 +260,69 @@ const CloudMusicManager = forwardRef((props, ref) => {
       ellipsis: true,
       render: null,
     },
+    // 歌曲原始专辑
+    {
+      title: '原始专辑',
+      dataIndex: 'simpleSong.al.name',
+      width: 160,
+      fixed: 'left',
+      ellipsis: true,
+      sorter: (a, b) => {
+        const aOriginalInfo = getOriginalInfo(a);
+        const bOriginalInfo = getOriginalInfo(b);
+        return aOriginalInfo.album?.localeCompare(bOriginalInfo.album);
+      },
+      sortDirections: ['ascend', 'descend'],
+      render: (_, record) => {
+        const { song, album, artist } = getOriginalInfo(record);
+        return (
+          <div className={styles['original-album']}>
+            <div className={styles['song-info']} title={song}>
+              {song} {artist && `· ${artist}`}
+            </div>
+            <div className={styles['album-info']} title={album}>
+              {album}
+            </div>
+          </div>
+        );
+      },
+    },
     // 云盘歌曲匹配
     {
       title: '手动id匹配',
       dataIndex: 'matchType',
       key: 'matchType',
       width: 300,
-      sorter: (a, b) => a.matchType - b.matchType,
+      sorter: (a, b) => {
+        const isAMatched = a.matchType === 'matched';
+        const isBMatched = b.matchType === 'matched';
+        // 如果都没匹配，则位置不变
+        if (!isAMatched && !isBMatched) {
+          return 0;
+        }
+        // 如果a没匹配，b匹配，则b在前
+        if (!isAMatched && isBMatched) {
+          return 1;
+        }
+        // 如果a匹配，b没匹配，则a在前
+        if (isAMatched && !isBMatched) {
+          return -1;
+        }
+        // 如果a匹配，b匹配，看是否可能存在匹配错误
+        const aAlbum = getAlbumName(a);
+        const bAlbum = getAlbumName(b);
+        const aOriginalAlbum = getOriginalInfo(a).album;
+        const bOriginalAlbum = getOriginalInfo(b).album;
+        const aMatchError = aAlbum !== aOriginalAlbum;
+        const bMatchError = bAlbum !== bOriginalAlbum;
+        if (aMatchError && !bMatchError) {
+          return 1;
+        }
+        if (!aMatchError && bMatchError) {
+          return -1;
+        }
+        return 0;
+      },
       sortDirections: ['ascend', 'descend'],
       render: (matchType, r) => (
         <IdMatch data={r} onUpdate={getCloudDataList} />
@@ -535,6 +608,14 @@ const CloudMusicManager = forwardRef((props, ref) => {
         <Button type='primary' onClick={handleMatch}>
           全部匹配
         </Button>
+        {/* 全部取消匹配 */}
+        <Button
+          type='primary'
+          disabled={!selectedRows.length}
+          loading={cancelMatchLoading}
+          onClick={handleCancelMatch}>
+          全部取消匹配
+        </Button>
         <Button type='primary' onClick={getCloudDataList}>
           刷新
         </Button>
@@ -547,12 +628,27 @@ const CloudMusicManager = forwardRef((props, ref) => {
         size='small'
         loading={loading}
         rowKey={({ songId }) => songId}
-        rowClassName={({ songId }) =>
-          songId === playSong?.id ? styles.currentSong : ''
-        }
+        rowClassName={(record) => {
+          const { songId } = record;
+          const classNames = [];
+          // 是否播放当前歌曲
+          if (songId === playSong?.id) {
+            classNames.push(styles.currentSong);
+          }
+          // 是否检测到匹配错误
+          const isMatch = record.matchType === 'matched';
+          const album = getAlbumName(record);
+          const { album: originalAlbum } = getOriginalInfo(record);
+          if (isMatch && album !== originalAlbum) {
+            classNames.push(styles.matchError);
+          }
+          return classNames.join(' ');
+        }}
         onChange={handleTableChange}
         pagination={{
           defaultPageSize: 20,
+          showQuickJumper: true,
+          showSizeChanger: true,
           onChange: (page, pageSize) => setPageParams({ page, pageSize }),
         }}
       />
@@ -728,4 +824,10 @@ export const getArtistName = (song) => {
 };
 export const getAlbumName = (song) => {
   return song.simpleSong.al?.name || song.album || '';
+};
+
+export const getOriginalInfo = (record) => {
+  const { simpleSong } = record;
+  const { song, album, artist } = simpleSong.privilege?.pc || {};
+  return { song, album, artist };
 };
