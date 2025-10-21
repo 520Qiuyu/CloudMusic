@@ -7,6 +7,20 @@ import { matchCloudSong } from '@/api';
 import { on, off, EVENT_TYPES } from '@/utils/eventBus';
 import { Input, Button, Select, Avatar, Spin, Tag } from 'antd';
 import styles from '../index.module.scss';
+import { useMemo } from 'react';
+
+/**
+ * 规范化字符串，去除特殊符号、空格等，便于比较
+ * @param {string} str - 需要规范化的字符串
+ * @returns {string} 规范化后的字符串
+ * @example
+ * normalizeString('Hello World!') // 'helloworld'
+ * normalizeString('专辑名称（特别版）') // '专辑名称特别版'
+ */
+const normalizeString = (str) => {
+  if (!str) return '';
+  return str.toLowerCase().replace(/[\s-_，,\.]/g, ''); // 去除空格、特殊符号、下划线
+};
 
 const CustomMatch = ({ data, onUpdate }) => {
   const [keywords, setKeywords] = useState(getArtistName(data));
@@ -35,6 +49,33 @@ const CustomMatch = ({ data, onUpdate }) => {
 
   const [updateLoading, setUpdateLoading] = useState(false);
   const [autoMatchLoading, setAutoMatchLoading] = useState(false);
+
+  const songOptions = useMemo(() => {
+    if (!singerMap[currentSelectSinger]?.songList) return [];
+    const allOptions = singerMap[currentSelectSinger]?.songList?.map(
+      (item) => ({
+        ...item,
+        label: item.name,
+        value: item.id,
+      }),
+    );
+    const mostMatch = allOptions.find((item) => {
+      const itemAlbumName = normalizeString(item.al?.name);
+      const itemSongName = normalizeString(item.name);
+      const dataAlbumName = normalizeString(
+        data.album || data.simpleSong?.al?.name,
+      );
+      const dataSongName = normalizeString(data.songName);
+      return (
+        itemSongName.includes(dataSongName) &&
+        itemAlbumName.includes(dataAlbumName)
+      );
+    });
+    console.log('找到最匹配，放置到第一 mostMatch', mostMatch);
+    return mostMatch
+      ? [mostMatch, ...allOptions.filter((item) => item.id !== mostMatch.id)]
+      : allOptions;
+  }, [singerMap, currentSelectSinger, data]);
 
   // 监听全部匹配事件
   useEffect(() => {
@@ -166,13 +207,11 @@ const CustomMatch = ({ data, onUpdate }) => {
           setSongSearchValue(value);
         }}
         placeholder='请选择歌曲'
-        filterOption={(input, option) => option?.label?.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+        filterOption={(input, option) =>
+          option?.label?.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        }
         loading={getSongLoading}
-        options={singerMap[currentSelectSinger]?.songList?.map((item) => ({
-          ...item,
-          label: item.name,
-          value: item.id,
-        }))}
+        options={songOptions}
         popupMatchSelectWidth={500}
         optionRender={(option) => {
           const data = option.data;
