@@ -19,7 +19,7 @@ import { useMemo } from 'react';
  */
 const normalizeString = (str) => {
   if (!str) return '';
-  return str.toLowerCase().replace(/[\s-_，,\.]/g, ''); // 去除空格、特殊符号、下划线
+  return str.toLowerCase().replace(/[\s-_，,\.…—]/g, ''); // 去除空格、特殊符号、下划线
 };
 
 const CustomMatch = ({ data, onUpdate }) => {
