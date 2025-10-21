@@ -8,19 +8,9 @@ import { on, off, EVENT_TYPES } from '@/utils/eventBus';
 import { Input, Button, Select, Avatar, Spin, Tag } from 'antd';
 import styles from '../index.module.scss';
 import { useMemo } from 'react';
+import { normalizeString } from '@/utils';
 
-/**
- * 规范化字符串，去除特殊符号、空格等，便于比较
- * @param {string} str - 需要规范化的字符串
- * @returns {string} 规范化后的字符串
- * @example
- * normalizeString('Hello World!') // 'helloworld'
- * normalizeString('专辑名称（特别版）') // '专辑名称特别版'
- */
-const normalizeString = (str) => {
-  if (!str) return '';
-  return str.toLowerCase().replace(/[\s-_，,\.…—]/g, ''); // 去除空格、特殊符号、下划线
-};
+
 
 const CustomMatch = ({ data, onUpdate }) => {
   const [keywords, setKeywords] = useState(getArtistName(data));

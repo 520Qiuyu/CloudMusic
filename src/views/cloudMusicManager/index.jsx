@@ -18,7 +18,12 @@ import {
   getSongUrl,
   matchCloudSong,
 } from '../../api';
-import { promiseLimit, sleep, truncateString } from '../../utils';
+import {
+  normalizeString,
+  promiseLimit,
+  sleep,
+  truncateString,
+} from '../../utils';
 import { confirm, msgError, msgSuccess, msgWarning } from '../../utils/modal';
 import { emit, EVENT_TYPES } from '../../utils/eventBus';
 import CustomMatch from './components/CustomMatch';
@@ -516,7 +521,10 @@ const CloudMusicManager = forwardRef((props, ref) => {
       ({ url, type, encodeType }, index) =>
         () => {
           const item = selectedRows[index];
-          downloadFile(url.replace('http://', 'https://'), item.songName + '.' + encodeType);
+          downloadFile(
+            url.replace('http://', 'https://'),
+            item.songName + '.' + encodeType,
+          );
         },
     );
     await promiseLimit(downloadTask, 1);
@@ -637,9 +645,9 @@ const CloudMusicManager = forwardRef((props, ref) => {
           }
           // 是否检测到匹配错误
           const isMatch = record.matchType === 'matched';
-          const album = getAlbumName(record);
-          const { album: originalAlbum } = getOriginalInfo(record);
-          if (isMatch && album !== originalAlbum) {
+          const album = normalizeString(getAlbumName(record));
+          const originalAlbum = normalizeString(getOriginalInfo(record)?.album);
+          if (isMatch && !album.includes(originalAlbum.slice(0, 3))) {
             classNames.push(styles.matchError);
           }
           return classNames.join(' ');
