@@ -222,7 +222,7 @@ const CustomMatch = ({ data, onUpdate }) => {
                 </div>
               </div>
               {/* 专辑图片 */}
-              {singerMap[currentSelectSinger]?.albumMap[data.al?.id]
+              {singerMap[currentSelectSinger]?.albumMap?.[data.al?.id]
                 ?.picUrl && (
                 <img
                   className={styles['album-cover']}

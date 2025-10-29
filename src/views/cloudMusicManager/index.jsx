@@ -691,6 +691,15 @@ const CloudMusicManager = forwardRef((props, ref) => {
           ) : (
             <Button onClick={() => setSelectedRows([])}>全部取消</Button>
           )}
+          {/* 反选 */}
+          <Button
+            onClick={() =>
+              setSelectedRows(
+                filteredSongList.filter((item) => !selectedRows.includes(item)),
+              )
+            }>
+            反选
+          </Button>
           {/* 自动按专辑添加 */}
           <Button
             type='primary'
@@ -706,12 +715,12 @@ const CloudMusicManager = forwardRef((props, ref) => {
             偷取资源
           </Button>
           {/* 下载资源 */}
-          <Button
+          {/* <Button
             type='primary'
             disabled={!selectedRows.length}
             onClick={handleDownloadSong}>
             下载资源
-          </Button>
+          </Button> */}
           {/* 添加到歌单 */}
           <Button
             type='primary'
