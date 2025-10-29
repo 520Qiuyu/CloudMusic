@@ -7,6 +7,7 @@ import {
   Space,
   Table,
   Input,
+  Tag,
 } from 'antd';
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import { createPlaylist, deletePlaylist, getPlaylistList } from '../../../api';
@@ -21,6 +22,34 @@ import { useRef } from 'react';
 import { getGUser } from '../../../utils';
 import SearchForm from '@/components/SearchForm';
 import useFilter from '@/hooks/useFilter';
+
+// 策略模式：不同歌手的歌单创建策略
+const playlistCreationStrategies = {
+  周杰伦: {
+    name: '周杰伦的歌单',
+    color: 'blue',
+    description: '创建周杰伦专属歌单',
+    getPlaylistName: () => '周杰伦',
+  },
+  林俊杰: {
+    name: '林俊杰的歌单',
+    color: 'green',
+    description: '创建林俊杰专属歌单',
+    getPlaylistName: () => '林俊杰',
+  },
+  陈奕迅: {
+    name: '陈奕迅的歌单',
+    color: 'purple',
+    description: '创建陈奕迅专属歌单',
+    getPlaylistName: () => '陈奕迅',
+  },
+  张学友: {
+    name: '张学友的歌单',
+    color: 'orange',
+    description: '创建张学友专属歌单',
+    getPlaylistName: () => '张学友',
+  },
+};
 
 const PlayList = (props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -123,8 +152,7 @@ const PlayList = (props, ref) => {
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
-            }}
-          >
+            }}>
             {text}
           </div>
         </div>
@@ -143,8 +171,7 @@ const PlayList = (props, ref) => {
           style={{
             color: '#666',
             fontSize: '13px',
-          }}
-        >
+          }}>
           {text} 首
         </span>
       ),
@@ -228,6 +255,30 @@ const PlayList = (props, ref) => {
     }
   };
 
+  // 策略模式：创建常用歌单
+  const handleCreateCommonPlaylist = async (artistName) => {
+    const strategy = playlistCreationStrategies[artistName];
+    if (!strategy) {
+      msgError('不支持的歌手类型');
+      return;
+    }
+
+    try {
+      const playlistName = strategy.getPlaylistName();
+      const res = await createPlaylist(playlistName);
+      if (res.code === 200) {
+        msgSuccess(`成功创建"${playlistName}"`);
+        handleGetPlayList(); // 重新获取列表
+        setCreateModalVisible(false);
+      } else {
+        msgError('创建失败');
+      }
+    } catch (error) {
+      console.log('error', error);
+      msgError('创建失败');
+    }
+  };
+
   // 删除歌单
   const handleDelete = async () => {
     if (!selectedRows.length) {
@@ -259,8 +310,7 @@ const PlayList = (props, ref) => {
         onCancel={close}
         footer={null}
         centered
-        width={900}
-      >
+        width={900}>
         <SearchForm
           data={playList.map((item) => ({
             ...item,
@@ -297,16 +347,14 @@ const PlayList = (props, ref) => {
             <Button
               danger
               disabled={!selectedRows.length}
-              onClick={handleDelete}
-            >
+              onClick={handleDelete}>
               删除歌单
             </Button>
             {isSelect && (
               <Button
                 type='primary'
                 onClick={handleConfirm}
-                disabled={selectedRows.length !== 1}
-              >
+                disabled={selectedRows.length !== 1}>
                 选择({selectedRows.length})
               </Button>
             )}
@@ -325,15 +373,36 @@ const PlayList = (props, ref) => {
         onOk={handleCreate}
         okText='确定'
         cancelText='取消'
-        centered
-      >
+        centered>
         <Input
           placeholder='请输入歌单名称'
           value={name}
           onChange={(e) => setName(e.target.value)}
           onPressEnter={handleCreate}
           autoFocus
+          style={{ marginBottom: 16 ,padding: '4px 8px'}}
         />
+
+        <Space wrap>
+          {Object.entries(playlistCreationStrategies).map(
+            ([artistName, strategy]) => (
+              <Tag
+                key={artistName}
+                color={strategy.color}
+                style={{
+                  cursor: 'pointer',
+                  marginBottom: 8,
+                  borderRadius: '4px',
+                  border: '1px solid #d9d9d9',
+                  transition: 'all 0.3s',
+                }}
+                onClick={() => handleCreateCommonPlaylist(artistName)}
+                title={strategy.description}>
+                {artistName}
+              </Tag>
+            ),
+          )}
+        </Space>
       </Modal>
     </>
   );
