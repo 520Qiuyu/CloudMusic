@@ -207,9 +207,19 @@ export const getGlobalThis = () => {
  * 获取网易云用户信息
  * @returns {Object}
  */
-export const getGUser = () => {
+export const getUser = () => {
   const globalThis = getGlobalThis();
-  return globalThis.GUser || {};
+  return globalThis.CustomUser || {};
+};
+
+/**
+ * 是否是移动端
+ * @returns {boolean}
+ */
+export const isMobile = () => {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent,
+  );
 };
 
 /**

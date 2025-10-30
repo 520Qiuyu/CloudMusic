@@ -19,7 +19,7 @@ import {
 } from '../../../utils/modal';
 import styles from '../index.module.scss';
 import { useRef } from 'react';
-import { getGUser } from '../../../utils';
+import { getUser } from '../../../utils';
 import SearchForm from '@/components/SearchForm';
 import useFilter from '@/hooks/useFilter';
 
@@ -103,9 +103,9 @@ const PlayList = (props, ref) => {
   const handleGetPlayList = async () => {
     setLoading(true);
     try {
-      const user = getGUser();
+      const user = getUser();
       if (!user) return message.error('请先登录');
-      const res = await getPlaylistList(user.userId);
+      const res = await getPlaylistList();
       console.log('res', res);
       if (res.code === 200) {
         setPlayList(res.playlist);

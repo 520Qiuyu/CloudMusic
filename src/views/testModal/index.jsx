@@ -18,6 +18,7 @@ import {
   getQrStatus,
   getSongInfoList,
   getSongUrl,
+  getUserAccount,
   matchLocalSong,
   searchArtist,
   uploadLocalSong,
@@ -28,6 +29,17 @@ import { downloadFile } from '@/utils/download';
 
 const TestModal = forwardRef((props, ref) => {
   const { visible, open, close } = useVisible({}, ref);
+
+  // 获取用户信息
+  const handleGetUserAccount = async () => {
+    console.log('获取用户信息');
+    try {
+      const res = await getUserAccount();
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
 
   // 获取云盘输入数据
   const [pageData, setPageData] = useState({
@@ -285,6 +297,12 @@ const TestModal = forwardRef((props, ref) => {
       footer={null}
       centered>
       <Form>
+        {/* 测试获取用户信息 */}
+        <Form.Item label='获取用户信息'>
+          <Button type='primary' onClick={handleGetUserAccount}>
+            获取用户信息
+          </Button>
+        </Form.Item>
         {/* 测试获取云盘数据 */}
         <Form.Item label='获取云盘数据'>
           <Space>

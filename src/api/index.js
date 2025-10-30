@@ -1,6 +1,6 @@
 import { BASE_CDN_URL, QUALITY_LEVELS } from '../constant';
 import { chunkArray, getAudioMetadata, getFileMD5, sleep } from '../utils';
-import { getGUser } from '../utils';
+import { getUser } from '../utils';
 import { msgError } from '../utils/modal';
 import { weapiFetch, weapiRequest } from '../utils/request';
 import { generateQRCode } from '../utils/qrcode';
@@ -29,6 +29,12 @@ export const getQrStatus = (key) =>
       type: 1,
     },
     originResponse: true,
+  });
+
+// 获取用户信息
+export const getUserAccount = () =>
+  weapiRequest('/api/nuser/account/get', {
+    data: {},
   });
 
 // 获取歌手列表
@@ -226,7 +232,7 @@ export const deleteCloudSong = (songIds) =>
 
 // 获取歌单列表
 export const getPlaylistList = (
-  uid = getGUser().userId,
+  uid = getUser().userId,
   limit = 1001,
   offset = 0,
 ) =>
