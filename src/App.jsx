@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import ButtonGroup from './components/ButtonGroup';
 import { getUserAccount } from './api';
+import { getGlobalThis } from './utils';
 
 function App() {
   /** 获取用户信息 */
@@ -9,7 +10,8 @@ function App() {
       const res = await getUserAccount();
       console.log('res', res);
       if (res.code === 200) {
-        window.CustomUser = {
+        const globalThis = getGlobalThis();
+        globalThis.CustomUser = {
           ...res.account,
           ...res.profile,
         };
