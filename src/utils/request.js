@@ -69,10 +69,14 @@ export const weapiRequest = (url, config) => {
     headers['X-Forwarded-For'] = ip;
   }
 
+   // 构建完整的请求URL
+   const baseUrl = 'https://music.163.com';
+   const fullUrl = new URL(url.replace('api', 'weapi'), baseUrl);
+
   // 发送请求
   return new Promise((resolve, reject) => {
     GM_xmlhttpRequest({
-      url: url.replace('api', 'weapi') + `?csrf_token=${data.csrf_token}`,
+      url: fullUrl.toString() + `?csrf_token=${data.csrf_token}`,
       method: 'POST',
       responseType: 'json',
       headers,

@@ -16,7 +16,7 @@ export default defineConfig({
       userscript: {
         icon: 'https://vitejs.dev/logo.svg',
         namespace: 'https://github.com/520Qiuyu/CloudMusic',
-        match: ['https://music.163.com/**/*'],
+        match: ['https://music.163.com/**/*', 'https://y.music.163.com/**/*'],
         require: [
           // "https://cdn.jsdelivr.net/npm/antd@5.22.4/dist/reset.min.css",
           'https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js',
