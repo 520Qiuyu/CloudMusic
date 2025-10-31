@@ -12,7 +12,6 @@ dist-ssr
 dist
 dist-sell
 *.local
-/*.pdf
 
 # Editor directories and files
 .vscode/*
