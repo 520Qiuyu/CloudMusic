@@ -33,6 +33,9 @@ import SongResourceManage from '@/views/SongResourceManage';
 import GithubInfo from '../../views/githubInfo';
 
 const ButtonGroup = () => {
+  console.log('import.meta.env.MODE', import.meta.env.MODE);
+  const isSell = import.meta.env.MODE === 'sell';
+
   // 云盘快速上传
   const quickUploadRef = useRef(null);
   const handleQuickUpload = () => {
@@ -136,14 +139,14 @@ const ButtonGroup = () => {
       </Tooltip>
 
       {/* 歌曲自动匹配 */}
-      <Tooltip title={'歌曲自动匹配'} placement='left'>
+      {/*  <Tooltip title={'歌曲自动匹配'} placement='left'>
         <Button
           type='primary'
           icon={<ApiOutlined />}
           onClick={handleMatchCorrect}
           className={styles['button']}
         />
-      </Tooltip>
+      </Tooltip> */}
 
       {/* 云盘音质提升 */}
       {/* <Tooltip title={"云盘音质提升"} placement="left">
@@ -156,24 +159,26 @@ const ButtonGroup = () => {
       </Tooltip> */}
 
       {/* 云盘本地上传 */}
-      <Tooltip title={'云盘本地上传'} placement='left'>
-        <Button
-          type='primary'
-          icon={<UploadOutlined />}
-          onClick={handleLocalUpload}
-          className={styles['button']}
-        />
-      </Tooltip>
+      {!isSell && (
+        <Tooltip title={'云盘本地上传'} placement='left'>
+          <Button
+            type='primary'
+            icon={<UploadOutlined />}
+            onClick={handleLocalUpload}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
 
       {/* 歌曲资源管理 */}
-      <Tooltip title={'歌曲资源管理'} placement='left'>
+      {/* <Tooltip title={'歌曲资源管理'} placement='left'>
         <Button
           type='primary'
           icon={<ConsoleSqlOutlined />}
           onClick={handleSongResource}
           className={styles['button']}
         />
-      </Tooltip>
+      </Tooltip> */}
 
       {/* 网页VIP歌曲A */}
       {/* <Tooltip title={"网页VIP歌曲A"} placement="left">
@@ -216,34 +221,40 @@ const ButtonGroup = () => {
       </Tooltip>
 
       {/* 查看歌单 */}
-      <Tooltip title={'查看歌单'} placement='left'>
-        <Button
-          type='primary'
-          icon={<OrderedListOutlined />}
-          onClick={handlePlayList}
-          className={styles['button']}
-        />
-      </Tooltip>
+      {!isSell && (
+        <Tooltip title={'查看歌单'} placement='left'>
+          <Button
+            type='primary'
+            icon={<OrderedListOutlined />}
+            onClick={handlePlayList}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
 
       {/* testModal */}
-      <Tooltip title={'testModal'} placement='left'>
-        <Button
-          type='primary'
-          icon={<InfoCircleOutlined />}
-          onClick={handleTestModal}
-          className={styles['button']}
-        />
-      </Tooltip>
+      {!isSell && (
+        <Tooltip title={'testModal'} placement='left'>
+          <Button
+            type='primary'
+            icon={<InfoCircleOutlined />}
+            onClick={handleTestModal}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
 
       {/* GitHub信息 */}
-      <Tooltip title={'GitHub信息'} placement='left'>
-        <Button
-          type='primary'
-          icon={<GithubOutlined />}
-          onClick={handleGithubInfo}
-          className={styles['button']}
-        />
-      </Tooltip>
+      {!isSell && (
+        <Tooltip title={'GitHub信息'} placement='left'>
+          <Button
+            type='primary'
+            icon={<GithubOutlined />}
+            onClick={handleGithubInfo}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
 
       {/* 弹窗组件 */}
       <QuickUpload ref={quickUploadRef} />

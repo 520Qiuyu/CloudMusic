@@ -45,6 +45,9 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Build Sell
+        run: pnpm build:sell
+
       - name: Commit dist
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
