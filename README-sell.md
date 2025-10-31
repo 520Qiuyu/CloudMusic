@@ -89,6 +89,9 @@ Tampermonkey（油猴）是一款非常流行的浏览器用户脚本管理器�
 6. 按 `Ctrl + S`（Windows）或 `Cmd + S`（Mac）保存脚本
 7. 关闭编辑器，脚本会自动生效
 
+#### 方法二：点击下方安装
+1. 安装本脚本 [![安装脚本](https://img.shields.io/badge/-%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-blue)](https://raw.githubusercontent.com/520Qiuyu/CloudMusic/main/dist-sell/cloudmusic.user.js)
+
 ---
 
 ## 3. 功能界面

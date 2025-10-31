@@ -38,7 +38,6 @@ export default defineConfig(({ mode }) => {
         },
         build: {
           minify: isSell ? true : false,
-          fileName: isSell ? 'cloudmusic-Sell.user.js' : 'cloudmusic.user.js',
           externalGlobals: [
             ['react', cdn.jsdelivr('React', 'umd/react.production.min.js')],
             [
