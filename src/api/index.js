@@ -277,14 +277,20 @@ export const getAlbumSongList = (id) =>
   });
 
 // 获取歌曲url
-export const getSongUrl = (
-  ids,
-  encodeType = 'flac',
-  level = QUALITY_LEVELS.无损,
-) =>
-  weapiRequest('/api/song/enhance/player/url/v1', {
-    data: { ids, level, encodeType },
+export const getSongUrl = (ids, options) => {
+  const { encodeType = 'flac', level = QUALITY_LEVELS.无损 } = options || {};
+  return weapiRequest('/api/song/enhance/player/url/v1', {
+    data: { ids: JSON.stringify(ids), level, encodeType },
   });
+};
+
+// 获取歌曲url旧版
+export const getSongUrlOld = (ids, options) => {
+  const { br = 999000 } = options || {};
+  return weapiRequest('/api/song/enhance/player/url', {
+    data: { ids: JSON.stringify(ids), br },
+  });
+};
 
 // 获取歌手热门歌曲
 export const getArtistTopSongList = (id) =>
@@ -566,4 +572,27 @@ export const getPlaylistAllData = async (id) => {
   } catch (error) {
     throw error;
   }
+};
+
+/** 获取歌曲歌词 */
+export const getSongLyric = async (id) => {
+  return weapiRequest('/api/song/lyric', {
+    data: {
+      id,
+      tv: -1,
+      lv: -1,
+      rv: -1,
+      kv: -1,
+      _nmclfl: 1,
+    },
+  });
+};
+
+/** 获取专辑详情 */
+export const getAlbumDetail = async (id) => {
+  return weapiRequest(`/api/album/${id}`, {
+    data: {
+      id,
+    },
+  });
 };

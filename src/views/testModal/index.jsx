@@ -6,6 +6,7 @@ import {
   addSongToPlaylist,
   createPlaylist,
   deleteCloudSong,
+  getAlbumDetail,
   getAlbumSongList,
   getArtistAlbumList,
   getArtistAllSongList,
@@ -17,6 +18,7 @@ import {
   getQrKey,
   getQrStatus,
   getSongInfoList,
+  getSongLyric,
   getSongUrl,
   getUserAccount,
   matchLocalSong,
@@ -126,6 +128,16 @@ const TestModal = forwardRef((props, ref) => {
       console.log('error', error);
     }
   };
+  // 获取歌曲歌词
+  const handleGetSongLyric = async () => {
+    console.log('获取歌曲歌词');
+    try {
+      const res = await getSongLyric(songId);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
   // 删除云盘歌曲
   const handleDeleteCloudSong = async () => {
     console.log('删除云盘歌曲');
@@ -143,6 +155,16 @@ const TestModal = forwardRef((props, ref) => {
     console.log('获取专辑歌曲列表');
     try {
       const res = await getAlbumSongList(albumId);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+  // 获取专辑详情
+  const handleGetAlbumDetail = async () => {
+    console.log('获取专辑详情');
+    try {
+      const res = await getAlbumDetail(albumId);
       console.log('res', res);
     } catch (error) {
       console.log('error', error);
@@ -282,7 +304,8 @@ const TestModal = forwardRef((props, ref) => {
   const [playlistId, setPlaylistId] = useState('13508631377');
   const handleGetPlaylist = async () => {
     try {
-      getPlaylistAllData(playlistId);
+      const res = await getPlaylistAllData(playlistId);
+      console.log('res', res);
     } catch (error) {
       console.log('error', error);
     }
@@ -357,12 +380,25 @@ const TestModal = forwardRef((props, ref) => {
               onChange={(e) => setUserId(e.target.value)}
             />
             <Button type='primary' onClick={handleGetPlaylistList}>
-              获取歌单列表
+              获取用户歌单列表
             </Button>
           </Space>
         </Form.Item>
-        {/* 测试获取歌曲URL */}
-        <Form.Item label='获取歌曲URL'>
+        {/* 测试获取歌单详情 */}
+        <Form.Item label='测试获取歌单详情'>
+          <Space>
+            <Input
+              placeholder='请输入歌单id'
+              value={playlistId}
+              onChange={(e) => setPlaylistId(e.target.value)}
+            />
+            <Button type='primary' onClick={handleGetPlaylist}>
+              获取歌单详情
+            </Button>
+          </Space>
+        </Form.Item>
+        {/* 测试获取歌曲信息 */}
+        <Form.Item label='获取歌曲信息'>
           <Space>
             <Input
               placeholder='请输入歌曲id'
@@ -375,6 +411,10 @@ const TestModal = forwardRef((props, ref) => {
             {/* 获取歌曲信息 */}
             <Button type='primary' onClick={handleGetSongInfo}>
               获取歌曲信息
+            </Button>
+            {/* 获取歌曲歌词 */}
+            <Button type='primary' onClick={handleGetSongLyric}>
+              获取歌曲歌词
             </Button>
             <Button type='primary' onClick={handleDeleteCloudSong}>
               删除云盘歌曲
@@ -391,6 +431,10 @@ const TestModal = forwardRef((props, ref) => {
             />
             <Button type='primary' onClick={handleGetAlbumSongList}>
               获取专辑歌曲列表
+            </Button>
+            {/* 获取专辑详情 */}
+            <Button type='primary' onClick={handleGetAlbumDetail}>
+              获取专辑详情
             </Button>
           </Space>
         </Form.Item>
@@ -459,19 +503,6 @@ const TestModal = forwardRef((props, ref) => {
           />
           <Button type='primary' onClick={handleSearchArtist}>
             搜索歌手信息
-          </Button>
-        </Space>
-      </Form.Item>
-      {/* 测试获取歌单信息 */}
-      <Form.Item label='测试获取歌单信息'>
-        <Space>
-          <Input
-            placeholder='请输入歌单id'
-            value={playlistId}
-            onChange={(e) => setPlaylistId(e.target.value)}
-          />
-          <Button type='primary' onClick={handleGetPlaylist}>
-            获取歌单信息
           </Button>
         </Space>
       </Form.Item>

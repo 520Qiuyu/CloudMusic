@@ -1,9 +1,12 @@
+const PRIMARY_COLOR = '#C20C0C';
+
+
 // 网易云音乐主题配置
 const theme = {
   // 品牌色
   token: {
     // 主色
-    colorPrimary: '#C20C0C', // 网易云特征红色
+    colorPrimary: PRIMARY_COLOR, // 网易云特征红色
     colorPrimaryHover: '#D81E06',
     colorPrimaryActive: '#A00606',
 
@@ -23,9 +26,9 @@ const theme = {
     colorBorderSecondary: '#F0F0F0',
 
     // 链接颜色
-    colorLink: '#0C73C2',
-    colorLinkHover: '#2994E7',
-    colorLinkActive: '#095C9C',
+    colorLink: PRIMARY_COLOR,
+    colorLinkHover: '#D81E06',
+    colorLinkActive: '#A00606',
 
     // 成功、警告、错误状态色
     colorSuccess: '#52C41A',
@@ -67,6 +70,13 @@ const theme = {
     },
     Input: {
       colorBorder: '#E1E1E1',
+      colorText: '#333333',
+      colorTextPlaceholder: '#999999',
+      paddingInline: 12,
+      paddingBlock: 8,
+      borderRadius: 4,
+      hoverBorderColor: PRIMARY_COLOR,
+      activeBorderColor: PRIMARY_COLOR,
       algorithm: true,
     },
     Table: {},

@@ -60,6 +60,9 @@ export default defineConfig(({ mode }) => {
         '@': path.resolve(__dirname, './src'),
       },
     },
+    optimizeDeps: {
+      exclude: ['metaflac.wasm'],
+    },
     build: {
       outDir: isSell ? './dist-sell' : './dist',
     },
