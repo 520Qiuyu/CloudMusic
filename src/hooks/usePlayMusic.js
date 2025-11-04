@@ -97,40 +97,42 @@ export const usePlayMusic = () => {
     /** 输出文件 */
     let outputFile = blob;
 
-    /** 获取歌词 */
-    const lyric = await getLyric(id);
+    if (!isProduction()) {
+      /** 获取歌词 */
+      const lyric = await getLyric(id);
 
-    /** 获取封面 */
-    let coverBlob;
-    if (albumMid) {
-      const albumRes = await getAlbumDetail(albumMid);
-      if (albumRes.code === 200) {
-        const albumCover = albumRes.album.blurPicUrl;
-        const { blob, response } = await getFileBlob(
-          albumCover.replace('http://', 'https://'),
-        );
-        coverBlob = blob;
+      /** 获取封面 */
+      let coverBlob;
+      if (albumMid) {
+        const albumRes = await getAlbumDetail(albumMid);
+        if (albumRes.code === 200) {
+          const albumCover = albumRes.album.blurPicUrl;
+          const { blob, response } = await getFileBlob(
+            albumCover.replace('http://', 'https://'),
+          );
+          coverBlob = blob;
+        }
+      }
+
+      switch (finalExt) {
+        case 'flac':
+          outputFile = await writeFlacTagAndPicture(
+            blob,
+            'lyrics',
+            lyric,
+            coverBlob,
+          );
+          break;
+        /*  case 'mp3':
+          outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
+          break; */
+        default:
+          console.log('当前格式不支持');
+          break;
       }
     }
 
-    switch (finalExt) {
-      case 'flac':
-        outputFile = await writeFlacTagAndPicture(
-          blob,
-          'lyrics',
-          lyric,
-          coverBlob,
-        );
-        break;
-      /*  case 'mp3':
-          outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
-          break; */
-      default:
-        console.log('当前格式不支持');
-        break;
-    }
-
-    downloadFileWithBlob(outputFile, name);
+    downloadFileWithBlob(outputFile, fileName);
   };
 
   const pause = () => {

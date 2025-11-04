@@ -338,6 +338,10 @@ export const mergeObjects = (o1, ...objects) => {
   }, o1);
 };
 
+export const isProduction = () => {
+  return import.meta.env.MODE === 'production';
+};
+
 // #endregion ================ 工具函数 ================
 
 // #region ================ 下载功能 ================
