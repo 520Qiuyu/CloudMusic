@@ -84,9 +84,7 @@ export default function UploadList({ singerList }) {
               album: getAlbumTextInSongDetail(song),
               artists,
               dt: formatDuration(song.dt),
-              filename: song.name
-                ? `${song.name}`
-                : undefined,
+              filename: song.name ? `${song.name}` : undefined,
               picUrl:
                 song.al?.picUrl ||
                 'http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg',
@@ -133,11 +131,15 @@ export default function UploadList({ singerList }) {
       },
     },
   };
+  const [searchParams, setSearchParams] = useState({});
   const {
     filteredList: filteredSongList,
     setFilteredList: setFilteredSongList,
     handleFilter: handleSearch,
   } = useFilter(songList, filterConfig);
+  useEffect(() => {
+    handleSearch(searchParams);
+  }, [songList]);
 
   /** 选择 */
   const [selectedRows, setSelectedRows] = useState([]);
@@ -196,8 +198,7 @@ export default function UploadList({ singerList }) {
             type='primary'
             size='small'
             onClick={() => handleUpload(record)}
-            loading={record.uploading}
-          >
+            loading={record.uploading}>
             上传
           </Button>
         );
@@ -462,7 +463,11 @@ export default function UploadList({ singerList }) {
       {singerList?.length ? (
         <div className={styles['upload-list']}>
           <SearchForm
-            onSearch={handleSearch}
+            onSearch={(values) => {
+              console.log('values', values);
+              setSearchParams(values);
+              handleSearch(values);
+            }}
             data={songList}
             options={[
               { label: '歌曲', value: 'name' },
@@ -480,8 +485,8 @@ export default function UploadList({ singerList }) {
             rowKey={({ artists, id, name }) => name + artists + id}
             onChange={handleTableChange}
             pagination={{
-              showQuickJumper:true,
-              showSizeChanger:true,
+              showQuickJumper: true,
+              showSizeChanger: true,
             }}
           />
           {/* 底部操作区 */}
@@ -508,32 +513,28 @@ export default function UploadList({ singerList }) {
               type='primary'
               onClick={() => handleUploadSelected()}
               disabled={!selectedRows.length}
-              loading={uploading}
-            >
+              loading={uploading}>
               批量上传
             </Button>
             {/* 全部上传 */}
             <Button
               type='primary'
               onClick={() => handleUploadAll()}
-              loading={uploading}
-            >
+              loading={uploading}>
               全部上传
             </Button>
             {/* 直接下载 */}
             <Button
               type='primary'
               onClick={() => handleDownloadAll()}
-              loading={downloading}
-            >
+              loading={downloading}>
               直接下载
             </Button>
             {/* 按专辑上传 */}
             <Button
               type='primary'
               onClick={handleUploadByAlbum}
-              loading={uploading}
-            >
+              loading={uploading}>
               按专辑上传
             </Button>
           </div>

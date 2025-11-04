@@ -1,36 +1,22 @@
-import React, { useRef } from 'react';
-import { Button, Tooltip } from 'antd';
 import {
   CloudUploadOutlined,
-  SyncOutlined,
-  UploadOutlined,
-  DownloadOutlined,
-  CustomerServiceOutlined,
-  ImportOutlined,
-  ExportOutlined,
-  InfoCircleOutlined,
-  PlusOutlined,
-  UnlockOutlined,
-  OrderedListOutlined,
-  ApiOutlined,
-  ConsoleSqlOutlined,
   CodeOutlined,
+  CustomerServiceOutlined,
   GithubOutlined,
+  InfoCircleOutlined,
+  OrderedListOutlined,
+  UploadOutlined
 } from '@ant-design/icons';
-import styles from './index.module.scss';
-import QuickUpload from '../../views/quickUpload';
-import QualityUpgrade from '../../views/qualityUpgrade';
-import LocalUpload from '../../views/localUpload';
-import VipSongA from '../../views/vipSongA';
-import VipSongB from '../../views/vipSongB';
-import CloudExport from '../../views/cloudExport';
+import { Button, Tooltip } from 'antd';
+import { useRef } from 'react';
 import CloudImport from '../../views/cloudImport';
-import TestModal from '../../views/testModal';
 import CloudMusicManager from '../../views/cloudMusicManager';
-import PlayList from '../../views/playList';
-import SongMatchCorrect from '../../views/songMatchCorrect';
-import SongResourceManage from '@/views/SongResourceManage';
 import GithubInfo from '../../views/githubInfo';
+import LocalUpload from '../../views/localUpload';
+import PlayList from '../../views/playList';
+import QuickUpload from '../../views/quickUpload';
+import TestModal from '../../views/testModal';
+import styles from './index.module.scss';
 
 const ButtonGroup = () => {
   console.log('import.meta.env.MODE', import.meta.env.MODE);
@@ -48,12 +34,6 @@ const ButtonGroup = () => {
     cloudMusicManagerRef.current.open();
   };
 
-  // 云盘音质提升
-  const qualityUpgradeRef = useRef(null);
-  const handleQualityUpgrade = () => {
-    qualityUpgradeRef.current.open();
-  };
-
   // 云盘本地上传
   const localUploadRef = useRef(null);
   const handleLocalUpload = () => {
@@ -66,42 +46,10 @@ const ButtonGroup = () => {
     playListRef.current.open();
   };
 
-  // 歌曲资源管理
-  const songResourceRef = useRef(null);
-  const handleSongResource = () => {
-    songResourceRef.current.open();
-  };
-
-  // 网页VIP歌曲A
-  const vipSongARef = useRef(null);
-  const handleVipSongA = () => {
-    vipSongARef.current.open();
-  };
-
-  // 网页VIP歌曲B
-  const vipSongBRef = useRef(null);
-  const handleVipSongB = () => {
-    vipSongBRef.current.open();
-  };
-
-  // 云盘导出
-  const cloudExportRef = useRef(null);
-  const handleExport = () => {
-    cloudExportRef.current.open();
-  };
-
   // 云盘导入
   const cloudImportRef = useRef(null);
   const handleImport = () => {
     cloudImportRef.current.open();
-  };
-
-  //
-
-  // 歌曲自动尝试匹配
-  const songMatchCorrectRef = useRef(null);
-  const handleMatchCorrect = () => {
-    songMatchCorrectRef.current.open();
   };
 
   // testModal
@@ -138,26 +86,6 @@ const ButtonGroup = () => {
         />
       </Tooltip>
 
-      {/* 歌曲自动匹配 */}
-      {/*  <Tooltip title={'歌曲自动匹配'} placement='left'>
-        <Button
-          type='primary'
-          icon={<ApiOutlined />}
-          onClick={handleMatchCorrect}
-          className={styles['button']}
-        />
-      </Tooltip> */}
-
-      {/* 云盘音质提升 */}
-      {/* <Tooltip title={"云盘音质提升"} placement="left">
-        <Button
-          type="primary"
-          icon={<CustomerServiceOutlined />}
-          onClick={handleQualityUpgrade}
-          className={styles["button"]}
-        />
-      </Tooltip> */}
-
       {/* 云盘本地上传 */}
       {!isSell && (
         <Tooltip title={'云盘本地上传'} placement='left'>
@@ -169,46 +97,6 @@ const ButtonGroup = () => {
           />
         </Tooltip>
       )}
-
-      {/* 歌曲资源管理 */}
-      {/* <Tooltip title={'歌曲资源管理'} placement='left'>
-        <Button
-          type='primary'
-          icon={<ConsoleSqlOutlined />}
-          onClick={handleSongResource}
-          className={styles['button']}
-        />
-      </Tooltip> */}
-
-      {/* 网页VIP歌曲A */}
-      {/* <Tooltip title={"网页VIP歌曲A"} placement="left">
-        <Button
-          type="primary"
-          icon={<PlayCircleOutlined />}
-          onClick={handleVipSongA}
-          className={styles["button"]}
-        />
-      </Tooltip> */}
-
-      {/* 网页VIP歌曲B */}
-      {/* <Tooltip title={"网页VIP歌曲B"} placement="left">
-        <Button
-          type="primary"
-          icon={<PlayCircleOutlined />}
-          onClick={handleVipSongB}
-          className={styles["button"]}
-        />
-      </Tooltip> */}
-
-      {/* 云盘导出 */}
-      {/* <Tooltip title={"云盘导出"} placement="left">
-        <Button
-          type="primary"
-          icon={<ExportOutlined />}
-          onClick={handleExport}
-          className={styles["button"]}
-        />
-      </Tooltip> */}
 
       {/* 云盘导入 */}
       <Tooltip title={'云盘JSON导入'} placement='left'>
@@ -259,19 +147,12 @@ const ButtonGroup = () => {
       {/* 弹窗组件 */}
       <QuickUpload ref={quickUploadRef} />
       <CloudMusicManager ref={cloudMusicManagerRef} />
-      <QualityUpgrade ref={qualityUpgradeRef} />
       <LocalUpload ref={localUploadRef} />
-      <VipSongA ref={vipSongARef} />
-      <VipSongB ref={vipSongBRef} />
-      <CloudExport ref={cloudExportRef} />
       <CloudImport ref={cloudImportRef} />
       {/* testModal */}
       <TestModal ref={testModalRef} />
       {/* 查看歌单 */}
       <PlayList ref={playListRef} />
-      <SongMatchCorrect ref={songMatchCorrectRef} />
-      {/* 歌曲资源管理 */}
-      <SongResourceManage ref={songResourceRef} />
       <CloudImport ref={cloudImportRef} />
       <GithubInfo ref={githubInfoRef} />
     </div>
