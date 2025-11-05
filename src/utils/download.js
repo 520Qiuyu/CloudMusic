@@ -49,11 +49,21 @@ export const downloadFile = async (url, filename) => {
 
 /**
  * 获取文件blob
- * @param url 文件地址
- * @returns blob
+ * @param {string} url - 文件地址（绝对路径）
+ * @returns {Promise<{blob: Blob, response: Response}>}
+ * @example
+ * const { blob, response } = await getFileBlob('https://example.com/file.flac');
  */
 export const getFileBlob = async (url) => {
-  const response = await fetch(url);
+  // 关键：指定 redirect: 'follow' 防止在 iframe 中触发地址栏跳转
+  const response = await fetch(url, {
+    redirect: 'follow',
+  });
+
+  if (!response.ok) {
+    throw new Error(`获取文件失败: ${response.status} ${response.statusText}`);
+  }
+
   const blob = await response.blob();
   return { blob, response };
 };
@@ -157,16 +167,35 @@ export const downloadAsJson = (
 
 /**
  * 直接下载文件
- * @param file 文件
- * @param name 文件名
+ * @param {Blob} file - 文件 Blob 对象
+ * @param {string} name - 文件名
+ * @example
+ * downloadFileWithBlob(blob, 'song.flac');
  */
 export const downloadFileWithBlob = (file, name) => {
   const blobUrl = window.URL.createObjectURL(file);
   const a = document.createElement('a');
   a.href = blobUrl;
   a.download = name;
+  
+  // 在 iframe 中防止触发地址栏跳转
+  a.style.display = 'none';
+  a.style.position = 'absolute';
+  a.style.left = '-9999px';
+  
+  // 阻止事件冒泡，防止触发父页面导航（但不阻止下载行为）
+  const handleClick = (e) => {
+    e.stopPropagation();
+  };
+  a.addEventListener('click', handleClick, true);
+  
   document.body.appendChild(a);
   a.click();
-  document.body.removeChild(a);
-  window.URL.revokeObjectURL(blobUrl);
+  
+  // 延迟清理，确保下载已开始
+  setTimeout(() => {
+    a.removeEventListener('click', handleClick);
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(blobUrl);
+  }, 100);
 };
