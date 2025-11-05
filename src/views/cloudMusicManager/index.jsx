@@ -19,6 +19,7 @@ import {
   matchCloudSong,
 } from '../../api';
 import {
+  isMobile,
   normalizeString,
   promiseLimit,
   sleep,
@@ -232,7 +233,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       dataIndex: 'simpleSong',
       key: 'name',
       width: 300,
-      fixed: 'left',
+      fixed: !isMobile() ? 'left' : undefined,
       sorter: (a, b) => a.simpleSong.name?.localeCompare(b.simpleSong.name),
       sortDirections: ['ascend', 'descend'],
       render: renderSongInfo,
@@ -247,7 +248,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
         const bArtists = b.simpleSong.ar?.map((a) => a.name).join(',');
         return aArtists?.localeCompare(bArtists);
       },
-      fixed: 'left',
+      fixed: !isMobile() ? 'left' : undefined,
       sortDirections: ['ascend', 'descend'],
       ellipsis: true,
       render: null,
@@ -257,7 +258,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       dataIndex: 'simpleSong',
       key: 'album',
       width: 60,
-      fixed: 'left',
+      fixed: !isMobile() ? 'left' : undefined,
       sorter: (a, b) =>
         a.simpleSong.al?.name?.localeCompare(b.simpleSong.al?.name),
       sortDirections: ['ascend', 'descend'],

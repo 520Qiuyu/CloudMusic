@@ -180,9 +180,14 @@ ${JSON.stringify(
         columns={columns}
         rowKey='id'
         scroll={{ y: 400 }}
+        pagination={{
+          showQuickJumper: true,
+          showSizeChanger: true,
+        }}
         rowSelection={{
           type: 'checkbox',
           fixed: true,
+          preserveSelectedRowKeys: true,
           onChange: (selectedRowKeys, selectedRows) => {
             setSelectedRows(selectedRows);
           },
