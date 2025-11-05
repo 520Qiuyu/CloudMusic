@@ -415,7 +415,7 @@ function SongList(props, ref) {
         const options = getQualityTags(record);
         const defaultLevel =
           options.find((option) => option.value === QUALITY_LEVELS.无损)
-            ?.value || options[0].value;
+            ?.value || options[0]?.value;
         return (
           <Select
             options={options}
