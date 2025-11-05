@@ -30,17 +30,21 @@ export const downloadFile = async (url, filename) => {
     if (!url || !filename) {
       throw new Error('URL和文件名不能为空');
     }
-    const response = await fetch(url.replace('http://', 'https://'));
-    if (!response.ok) {
-      throw new Error(`下载失败: ${response.statusText}`);
-    }
-    const blob = await response.blob();
-    const objectUrl = URL.createObjectURL(blob);
     const link = document.createElement('a');
-    link.href = objectUrl;
+    link.href = url.replace('http://', 'https://');
     link.download = filename;
+    link.style.display = 'none';
+    link.style.position = 'absolute';
+    link.style.left = '-9999px';
+
+    const handleClick = (e) => {
+      e.stopPropagation();
+    };
+    link.addEventListener('click', handleClick, true);
     link.click();
-    URL.revokeObjectURL(objectUrl);
+    setTimeout(() => {
+      link.removeEventListener('click', handleClick);
+    }, 100);
   } catch (error) {
     console.error('文件下载出错:', error);
     throw error;
@@ -69,33 +73,6 @@ export const getFileBlob = async (url) => {
 };
 
 /**
- * 通过blob方式下载文件（适用于需要指定文件名的场景）
- * @param url 文件地址
- * @param name 文件名
- */
-export const downloadWithFileName = async (url, name) => {
-  try {
-    const { blob, response } = await getFileBlob(url);
-    const blobUrl = window.URL.createObjectURL(blob);
-
-    // 获取url的后缀
-    const suffix = url.split('?')[0].split('.').pop();
-
-    const a = document.createElement('a');
-    a.href = blobUrl;
-    a.download = `${name}.${suffix}`;
-    document.body.appendChild(a);
-    a.click();
-
-    // 清理
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(blobUrl);
-  } catch (error) {
-    console.error('下载失败:', error);
-  }
-};
-
-/**
  * 直接打开下载（适用于后端已经设置了文件名的场景）
  * @param url 文件地址
  */
@@ -119,11 +96,7 @@ export const downloadDirectly = (url) => {
  *   replacer: (key, value) => value === null ? undefined : value // 自定义replacer
  * });
  */
-export const downloadAsJson = (
-  data,
-  filename,
-  options = {},
-) => {
+export const downloadAsJson = (data, filename, options = {}) => {
   try {
     // 处理选项
     const { space = 2, timestamp = false } = options;
@@ -148,14 +121,7 @@ export const downloadAsJson = (
     }
 
     // 创建下载链接
-    const a = document.createElement('a');
-    a.href = blobUrl;
-    a.download = `${finalFilename}.json`;
-    document.body.appendChild(a);
-    a.click();
-
-    // 清理
-    document.body.removeChild(a);
+    downloadFile(blobUrl, `${finalFilename}.json`);
     window.URL.revokeObjectURL(blobUrl);
 
     return true;
@@ -177,21 +143,21 @@ export const downloadFileWithBlob = (file, name) => {
   const a = document.createElement('a');
   a.href = blobUrl;
   a.download = name;
-  
+
   // 在 iframe 中防止触发地址栏跳转
   a.style.display = 'none';
   a.style.position = 'absolute';
   a.style.left = '-9999px';
-  
+
   // 阻止事件冒泡，防止触发父页面导航（但不阻止下载行为）
   const handleClick = (e) => {
     e.stopPropagation();
   };
   a.addEventListener('click', handleClick, true);
-  
+
   document.body.appendChild(a);
   a.click();
-  
+
   // 延迟清理，确保下载已开始
   setTimeout(() => {
     a.removeEventListener('click', handleClick);

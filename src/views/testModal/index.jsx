@@ -199,11 +199,12 @@ const TestModal = forwardRef((props, ref) => {
     try {
       const res = await getArtistAlbumList(artistId);
       console.log('res', res);
+      if(res.code === 200){
       const downloadTask = res.map(
         (item) => () =>
           downloadFile(item.cover.split('?')[0], item.name + '.jpg'),
       );
-      await promiseLimit(downloadTask, 1);
+      await promiseLimit(downloadTask, 1);}
     } catch (error) {
       console.log('error', error);
     }

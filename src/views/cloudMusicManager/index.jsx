@@ -668,6 +668,9 @@ const CloudMusicManager = forwardRef((props, ref) => {
         <div className={styles.actions}>
           {/* 区间选择 输入两个坐标 选择排序后的其中的歌曲 */}
           <Input
+            style={{
+              width: 100,
+            }}
             value={range[0]}
             onChange={(e) => {
               setRange([+e.target.value || undefined, range[1]]);
@@ -675,6 +678,9 @@ const CloudMusicManager = forwardRef((props, ref) => {
             placeholder='起始位置'
           />
           <Input
+            style={{
+              width: 100,
+            }}
             value={range[1]}
             onChange={(e) => setRange([range[0], +e.target.value || undefined])}
             placeholder='结束位置'

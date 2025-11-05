@@ -1,9 +1,11 @@
-import { getPlaylistAllData } from '@/api';
 import SearchForm from '@/components/SearchForm';
 import { QUALITY_LEVELS } from '@/constant';
 import useFilter from '@/hooks/useFilter';
+import { useGetSongListDetail } from '@/hooks/useGetSongListDetail';
 import { usePlayMusic } from '@/hooks/usePlayMusic';
 import { useVisible } from '@/hooks/useVisible';
+import { msgWarning } from '@/utils/modal';
+import { getQualityTags } from '@/utils/musicQuality';
 import {
   DownloadOutlined,
   FileOutlined,
@@ -36,7 +38,7 @@ function SongList(props, ref) {
         setPlaylistId(id);
       },
       onReset() {
-        setSongList([]);
+        resetSongList();
         setPlaylistId(null);
       },
     },
@@ -46,25 +48,18 @@ function SongList(props, ref) {
   const { getUrl, play, pause, isPlaying, download, playPlayList } =
     usePlayMusic();
 
-  const [loading, setLoading] = useState(false);
-  const [songList, setSongList] = useState([]);
+  const {
+    getSongListData,
+    loading,
+    songList,
+    resetSongList,
+    downloadSongList,
+    downloading,
+    downloadSongListAsJson,
+  } = useGetSongListDetail();
   const [playlistId, setPlaylistId] = useState(null);
   const [selectedRows, setSelectedRows] = useState([]);
 
-  // 获取歌曲列表
-  const getSongListData = async (playlistId) => {
-    if (!playlistId) return;
-    try {
-      setLoading(true);
-      const res = await getPlaylistAllData(playlistId);
-      console.log('res', res);
-      setSongList(res);
-    } catch (error) {
-      console.log('error', error);
-    } finally {
-      setLoading(false);
-    }
-  };
   useEffect(() => {
     if (playlistId && visible) {
       getSongListData(playlistId);
@@ -528,18 +523,18 @@ function SongList(props, ref) {
   };
   /** 下载当前歌单 */
   const handleDownloadAll = async () => {
-    if (!currentDissid) return;
+    if (!filteredSongList.length) return msgWarning('暂无歌曲下载');
     try {
-      await downloadPlaylistSong(currentDissid);
+      await downloadSongList(filteredSongList);
     } catch (error) {
       console.error('下载歌单失败:', error);
     }
   };
   /** 下载当前歌单JSON */
   const handleDownloadAllJson = async () => {
-    if (!currentDissid) return;
+    if (!filteredSongList.length) return;
     try {
-      await getPlaylistDownloadJson(currentDissid);
+      await downloadSongListAsJson(filteredSongList);
     } catch (error) {
       console.error('下载歌单JSON失败:', error);
     }
@@ -554,11 +549,17 @@ function SongList(props, ref) {
           onClick={handlePlayAll}>
           播放全部
         </Button>
-        <Button icon={<DownloadOutlined />} onClick={handleDownloadAll}>
-          下载全部
+        <Button
+          icon={<DownloadOutlined />}
+          loading={downloading}
+          onClick={handleDownloadAll}>
+          下载全部 ({selectedRows.length || filteredSongList.length})
         </Button>
-        <Button icon={<FileOutlined />} onClick={handleDownloadAllJson}>
-          下载JSON
+        <Button
+          icon={<FileOutlined />}
+          loading={downloading}
+          onClick={handleDownloadAllJson}>
+          下载JSON ({selectedRows.length || filteredSongList.length})
         </Button>
       </Space>
     );
@@ -608,6 +609,7 @@ function SongList(props, ref) {
         rowSelection={{
           type: 'checkbox',
           fixed: true,
+          preserveSelectedRowKeys: true,
           onChange: (selectedRowKeys, selectedRows) => {
             setSelectedRows(selectedRows);
           },
@@ -625,22 +627,6 @@ const formatDuration = (ms) => {
   const minutes = time.minutes();
   const seconds = time.seconds();
   return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-};
-
-// 获取音质标签
-const getQualityTags = (song) => {
-  const tags = [];
-  if (song.hr)
-    tags.push({
-      label: 'Hi-Res',
-      color: '#f50',
-      value: QUALITY_LEVELS['Hi-Res'],
-    });
-  if (song.sq)
-    tags.push({ label: 'SQ', color: '#87d068', value: QUALITY_LEVELS.无损 });
-  if (song.h)
-    tags.push({ label: 'HQ', color: '#2db7f5', value: QUALITY_LEVELS.较高 });
-  return tags;
 };
 
 // 获取歌曲标记

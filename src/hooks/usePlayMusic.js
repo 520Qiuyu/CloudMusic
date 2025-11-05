@@ -147,6 +147,7 @@ export const usePlayMusic = () => {
     currentTime,
     duration,
     getUrl,
+    getLyric,
     play,
     pause,
     playPlayList,
