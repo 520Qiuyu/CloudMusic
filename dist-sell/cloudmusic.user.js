@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-CbrmS8oQ.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-DMnS0z6v.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,9 +44,9 @@ System.register("./__entry.js", ['./__monkey.entry-CbrmS8oQ.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-CbrmS8oQ.js", ['react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge'], (function (exports, module) {
+System.register("./__monkey.entry-DMnS0z6v.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, message, Input, Modal, Table, Upload, Button, Tag, Typography, Avatar, Progress, Tabs, Form, Space, ConfigProvider, Select, Image, Spin, Tooltip, Empty, require$$0$1, UploadOutlined, GithubOutlined, InboxOutlined, PauseCircleFilled, PlayCircleFilled, CopyrightOutlined, PlayCircleOutlined, DownloadOutlined, FileOutlined, PauseCircleOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined, forge;
+  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Form, Input, Tabs, Pagination, Table, Upload, Button, Tag, Typography, Avatar, Progress, Space, ConfigProvider, Select, Image, Tooltip, Spin, Empty, require$$0$1, forge, UploadOutlined, GithubOutlined, InboxOutlined, PauseCircleFilled, PlayCircleFilled, PauseCircleOutlined, PlayCircleOutlined, DownloadOutlined, SaveOutlined, CopyrightOutlined, FileOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined, CopyOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
@@ -57,10 +57,15 @@ System.register("./__monkey.entry-CbrmS8oQ.js", ['react', 'antd', 'react-dom', '
       useRef = module.useRef;
       useImperativeHandle = module.useImperativeHandle;
       require$$0 = module.default;
+      useCallback = module.useCallback;
+      useLayoutEffect = module.useLayoutEffect;
     }, module => {
       message = module.message;
-      Input = module.Input;
       Modal = module.Modal;
+      Form = module.Form;
+      Input = module.Input;
+      Tabs = module.Tabs;
+      Pagination = module.Pagination;
       Table = module.Table;
       Upload = module.Upload;
       Button = module.Button;
@@ -68,33 +73,33 @@ System.register("./__monkey.entry-CbrmS8oQ.js", ['react', 'antd', 'react-dom', '
       Typography = module.Typography;
       Avatar = module.Avatar;
       Progress = module.Progress;
-      Tabs = module.Tabs;
-      Form = module.Form;
       Space = module.Space;
       ConfigProvider = module.ConfigProvider;
       Select = module.Select;
       Image = module.Image;
-      Spin = module.Spin;
       Tooltip = module.Tooltip;
+      Spin = module.Spin;
       Empty = module.Empty;
     }, module => {
       require$$0$1 = module.default;
+    }, module => {
+      forge = module.default;
     }, module => {
       UploadOutlined = module.UploadOutlined;
       GithubOutlined = module.GithubOutlined;
       InboxOutlined = module.InboxOutlined;
       PauseCircleFilled = module.PauseCircleFilled;
       PlayCircleFilled = module.PlayCircleFilled;
-      CopyrightOutlined = module.CopyrightOutlined;
+      PauseCircleOutlined = module.PauseCircleOutlined;
       PlayCircleOutlined = module.PlayCircleOutlined;
       DownloadOutlined = module.DownloadOutlined;
+      SaveOutlined = module.SaveOutlined;
+      CopyrightOutlined = module.CopyrightOutlined;
       FileOutlined = module.FileOutlined;
-      PauseCircleOutlined = module.PauseCircleOutlined;
       CloudUploadOutlined = module.CloudUploadOutlined;
       CustomerServiceOutlined = module.CustomerServiceOutlined;
       CodeOutlined = module.CodeOutlined;
-    }, module => {
-      forge = module.default;
+      CopyOutlined = module.CopyOutlined;
     }],
     execute: (function () {
 
@@ -114,7 +119,7 @@ System.register("./__monkey.entry-CbrmS8oQ.js", ['react', 'antd', 'react-dom', '
 
       const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
-      importCSS(' @charset "UTF-8";._search-form_1aabt_1{padding:16px 0}._songInfoColumn_18snm_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_18snm_1 ._songIndex_18snm_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_18snm_1 ._songCover_18snm_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover{transform:scale(1.05)}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._btnWrapper_18snm_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._songCoverImg_18snm_33{filter:brightness(.85)}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._songCoverImg_18snm_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_18snm_1 ._songInfo_18snm_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._songName_18snm_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84,._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84{max-width:160px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_18snm_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_18snm_1 10s linear infinite}._currentSong_18snm_102 td{background:var(--background)!important;animation:_rotate_18snm_1 10s linear infinite}@keyframes _rotate_18snm_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_18snm_121{background-color:#f06161}._matchError_18snm_121 td{background-color:#f06161!important}._footer_18snm_128{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_18snm_128 ._actions_18snm_136{display:flex;gap:8px}._stats_18snm_141{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_18snm_141 ._size_18snm_149{color:#666}._stats_18snm_141 ._divider_18snm_152{color:#999;margin:0 4px}._stats_18snm_141 .ant-tag{margin:0}._playlist_18snm_160 .ant-modal-body{padding-bottom:0}._autoAddContent_18snm_164 ._title_18snm_164{font-size:16px;margin-bottom:8px}._autoAddContent_18snm_164 ._statsWrapper_18snm_168{margin-bottom:16px}._autoAddContent_18snm_164 ._statsContent_18snm_171{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._label_18snm_178{color:#666}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._value_18snm_181{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_18snm_164 ._listHeader_18snm_186{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_18snm_164 ._listWrapper_18snm_192{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_18snm_164 ._listItem_18snm_213{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_18snm_164 ._listItem_18snm_213:hover{background:#f5f5f5}._autoAddContent_18snm_164 ._listItem_18snm_213:last-child{margin-bottom:0}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemName_18snm_229{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemCount_18snm_235{color:#1890ff;margin-left:8px}._deleteConfirmation_18snm_240{font-size:14px}._deleteConfirmation_18snm_240 ._title_18snm_164{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_18snm_240 ._title_18snm_164 ._count_18snm_248{color:#1890ff}._deleteConfirmation_18snm_240 ._songs_18snm_251{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:hover{background:#f0f0f0}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:not(:last-child){margin-bottom:4px}._deleteConfirmation_18snm_240 ._warning_18snm_273{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._text_18snm_280{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._icon_18snm_287{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_18snm_301{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_18snm_301 ._singer-option-content_18snm_314{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-name_18snm_329{font-size:14px}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-id_18snm_332{font-size:13px}._singer-option_18snm_301:hover ._singer-option-content_18snm_314{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_18snm_340{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_18snm_340 ._song-name_18snm_346{font-size:14px;color:#333;font-weight:500}._song-label_18snm_340 ._tag-group_18snm_351{display:flex;gap:8px;flex-wrap:wrap}._song-option_18snm_357{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_18snm_357:hover{background-color:#f5f5f5}._song-option_18snm_357 ._song-info_18snm_370{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_18snm_357 ._song-name_18snm_346{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_18snm_357 ._tag-group_18snm_351{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_18snm_357 ._tag-group_18snm_351 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_18snm_357 ._album-cover_18snm_399{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_18snm_357 ._album-cover_18snm_399:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_18snm_415{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_18snm_415 ._song-info_18snm_370{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._artist-info_18snm_431{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._album-info_18snm_439{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._githubContainer_b3krt_2{display:flex;flex-direction:column;align-items:center;padding:20px;text-align:center}._githubContainer_b3krt_2 ._userInfo_b3krt_9{display:flex;align-items:center;gap:16px;margin-bottom:20px}._githubContainer_b3krt_2 ._username_b3krt_15{margin:0}._githubContainer_b3krt_2 ._starCount_b3krt_18{display:block;color:#666;font-size:14px;margin-top:4px}._githubContainer_b3krt_2 ._bio_b3krt_24{color:#666;margin-bottom:20px}._githubContainer_b3krt_2 ._features_b3krt_28{width:100%;margin-bottom:24px;text-align:left}._githubContainer_b3krt_2 ._features_b3krt_28 h5{text-align:center;margin-bottom:16px}._githubContainer_b3krt_2 ._featureList_b3krt_37{list-style:none;padding:0;margin:0;max-height:300px;overflow-y:auto}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar{width:6px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-track{background-color:#f5f5f5}._githubContainer_b3krt_2 ._featureList_b3krt_37 li{margin-bottom:12px;font-size:14px;line-height:1.5;color:#666}._githubContainer_b3krt_2 ._profileButton_b3krt_61{background:#24292e;border-color:#24292e}._githubContainer_b3krt_2 ._profileButton_b3krt_61:hover{background:#2f363d;border-color:#2f363d}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_15nrq_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_15nrq_1 ._cover_15nrq_8{width:60px;height:60px;border-radius:6px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_15nrq_1 ._cover_15nrq_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_15nrq_1 ._cover_15nrq_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_15nrq_1 ._cover_15nrq_8:hover:before{opacity:1}._playlist-info_15nrq_1 ._cover_15nrq_8:active{transform:scale(1.02)}._playlist-info_15nrq_1 ._info_15nrq_40{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_15nrq_1 ._info_15nrq_40 ._name_15nrq_47{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_15nrq_1 ._info_15nrq_40 ._creator_15nrq_58{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-item_15nrq_69{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_15nrq_69:hover{background-color:#fafafa!important}._playlist-item_15nrq_69:active,._playlist-item_15nrq_69:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_1rogj_22 ._select_1rogj_22{width:100%}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26{display:flex;flex-direction:column;justify-content:space-between;height:400px}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26 ._btn-group_1rogj_32{display:flex;justify-content:flex-end}._singer-choose_1rogj_26 ._option-label_1rogj_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._singer-name_1rogj_43{font-weight:500}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._tag-group_1rogj_46 ._tag_1rogj_46:not(:last-child){margin-right:8px}._upload-list_1rogj_50 .ant-table{margin:16px 0}._upload-footer_1rogj_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_1rogj_62{color:#666;font-size:13px;margin-right:auto}._upload-stats_1rogj_62 ._size-text_1rogj_67{color:#999}._upload-stats_1rogj_62 ._divider_1rogj_70{margin:0 8px;color:#d9d9d9}._upload-confirm_1rogj_75{padding:16px 0;font-size:14px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79:last-child{margin-bottom:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._label_1rogj_87{color:#666;width:80px;flex-shrink:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92{color:#333;font-weight:500}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92 ._size_1rogj_67{margin-left:4px;color:#999;font-weight:400}._upload-progress_1rogj_102 ._progress-header_1rogj_102{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._progress-info_1rogj_109{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._percentage_1rogj_113{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_1rogj_102 ._progress-list_1rogj_118{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123:last-child{border-bottom:none}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133{flex:1;min-width:0;padding-right:16px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._name_1rogj_138{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._artist_1rogj_142{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_1rogj_148 .ant-modal-body{padding:24px}._uploadProgressModal_1rogj_148 ._progressContent_1rogj_151{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._detail_1rogj_167{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._label_1rogj_87{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._value_1rogj_92 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193{width:100%}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedTitle_1rogj_196{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._songName_1rogj_208{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._errorMsg_1rogj_213{font-size:12px;color:#ff4d4f}._uploadModal_1rogj_218 .ant-modal-body{padding:24px}._progressSection_1rogj_222{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._progressInfo_1rogj_157 ._count_1rogj_241{font-size:14px;color:#666;margin-top:4px}._statsContainer_1rogj_172{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._statsContainer_1rogj_172 ._statsTag_1rogj_256{padding:4px 12px;font-size:14px}._songList_1rogj_261{max-height:300px;overflow-y:auto;padding-right:4px}._songList_1rogj_261::-webkit-scrollbar{width:6px}._songList_1rogj_261::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_1rogj_261::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_1rogj_277{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_1rogj_277:not(:last-child){margin-bottom:8px}._songItem_1rogj_277:hover{background:#f5f5f5}._songInfo_1rogj_292{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_1rogj_292 ._songName_1rogj_208{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_1rogj_292 ._artistName_1rogj_306{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
+      importCSS(' @charset "UTF-8";._search-form_1aabt_1{padding:16px 0}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._songInfoColumn_18snm_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_18snm_1 ._songIndex_18snm_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_18snm_1 ._songCover_18snm_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover{transform:scale(1.05)}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._btnWrapper_18snm_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._songCoverImg_18snm_33{filter:brightness(.85)}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._songCoverImg_18snm_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_18snm_1 ._songInfo_18snm_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._songName_18snm_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84,._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84{max-width:160px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_18snm_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_18snm_1 10s linear infinite}._currentSong_18snm_102 td{background:var(--background)!important;animation:_rotate_18snm_1 10s linear infinite}@keyframes _rotate_18snm_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_18snm_121{background-color:#f06161}._matchError_18snm_121 td{background-color:#f06161!important}._footer_18snm_128{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_18snm_128 ._actions_18snm_136{display:flex;gap:8px}._stats_18snm_141{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_18snm_141 ._size_18snm_149{color:#666}._stats_18snm_141 ._divider_18snm_152{color:#999;margin:0 4px}._stats_18snm_141 .ant-tag{margin:0}._playlist_18snm_160 .ant-modal-body{padding-bottom:0}._autoAddContent_18snm_164 ._title_18snm_164{font-size:16px;margin-bottom:8px}._autoAddContent_18snm_164 ._statsWrapper_18snm_168{margin-bottom:16px}._autoAddContent_18snm_164 ._statsContent_18snm_171{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._label_18snm_178{color:#666}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._value_18snm_181{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_18snm_164 ._listHeader_18snm_186{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_18snm_164 ._listWrapper_18snm_192{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_18snm_164 ._listItem_18snm_213{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_18snm_164 ._listItem_18snm_213:hover{background:#f5f5f5}._autoAddContent_18snm_164 ._listItem_18snm_213:last-child{margin-bottom:0}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemName_18snm_229{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemCount_18snm_235{color:#1890ff;margin-left:8px}._deleteConfirmation_18snm_240{font-size:14px}._deleteConfirmation_18snm_240 ._title_18snm_164{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_18snm_240 ._title_18snm_164 ._count_18snm_248{color:#1890ff}._deleteConfirmation_18snm_240 ._songs_18snm_251{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:hover{background:#f0f0f0}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:not(:last-child){margin-bottom:4px}._deleteConfirmation_18snm_240 ._warning_18snm_273{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._text_18snm_280{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._icon_18snm_287{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_18snm_301{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_18snm_301 ._singer-option-content_18snm_314{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-name_18snm_329{font-size:14px}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-id_18snm_332{font-size:13px}._singer-option_18snm_301:hover ._singer-option-content_18snm_314{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_18snm_340{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_18snm_340 ._song-name_18snm_346{font-size:14px;color:#333;font-weight:500}._song-label_18snm_340 ._tag-group_18snm_351{display:flex;gap:8px;flex-wrap:wrap}._song-option_18snm_357{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_18snm_357:hover{background-color:#f5f5f5}._song-option_18snm_357 ._song-info_18snm_370{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_18snm_357 ._song-name_18snm_346{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_18snm_357 ._tag-group_18snm_351{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_18snm_357 ._tag-group_18snm_351 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_18snm_357 ._album-cover_18snm_399{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_18snm_357 ._album-cover_18snm_399:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_18snm_415{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_18snm_415 ._song-info_18snm_370{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._artist-info_18snm_431{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._album-info_18snm_439{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._githubContainer_b3krt_2{display:flex;flex-direction:column;align-items:center;padding:20px;text-align:center}._githubContainer_b3krt_2 ._userInfo_b3krt_9{display:flex;align-items:center;gap:16px;margin-bottom:20px}._githubContainer_b3krt_2 ._username_b3krt_15{margin:0}._githubContainer_b3krt_2 ._starCount_b3krt_18{display:block;color:#666;font-size:14px;margin-top:4px}._githubContainer_b3krt_2 ._bio_b3krt_24{color:#666;margin-bottom:20px}._githubContainer_b3krt_2 ._features_b3krt_28{width:100%;margin-bottom:24px;text-align:left}._githubContainer_b3krt_2 ._features_b3krt_28 h5{text-align:center;margin-bottom:16px}._githubContainer_b3krt_2 ._featureList_b3krt_37{list-style:none;padding:0;margin:0;max-height:300px;overflow-y:auto}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar{width:6px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-track{background-color:#f5f5f5}._githubContainer_b3krt_2 ._featureList_b3krt_37 li{margin-bottom:12px;font-size:14px;line-height:1.5;color:#666}._githubContainer_b3krt_2 ._profileButton_b3krt_61{background:#24292e;border-color:#24292e}._githubContainer_b3krt_2 ._profileButton_b3krt_61:hover{background:#2f363d;border-color:#2f363d}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_15nrq_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_15nrq_1 ._cover_15nrq_8{width:60px;height:60px;border-radius:6px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_15nrq_1 ._cover_15nrq_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_15nrq_1 ._cover_15nrq_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_15nrq_1 ._cover_15nrq_8:hover:before{opacity:1}._playlist-info_15nrq_1 ._cover_15nrq_8:active{transform:scale(1.02)}._playlist-info_15nrq_1 ._info_15nrq_40{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_15nrq_1 ._info_15nrq_40 ._name_15nrq_47{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_15nrq_1 ._info_15nrq_40 ._creator_15nrq_58{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-item_15nrq_69{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_15nrq_69:hover{background-color:#fafafa!important}._playlist-item_15nrq_69:active,._playlist-item_15nrq_69:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_1rogj_22 ._select_1rogj_22{width:100%}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26{display:flex;flex-direction:column;justify-content:space-between;height:400px}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26 ._btn-group_1rogj_32{display:flex;justify-content:flex-end}._singer-choose_1rogj_26 ._option-label_1rogj_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._singer-name_1rogj_43{font-weight:500}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._tag-group_1rogj_46 ._tag_1rogj_46:not(:last-child){margin-right:8px}._upload-list_1rogj_50 .ant-table{margin:16px 0}._upload-footer_1rogj_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_1rogj_62{color:#666;font-size:13px;margin-right:auto}._upload-stats_1rogj_62 ._size-text_1rogj_67{color:#999}._upload-stats_1rogj_62 ._divider_1rogj_70{margin:0 8px;color:#d9d9d9}._upload-confirm_1rogj_75{padding:16px 0;font-size:14px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79:last-child{margin-bottom:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._label_1rogj_87{color:#666;width:80px;flex-shrink:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92{color:#333;font-weight:500}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92 ._size_1rogj_67{margin-left:4px;color:#999;font-weight:400}._upload-progress_1rogj_102 ._progress-header_1rogj_102{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._progress-info_1rogj_109{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._percentage_1rogj_113{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_1rogj_102 ._progress-list_1rogj_118{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123:last-child{border-bottom:none}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133{flex:1;min-width:0;padding-right:16px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._name_1rogj_138{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._artist_1rogj_142{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_1rogj_148 .ant-modal-body{padding:24px}._uploadProgressModal_1rogj_148 ._progressContent_1rogj_151{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._detail_1rogj_167{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._label_1rogj_87{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._value_1rogj_92 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193{width:100%}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedTitle_1rogj_196{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._songName_1rogj_208{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._errorMsg_1rogj_213{font-size:12px;color:#ff4d4f}._uploadModal_1rogj_218 .ant-modal-body{padding:24px}._progressSection_1rogj_222{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._progressInfo_1rogj_157 ._count_1rogj_241{font-size:14px;color:#666;margin-top:4px}._statsContainer_1rogj_172{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._statsContainer_1rogj_172 ._statsTag_1rogj_256{padding:4px 12px;font-size:14px}._songList_1rogj_261{max-height:300px;overflow-y:auto;padding-right:4px}._songList_1rogj_261::-webkit-scrollbar{width:6px}._songList_1rogj_261::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_1rogj_261::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_1rogj_277{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_1rogj_277:not(:last-child){margin-bottom:8px}._songItem_1rogj_277:hover{background:#f5f5f5}._songInfo_1rogj_292{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_1rogj_292 ._songName_1rogj_208{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_1rogj_292 ._artistName_1rogj_306{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
 
       var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
       function getDefaultExportFromCjs(x) {
@@ -174,6 +179,179 @@ System.register("./__monkey.entry-CbrmS8oQ.js", ['react', 'antd', 'react-dom', '
       }
       var clientExports = requireClient();
       const ReactDOM = getDefaultExportFromCjs(clientExports);
+      var _GM_xmlhttpRequest = (() => typeof GM_xmlhttpRequest != "undefined" ? GM_xmlhttpRequest : void 0)();
+      var _unsafeWindow = (() => typeof unsafeWindow != "undefined" ? unsafeWindow : void 0)();
+      const IV = "0102030405060708";
+      const PRESET_KEY = "0CoJUm6Qyw8W8jud";
+      const PUBLIC_KEY = "-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7clFSs6sXqHauqKWqdtLkF2KexO40H1YTX8z2lSgBBOAxLsvaklV8k4cBFK9snQXE9/DDaFt6Rr7iVZMldczhC0JNgTz+SHXT6CBHuX3e9SdB1Ua44oncaTWz7OBGLbCiK45wIDAQAB\n-----END PUBLIC KEY-----";
+      const BASE62 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      const aesEncrypt = (text2, key, iv) => {
+        const cipher = forge.cipher.createCipher("AES-CBC", key);
+        cipher.start({ iv });
+        cipher.update(forge.util.createBuffer(text2, "utf8"));
+        cipher.finish();
+        return forge.util.encode64(cipher.output.getBytes());
+      };
+      const rsaEncrypt = (text2, key) => {
+        const publicKey = forge.pki.publicKeyFromPem(key);
+        const encrypted = publicKey.encrypt(text2, "NONE");
+        return forge.util.bytesToHex(encrypted);
+      };
+      const weapi = (object) => {
+        const text2 = JSON.stringify(object);
+        const secretKey = Array.from(
+          { length: 16 },
+          () => BASE62.charAt(Math.floor(Math.random() * 62))
+        ).join("");
+        return {
+          params: aesEncrypt(aesEncrypt(text2, PRESET_KEY, IV), secretKey, IV),
+          encSecKey: rsaEncrypt(secretKey.split("").reverse().join(""), PUBLIC_KEY)
+        };
+      };
+      const CLIENT_CONFIG = {
+        web: {
+          cookie: true,
+          userAgent: void 0
+        },
+        android: {
+          cookie: "os=android;appver=9.1.78;channel=netease;osver=14;buildver=241009150147;",
+          userAgent: "NeteaseMusic/9.1.78.241009150147(9001078);Dalvik/2.1.0 (Linux; U; Android 14; V2318A Build/TP1A.220624.014)"
+        },
+        pc: {
+          cookie: "os=pc;appver=3.0.18.203152;channel=netease;osver=Microsoft-Windows-10-Professional-build-19045-64bit;",
+          userAgent: "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36 Chrome/91.0.4472.164 NeteaseMusicDesktop/3.0.18.203152"
+        }
+      };
+      const weapiRequest = (url, config) => {
+        const {
+          data = {},
+          clientType = "pc",
+          ip,
+          onerror,
+          onload,
+          originResponse = false,
+          ...rest
+        } = config;
+        const csrfToken = document.cookie.match(/_csrf=([^(;|$)]+)/);
+        data.csrf_token = csrfToken ? csrfToken[1] : "";
+        const encryptedData = weapi(data);
+        console.log({
+          url,
+          data,
+          encryptedData
+        });
+        const headers = {
+          "content-type": "application/x-www-form-urlencoded",
+          "user-agent": CLIENT_CONFIG[clientType].userAgent
+        };
+        if (ip) {
+          headers["X-Real-IP"] = ip;
+          headers["X-Forwarded-For"] = ip;
+        }
+        const baseUrl = "https://music.163.com";
+        const fullUrl = new URL(url.replace("api", "weapi"), baseUrl);
+        return new Promise((resolve, reject) => {
+          _GM_xmlhttpRequest({
+            url: fullUrl.toString() + `?csrf_token=${data.csrf_token}`,
+            method: "POST",
+            responseType: "json",
+            headers,
+            cookie: CLIENT_CONFIG[clientType].cookie,
+            data: `params=${encodeURIComponent(
+        encryptedData.params
+      )}&encSecKey=${encodeURIComponent(encryptedData.encSecKey)}`,
+            onload: (res) => resolve(originResponse ? res : res.response),
+            onerror: reject
+          });
+        });
+      };
+      const weapiFetch = async (url, config) => {
+        const {
+          data = {},
+          clientType = "pc",
+          ip,
+          originResponse = false,
+          ...rest
+        } = config;
+        const csrfToken = document.cookie.match(/_csrf=([^(;|$)]+)/);
+        data.csrf_token = csrfToken ? csrfToken[1] : "";
+        const encryptedData = weapi(data);
+        console.log({
+          url,
+          data,
+          encryptedData
+        });
+        const headers = {
+          "content-type": "application/x-www-form-urlencoded",
+          "user-agent": CLIENT_CONFIG[clientType].userAgent,
+          accept: "application/json, text/plain, */*",
+          "accept-language": "zh-CN,zh;q=0.9",
+          origin: "https://music.163.com",
+          referer: "https://music.163.com/"
+        };
+        if (ip) {
+          headers["X-Real-IP"] = ip;
+          headers["X-Forwarded-For"] = ip;
+        }
+        if (CLIENT_CONFIG[clientType].cookie) {
+          headers.cookie = CLIENT_CONFIG[clientType].cookie;
+        }
+        try {
+          const baseUrl = "https://music.163.com";
+          const fullUrl = new URL(url.replace("api", "weapi"), baseUrl);
+          fullUrl.searchParams.append("csrf_token", data.csrf_token);
+          const response = await fetch(fullUrl.toString(), {
+            method: "POST",
+            headers,
+            body: `params=${encodeURIComponent(
+        encryptedData.params
+      )}&encSecKey=${encodeURIComponent(encryptedData.encSecKey)}`,
+            credentials: "include",
+mode: "cors",
+redirect: "follow"
+});
+          if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(
+              `HTTP error! status: ${response.status}, message: ${errorText}`
+            );
+          }
+          const result = await response.json();
+          if (result.code !== 200 && !originResponse) {
+            throw new Error(result.msg || result.message || "API请求失败");
+          }
+          return originResponse ? {
+            headers: response.headers,
+            ...result
+          } : result;
+        } catch (error) {
+          console.error("请求失败:", error);
+          throw new Error(`请求失败: ${error.message || "未知错误"}`);
+        }
+      };
+      const search = (keyword, options) => {
+        const { type = 1, limit = 30, offset = 0 } = {};
+        return weapiRequest("/api/search/get", {
+          data: {
+            s: keyword,
+            type,
+            limit,
+            offset
+          }
+        });
+      };
+      const cloudSearch = (keyword, options) => {
+        const { type = 1, limit = 30, offset = 0 } = options || {};
+        return weapiRequest("/api/cloudsearch/pc", {
+          data: {
+            s: keyword,
+            type,
+            limit,
+            offset,
+            total: true
+          }
+        });
+      };
       var md5$1 = { exports: {} };
       var crypt = { exports: {} };
       var hasRequiredCrypt;
@@ -423,8 +601,6 @@ bytesToString: function(bytes) {
       }
       var md5Exports = requireMd5();
       const md5 = getDefaultExportFromCjs(md5Exports);
-      var _GM_xmlhttpRequest = (() => typeof GM_xmlhttpRequest != "undefined" ? GM_xmlhttpRequest : void 0)();
-      var _unsafeWindow = (() => typeof unsafeWindow != "undefined" ? unsafeWindow : void 0)();
       const defaultMessages = "End-Of-Stream";
       class EndOfStreamError extends Error {
         constructor() {
@@ -1749,18 +1925,18 @@ get(array, off2) {
               if (typeof args[0] !== "string") {
                 args.unshift("%O");
               }
-              let index = 0;
+              let index2 = 0;
               args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format) => {
                 if (match === "%%") {
                   return "%";
                 }
-                index++;
+                index2++;
                 const formatter = createDebug.formatters[format];
                 if (typeof formatter === "function") {
-                  const val = args[index];
+                  const val = args[index2];
                   match = formatter.call(self2, val);
-                  args.splice(index, 1);
-                  index--;
+                  args.splice(index2, 1);
+                  index2--;
                 }
                 return match;
               });
@@ -1814,13 +1990,13 @@ get(array, off2) {
               }
             }
           }
-          function matchesTemplate(search, template) {
+          function matchesTemplate(search2, template) {
             let searchIndex = 0;
             let templateIndex = 0;
             let starIndex = -1;
             let matchIndex = 0;
-            while (searchIndex < search.length) {
-              if (templateIndex < template.length && (template[templateIndex] === search[searchIndex] || template[templateIndex] === "*")) {
+            while (searchIndex < search2.length) {
+              if (templateIndex < template.length && (template[templateIndex] === search2[searchIndex] || template[templateIndex] === "*")) {
                 if (template[templateIndex] === "*") {
                   starIndex = templateIndex;
                   matchIndex = searchIndex;
@@ -1997,15 +2173,15 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
             }
             const c = "color: " + this.color;
             args.splice(1, 0, c, "color: inherit");
-            let index = 0;
+            let index2 = 0;
             let lastC = 0;
             args[0].replace(/%[a-zA-Z%]/g, (match) => {
               if (match === "%%") {
                 return;
               }
-              index++;
+              index2++;
               if (match === "%c") {
-                lastC = index;
+                lastC = index2;
               }
             });
             args.splice(lastC, 0, c);
@@ -2356,12 +2532,12 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
         assertString(string);
         return cachedEncoder.encode(string);
       }
-      const byteToHexLookupTable = Array.from({ length: 256 }, (_, index) => index.toString(16).padStart(2, "0"));
+      const byteToHexLookupTable = Array.from({ length: 256 }, (_, index2) => index2.toString(16).padStart(2, "0"));
       function uint8ArrayToHex(array) {
         assertUint8Array(array);
         let hexString = "";
-        for (let index = 0; index < array.length; index++) {
-          hexString += byteToHexLookupTable[array[index]];
+        for (let index2 = 0; index2 < array.length; index2++) {
+          hexString += byteToHexLookupTable[array[index2]];
         }
         return hexString;
       }
@@ -2396,13 +2572,13 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
         }
         const resultLength = hexString.length / 2;
         const bytes = new Uint8Array(resultLength);
-        for (let index = 0; index < resultLength; index++) {
-          const highNibble = hexToDecimalLookupTable[hexString[index * 2]];
-          const lowNibble = hexToDecimalLookupTable[hexString[index * 2 + 1]];
+        for (let index2 = 0; index2 < resultLength; index2++) {
+          const highNibble = hexToDecimalLookupTable[hexString[index2 * 2]];
+          const lowNibble = hexToDecimalLookupTable[hexString[index2 * 2 + 1]];
           if (highNibble === void 0 || lowNibble === void 0) {
-            throw new Error(`Invalid Hex character encountered at position ${index * 2}`);
+            throw new Error(`Invalid Hex character encountered at position ${index2 * 2}`);
           }
-          bytes[index] = highNibble << 4 | lowNibble;
+          bytes[index2] = highNibble << 4 | lowNibble;
         }
         return bytes;
       }
@@ -2437,16 +2613,16 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
           return -1;
         }
         const validOffsetLength = arrayLength - valueLength;
-        for (let index = 0; index <= validOffsetLength; index++) {
+        for (let index2 = 0; index2 <= validOffsetLength; index2++) {
           let isMatch = true;
-          for (let index2 = 0; index2 < valueLength; index2++) {
-            if (array[index + index2] !== value2[index2]) {
+          for (let index22 = 0; index22 < valueLength; index22++) {
+            if (array[index2 + index22] !== value2[index22]) {
               isMatch = false;
               break;
             }
           }
           if (isMatch) {
-            return index;
+            return index2;
           }
         }
         return -1;
@@ -2463,11 +2639,11 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
           return false;
         }
         let sum = 8 * 32;
-        for (let index = offset; index < offset + 148; index++) {
-          sum += arrayBuffer[index];
+        for (let index2 = offset; index2 < offset + 148; index2++) {
+          sum += arrayBuffer[index2];
         }
-        for (let index = offset + 156; index < offset + 512; index++) {
-          sum += arrayBuffer[index];
+        for (let index2 = offset + 156; index2 < offset + 512; index2++) {
+          sum += arrayBuffer[index2];
         }
         return readSum === sum;
       }
@@ -2964,12 +3140,12 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
           offset: 0,
           ...options
         };
-        for (const [index, header] of headers.entries()) {
+        for (const [index2, header] of headers.entries()) {
           if (options.mask) {
-            if (header !== (options.mask[index] & buffer[index + options.offset])) {
+            if (header !== (options.mask[index2] & buffer[index2 + options.offset])) {
               return false;
             }
-          } else if (header !== buffer[index + options.offset]) {
+          } else if (header !== buffer[index2 + options.offset]) {
             return false;
           }
         }
@@ -4291,22 +4467,22 @@ var hasRequiredContentType;
           if (typeof header !== "string") {
             throw new TypeError("argument string is required to be a string");
           }
-          var index = header.indexOf(";");
-          var type = index !== -1 ? header.slice(0, index).trim() : header.trim();
+          var index2 = header.indexOf(";");
+          var type = index2 !== -1 ? header.slice(0, index2).trim() : header.trim();
           if (!TYPE_REGEXP.test(type)) {
             throw new TypeError("invalid media type");
           }
           var obj = new ContentType2(type.toLowerCase());
-          if (index !== -1) {
+          if (index2 !== -1) {
             var key;
             var match;
             var value2;
-            PARAM_REGEXP.lastIndex = index;
+            PARAM_REGEXP.lastIndex = index2;
             while (match = PARAM_REGEXP.exec(header)) {
-              if (match.index !== index) {
+              if (match.index !== index2) {
                 throw new TypeError("invalid parameter format");
               }
-              index += match[0].length;
+              index2 += match[0].length;
               key = match[1].toLowerCase();
               value2 = match[2];
               if (value2.charCodeAt(0) === 34) {
@@ -4317,7 +4493,7 @@ var hasRequiredContentType;
               }
               obj.parameters[key] = value2;
             }
-            if (index !== header.length) {
+            if (index2 !== header.length) {
               throw new TypeError("invalid parameter format");
             }
           }
@@ -4409,10 +4585,10 @@ var hasRequiredMediaTyper;
           var type = match[1];
           var subtype = match[2];
           var suffix;
-          var index = subtype.lastIndexOf("+");
-          if (index !== -1) {
-            suffix = subtype.substr(index + 1);
-            subtype = subtype.substr(0, index);
+          var index2 = subtype.lastIndexOf("+");
+          if (index2 !== -1) {
+            suffix = subtype.substr(index2 + 1);
+            subtype = subtype.substr(0, index2);
           }
           return new MediaType(type, subtype, suffix);
         }
@@ -5881,7 +6057,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-BukFGPWg-DDBd2zMK.js');
+            const { MpegParser } = await module.import('./MpegParser-DoefaO-R-Dj6fQ2f6.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -5903,7 +6079,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-BVBFrJH0-CYufG09z.js');
+            const { AsfParser } = await module.import('./AsfParser-C_SoivlU-DR1Nh8jk.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -5914,7 +6090,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-DamB4CAg-Cd7Se5Qw.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-CO9Q9Lak-BKPJe17Y.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -5925,7 +6101,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-DzwzTmPQ-B7isKTTv.js');
+            const { AIFFParser } = await module.import('./AiffParser-pgGQg1Gu-B4nNJKbN.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -5936,7 +6112,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CI2QaBwH-CfnIZiJV.js');
+            const { DsfParser } = await module.import('./DsfParser-WRUWgat8-CBVAJ9lE.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -5947,7 +6123,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-B2wTqkGg-Cdj5Wdtk.js');
+            const { FlacParser } = await module.import('./FlacParser-Dwju9kli-CaJpLZlw.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -5958,7 +6134,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-CyBAngFp-Rjnur7Cg.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-CAlb9_7J-DX8hd5e9.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -5969,7 +6145,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-DV8PZw-t-GXfp5Xph.js');
+            const { MP4Parser } = await module.import('./MP4Parser-XjErgjoC-B07oMpe2.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -5980,7 +6156,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-ZDqdhqug-BXnaj__z.js');
+            const { MusepackParser } = await module.import('./MusepackParser-DaGLGWgr-CetFBBBH.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -5991,7 +6167,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-DQnKuRrD-wD8AgtlZ.js');
+            const { OggParser } = await module.import('./OggParser-rlNoLpfy-BgIxHPJj.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -6002,7 +6178,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-BT8abLZ8-ByhulSmO.js');
+            const { WavPackParser } = await module.import('./WavPackParser-B1W6Q8MY-BHrdBIZ3.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -6013,7 +6189,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-Chdv5iA--BKlpcD6n.js');
+            const { WaveParser } = await module.import('./WaveParser-CcT8Iu6I-D1UOn_K-.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -6713,17 +6889,26 @@ track: UINT8.get(buf, off2 + 126),
         较高: "higher",
         标准: "standard"
       };
+      const SEARCH_TYPES = {
+        单曲: "1",
+        专辑: "10",
+        歌手: "100",
+        歌单: "1000",
+        用户: "1002",
+        MV: "1004",
+        歌词: "1006"
+      };
       const BASE_CDN_URL = "https://fastly.jsdelivr.net/gh/520Qiuyu/cdn@latest/artist/";
       const formatFileSize = (size2) => {
         if (!size2 || isNaN(size2)) return "0 B";
         const units = ["B", "KB", "MB", "GB", "TB"];
         size2 = Math.abs(Number(size2));
-        let index = 0;
-        while (size2 >= 1024 && index < units.length - 1) {
+        let index2 = 0;
+        while (size2 >= 1024 && index2 < units.length - 1) {
           size2 /= 1024;
-          index++;
+          index2++;
         }
-        return `${size2.toFixed(index > 0 ? 1 : 0)} ${units[index]}`;
+        return `${size2.toFixed(index2 > 0 ? 1 : 0)} ${units[index2]}`;
       };
       const formatDuration$1 = (ms2) => {
         const totalSeconds = Math.floor(ms2 / 1e3);
@@ -6775,18 +6960,18 @@ track: UINT8.get(buf, off2 + 126),
           let completed = 0;
           let currentIndex = 0;
           const runTask = async () => {
-            const index = currentIndex++;
-            if (index >= promiseArray.length) {
+            const index2 = currentIndex++;
+            if (index2 >= promiseArray.length) {
               return;
             }
             try {
-              const promise = promiseArray[index];
+              const promise = promiseArray[index2];
               if (typeof promise !== "function") {
-                throw new Error(`数组中索引为 ${index} 的元素不是函数`);
+                throw new Error(`数组中索引为 ${index2} 的元素不是函数`);
               }
-              results[index] = await promise();
+              results[index2] = await promise();
             } catch (error) {
-              results[index] = error;
+              results[index2] = error;
             }
             completed++;
             if (currentIndex < promiseArray.length) {
@@ -6876,7 +7061,7 @@ track: UINT8.get(buf, off2 + 126),
           return result;
         }, o1);
       };
-      const styles$7 = {
+      const styles$a = {
         "search-form": "_search-form_1aabt_1"
       };
       const SearchForm = ({ onSearch, data = [], options = [] }) => {
@@ -6897,7 +7082,7 @@ track: UINT8.get(buf, off2 + 126),
           form.resetFields();
           onSearch({});
         };
-        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$7["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$a["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
           options.map((item) => {
             return jsxRuntimeExports.jsx(
               Form.Item,
@@ -6925,6 +7110,68 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearch, children
 jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
         ] }) });
       };
+      function useFilter(list, config) {
+        const [filteredList, setFilteredList] = useState(list);
+        useEffect(() => {
+          setFilteredList(list);
+        }, [list]);
+        const handleFilter = (values) => {
+          const filtered = list.filter((item) => {
+            return Object.entries(config.fields).every(([field, fieldConfig]) => {
+              const filterValue = values[field];
+              if (!filterValue?.length) return true;
+              const itemValue = fieldConfig.getValue(item);
+              if (!itemValue) return false;
+              return filterValue.some(
+                (keyword) => itemValue.toLowerCase().includes(keyword.toLowerCase())
+              );
+            });
+          });
+          setFilteredList(filtered);
+        };
+        return { filteredList, setFilteredList, handleFilter };
+      }
+      const useGetData = (api, params, options) => {
+        const {
+monitors,
+returnFunction,
+initialValue = {},
+callback
+        } = options || {};
+        const [data, setData] = useState(initialValue);
+        const [loading, setLoading] = useState(false);
+        const getData = async () => {
+          try {
+            setLoading(true);
+            const res = await api(params);
+            setData(res || {});
+            callback && callback(res || {});
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        useEffect(() => {
+          if (returnFunction && returnFunction()) return;
+          getData();
+        }, monitors || []);
+        return {
+data,
+setData,
+loading,
+getData
+        };
+      };
+      const urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
+      let nanoid = (size2 = 21) => {
+        let id = "";
+        let bytes = crypto.getRandomValues(new Uint8Array(size2 |= 0));
+        while (size2--) {
+          id += urlAlphabet[bytes[size2] & 63];
+        }
+        return id;
+      };
       message.config({
         top: 100
       });
@@ -6936,6 +7183,15 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
       };
       const msgError = (content) => {
         message.error(content);
+      };
+      const msgLoading = (loadingContent, completeCallBack) => {
+        const key = nanoid();
+        message.loading({
+          key,
+          content: loadingContent
+        }).then(() => {
+        });
+        return () => message.destroy(key);
       };
       const confirm = (content, title2, otherOptions = {}) => {
         return new Promise((resolve, reject) => {
@@ -6965,154 +7221,6 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
             ...otherOptions
           });
         });
-      };
-      const IV = "0102030405060708";
-      const PRESET_KEY = "0CoJUm6Qyw8W8jud";
-      const PUBLIC_KEY = "-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDgtQn2JZ34ZC28NWYpAUd98iZ37BUrX/aKzmFbt7clFSs6sXqHauqKWqdtLkF2KexO40H1YTX8z2lSgBBOAxLsvaklV8k4cBFK9snQXE9/DDaFt6Rr7iVZMldczhC0JNgTz+SHXT6CBHuX3e9SdB1Ua44oncaTWz7OBGLbCiK45wIDAQAB\n-----END PUBLIC KEY-----";
-      const BASE62 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-      const aesEncrypt = (text2, key, iv) => {
-        const cipher = forge.cipher.createCipher("AES-CBC", key);
-        cipher.start({ iv });
-        cipher.update(forge.util.createBuffer(text2, "utf8"));
-        cipher.finish();
-        return forge.util.encode64(cipher.output.getBytes());
-      };
-      const rsaEncrypt = (text2, key) => {
-        const publicKey = forge.pki.publicKeyFromPem(key);
-        const encrypted = publicKey.encrypt(text2, "NONE");
-        return forge.util.bytesToHex(encrypted);
-      };
-      const weapi = (object) => {
-        const text2 = JSON.stringify(object);
-        const secretKey = Array.from(
-          { length: 16 },
-          () => BASE62.charAt(Math.floor(Math.random() * 62))
-        ).join("");
-        return {
-          params: aesEncrypt(aesEncrypt(text2, PRESET_KEY, IV), secretKey, IV),
-          encSecKey: rsaEncrypt(secretKey.split("").reverse().join(""), PUBLIC_KEY)
-        };
-      };
-      const CLIENT_CONFIG = {
-        web: {
-          cookie: true,
-          userAgent: void 0
-        },
-        android: {
-          cookie: "os=android;appver=9.1.78;channel=netease;osver=14;buildver=241009150147;",
-          userAgent: "NeteaseMusic/9.1.78.241009150147(9001078);Dalvik/2.1.0 (Linux; U; Android 14; V2318A Build/TP1A.220624.014)"
-        },
-        pc: {
-          cookie: "os=pc;appver=3.0.18.203152;channel=netease;osver=Microsoft-Windows-10-Professional-build-19045-64bit;",
-          userAgent: "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36 Chrome/91.0.4472.164 NeteaseMusicDesktop/3.0.18.203152"
-        }
-      };
-      const weapiRequest = (url, config) => {
-        const {
-          data = {},
-          clientType = "pc",
-          ip,
-          onerror,
-          onload,
-          originResponse = false,
-          ...rest
-        } = config;
-        const csrfToken = document.cookie.match(/_csrf=([^(;|$)]+)/);
-        data.csrf_token = csrfToken ? csrfToken[1] : "";
-        const encryptedData = weapi(data);
-        console.log({
-          url,
-          data,
-          encryptedData
-        });
-        const headers = {
-          "content-type": "application/x-www-form-urlencoded",
-          "user-agent": CLIENT_CONFIG[clientType].userAgent
-        };
-        if (ip) {
-          headers["X-Real-IP"] = ip;
-          headers["X-Forwarded-For"] = ip;
-        }
-        const baseUrl = "https://music.163.com";
-        const fullUrl = new URL(url.replace("api", "weapi"), baseUrl);
-        return new Promise((resolve, reject) => {
-          _GM_xmlhttpRequest({
-            url: fullUrl.toString() + `?csrf_token=${data.csrf_token}`,
-            method: "POST",
-            responseType: "json",
-            headers,
-            cookie: CLIENT_CONFIG[clientType].cookie,
-            data: `params=${encodeURIComponent(
-        encryptedData.params
-      )}&encSecKey=${encodeURIComponent(encryptedData.encSecKey)}`,
-            onload: (res) => resolve(originResponse ? res : res.response),
-            onerror: reject
-          });
-        });
-      };
-      const weapiFetch = async (url, config) => {
-        const {
-          data = {},
-          clientType = "pc",
-          ip,
-          originResponse = false,
-          ...rest
-        } = config;
-        const csrfToken = document.cookie.match(/_csrf=([^(;|$)]+)/);
-        data.csrf_token = csrfToken ? csrfToken[1] : "";
-        const encryptedData = weapi(data);
-        console.log({
-          url,
-          data,
-          encryptedData
-        });
-        const headers = {
-          "content-type": "application/x-www-form-urlencoded",
-          "user-agent": CLIENT_CONFIG[clientType].userAgent,
-          accept: "application/json, text/plain, */*",
-          "accept-language": "zh-CN,zh;q=0.9",
-          origin: "https://music.163.com",
-          referer: "https://music.163.com/"
-        };
-        if (ip) {
-          headers["X-Real-IP"] = ip;
-          headers["X-Forwarded-For"] = ip;
-        }
-        if (CLIENT_CONFIG[clientType].cookie) {
-          headers.cookie = CLIENT_CONFIG[clientType].cookie;
-        }
-        try {
-          const baseUrl = "https://music.163.com";
-          const fullUrl = new URL(url.replace("api", "weapi"), baseUrl);
-          fullUrl.searchParams.append("csrf_token", data.csrf_token);
-          const response = await fetch(fullUrl.toString(), {
-            method: "POST",
-            headers,
-            body: `params=${encodeURIComponent(
-        encryptedData.params
-      )}&encSecKey=${encodeURIComponent(encryptedData.encSecKey)}`,
-            credentials: "include",
-mode: "cors",
-redirect: "follow"
-});
-          if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(
-              `HTTP error! status: ${response.status}, message: ${errorText}`
-            );
-          }
-          const result = await response.json();
-          if (result.code !== 200 && !originResponse) {
-            throw new Error(result.msg || result.message || "API请求失败");
-          }
-          return originResponse ? {
-            headers: response.headers,
-            ...result
-          } : result;
-        } catch (error) {
-          console.error("请求失败:", error);
-          throw new Error(`请求失败: ${error.message || "未知错误"}`);
-        }
       };
       var browser = {};
       var canPromise;
@@ -7263,9 +7371,9 @@ redirect: "follow"
           this.length = 0;
         }
         BitBuffer.prototype = {
-          get: function(index) {
-            const bufIndex = Math.floor(index / 8);
-            return (this.buffer[bufIndex] >>> 7 - index % 8 & 1) === 1;
+          get: function(index2) {
+            const bufIndex = Math.floor(index2 / 8);
+            return (this.buffer[bufIndex] >>> 7 - index2 % 8 & 1) === 1;
           },
           put: function(num, length) {
             for (let i = 0; i < length; i++) {
@@ -7303,9 +7411,9 @@ redirect: "follow"
           this.reservedBit = new Uint8Array(size2 * size2);
         }
         BitMatrix.prototype.set = function(row, col, value2, reserved) {
-          const index = row * this.size + col;
-          this.data[index] = value2;
-          if (reserved) this.reservedBit[index] = true;
+          const index2 = row * this.size + col;
+          this.data[index2] = value2;
+          if (reserved) this.reservedBit[index2] = true;
         };
         BitMatrix.prototype.get = function(row, col) {
           return this.data[row * this.size + col];
@@ -8867,18 +8975,18 @@ pop: function() {
             maxDataSize = Math.max(maxDataSize, dataSize);
           }
           const data = new Uint8Array(totalCodewords);
-          let index = 0;
+          let index2 = 0;
           let i, r;
           for (i = 0; i < maxDataSize; i++) {
             for (r = 0; r < ecTotalBlocks; r++) {
               if (i < dcData[r].length) {
-                data[index++] = dcData[r][i];
+                data[index2++] = dcData[r][i];
               }
             }
           }
           for (i = 0; i < ecCount; i++) {
             for (r = 0; r < ecTotalBlocks; r++) {
-              data[index++] = ecData[r][i];
+              data[index2++] = ecData[r][i];
             }
           }
           return data;
@@ -9714,1389 +9822,13 @@ offset
           }
         });
       };
-      function useFilter(list, config) {
-        const [filteredList, setFilteredList] = useState(list);
-        useEffect(() => {
-          setFilteredList(list);
-        }, [list]);
-        const handleFilter = (values) => {
-          const filtered = list.filter((item) => {
-            return Object.entries(config.fields).every(([field, fieldConfig]) => {
-              const filterValue = values[field];
-              if (!filterValue?.length) return true;
-              const itemValue = fieldConfig.getValue(item);
-              if (!itemValue) return false;
-              return filterValue.some(
-                (keyword) => itemValue.toLowerCase().includes(keyword.toLowerCase())
-              );
-            });
-          });
-          setFilteredList(filtered);
-        };
-        return { filteredList, setFilteredList, handleFilter };
-      }
-      const useVisible = (props = {}, ref) => {
-        const {
-          onOpen = NOOP,
-          onClose = NOOP,
-          onReset = NOOP,
-          resetOnOpen = true,
-          resetOnClose = false
-        } = props;
-        const [visible, setVisible] = useState(false);
-        const resolve = useRef();
-        const reject = useRef();
-        const open = (value2) => {
-          resetOnOpen && reset();
-          setVisible(true);
-          onOpen(value2);
-        };
-        const close = () => {
-          resetOnClose && reset();
-          setVisible(false);
-          onClose();
-        };
-        const reset = () => {
-          onReset();
-        };
-        const submit = () => {
-          return new Promise((_resolve, _reject) => {
-            resolve.current = _resolve;
-            reject.current = _reject;
-          });
-        };
-        ref && useImperativeHandle(ref, () => ({
-          open,
-          close,
-          reset,
-          submit,
-          resolve: resolve.current,
-          reject: reject.current
-        }));
-        return {
-          visible,
-          open,
-          close,
-          reset,
-          submit,
-          resolve: resolve.current,
-          reject: reject.current
-        };
-      };
-      const NOOP = () => {
-      };
-      const { Search } = Input;
-      const CloudImport = forwardRef((props, ref) => {
-        const { visible, close } = useVisible(
-          {
-            onOpen() {
-            },
-            onReset() {
-              setSearchText("");
-              setAudioFormat("all");
-              setBitrate("all");
-              setTableData([]);
-              setSelectedRows([]);
-              setLoading(false);
-            }
-          },
-          ref
-        );
-        const [searchText, setSearchText] = useState("");
-        const [audioFormat, setAudioFormat] = useState("all");
-        const [bitrate, setBitrate] = useState("all");
-        const [selectedRows, setSelectedRows] = useState([]);
-        const [tableData, setTableData] = useState([]);
-        const filterConfig = {
-          fields: {
-            name: {
-              getValue: (song) => song.name
-            },
-            artist: {
-              getValue: (song) => song.artist
-            },
-            album: {
-              getValue: (song) => song.album
-            }
-          }
-        };
-        const { filteredList, handleFilter } = useFilter(
-          tableData,
-          filterConfig
-        );
-        const columns = [
-          { title: "歌手", dataIndex: "artist", key: "artist" },
-          { title: "歌曲名", dataIndex: "name", key: "name" },
-          { title: "专辑", dataIndex: "album", key: "album" },
-          {
-            title: "格式",
-            dataIndex: "ext",
-            key: "ext",
-            render: (ext) => ext.toUpperCase()
-          },
-          { title: "比特率", dataIndex: "bitrate", key: "bitrate" },
-          {
-            title: "大小",
-            dataIndex: "size",
-            key: "size",
-            render: (size2) => formatFileSize(size2)
-          }
-        ];
-        const [concurrent, setConcurrent] = useState(6);
-        const [loading, setLoading] = useState(false);
-        const handleOk = async () => {
-          try {
-            setLoading(true);
-            const proArr = selectedRows.map(
-              (item) => () => uploadSong({
-                ...item,
-                filename: item.name || "未知",
-                artists: item.artists?.join?.(",")
-              })
-            );
-            const res = await promiseLimit(proArr, concurrent);
-            console.log("res", res);
-            msgSuccess$1("导入成功");
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        const handleWatchJSON = () => {
-          Modal.info({
-            title: "JSON示例格式",
-            width: 600,
-            content: jsxRuntimeExports.jsx("pre", { style: { maxHeight: 400, overflow: "auto" }, children: `// 必填字段说明：
-// - id: 匹配后的歌曲ID（必填）
-// - size: 文件大小，单位字节（必填）
-// - md5: 文件MD5值（必填）
-// - ext: 文件扩展名（必填）
-// - bitrate: 比特率（必填）
-// - name: 歌曲名（选填）
-// - artist: 歌手名（选填）
-// - artists: 歌手名列表（选填）
-// - album: 专辑名（选填）
-
-${JSON.stringify(
-        [
-          {
-            id: "1",
-name: "晴天",
-            artist: "周杰伦",
-            album: "叶惠美",
-            ext: "flac",
-bitrate: "320",
-size: 31457280,
-md5: "b2c63499d0fe68aedd0323030c0965e5"
-},
-          {
-            id: 1305990326,
-name: "Call You Tonight",
-            artist: "Johnta Austin",
-            artists: ["Johnta Austin"],
-            album: "Ocean Drive",
-            size: 10325748,
-md5: "b2c63499d0fe68aedd0323030c0965e5",
-ext: "mp3",
-bitrate: 321
-}
-        ],
-        null,
-        2
-      )}` }),
-            okText: "关闭",
-            centered: true,
-            okButtonProps: {
-              type: "primary",
-              style: { background: "#C20C0C", borderColor: "#C20C0C" }
-            },
-            cancelButtonProps: {
-              style: { borderColor: "#d9d9d9" }
-            }
-          });
-        };
-        return jsxRuntimeExports.jsxs(
-          Modal,
-          {
-            title: "云盘JSON导入",
-            open: visible,
-            onCancel: close,
-            centered: true,
-            width: 1e3,
-            onOk: handleOk,
-            onClose: close,
-            confirmLoading: loading,
-            children: [
-jsxRuntimeExports.jsx(
-                SearchForm,
-                {
-                  data: tableData,
-                  options: [
-                    { value: "artist", label: "歌手" },
-                    { value: "name", label: "歌曲名" },
-                    { value: "album", label: "专辑" }
-                  ],
-                  onSearch: handleFilter
-                }
-              ),
-jsxRuntimeExports.jsx(
-                Table,
-                {
-                  dataSource: filteredList,
-                  columns,
-                  rowKey: "id",
-                  scroll: { y: 400 },
-                  pagination: {
-                    showQuickJumper: true,
-                    showSizeChanger: true
-                  },
-                  rowSelection: {
-                    type: "checkbox",
-                    fixed: true,
-                    preserveSelectedRowKeys: true,
-                    onChange: (selectedRowKeys, selectedRows2) => {
-                      setSelectedRows(selectedRows2);
-                    }
-                  }
-                }
-              ),
-jsxRuntimeExports.jsxs("div", { style: { marginTop: 16, textAlign: "left" }, children: [
-jsxRuntimeExports.jsx(
-                  Upload,
-                  {
-                    accept: ".json",
-                    showUploadList: false,
-                    beforeUpload: (file) => {
-                      const reader = new FileReader();
-                      reader.onload = (e) => {
-                        try {
-                          const jsonData = JSON.parse(e.target.result);
-                          setTableData(jsonData);
-                          message.success("JSON文件解析成功");
-                        } catch (error) {
-                          message.error("JSON文件解析失败");
-                        }
-                      };
-                      reader.readAsText(file);
-                      return false;
-                    },
-                    children: jsxRuntimeExports.jsx(Button, { icon: jsxRuntimeExports.jsx(UploadOutlined, {}), children: "选择JSON文件" })
-                  }
-                ),
-jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    style: { marginLeft: 6, color: "#C20C0C" },
-                    onClick: handleWatchJSON,
-                    type: "link",
-                    children: "查看JSON示例"
-                  }
-                )
-              ] })
-            ]
-          }
-        );
-      });
-      const downloadJsonFile = (data, filename) => {
-        const blob = new Blob([JSON.stringify(data, null, 2)], {
-          type: "application/json"
-        });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = filename;
-        link.click();
-        URL.revokeObjectURL(url);
-      };
-      const downloadFile = async (url, filename) => {
-        try {
-          if (!url || !filename) {
-            throw new Error("URL和文件名不能为空");
-          }
-          const link = document.createElement("a");
-          link.href = url.replace("http://", "https://");
-          link.download = filename;
-          link.style.display = "none";
-          link.style.position = "absolute";
-          link.style.left = "-9999px";
-          const handleClick = (e) => {
-            e.stopPropagation();
-          };
-          link.addEventListener("click", handleClick, true);
-          link.click();
-          setTimeout(() => {
-            link.removeEventListener("click", handleClick);
-          }, 100);
-        } catch (error) {
-          console.error("文件下载出错:", error);
-          throw error;
-        }
-      };
-      const getFileBlob = async (url) => {
-        const response = await fetch(url, {
-          redirect: "follow"
-        });
-        if (!response.ok) {
-          throw new Error(`获取文件失败: ${response.status} ${response.statusText}`);
-        }
-        const blob = await response.blob();
-        return { blob, response };
-      };
-      const downloadAsJson = (data, filename, options = {}) => {
-        try {
-          const { space = 2, timestamp = false } = options;
-          const jsonString = JSON.stringify(data, null, space);
-          const blob = new Blob([jsonString], { type: "application/json" });
-          const blobUrl = window.URL.createObjectURL(blob);
-          let finalFilename = filename;
-          if (timestamp) {
-            const date = new Date();
-            const timeString = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(
-        date.getDate()
-      ).padStart(2, "0")}_${String(date.getHours()).padStart(2, "0")}${String(
-        date.getMinutes()
-      ).padStart(2, "0")}${String(date.getSeconds()).padStart(2, "0")}`;
-            finalFilename = `${filename}_${timeString}`;
-          }
-          downloadFile(blobUrl, `${finalFilename}.json`);
-          window.URL.revokeObjectURL(blobUrl);
-          return true;
-        } catch (error) {
-          console.error("JSON数据下载失败:", error);
-          return false;
-        }
-      };
-      const downloadFileWithBlob = (file, name2) => {
-        const blobUrl = window.URL.createObjectURL(file);
-        const a = document.createElement("a");
-        a.href = blobUrl;
-        a.download = name2;
-        a.style.display = "none";
-        a.style.position = "absolute";
-        a.style.left = "-9999px";
-        const handleClick = (e) => {
-          e.stopPropagation();
-        };
-        a.addEventListener("click", handleClick, true);
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(() => {
-          a.removeEventListener("click", handleClick);
-          document.body.removeChild(a);
-          window.URL.revokeObjectURL(blobUrl);
-        }, 100);
-      };
-      function mitt(n) {
-        return { all: n = n || new Map(), on: function(t, e) {
-          var i = n.get(t);
-          i ? i.push(e) : n.set(t, [e]);
-        }, off: function(t, e) {
-          var i = n.get(t);
-          i && (e ? i.splice(i.indexOf(e) >>> 0, 1) : n.set(t, []));
-        }, emit: function(t, e) {
-          var i = n.get(t);
-          i && i.slice().map(function(n2) {
-            n2(e);
-          }), (i = n.get("*")) && i.slice().map(function(n2) {
-            n2(t, e);
-          });
-        } };
-      }
-      const eventBus = mitt();
-      const EVENT_TYPES = {
-CLOUD_MUSIC_MATCH_ALL: "cloud_music_match_all"
-      };
-      const emit = (event, data) => {
-        eventBus.emit(event, data);
-      };
-      const on = (event, handler) => {
-        eventBus.on(event, handler);
-      };
-      const off = (event, handler) => {
-        eventBus.off(event, handler);
-      };
-      const singerKeywordsMap = {};
-      const useSearchSinger = (options) => {
-        const {
-keywords
-        } = options || {};
-        const [singerList, setSingerList] = useState([]);
-        const [loading, setLoading] = useState(false);
-        const searchSingerList = async (keywords2) => {
-          try {
-            setLoading(true);
-            if (singerKeywordsMap[keywords2]) {
-              const res2 = await singerKeywordsMap[keywords2];
-              const list = (res2.data.list || []).sort(
-                (a, b) => a.artistId - b.artistId
-              );
-              setSingerList(list);
-              return;
-            }
-            singerKeywordsMap[keywords2] = searchArtist(keywords2);
-            const res = await singerKeywordsMap[keywords2];
-            if (res.code === 200) {
-              const list = (res.data.list || []).sort(
-                (a, b) => a.artistId - b.artistId
-              );
-              setSingerList(list);
-            }
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        useEffect(() => {
-          if (!keywords) return;
-          searchSingerList(keywords);
-        }, [keywords]);
-        return {
-          singerList,
-          loading,
-          searchSingerList
-        };
-      };
-      const useGetSingerList = () => {
-        const [singerList, setSingerList] = useState([]);
-        const [loading, setLoading] = useState(false);
-        const getSingerList = async () => {
-          try {
-            setLoading(true);
-            const res = await getArtists();
-            const res2 = await getArtists2();
-            const list = [
-              ...new Map([...res2, ...res].map((item) => [item.id, item])).values()
-            ];
-            setSingerList(list);
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        const resetSingerList = () => {
-          setSingerList([]);
-        };
-        useEffect(() => {
-          getSingerList();
-        }, []);
-        return {
-          singerList,
-          loading,
-          getSingerList,
-          resetSingerList
-        };
-      };
-      function useGetSingerSongs(options) {
-        const {
-singerIds
-        } = options || {};
-        useGetSingerList();
-        const [singerMap, setSingerMap] = useState({});
-        const [loading, setLoading] = useState(false);
-        const getSingerInfoById = async (singerId) => {
-          try {
-            if (singerMap[singerId]?.singerInfo)
-              return singerMap[singerId]?.singerInfo;
-            const res = await searchArtist(singerId);
-            if (res.code === 200) {
-              console.log("res", res);
-              const singerInfo = res.data.list[0];
-              setSingerMap((prv) => ({
-                ...prv,
-                [singerId]: {
-                  ...prv[singerId],
-                  singerInfo
-                }
-              }));
-              return singerInfo;
-            }
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const getSingerAllSongListById = async (singerId) => {
-          try {
-            setLoading(true);
-            if (singerMap[singerId]?.songList) return singerMap[singerId]?.songList;
-            const res = await getArtistAllSongList(singerId);
-            if (res.code === 200) {
-              const songList2 = res.songs;
-              setSingerMap((prv) => ({
-                ...prv,
-                [singerId]: {
-                  ...prv[singerId],
-                  songList: songList2
-                }
-              }));
-              return songList2;
-            }
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        const getSingerAlbumListById = async (singerId) => {
-          try {
-            if (singerMap[singerId]?.albumList) return singerMap[singerId]?.albumList;
-            const res = await getArtistAlbumList(singerId);
-            if (res.code === 200) {
-              const albumList = res.data;
-              setSingerMap((prv) => ({
-                ...prv,
-                [singerId]: {
-                  ...prv[singerId],
-                  albumList,
-                  albumMap: Object.fromEntries(
-                    albumList.map((item) => [item.id, item])
-                  )
-                }
-              }));
-              return albumList;
-            }
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        useEffect(() => {
-          if (!singerIds) return;
-          const ids = (singerIds + "").split(",");
-          ids.forEach((singerId) => {
-            getSingerInfoById(singerId);
-            getSingerAllSongListById(singerId);
-            getSingerAlbumListById(singerId);
-          });
-        }, [singerIds]);
-        const reset = () => {
-          setSingerMap({});
-        };
-        return {
-          singerMap,
-          getSingerInfoById,
-          getSingerAllSongListById,
-          reset,
-          loading
-        };
-      }
-      const songInfoColumn = "_songInfoColumn_18snm_1";
-      const songIndex = "_songIndex_18snm_7";
-      const songCover = "_songCover_18snm_16";
-      const btnWrapper = "_btnWrapper_18snm_28";
-      const songCoverImg = "_songCoverImg_18snm_33";
-      const songInfo$1 = "_songInfo_18snm_1";
-      const songName$1 = "_songName_18snm_67";
-      const subInfo = "_subInfo_18snm_76";
-      const artist = "_artist_18snm_84";
-      const album = "_album_18snm_85";
-      const currentSong = "_currentSong_18snm_102";
-      const matchError = "_matchError_18snm_121";
-      const footer = "_footer_18snm_128";
-      const actions = "_actions_18snm_136";
-      const stats = "_stats_18snm_141";
-      const size$1 = "_size_18snm_149";
-      const divider$2 = "_divider_18snm_152";
-      const autoAddContent = "_autoAddContent_18snm_164";
-      const title = "_title_18snm_164";
-      const statsWrapper = "_statsWrapper_18snm_168";
-      const statsContent = "_statsContent_18snm_171";
-      const label$1 = "_label_18snm_178";
-      const value$1 = "_value_18snm_181";
-      const listHeader = "_listHeader_18snm_186";
-      const listWrapper = "_listWrapper_18snm_192";
-      const listItem = "_listItem_18snm_213";
-      const itemName = "_itemName_18snm_229";
-      const itemCount = "_itemCount_18snm_235";
-      const deleteConfirmation = "_deleteConfirmation_18snm_240";
-      const count$1 = "_count_18snm_248";
-      const songs = "_songs_18snm_251";
-      const songItem$1 = "_songItem_18snm_262";
-      const warning = "_warning_18snm_273";
-      const text = "_text_18snm_280";
-      const icon = "_icon_18snm_287";
-      const styles$6 = {
-        songInfoColumn,
-        songIndex,
-        songCover,
-        btnWrapper,
-        songCoverImg,
-        songInfo: songInfo$1,
-        songName: songName$1,
-        subInfo,
-        artist,
-        album,
-        currentSong,
-        matchError,
-        footer,
-        actions,
-        stats,
-        size: size$1,
-        divider: divider$2,
-        autoAddContent,
-        title,
-        statsWrapper,
-        statsContent,
-        label: label$1,
-        value: value$1,
-        listHeader,
-        listWrapper,
-        listItem,
-        itemName,
-        itemCount,
-        deleteConfirmation,
-        count: count$1,
-        songs,
-        songItem: songItem$1,
-        warning,
-        text,
-        icon,
-        "singer-option": "_singer-option_18snm_301",
-        "singer-option-content": "_singer-option-content_18snm_314",
-        "singer-option-name": "_singer-option-name_18snm_329",
-        "singer-option-id": "_singer-option-id_18snm_332",
-        "song-name": "_song-name_18snm_346",
-        "tag-group": "_tag-group_18snm_351",
-        "song-option": "_song-option_18snm_357",
-        "song-info": "_song-info_18snm_370",
-        "album-cover": "_album-cover_18snm_399",
-        "original-album": "_original-album_18snm_415",
-        "album-info": "_album-info_18snm_439"
-      };
-      const CustomMatch = ({ data, onUpdate }) => {
-        const [keywords, setKeywords] = useState(getArtistName(data));
-        const [currentSelectSinger, setCurrentSelectSinger] = useState();
-        const [currentSelectSong, setCurrentSelectSong] = useState();
-        const [songSearchValue, setSongSearchValue] = useState(data.name);
-        const [currentSelectSongId, setCurrentSelectSongId] = useState();
-        const { loading: searchSingerLoading, singerList } = useSearchSinger({
-          keywords
-        });
-        const { singerMap, loading: getSongLoading } = useGetSingerSongs({
-          singerIds: currentSelectSinger
-        });
-        const [updateLoading, setUpdateLoading] = useState(false);
-        const [autoMatchLoading, setAutoMatchLoading] = useState(false);
-        const songOptions = useMemo(() => {
-          if (!singerMap[currentSelectSinger]?.songList) return [];
-          const allOptions = singerMap[currentSelectSinger]?.songList?.map(
-            (item) => ({
-              ...item,
-              label: item.name,
-              value: item.id
-            })
-          );
-          const mostMatch = allOptions.find((item) => {
-            const itemAlbumName = normalizeString(item.al?.name);
-            const itemSongName = normalizeString(item.name);
-            const dataAlbumName = normalizeString(
-              data.album || data.simpleSong?.al?.name
-            );
-            const dataSongName = normalizeString(data.songName);
-            return itemSongName.includes(dataSongName) && itemAlbumName.includes(dataAlbumName);
-          });
-          console.log("找到最匹配，放置到第一 mostMatch", mostMatch);
-          return mostMatch ? [mostMatch, ...allOptions.filter((item) => item.id !== mostMatch.id)] : allOptions;
-        }, [singerMap, currentSelectSinger, data]);
-        useEffect(() => {
-          const handleMatchAll = async (eventData) => {
-            console.log("CustomMatch 收到全部匹配事件", eventData);
-            if (!currentSelectSinger || !currentSelectSongId) {
-              console.log("当前组件未选择歌手或歌曲，跳过自动匹配");
-              return;
-            }
-            handleUpdate();
-          };
-          on(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, handleMatchAll);
-          return () => {
-            off(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, handleMatchAll);
-          };
-        }, [currentSelectSinger, currentSelectSongId, data, onUpdate]);
-        const handleUpdate = async () => {
-          try {
-            setUpdateLoading(true);
-            if (!currentSelectSinger || !currentSelectSongId) {
-              msgError("请选择歌手和歌曲");
-              return;
-            }
-            const res = await matchCloudSong(
-              data.songId,
-              currentSelectSongId,
-              currentSelectSong
-            );
-            console.log("res", res);
-            if (res.code === 200) {
-              msgSuccess$1("更新成功");
-            }
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setUpdateLoading(false);
-          }
-        };
-        return jsxRuntimeExports.jsxs(
-          "div",
-          {
-            style: { display: "flex", alignItems: "center", gap: 8 },
-            onClick: () => console.log(data),
-            children: [
-jsxRuntimeExports.jsx(
-                Input,
-                {
-                  style: {
-                    width: 120
-                  },
-                  defaultValue: keywords,
-                  placeholder: "请输入歌手名",
-                  onPressEnter: (e) => {
-                    console.log("e", e);
-                    setKeywords(e.target.value);
-                  }
-                }
-              ),
-jsxRuntimeExports.jsx(
-                Select,
-                {
-                  style: { width: 200 },
-                  value: currentSelectSinger,
-                  onChange: (value2) => {
-                    setCurrentSelectSinger(value2);
-                  },
-                  popupMatchSelectWidth: 300,
-                  showSearch: true,
-                  placeholder: "请选择歌手",
-                  filterOption: (input, option) => option?.label?.indexOf(input) >= 0,
-                  loading: searchSingerLoading,
-                  options: singerList.map((item) => ({
-                    ...item,
-                    label: item.artistName,
-                    value: item.artistId
-                  })),
-                  onFocus: () => {
-                    setCurrentSelectSinger(singerList?.[0]?.artistId);
-                  },
-                  optionRender: (option) => {
-                    const { artistAvatarPicUrl, artistName: artistName2, artistId } = option.data;
-                    return jsxRuntimeExports.jsx(
-                      "div",
-                      {
-                        className: styles$6["singer-option"],
-                        style: {
-                          "--avatar-url": `url(${artistAvatarPicUrl})`
-                        },
-                        children: jsxRuntimeExports.jsxs("div", { className: styles$6["singer-option-content"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$6["singer-option-name"], children: artistName2 }),
-jsxRuntimeExports.jsx("div", { className: styles$6["singer-option-id"], children: artistId })
-                        ] })
-                      }
-                    );
-                  },
-                  dropdownRender: (originNode) => {
-                    return searchSingerLoading ? jsxRuntimeExports.jsx(
-                      Spin,
-                      {
-                        style: {
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          height: 100
-                        }
-                      }
-                    ) : originNode;
-                  }
-                }
-              ),
-jsxRuntimeExports.jsx(
-                Select,
-                {
-                  style: { width: 200 },
-                  value: currentSelectSongId,
-                  onChange: (value2, option) => {
-                    console.log("value", value2, option);
-                    setCurrentSelectSongId(value2);
-                    setCurrentSelectSong(option);
-                  },
-                  showSearch: true,
-                  searchValue: songSearchValue,
-                  onFocus: () => {
-                    console.log("data", data);
-                    setSongSearchValue(data.songName);
-                  },
-                  onSearch: (value2) => {
-                    setSongSearchValue(value2);
-                  },
-                  placeholder: "请选择歌曲",
-                  filterOption: (input, option) => option?.label?.toLowerCase().indexOf(input.toLowerCase()) >= 0,
-                  loading: getSongLoading,
-                  options: songOptions,
-                  popupMatchSelectWidth: 500,
-                  optionRender: (option) => {
-                    const data2 = option.data;
-                    return jsxRuntimeExports.jsxs(
-                      "div",
-                      {
-                        className: styles$6["song-option"],
-                        onClick: () => console.log("option", data2, option, singerMap),
-                        children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6["song-info"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$6["song-name"], children: option.label }),
-jsxRuntimeExports.jsxs("div", { className: styles$6["tag-group"], children: [
-                              data2.al?.name && jsxRuntimeExports.jsx(Tag, { color: "blue", children: data2.al?.name }),
-                              data2.ar?.length && data2.ar?.map((artist2, index) => jsxRuntimeExports.jsx(Tag, { color: "green", children: artist2.name }, index))
-                            ] })
-                          ] }),
-                          singerMap[currentSelectSinger]?.albumMap?.[data2.al?.id]?.picUrl && jsxRuntimeExports.jsx(
-                            "img",
-                            {
-                              className: styles$6["album-cover"],
-                              src: singerMap[currentSelectSinger]?.albumMap[data2.al?.id]?.picUrl,
-                              alt: data2.al?.name
-                            }
-                          )
-                        ]
-                      }
-                    );
-                  },
-                  dropdownRender: (originNode) => {
-                    return getSongLoading ? jsxRuntimeExports.jsx(
-                      Spin,
-                      {
-                        style: {
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          height: 100
-                        }
-                      }
-                    ) : originNode;
-                  }
-                }
-              ),
-jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "primary",
-                  size: "small",
-                  loading: updateLoading || autoMatchLoading,
-                  disabled: !currentSelectSinger || !currentSelectSongId,
-                  onClick: handleUpdate,
-                  children: autoMatchLoading ? "自动匹配中..." : "匹配"
-                }
-              )
-            ]
-          }
-        );
-      };
-      const IdMatch = ({ data, onUpdate }) => {
-        const { matchType, songId } = data;
-        const isMatched = matchType === "matched";
-        const [value2, setValue] = useState(songId);
-        const [loading, setLoading] = useState(false);
-        const [autoMatchLoading, setAutoMatchLoading] = useState(false);
-        useEffect(() => {
-          const handleMatchAll = async (eventData) => {
-            console.log("IdMatch 收到全部匹配事件", eventData);
-            if (!value2 || value2 === songId) {
-              console.log("当前组件未设置匹配ID，跳过自动匹配");
-              return;
-            }
-            try {
-              setAutoMatchLoading(true);
-              console.log("开始自动ID匹配歌曲:", data.songName);
-              const res = await matchCloudSong(songId, value2);
-              if (res.code === 200) {
-                console.log("自动ID匹配成功:", data.songName);
-                onUpdate?.();
-              } else {
-                console.log("自动ID匹配失败:", data.songName, res.message);
-              }
-            } catch (error) {
-              console.log("自动ID匹配出错:", data.songName, error);
-            } finally {
-              setAutoMatchLoading(false);
-            }
-          };
-          on(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, handleMatchAll);
-          return () => {
-            off(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, handleMatchAll);
-          };
-        }, [value2, songId, data, onUpdate]);
-        const handleUpdate = async () => {
-          try {
-            setLoading(true);
-            const res = await matchCloudSong(songId, value2);
-            console.log("res", res);
-            if (res.code === 200) {
-              msgSuccess$1("更新成功");
-              onUpdate?.();
-            }
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        return jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center" }, children: [
-jsxRuntimeExports.jsx(Tag, { color: isMatched ? "green" : "red", children: isMatched ? "已匹配" : "未匹配" }),
-jsxRuntimeExports.jsx(
-            Input,
-            {
-              value: value2,
-              onChange: (e) => {
-                setValue(e.target.value);
-              },
-              size: "small",
-              onKeyDown: (e) => {
-                if (e.key === "Enter") {
-                  handleUpdate();
-                }
-              },
-              style: { flex: 1, marginRight: 8 }
-            }
-          ),
-jsxRuntimeExports.jsx(
-            Button,
-            {
-              type: "primary",
-              onClick: handleUpdate,
-              loading: loading || autoMatchLoading,
-              size: "small",
-              children: autoMatchLoading ? "自动匹配中..." : "更新"
-            }
-          )
-        ] });
-      };
-      const playlistCreationStrategies = {
-        周杰伦: {
-          name: "周杰伦的歌单",
-          color: "blue",
-          description: "创建周杰伦专属歌单",
-          getPlaylistName: () => "周杰伦"
-        },
-        林俊杰: {
-          name: "林俊杰的歌单",
-          color: "green",
-          description: "创建林俊杰专属歌单",
-          getPlaylistName: () => "林俊杰"
-        },
-        陈奕迅: {
-          name: "陈奕迅的歌单",
-          color: "purple",
-          description: "创建陈奕迅专属歌单",
-          getPlaylistName: () => "陈奕迅"
-        },
-        张学友: {
-          name: "张学友的歌单",
-          color: "orange",
-          description: "创建张学友专属歌单",
-          getPlaylistName: () => "张学友"
-        }
-      };
-      const PlayList$2 = (props, ref) => {
-        const [visible, setVisible] = useState(false);
-        const [mode2, setMode] = useState("edit");
-        const isSelect = mode2 === "select";
-        const open = (mode22) => {
-          reset();
-          if (mode22) {
-            setMode(mode22);
-          }
-          setVisible(true);
-          handleGetPlayList();
-        };
-        const close = () => {
-          setVisible(false);
-          setPlayList([]);
-        };
-        const reset = () => {
-          setPlayList([]);
-          res.current = null;
-          setMode("add");
-          setSelectedRows([]);
-          setName("");
-          setCreateModalVisible(false);
-        };
-        const res = useRef(null);
-        const submit = () => {
-          return new Promise((resolve, reject) => {
-            res.current = resolve;
-          });
-        };
-        useImperativeHandle(ref, () => ({
-          open,
-          close,
-          submit
-        }));
-        const [loading, setLoading] = useState(false);
-        const [playList, setPlayList] = useState([]);
-        const handleGetPlayList = async () => {
-          setLoading(true);
-          try {
-            const user = getUser();
-            if (!user) return message.error("请先登录");
-            const res2 = await getPlaylistList();
-            console.log("res", res2);
-            if (res2.code === 200) {
-              setPlayList(res2.playlist);
-            }
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        const { filteredList, handleFilter } = useFilter(playList, {
-          fields: {
-            name: {
-              getValue: (item) => item.name
-            },
-            creator: {
-              getValue: (item) => item.creator.nickname
-            }
+      const getSongDynamicCover = async (songId) => {
+        return weapiRequest("/api/songplay/dynamic-cover", {
+          data: {
+            songId
           }
         });
-        const columns = [
-          {
-            title: "歌单",
-            dataIndex: "name",
-            key: "name",
-            width: 220,
-            ellipsis: true,
-            render: (text2, record) => jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: "8px" }, children: [
-jsxRuntimeExports.jsx(
-                Image,
-                {
-                  src: record.coverImgUrl,
-                  width: 40,
-                  height: 40,
-                  style: { borderRadius: "4px" },
-                  preview: false
-                }
-              ),
-jsxRuntimeExports.jsx(
-                "div",
-                {
-                  style: {
-                    fontWeight: 500,
-                    flex: 1,
-                    minWidth: 0,
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                    whiteSpace: "nowrap"
-                  },
-                  children: text2
-                }
-              )
-            ] })
-          },
-          {
-            title: "歌曲数",
-            dataIndex: "trackCount",
-            key: "trackCount",
-            width: 100,
-            align: "right",
-            sorter: (a, b) => a.trackCount - b.trackCount,
-            sortDirections: ["descend", "ascend"],
-            render: (text2) => jsxRuntimeExports.jsxs(
-              "span",
-              {
-                style: {
-                  color: "#666",
-                  fontSize: "13px"
-                },
-                children: [
-                  text2,
-                  " 首"
-                ]
-              }
-            )
-          },
-          {
-            title: "创建者",
-            dataIndex: ["creator", "nickname"],
-            key: "creator",
-            width: 150,
-            ellipsis: true
-          },
-          {
-            title: "更新时间",
-            dataIndex: "updateTime",
-            key: "updateTime",
-            width: 200,
-            render: (text2) => new Date(text2).toLocaleString(),
-            sorter: (a, b) => a.updateTime - b.updateTime,
-            sortDirections: ["descend", "ascend"]
-          },
-          {
-            title: "播放量",
-            dataIndex: "playCount",
-            key: "playCount",
-            width: 100,
-            render: (text2) => {
-              const count2 = text2 > 1e4 ? `${(text2 / 1e4).toFixed(1)}万` : text2;
-              return jsxRuntimeExports.jsx("span", { children: count2 });
-            },
-            sorter: (a, b) => a.playCount - b.playCount,
-            sortDirections: ["descend", "ascend"]
-          }
-        ];
-        const [selectedRows, setSelectedRows] = useState([]);
-        const rowSelection = {
-          type: isSelect ? "radio" : "checkbox",
-          selectedRowKeys: selectedRows.map((item) => item.id),
-          onSelectAll: () => {
-            setTimeout(() => {
-              setSelectedRows(playList);
-            }, 0);
-          },
-          onChange: (_, selectedRows2) => {
-            setSelectedRows(selectedRows2);
-          }
-        };
-        const handleConfirm = () => {
-          if (!selectedRows.length) {
-            msgWarning("请选择歌单");
-            return;
-          }
-          if (selectedRows.length !== 1) return msgWarning("只能选择一个歌单");
-          res.current?.(selectedRows[0]);
-          close();
-        };
-        const [name2, setName] = useState("");
-        const [createModalVisible, setCreateModalVisible] = useState(false);
-        const handleCreate = async () => {
-          if (!name2.trim()) {
-            msgWarning("请输入歌单名称");
-            return;
-          }
-          try {
-            const res2 = await createPlaylist(name2.trim());
-            if (res2.code === 200) {
-              msgSuccess$1("新建成功");
-              handleGetPlayList();
-              setName("");
-              setCreateModalVisible(false);
-            } else {
-              msgError("新建失败");
-            }
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const handleCreateCommonPlaylist = async (artistName2) => {
-          const strategy = playlistCreationStrategies[artistName2];
-          if (!strategy) {
-            msgError("不支持的歌手类型");
-            return;
-          }
-          try {
-            const playlistName = strategy.getPlaylistName();
-            const res2 = await createPlaylist(playlistName);
-            if (res2.code === 200) {
-              msgSuccess$1(`成功创建"${playlistName}"`);
-              handleGetPlayList();
-              setCreateModalVisible(false);
-            } else {
-              msgError("创建失败");
-            }
-          } catch (error) {
-            console.log("error", error);
-            msgError("创建失败");
-          }
-        };
-        const handleDelete = async () => {
-          if (!selectedRows.length) {
-            msgWarning("请选择要删除的歌单");
-            return;
-          }
-          try {
-            await confirm(
-jsxRuntimeExports.jsx(DeleteConfirmContent, { playlists: selectedRows }),
-              "删除歌单"
-            );
-            const proArr = selectedRows.map((item) => deletePlaylist(item.id));
-            const res2 = await Promise.all(proArr);
-            console.log("res", res2);
-            msgSuccess$1("删除成功");
-            handleGetPlayList();
-            setSelectedRows([]);
-          } catch (error) {
-            console.log("error", error);
-            msgError("删除失败");
-          }
-        };
-        return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-jsxRuntimeExports.jsxs(
-            Modal,
-            {
-              title: "歌单列表",
-              open: visible,
-              onCancel: close,
-              footer: null,
-              centered: true,
-              width: 900,
-              children: [
-jsxRuntimeExports.jsx(
-                  SearchForm,
-                  {
-                    data: playList.map((item) => ({
-                      ...item,
-                      creator: item.creator.nickname
-                    })),
-                    options: [
-                      {
-                        label: "歌单名字",
-                        value: "name"
-                      },
-                      {
-                        label: "创建者",
-                        value: "creator"
-                      }
-                    ],
-                    onSearch: handleFilter
-                  }
-                ),
-jsxRuntimeExports.jsx(
-                  Table,
-                  {
-                    dataSource: filteredList,
-                    columns,
-                    rowKey: "id",
-                    size: "small",
-                    loading,
-                    scroll: { y: 400 },
-                    rowSelection
-                  }
-                ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.footer, children: [
-jsxRuntimeExports.jsxs("div", { children: [
-                    "已选择 ",
-                    selectedRows.length,
-                    " 个歌单"
-                  ] }),
-jsxRuntimeExports.jsxs(Space, { children: [
-jsxRuntimeExports.jsx(Button, { onClick: () => setCreateModalVisible(true), children: "新建歌单" }),
-jsxRuntimeExports.jsx(
-                      Button,
-                      {
-                        danger: true,
-                        disabled: !selectedRows.length,
-                        onClick: handleDelete,
-                        children: "删除歌单"
-                      }
-                    ),
-                    isSelect && jsxRuntimeExports.jsxs(
-                      Button,
-                      {
-                        type: "primary",
-                        onClick: handleConfirm,
-                        disabled: selectedRows.length !== 1,
-                        children: [
-                          "选择(",
-                          selectedRows.length,
-                          ")"
-                        ]
-                      }
-                    )
-                  ] })
-                ] })
-              ]
-            }
-          ),
-jsxRuntimeExports.jsxs(
-            Modal,
-            {
-              title: "新建歌单",
-              open: createModalVisible,
-              onCancel: () => {
-                setCreateModalVisible(false);
-                setName("");
-              },
-              onOk: handleCreate,
-              okText: "确定",
-              cancelText: "取消",
-              centered: true,
-              children: [
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入歌单名称",
-                    value: name2,
-                    onChange: (e) => setName(e.target.value),
-                    onPressEnter: handleCreate,
-                    autoFocus: true,
-                    style: { marginBottom: 16, padding: "4px 8px" }
-                  }
-                ),
-jsxRuntimeExports.jsx(Space, { wrap: true, children: Object.entries(playlistCreationStrategies).map(
-                  ([artistName2, strategy]) => jsxRuntimeExports.jsx(
-                    Tag,
-                    {
-                      color: strategy.color,
-                      style: {
-                        cursor: "pointer",
-                        marginBottom: 8,
-                        borderRadius: "4px",
-                        border: "1px solid #d9d9d9",
-                        transition: "all 0.3s"
-                      },
-                      onClick: () => handleCreateCommonPlaylist(artistName2),
-                      title: strategy.description,
-                      children: artistName2
-                    },
-                    artistName2
-                  )
-                ) })
-              ]
-            }
-          )
-        ] });
       };
-      const DeleteConfirmContent = ({ playlists }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "总计：" }),
-jsxRuntimeExports.jsx("div", { className: styles$6.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "删除数量：" }),
-jsxRuntimeExports.jsx("span", { className: styles$6.value, children: playlists.length }),
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 个歌单" })
-            ] }) })
-          ] }),
-jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "即将删除的歌单：" }) }),
-jsxRuntimeExports.jsx("ul", { className: styles$6.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$6.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.itemName, children: item.name }),
-              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$6.itemCount, children: [
-                item.trackCount,
-                "首"
-              ] })
-            ] }, item.id)) })
-          ] })
-        ] });
-      };
-      const PlayList$3 = forwardRef(PlayList$2);
-      const Stats = memo(({ selectedRows = [], filteredSongList = [] }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.stats, children: [
-          "已选择 ",
-jsxRuntimeExports.jsxs(Tag, { color: "blue", children: [
-            selectedRows.length,
-            " 首"
-          ] }),
-          " ",
-jsxRuntimeExports.jsx("span", { className: styles$6.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
-jsxRuntimeExports.jsx("span", { className: styles$6.divider, children: "/" }),
-          "共",
-          " ",
-jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
-            filteredSongList.length,
-            " 首"
-          ] }),
-          " ",
-jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
-        ] });
-      });
-      Stats.displayName = "Stats";
       var dayjs_min$1 = { exports: {} };
       var dayjs_min = dayjs_min$1.exports;
       var hasRequiredDayjs_min;
@@ -11382,1081 +10114,6 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
       }
       var dayjs_minExports = requireDayjs_min();
       const dayjs = getDefaultExportFromCjs(dayjs_minExports);
-      const CloudMusicManager = forwardRef((props, ref) => {
-        const { visible, close, reset } = useVisible(
-          {
-            onOpen() {
-              getCloudDataList();
-            }
-          },
-          ref
-        );
-        const [songList2, setSongList] = useState([]);
-        const [loading, setLoading] = useState(false);
-        const getCloudDataList = async () => {
-          try {
-            setLoading(true);
-            const res = await getCloudData(1e4, 0);
-            if (res.code === 200) {
-              console.log("songList", res.data);
-              setSongList(res.data);
-              setFilteredSongList(res.data);
-            }
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        const handleMatch = () => {
-          console.log("触发全部匹配事件");
-          emit(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, {
-            songList: filteredSongList,
-            timestamp: Date.now()
-          });
-        };
-        const [cancelMatchLoading, setCancelMatchLoading] = useState(false);
-        const handleCancelMatch = async () => {
-          try {
-            setCancelMatchLoading(true);
-            const promises = selectedRowKeys.map((songId) => {
-              return () => matchCloudSong(songId, "0");
-            });
-            const res = await promiseLimit(promises, 6);
-            console.log("res", res);
-            getCloudDataList();
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setCancelMatchLoading(false);
-          }
-        };
-        const filterConfig = {
-          fields: {
-            name: {
-              getValue: (song) => song?.simpleSong?.name
-            },
-            artist: {
-              getValue: getArtistName
-            },
-            album: {
-              getValue: getAlbumName
-            }
-          }
-        };
-        const [searchParams, setSearchParams] = useState({});
-        const {
-          filteredList: filteredSongList,
-          setFilteredList: setFilteredSongList,
-          handleFilter: handleSearch
-        } = useFilter(songList2, filterConfig);
-        useEffect(() => {
-          handleSearch(searchParams);
-        }, [songList2]);
-        const [selectedRows, setSelectedRows] = useState([]);
-        const selectedRowKeys = useMemo(
-          () => selectedRows.map((item) => item.songId),
-          [selectedRows]
-        );
-        const rowSelection = {
-          type: "checkbox",
-          fixed: true,
-          selectedRowKeys,
-          getCheckboxProps: (record) => ({
-            disabled: record.uploaded
-          }),
-          onChange: (selectedRowKeys2, selectedRows2) => {
-            setSelectedRows(selectedRows2);
-          }
-        };
-        const handleTableChange = (pagination, filters, sorter) => {
-          console.log("sorter", sorter);
-          setFilteredSongList((songList22) => {
-            return [...songList22].sort((a, b) => {
-              const order = sorter.order === "ascend" ? 1 : -1;
-              return order * sorter.column?.sorter?.(a, b);
-            });
-          });
-        };
-        const AudioRef = useRef(new Audio());
-        const [playSong, setPlaySong] = useState(null);
-        const [playing, setPlaying] = useState(false);
-        const handlePlaySong = (record) => {
-          if (playSong?.id === record.id) {
-            const audio2 = AudioRef.current;
-            playing ? audio2.pause() : audio2.play();
-            setPlaying(!playing);
-            return;
-          }
-          setPlaySong(record);
-          setPlaying(true);
-        };
-        const play = async () => {
-          try {
-            const res = await getSongUrl([playSong.id]);
-            console.log("res", res);
-            if (res.code !== 200) return msgError("获取歌曲链接失败");
-            const audio2 = AudioRef.current;
-            audio2.src = res.data[0].url;
-            audio2.addEventListener("ended", () => {
-              setPlaySong(null);
-            });
-            audio2.addEventListener("error", () => {
-              setPlaySong(null);
-            });
-            audio2.play();
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        useEffect(() => {
-          if (!playSong) return;
-          play();
-        }, [playSong]);
-        const [pageParams, setPageParams] = useState({
-          page: 1,
-          pageSize: 20
-        });
-        const renderSongInfo = (_, record, index) => {
-          const isCurrentSong = record.simpleSong?.id === playSong?.id;
-          const artistName2 = getArtistName(record);
-          const albumName = getAlbumName(record);
-          const songName2 = record.simpleSong?.name;
-          const albumPic = record.simpleSong?.al?.picUrl;
-          return jsxRuntimeExports.jsxs("div", { className: styles$6.songInfoColumn, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index + 1 }),
-jsxRuntimeExports.jsxs(
-              "div",
-              {
-                className: `${styles$6.songCover} ${isCurrentSong ? styles$6.playing : ""}`,
-                onClick: () => handlePlaySong(record.simpleSong),
-                children: [
-jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$6.songCoverImg }),
-jsxRuntimeExports.jsx("div", { className: styles$6.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
-                ]
-              }
-            ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.songInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.songName, children: songName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$6.subInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.artist, children: artistName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$6.album, children: [
-                  albumName && " - ",
-                  albumName
-                ] })
-              ] })
-            ] })
-          ] });
-        };
-        const columns = [
-          {
-            title: "歌名",
-            dataIndex: "simpleSong",
-            key: "name",
-            width: 300,
-            fixed: !isMobile() ? "left" : void 0,
-            sorter: (a, b) => a.simpleSong.name?.localeCompare(b.simpleSong.name),
-            sortDirections: ["ascend", "descend"],
-            render: renderSongInfo
-          },
-          {
-            title: "歌手",
-            dataIndex: "simpleSong",
-            key: "artists",
-            width: 60,
-            sorter: (a, b) => {
-              const aArtists = a.simpleSong.ar?.map((a2) => a2.name).join(",");
-              const bArtists = b.simpleSong.ar?.map((a2) => a2.name).join(",");
-              return aArtists?.localeCompare(bArtists);
-            },
-            fixed: !isMobile() ? "left" : void 0,
-            sortDirections: ["ascend", "descend"],
-            ellipsis: true,
-            render: null
-          },
-          {
-            title: "专辑",
-            dataIndex: "simpleSong",
-            key: "album",
-            width: 60,
-            fixed: !isMobile() ? "left" : void 0,
-            sorter: (a, b) => a.simpleSong.al?.name?.localeCompare(b.simpleSong.al?.name),
-            sortDirections: ["ascend", "descend"],
-            defaultSortOrder: "ascend",
-            ellipsis: true,
-            render: null
-          },
-{
-            title: "原始专辑",
-            dataIndex: "simpleSong.al.name",
-            width: 160,
-            fixed: "left",
-            ellipsis: true,
-            sorter: (a, b) => {
-              const aOriginalInfo = getOriginalInfo(a);
-              const bOriginalInfo = getOriginalInfo(b);
-              return aOriginalInfo.album?.localeCompare(bOriginalInfo.album);
-            },
-            sortDirections: ["ascend", "descend"],
-            render: (_, record) => {
-              const { song, album: album2, artist: artist2 } = getOriginalInfo(record);
-              return jsxRuntimeExports.jsxs("div", { className: styles$6["original-album"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6["song-info"], title: song, children: [
-                  song,
-                  " ",
-                  artist2 && `· ${artist2}`
-                ] }),
-jsxRuntimeExports.jsx("div", { className: styles$6["album-info"], title: album2, children: album2 })
-              ] });
-            }
-          },
-{
-            title: "手动id匹配",
-            dataIndex: "matchType",
-            key: "matchType",
-            width: 300,
-            sorter: (a, b) => {
-              const isAMatched = a.matchType === "matched";
-              const isBMatched = b.matchType === "matched";
-              if (!isAMatched && !isBMatched) {
-                return 0;
-              }
-              if (!isAMatched && isBMatched) {
-                return 1;
-              }
-              if (isAMatched && !isBMatched) {
-                return -1;
-              }
-              const aAlbum = getAlbumName(a);
-              const bAlbum = getAlbumName(b);
-              const aOriginalAlbum = getOriginalInfo(a).album;
-              const bOriginalAlbum = getOriginalInfo(b).album;
-              const aMatchError = aAlbum !== aOriginalAlbum;
-              const bMatchError = bAlbum !== bOriginalAlbum;
-              if (aMatchError && !bMatchError) {
-                return 1;
-              }
-              if (!aMatchError && bMatchError) {
-                return -1;
-              }
-              return 0;
-            },
-            sortDirections: ["ascend", "descend"],
-            render: (matchType, r) => jsxRuntimeExports.jsx(IdMatch, { data: r, onUpdate: getCloudDataList })
-          },
-{
-            title: "自定义匹配",
-            dataIndex: "customMatch",
-            key: "customMatch",
-            width: 500,
-            render: (_, record) => jsxRuntimeExports.jsx(CustomMatch, { data: record, onUpdate: getCloudDataList })
-          },
-          {
-            title: "大小",
-            dataIndex: "fileSize",
-            key: "fileSize",
-            width: 100,
-            sorter: (a, b) => a.fileSize - b.fileSize,
-            sortDirections: ["ascend", "descend"],
-            render: (size2) => `${(size2 / 1024 / 1024).toFixed(2)}MB`
-          },
-          {
-            title: "比特率",
-            dataIndex: "bitrate",
-            key: "bitrate",
-            width: 100,
-            sorter: (a, b) => a.bitrate - b.bitrate,
-            sortDirections: ["ascend", "descend"],
-            render: (bitrate) => jsxRuntimeExports.jsxs(Tag, { color: "blue", children: [
-              bitrate,
-              "kbps"
-            ] })
-          },
-          {
-            title: "上传时间",
-            dataIndex: "addTime",
-            key: "addTime",
-            width: 150,
-            sorter: (a, b) => a.addTime - b.addTime,
-            sortDirections: ["ascend", "descend"],
-            render: (time) => dayjs(time).format("YYYY-MM-DD HH:mm:ss")
-          }
-        ];
-        const [range, setRange] = useState([]);
-        const handleRangeChoose = () => {
-          console.log("range", range);
-          if (!range[0] || !range[1]) return msgWarning("请输入区间");
-          if (range[0] > range[1]) return msgWarning("区间错误");
-          console.log(
-            "filteredSongList.slice(range[0] - 1, range[1])",
-            filteredSongList,
-            filteredSongList.slice(range[0] - 1, range[1])
-          );
-          setSelectedRows(filteredSongList.slice(range[0] - 1, range[1]));
-        };
-        const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] = useState(false);
-        const handleAddToPlaylistByAlbum = async () => {
-          try {
-            setAddToPlayListByAlbumLoading(true);
-            console.log("自动按专辑添加");
-            const albumMap = new Map();
-            filteredSongList.forEach((song) => {
-              const { simpleSong } = song;
-              const album2 = `${simpleSong.ar?.[0]?.name || ""}-${simpleSong.al?.name}`;
-              if (!albumMap.has(album2)) {
-                albumMap.set(album2, []);
-              }
-              albumMap.get(album2).push(song);
-            });
-            const totalSongs = filteredSongList.length;
-            const albums = Array.from(albumMap.entries()).sort(
-              ([, songsA], [, songsB]) => songsB.length - songsA.length
-            );
-            await confirm(
-jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
-              "自动按专辑添加",
-              {
-                width: "auto"
-              }
-            );
-            const res = await getPlaylistList();
-            console.log("res", res);
-            if (res.code !== 200) return msgError("获取歌单失败");
-            const playlist = res.playlist;
-            for (const [album2, songs2] of albums) {
-              try {
-                const playlistName = album2;
-                console.log("playlistName", playlistName, "songs", songs2);
-                let playlistId = playlist.find((p) => p.name === playlistName)?.id;
-                if (!playlistId) {
-                  const truncatedName = truncateString(playlistName, 40);
-                  const res3 = await createPlaylist(truncatedName);
-                  if (res3.code === 200) {
-                    playlistId = res3.id;
-                  } else {
-                    console.log("res", res3);
-                    debugger;
-                  }
-                  await sleep(1e3);
-                }
-                const songIds = songs2.map((song) => song.songId);
-                const res2 = await addSongToPlaylist(playlistId, songIds);
-                console.log("res", res2);
-                if (res2.code !== 200) {
-                  console.log("添加歌曲失败", res2.message || res2.msg);
-                }
-                await sleep(500);
-              } catch (error) {
-                console.log("error", error);
-              }
-            }
-            setSelectedRows([]);
-            msgSuccess$1("添加成功");
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setAddToPlayListByAlbumLoading(false);
-          }
-        };
-        const handleStoleSong = async () => {
-          console.log("selectedRows", selectedRows);
-          const stolenList = selectedRows.map((item) => {
-            const {
-              artist: artist2,
-              album: album2,
-              ar,
-              simpleSong,
-              privateCloud,
-              songId,
-              fileSize,
-              songName: songName2,
-              fileName,
-              bitrate
-            } = item;
-            return {
-              artist: artist2,
-              artists: ar?.map((a) => a.name) || [artist2],
-              album: album2 || getAlbumName(item),
-              id: songId,
-              size: fileSize,
-              md5: privateCloud.md5,
-              name: songName2,
-              ext: fileName.split(".")[1] || "mp3",
-              bitrate
-            };
-          });
-          downloadJsonFile(stolenList, "stolenList.json");
-        };
-        const playListRef = useRef(null);
-        const handleAddToPlaylist = async () => {
-          try {
-            console.log("添加到歌单");
-            playListRef.current.open("select");
-            const playlist = await playListRef.current.submit();
-            if (!playlist) return;
-            const songIds = selectedRows.map((item) => item.songId);
-            const res = await addSongToPlaylist(playlist.id, songIds);
-            console.log("res", res);
-            if (res.code === 200) {
-              setSelectedRows([]);
-              msgSuccess$1("添加成功");
-            }
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const handleCreatePlaylist = () => {
-          playListRef.current.open();
-        };
-        const handleDeleteSong = async () => {
-          try {
-            const confirmContent = jsxRuntimeExports.jsx(
-              DeleteConfirmation,
-              {
-                selectedCount: selectedRows.length,
-                songNames: selectedRows.map((item) => item.simpleSong.name)
-              }
-            );
-            await confirm(confirmContent, "删除确认");
-            const songIds = selectedRows.map((item) => item.songId);
-            const res = await deleteCloudSong(songIds);
-            console.log("res", res);
-            if (res.code === 200) {
-              msgSuccess$1("删除成功");
-              reset();
-              getCloudDataList();
-            }
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        return jsxRuntimeExports.jsxs(
-          Modal,
-          {
-            title: "云盘音乐管理",
-            open: visible,
-            onCancel: close,
-            footer: null,
-            centered: true,
-            width: 1700,
-            children: [
-jsxRuntimeExports.jsx(
-                SearchForm,
-                {
-                  onSearch: (values) => {
-                    console.log("values", values);
-                    setSearchParams(values);
-                    handleSearch(values);
-                  },
-                  data: songList2.map((item) => {
-                    return {
-                      ...item,
-                      name: item.simpleSong.name,
-                      artists: getArtistName(item),
-                      album: getAlbumName(item)
-                    };
-                  }),
-                  options: [
-                    { label: "歌曲", value: "name" },
-                    { label: "歌手", value: "artist" },
-                    { label: "专辑", value: "album" }
-                  ]
-                }
-              ),
-jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  style: {
-                    display: "flex",
-                    justifyContent: "flex-end",
-                    gap: 16,
-                    marginBottom: 16
-                  },
-                  children: [
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleMatch, children: "全部匹配" }),
-jsxRuntimeExports.jsx(
-                      Button,
-                      {
-                        type: "primary",
-                        disabled: !selectedRows.length,
-                        loading: cancelMatchLoading,
-                        onClick: handleCancelMatch,
-                        children: "全部取消匹配"
-                      }
-                    ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: getCloudDataList, children: "刷新" })
-                  ]
-                }
-              ),
-jsxRuntimeExports.jsx(
-                Table,
-                {
-                  rowSelection,
-                  dataSource: filteredSongList,
-                  columns,
-                  scroll: { y: 500, x: 1e3 },
-                  size: "small",
-                  loading,
-                  rowKey: ({ songId }) => songId,
-                  rowClassName: (record) => {
-                    const { songId } = record;
-                    const classNames = [];
-                    if (songId === playSong?.id) {
-                      classNames.push(styles$6.currentSong);
-                    }
-                    const isMatch = record.matchType === "matched";
-                    const album2 = normalizeString(getAlbumName(record));
-                    const originalAlbum = normalizeString(getOriginalInfo(record)?.album);
-                    if (isMatch && !album2.includes(originalAlbum.slice(0, 3))) {
-                      classNames.push(styles$6.matchError);
-                    }
-                    return classNames.join(" ");
-                  },
-                  onChange: handleTableChange,
-                  pagination: {
-                    defaultPageSize: 20,
-                    showQuickJumper: true,
-                    showSizeChanger: true,
-                    onChange: (page, pageSize) => setPageParams({ page, pageSize })
-                  }
-                }
-              ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.footer, children: [
-jsxRuntimeExports.jsx(
-                  Stats,
-                  {
-                    selectedRows,
-                    filteredSongList
-                  }
-                ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.actions, children: [
-jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      style: {
-                        width: 100
-                      },
-                      value: range[0],
-                      onChange: (e) => {
-                        setRange([+e.target.value || void 0, range[1]]);
-                      },
-                      placeholder: "起始位置"
-                    }
-                  ),
-jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      style: {
-                        width: 100
-                      },
-                      value: range[1],
-                      onChange: (e) => setRange([range[0], +e.target.value || void 0]),
-                      placeholder: "结束位置"
-                    }
-                  ),
-jsxRuntimeExports.jsx(Button, { onClick: handleRangeChoose, style: { marginRight: 10 }, children: "区间选择" }),
-                  filteredSongList?.length > selectedRows?.length ? jsxRuntimeExports.jsx(Button, { onClick: () => setSelectedRows(filteredSongList), children: "全部选择" }) : jsxRuntimeExports.jsx(Button, { onClick: () => setSelectedRows([]), children: "全部取消" }),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      onClick: () => setSelectedRows(
-                        filteredSongList.filter((item) => !selectedRows.includes(item))
-                      ),
-                      children: "反选"
-                    }
-                  ),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      type: "primary",
-                      onClick: handleAddToPlaylistByAlbum,
-                      loading: addToPlayListByAlbumLoading,
-                      children: "自动按专辑添加"
-                    }
-                  ),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      type: "primary",
-                      disabled: !selectedRows.length,
-                      onClick: handleStoleSong,
-                      children: "偷取资源"
-                    }
-                  ),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      type: "primary",
-                      disabled: !selectedRows.length,
-                      onClick: handleAddToPlaylist,
-                      children: "添加到歌单"
-                    }
-                  ),
-jsxRuntimeExports.jsx(Button, { onClick: handleCreatePlaylist, children: "新建歌单" }),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      type: "primary",
-                      danger: true,
-                      disabled: !selectedRows.length,
-                      onClick: handleDeleteSong,
-                      children: "删除歌曲"
-                    }
-                  )
-                ] })
-              ] }),
-jsxRuntimeExports.jsx(PlayList$3, { ref: playListRef })
-            ]
-          }
-        );
-      });
-      const AutoAddContent = ({ totalSongs, albums }) => {
-        const handleCopy = () => {
-          const text2 = albums.map(([name2, songs2]) => `${name2}（${songs2.length}首）`).join("\n");
-          navigator.clipboard.writeText(text2).then(() => {
-            message.success("复制成功");
-          });
-        };
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "总计：" }),
-jsxRuntimeExports.jsxs("div", { className: styles$6.statsContent, children: [
-jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "歌曲数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$6.value, children: totalSongs }),
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 首" })
-              ] }),
-jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "歌单数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$6.value, children: albums.length }),
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 个" })
-              ] })
-            ] })
-          ] }),
-jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6.listHeader, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "即将创建的歌单：" }),
-jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "link",
-                  size: "small",
-                  icon: jsxRuntimeExports.jsx(CopyrightOutlined, {}),
-                  onClick: handleCopy,
-                  children: "复制列表"
-                }
-              )
-            ] }),
-jsxRuntimeExports.jsx("ul", { className: styles$6.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$6.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.itemName, children: name2 }),
-jsxRuntimeExports.jsxs("span", { className: styles$6.itemCount, children: [
-                songs2.length,
-                "首"
-              ] })
-            ] }, name2)) })
-          ] })
-        ] });
-      };
-      const DeleteConfirmation = ({ selectedCount, songNames }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.deleteConfirmation, children: [
-jsxRuntimeExports.jsxs("p", { className: styles$6.title, children: [
-            "您确定要删除以下 ",
-jsxRuntimeExports.jsx("span", { className: styles$6.count, children: selectedCount }),
-            " ",
-            "首歌曲吗？"
-          ] }),
-jsxRuntimeExports.jsx("div", { className: styles$6.songs, children: songNames.map((name2, index) => jsxRuntimeExports.jsx("div", { className: styles$6.songItem, children: name2 }, index)) }),
-jsxRuntimeExports.jsx("div", { className: styles$6.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$6.text, children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.icon, children: "!" }),
-            "注意：此操作不可恢复，删除后歌曲将从您的网易云音乐云盘中永久移除。"
-          ] }) })
-        ] });
-      };
-      const getArtistName = (song) => {
-        return song.simpleSong.ar?.map((a) => a.name).filter(Boolean).join(",") || song.artist || "";
-      };
-      const getAlbumName = (song) => {
-        return song.simpleSong.al?.name || song.album || "";
-      };
-      const getOriginalInfo = (record) => {
-        const { simpleSong } = record;
-        const { song, album: album2, artist: artist2 } = simpleSong.privilege?.pc || {};
-        return { song, album: album2, artist: artist2 };
-      };
-      const githubContainer = "_githubContainer_b3krt_2";
-      const userInfo = "_userInfo_b3krt_9";
-      const username = "_username_b3krt_15";
-      const starCount = "_starCount_b3krt_18";
-      const bio = "_bio_b3krt_24";
-      const features = "_features_b3krt_28";
-      const featureList = "_featureList_b3krt_37";
-      const profileButton = "_profileButton_b3krt_61";
-      const styles$5 = {
-        githubContainer,
-        userInfo,
-        username,
-        starCount,
-        bio,
-        features,
-        featureList,
-        profileButton
-      };
-      const fetchGithubData = async () => {
-        try {
-          const owner = "520Qiuyu";
-          const repo = "CloudMusic";
-          const token = "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";
-          const [userResponse, repoResponse] = await Promise.all([
-            fetch(`https://api.github.com/users/${owner}`, {
-              headers: {
-                Accept: "application/vnd.github.v3+json",
-                Authorization: `token ${token}`
-              }
-            }),
-            fetch(`https://api.github.com/repos/${owner}/${repo}`, {
-              headers: {
-                Accept: "application/vnd.github.v3+json",
-                Authorization: `token ${token}`
-              }
-            })
-          ]);
-          if (!userResponse.ok || !repoResponse.ok) {
-            throw new Error("API请求失败");
-          }
-          const userData = await userResponse.json();
-          const repoData = await repoResponse.json();
-          return {
-            avatar_url: userData.avatar_url,
-            stargazers_count: repoData.stargazers_count
-          };
-        } catch (error) {
-          console.error("获取GitHub数据失败:", error);
-          return {
-            avatar_url: "",
-            stargazers_count: 0
-          };
-        }
-      };
-      const { Title, Text } = Typography;
-      const GithubInfo = forwardRef((props, ref) => {
-        const { visible, close } = useVisible({}, ref);
-        const [starCount2, setStarCount] = useState(0);
-        const [avatarUrl, setAvatarUrl] = useState("");
-        useEffect(() => {
-          fetchGithubData().then((data) => {
-            setStarCount(data.stargazers_count);
-            setAvatarUrl(data.avatar_url);
-          });
-        }, []);
-        const githubInfo = {
-          avatar: avatarUrl || "https://avatars.githubusercontent.com/u/520Qiuyu",
-          username: "520Qiuyu",
-          bio: "网易云音乐快速上传助手",
-          profileUrl: "https://github.com/520Qiuyu/CloudMusic",
-          starCount: `⭐ ${starCount2}`,
-          features: [
-            "🚀 云盘快速上传：支持同时选择多个歌手的音乐资源文件按专辑顺序进行上传",
-            "📊 进度显示：实时展示上传进度和状态",
-            "🔍 智能匹配：自动匹配歌曲信息，包括歌手、专辑等",
-            "🎵 文件管理：支持查看已上传文件列表",
-            "🔄 并发控制：智能控制上传并发数，避免服务器压力",
-            "🎵 云盘音乐管理：支持手动将添加的歌曲添加到歌单中",
-            "🔄 偷取资源：支持从其他用户的云盘偷取资源，获得导入JSON文件",
-            "🎯 手动匹配纠正：支持手动匹配纠正歌曲信息",
-            "📤 云盘本地上传：支持将本地音乐文件上传",
-            "📥 云盘JSON文件导入：支持通过JSON文件（偷取资源的JSON）导入到云盘，实现云盘音乐的批量导入"
-          ]
-        };
-        const handleProfileClick = () => {
-          window.open(githubInfo.profileUrl, "_blank");
-        };
-        return jsxRuntimeExports.jsx(
-          Modal,
-          {
-            title: "GitHub 信息",
-            open: visible,
-            onCancel: close,
-            footer: null,
-            centered: true,
-            width: 700,
-            zIndex: 99999,
-            children: jsxRuntimeExports.jsxs("div", { className: styles$5.githubContainer, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$5.userInfo, children: [
-jsxRuntimeExports.jsx(
-                  Avatar,
-                  {
-                    size: 100,
-                    src: githubInfo.avatar,
-                    icon: jsxRuntimeExports.jsx(GithubOutlined, {})
-                  }
-                ),
-jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx(Title, { level: 4, className: styles$5.username, children: githubInfo.username }),
-jsxRuntimeExports.jsx(Text, { className: styles$5.starCount, children: githubInfo.starCount })
-                ] })
-              ] }),
-jsxRuntimeExports.jsx(Title, { level: 5, className: styles$5.bio, children: githubInfo.bio }),
-jsxRuntimeExports.jsxs("div", { className: styles$5.features, children: [
-jsxRuntimeExports.jsx(Title, { level: 5, children: "✨ 功能特性" }),
-jsxRuntimeExports.jsx("ul", { className: styles$5.featureList, children: githubInfo.features.map((feature, index) => jsxRuntimeExports.jsx("li", { children: feature }, index)) })
-              ] }),
-jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "primary",
-                  icon: jsxRuntimeExports.jsx(GithubOutlined, {}),
-                  onClick: handleProfileClick,
-                  className: styles$5.profileButton,
-                  children: "查看 GitHub 主页"
-                }
-              )
-            ] })
-          }
-        );
-      });
-      const dragger = "_dragger_1latm_12";
-      const divider$1 = "_divider_1latm_58";
-      const styles$4 = {
-        "local-upload": "_local-upload_1latm_1",
-        "upload-section": "_upload-section_1latm_6",
-        dragger,
-        "upload-icon": "_upload-icon_1latm_26",
-        "upload-text": "_upload-text_1latm_30",
-        "upload-hint": "_upload-hint_1latm_34",
-        "file-list": "_file-list_1latm_39",
-        "upload-stats": "_upload-stats_1latm_49",
-        "size-text": "_size-text_1latm_55",
-        divider: divider$1
-      };
-      const { Dragger } = Upload;
-      const LocalUpload = forwardRef((props, ref) => {
-        const { visible, close } = useVisible(
-          {
-            onReset() {
-              setLoading(false);
-              setFileList([]);
-            }
-          },
-          ref
-        );
-        const [fileList, setFileList] = useState([]);
-        const [loading, setLoading] = useState(false);
-        const [concurrency, setConcurrency] = useState(1);
-        const handleUpload = async () => {
-          try {
-            setLoading(true);
-            const uploadPromises = fileList.map((file) => async () => {
-              try {
-                if (file.status === "done") {
-                  return;
-                }
-                file.status = "uploading";
-                const res2 = await uploadLocalSong(file);
-                console.log("res", res2);
-                file.status = "done";
-                return res2;
-              } catch (e) {
-                file.status = "error";
-                return null;
-              } finally {
-                setFileList((prev) => [...prev]);
-              }
-            });
-            const res = await promiseLimit(uploadPromises, concurrency);
-            console.log("res", res);
-            msgSuccess$1("上传成功");
-            const size2 = res.filter(Boolean).reduce((acc, file) => acc + file.size, 0);
-            const info2 = {
-              list: res.filter(Boolean),
-              count: res.filter(Boolean).length,
-              size: size2,
-              sizeDesc: formatFileSize(size2),
-              artist: res.filter(Boolean)?.[0].artist || ""
-            };
-            downloadJsonFile(info2, info2.artist + ".json");
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        const handleFilter = async () => {
-          setFileList((prev) => prev.filter((file) => file.status === "error"));
-        };
-        const [getJsonLoading, setGetJsonLoading] = useState(false);
-        const handleGetJson = async () => {
-          try {
-            setGetJsonLoading(true);
-            const proArr = fileList.map(async (file) => {
-              const ext = file.name.split(".").pop() || "mp3";
-              const bitrate = 999e3;
-              const name2 = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
-              const size2 = file.size;
-              const md52 = await getFileMD5(file);
-              const { album: album2, artist: artist2, artists, title: title2 } = await getAudioMetadata(file);
-              return {
-                size: size2,
-                md5: md52,
-                bitrate,
-                ext,
-                album: album2,
-                artist: artist2,
-                artists,
-                name: title2
-              };
-            });
-            const data = await Promise.all(proArr);
-            console.log("data", data);
-            downloadJsonFile(data, data[0].artist + ".json");
-          } catch (e) {
-            console.log("error", e);
-          } finally {
-            setGetJsonLoading(false);
-          }
-        };
-        const columns = [
-          {
-            title: "文件名",
-            dataIndex: "name",
-            key: "name"
-          },
-          {
-            title: "大小",
-            dataIndex: "size",
-            key: "size",
-            render: (size2) => `${(size2 / 1024 / 1024).toFixed(2)} MB`
-          },
-          {
-            title: "状态",
-            dataIndex: "status",
-            key: "status",
-            render: (status, record) => {
-              if (status === "done") {
-                return jsxRuntimeExports.jsx(Progress, { percent: 100, size: "small", status: "success" });
-              }
-              if (status === "error") {
-                return jsxRuntimeExports.jsx(Progress, { percent: 100, size: "small", status: "exception" });
-              }
-              if (status === "uploading") {
-                return jsxRuntimeExports.jsx(
-                  Progress,
-                  {
-                    percent: record.progress || 0,
-                    size: "small",
-                    status: "active"
-                  }
-                );
-              }
-              return jsxRuntimeExports.jsx(Progress, { percent: 0, size: "small" });
-            }
-          }
-        ];
-        return jsxRuntimeExports.jsx(
-          Modal,
-          {
-            title: "云盘本地上传",
-            open: visible,
-            onCancel: close,
-            onOk: handleUpload,
-            confirmLoading: loading,
-            centered: true,
-            width: 1e3,
-            children: jsxRuntimeExports.jsxs("div", { className: styles$4["local-upload"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$4["upload-section"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$4["concurrency-control"], children: [
-jsxRuntimeExports.jsx("span", { children: "并发数量：" }),
-jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      type: "number",
-                      min: 1,
-                      max: 6,
-                      value: concurrency,
-                      onChange: (e) => setConcurrency(parseInt(e.target.value) || 1),
-                      style: { width: 80 }
-                    }
-                  )
-                ] }),
-jsxRuntimeExports.jsxs(
-                  Dragger,
-                  {
-                    className: styles$4.dragger,
-                    multiple: true,
-                    fileList,
-                    beforeUpload: (file) => {
-                      setFileList((prev) => [...prev, file]);
-                      return false;
-                    },
-                    showUploadList: false,
-                    accept: ".mp3,.flac,.wav,.m4a,.ogg",
-                    children: [
-jsxRuntimeExports.jsx("p", { className: styles$4["upload-icon"], children: jsxRuntimeExports.jsx(InboxOutlined, {}) }),
-jsxRuntimeExports.jsx("p", { className: styles$4["upload-text"], children: "点击或拖拽文件到此区域上传" }),
-jsxRuntimeExports.jsx("p", { className: styles$4["upload-hint"], children: "支持 mp3, flac, wav, m4a, ogg 格式的音频文件" })
-                    ]
-                  }
-                )
-              ] }),
-jsxRuntimeExports.jsxs("div", { className: styles$4["file-list"], children: [
-jsxRuntimeExports.jsx(
-                  Table,
-                  {
-                    columns,
-                    dataSource: fileList,
-                    rowKey: (file) => file.uid || file.name,
-                    scroll: { y: 300 },
-                    pagination: false
-                  }
-                ),
-jsxRuntimeExports.jsxs("div", { className: styles$4["upload-stats"], children: [
-jsxRuntimeExports.jsxs("span", { children: [
-                    "共 ",
-                    fileList.length,
-                    " 个文件"
-                  ] }),
-jsxRuntimeExports.jsx("span", { className: styles$4.divider, children: "|" }),
-jsxRuntimeExports.jsxs("span", { className: styles$4["size-text"], children: [
-                    "总大小：",
-                    formatFileSize(
-                      fileList.reduce((acc, file) => acc + file.size, 0)
-                    )
-                  ] }),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      type: "primary",
-                      size: "small",
-                      onClick: () => setFileList([]),
-                      style: { marginLeft: "auto" },
-                      children: "清空列表"
-                    }
-                  ),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      type: "primary",
-                      size: "small",
-                      onClick: handleFilter,
-                      disabled: !fileList.some((file) => file.status !== "error"),
-                      children: "失败过滤"
-                    }
-                  ),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      type: "primary",
-                      size: "small",
-                      onClick: handleGetJson,
-                      loading: getJsonLoading,
-                      children: "直接获取JSON"
-                    }
-                  )
-                ] })
-              ] })
-            ] })
-          }
-        );
-      });
       const getQualityTags = (song) => {
         const tags = [];
         if (song.hr)
@@ -12470,6 +10127,49 @@ jsxRuntimeExports.jsx(
         if (song.h)
           tags.push({ label: "HQ", color: "#2db7f5", value: QUALITY_LEVELS.较高 });
         return tags;
+      };
+      const formatDuration = (ms2) => {
+        const time = dayjs.duration(ms2);
+        const minutes = time.minutes();
+        const seconds = time.seconds();
+        return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+      };
+      const getMarkTags = (mark) => {
+        const tags = [];
+        if (mark & 131072) tags.push({ text: "纯音乐", color: "#2db7f5" });
+        if (mark & 262144) tags.push({ text: "杜比全景声", color: "#722ed1" });
+        if (mark & 1048576) tags.push({ text: "🅴", color: "#f50" });
+        if (mark & 17179869184) tags.push({ text: "Hi-Res", color: "#f50" });
+        return tags;
+      };
+      const getOriginTag = (originCoverType) => {
+        const types = {
+          0: { text: "未知", color: "#d9d9d9" },
+          1: { text: "原曲", color: "#87d068" },
+          2: { text: "翻唱", color: "#2db7f5" }
+        };
+        return types[originCoverType] || types[0];
+      };
+      const formatPopularity = (pop) => {
+        if (!pop) return "0";
+        return pop.toFixed(1);
+      };
+      const getTypeTag = (t) => {
+        const types = {
+          0: { text: "普通歌曲", color: "#108ee9" },
+          1: { text: "独立云盘", color: "#f50" },
+          2: { text: "云盘歌曲", color: "#87d068" }
+        };
+        return types[t] || types[0];
+      };
+      const getFeeTag = (fee) => {
+        const fees = {
+          0: { text: "免费", color: "#87d068" },
+          1: { text: "VIP", color: "#f50" },
+          4: { text: "专辑购买", color: "#722ed1" },
+          8: { text: "付费/试听", color: "#faad14" }
+        };
+        return fees[fee] || fees[0];
       };
       var Module = (() => {
         var _scriptName = module.meta.url;
@@ -15116,95 +12816,123 @@ jsxRuntimeExports.jsx(
           }
         });
       }
-      const executeMetaflac = async (args, inputFiles, outputFileNames) => {
-        const options = { inputFiles };
-        if (outputFileNames) {
-          options.outputFileNames = outputFileNames;
-        }
-        const result = await metaflac(args, options);
-        console.log("metaflac result:", result);
-        return result;
+      const downloadJsonFile = (data, filename) => {
+        const blob = new Blob([JSON.stringify(data, null, 2)], {
+          type: "application/json"
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.click();
+        URL.revokeObjectURL(url);
       };
-      const checkMetaflacSuccess = (result, operation) => {
-        if (result.exitCode !== 0) {
-          console.error(`${operation}失败:`, result.stderr);
+      const downloadFile = async (url, filename) => {
+        try {
+          if (!url || !filename) {
+            throw new Error("URL和文件名不能为空");
+          }
+          const link = document.createElement("a");
+          link.href = url.replace("http://", "https://");
+          link.download = filename;
+          link.style.display = "none";
+          link.style.position = "absolute";
+          link.style.left = "-9999px";
+          const handleClick = (e) => {
+            e.stopPropagation();
+          };
+          link.addEventListener("click", handleClick, true);
+          link.click();
+          setTimeout(() => {
+            link.removeEventListener("click", handleClick);
+          }, 100);
+        } catch (error) {
+          console.error("文件下载出错:", error);
+          throw error;
+        }
+      };
+      const getFileBlob = async (url) => {
+        const response = await fetch(url, {
+          redirect: "follow"
+        });
+        if (!response.ok) {
+          throw new Error(`获取文件失败: ${response.status} ${response.statusText}`);
+        }
+        const blob = await response.blob();
+        return { blob, response };
+      };
+      const downloadAsJson = (data, filename, options = {}) => {
+        try {
+          const { space = 2, timestamp = false } = options;
+          const jsonString = JSON.stringify(data, null, space);
+          const blob = new Blob([jsonString], { type: "application/json" });
+          const blobUrl = window.URL.createObjectURL(blob);
+          let finalFilename = filename;
+          if (timestamp) {
+            const date = new Date();
+            const timeString = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(
+        date.getDate()
+      ).padStart(2, "0")}_${String(date.getHours()).padStart(2, "0")}${String(
+        date.getMinutes()
+      ).padStart(2, "0")}${String(date.getSeconds()).padStart(2, "0")}`;
+            finalFilename = `${filename}_${timeString}`;
+          }
+          downloadFile(blobUrl, `${finalFilename}.json`);
+          window.URL.revokeObjectURL(blobUrl);
+          return true;
+        } catch (error) {
+          console.error("JSON数据下载失败:", error);
           return false;
         }
-        return true;
       };
-      const blobToBuffer = async (file) => {
-        return new Uint8Array(await file.arrayBuffer());
-      };
-      const bufferToBlob = (buffer, mimeType = "audio/flac") => {
-        return new Blob([buffer], { type: mimeType });
-      };
-      const writeFlacTag = async (file, tagName, tagValue) => {
+      const downloadAsLRC = (lrcContent, filename, options = {}) => {
         try {
-          const buffer = await blobToBuffer(file);
-          const result = await executeMetaflac(
-            [`--set-tag=${tagName.toUpperCase()}=${tagValue}`, "file.flac"],
-new Map([["file.flac", buffer]]),
-            ["file.flac"]
-          );
-          if (!checkMetaflacSuccess(result, "给 FLAC 写标签")) {
-            return void 0;
+          const { timestamp = false } = options;
+          let finalFilename = filename;
+          if (timestamp) {
+            const now = new Date();
+            const ts = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(
+        now.getDate()
+      ).padStart(2, "0")}_${String(now.getHours()).padStart(2, "0")}${String(
+        now.getMinutes()
+      ).padStart(2, "0")}${String(now.getSeconds()).padStart(2, "0")}`;
+            finalFilename = `${filename}_${ts}`;
           }
-          const outputFile = result.files.get("file.flac");
-          if (outputFile) {
-            console.log("给 FLAC 写标签成功:", result.stdout);
-            return bufferToBlob(outputFile);
-          }
-          return file;
+          const blob = new Blob([lrcContent], { type: "text/plain" });
+          const blobUrl = window.URL.createObjectURL(blob);
+          downloadFile(blobUrl, `${finalFilename}.lrc`);
+          window.URL.revokeObjectURL(blobUrl);
+          return true;
         } catch (error) {
-          console.error("给 FLAC 写标签失败:", error);
-          throw new Error("给 FLAC 写标签失败");
+          console.error("LRC歌词下载失败:", error);
+          return false;
         }
       };
-      const embedFlacPicture = async (file, picture) => {
-        try {
-          const buffer = await blobToBuffer(file);
-          const coverBuffer = await blobToBuffer(picture);
-          const result = await executeMetaflac(
-            [`--import-picture-from=cover`, "file.flac"],
-new Map([
-              ["file.flac", buffer],
-              [`cover`, coverBuffer]
-            ]),
-            ["file.flac"]
-          );
-          if (!checkMetaflacSuccess(result, "给 FLAC 嵌入图片")) {
-            return file;
-          }
-          const outputFile = result.files.get("file.flac");
-          if (outputFile) {
-            console.log("给 FLAC 嵌入图片成功:", result.stdout);
-            return bufferToBlob(outputFile);
-          }
-          return file;
-        } catch (error) {
-          console.error("给 FLAC 嵌入图片失败:", error);
-          throw new Error("给 FLAC 嵌入图片失败");
-        }
-      };
-      const writeFlacTagAndPicture = async (file, tagName, tagValue, picture) => {
-        try {
-          let outputFile = file;
-          if (tagName && tagValue) {
-            outputFile = await writeFlacTag(file, tagName, tagValue);
-          }
-          if (picture) {
-            outputFile = await embedFlacPicture(outputFile || file, picture);
-          }
-          return outputFile || file;
-        } catch (error) {
-          console.error("同时写入歌词和封面失败:", error);
-          return file;
-        }
+      const downloadFileWithBlob = (file, name2) => {
+        const blobUrl = window.URL.createObjectURL(file);
+        const a = document.createElement("a");
+        a.href = blobUrl;
+        a.download = name2;
+        a.style.display = "none";
+        a.style.position = "absolute";
+        a.style.left = "-9999px";
+        const handleClick = (e) => {
+          e.stopPropagation();
+        };
+        a.addEventListener("click", handleClick, true);
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          a.removeEventListener("click", handleClick);
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(blobUrl);
+        }, 100);
       };
       const audio = new Audio();
       const usePlayMusic = () => {
         const [currentMid, setCurrentMid] = useState("");
         const [isPlaying, setIsPlaying] = useState();
+        const [downloading, setDownloading] = useState(false);
         const [currentTime, setCurrentTime] = useState(0);
         const [duration2, setDuration] = useState(0);
         const urlMap = useRef({});
@@ -15215,7 +12943,7 @@ new Map([
             return urlMap.current[key];
           }
           const res = await getSongUrl([id], { level });
-          if (res.code !== 200) {
+          if (res.code !== 200 || !res.data[0]?.url) {
             msgError(res.message || res.msg || "获取歌曲链接失败");
             throw new Error(res.message || res.msg || "获取歌曲链接失败");
           }
@@ -15259,43 +12987,25 @@ new Map([
           return res.lrc?.lyric;
         };
         const download = async (id, name2, level = QUALITY_LEVELS.无损, albumMid) => {
-          const url = await getUrl(id, level);
-          console.log(`当前下载歌曲${name2},音质为${level},链接为${url}`);
-          const finalExt = url.split("?")[0].split(".").pop();
-          const { blob, response } = await getFileBlob(
-            url.replace("http://", "https://")
-          );
-          console.log("blob", blob);
-          const fileName = `${name2}.${finalExt}`;
-          let outputFile = blob;
-          {
+          try {
+            setDownloading(id);
+            const url = await getUrl(id, level);
+            console.log(`当前下载歌曲${name2},音质为${level},链接为${url}`);
+            const finalExt = url.split("?")[0].split(".").pop();
+            const { blob, response } = await getFileBlob(
+              url.replace("http://", "https://")
+            );
+            console.log("blob", blob);
+            const fileName = `${name2}.${finalExt}`;
+            let outputFile = blob;
             const lyric = await getLyric(id);
-            let coverBlob;
-            if (albumMid) {
-              const albumRes = await getAlbumDetail(albumMid);
-              if (albumRes.code === 200) {
-                const albumCover = albumRes.album.blurPicUrl;
-                const { blob: blob2, response: response2 } = await getFileBlob(
-                  albumCover.replace("http://", "https://")
-                );
-                coverBlob = blob2;
-              }
-            }
-            switch (finalExt) {
-              case "flac":
-                outputFile = await writeFlacTagAndPicture(
-                  blob,
-                  "lyrics",
-                  lyric,
-                  coverBlob
-                );
-                break;
-default:
-                console.log("当前格式不支持");
-                break;
-            }
+            downloadAsLRC(lyric, name2);
+            downloadFileWithBlob(outputFile, fileName);
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setDownloading(void 0);
           }
-          downloadFileWithBlob(outputFile, fileName);
         };
         const pause = () => {
           audio.pause();
@@ -15311,9 +13021,302 @@ default:
           play,
           pause,
           playPlayList,
-          download
+          download,
+          downloading
         };
       };
+      const useGetAlbumDetail = () => {
+        const [currentId, setCurrentId] = useState("");
+        const [albumInfo, setAlbumInfo] = useState(null);
+        const [isLoading, setIsLoading] = useState(false);
+        const albumInfoMap = useRef({});
+        const { play, getUrl, download, getLyric } = usePlayMusic();
+        const getAlbumDetailData = async (id) => {
+          try {
+            setIsLoading(true);
+            const idStr = String(id);
+            if (albumInfoMap.current[idStr]) {
+              const cached = albumInfoMap.current[idStr];
+              setAlbumInfo(cached);
+              setCurrentId(idStr);
+              return cached;
+            }
+            const res = await getAlbumDetail(id);
+            console.log("专辑详情 res", res);
+            if (res.code === 200 && res.album) {
+              albumInfoMap.current[idStr] = res.album;
+              setAlbumInfo(res.album);
+              setCurrentId(idStr);
+              return res.album;
+            } else {
+              throw new Error(res.message || res.msg || "获取专辑详情失败");
+            }
+          } catch (error) {
+            console.error("获取专辑详情失败:", error);
+            throw error;
+          } finally {
+            setIsLoading(false);
+          }
+        };
+        const getAlbumSongListData = async (id) => {
+          try {
+            setIsLoading(true);
+            const res = await getAlbumSongList(id);
+            console.log("专辑歌曲列表 res", res);
+            if (res.code === 200 && res.songs) {
+              return res.songs;
+            } else {
+              throw new Error(res.message || res.msg || "获取专辑歌曲列表失败");
+            }
+          } catch (error) {
+            console.error("获取专辑歌曲列表失败:", error);
+            throw error;
+          } finally {
+            setIsLoading(false);
+          }
+        };
+        const getHighestQuality = (song) => {
+          const tags = getQualityTags(song);
+          if (tags.length === 0) {
+            return QUALITY_LEVELS.标准;
+          }
+          if (song.hr) return QUALITY_LEVELS["Hi-Res"];
+          if (song.sq) return QUALITY_LEVELS.无损;
+          if (song.h) return QUALITY_LEVELS.较高;
+          return tags[0].value;
+        };
+        const getAlbumSongUrl = async (id) => {
+          try {
+            const songList2 = await getAlbumSongListData(id);
+            if (!songList2 || songList2.length === 0) {
+              return [];
+            }
+            const ids = songList2.map((song) => {
+              const quality = getHighestQuality(song);
+              return {
+                id: song.id,
+                name: song.name,
+                quality
+              };
+            });
+            const promiseArr = ids.map((item) => async () => {
+              const url = await getUrl(item.id, item.quality);
+              return {
+                ...item,
+                url
+              };
+            });
+            const urls = await promiseLimit(promiseArr, 6);
+            console.log("专辑歌曲URL列表", urls);
+            return urls;
+          } catch (error) {
+            console.error("获取专辑歌曲URL失败:", error);
+            throw error;
+          }
+        };
+        const downloadAlbumSong = async (id, options = { level: QUALITY_LEVELS.无损 }) => {
+          try {
+            const { level = QUALITY_LEVELS.无损 } = options;
+            const songList2 = await getAlbumSongListData(id);
+            if (!songList2 || songList2.length === 0) {
+              throw new Error("专辑中没有歌曲");
+            }
+            for (const song of songList2) {
+              console.log(`当前正在下载${song.name}...`);
+              await download(song.id, song.name, level, id);
+            }
+          } catch (error) {
+            console.error("下载专辑歌曲失败:", error);
+            throw error;
+          }
+        };
+        const getDownLoadJson = async (id, options = { level: QUALITY_LEVELS.无损 }) => {
+          try {
+            const { level = QUALITY_LEVELS.无损 } = options;
+            const albumDetail = await getAlbumDetailData(id);
+            const songList2 = await getAlbumSongListData(id);
+            if (!songList2 || songList2.length === 0) {
+              throw new Error("专辑中没有歌曲");
+            }
+            const promiseArr = songList2.map((song) => async () => {
+              const lrcContent = await getLyric(song.id);
+              const url = await getUrl(song.id, level);
+              return {
+                songName: song.name,
+                url,
+                lrcContent
+              };
+            });
+            const songListWithUrl = await promiseLimit(promiseArr, 6);
+            downloadAsJson(
+              {
+                albumName: albumDetail.name,
+                albumCover: albumDetail.picUrl || albumDetail.blurPicUrl,
+                list: songListWithUrl
+              },
+              `${albumDetail.name}-专辑`
+            );
+            return {
+              albumName: albumDetail.name,
+              albumCover: albumDetail.picUrl || albumDetail.blurPicUrl,
+              list: songListWithUrl
+            };
+          } catch (error) {
+            console.error("获取下载JSON失败:", error);
+            throw error;
+          }
+        };
+        const playAlbum = async (id) => {
+          try {
+            const songList2 = await getAlbumSongListData(id);
+            console.log("专辑歌曲列表", songList2);
+            if (!songList2 || songList2.length === 0) {
+              throw new Error("专辑中没有歌曲");
+            }
+            for (const song of songList2) {
+              const quality = getHighestQuality(song);
+              console.log("当前正在播放", song.name);
+              await play(song.id, quality);
+            }
+          } catch (error) {
+            console.error("播放专辑失败:", error);
+            throw error;
+          }
+        };
+        return {
+          albumInfo,
+          isLoading,
+          getAlbumDetail: getAlbumDetailData,
+          getAlbumSongList: getAlbumSongListData,
+          playAlbum,
+          getAlbumSongUrl,
+          downloadAlbumSong,
+          getDownLoadJson
+        };
+      };
+      const useGetSingerList = () => {
+        const [singerList, setSingerList] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const getSingerList = async () => {
+          try {
+            setLoading(true);
+            const res = await getArtists();
+            const res2 = await getArtists2();
+            const list = [
+              ...new Map([...res2, ...res].map((item) => [item.id, item])).values()
+            ];
+            setSingerList(list);
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const resetSingerList = () => {
+          setSingerList([]);
+        };
+        useEffect(() => {
+          getSingerList();
+        }, []);
+        return {
+          singerList,
+          loading,
+          getSingerList,
+          resetSingerList
+        };
+      };
+      function useGetSingerSongs(options) {
+        const {
+singerIds
+        } = options || {};
+        useGetSingerList();
+        const [singerMap, setSingerMap] = useState({});
+        const [loading, setLoading] = useState(false);
+        const getSingerInfoById = async (singerId) => {
+          try {
+            if (singerMap[singerId]?.singerInfo)
+              return singerMap[singerId]?.singerInfo;
+            const res = await searchArtist(singerId);
+            if (res.code === 200) {
+              console.log("res", res);
+              const singerInfo = res.data.list[0];
+              setSingerMap((prv) => ({
+                ...prv,
+                [singerId]: {
+                  ...prv[singerId],
+                  singerInfo
+                }
+              }));
+              return singerInfo;
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const getSingerAllSongListById = async (singerId) => {
+          try {
+            setLoading(true);
+            if (singerMap[singerId]?.songList) return singerMap[singerId]?.songList;
+            const res = await getArtistAllSongList(singerId);
+            if (res.code === 200) {
+              const songList2 = res.songs;
+              setSingerMap((prv) => ({
+                ...prv,
+                [singerId]: {
+                  ...prv[singerId],
+                  songList: songList2
+                }
+              }));
+              return songList2;
+            }
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const getSingerAlbumListById = async (singerId) => {
+          try {
+            if (singerMap[singerId]?.albumList) return singerMap[singerId]?.albumList;
+            const res = await getArtistAlbumList(singerId);
+            if (res.code === 200) {
+              const albumList = res.data;
+              setSingerMap((prv) => ({
+                ...prv,
+                [singerId]: {
+                  ...prv[singerId],
+                  albumList,
+                  albumMap: Object.fromEntries(
+                    albumList.map((item) => [item.id, item])
+                  )
+                }
+              }));
+              return albumList;
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        useEffect(() => {
+          if (!singerIds) return;
+          const ids = (singerIds + "").split(",");
+          ids.forEach((singerId) => {
+            getSingerInfoById(singerId);
+            getSingerAllSongListById(singerId);
+            getSingerAlbumListById(singerId);
+          });
+        }, [singerIds]);
+        const reset = () => {
+          setSingerMap({});
+        };
+        return {
+          singerMap,
+          getSingerInfoById,
+          getSingerAllSongListById,
+          reset,
+          loading
+        };
+      }
       var lodash$1 = { exports: {} };
       /**
        * @license
@@ -15683,17 +13686,17 @@ default:
               return func.apply(thisArg, args);
             }
             function arrayAggregator(array, setter, iteratee, accumulator) {
-              var index = -1, length = array == null ? 0 : array.length;
-              while (++index < length) {
-                var value2 = array[index];
+              var index2 = -1, length = array == null ? 0 : array.length;
+              while (++index2 < length) {
+                var value2 = array[index2];
                 setter(accumulator, value2, iteratee(value2), array);
               }
               return accumulator;
             }
             function arrayEach(array, iteratee) {
-              var index = -1, length = array == null ? 0 : array.length;
-              while (++index < length) {
-                if (iteratee(array[index], index, array) === false) {
+              var index2 = -1, length = array == null ? 0 : array.length;
+              while (++index2 < length) {
+                if (iteratee(array[index2], index2, array) === false) {
                   break;
                 }
               }
@@ -15709,19 +13712,19 @@ default:
               return array;
             }
             function arrayEvery(array, predicate) {
-              var index = -1, length = array == null ? 0 : array.length;
-              while (++index < length) {
-                if (!predicate(array[index], index, array)) {
+              var index2 = -1, length = array == null ? 0 : array.length;
+              while (++index2 < length) {
+                if (!predicate(array[index2], index2, array)) {
                   return false;
                 }
               }
               return true;
             }
             function arrayFilter(array, predicate) {
-              var index = -1, length = array == null ? 0 : array.length, resIndex = 0, result = [];
-              while (++index < length) {
-                var value2 = array[index];
-                if (predicate(value2, index, array)) {
+              var index2 = -1, length = array == null ? 0 : array.length, resIndex = 0, result = [];
+              while (++index2 < length) {
+                var value2 = array[index2];
+                if (predicate(value2, index2, array)) {
                   result[resIndex++] = value2;
                 }
               }
@@ -15732,35 +13735,35 @@ default:
               return !!length && baseIndexOf(array, value2, 0) > -1;
             }
             function arrayIncludesWith(array, value2, comparator) {
-              var index = -1, length = array == null ? 0 : array.length;
-              while (++index < length) {
-                if (comparator(value2, array[index])) {
+              var index2 = -1, length = array == null ? 0 : array.length;
+              while (++index2 < length) {
+                if (comparator(value2, array[index2])) {
                   return true;
                 }
               }
               return false;
             }
             function arrayMap(array, iteratee) {
-              var index = -1, length = array == null ? 0 : array.length, result = Array(length);
-              while (++index < length) {
-                result[index] = iteratee(array[index], index, array);
+              var index2 = -1, length = array == null ? 0 : array.length, result = Array(length);
+              while (++index2 < length) {
+                result[index2] = iteratee(array[index2], index2, array);
               }
               return result;
             }
             function arrayPush(array, values) {
-              var index = -1, length = values.length, offset = array.length;
-              while (++index < length) {
-                array[offset + index] = values[index];
+              var index2 = -1, length = values.length, offset = array.length;
+              while (++index2 < length) {
+                array[offset + index2] = values[index2];
               }
               return array;
             }
             function arrayReduce(array, iteratee, accumulator, initAccum) {
-              var index = -1, length = array == null ? 0 : array.length;
+              var index2 = -1, length = array == null ? 0 : array.length;
               if (initAccum && length) {
-                accumulator = array[++index];
+                accumulator = array[++index2];
               }
-              while (++index < length) {
-                accumulator = iteratee(accumulator, array[index], index, array);
+              while (++index2 < length) {
+                accumulator = iteratee(accumulator, array[index2], index2, array);
               }
               return accumulator;
             }
@@ -15775,9 +13778,9 @@ default:
               return accumulator;
             }
             function arraySome(array, predicate) {
-              var index = -1, length = array == null ? 0 : array.length;
-              while (++index < length) {
-                if (predicate(array[index], index, array)) {
+              var index2 = -1, length = array == null ? 0 : array.length;
+              while (++index2 < length) {
+                if (predicate(array[index2], index2, array)) {
                   return true;
                 }
               }
@@ -15801,10 +13804,10 @@ default:
               return result;
             }
             function baseFindIndex(array, predicate, fromIndex, fromRight) {
-              var length = array.length, index = fromIndex + (fromRight ? 1 : -1);
-              while (fromRight ? index-- : ++index < length) {
-                if (predicate(array[index], index, array)) {
-                  return index;
+              var length = array.length, index2 = fromIndex + (fromRight ? 1 : -1);
+              while (fromRight ? index2-- : ++index2 < length) {
+                if (predicate(array[index2], index2, array)) {
+                  return index2;
                 }
               }
               return -1;
@@ -15813,10 +13816,10 @@ default:
               return value2 === value2 ? strictIndexOf(array, value2, fromIndex) : baseFindIndex(array, baseIsNaN, fromIndex);
             }
             function baseIndexOfWith(array, value2, fromIndex, comparator) {
-              var index = fromIndex - 1, length = array.length;
-              while (++index < length) {
-                if (comparator(array[index], value2)) {
-                  return index;
+              var index2 = fromIndex - 1, length = array.length;
+              while (++index2 < length) {
+                if (comparator(array[index2], value2)) {
+                  return index2;
                 }
               }
               return -1;
@@ -15839,8 +13842,8 @@ default:
               };
             }
             function baseReduce(collection, iteratee, accumulator, initAccum, eachFunc) {
-              eachFunc(collection, function(value2, index, collection2) {
-                accumulator = initAccum ? (initAccum = false, value2) : iteratee(accumulator, value2, index, collection2);
+              eachFunc(collection, function(value2, index2, collection2) {
+                accumulator = initAccum ? (initAccum = false, value2) : iteratee(accumulator, value2, index2, collection2);
               });
               return accumulator;
             }
@@ -15853,9 +13856,9 @@ default:
               return array;
             }
             function baseSum(array, iteratee) {
-              var result, index = -1, length = array.length;
-              while (++index < length) {
-                var current = iteratee(array[index]);
+              var result, index2 = -1, length = array.length;
+              while (++index2 < length) {
+                var current = iteratee(array[index2]);
                 if (current !== undefined$1) {
                   result = result === undefined$1 ? current : result + current;
                 }
@@ -15863,9 +13866,9 @@ default:
               return result;
             }
             function baseTimes(n, iteratee) {
-              var index = -1, result = Array(n);
-              while (++index < n) {
-                result[index] = iteratee(index);
+              var index2 = -1, result = Array(n);
+              while (++index2 < n) {
+                result[index2] = iteratee(index2);
               }
               return result;
             }
@@ -15891,16 +13894,16 @@ default:
               return cache.has(key);
             }
             function charsStartIndex(strSymbols, chrSymbols) {
-              var index = -1, length = strSymbols.length;
-              while (++index < length && baseIndexOf(chrSymbols, strSymbols[index], 0) > -1) {
+              var index2 = -1, length = strSymbols.length;
+              while (++index2 < length && baseIndexOf(chrSymbols, strSymbols[index2], 0) > -1) {
               }
-              return index;
+              return index2;
             }
             function charsEndIndex(strSymbols, chrSymbols) {
-              var index = strSymbols.length;
-              while (index-- && baseIndexOf(chrSymbols, strSymbols[index], 0) > -1) {
+              var index2 = strSymbols.length;
+              while (index2-- && baseIndexOf(chrSymbols, strSymbols[index2], 0) > -1) {
               }
-              return index;
+              return index2;
             }
             function countHolders(array, placeholder) {
               var length = array.length, result = 0;
@@ -15933,9 +13936,9 @@ default:
               return result;
             }
             function mapToArray(map) {
-              var index = -1, result = Array(map.size);
+              var index2 = -1, result = Array(map.size);
               map.forEach(function(value2, key) {
-                result[++index] = [key, value2];
+                result[++index2] = [key, value2];
               });
               return result;
             }
@@ -15945,47 +13948,47 @@ default:
               };
             }
             function replaceHolders(array, placeholder) {
-              var index = -1, length = array.length, resIndex = 0, result = [];
-              while (++index < length) {
-                var value2 = array[index];
+              var index2 = -1, length = array.length, resIndex = 0, result = [];
+              while (++index2 < length) {
+                var value2 = array[index2];
                 if (value2 === placeholder || value2 === PLACEHOLDER) {
-                  array[index] = PLACEHOLDER;
-                  result[resIndex++] = index;
+                  array[index2] = PLACEHOLDER;
+                  result[resIndex++] = index2;
                 }
               }
               return result;
             }
             function setToArray(set) {
-              var index = -1, result = Array(set.size);
+              var index2 = -1, result = Array(set.size);
               set.forEach(function(value2) {
-                result[++index] = value2;
+                result[++index2] = value2;
               });
               return result;
             }
             function setToPairs(set) {
-              var index = -1, result = Array(set.size);
+              var index2 = -1, result = Array(set.size);
               set.forEach(function(value2) {
-                result[++index] = [value2, value2];
+                result[++index2] = [value2, value2];
               });
               return result;
             }
             function strictIndexOf(array, value2, fromIndex) {
-              var index = fromIndex - 1, length = array.length;
-              while (++index < length) {
-                if (array[index] === value2) {
-                  return index;
+              var index2 = fromIndex - 1, length = array.length;
+              while (++index2 < length) {
+                if (array[index2] === value2) {
+                  return index2;
                 }
               }
               return -1;
             }
             function strictLastIndexOf(array, value2, fromIndex) {
-              var index = fromIndex + 1;
-              while (index--) {
-                if (array[index] === value2) {
-                  return index;
+              var index2 = fromIndex + 1;
+              while (index2--) {
+                if (array[index2] === value2) {
+                  return index2;
                 }
               }
-              return index;
+              return index2;
             }
             function stringSize(string) {
               return hasUnicode(string) ? unicodeSize(string) : asciiSize(string);
@@ -15994,10 +13997,10 @@ default:
               return hasUnicode(string) ? unicodeToArray(string) : asciiToArray(string);
             }
             function trimmedEndIndex(string) {
-              var index = string.length;
-              while (index-- && reWhitespace.test(string.charAt(index))) {
+              var index2 = string.length;
+              while (index2-- && reWhitespace.test(string.charAt(index2))) {
               }
-              return index;
+              return index2;
             }
             var unescapeHtmlChar = basePropertyOf(htmlUnescapes);
             function unicodeSize(string) {
@@ -16042,10 +14045,10 @@ default:
               })();
               var ctxClearTimeout = context.clearTimeout !== root.clearTimeout && context.clearTimeout, ctxNow = Date2 && Date2.now !== root.Date.now && Date2.now, ctxSetTimeout = context.setTimeout !== root.setTimeout && context.setTimeout;
               var nativeCeil = Math2.ceil, nativeFloor = Math2.floor, nativeGetSymbols = Object2.getOwnPropertySymbols, nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined$1, nativeIsFinite = context.isFinite, nativeJoin = arrayProto.join, nativeKeys = overArg(Object2.keys, Object2), nativeMax = Math2.max, nativeMin = Math2.min, nativeNow = Date2.now, nativeParseInt = context.parseInt, nativeRandom = Math2.random, nativeReverse = arrayProto.reverse;
-              var DataView2 = getNative(context, "DataView"), Map2 = getNative(context, "Map"), Promise2 = getNative(context, "Promise"), Set2 = getNative(context, "Set"), WeakMap = getNative(context, "WeakMap"), nativeCreate = getNative(Object2, "create");
-              var metaMap = WeakMap && new WeakMap();
+              var DataView2 = getNative(context, "DataView"), Map2 = getNative(context, "Map"), Promise2 = getNative(context, "Promise"), Set2 = getNative(context, "Set"), WeakMap2 = getNative(context, "WeakMap"), nativeCreate = getNative(Object2, "create");
+              var metaMap = WeakMap2 && new WeakMap2();
               var realNames = {};
-              var dataViewCtorString = toSource(DataView2), mapCtorString = toSource(Map2), promiseCtorString = toSource(Promise2), setCtorString = toSource(Set2), weakMapCtorString = toSource(WeakMap);
+              var dataViewCtorString = toSource(DataView2), mapCtorString = toSource(Map2), promiseCtorString = toSource(Promise2), setCtorString = toSource(Set2), weakMapCtorString = toSource(WeakMap2);
               var symbolProto = Symbol2 ? Symbol2.prototype : undefined$1, symbolValueOf = symbolProto ? symbolProto.valueOf : undefined$1, symbolToString = symbolProto ? symbolProto.toString : undefined$1;
               function lodash2(value2) {
                 if (isObjectLike(value2) && !isArray(value2) && !(value2 instanceof LazyWrapper)) {
@@ -16127,15 +14130,15 @@ default:
                 return result2;
               }
               function lazyValue() {
-                var array = this.__wrapped__.value(), dir = this.__dir__, isArr = isArray(array), isRight = dir < 0, arrLength = isArr ? array.length : 0, view = getView(0, arrLength, this.__views__), start = view.start, end = view.end, length = end - start, index = isRight ? end : start - 1, iteratees = this.__iteratees__, iterLength = iteratees.length, resIndex = 0, takeCount = nativeMin(length, this.__takeCount__);
+                var array = this.__wrapped__.value(), dir = this.__dir__, isArr = isArray(array), isRight = dir < 0, arrLength = isArr ? array.length : 0, view = getView(0, arrLength, this.__views__), start = view.start, end = view.end, length = end - start, index2 = isRight ? end : start - 1, iteratees = this.__iteratees__, iterLength = iteratees.length, resIndex = 0, takeCount = nativeMin(length, this.__takeCount__);
                 if (!isArr || !isRight && arrLength == length && takeCount == length) {
                   return baseWrapperValue(array, this.__actions__);
                 }
                 var result2 = [];
                 outer:
                   while (length-- && resIndex < takeCount) {
-                    index += dir;
-                    var iterIndex = -1, value2 = array[index];
+                    index2 += dir;
+                    var iterIndex = -1, value2 = array[index2];
                     while (++iterIndex < iterLength) {
                       var data = iteratees[iterIndex], iteratee2 = data.iteratee, type = data.type, computed = iteratee2(value2);
                       if (type == LAZY_MAP_FLAG) {
@@ -16155,10 +14158,10 @@ default:
               LazyWrapper.prototype = baseCreate(baseLodash.prototype);
               LazyWrapper.prototype.constructor = LazyWrapper;
               function Hash(entries) {
-                var index = -1, length = entries == null ? 0 : entries.length;
+                var index2 = -1, length = entries == null ? 0 : entries.length;
                 this.clear();
-                while (++index < length) {
-                  var entry = entries[index];
+                while (++index2 < length) {
+                  var entry = entries[index2];
                   this.set(entry[0], entry[1]);
                 }
               }
@@ -16195,10 +14198,10 @@ default:
               Hash.prototype.has = hashHas;
               Hash.prototype.set = hashSet;
               function ListCache(entries) {
-                var index = -1, length = entries == null ? 0 : entries.length;
+                var index2 = -1, length = entries == null ? 0 : entries.length;
                 this.clear();
-                while (++index < length) {
-                  var entry = entries[index];
+                while (++index2 < length) {
+                  var entry = entries[index2];
                   this.set(entry[0], entry[1]);
                 }
               }
@@ -16207,33 +14210,33 @@ default:
                 this.size = 0;
               }
               function listCacheDelete(key) {
-                var data = this.__data__, index = assocIndexOf(data, key);
-                if (index < 0) {
+                var data = this.__data__, index2 = assocIndexOf(data, key);
+                if (index2 < 0) {
                   return false;
                 }
                 var lastIndex = data.length - 1;
-                if (index == lastIndex) {
+                if (index2 == lastIndex) {
                   data.pop();
                 } else {
-                  splice.call(data, index, 1);
+                  splice.call(data, index2, 1);
                 }
                 --this.size;
                 return true;
               }
               function listCacheGet(key) {
-                var data = this.__data__, index = assocIndexOf(data, key);
-                return index < 0 ? undefined$1 : data[index][1];
+                var data = this.__data__, index2 = assocIndexOf(data, key);
+                return index2 < 0 ? undefined$1 : data[index2][1];
               }
               function listCacheHas(key) {
                 return assocIndexOf(this.__data__, key) > -1;
               }
               function listCacheSet(key, value2) {
-                var data = this.__data__, index = assocIndexOf(data, key);
-                if (index < 0) {
+                var data = this.__data__, index2 = assocIndexOf(data, key);
+                if (index2 < 0) {
                   ++this.size;
                   data.push([key, value2]);
                 } else {
-                  data[index][1] = value2;
+                  data[index2][1] = value2;
                 }
                 return this;
               }
@@ -16243,10 +14246,10 @@ default:
               ListCache.prototype.has = listCacheHas;
               ListCache.prototype.set = listCacheSet;
               function MapCache(entries) {
-                var index = -1, length = entries == null ? 0 : entries.length;
+                var index2 = -1, length = entries == null ? 0 : entries.length;
                 this.clear();
-                while (++index < length) {
-                  var entry = entries[index];
+                while (++index2 < length) {
+                  var entry = entries[index2];
                   this.set(entry[0], entry[1]);
                 }
               }
@@ -16281,10 +14284,10 @@ default:
               MapCache.prototype.has = mapCacheHas;
               MapCache.prototype.set = mapCacheSet;
               function SetCache(values2) {
-                var index = -1, length = values2 == null ? 0 : values2.length;
+                var index2 = -1, length = values2 == null ? 0 : values2.length;
                 this.__data__ = new MapCache();
-                while (++index < length) {
-                  this.add(values2[index]);
+                while (++index2 < length) {
+                  this.add(values2[index2]);
                 }
               }
               function setCacheAdd(value2) {
@@ -16403,9 +14406,9 @@ isIndex(key, length)))) {
                 }
               }
               function baseAt(object, paths) {
-                var index = -1, length = paths.length, result2 = Array2(length), skip = object == null;
-                while (++index < length) {
-                  result2[index] = skip ? undefined$1 : get(object, paths[index]);
+                var index2 = -1, length = paths.length, result2 = Array2(length), skip = object == null;
+                while (++index2 < length) {
+                  result2[index2] = skip ? undefined$1 : get(object, paths[index2]);
                 }
                 return result2;
               }
@@ -16509,7 +14512,7 @@ isIndex(key, length)))) {
                 }, wait);
               }
               function baseDifference(array, values2, iteratee2, comparator) {
-                var index = -1, includes3 = arrayIncludes, isCommon = true, length = array.length, result2 = [], valuesLength = values2.length;
+                var index2 = -1, includes3 = arrayIncludes, isCommon = true, length = array.length, result2 = [], valuesLength = values2.length;
                 if (!length) {
                   return result2;
                 }
@@ -16525,8 +14528,8 @@ isIndex(key, length)))) {
                   values2 = new SetCache(values2);
                 }
                 outer:
-                  while (++index < length) {
-                    var value2 = array[index], computed = iteratee2 == null ? value2 : iteratee2(value2);
+                  while (++index2 < length) {
+                    var value2 = array[index2], computed = iteratee2 == null ? value2 : iteratee2(value2);
                     value2 = comparator || value2 !== 0 ? value2 : 0;
                     if (isCommon && computed === computed) {
                       var valuesIndex = valuesLength;
@@ -16546,16 +14549,16 @@ isIndex(key, length)))) {
               var baseEachRight = createBaseEach(baseForOwnRight, true);
               function baseEvery(collection, predicate) {
                 var result2 = true;
-                baseEach(collection, function(value2, index, collection2) {
-                  result2 = !!predicate(value2, index, collection2);
+                baseEach(collection, function(value2, index2, collection2) {
+                  result2 = !!predicate(value2, index2, collection2);
                   return result2;
                 });
                 return result2;
               }
               function baseExtremum(array, iteratee2, comparator) {
-                var index = -1, length = array.length;
-                while (++index < length) {
-                  var value2 = array[index], current = iteratee2(value2);
+                var index2 = -1, length = array.length;
+                while (++index2 < length) {
+                  var value2 = array[index2], current = iteratee2(value2);
                   if (current != null && (computed === undefined$1 ? current === current && !isSymbol(current) : comparator(current, computed))) {
                     var computed = current, result2 = value2;
                   }
@@ -16580,19 +14583,19 @@ isIndex(key, length)))) {
               }
               function baseFilter(collection, predicate) {
                 var result2 = [];
-                baseEach(collection, function(value2, index, collection2) {
-                  if (predicate(value2, index, collection2)) {
+                baseEach(collection, function(value2, index2, collection2) {
+                  if (predicate(value2, index2, collection2)) {
                     result2.push(value2);
                   }
                 });
                 return result2;
               }
               function baseFlatten(array, depth, predicate, isStrict, result2) {
-                var index = -1, length = array.length;
+                var index2 = -1, length = array.length;
                 predicate || (predicate = isFlattenable);
                 result2 || (result2 = []);
-                while (++index < length) {
-                  var value2 = array[index];
+                while (++index2 < length) {
+                  var value2 = array[index2];
                   if (depth > 0 && predicate(value2)) {
                     if (depth > 1) {
                       baseFlatten(value2, depth - 1, predicate, isStrict, result2);
@@ -16615,16 +14618,16 @@ isIndex(key, length)))) {
               }
               function baseFunctions(object, props) {
                 return arrayFilter(props, function(key) {
-                  return isFunction(object[key]);
+                  return isFunction2(object[key]);
                 });
               }
               function baseGet(object, path) {
                 path = castPath(path, object);
-                var index = 0, length = path.length;
-                while (object != null && index < length) {
-                  object = object[toKey(path[index++])];
+                var index2 = 0, length = path.length;
+                while (object != null && index2 < length) {
+                  object = object[toKey(path[index2++])];
                 }
-                return index && index == length ? object : undefined$1;
+                return index2 && index2 == length ? object : undefined$1;
               }
               function baseGetAllKeys(object, keysFunc, symbolsFunc) {
                 var result2 = keysFunc(object);
@@ -16659,10 +14662,10 @@ isIndex(key, length)))) {
                   caches[othIndex] = !comparator && (iteratee2 || length >= 120 && array.length >= 120) ? new SetCache(othIndex && array) : undefined$1;
                 }
                 array = arrays[0];
-                var index = -1, seen2 = caches[0];
+                var index2 = -1, seen2 = caches[0];
                 outer:
-                  while (++index < length && result2.length < maxLength) {
-                    var value2 = array[index], computed = iteratee2 ? iteratee2(value2) : value2;
+                  while (++index2 < length && result2.length < maxLength) {
+                    var value2 = array[index2], computed = iteratee2 ? iteratee2(value2) : value2;
                     value2 = comparator || value2 !== 0 ? value2 : 0;
                     if (!(seen2 ? cacheHas(seen2, computed) : includes3(result2, computed, comparator))) {
                       othIndex = othLength;
@@ -16744,19 +14747,19 @@ isIndex(key, length)))) {
                 return isObjectLike(value2) && getTag(value2) == mapTag;
               }
               function baseIsMatch(object, source, matchData, customizer) {
-                var index = matchData.length, length = index, noCustomizer = !customizer;
+                var index2 = matchData.length, length = index2, noCustomizer = !customizer;
                 if (object == null) {
                   return !length;
                 }
                 object = Object2(object);
-                while (index--) {
-                  var data = matchData[index];
+                while (index2--) {
+                  var data = matchData[index2];
                   if (noCustomizer && data[2] ? data[1] !== object[data[0]] : !(data[0] in object)) {
                     return false;
                   }
                 }
-                while (++index < length) {
-                  data = matchData[index];
+                while (++index2 < length) {
+                  data = matchData[index2];
                   var key = data[0], objValue = object[key], srcValue = data[1];
                   if (noCustomizer && data[2]) {
                     if (objValue === undefined$1 && !(key in object)) {
@@ -16778,7 +14781,7 @@ isIndex(key, length)))) {
                 if (!isObject(value2) || isMasked(value2)) {
                   return false;
                 }
-                var pattern = isFunction(value2) ? reIsNative : reIsHostCtor;
+                var pattern = isFunction2(value2) ? reIsNative : reIsHostCtor;
                 return pattern.test(toSource(value2));
               }
               function baseIsRegExp(value2) {
@@ -16830,9 +14833,9 @@ isIndex(key, length)))) {
                 return value2 < other;
               }
               function baseMap(collection, iteratee2) {
-                var index = -1, result2 = isArrayLike(collection) ? Array2(collection.length) : [];
+                var index2 = -1, result2 = isArrayLike(collection) ? Array2(collection.length) : [];
                 baseEach(collection, function(value2, key, collection2) {
-                  result2[++index] = iteratee2(value2, key, collection2);
+                  result2[++index2] = iteratee2(value2, key, collection2);
                 });
                 return result2;
               }
@@ -16900,7 +14903,7 @@ isIndex(key, length)))) {
                     newValue = objValue;
                     if (isArguments(objValue)) {
                       newValue = toPlainObject(objValue);
-                    } else if (!isObject(objValue) || isFunction(objValue)) {
+                    } else if (!isObject(objValue) || isFunction2(objValue)) {
                       newValue = initCloneObject(srcValue);
                     }
                   } else {
@@ -16935,13 +14938,13 @@ isIndex(key, length)))) {
                 } else {
                   iteratees = [identity];
                 }
-                var index = -1;
+                var index2 = -1;
                 iteratees = arrayMap(iteratees, baseUnary(getIteratee()));
                 var result2 = baseMap(collection, function(value2, key, collection2) {
                   var criteria = arrayMap(iteratees, function(iteratee2) {
                     return iteratee2(value2);
                   });
-                  return { "criteria": criteria, "index": ++index, "value": value2 };
+                  return { "criteria": criteria, "index": ++index2, "value": value2 };
                 });
                 return baseSortBy(result2, function(object, other) {
                   return compareMultiple(object, other, orders);
@@ -16953,9 +14956,9 @@ isIndex(key, length)))) {
                 });
               }
               function basePickBy(object, paths, predicate) {
-                var index = -1, length = paths.length, result2 = {};
-                while (++index < length) {
-                  var path = paths[index], value2 = baseGet(object, path);
+                var index2 = -1, length = paths.length, result2 = {};
+                while (++index2 < length) {
+                  var path = paths[index2], value2 = baseGet(object, path);
                   if (predicate(value2, path)) {
                     baseSet(result2, castPath(path, object), value2);
                   }
@@ -16968,15 +14971,15 @@ isIndex(key, length)))) {
                 };
               }
               function basePullAll(array, values2, iteratee2, comparator) {
-                var indexOf3 = comparator ? baseIndexOfWith : baseIndexOf, index = -1, length = values2.length, seen2 = array;
+                var indexOf3 = comparator ? baseIndexOfWith : baseIndexOf, index2 = -1, length = values2.length, seen2 = array;
                 if (array === values2) {
                   values2 = copyArray(values2);
                 }
                 if (iteratee2) {
                   seen2 = arrayMap(array, baseUnary(iteratee2));
                 }
-                while (++index < length) {
-                  var fromIndex = 0, value2 = values2[index], computed = iteratee2 ? iteratee2(value2) : value2;
+                while (++index2 < length) {
+                  var fromIndex = 0, value2 = values2[index2], computed = iteratee2 ? iteratee2(value2) : value2;
                   while ((fromIndex = indexOf3(seen2, computed, fromIndex, comparator)) > -1) {
                     if (seen2 !== array) {
                       splice.call(seen2, fromIndex, 1);
@@ -16989,13 +14992,13 @@ isIndex(key, length)))) {
               function basePullAt(array, indexes) {
                 var length = array ? indexes.length : 0, lastIndex = length - 1;
                 while (length--) {
-                  var index = indexes[length];
-                  if (length == lastIndex || index !== previous) {
-                    var previous = index;
-                    if (isIndex(index)) {
-                      splice.call(array, index, 1);
+                  var index2 = indexes[length];
+                  if (length == lastIndex || index2 !== previous) {
+                    var previous = index2;
+                    if (isIndex(index2)) {
+                      splice.call(array, index2, 1);
                     } else {
-                      baseUnset(array, index);
+                      baseUnset(array, index2);
                     }
                   }
                 }
@@ -17005,9 +15008,9 @@ isIndex(key, length)))) {
                 return lower + nativeFloor(nativeRandom() * (upper - lower + 1));
               }
               function baseRange(start, end, step, fromRight) {
-                var index = -1, length = nativeMax(nativeCeil((end - start) / (step || 1)), 0), result2 = Array2(length);
+                var index2 = -1, length = nativeMax(nativeCeil((end - start) / (step || 1)), 0), result2 = Array2(length);
                 while (length--) {
-                  result2[fromRight ? length : ++index] = start;
+                  result2[fromRight ? length : ++index2] = start;
                   start += step;
                 }
                 return result2;
@@ -17043,17 +15046,17 @@ isIndex(key, length)))) {
                   return object;
                 }
                 path = castPath(path, object);
-                var index = -1, length = path.length, lastIndex = length - 1, nested = object;
-                while (nested != null && ++index < length) {
-                  var key = toKey(path[index]), newValue = value2;
+                var index2 = -1, length = path.length, lastIndex = length - 1, nested = object;
+                while (nested != null && ++index2 < length) {
+                  var key = toKey(path[index2]), newValue = value2;
                   if (key === "__proto__" || key === "constructor" || key === "prototype") {
                     return object;
                   }
-                  if (index != lastIndex) {
+                  if (index2 != lastIndex) {
                     var objValue = nested[key];
                     newValue = customizer ? customizer(objValue, key, nested) : undefined$1;
                     if (newValue === undefined$1) {
-                      newValue = isObject(objValue) ? objValue : isIndex(path[index + 1]) ? [] : {};
+                      newValue = isObject(objValue) ? objValue : isIndex(path[index2 + 1]) ? [] : {};
                     }
                   }
                   assignValue(nested, key, newValue);
@@ -17077,7 +15080,7 @@ isIndex(key, length)))) {
                 return shuffleSelf(values(collection));
               }
               function baseSlice(array, start, end) {
-                var index = -1, length = array.length;
+                var index2 = -1, length = array.length;
                 if (start < 0) {
                   start = -start > length ? 0 : length + start;
                 }
@@ -17088,15 +15091,15 @@ isIndex(key, length)))) {
                 length = start > end ? 0 : end - start >>> 0;
                 start >>>= 0;
                 var result2 = Array2(length);
-                while (++index < length) {
-                  result2[index] = array[index + start];
+                while (++index2 < length) {
+                  result2[index2] = array[index2 + start];
                 }
                 return result2;
               }
               function baseSome(collection, predicate) {
                 var result2;
-                baseEach(collection, function(value2, index, collection2) {
-                  result2 = predicate(value2, index, collection2);
+                baseEach(collection, function(value2, index2, collection2) {
+                  result2 = predicate(value2, index2, collection2);
                   return !result2;
                 });
                 return !!result2;
@@ -17147,10 +15150,10 @@ isIndex(key, length)))) {
                 return nativeMin(high, MAX_ARRAY_INDEX);
               }
               function baseSortedUniq(array, iteratee2) {
-                var index = -1, length = array.length, resIndex = 0, result2 = [];
-                while (++index < length) {
-                  var value2 = array[index], computed = iteratee2 ? iteratee2(value2) : value2;
-                  if (!index || !eq(computed, seen2)) {
+                var index2 = -1, length = array.length, resIndex = 0, result2 = [];
+                while (++index2 < length) {
+                  var value2 = array[index2], computed = iteratee2 ? iteratee2(value2) : value2;
+                  if (!index2 || !eq(computed, seen2)) {
                     var seen2 = computed;
                     result2[resIndex++] = value2 === 0 ? 0 : value2;
                   }
@@ -17180,7 +15183,7 @@ isIndex(key, length)))) {
                 return result2 == "0" && 1 / value2 == -INFINITY ? "-0" : result2;
               }
               function baseUniq(array, iteratee2, comparator) {
-                var index = -1, includes3 = arrayIncludes, length = array.length, isCommon = true, result2 = [], seen2 = result2;
+                var index2 = -1, includes3 = arrayIncludes, length = array.length, isCommon = true, result2 = [], seen2 = result2;
                 if (comparator) {
                   isCommon = false;
                   includes3 = arrayIncludesWith;
@@ -17196,8 +15199,8 @@ isIndex(key, length)))) {
                   seen2 = iteratee2 ? [] : result2;
                 }
                 outer:
-                  while (++index < length) {
-                    var value2 = array[index], computed = iteratee2 ? iteratee2(value2) : value2;
+                  while (++index2 < length) {
+                    var value2 = array[index2], computed = iteratee2 ? iteratee2(value2) : value2;
                     value2 = comparator || value2 !== 0 ? value2 : 0;
                     if (isCommon && computed === computed) {
                       var seenIndex = seen2.length;
@@ -17228,10 +15231,10 @@ isIndex(key, length)))) {
                 return baseSet(object, path, updater(baseGet(object, path)), customizer);
               }
               function baseWhile(array, predicate, isDrop, fromRight) {
-                var length = array.length, index = fromRight ? length : -1;
-                while ((fromRight ? index-- : ++index < length) && predicate(array[index], index, array)) {
+                var length = array.length, index2 = fromRight ? length : -1;
+                while ((fromRight ? index2-- : ++index2 < length) && predicate(array[index2], index2, array)) {
                 }
-                return isDrop ? baseSlice(array, fromRight ? 0 : index, fromRight ? index + 1 : length) : baseSlice(array, fromRight ? index + 1 : 0, fromRight ? length : index);
+                return isDrop ? baseSlice(array, fromRight ? 0 : index2, fromRight ? index2 + 1 : length) : baseSlice(array, fromRight ? index2 + 1 : 0, fromRight ? length : index2);
               }
               function baseWrapperValue(value2, actions2) {
                 var result2 = value2;
@@ -17247,22 +15250,22 @@ isIndex(key, length)))) {
                 if (length < 2) {
                   return length ? baseUniq(arrays[0]) : [];
                 }
-                var index = -1, result2 = Array2(length);
-                while (++index < length) {
-                  var array = arrays[index], othIndex = -1;
+                var index2 = -1, result2 = Array2(length);
+                while (++index2 < length) {
+                  var array = arrays[index2], othIndex = -1;
                   while (++othIndex < length) {
-                    if (othIndex != index) {
-                      result2[index] = baseDifference(result2[index] || array, arrays[othIndex], iteratee2, comparator);
+                    if (othIndex != index2) {
+                      result2[index2] = baseDifference(result2[index2] || array, arrays[othIndex], iteratee2, comparator);
                     }
                   }
                 }
                 return baseUniq(baseFlatten(result2, 1), iteratee2, comparator);
               }
               function baseZipObject(props, values2, assignFunc) {
-                var index = -1, length = props.length, valsLength = values2.length, result2 = {};
-                while (++index < length) {
-                  var value2 = index < valsLength ? values2[index] : undefined$1;
-                  assignFunc(result2, props[index], value2);
+                var index2 = -1, length = props.length, valsLength = values2.length, result2 = {};
+                while (++index2 < length) {
+                  var value2 = index2 < valsLength ? values2[index2] : undefined$1;
+                  assignFunc(result2, props[index2], value2);
                 }
                 return result2;
               }
@@ -17330,14 +15333,14 @@ isIndex(key, length)))) {
                 return 0;
               }
               function compareMultiple(object, other, orders) {
-                var index = -1, objCriteria = object.criteria, othCriteria = other.criteria, length = objCriteria.length, ordersLength = orders.length;
-                while (++index < length) {
-                  var result2 = compareAscending(objCriteria[index], othCriteria[index]);
+                var index2 = -1, objCriteria = object.criteria, othCriteria = other.criteria, length = objCriteria.length, ordersLength = orders.length;
+                while (++index2 < length) {
+                  var result2 = compareAscending(objCriteria[index2], othCriteria[index2]);
                   if (result2) {
-                    if (index >= ordersLength) {
+                    if (index2 >= ordersLength) {
                       return result2;
                     }
-                    var order = orders[index];
+                    var order = orders[index2];
                     return result2 * (order == "desc" ? -1 : 1);
                   }
                 }
@@ -17375,19 +15378,19 @@ isIndex(key, length)))) {
                 return result2;
               }
               function copyArray(source, array) {
-                var index = -1, length = source.length;
+                var index2 = -1, length = source.length;
                 array || (array = Array2(length));
-                while (++index < length) {
-                  array[index] = source[index];
+                while (++index2 < length) {
+                  array[index2] = source[index2];
                 }
                 return array;
               }
               function copyObject(source, props, object, customizer) {
                 var isNew = !object;
                 object || (object = {});
-                var index = -1, length = props.length;
-                while (++index < length) {
-                  var key = props[index];
+                var index2 = -1, length = props.length;
+                while (++index2 < length) {
+                  var key = props[index2];
                   var newValue = customizer ? customizer(object[key], source[key], key, object, source) : undefined$1;
                   if (newValue === undefined$1) {
                     newValue = source[key];
@@ -17414,17 +15417,17 @@ isIndex(key, length)))) {
               }
               function createAssigner(assigner) {
                 return baseRest(function(object, sources) {
-                  var index = -1, length = sources.length, customizer = length > 1 ? sources[length - 1] : undefined$1, guard = length > 2 ? sources[2] : undefined$1;
+                  var index2 = -1, length = sources.length, customizer = length > 1 ? sources[length - 1] : undefined$1, guard = length > 2 ? sources[2] : undefined$1;
                   customizer = assigner.length > 3 && typeof customizer == "function" ? (length--, customizer) : undefined$1;
                   if (guard && isIterateeCall(sources[0], sources[1], guard)) {
                     customizer = length < 3 ? undefined$1 : customizer;
                     length = 1;
                   }
                   object = Object2(object);
-                  while (++index < length) {
-                    var source = sources[index];
+                  while (++index2 < length) {
+                    var source = sources[index2];
                     if (source) {
-                      assigner(object, source, index, customizer);
+                      assigner(object, source, index2, customizer);
                     }
                   }
                   return object;
@@ -17438,9 +15441,9 @@ isIndex(key, length)))) {
                   if (!isArrayLike(collection)) {
                     return eachFunc(collection, iteratee2);
                   }
-                  var length = collection.length, index = fromRight ? length : -1, iterable = Object2(collection);
-                  while (fromRight ? index-- : ++index < length) {
-                    if (iteratee2(iterable[index], index, iterable) === false) {
+                  var length = collection.length, index2 = fromRight ? length : -1, iterable = Object2(collection);
+                  while (fromRight ? index2-- : ++index2 < length) {
+                    if (iteratee2(iterable[index2], index2, iterable) === false) {
                       break;
                     }
                   }
@@ -17449,9 +15452,9 @@ isIndex(key, length)))) {
               }
               function createBaseFor(fromRight) {
                 return function(object, iteratee2, keysFunc) {
-                  var index = -1, iterable = Object2(object), props = keysFunc(object), length = props.length;
+                  var index2 = -1, iterable = Object2(object), props = keysFunc(object), length = props.length;
                   while (length--) {
-                    var key = props[fromRight ? length : ++index];
+                    var key = props[fromRight ? length : ++index2];
                     if (iteratee2(iterable[key], key, iterable) === false) {
                       break;
                     }
@@ -17509,9 +15512,9 @@ isIndex(key, length)))) {
               function createCurry(func, bitmask, arity) {
                 var Ctor = createCtor(func);
                 function wrapper() {
-                  var length = arguments.length, args = Array2(length), index = length, placeholder = getHolder(wrapper);
-                  while (index--) {
-                    args[index] = arguments[index];
+                  var length = arguments.length, args = Array2(length), index2 = length, placeholder = getHolder(wrapper);
+                  while (index2--) {
+                    args[index2] = arguments[index2];
                   }
                   var holders = length < 3 && args[0] !== placeholder && args[length - 1] !== placeholder ? [] : replaceHolders(args, placeholder);
                   length -= holders.length;
@@ -17544,18 +15547,18 @@ isIndex(key, length)))) {
                       return iteratee2(iterable[key], key, iterable);
                     };
                   }
-                  var index = findIndexFunc(collection, predicate, fromIndex);
-                  return index > -1 ? iterable[iteratee2 ? collection[index] : index] : undefined$1;
+                  var index2 = findIndexFunc(collection, predicate, fromIndex);
+                  return index2 > -1 ? iterable[iteratee2 ? collection[index2] : index2] : undefined$1;
                 };
               }
               function createFlow(fromRight) {
                 return flatRest(function(funcs) {
-                  var length = funcs.length, index = length, prereq = LodashWrapper.prototype.thru;
+                  var length = funcs.length, index2 = length, prereq = LodashWrapper.prototype.thru;
                   if (fromRight) {
                     funcs.reverse();
                   }
-                  while (index--) {
-                    var func = funcs[index];
+                  while (index2--) {
+                    var func = funcs[index2];
                     if (typeof func != "function") {
                       throw new TypeError2(FUNC_ERROR_TEXT);
                     }
@@ -17563,9 +15566,9 @@ isIndex(key, length)))) {
                       var wrapper = new LodashWrapper([], true);
                     }
                   }
-                  index = wrapper ? index : length;
-                  while (++index < length) {
-                    func = funcs[index];
+                  index2 = wrapper ? index2 : length;
+                  while (++index2 < length) {
+                    func = funcs[index2];
                     var funcName = getFuncName(func), data = funcName == "wrapper" ? getData(func) : undefined$1;
                     if (data && isLaziable(data[0]) && data[1] == (WRAP_ARY_FLAG | WRAP_CURRY_FLAG | WRAP_PARTIAL_FLAG | WRAP_REARG_FLAG) && !data[4].length && data[9] == 1) {
                       wrapper = wrapper[getFuncName(data[0])].apply(wrapper, data[3]);
@@ -17578,9 +15581,9 @@ isIndex(key, length)))) {
                     if (wrapper && args.length == 1 && isArray(value2)) {
                       return wrapper.plant(value2).value();
                     }
-                    var index2 = 0, result2 = length ? funcs[index2].apply(this, args) : value2;
-                    while (++index2 < length) {
-                      result2 = funcs[index2].call(this, result2);
+                    var index3 = 0, result2 = length ? funcs[index3].apply(this, args) : value2;
+                    while (++index3 < length) {
+                      result2 = funcs[index3].call(this, result2);
                     }
                     return result2;
                   };
@@ -17589,9 +15592,9 @@ isIndex(key, length)))) {
               function createHybrid(func, bitmask, thisArg, partials, holders, partialsRight, holdersRight, argPos, ary2, arity) {
                 var isAry = bitmask & WRAP_ARY_FLAG, isBind = bitmask & WRAP_BIND_FLAG, isBindKey = bitmask & WRAP_BIND_KEY_FLAG, isCurried = bitmask & (WRAP_CURRY_FLAG | WRAP_CURRY_RIGHT_FLAG), isFlip = bitmask & WRAP_FLIP_FLAG, Ctor = isBindKey ? undefined$1 : createCtor(func);
                 function wrapper() {
-                  var length = arguments.length, args = Array2(length), index = length;
-                  while (index--) {
-                    args[index] = arguments[index];
+                  var length = arguments.length, args = Array2(length), index2 = length;
+                  while (index2--) {
+                    args[index2] = arguments[index2];
                   }
                   if (isCurried) {
                     var placeholder = getHolder(wrapper), holdersCount = countHolders(args, placeholder);
@@ -17859,13 +15862,13 @@ isIndex(key, length)))) {
                 if (arrStacked && othStacked) {
                   return arrStacked == other && othStacked == array;
                 }
-                var index = -1, result2 = true, seen2 = bitmask & COMPARE_UNORDERED_FLAG ? new SetCache() : undefined$1;
+                var index2 = -1, result2 = true, seen2 = bitmask & COMPARE_UNORDERED_FLAG ? new SetCache() : undefined$1;
                 stack.set(array, other);
                 stack.set(other, array);
-                while (++index < arrLength) {
-                  var arrValue = array[index], othValue = other[index];
+                while (++index2 < arrLength) {
+                  var arrValue = array[index2], othValue = other[index2];
                   if (customizer) {
-                    var compared = isPartial ? customizer(othValue, arrValue, index, other, array, stack) : customizer(arrValue, othValue, index, array, other, stack);
+                    var compared = isPartial ? customizer(othValue, arrValue, index2, other, array, stack) : customizer(arrValue, othValue, index2, array, other, stack);
                   }
                   if (compared !== undefined$1) {
                     if (compared) {
@@ -17943,9 +15946,9 @@ isIndex(key, length)))) {
                 if (objLength != othLength && !isPartial) {
                   return false;
                 }
-                var index = objLength;
-                while (index--) {
-                  var key = objProps[index];
+                var index2 = objLength;
+                while (index2--) {
+                  var key = objProps[index2];
                   if (!(isPartial ? key in other : hasOwnProperty.call(other, key))) {
                     return false;
                   }
@@ -17959,8 +15962,8 @@ isIndex(key, length)))) {
                 stack.set(object, other);
                 stack.set(other, object);
                 var skipCtor = isPartial;
-                while (++index < objLength) {
-                  key = objProps[index];
+                while (++index2 < objLength) {
+                  key = objProps[index2];
                   var objValue = object[key], othValue = other[key];
                   if (customizer) {
                     var compared = isPartial ? customizer(othValue, objValue, key, other, object, stack) : customizer(objValue, othValue, key, object, other, stack);
@@ -18063,7 +16066,7 @@ isIndex(key, length)))) {
                 return result2;
               };
               var getTag = baseGetTag;
-              if (DataView2 && getTag(new DataView2(new ArrayBuffer(1))) != dataViewTag || Map2 && getTag(new Map2()) != mapTag || Promise2 && getTag(Promise2.resolve()) != promiseTag || Set2 && getTag(new Set2()) != setTag || WeakMap && getTag(new WeakMap()) != weakMapTag) {
+              if (DataView2 && getTag(new DataView2(new ArrayBuffer(1))) != dataViewTag || Map2 && getTag(new Map2()) != mapTag || Promise2 && getTag(Promise2.resolve()) != promiseTag || Set2 && getTag(new Set2()) != setTag || WeakMap2 && getTag(new WeakMap2()) != weakMapTag) {
                 getTag = function(value2) {
                   var result2 = baseGetTag(value2), Ctor = result2 == objectTag ? value2.constructor : undefined$1, ctorString = Ctor ? toSource(Ctor) : "";
                   if (ctorString) {
@@ -18084,9 +16087,9 @@ isIndex(key, length)))) {
                 };
               }
               function getView(start, end, transforms) {
-                var index = -1, length = transforms.length;
-                while (++index < length) {
-                  var data = transforms[index], size3 = data.size;
+                var index2 = -1, length = transforms.length;
+                while (++index2 < length) {
+                  var data = transforms[index2], size3 = data.size;
                   switch (data.type) {
                     case "drop":
                       start += size3;
@@ -18110,15 +16113,15 @@ isIndex(key, length)))) {
               }
               function hasPath(object, path, hasFunc) {
                 path = castPath(path, object);
-                var index = -1, length = path.length, result2 = false;
-                while (++index < length) {
-                  var key = toKey(path[index]);
+                var index2 = -1, length = path.length, result2 = false;
+                while (++index2 < length) {
+                  var key = toKey(path[index2]);
                   if (!(result2 = object != null && hasFunc(object, key))) {
                     break;
                   }
                   object = object[key];
                 }
-                if (result2 || ++index != length) {
+                if (result2 || ++index2 != length) {
                   return result2;
                 }
                 length = object == null ? 0 : object.length;
@@ -18186,13 +16189,13 @@ isIndex(key, length)))) {
                 length = length == null ? MAX_SAFE_INTEGER : length;
                 return !!length && (type == "number" || type != "symbol" && reIsUint.test(value2)) && (value2 > -1 && value2 % 1 == 0 && value2 < length);
               }
-              function isIterateeCall(value2, index, object) {
+              function isIterateeCall(value2, index2, object) {
                 if (!isObject(object)) {
                   return false;
                 }
-                var type = typeof index;
-                if (type == "number" ? isArrayLike(object) && isIndex(index, object.length) : type == "string" && index in object) {
-                  return eq(object[index], value2);
+                var type = typeof index2;
+                if (type == "number" ? isArrayLike(object) && isIndex(index2, object.length) : type == "string" && index2 in object) {
+                  return eq(object[index2], value2);
                 }
                 return false;
               }
@@ -18224,7 +16227,7 @@ isIndex(key, length)))) {
               function isMasked(func) {
                 return !!maskSrcKey && maskSrcKey in func;
               }
-              var isMaskable = coreJsData ? isFunction : stubFalse;
+              var isMaskable = coreJsData ? isFunction2 : stubFalse;
               function isPrototype(value2) {
                 var Ctor = value2 && value2.constructor, proto = typeof Ctor == "function" && Ctor.prototype || objectProto;
                 return value2 === proto;
@@ -18301,14 +16304,14 @@ isIndex(key, length)))) {
               function overRest(func, start, transform2) {
                 start = nativeMax(start === undefined$1 ? func.length - 1 : start, 0);
                 return function() {
-                  var args = arguments, index = -1, length = nativeMax(args.length - start, 0), array = Array2(length);
-                  while (++index < length) {
-                    array[index] = args[start + index];
+                  var args = arguments, index2 = -1, length = nativeMax(args.length - start, 0), array = Array2(length);
+                  while (++index2 < length) {
+                    array[index2] = args[start + index2];
                   }
-                  index = -1;
+                  index2 = -1;
                   var otherArgs = Array2(start + 1);
-                  while (++index < start) {
-                    otherArgs[index] = args[index];
+                  while (++index2 < start) {
+                    otherArgs[index2] = args[index2];
                   }
                   otherArgs[start] = transform2(array);
                   return apply(func, this, otherArgs);
@@ -18320,8 +16323,8 @@ isIndex(key, length)))) {
               function reorder(array, indexes) {
                 var arrLength = array.length, length = nativeMin(indexes.length, arrLength), oldArray = copyArray(array);
                 while (length--) {
-                  var index = indexes[length];
-                  array[length] = isIndex(index, arrLength) ? oldArray[index] : undefined$1;
+                  var index2 = indexes[length];
+                  array[length] = isIndex(index2, arrLength) ? oldArray[index2] : undefined$1;
                 }
                 return array;
               }
@@ -18359,12 +16362,12 @@ isIndex(key, length)))) {
                 };
               }
               function shuffleSelf(array, size3) {
-                var index = -1, length = array.length, lastIndex = length - 1;
+                var index2 = -1, length = array.length, lastIndex = length - 1;
                 size3 = size3 === undefined$1 ? length : size3;
-                while (++index < size3) {
-                  var rand = baseRandom(index, lastIndex), value2 = array[rand];
-                  array[rand] = array[index];
-                  array[index] = value2;
+                while (++index2 < size3) {
+                  var rand = baseRandom(index2, lastIndex), value2 = array[rand];
+                  array[rand] = array[index2];
+                  array[index2] = value2;
                 }
                 array.length = size3;
                 return array;
@@ -18428,16 +16431,16 @@ isIndex(key, length)))) {
                 if (!length || size3 < 1) {
                   return [];
                 }
-                var index = 0, resIndex = 0, result2 = Array2(nativeCeil(length / size3));
-                while (index < length) {
-                  result2[resIndex++] = baseSlice(array, index, index += size3);
+                var index2 = 0, resIndex = 0, result2 = Array2(nativeCeil(length / size3));
+                while (index2 < length) {
+                  result2[resIndex++] = baseSlice(array, index2, index2 += size3);
                 }
                 return result2;
               }
               function compact(array) {
-                var index = -1, length = array == null ? 0 : array.length, resIndex = 0, result2 = [];
-                while (++index < length) {
-                  var value2 = array[index];
+                var index2 = -1, length = array == null ? 0 : array.length, resIndex = 0, result2 = [];
+                while (++index2 < length) {
+                  var value2 = array[index2];
                   if (value2) {
                     result2[resIndex++] = value2;
                   }
@@ -18449,9 +16452,9 @@ isIndex(key, length)))) {
                 if (!length) {
                   return [];
                 }
-                var args = Array2(length - 1), array = arguments[0], index = length;
-                while (index--) {
-                  args[index - 1] = arguments[index];
+                var args = Array2(length - 1), array = arguments[0], index2 = length;
+                while (index2--) {
+                  args[index2 - 1] = arguments[index2];
                 }
                 return arrayPush(isArray(array) ? copyArray(array) : [array], baseFlatten(args, 1));
               }
@@ -18511,23 +16514,23 @@ isIndex(key, length)))) {
                 if (!length) {
                   return -1;
                 }
-                var index = fromIndex == null ? 0 : toInteger(fromIndex);
-                if (index < 0) {
-                  index = nativeMax(length + index, 0);
+                var index2 = fromIndex == null ? 0 : toInteger(fromIndex);
+                if (index2 < 0) {
+                  index2 = nativeMax(length + index2, 0);
                 }
-                return baseFindIndex(array, getIteratee(predicate, 3), index);
+                return baseFindIndex(array, getIteratee(predicate, 3), index2);
               }
               function findLastIndex(array, predicate, fromIndex) {
                 var length = array == null ? 0 : array.length;
                 if (!length) {
                   return -1;
                 }
-                var index = length - 1;
+                var index2 = length - 1;
                 if (fromIndex !== undefined$1) {
-                  index = toInteger(fromIndex);
-                  index = fromIndex < 0 ? nativeMax(length + index, 0) : nativeMin(index, length - 1);
+                  index2 = toInteger(fromIndex);
+                  index2 = fromIndex < 0 ? nativeMax(length + index2, 0) : nativeMin(index2, length - 1);
                 }
-                return baseFindIndex(array, getIteratee(predicate, 3), index, true);
+                return baseFindIndex(array, getIteratee(predicate, 3), index2, true);
               }
               function flatten(array) {
                 var length = array == null ? 0 : array.length;
@@ -18546,9 +16549,9 @@ isIndex(key, length)))) {
                 return baseFlatten(array, depth);
               }
               function fromPairs(pairs) {
-                var index = -1, length = pairs == null ? 0 : pairs.length, result2 = {};
-                while (++index < length) {
-                  var pair = pairs[index];
+                var index2 = -1, length = pairs == null ? 0 : pairs.length, result2 = {};
+                while (++index2 < length) {
+                  var pair = pairs[index2];
                   result2[pair[0]] = pair[1];
                 }
                 return result2;
@@ -18561,11 +16564,11 @@ isIndex(key, length)))) {
                 if (!length) {
                   return -1;
                 }
-                var index = fromIndex == null ? 0 : toInteger(fromIndex);
-                if (index < 0) {
-                  index = nativeMax(length + index, 0);
+                var index2 = fromIndex == null ? 0 : toInteger(fromIndex);
+                if (index2 < 0) {
+                  index2 = nativeMax(length + index2, 0);
                 }
-                return baseIndexOf(array, value2, index);
+                return baseIndexOf(array, value2, index2);
               }
               function initial(array) {
                 var length = array == null ? 0 : array.length;
@@ -18604,12 +16607,12 @@ isIndex(key, length)))) {
                 if (!length) {
                   return -1;
                 }
-                var index = length;
+                var index2 = length;
                 if (fromIndex !== undefined$1) {
-                  index = toInteger(fromIndex);
-                  index = index < 0 ? nativeMax(length + index, 0) : nativeMin(index, length - 1);
+                  index2 = toInteger(fromIndex);
+                  index2 = index2 < 0 ? nativeMax(length + index2, 0) : nativeMin(index2, length - 1);
                 }
-                return value2 === value2 ? strictLastIndexOf(array, value2, index) : baseFindIndex(array, baseIsNaN, index, true);
+                return value2 === value2 ? strictLastIndexOf(array, value2, index2) : baseFindIndex(array, baseIsNaN, index2, true);
               }
               function nth(array, n) {
                 return array && array.length ? baseNth(array, toInteger(n)) : undefined$1;
@@ -18626,8 +16629,8 @@ isIndex(key, length)))) {
               }
               var pullAt = flatRest(function(array, indexes) {
                 var length = array == null ? 0 : array.length, result2 = baseAt(array, indexes);
-                basePullAt(array, arrayMap(indexes, function(index) {
-                  return isIndex(index, length) ? +index : index;
+                basePullAt(array, arrayMap(indexes, function(index2) {
+                  return isIndex(index2, length) ? +index2 : index2;
                 }).sort(compareAscending));
                 return result2;
               });
@@ -18636,13 +16639,13 @@ isIndex(key, length)))) {
                 if (!(array && array.length)) {
                   return result2;
                 }
-                var index = -1, indexes = [], length = array.length;
+                var index2 = -1, indexes = [], length = array.length;
                 predicate = getIteratee(predicate, 3);
-                while (++index < length) {
-                  var value2 = array[index];
-                  if (predicate(value2, index, array)) {
+                while (++index2 < length) {
+                  var value2 = array[index2];
+                  if (predicate(value2, index2, array)) {
                     result2.push(value2);
-                    indexes.push(index);
+                    indexes.push(index2);
                   }
                 }
                 basePullAt(array, indexes);
@@ -18674,9 +16677,9 @@ isIndex(key, length)))) {
               function sortedIndexOf(array, value2) {
                 var length = array == null ? 0 : array.length;
                 if (length) {
-                  var index = baseSortedIndex(array, value2);
-                  if (index < length && eq(array[index], value2)) {
-                    return index;
+                  var index2 = baseSortedIndex(array, value2);
+                  if (index2 < length && eq(array[index2], value2)) {
+                    return index2;
                   }
                 }
                 return -1;
@@ -18690,9 +16693,9 @@ isIndex(key, length)))) {
               function sortedLastIndexOf(array, value2) {
                 var length = array == null ? 0 : array.length;
                 if (length) {
-                  var index = baseSortedIndex(array, value2, true) - 1;
-                  if (eq(array[index], value2)) {
-                    return index;
+                  var index2 = baseSortedIndex(array, value2, true) - 1;
+                  if (eq(array[index2], value2)) {
+                    return index2;
                   }
                 }
                 return -1;
@@ -18765,8 +16768,8 @@ isIndex(key, length)))) {
                     return true;
                   }
                 });
-                return baseTimes(length, function(index) {
-                  return arrayMap(array, baseProperty(index));
+                return baseTimes(length, function(index2) {
+                  return arrayMap(array, baseProperty(index2));
                 });
               }
               function unzipWith(array, iteratee2) {
@@ -18951,9 +16954,9 @@ isIndex(key, length)))) {
                 return isString(collection) ? fromIndex <= length && collection.indexOf(value2, fromIndex) > -1 : !!length && baseIndexOf(collection, value2, fromIndex) > -1;
               }
               var invokeMap = baseRest(function(collection, path, args) {
-                var index = -1, isFunc = typeof path == "function", result2 = isArrayLike(collection) ? Array2(collection.length) : [];
+                var index2 = -1, isFunc = typeof path == "function", result2 = isArrayLike(collection) ? Array2(collection.length) : [];
                 baseEach(collection, function(value2) {
-                  result2[++index] = isFunc ? apply(path, value2, args) : baseInvoke(value2, path, args);
+                  result2[++index2] = isFunc ? apply(path, value2, args) : baseInvoke(value2, path, args);
                 });
                 return result2;
               });
@@ -19239,9 +17242,9 @@ isIndex(key, length)))) {
                 transforms = transforms.length == 1 && isArray(transforms[0]) ? arrayMap(transforms[0], baseUnary(getIteratee())) : arrayMap(baseFlatten(transforms, 1), baseUnary(getIteratee()));
                 var funcsLength = transforms.length;
                 return baseRest(function(args) {
-                  var index = -1, length = nativeMin(args.length, funcsLength);
-                  while (++index < length) {
-                    args[index] = transforms[index].call(this, args[index]);
+                  var index2 = -1, length = nativeMin(args.length, funcsLength);
+                  while (++index2 < length) {
+                    args[index2] = transforms[index2].call(this, args[index2]);
                   }
                   return apply(func, this, args);
                 });
@@ -19277,7 +17280,7 @@ isIndex(key, length)))) {
                   return apply(func, this, otherArgs);
                 });
               }
-              function throttle(func, wait, options) {
+              function throttle2(func, wait, options) {
                 var leading = true, trailing = true;
                 if (typeof func != "function") {
                   throw new TypeError2(FUNC_ERROR_TEXT);
@@ -19337,7 +17340,7 @@ isIndex(key, length)))) {
               var isArray = Array2.isArray;
               var isArrayBuffer2 = nodeIsArrayBuffer ? baseUnary(nodeIsArrayBuffer) : baseIsArrayBuffer;
               function isArrayLike(value2) {
-                return value2 != null && isLength(value2.length) && !isFunction(value2);
+                return value2 != null && isLength(value2.length) && !isFunction2(value2);
               }
               function isArrayLikeObject(value2) {
                 return isObjectLike(value2) && isArrayLike(value2);
@@ -19389,7 +17392,7 @@ isIndex(key, length)))) {
               function isFinite2(value2) {
                 return typeof value2 == "number" && nativeIsFinite(value2);
               }
-              function isFunction(value2) {
+              function isFunction2(value2) {
                 if (!isObject(value2)) {
                   return false;
                 }
@@ -19556,14 +17559,14 @@ isIndex(key, length)))) {
               }
               var defaults = baseRest(function(object, sources) {
                 object = Object2(object);
-                var index = -1;
+                var index2 = -1;
                 var length = sources.length;
                 var guard = length > 2 ? sources[2] : undefined$1;
                 if (guard && isIterateeCall(sources[0], sources[1], guard)) {
                   length = 1;
                 }
-                while (++index < length) {
-                  var source = sources[index];
+                while (++index2 < length) {
+                  var source = sources[index2];
                   var props = keysIn(source);
                   var propsIndex = -1;
                   var propsLength = props.length;
@@ -19701,18 +17704,18 @@ isIndex(key, length)))) {
               }
               function result(object, path, defaultValue) {
                 path = castPath(path, object);
-                var index = -1, length = path.length;
+                var index2 = -1, length = path.length;
                 if (!length) {
                   length = 1;
                   object = undefined$1;
                 }
-                while (++index < length) {
-                  var value2 = object == null ? undefined$1 : object[toKey(path[index])];
+                while (++index2 < length) {
+                  var value2 = object == null ? undefined$1 : object[toKey(path[index2])];
                   if (value2 === undefined$1) {
-                    index = length;
+                    index2 = length;
                     value2 = defaultValue;
                   }
-                  object = isFunction(value2) ? value2.call(object) : value2;
+                  object = isFunction2(value2) ? value2.call(object) : value2;
                 }
                 return object;
               }
@@ -19733,13 +17736,13 @@ isIndex(key, length)))) {
                   if (isArrLike) {
                     accumulator = isArr ? new Ctor() : [];
                   } else if (isObject(object)) {
-                    accumulator = isFunction(Ctor) ? baseCreate(getPrototype(object)) : {};
+                    accumulator = isFunction2(Ctor) ? baseCreate(getPrototype(object)) : {};
                   } else {
                     accumulator = {};
                   }
                 }
-                (isArrLike ? arrayEach : baseForOwn)(object, function(value2, index, object2) {
-                  return iteratee2(accumulator, value2, index, object2);
+                (isArrLike ? arrayEach : baseForOwn)(object, function(value2, index2, object2) {
+                  return iteratee2(accumulator, value2, index2, object2);
                 });
                 return accumulator;
               }
@@ -19821,9 +17824,9 @@ isIndex(key, length)))) {
                 }
                 return baseRandom(lower, upper);
               }
-              var camelCase = createCompounder(function(result2, word, index) {
+              var camelCase = createCompounder(function(result2, word, index2) {
                 word = word.toLowerCase();
-                return result2 + (index ? capitalize(word) : word);
+                return result2 + (index2 ? capitalize(word) : word);
               });
               function capitalize(string) {
                 return upperFirst(toString(string).toLowerCase());
@@ -19849,11 +17852,11 @@ isIndex(key, length)))) {
                 string = toString(string);
                 return string && reHasRegExpChar.test(string) ? string.replace(reRegExpChar, "\\$&") : string;
               }
-              var kebabCase = createCompounder(function(result2, word, index) {
-                return result2 + (index ? "-" : "") + word.toLowerCase();
+              var kebabCase = createCompounder(function(result2, word, index2) {
+                return result2 + (index2 ? "-" : "") + word.toLowerCase();
               });
-              var lowerCase = createCompounder(function(result2, word, index) {
-                return result2 + (index ? " " : "") + word.toLowerCase();
+              var lowerCase = createCompounder(function(result2, word, index2) {
+                return result2 + (index2 ? " " : "") + word.toLowerCase();
               });
               var lowerFirst = createCaseFirst("toLowerCase");
               function pad(string, length, chars) {
@@ -19898,8 +17901,8 @@ isIndex(key, length)))) {
                 var args = arguments, string = toString(args[0]);
                 return args.length < 3 ? string : string.replace(args[1], args[2]);
               }
-              var snakeCase = createCompounder(function(result2, word, index) {
-                return result2 + (index ? "_" : "") + word.toLowerCase();
+              var snakeCase = createCompounder(function(result2, word, index2) {
+                return result2 + (index2 ? "_" : "") + word.toLowerCase();
               });
               function split(string, separator, limit) {
                 if (limit && typeof limit != "number" && isIterateeCall(string, separator, limit)) {
@@ -19918,8 +17921,8 @@ isIndex(key, length)))) {
                 }
                 return string.split(separator, limit);
               }
-              var startCase = createCompounder(function(result2, word, index) {
-                return result2 + (index ? " " : "") + upperFirst(word);
+              var startCase = createCompounder(function(result2, word, index2) {
+                return result2 + (index2 ? " " : "") + upperFirst(word);
               });
               function startsWith(string, target, position) {
                 string = toString(string);
@@ -19935,7 +17938,7 @@ isIndex(key, length)))) {
                 string = toString(string);
                 options = assignInWith({}, options, settings, customDefaultsAssignIn);
                 var imports = assignInWith({}, options.imports, settings.imports, customDefaultsAssignIn), importsKeys = keys(imports), importsValues = baseValues(imports, importsKeys);
-                var isEscaping, isEvaluating, index = 0, interpolate = options.interpolate || reNoMatch, source = "__p += '";
+                var isEscaping, isEvaluating, index2 = 0, interpolate = options.interpolate || reNoMatch, source = "__p += '";
                 var reDelimiters = RegExp2(
                   (options.escape || reNoMatch).source + "|" + interpolate.source + "|" + (interpolate === reInterpolate ? reEsTemplate : reNoMatch).source + "|" + (options.evaluate || reNoMatch).source + "|$",
                   "g"
@@ -19943,7 +17946,7 @@ isIndex(key, length)))) {
                 var sourceURL = "//# sourceURL=" + (hasOwnProperty.call(options, "sourceURL") ? (options.sourceURL + "").replace(/\s/g, " ") : "lodash.templateSources[" + ++templateCounter + "]") + "\n";
                 string.replace(reDelimiters, function(match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
                   interpolateValue || (interpolateValue = esTemplateValue);
-                  source += string.slice(index, offset).replace(reUnescapedString, escapeStringChar);
+                  source += string.slice(index2, offset).replace(reUnescapedString, escapeStringChar);
                   if (escapeValue) {
                     isEscaping = true;
                     source += "' +\n__e(" + escapeValue + ") +\n'";
@@ -19955,7 +17958,7 @@ isIndex(key, length)))) {
                   if (interpolateValue) {
                     source += "' +\n((__t = (" + interpolateValue + ")) == null ? '' : __t) +\n'";
                   }
-                  index = offset + match.length;
+                  index2 = offset + match.length;
                   return match;
                 });
                 source += "';\n";
@@ -20055,9 +18058,9 @@ isIndex(key, length)))) {
                     result2 = result2.slice(0, newEnd === undefined$1 ? end : newEnd);
                   }
                 } else if (string.indexOf(baseToString(separator), end) != end) {
-                  var index = result2.lastIndexOf(separator);
-                  if (index > -1) {
-                    result2 = result2.slice(0, index);
+                  var index2 = result2.lastIndexOf(separator);
+                  if (index2 > -1) {
+                    result2 = result2.slice(0, index2);
                   }
                 }
                 return result2 + omission;
@@ -20066,8 +18069,8 @@ isIndex(key, length)))) {
                 string = toString(string);
                 return string && reHasEscapedHtml.test(string) ? string.replace(reEscapedHtml, unescapeHtmlChar) : string;
               }
-              var upperCase = createCompounder(function(result2, word, index) {
-                return result2 + (index ? " " : "") + word.toUpperCase();
+              var upperCase = createCompounder(function(result2, word, index2) {
+                return result2 + (index2 ? " " : "") + word.toUpperCase();
               });
               var upperFirst = createCaseFirst("toUpperCase");
               function words(string, pattern, guard) {
@@ -20101,9 +18104,9 @@ isIndex(key, length)))) {
                   return [toIteratee(pair[0]), pair[1]];
                 });
                 return baseRest(function(args) {
-                  var index = -1;
-                  while (++index < length) {
-                    var pair = pairs[index];
+                  var index2 = -1;
+                  while (++index2 < length) {
+                    var pair = pairs[index2];
                     if (apply(pair[0], this, args)) {
                       return apply(pair[1], this, args);
                     }
@@ -20153,7 +18156,7 @@ isIndex(key, length)))) {
                   object = this;
                   methodNames = baseFunctions(source, keys(source));
                 }
-                var chain2 = !(isObject(options) && "chain" in options) || !!options.chain, isFunc = isFunction(object);
+                var chain2 = !(isObject(options) && "chain" in options) || !!options.chain, isFunc = isFunction2(object);
                 arrayEach(methodNames, function(methodName) {
                   var func = source[methodName];
                   object[methodName] = func;
@@ -20219,12 +18222,12 @@ isIndex(key, length)))) {
                 if (n < 1 || n > MAX_SAFE_INTEGER) {
                   return [];
                 }
-                var index = MAX_ARRAY_LENGTH, length = nativeMin(n, MAX_ARRAY_LENGTH);
+                var index2 = MAX_ARRAY_LENGTH, length = nativeMin(n, MAX_ARRAY_LENGTH);
                 iteratee2 = getIteratee(iteratee2);
                 n -= MAX_ARRAY_LENGTH;
                 var result2 = baseTimes(length, iteratee2);
-                while (++index < n) {
-                  iteratee2(index);
+                while (++index2 < n) {
+                  iteratee2(index2);
                 }
                 return result2;
               }
@@ -20394,7 +18397,7 @@ isIndex(key, length)))) {
               lodash2.takeRightWhile = takeRightWhile;
               lodash2.takeWhile = takeWhile;
               lodash2.tap = tap;
-              lodash2.throttle = throttle;
+              lodash2.throttle = throttle2;
               lodash2.thru = thru;
               lodash2.toArray = toArray;
               lodash2.toPairs = toPairs;
@@ -20488,7 +18491,7 @@ isIndex(key, length)))) {
               lodash2.isEqualWith = isEqualWith;
               lodash2.isError = isError;
               lodash2.isFinite = isFinite2;
-              lodash2.isFunction = isFunction;
+              lodash2.isFunction = isFunction2;
               lodash2.isInteger = isInteger;
               lodash2.isLength = isLength;
               lodash2.isMap = isMap;
@@ -20596,10 +18599,10 @@ isIndex(key, length)))) {
               arrayEach(["bind", "bindKey", "curry", "curryRight", "partial", "partialRight"], function(methodName) {
                 lodash2[methodName].placeholder = lodash2;
               });
-              arrayEach(["drop", "take"], function(methodName, index) {
+              arrayEach(["drop", "take"], function(methodName, index2) {
                 LazyWrapper.prototype[methodName] = function(n) {
                   n = n === undefined$1 ? 1 : nativeMax(toInteger(n), 0);
-                  var result2 = this.__filtered__ && !index ? new LazyWrapper(this) : this.clone();
+                  var result2 = this.__filtered__ && !index2 ? new LazyWrapper(this) : this.clone();
                   if (result2.__filtered__) {
                     result2.__takeCount__ = nativeMin(n, result2.__takeCount__);
                   } else {
@@ -20614,8 +18617,8 @@ isIndex(key, length)))) {
                   return this.reverse()[methodName](n).reverse();
                 };
               });
-              arrayEach(["filter", "map", "takeWhile"], function(methodName, index) {
-                var type = index + 1, isFilter = type == LAZY_FILTER_FLAG || type == LAZY_WHILE_FLAG;
+              arrayEach(["filter", "map", "takeWhile"], function(methodName, index2) {
+                var type = index2 + 1, isFilter = type == LAZY_FILTER_FLAG || type == LAZY_WHILE_FLAG;
                 LazyWrapper.prototype[methodName] = function(iteratee2) {
                   var result2 = this.clone();
                   result2.__iteratees__.push({
@@ -20626,14 +18629,14 @@ isIndex(key, length)))) {
                   return result2;
                 };
               });
-              arrayEach(["head", "last"], function(methodName, index) {
-                var takeName = "take" + (index ? "Right" : "");
+              arrayEach(["head", "last"], function(methodName, index2) {
+                var takeName = "take" + (index2 ? "Right" : "");
                 LazyWrapper.prototype[methodName] = function() {
                   return this[takeName](1).value()[0];
                 };
               });
-              arrayEach(["initial", "tail"], function(methodName, index) {
-                var dropName = "drop" + (index ? "" : "Right");
+              arrayEach(["initial", "tail"], function(methodName, index2) {
+                var dropName = "drop" + (index2 ? "" : "Right");
                 LazyWrapper.prototype[methodName] = function() {
                   return this.__filtered__ ? new LazyWrapper(this) : this[dropName](1);
                 };
@@ -20849,6 +18852,3929 @@ isIndex(key, length)))) {
           downloadSongListAsJson
         };
       };
+      const singerKeywordsMap = {};
+      const useSearchSinger = (options) => {
+        const {
+keywords
+        } = options || {};
+        const [singerList, setSingerList] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const searchSingerList = async (keywords2) => {
+          try {
+            setLoading(true);
+            if (singerKeywordsMap[keywords2]) {
+              const res2 = await singerKeywordsMap[keywords2];
+              const list = (res2.data.list || []).sort(
+                (a, b) => a.artistId - b.artistId
+              );
+              setSingerList(list);
+              return;
+            }
+            singerKeywordsMap[keywords2] = searchArtist(keywords2);
+            const res = await singerKeywordsMap[keywords2];
+            if (res.code === 200) {
+              const list = (res.data.list || []).sort(
+                (a, b) => a.artistId - b.artistId
+              );
+              setSingerList(list);
+            }
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        useEffect(() => {
+          if (!keywords) return;
+          searchSingerList(keywords);
+        }, [keywords]);
+        return {
+          singerList,
+          loading,
+          searchSingerList
+        };
+      };
+      const useVisible = (props = {}, ref) => {
+        const {
+          onOpen = NOOP,
+          onClose = NOOP,
+          onReset = NOOP,
+          resetOnOpen = true,
+          resetOnClose = false
+        } = props;
+        const [visible, setVisible] = useState(false);
+        const resolve = useRef();
+        const reject = useRef();
+        const open = (value2) => {
+          resetOnOpen && reset();
+          setVisible(true);
+          onOpen(value2);
+        };
+        const close = () => {
+          resetOnClose && reset();
+          setVisible(false);
+          onClose();
+        };
+        const reset = () => {
+          onReset();
+        };
+        const submit = () => {
+          return new Promise((_resolve, _reject) => {
+            resolve.current = _resolve;
+            reject.current = _reject;
+          });
+        };
+        ref && useImperativeHandle(ref, () => ({
+          open,
+          close,
+          reset,
+          submit,
+          resolve: resolve.current,
+          reject: reject.current
+        }));
+        return {
+          visible,
+          open,
+          close,
+          reset,
+          submit,
+          resolve: resolve.current,
+          reject: reject.current
+        };
+      };
+      const NOOP = () => {
+      };
+      const styles$9 = {
+        "song-search-modal": "_song-search-modal_15iqn_1",
+        "modal-title": "_modal-title_15iqn_1",
+        "title-content": "_title-content_15iqn_6",
+        "title-text": "_title-text_15iqn_11",
+        "song-table": "_song-table_15iqn_16"
+      };
+      const copy = async (text2, options = {}) => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            if (options.html) {
+              const type = "text/html";
+              const blob = new Blob([text2], { type });
+              const data = [new ClipboardItem({ [type]: blob })];
+              await navigator.clipboard.write(data);
+            } else {
+              await navigator.clipboard.writeText(text2);
+            }
+          } else {
+            const textArea = document.createElement("textarea");
+            textArea.value = text2;
+            textArea.style.cssText = "position: fixed; top: -9999px; left: -9999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+              document.execCommand("copy");
+            } catch (err2) {
+              throw new Error("复制失败，请检查浏览器权限设置");
+            } finally {
+              document.body.removeChild(textArea);
+            }
+          }
+        } catch (err2) {
+          throw new Error(
+            err2 instanceof Error ? err2.message : "复制失败，请重试"
+          );
+        }
+      };
+      const styles$8 = {
+        "copy-text": "_copy-text_1att4_1",
+        "copy-btn": "_copy-btn_1att4_12"
+      };
+      var classnames = { exports: {} };
+var hasRequiredClassnames;
+      function requireClassnames() {
+        if (hasRequiredClassnames) return classnames.exports;
+        hasRequiredClassnames = 1;
+        (function(module) {
+          (function() {
+            var hasOwn = {}.hasOwnProperty;
+            function classNames2() {
+              var classes = "";
+              for (var i = 0; i < arguments.length; i++) {
+                var arg = arguments[i];
+                if (arg) {
+                  classes = appendClass(classes, parseValue(arg));
+                }
+              }
+              return classes;
+            }
+            function parseValue(arg) {
+              if (typeof arg === "string" || typeof arg === "number") {
+                return arg;
+              }
+              if (typeof arg !== "object") {
+                return "";
+              }
+              if (Array.isArray(arg)) {
+                return classNames2.apply(null, arg);
+              }
+              if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) {
+                return arg.toString();
+              }
+              var classes = "";
+              for (var key in arg) {
+                if (hasOwn.call(arg, key) && arg[key]) {
+                  classes = appendClass(classes, key);
+                }
+              }
+              return classes;
+            }
+            function appendClass(value2, newClass) {
+              if (!newClass) {
+                return value2;
+              }
+              if (value2) {
+                return value2 + " " + newClass;
+              }
+              return value2 + newClass;
+            }
+            if (module.exports) {
+              classNames2.default = classNames2;
+              module.exports = classNames2;
+            } else {
+              window.classNames = classNames2;
+            }
+          })();
+        })(classnames);
+        return classnames.exports;
+      }
+      var classnamesExports = requireClassnames();
+      const classNames = getDefaultExportFromCjs(classnamesExports);
+      function __read(o, n) {
+        var m = typeof Symbol === "function" && o[Symbol.iterator];
+        if (!m) return o;
+        var i = m.call(o), r, ar = [], e;
+        try {
+          while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+        } catch (error) {
+          e = { error };
+        } finally {
+          try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+          } finally {
+            if (e) throw e.error;
+          }
+        }
+        return ar;
+      }
+      typeof SuppressedError === "function" ? SuppressedError : function(error, suppressed, message2) {
+        var e = new Error(message2);
+        return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+      };
+      var isFunction = function(value2) {
+        return typeof value2 === "function";
+      };
+      function depsAreSame(oldDeps, deps) {
+        if (oldDeps === deps) {
+          return true;
+        }
+        for (var i = 0; i < oldDeps.length; i++) {
+          if (!Object.is(oldDeps[i], deps[i])) {
+            return false;
+          }
+        }
+        return true;
+      }
+      function useLatest(value2) {
+        var ref = useRef(value2);
+        ref.current = value2;
+        return ref;
+      }
+      var useUnmount = function(fn) {
+        var fnRef = useLatest(fn);
+        useEffect(function() {
+          return function() {
+            fnRef.current();
+          };
+        }, []);
+      };
+      var isBrowser$1 = !!(typeof window !== "undefined" && window.document && window.document.createElement);
+      function getTargetElement(target, defaultElement) {
+        if (!isBrowser$1) {
+          return void 0;
+        }
+        if (!target) {
+          return defaultElement;
+        }
+        var targetElement;
+        if (isFunction(target)) {
+          targetElement = target();
+        } else if ("current" in target) {
+          targetElement = target.current;
+        } else {
+          targetElement = target;
+        }
+        return targetElement;
+      }
+      var createEffectWithTarget = function(useEffectType) {
+        var useEffectWithTarget2 = function(effect, deps, target) {
+          var hasInitRef = useRef(false);
+          var lastElementRef = useRef([]);
+          var lastDepsRef = useRef([]);
+          var unLoadRef = useRef(void 0);
+          useEffectType(function() {
+            var _a2;
+            var targets = Array.isArray(target) ? target : [target];
+            var els = targets.map(function(item) {
+              return getTargetElement(item);
+            });
+            if (!hasInitRef.current) {
+              hasInitRef.current = true;
+              lastElementRef.current = els;
+              lastDepsRef.current = deps;
+              unLoadRef.current = effect();
+              return;
+            }
+            if (els.length !== lastElementRef.current.length || !depsAreSame(lastElementRef.current, els) || !depsAreSame(lastDepsRef.current, deps)) {
+              (_a2 = unLoadRef.current) === null || _a2 === void 0 ? void 0 : _a2.call(unLoadRef);
+              lastElementRef.current = els;
+              lastDepsRef.current = deps;
+              unLoadRef.current = effect();
+            }
+          });
+          useUnmount(function() {
+            var _a2;
+            (_a2 = unLoadRef.current) === null || _a2 === void 0 ? void 0 : _a2.call(unLoadRef);
+            hasInitRef.current = false;
+          });
+        };
+        return useEffectWithTarget2;
+      };
+      var useEffectWithTarget$1 = createEffectWithTarget(useEffect);
+      function useRafState(initialState) {
+        var ref = useRef(0);
+        var _a2 = __read(useState(initialState), 2), state = _a2[0], setState = _a2[1];
+        var setRafState = useCallback(function(value2) {
+          cancelAnimationFrame(ref.current);
+          ref.current = requestAnimationFrame(function() {
+            setState(value2);
+          });
+        }, []);
+        useUnmount(function() {
+          cancelAnimationFrame(ref.current);
+        });
+        return [state, setRafState];
+      }
+      var MapShim = (function() {
+        if (typeof Map !== "undefined") {
+          return Map;
+        }
+        function getIndex(arr, key) {
+          var result = -1;
+          arr.some(function(entry, index2) {
+            if (entry[0] === key) {
+              result = index2;
+              return true;
+            }
+            return false;
+          });
+          return result;
+        }
+        return (
+(function() {
+            function class_1() {
+              this.__entries__ = [];
+            }
+            Object.defineProperty(class_1.prototype, "size", {
+get: function() {
+                return this.__entries__.length;
+              },
+              enumerable: true,
+              configurable: true
+            });
+            class_1.prototype.get = function(key) {
+              var index2 = getIndex(this.__entries__, key);
+              var entry = this.__entries__[index2];
+              return entry && entry[1];
+            };
+            class_1.prototype.set = function(key, value2) {
+              var index2 = getIndex(this.__entries__, key);
+              if (~index2) {
+                this.__entries__[index2][1] = value2;
+              } else {
+                this.__entries__.push([key, value2]);
+              }
+            };
+            class_1.prototype.delete = function(key) {
+              var entries = this.__entries__;
+              var index2 = getIndex(entries, key);
+              if (~index2) {
+                entries.splice(index2, 1);
+              }
+            };
+            class_1.prototype.has = function(key) {
+              return !!~getIndex(this.__entries__, key);
+            };
+            class_1.prototype.clear = function() {
+              this.__entries__.splice(0);
+            };
+            class_1.prototype.forEach = function(callback, ctx) {
+              if (ctx === void 0) {
+                ctx = null;
+              }
+              for (var _i = 0, _a2 = this.__entries__; _i < _a2.length; _i++) {
+                var entry = _a2[_i];
+                callback.call(ctx, entry[1], entry[0]);
+              }
+            };
+            return class_1;
+          })()
+        );
+      })();
+      var isBrowser = typeof window !== "undefined" && typeof document !== "undefined" && window.document === document;
+      var global$1 = (function() {
+        if (typeof global !== "undefined" && global.Math === Math) {
+          return global;
+        }
+        if (typeof self !== "undefined" && self.Math === Math) {
+          return self;
+        }
+        if (typeof window !== "undefined" && window.Math === Math) {
+          return window;
+        }
+        return Function("return this")();
+      })();
+      var requestAnimationFrame$1 = (function() {
+        if (typeof requestAnimationFrame === "function") {
+          return requestAnimationFrame.bind(global$1);
+        }
+        return function(callback) {
+          return setTimeout(function() {
+            return callback(Date.now());
+          }, 1e3 / 60);
+        };
+      })();
+      var trailingTimeout = 2;
+      function throttle(callback, delay) {
+        var leadingCall = false, trailingCall = false, lastCallTime = 0;
+        function resolvePending() {
+          if (leadingCall) {
+            leadingCall = false;
+            callback();
+          }
+          if (trailingCall) {
+            proxy();
+          }
+        }
+        function timeoutCallback() {
+          requestAnimationFrame$1(resolvePending);
+        }
+        function proxy() {
+          var timeStamp = Date.now();
+          if (leadingCall) {
+            if (timeStamp - lastCallTime < trailingTimeout) {
+              return;
+            }
+            trailingCall = true;
+          } else {
+            leadingCall = true;
+            trailingCall = false;
+            setTimeout(timeoutCallback, delay);
+          }
+          lastCallTime = timeStamp;
+        }
+        return proxy;
+      }
+      var REFRESH_DELAY = 20;
+      var transitionKeys = ["top", "right", "bottom", "left", "width", "height", "size", "weight"];
+      var mutationObserverSupported = typeof MutationObserver !== "undefined";
+      var ResizeObserverController = (
+(function() {
+          function ResizeObserverController2() {
+            this.connected_ = false;
+            this.mutationEventsAdded_ = false;
+            this.mutationsObserver_ = null;
+            this.observers_ = [];
+            this.onTransitionEnd_ = this.onTransitionEnd_.bind(this);
+            this.refresh = throttle(this.refresh.bind(this), REFRESH_DELAY);
+          }
+          ResizeObserverController2.prototype.addObserver = function(observer) {
+            if (!~this.observers_.indexOf(observer)) {
+              this.observers_.push(observer);
+            }
+            if (!this.connected_) {
+              this.connect_();
+            }
+          };
+          ResizeObserverController2.prototype.removeObserver = function(observer) {
+            var observers2 = this.observers_;
+            var index2 = observers2.indexOf(observer);
+            if (~index2) {
+              observers2.splice(index2, 1);
+            }
+            if (!observers2.length && this.connected_) {
+              this.disconnect_();
+            }
+          };
+          ResizeObserverController2.prototype.refresh = function() {
+            var changesDetected = this.updateObservers_();
+            if (changesDetected) {
+              this.refresh();
+            }
+          };
+          ResizeObserverController2.prototype.updateObservers_ = function() {
+            var activeObservers = this.observers_.filter(function(observer) {
+              return observer.gatherActive(), observer.hasActive();
+            });
+            activeObservers.forEach(function(observer) {
+              return observer.broadcastActive();
+            });
+            return activeObservers.length > 0;
+          };
+          ResizeObserverController2.prototype.connect_ = function() {
+            if (!isBrowser || this.connected_) {
+              return;
+            }
+            document.addEventListener("transitionend", this.onTransitionEnd_);
+            window.addEventListener("resize", this.refresh);
+            if (mutationObserverSupported) {
+              this.mutationsObserver_ = new MutationObserver(this.refresh);
+              this.mutationsObserver_.observe(document, {
+                attributes: true,
+                childList: true,
+                characterData: true,
+                subtree: true
+              });
+            } else {
+              document.addEventListener("DOMSubtreeModified", this.refresh);
+              this.mutationEventsAdded_ = true;
+            }
+            this.connected_ = true;
+          };
+          ResizeObserverController2.prototype.disconnect_ = function() {
+            if (!isBrowser || !this.connected_) {
+              return;
+            }
+            document.removeEventListener("transitionend", this.onTransitionEnd_);
+            window.removeEventListener("resize", this.refresh);
+            if (this.mutationsObserver_) {
+              this.mutationsObserver_.disconnect();
+            }
+            if (this.mutationEventsAdded_) {
+              document.removeEventListener("DOMSubtreeModified", this.refresh);
+            }
+            this.mutationsObserver_ = null;
+            this.mutationEventsAdded_ = false;
+            this.connected_ = false;
+          };
+          ResizeObserverController2.prototype.onTransitionEnd_ = function(_a2) {
+            var _b2 = _a2.propertyName, propertyName = _b2 === void 0 ? "" : _b2;
+            var isReflowProperty = transitionKeys.some(function(key) {
+              return !!~propertyName.indexOf(key);
+            });
+            if (isReflowProperty) {
+              this.refresh();
+            }
+          };
+          ResizeObserverController2.getInstance = function() {
+            if (!this.instance_) {
+              this.instance_ = new ResizeObserverController2();
+            }
+            return this.instance_;
+          };
+          ResizeObserverController2.instance_ = null;
+          return ResizeObserverController2;
+        })()
+      );
+      var defineConfigurable = (function(target, props) {
+        for (var _i = 0, _a2 = Object.keys(props); _i < _a2.length; _i++) {
+          var key = _a2[_i];
+          Object.defineProperty(target, key, {
+            value: props[key],
+            enumerable: false,
+            writable: false,
+            configurable: true
+          });
+        }
+        return target;
+      });
+      var getWindowOf = (function(target) {
+        var ownerGlobal = target && target.ownerDocument && target.ownerDocument.defaultView;
+        return ownerGlobal || global$1;
+      });
+      var emptyRect = createRectInit(0, 0, 0, 0);
+      function toFloat(value2) {
+        return parseFloat(value2) || 0;
+      }
+      function getBordersSize(styles2) {
+        var positions = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+          positions[_i - 1] = arguments[_i];
+        }
+        return positions.reduce(function(size2, position) {
+          var value2 = styles2["border-" + position + "-width"];
+          return size2 + toFloat(value2);
+        }, 0);
+      }
+      function getPaddings(styles2) {
+        var positions = ["top", "right", "bottom", "left"];
+        var paddings = {};
+        for (var _i = 0, positions_1 = positions; _i < positions_1.length; _i++) {
+          var position = positions_1[_i];
+          var value2 = styles2["padding-" + position];
+          paddings[position] = toFloat(value2);
+        }
+        return paddings;
+      }
+      function getSVGContentRect(target) {
+        var bbox = target.getBBox();
+        return createRectInit(0, 0, bbox.width, bbox.height);
+      }
+      function getHTMLElementContentRect(target) {
+        var clientWidth = target.clientWidth, clientHeight = target.clientHeight;
+        if (!clientWidth && !clientHeight) {
+          return emptyRect;
+        }
+        var styles2 = getWindowOf(target).getComputedStyle(target);
+        var paddings = getPaddings(styles2);
+        var horizPad = paddings.left + paddings.right;
+        var vertPad = paddings.top + paddings.bottom;
+        var width = toFloat(styles2.width), height = toFloat(styles2.height);
+        if (styles2.boxSizing === "border-box") {
+          if (Math.round(width + horizPad) !== clientWidth) {
+            width -= getBordersSize(styles2, "left", "right") + horizPad;
+          }
+          if (Math.round(height + vertPad) !== clientHeight) {
+            height -= getBordersSize(styles2, "top", "bottom") + vertPad;
+          }
+        }
+        if (!isDocumentElement(target)) {
+          var vertScrollbar = Math.round(width + horizPad) - clientWidth;
+          var horizScrollbar = Math.round(height + vertPad) - clientHeight;
+          if (Math.abs(vertScrollbar) !== 1) {
+            width -= vertScrollbar;
+          }
+          if (Math.abs(horizScrollbar) !== 1) {
+            height -= horizScrollbar;
+          }
+        }
+        return createRectInit(paddings.left, paddings.top, width, height);
+      }
+      var isSVGGraphicsElement = (function() {
+        if (typeof SVGGraphicsElement !== "undefined") {
+          return function(target) {
+            return target instanceof getWindowOf(target).SVGGraphicsElement;
+          };
+        }
+        return function(target) {
+          return target instanceof getWindowOf(target).SVGElement && typeof target.getBBox === "function";
+        };
+      })();
+      function isDocumentElement(target) {
+        return target === getWindowOf(target).document.documentElement;
+      }
+      function getContentRect(target) {
+        if (!isBrowser) {
+          return emptyRect;
+        }
+        if (isSVGGraphicsElement(target)) {
+          return getSVGContentRect(target);
+        }
+        return getHTMLElementContentRect(target);
+      }
+      function createReadOnlyRect(_a2) {
+        var x = _a2.x, y = _a2.y, width = _a2.width, height = _a2.height;
+        var Constr = typeof DOMRectReadOnly !== "undefined" ? DOMRectReadOnly : Object;
+        var rect = Object.create(Constr.prototype);
+        defineConfigurable(rect, {
+          x,
+          y,
+          width,
+          height,
+          top: y,
+          right: x + width,
+          bottom: height + y,
+          left: x
+        });
+        return rect;
+      }
+      function createRectInit(x, y, width, height) {
+        return { x, y, width, height };
+      }
+      var ResizeObservation = (
+(function() {
+          function ResizeObservation2(target) {
+            this.broadcastWidth = 0;
+            this.broadcastHeight = 0;
+            this.contentRect_ = createRectInit(0, 0, 0, 0);
+            this.target = target;
+          }
+          ResizeObservation2.prototype.isActive = function() {
+            var rect = getContentRect(this.target);
+            this.contentRect_ = rect;
+            return rect.width !== this.broadcastWidth || rect.height !== this.broadcastHeight;
+          };
+          ResizeObservation2.prototype.broadcastRect = function() {
+            var rect = this.contentRect_;
+            this.broadcastWidth = rect.width;
+            this.broadcastHeight = rect.height;
+            return rect;
+          };
+          return ResizeObservation2;
+        })()
+      );
+      var ResizeObserverEntry = (
+
+(function() {
+          function ResizeObserverEntry2(target, rectInit) {
+            var contentRect = createReadOnlyRect(rectInit);
+            defineConfigurable(this, { target, contentRect });
+          }
+          return ResizeObserverEntry2;
+        })()
+      );
+      var ResizeObserverSPI = (
+(function() {
+          function ResizeObserverSPI2(callback, controller, callbackCtx) {
+            this.activeObservations_ = [];
+            this.observations_ = new MapShim();
+            if (typeof callback !== "function") {
+              throw new TypeError("The callback provided as parameter 1 is not a function.");
+            }
+            this.callback_ = callback;
+            this.controller_ = controller;
+            this.callbackCtx_ = callbackCtx;
+          }
+          ResizeObserverSPI2.prototype.observe = function(target) {
+            if (!arguments.length) {
+              throw new TypeError("1 argument required, but only 0 present.");
+            }
+            if (typeof Element === "undefined" || !(Element instanceof Object)) {
+              return;
+            }
+            if (!(target instanceof getWindowOf(target).Element)) {
+              throw new TypeError('parameter 1 is not of type "Element".');
+            }
+            var observations = this.observations_;
+            if (observations.has(target)) {
+              return;
+            }
+            observations.set(target, new ResizeObservation(target));
+            this.controller_.addObserver(this);
+            this.controller_.refresh();
+          };
+          ResizeObserverSPI2.prototype.unobserve = function(target) {
+            if (!arguments.length) {
+              throw new TypeError("1 argument required, but only 0 present.");
+            }
+            if (typeof Element === "undefined" || !(Element instanceof Object)) {
+              return;
+            }
+            if (!(target instanceof getWindowOf(target).Element)) {
+              throw new TypeError('parameter 1 is not of type "Element".');
+            }
+            var observations = this.observations_;
+            if (!observations.has(target)) {
+              return;
+            }
+            observations.delete(target);
+            if (!observations.size) {
+              this.controller_.removeObserver(this);
+            }
+          };
+          ResizeObserverSPI2.prototype.disconnect = function() {
+            this.clearActive();
+            this.observations_.clear();
+            this.controller_.removeObserver(this);
+          };
+          ResizeObserverSPI2.prototype.gatherActive = function() {
+            var _this = this;
+            this.clearActive();
+            this.observations_.forEach(function(observation) {
+              if (observation.isActive()) {
+                _this.activeObservations_.push(observation);
+              }
+            });
+          };
+          ResizeObserverSPI2.prototype.broadcastActive = function() {
+            if (!this.hasActive()) {
+              return;
+            }
+            var ctx = this.callbackCtx_;
+            var entries = this.activeObservations_.map(function(observation) {
+              return new ResizeObserverEntry(observation.target, observation.broadcastRect());
+            });
+            this.callback_.call(ctx, entries, ctx);
+            this.clearActive();
+          };
+          ResizeObserverSPI2.prototype.clearActive = function() {
+            this.activeObservations_.splice(0);
+          };
+          ResizeObserverSPI2.prototype.hasActive = function() {
+            return this.activeObservations_.length > 0;
+          };
+          return ResizeObserverSPI2;
+        })()
+      );
+      var observers = typeof WeakMap !== "undefined" ? new WeakMap() : new MapShim();
+      var ResizeObserver = (
+
+(function() {
+          function ResizeObserver2(callback) {
+            if (!(this instanceof ResizeObserver2)) {
+              throw new TypeError("Cannot call a class as a function.");
+            }
+            if (!arguments.length) {
+              throw new TypeError("1 argument required, but only 0 present.");
+            }
+            var controller = ResizeObserverController.getInstance();
+            var observer = new ResizeObserverSPI(callback, controller, this);
+            observers.set(this, observer);
+          }
+          return ResizeObserver2;
+        })()
+      );
+      [
+        "observe",
+        "unobserve",
+        "disconnect"
+      ].forEach(function(method) {
+        ResizeObserver.prototype[method] = function() {
+          var _a2;
+          return (_a2 = observers.get(this))[method].apply(_a2, arguments);
+        };
+      });
+      var index = (function() {
+        if (typeof global$1.ResizeObserver !== "undefined") {
+          return global$1.ResizeObserver;
+        }
+        return ResizeObserver;
+      })();
+      var useEffectWithTarget = createEffectWithTarget(useLayoutEffect);
+      var useIsomorphicLayoutEffectWithTarget = isBrowser$1 ? useEffectWithTarget : useEffectWithTarget$1;
+      function useSize(target) {
+        var _a2 = __read(useRafState(function() {
+          var el = getTargetElement(target);
+          return el ? { width: el.clientWidth, height: el.clientHeight } : void 0;
+        }), 2), state = _a2[0], setState = _a2[1];
+        useIsomorphicLayoutEffectWithTarget(function() {
+          var el = getTargetElement(target);
+          if (!el) {
+            return;
+          }
+          var resizeObserver = new index(function(entries) {
+            entries.forEach(function(entry) {
+              var _a3 = entry.target, clientWidth = _a3.clientWidth, clientHeight = _a3.clientHeight;
+              setState({ width: clientWidth, height: clientHeight });
+            });
+          });
+          resizeObserver.observe(el);
+          return function() {
+            resizeObserver.disconnect();
+          };
+        }, [], target);
+        return state;
+      }
+      const styles$7 = {
+        "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
+      };
+      function TextOverflowShowTips({
+        text: text2,
+        tooltipProps,
+        className,
+        ...restProps
+      }) {
+        const containerRef = useRef(null);
+        const { width: containerWidth } = useSize(containerRef) || {};
+        const isTooLong = useMemo(() => {
+          if (containerWidth) {
+            const textWidth = getTextWidth(text2);
+            return containerWidth < textWidth;
+          }
+          return false;
+        }, [text2, containerWidth]);
+        const containerStyle = {
+          maxWidth: "100%",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap"
+        };
+        return isTooLong ? jsxRuntimeExports.jsx(Tooltip, { title: text2, ...tooltipProps, children: jsxRuntimeExports.jsx(
+          "div",
+          {
+            ...restProps,
+            className: classNames(styles$7["text-overflow-show-tips-container"], className),
+            children: jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text2 })
+          }
+        ) }) : jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text2 });
+      }
+      function getTextWidth(text2, font = "14px Arial") {
+        const span = document.createElement("span");
+        span.style.visibility = "hidden";
+        span.style.whiteSpace = "nowrap";
+        span.style.font = font;
+        span.style.position = "absolute";
+        span.style.top = "-9999px";
+        span.style.left = "-9999px";
+        span.innerText = text2;
+        document.body.appendChild(span);
+        const width = span.offsetWidth;
+        document.body.removeChild(span);
+        return width;
+      }
+      function CopyText(props) {
+        const { text: text2, className, ...rest } = props;
+        const handleCopy = () => {
+          copy(text2);
+          msgSuccess$1("复制成功");
+        };
+        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$8["copy-text"], className), ...rest, children: [
+jsxRuntimeExports.jsx(
+            TextOverflowShowTips,
+            {
+              text: text2 + "",
+              tooltipProps: {
+                getPopupContainer: (node) => {
+                  return document.body;
+                }
+              }
+            }
+          ),
+jsxRuntimeExports.jsx(
+            Button,
+            {
+              type: "link",
+              icon: jsxRuntimeExports.jsx(CopyOutlined, {}),
+              onClick: handleCopy,
+              className: styles$8["copy-btn"]
+            }
+          )
+        ] });
+      }
+      const SongTab = ({ data, loading }) => {
+        const { play, download, isPlaying, pause, downloading } = usePlayMusic();
+        const [songList2, setSongList] = useState(data);
+        useEffect(() => {
+          setSongList(data);
+        }, [data]);
+        const handleSelectQuality = (record, value2) => {
+          console.log("record", record);
+          console.log("value", value2);
+          setSongList((prev) => {
+            return prev.map((song) => {
+              if (song.id === record.id) {
+                return { ...song, level: value2 };
+              }
+              return song;
+            });
+          });
+        };
+        const handlePlay = (record) => {
+          console.log("record", record);
+          if (isPlaying === record.id) {
+            pause();
+          } else {
+            play(record.id, record.level);
+          }
+        };
+        const handleDownload = (record) => {
+          console.log("record", record);
+          download(
+            record.id,
+            record.name,
+            record.level || QUALITY_LEVELS.无损,
+            record.al?.id
+          );
+        };
+        const columns = [
+          {
+            title: "歌曲信息",
+            key: "songInfo",
+            width: 350,
+            fixed: "left",
+            sorter: (a, b) => a.name?.localeCompare(b.name),
+            sortDirections: ["ascend", "descend"],
+            render: (_, record) => {
+              const alias = record.alia?.[0] || "";
+              return jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    minWidth: 0
+                  },
+                  children: [
+jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        style: {
+                          width: "60px",
+                          height: "60px",
+                          borderRadius: "6px",
+                          flexShrink: 0,
+                          overflow: "hidden",
+                          cursor: "pointer"
+                        },
+                        onClick: (e) => e.stopPropagation(),
+                        children: record.al?.picUrl ? jsxRuntimeExports.jsx(
+                          Image,
+                          {
+                            src: record.al.picUrl,
+                            width: 60,
+                            height: 60,
+                            preview: true,
+                            placeholder: true
+                          }
+                        ) : jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            style: {
+                              width: "60px",
+                              height: "60px",
+                              backgroundColor: "#f0f0f0",
+                              borderRadius: "6px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              color: "#999",
+                              fontSize: "12px"
+                            },
+                            children: "无封面"
+                          }
+                        )
+                      }
+                    ),
+jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        style: {
+                          flex: 1,
+                          minWidth: 0,
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "4px"
+                        },
+                        children: [
+jsxRuntimeExports.jsx(Tooltip, { title: record.name, placement: "top", children: jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              style: {
+                                fontWeight: 500,
+                                fontSize: "14px",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap",
+                                color: "#262626"
+                              },
+                              children: record.name
+                            }
+                          ) }),
+                          alias && jsxRuntimeExports.jsx(Tooltip, { title: alias, placement: "top", children: jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              style: {
+                                fontSize: "12px",
+                                color: "#8c8c8c",
+                                fontStyle: "italic",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap"
+                              },
+                              children: alias
+                            }
+                          ) }),
+jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: jsxRuntimeExports.jsxs(
+                            "div",
+                            {
+                              style: {
+                                fontSize: "12px",
+                                color: "#8c8c8c",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap"
+                              },
+                              children: [
+                                "ID:",
+                                " ",
+jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12px" }, children: record.id })
+                              ]
+                            }
+                          ) })
+                        ]
+                      }
+                    )
+                  ]
+                }
+              );
+            }
+          },
+          {
+            title: "歌手",
+            dataIndex: "ar",
+            key: "ar",
+            width: 150,
+            sorter: (a, b) => {
+              const aName = a.ar?.map((a2) => a2.name).join(", ") || "";
+              const bName = b.ar?.map((b2) => b2.name).join(", ") || "";
+              return aName.localeCompare(bName);
+            },
+            sortDirections: ["ascend", "descend"],
+            render: (ar) => ar?.map((a) => a.name).join(", ")
+          },
+          {
+            title: "专辑",
+            dataIndex: "al",
+            key: "al",
+            width: 200,
+            sorter: (a, b) => (a.al?.name || "").localeCompare(b.al?.name || ""),
+            sortDirections: ["ascend", "descend"],
+            render: (al) => al?.name
+          },
+          {
+            title: "专辑ID",
+            dataIndex: ["al", "id"],
+            key: "albumId",
+            width: 120,
+            render: (id) => jsxRuntimeExports.jsx(CopyText, { text: id }) || "-"
+          },
+          {
+            title: "音质",
+            key: "quality",
+            width: 150,
+            render: (_, record) => {
+              const tags = getQualityTags(record);
+              if (tags.length === 0) return "-";
+              return jsxRuntimeExports.jsx("div", { children: tags.map((tag2, index2) => jsxRuntimeExports.jsx(
+                Tag,
+                {
+                  color: tag2.color,
+                  style: { marginBottom: "4px" },
+                  children: tag2.label
+                },
+                index2
+              )) });
+            }
+          },
+{
+            title: "选择音质",
+            key: "selectQuality",
+            width: 150,
+            render: (_, record) => {
+              const options = getQualityTags(record);
+              const defaultLevel = options.find((option) => option.value === QUALITY_LEVELS.无损)?.value || options[0]?.value;
+              return jsxRuntimeExports.jsx(
+                Select,
+                {
+                  options,
+                  value: record.level || defaultLevel,
+                  onChange: (value2) => handleSelectQuality(record, value2)
+                }
+              );
+            }
+          },
+          {
+            title: "时长",
+            dataIndex: "dt",
+            key: "dt",
+            width: 80,
+            sorter: (a, b) => a.dt - b.dt,
+            sortDirections: ["ascend", "descend"],
+            render: (dt) => formatDuration(dt)
+          },
+          {
+            title: "光盘号",
+            dataIndex: "cd",
+            key: "cd",
+            width: 80,
+            render: (cd) => cd || "-"
+          },
+          {
+            title: "序号",
+            dataIndex: "no",
+            key: "no",
+            width: 60,
+            sorter: (a, b) => a.no - b.no,
+            sortDirections: ["ascend", "descend"],
+            render: (no) => no || "-"
+          },
+          {
+            title: "版权",
+            dataIndex: "fee",
+            key: "fee",
+            width: 100,
+            filters: [
+              { text: "免费", value: 0 },
+              { text: "VIP", value: 1 },
+              { text: "专辑购买", value: 4 },
+              { text: "付费/试听", value: 8 }
+            ],
+            onFilter: (value2, record) => record.fee === value2,
+            render: (fee) => {
+              const tag2 = getFeeTag(fee);
+              return jsxRuntimeExports.jsx(Tag, { color: tag2.color, children: tag2.text });
+            }
+          },
+          {
+            title: "版权信息",
+            dataIndex: "copyright",
+            key: "copyright",
+            width: 100,
+            render: (copyright) => {
+              if (copyright === void 0 || copyright === null) return "-";
+              return copyright === 1 ? jsxRuntimeExports.jsx(Tag, { color: "#87d068", children: "有版权" }) : jsxRuntimeExports.jsx(Tag, { color: "#ff4d4f", children: "无版权" });
+            }
+          },
+          {
+            title: "音源",
+            dataIndex: "noCopyrightRcmd",
+            key: "noCopyrightRcmd",
+            width: 100,
+            filters: [
+              { text: "有音源", value: false },
+              { text: "无音源", value: true }
+            ],
+            onFilter: (value2, record) => !!record.noCopyrightRcmd === value2,
+            render: (noCopyrightRcmd) => {
+              return jsxRuntimeExports.jsx(Tag, { color: noCopyrightRcmd ? "#ff4d4f" : "#87d068", children: noCopyrightRcmd ? "无音源" : "有音源" });
+            }
+          },
+          {
+            title: "原创类型",
+            dataIndex: "originCoverType",
+            key: "originCoverType",
+            width: 100,
+            filters: [
+              { text: "未知", value: 0 },
+              { text: "原曲", value: 1 },
+              { text: "翻唱", value: 2 }
+            ],
+            onFilter: (value2, record) => record.originCoverType === value2,
+            render: (type) => {
+              const tag2 = getOriginTag(type);
+              return jsxRuntimeExports.jsx(Tag, { color: tag2.color, children: tag2.text });
+            }
+          },
+          {
+            title: "热度",
+            dataIndex: "pop",
+            key: "pop",
+            width: 80,
+            sorter: (a, b) => a.pop - b.pop,
+            sortDirections: ["ascend", "descend"],
+            render: (pop) => formatPopularity(pop)
+          },
+          {
+            title: "MV ID",
+            dataIndex: "mv",
+            key: "mv",
+            width: 100,
+            render: (mv) => mv ? jsxRuntimeExports.jsx(Typography.Text, { copyable: true, children: mv }) : "-"
+          },
+          {
+            title: "发布时间",
+            dataIndex: "publishTime",
+            key: "publishTime",
+            width: 120,
+            sorter: (a, b) => a.publishTime - b.publishTime,
+            sortDirections: ["ascend", "descend"],
+            render: (time) => time ? dayjs(time).format("YYYY-MM-DD") : "-"
+          },
+          {
+            title: "歌曲类型",
+            dataIndex: "t",
+            key: "t",
+            width: 100,
+            render: (t) => {
+              const tag2 = getTypeTag(t);
+              return jsxRuntimeExports.jsx(Tag, { color: tag2.color, children: tag2.text });
+            }
+          },
+          {
+            title: "标记",
+            dataIndex: "mark",
+            key: "mark",
+            width: 150,
+            render: (mark) => {
+              if (!mark) return "-";
+              const tags = getMarkTags(mark);
+              if (tags.length === 0) return "-";
+              return jsxRuntimeExports.jsx("div", { children: tags.map((tag2, index2) => jsxRuntimeExports.jsx(
+                Tag,
+                {
+                  color: tag2.color,
+                  style: { marginBottom: "4px" },
+                  children: tag2.text
+                },
+                index2
+              )) });
+            }
+          },
+          {
+            title: "版本",
+            dataIndex: "version",
+            key: "version",
+            width: 80,
+            render: (version2) => version2 || "-"
+          },
+          {
+            title: "CP",
+            dataIndex: "cp",
+            key: "cp",
+            width: 80,
+            render: (cp) => cp || "-"
+          },
+          {
+            title: "资源状态",
+            dataIndex: "resourceState",
+            key: "resourceState",
+            width: 100,
+            render: (state) => {
+              if (state === void 0 || state === null) return "-";
+              return state ? jsxRuntimeExports.jsx(Tag, { color: "#87d068", children: "可用" }) : jsxRuntimeExports.jsx(Tag, { color: "#ff4d4f", children: "不可用" });
+            }
+          },
+{
+            title: "操作",
+            key: "action",
+            width: 200,
+            align: "center",
+            fixed: "right",
+            render: (_, record) => {
+              return jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "link",
+                    size: "small",
+                    icon: isPlaying === record.id ? jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
+                    onClick: () => handlePlay(record),
+                    children: "播放"
+                  }
+                ),
+jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "link",
+                    size: "small",
+                    loading: downloading === record.id,
+                    icon: jsxRuntimeExports.jsx(DownloadOutlined, {}),
+                    onClick: () => handleDownload(record),
+                    children: "下载"
+                  }
+                )
+              ] });
+            }
+          }
+        ];
+        return jsxRuntimeExports.jsx(
+          Table,
+          {
+            columns,
+            dataSource: songList2,
+            rowKey: "id",
+            loading,
+            scroll: { y: 500, x: 1e3 },
+            className: styles$9["song-table"],
+            pagination: false
+          }
+        );
+      };
+      const AlbumDetail = forwardRef((props, ref) => {
+        const { visible, close } = useVisible({}, ref);
+        return jsxRuntimeExports.jsx(
+          Modal,
+          {
+            title: "专辑详情",
+            open: visible,
+            onCancel: close,
+            width: 1200,
+            centered: true,
+            footer: null,
+            children: jsxRuntimeExports.jsx("div", { children: "专辑详情内容" })
+          }
+        );
+      });
+      const AlbumTab = ({ data, loading }) => {
+        const albumDetailRef = useRef();
+        const { pause, isPlaying } = usePlayMusic();
+        const {
+          playAlbum,
+          downloadAlbumSong,
+          getDownLoadJson
+        } = useGetAlbumDetail();
+        const [playing, setPlaying] = useState(void 0);
+        const handlePlay = async (record) => {
+          try {
+            setPlaying(record.id);
+            const hide = msgLoading(`正在加载《${record.name}》...`);
+            await playAlbum(record.id);
+            hide();
+            msgSuccess$1(`《${record.name}》开始播放`);
+          } catch (error) {
+            console.error("播放失败:", error);
+          } finally {
+            setPlaying(void 0);
+          }
+        };
+        const [downloading, setDownloading] = useState(void 0);
+        const handleDownload = async (record) => {
+          try {
+            setDownloading(record.id);
+            const hide = msgLoading(`正在准备下载《${record.name}》...`);
+            await downloadAlbumSong(record.id);
+            hide();
+            msgSuccess$1(`《${record.name}》下载成功！`);
+          } catch (error) {
+            console.error("下载失败:", error);
+          } finally {
+            setDownloading(void 0);
+          }
+        };
+        const [downloadingJson, setDownloadingJson] = useState(void 0);
+        const handleDownloadJson = async (record) => {
+          try {
+            setDownloadingJson(record.id);
+            const hide = msgLoading(`正在准备下载《${record.name}》...`);
+            await getDownLoadJson(record.id);
+            hide();
+            msgSuccess$1(`《${record.name}》下载成功！`);
+          } catch (error) {
+            msgError("下载JSON失败: " + (error?.message || error));
+          } finally {
+            setDownloadingJson(void 0);
+          }
+        };
+        const columns = [
+          {
+            title: "专辑信息",
+            key: "albumInfo",
+            width: 350,
+            fixed: "left",
+            sorter: (a, b) => (a.name || "").localeCompare(b.name || ""),
+            sortDirections: ["ascend", "descend"],
+            render: (_, record) => {
+              const alias = record.alias?.[0] || "";
+              return jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "12px",
+                    minWidth: 0
+                  },
+                  children: [
+jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        style: {
+                          width: "60px",
+                          height: "60px",
+                          borderRadius: "6px",
+                          flexShrink: 0,
+                          overflow: "hidden",
+                          cursor: "pointer"
+                        },
+                        onClick: (e) => e.stopPropagation(),
+                        children: record.picUrl ? jsxRuntimeExports.jsx(
+                          Image,
+                          {
+                            src: record.picUrl,
+                            width: 60,
+                            height: 60,
+                            preview: true,
+                            placeholder: true
+                          }
+                        ) : jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            style: {
+                              width: "60px",
+                              height: "60px",
+                              backgroundColor: "#f0f0f0",
+                              borderRadius: "6px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              color: "#999",
+                              fontSize: "12px"
+                            },
+                            children: "无封面"
+                          }
+                        )
+                      }
+                    ),
+jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        style: {
+                          flex: 1,
+                          minWidth: 0,
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "4px"
+                        },
+                        children: [
+jsxRuntimeExports.jsx(Tooltip, { title: record.name, placement: "top", children: jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              style: {
+                                fontWeight: 500,
+                                fontSize: "14px",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap",
+                                color: "#262626",
+                                cursor: "pointer"
+                              },
+                              onClick: () => albumDetailRef.current?.open({ albummid: record.id }),
+                              children: record.name
+                            }
+                          ) }),
+                          alias && jsxRuntimeExports.jsx(Tooltip, { title: alias, placement: "top", children: jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              style: {
+                                fontSize: "12px",
+                                color: "#8c8c8c",
+                                fontStyle: "italic",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap"
+                              },
+                              children: alias
+                            }
+                          ) }),
+jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: jsxRuntimeExports.jsxs(
+                            "div",
+                            {
+                              style: {
+                                fontSize: "12px",
+                                color: "#8c8c8c",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                whiteSpace: "nowrap"
+                              },
+                              children: [
+                                "ID:",
+                                " ",
+jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12px" }, children: record.id })
+                              ]
+                            }
+                          ) })
+                        ]
+                      }
+                    )
+                  ]
+                }
+              );
+            }
+          },
+          {
+            title: "歌手",
+            dataIndex: "artists",
+            key: "artists",
+            width: 150,
+            sorter: (a, b) => {
+              const aName = a.artists?.map((a2) => a2.name).join(", ") || a.artist?.name || "";
+              const bName = b.artists?.map((b2) => b2.name).join(", ") || b.artist?.name || "";
+              return aName.localeCompare(bName);
+            },
+            sortDirections: ["ascend", "descend"],
+            render: (artists, record) => {
+              const singerName = artists?.map((a) => a.name).join(", ") || record.artist?.name || "-";
+              return singerName;
+            }
+          },
+          {
+            title: "歌曲数量",
+            dataIndex: "size",
+            key: "size",
+            width: 100,
+            align: "center",
+            sorter: (a, b) => (a.size || 0) - (b.size || 0),
+            sortDirections: ["ascend", "descend"],
+            render: (size2) => size2 || 0
+          },
+          {
+            title: "发布时间",
+            dataIndex: "publishTime",
+            key: "publishTime",
+            width: 120,
+            sorter: (a, b) => (a.publishTime || 0) - (b.publishTime || 0),
+            sortDirections: ["ascend", "descend"],
+            render: (time) => time ? dayjs(time).format("YYYY-MM-DD") : "-"
+          },
+          {
+            title: "版权ID",
+            dataIndex: "copyrightId",
+            key: "copyrightId",
+            width: 100,
+            render: (copyrightId) => copyrightId !== void 0 ? copyrightId : "-"
+          },
+          {
+            title: "状态",
+            dataIndex: "status",
+            key: "status",
+            width: 100,
+            filters: [
+              { text: "正常", value: 1 },
+              { text: "下架", value: -1 }
+            ],
+            onFilter: (value2, record) => record.status === value2,
+            render: (status) => {
+              if (status === void 0 || status === null) return "-";
+              return status === 1 ? jsxRuntimeExports.jsx(Tag, { color: "#87d068", children: "正常" }) : jsxRuntimeExports.jsx(Tag, { color: "#ff4d4f", children: "下架" });
+            }
+          },
+          {
+            title: "在售",
+            dataIndex: "onSale",
+            key: "onSale",
+            width: 80,
+            filters: [
+              { text: "在售", value: true },
+              { text: "停售", value: false }
+            ],
+            onFilter: (value2, record) => !!record.onSale === value2,
+            render: (onSale) => {
+              if (onSale === void 0 || onSale === null) return "-";
+              return onSale ? jsxRuntimeExports.jsx(Tag, { color: "#87d068", children: "是" }) : jsxRuntimeExports.jsx(Tag, { color: "#d9d9d9", children: "否" });
+            }
+          },
+          {
+            title: "订阅",
+            dataIndex: "isSub",
+            key: "isSub",
+            width: 80,
+            filters: [
+              { text: "已订阅", value: true },
+              { text: "未订阅", value: false }
+            ],
+            onFilter: (value2, record) => !!record.isSub === value2,
+            render: (isSub) => {
+              if (isSub === void 0 || isSub === null) return "-";
+              return isSub ? jsxRuntimeExports.jsx(Tag, { color: "#2db7f5", children: "是" }) : jsxRuntimeExports.jsx(Tag, { color: "#d9d9d9", children: "否" });
+            }
+          },
+          {
+            title: "操作",
+            key: "action",
+            width: 250,
+            align: "center",
+            fixed: "right",
+            render: (_, record) => {
+              return jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "link",
+                    size: "small",
+                    loading: playing === record.id,
+                    icon: playing === record.id ? jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
+                    onClick: () => {
+                      if (isPlaying === record.id) {
+                        pause();
+                      } else {
+                        handlePlay(record);
+                      }
+                    },
+                    children: "播放"
+                  }
+                ),
+jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "link",
+                    size: "small",
+                    loading: downloadingJson === record.id,
+                    icon: jsxRuntimeExports.jsx(SaveOutlined, {}),
+                    onClick: () => handleDownloadJson(record),
+                    children: "下载JSON"
+                  }
+                ),
+jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "link",
+                    size: "small",
+                    loading: downloading === record.id,
+                    icon: jsxRuntimeExports.jsx(DownloadOutlined, {}),
+                    onClick: () => handleDownload(record),
+                    children: "下载"
+                  }
+                )
+              ] });
+            }
+          }
+        ];
+        return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+jsxRuntimeExports.jsx(
+            Table,
+            {
+              columns,
+              dataSource: data,
+              rowKey: "id",
+              loading,
+              scroll: { y: 500, x: 1200 },
+              className: styles$9["song-table"],
+              pagination: false
+            }
+          ),
+jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
+        ] });
+      };
+      forwardRef((props, ref) => {
+        const { visible, close } = useVisible({}, ref);
+        return jsxRuntimeExports.jsx(
+          Modal,
+          {
+            title: "专辑列表",
+            open: visible,
+            onCancel: close,
+            width: 1200,
+            centered: true,
+            footer: null,
+            children: jsxRuntimeExports.jsx("div", { children: "专辑列表内容" })
+          }
+        );
+      });
+      forwardRef((props, ref) => {
+        const { visible, close } = useVisible({}, ref);
+        return jsxRuntimeExports.jsx(
+          Modal,
+          {
+            title: "热门歌曲",
+            open: visible,
+            onCancel: close,
+            width: 1200,
+            centered: true,
+            footer: null,
+            children: jsxRuntimeExports.jsx("div", { children: "热门歌曲内容" })
+          }
+        );
+      });
+      const defaultSearchParams = {
+        pageNum: 1,
+        pageSize: 20,
+        type: SEARCH_TYPES.单曲
+      };
+      const Search$1 = forwardRef((props, ref) => {
+        const { visible, close } = useVisible({}, ref);
+        const [searchParams, setSearchParams] = useState(defaultSearchParams);
+        console.log("searchParams", searchParams);
+        const handleSearch = (values) => {
+          setSearchParams({ ...searchParams, keyword: values.keyword });
+        };
+        const { data, loading } = useGetData(
+          () => cloudSearch(searchParams.keyword, {
+            type: searchParams.type,
+            limit: searchParams.pageSize,
+            offset: (searchParams.pageNum - 1) * searchParams.pageSize
+          }),
+          void 0,
+          {
+            returnFunction: () => !searchParams.keyword,
+            monitors: [searchParams]
+          }
+        );
+        console.log("data", data);
+        const renderTitle = () => {
+          return jsxRuntimeExports.jsx("div", { className: styles$9["modal-title"], children: jsxRuntimeExports.jsx("div", { className: styles$9["title-content"], children: jsxRuntimeExports.jsx("span", { className: styles$9["title-text"], children: "歌曲查询" }) }) });
+        };
+        return jsxRuntimeExports.jsxs(
+          Modal,
+          {
+            title: renderTitle(),
+            open: visible,
+            onCancel: close,
+            width: 1500,
+            centered: true,
+            className: styles$9["song-search-modal"],
+            children: [
+jsxRuntimeExports.jsx(Form, { onFinish: handleSearch, layout: "inline", children: jsxRuntimeExports.jsx(Form.Item, { label: "关键词", name: "keyword", children: jsxRuntimeExports.jsx(Input, { placeholder: "请输入关键词" }) }) }),
+jsxRuntimeExports.jsxs(
+                Tabs,
+                {
+                  activeKey: searchParams.type,
+                  onChange: (key) => setSearchParams({ ...searchParams, type: key, pageNum: 1 }),
+                  children: [
+jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "单曲", children: jsxRuntimeExports.jsx(SongTab, { data: data?.result?.songs || [], loading }) }, SEARCH_TYPES.单曲),
+jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "专辑", children: jsxRuntimeExports.jsx(AlbumTab, { data: data?.result?.albums || [], loading }) }, SEARCH_TYPES.专辑),
+jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌手" }, SEARCH_TYPES.歌手),
+jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌单" }, SEARCH_TYPES.歌单),
+jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "用户" }, SEARCH_TYPES.用户),
+jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "MV" }, SEARCH_TYPES.MV),
+jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌词" }, SEARCH_TYPES.歌词)
+                  ]
+                }
+              ),
+jsxRuntimeExports.jsx(
+                Pagination,
+                {
+                  align: "end",
+                  total: data?.result?.[{
+                    [SEARCH_TYPES.单曲]: "songCount",
+                    [SEARCH_TYPES.专辑]: "albumCount",
+                    [SEARCH_TYPES.歌手]: "artistCount",
+                    [SEARCH_TYPES.MV]: "mvCount",
+                    [SEARCH_TYPES.歌词]: "songCount"
+                  }[searchParams.type]] || 0,
+                  current: searchParams.pageNum,
+                  pageSize: searchParams.pageSize,
+                  showSizeChanger: true,
+                  showTotal: (total) => {
+                    const typeMap = {
+                      [SEARCH_TYPES.单曲]: "首歌曲",
+                      [SEARCH_TYPES.专辑]: "张专辑",
+                      [SEARCH_TYPES.歌手]: "位歌手",
+                      [SEARCH_TYPES.MV]: "个MV",
+                      [SEARCH_TYPES.歌词]: "首歌词"
+                    };
+                    return `共 ${total} ${typeMap[searchParams.type] || "条记录"}`;
+                  },
+                  onChange: (page, pageSize) => {
+                    setSearchParams({ ...searchParams, pageNum: page, pageSize });
+                  },
+                  style: { marginTop: 16 }
+                }
+              )
+            ]
+          }
+        );
+      });
+      const { Search } = Input;
+      const CloudImport = forwardRef((props, ref) => {
+        const { visible, close } = useVisible(
+          {
+            onOpen() {
+            },
+            onReset() {
+              setSearchText("");
+              setAudioFormat("all");
+              setBitrate("all");
+              setTableData([]);
+              setSelectedRows([]);
+              setLoading(false);
+            }
+          },
+          ref
+        );
+        const [searchText, setSearchText] = useState("");
+        const [audioFormat, setAudioFormat] = useState("all");
+        const [bitrate, setBitrate] = useState("all");
+        const [selectedRows, setSelectedRows] = useState([]);
+        const [tableData, setTableData] = useState([]);
+        const filterConfig = {
+          fields: {
+            name: {
+              getValue: (song) => song.name
+            },
+            artist: {
+              getValue: (song) => song.artist
+            },
+            album: {
+              getValue: (song) => song.album
+            }
+          }
+        };
+        const { filteredList, handleFilter } = useFilter(
+          tableData,
+          filterConfig
+        );
+        const columns = [
+          { title: "歌手", dataIndex: "artist", key: "artist" },
+          { title: "歌曲名", dataIndex: "name", key: "name" },
+          { title: "专辑", dataIndex: "album", key: "album" },
+          {
+            title: "格式",
+            dataIndex: "ext",
+            key: "ext",
+            render: (ext) => ext.toUpperCase()
+          },
+          { title: "比特率", dataIndex: "bitrate", key: "bitrate" },
+          {
+            title: "大小",
+            dataIndex: "size",
+            key: "size",
+            render: (size2) => formatFileSize(size2)
+          }
+        ];
+        const [concurrent, setConcurrent] = useState(6);
+        const [loading, setLoading] = useState(false);
+        const handleOk = async () => {
+          try {
+            setLoading(true);
+            const proArr = selectedRows.map(
+              (item) => () => uploadSong({
+                ...item,
+                filename: item.name || "未知",
+                artists: item.artists?.join?.(",")
+              })
+            );
+            const res = await promiseLimit(proArr, concurrent);
+            console.log("res", res);
+            msgSuccess$1("导入成功");
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const handleWatchJSON = () => {
+          Modal.info({
+            title: "JSON示例格式",
+            width: 600,
+            content: jsxRuntimeExports.jsx("pre", { style: { maxHeight: 400, overflow: "auto" }, children: `// 必填字段说明：
+// - id: 匹配后的歌曲ID（必填）
+// - size: 文件大小，单位字节（必填）
+// - md5: 文件MD5值（必填）
+// - ext: 文件扩展名（必填）
+// - bitrate: 比特率（必填）
+// - name: 歌曲名（选填）
+// - artist: 歌手名（选填）
+// - artists: 歌手名列表（选填）
+// - album: 专辑名（选填）
+
+${JSON.stringify(
+        [
+          {
+            id: "1",
+name: "晴天",
+            artist: "周杰伦",
+            album: "叶惠美",
+            ext: "flac",
+bitrate: "320",
+size: 31457280,
+md5: "b2c63499d0fe68aedd0323030c0965e5"
+},
+          {
+            id: 1305990326,
+name: "Call You Tonight",
+            artist: "Johnta Austin",
+            artists: ["Johnta Austin"],
+            album: "Ocean Drive",
+            size: 10325748,
+md5: "b2c63499d0fe68aedd0323030c0965e5",
+ext: "mp3",
+bitrate: 321
+}
+        ],
+        null,
+        2
+      )}` }),
+            okText: "关闭",
+            centered: true,
+            okButtonProps: {
+              type: "primary",
+              style: { background: "#C20C0C", borderColor: "#C20C0C" }
+            },
+            cancelButtonProps: {
+              style: { borderColor: "#d9d9d9" }
+            }
+          });
+        };
+        return jsxRuntimeExports.jsxs(
+          Modal,
+          {
+            title: "云盘JSON导入",
+            open: visible,
+            onCancel: close,
+            centered: true,
+            width: 1e3,
+            onOk: handleOk,
+            onClose: close,
+            confirmLoading: loading,
+            children: [
+jsxRuntimeExports.jsx(
+                SearchForm,
+                {
+                  data: tableData,
+                  options: [
+                    { value: "artist", label: "歌手" },
+                    { value: "name", label: "歌曲名" },
+                    { value: "album", label: "专辑" }
+                  ],
+                  onSearch: handleFilter
+                }
+              ),
+jsxRuntimeExports.jsx(
+                Table,
+                {
+                  dataSource: filteredList,
+                  columns,
+                  rowKey: "id",
+                  scroll: { y: 400 },
+                  pagination: {
+                    showQuickJumper: true,
+                    showSizeChanger: true
+                  },
+                  rowSelection: {
+                    type: "checkbox",
+                    fixed: true,
+                    preserveSelectedRowKeys: true,
+                    onChange: (selectedRowKeys, selectedRows2) => {
+                      setSelectedRows(selectedRows2);
+                    }
+                  }
+                }
+              ),
+jsxRuntimeExports.jsxs("div", { style: { marginTop: 16, textAlign: "left" }, children: [
+jsxRuntimeExports.jsx(
+                  Upload,
+                  {
+                    accept: ".json",
+                    showUploadList: false,
+                    beforeUpload: (file) => {
+                      const reader = new FileReader();
+                      reader.onload = (e) => {
+                        try {
+                          const jsonData = JSON.parse(e.target.result);
+                          setTableData(jsonData);
+                          message.success("JSON文件解析成功");
+                        } catch (error) {
+                          message.error("JSON文件解析失败");
+                        }
+                      };
+                      reader.readAsText(file);
+                      return false;
+                    },
+                    children: jsxRuntimeExports.jsx(Button, { icon: jsxRuntimeExports.jsx(UploadOutlined, {}), children: "选择JSON文件" })
+                  }
+                ),
+jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    style: { marginLeft: 6, color: "#C20C0C" },
+                    onClick: handleWatchJSON,
+                    type: "link",
+                    children: "查看JSON示例"
+                  }
+                )
+              ] })
+            ]
+          }
+        );
+      });
+      function mitt(n) {
+        return { all: n = n || new Map(), on: function(t, e) {
+          var i = n.get(t);
+          i ? i.push(e) : n.set(t, [e]);
+        }, off: function(t, e) {
+          var i = n.get(t);
+          i && (e ? i.splice(i.indexOf(e) >>> 0, 1) : n.set(t, []));
+        }, emit: function(t, e) {
+          var i = n.get(t);
+          i && i.slice().map(function(n2) {
+            n2(e);
+          }), (i = n.get("*")) && i.slice().map(function(n2) {
+            n2(t, e);
+          });
+        } };
+      }
+      const eventBus = mitt();
+      const EVENT_TYPES = {
+CLOUD_MUSIC_MATCH_ALL: "cloud_music_match_all"
+      };
+      const emit = (event, data) => {
+        eventBus.emit(event, data);
+      };
+      const on = (event, handler) => {
+        eventBus.on(event, handler);
+      };
+      const off = (event, handler) => {
+        eventBus.off(event, handler);
+      };
+      const songInfoColumn = "_songInfoColumn_18snm_1";
+      const songIndex = "_songIndex_18snm_7";
+      const songCover = "_songCover_18snm_16";
+      const btnWrapper = "_btnWrapper_18snm_28";
+      const songCoverImg = "_songCoverImg_18snm_33";
+      const songInfo$1 = "_songInfo_18snm_1";
+      const songName$1 = "_songName_18snm_67";
+      const subInfo = "_subInfo_18snm_76";
+      const artist = "_artist_18snm_84";
+      const album = "_album_18snm_85";
+      const currentSong = "_currentSong_18snm_102";
+      const matchError = "_matchError_18snm_121";
+      const footer = "_footer_18snm_128";
+      const actions = "_actions_18snm_136";
+      const stats = "_stats_18snm_141";
+      const size$1 = "_size_18snm_149";
+      const divider$2 = "_divider_18snm_152";
+      const autoAddContent = "_autoAddContent_18snm_164";
+      const title = "_title_18snm_164";
+      const statsWrapper = "_statsWrapper_18snm_168";
+      const statsContent = "_statsContent_18snm_171";
+      const label$1 = "_label_18snm_178";
+      const value$1 = "_value_18snm_181";
+      const listHeader = "_listHeader_18snm_186";
+      const listWrapper = "_listWrapper_18snm_192";
+      const listItem = "_listItem_18snm_213";
+      const itemName = "_itemName_18snm_229";
+      const itemCount = "_itemCount_18snm_235";
+      const deleteConfirmation = "_deleteConfirmation_18snm_240";
+      const count$1 = "_count_18snm_248";
+      const songs = "_songs_18snm_251";
+      const songItem$1 = "_songItem_18snm_262";
+      const warning = "_warning_18snm_273";
+      const text = "_text_18snm_280";
+      const icon = "_icon_18snm_287";
+      const styles$6 = {
+        songInfoColumn,
+        songIndex,
+        songCover,
+        btnWrapper,
+        songCoverImg,
+        songInfo: songInfo$1,
+        songName: songName$1,
+        subInfo,
+        artist,
+        album,
+        currentSong,
+        matchError,
+        footer,
+        actions,
+        stats,
+        size: size$1,
+        divider: divider$2,
+        autoAddContent,
+        title,
+        statsWrapper,
+        statsContent,
+        label: label$1,
+        value: value$1,
+        listHeader,
+        listWrapper,
+        listItem,
+        itemName,
+        itemCount,
+        deleteConfirmation,
+        count: count$1,
+        songs,
+        songItem: songItem$1,
+        warning,
+        text,
+        icon,
+        "singer-option": "_singer-option_18snm_301",
+        "singer-option-content": "_singer-option-content_18snm_314",
+        "singer-option-name": "_singer-option-name_18snm_329",
+        "singer-option-id": "_singer-option-id_18snm_332",
+        "song-name": "_song-name_18snm_346",
+        "tag-group": "_tag-group_18snm_351",
+        "song-option": "_song-option_18snm_357",
+        "song-info": "_song-info_18snm_370",
+        "album-cover": "_album-cover_18snm_399",
+        "original-album": "_original-album_18snm_415",
+        "album-info": "_album-info_18snm_439"
+      };
+      const CustomMatch = ({ data, onUpdate }) => {
+        const [keywords, setKeywords] = useState(getArtistName(data));
+        const [currentSelectSinger, setCurrentSelectSinger] = useState();
+        const [currentSelectSong, setCurrentSelectSong] = useState();
+        const [songSearchValue, setSongSearchValue] = useState(data.name);
+        const [currentSelectSongId, setCurrentSelectSongId] = useState();
+        const { loading: searchSingerLoading, singerList } = useSearchSinger({
+          keywords
+        });
+        const { singerMap, loading: getSongLoading } = useGetSingerSongs({
+          singerIds: currentSelectSinger
+        });
+        const [updateLoading, setUpdateLoading] = useState(false);
+        const [autoMatchLoading, setAutoMatchLoading] = useState(false);
+        const songOptions = useMemo(() => {
+          if (!singerMap[currentSelectSinger]?.songList) return [];
+          const allOptions = singerMap[currentSelectSinger]?.songList?.map(
+            (item) => ({
+              ...item,
+              label: item.name,
+              value: item.id
+            })
+          );
+          const mostMatch = allOptions.find((item) => {
+            const itemAlbumName = normalizeString(item.al?.name);
+            const itemSongName = normalizeString(item.name);
+            const dataAlbumName = normalizeString(
+              data.album || data.simpleSong?.al?.name
+            );
+            const dataSongName = normalizeString(data.songName);
+            return itemSongName.includes(dataSongName) && itemAlbumName.includes(dataAlbumName);
+          });
+          console.log("找到最匹配，放置到第一 mostMatch", mostMatch);
+          return mostMatch ? [mostMatch, ...allOptions.filter((item) => item.id !== mostMatch.id)] : allOptions;
+        }, [singerMap, currentSelectSinger, data]);
+        useEffect(() => {
+          const handleMatchAll = async (eventData) => {
+            console.log("CustomMatch 收到全部匹配事件", eventData);
+            if (!currentSelectSinger || !currentSelectSongId) {
+              console.log("当前组件未选择歌手或歌曲，跳过自动匹配");
+              return;
+            }
+            handleUpdate();
+          };
+          on(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, handleMatchAll);
+          return () => {
+            off(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, handleMatchAll);
+          };
+        }, [currentSelectSinger, currentSelectSongId, data, onUpdate]);
+        const handleUpdate = async () => {
+          try {
+            setUpdateLoading(true);
+            if (!currentSelectSinger || !currentSelectSongId) {
+              msgError("请选择歌手和歌曲");
+              return;
+            }
+            const res = await matchCloudSong(
+              data.songId,
+              currentSelectSongId,
+              currentSelectSong
+            );
+            console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("更新成功");
+            }
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setUpdateLoading(false);
+          }
+        };
+        return jsxRuntimeExports.jsxs(
+          "div",
+          {
+            style: { display: "flex", alignItems: "center", gap: 8 },
+            onClick: () => console.log(data),
+            children: [
+jsxRuntimeExports.jsx(
+                Input,
+                {
+                  style: {
+                    width: 120
+                  },
+                  defaultValue: keywords,
+                  placeholder: "请输入歌手名",
+                  onPressEnter: (e) => {
+                    console.log("e", e);
+                    setKeywords(e.target.value);
+                  }
+                }
+              ),
+jsxRuntimeExports.jsx(
+                Select,
+                {
+                  style: { width: 200 },
+                  value: currentSelectSinger,
+                  onChange: (value2) => {
+                    setCurrentSelectSinger(value2);
+                  },
+                  popupMatchSelectWidth: 300,
+                  showSearch: true,
+                  placeholder: "请选择歌手",
+                  filterOption: (input, option) => option?.label?.indexOf(input) >= 0,
+                  loading: searchSingerLoading,
+                  options: singerList.map((item) => ({
+                    ...item,
+                    label: item.artistName,
+                    value: item.artistId
+                  })),
+                  onFocus: () => {
+                    setCurrentSelectSinger(singerList?.[0]?.artistId);
+                  },
+                  optionRender: (option) => {
+                    const { artistAvatarPicUrl, artistName: artistName2, artistId } = option.data;
+                    return jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: styles$6["singer-option"],
+                        style: {
+                          "--avatar-url": `url(${artistAvatarPicUrl})`
+                        },
+                        children: jsxRuntimeExports.jsxs("div", { className: styles$6["singer-option-content"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$6["singer-option-name"], children: artistName2 }),
+jsxRuntimeExports.jsx("div", { className: styles$6["singer-option-id"], children: artistId })
+                        ] })
+                      }
+                    );
+                  },
+                  dropdownRender: (originNode) => {
+                    return searchSingerLoading ? jsxRuntimeExports.jsx(
+                      Spin,
+                      {
+                        style: {
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          height: 100
+                        }
+                      }
+                    ) : originNode;
+                  }
+                }
+              ),
+jsxRuntimeExports.jsx(
+                Select,
+                {
+                  style: { width: 200 },
+                  value: currentSelectSongId,
+                  onChange: (value2, option) => {
+                    console.log("value", value2, option);
+                    setCurrentSelectSongId(value2);
+                    setCurrentSelectSong(option);
+                  },
+                  showSearch: true,
+                  searchValue: songSearchValue,
+                  onFocus: () => {
+                    console.log("data", data);
+                    setSongSearchValue(data.songName);
+                  },
+                  onSearch: (value2) => {
+                    setSongSearchValue(value2);
+                  },
+                  placeholder: "请选择歌曲",
+                  filterOption: (input, option) => option?.label?.toLowerCase().indexOf(input.toLowerCase()) >= 0,
+                  loading: getSongLoading,
+                  options: songOptions,
+                  popupMatchSelectWidth: 500,
+                  optionRender: (option) => {
+                    const data2 = option.data;
+                    return jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: styles$6["song-option"],
+                        onClick: () => console.log("option", data2, option, singerMap),
+                        children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6["song-info"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$6["song-name"], children: option.label }),
+jsxRuntimeExports.jsxs("div", { className: styles$6["tag-group"], children: [
+                              data2.al?.name && jsxRuntimeExports.jsx(Tag, { color: "blue", children: data2.al?.name }),
+                              data2.ar?.length && data2.ar?.map((artist2, index2) => jsxRuntimeExports.jsx(Tag, { color: "green", children: artist2.name }, index2))
+                            ] })
+                          ] }),
+                          singerMap[currentSelectSinger]?.albumMap?.[data2.al?.id]?.picUrl && jsxRuntimeExports.jsx(
+                            "img",
+                            {
+                              className: styles$6["album-cover"],
+                              src: singerMap[currentSelectSinger]?.albumMap[data2.al?.id]?.picUrl,
+                              alt: data2.al?.name
+                            }
+                          )
+                        ]
+                      }
+                    );
+                  },
+                  dropdownRender: (originNode) => {
+                    return getSongLoading ? jsxRuntimeExports.jsx(
+                      Spin,
+                      {
+                        style: {
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          height: 100
+                        }
+                      }
+                    ) : originNode;
+                  }
+                }
+              ),
+jsxRuntimeExports.jsx(
+                Button,
+                {
+                  type: "primary",
+                  size: "small",
+                  loading: updateLoading || autoMatchLoading,
+                  disabled: !currentSelectSinger || !currentSelectSongId,
+                  onClick: handleUpdate,
+                  children: autoMatchLoading ? "自动匹配中..." : "匹配"
+                }
+              )
+            ]
+          }
+        );
+      };
+      const IdMatch = ({ data, onUpdate }) => {
+        const { matchType, songId } = data;
+        const isMatched = matchType === "matched";
+        const [value2, setValue] = useState(songId);
+        const [loading, setLoading] = useState(false);
+        const [autoMatchLoading, setAutoMatchLoading] = useState(false);
+        useEffect(() => {
+          const handleMatchAll = async (eventData) => {
+            console.log("IdMatch 收到全部匹配事件", eventData);
+            if (!value2 || value2 === songId) {
+              console.log("当前组件未设置匹配ID，跳过自动匹配");
+              return;
+            }
+            try {
+              setAutoMatchLoading(true);
+              console.log("开始自动ID匹配歌曲:", data.songName);
+              const res = await matchCloudSong(songId, value2);
+              if (res.code === 200) {
+                console.log("自动ID匹配成功:", data.songName);
+                onUpdate?.();
+              } else {
+                console.log("自动ID匹配失败:", data.songName, res.message);
+              }
+            } catch (error) {
+              console.log("自动ID匹配出错:", data.songName, error);
+            } finally {
+              setAutoMatchLoading(false);
+            }
+          };
+          on(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, handleMatchAll);
+          return () => {
+            off(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, handleMatchAll);
+          };
+        }, [value2, songId, data, onUpdate]);
+        const handleUpdate = async () => {
+          try {
+            setLoading(true);
+            const res = await matchCloudSong(songId, value2);
+            console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("更新成功");
+              onUpdate?.();
+            }
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        return jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center" }, children: [
+jsxRuntimeExports.jsx(Tag, { color: isMatched ? "green" : "red", children: isMatched ? "已匹配" : "未匹配" }),
+jsxRuntimeExports.jsx(
+            Input,
+            {
+              value: value2,
+              onChange: (e) => {
+                setValue(e.target.value);
+              },
+              size: "small",
+              onKeyDown: (e) => {
+                if (e.key === "Enter") {
+                  handleUpdate();
+                }
+              },
+              style: { flex: 1, marginRight: 8 }
+            }
+          ),
+jsxRuntimeExports.jsx(
+            Button,
+            {
+              type: "primary",
+              onClick: handleUpdate,
+              loading: loading || autoMatchLoading,
+              size: "small",
+              children: autoMatchLoading ? "自动匹配中..." : "更新"
+            }
+          )
+        ] });
+      };
+      const playlistCreationStrategies = {
+        周杰伦: {
+          name: "周杰伦的歌单",
+          color: "blue",
+          description: "创建周杰伦专属歌单",
+          getPlaylistName: () => "周杰伦"
+        },
+        林俊杰: {
+          name: "林俊杰的歌单",
+          color: "green",
+          description: "创建林俊杰专属歌单",
+          getPlaylistName: () => "林俊杰"
+        },
+        陈奕迅: {
+          name: "陈奕迅的歌单",
+          color: "purple",
+          description: "创建陈奕迅专属歌单",
+          getPlaylistName: () => "陈奕迅"
+        },
+        张学友: {
+          name: "张学友的歌单",
+          color: "orange",
+          description: "创建张学友专属歌单",
+          getPlaylistName: () => "张学友"
+        }
+      };
+      const PlayList$2 = (props, ref) => {
+        const [visible, setVisible] = useState(false);
+        const [mode2, setMode] = useState("edit");
+        const isSelect = mode2 === "select";
+        const open = (mode22) => {
+          reset();
+          if (mode22) {
+            setMode(mode22);
+          }
+          setVisible(true);
+          handleGetPlayList();
+        };
+        const close = () => {
+          setVisible(false);
+          setPlayList([]);
+        };
+        const reset = () => {
+          setPlayList([]);
+          res.current = null;
+          setMode("add");
+          setSelectedRows([]);
+          setName("");
+          setCreateModalVisible(false);
+        };
+        const res = useRef(null);
+        const submit = () => {
+          return new Promise((resolve, reject) => {
+            res.current = resolve;
+          });
+        };
+        useImperativeHandle(ref, () => ({
+          open,
+          close,
+          submit
+        }));
+        const [loading, setLoading] = useState(false);
+        const [playList, setPlayList] = useState([]);
+        const handleGetPlayList = async () => {
+          setLoading(true);
+          try {
+            const user = getUser();
+            if (!user) return message.error("请先登录");
+            const res2 = await getPlaylistList();
+            console.log("res", res2);
+            if (res2.code === 200) {
+              setPlayList(res2.playlist);
+            }
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const { filteredList, handleFilter } = useFilter(playList, {
+          fields: {
+            name: {
+              getValue: (item) => item.name
+            },
+            creator: {
+              getValue: (item) => item.creator.nickname
+            }
+          }
+        });
+        const columns = [
+          {
+            title: "歌单",
+            dataIndex: "name",
+            key: "name",
+            width: 220,
+            ellipsis: true,
+            render: (text2, record) => jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: "8px" }, children: [
+jsxRuntimeExports.jsx(
+                Image,
+                {
+                  src: record.coverImgUrl,
+                  width: 40,
+                  height: 40,
+                  style: { borderRadius: "4px" },
+                  preview: false
+                }
+              ),
+jsxRuntimeExports.jsx(
+                "div",
+                {
+                  style: {
+                    fontWeight: 500,
+                    flex: 1,
+                    minWidth: 0,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap"
+                  },
+                  children: text2
+                }
+              )
+            ] })
+          },
+          {
+            title: "歌曲数",
+            dataIndex: "trackCount",
+            key: "trackCount",
+            width: 100,
+            align: "right",
+            sorter: (a, b) => a.trackCount - b.trackCount,
+            sortDirections: ["descend", "ascend"],
+            render: (text2) => jsxRuntimeExports.jsxs(
+              "span",
+              {
+                style: {
+                  color: "#666",
+                  fontSize: "13px"
+                },
+                children: [
+                  text2,
+                  " 首"
+                ]
+              }
+            )
+          },
+          {
+            title: "创建者",
+            dataIndex: ["creator", "nickname"],
+            key: "creator",
+            width: 150,
+            ellipsis: true
+          },
+          {
+            title: "更新时间",
+            dataIndex: "updateTime",
+            key: "updateTime",
+            width: 200,
+            render: (text2) => new Date(text2).toLocaleString(),
+            sorter: (a, b) => a.updateTime - b.updateTime,
+            sortDirections: ["descend", "ascend"]
+          },
+          {
+            title: "播放量",
+            dataIndex: "playCount",
+            key: "playCount",
+            width: 100,
+            render: (text2) => {
+              const count2 = text2 > 1e4 ? `${(text2 / 1e4).toFixed(1)}万` : text2;
+              return jsxRuntimeExports.jsx("span", { children: count2 });
+            },
+            sorter: (a, b) => a.playCount - b.playCount,
+            sortDirections: ["descend", "ascend"]
+          }
+        ];
+        const [selectedRows, setSelectedRows] = useState([]);
+        const rowSelection = {
+          type: isSelect ? "radio" : "checkbox",
+          selectedRowKeys: selectedRows.map((item) => item.id),
+          onSelectAll: () => {
+            setTimeout(() => {
+              setSelectedRows(playList);
+            }, 0);
+          },
+          onChange: (_, selectedRows2) => {
+            setSelectedRows(selectedRows2);
+          }
+        };
+        const handleConfirm = () => {
+          if (!selectedRows.length) {
+            msgWarning("请选择歌单");
+            return;
+          }
+          if (selectedRows.length !== 1) return msgWarning("只能选择一个歌单");
+          res.current?.(selectedRows[0]);
+          close();
+        };
+        const [name2, setName] = useState("");
+        const [createModalVisible, setCreateModalVisible] = useState(false);
+        const handleCreate = async () => {
+          if (!name2.trim()) {
+            msgWarning("请输入歌单名称");
+            return;
+          }
+          try {
+            const res2 = await createPlaylist(name2.trim());
+            if (res2.code === 200) {
+              msgSuccess$1("新建成功");
+              handleGetPlayList();
+              setName("");
+              setCreateModalVisible(false);
+            } else {
+              msgError("新建失败");
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const handleCreateCommonPlaylist = async (artistName2) => {
+          const strategy = playlistCreationStrategies[artistName2];
+          if (!strategy) {
+            msgError("不支持的歌手类型");
+            return;
+          }
+          try {
+            const playlistName = strategy.getPlaylistName();
+            const res2 = await createPlaylist(playlistName);
+            if (res2.code === 200) {
+              msgSuccess$1(`成功创建"${playlistName}"`);
+              handleGetPlayList();
+              setCreateModalVisible(false);
+            } else {
+              msgError("创建失败");
+            }
+          } catch (error) {
+            console.log("error", error);
+            msgError("创建失败");
+          }
+        };
+        const handleDelete = async () => {
+          if (!selectedRows.length) {
+            msgWarning("请选择要删除的歌单");
+            return;
+          }
+          try {
+            await confirm(
+jsxRuntimeExports.jsx(DeleteConfirmContent, { playlists: selectedRows }),
+              "删除歌单"
+            );
+            const proArr = selectedRows.map((item) => deletePlaylist(item.id));
+            const res2 = await Promise.all(proArr);
+            console.log("res", res2);
+            msgSuccess$1("删除成功");
+            handleGetPlayList();
+            setSelectedRows([]);
+          } catch (error) {
+            console.log("error", error);
+            msgError("删除失败");
+          }
+        };
+        return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+jsxRuntimeExports.jsxs(
+            Modal,
+            {
+              title: "歌单列表",
+              open: visible,
+              onCancel: close,
+              footer: null,
+              centered: true,
+              width: 900,
+              children: [
+jsxRuntimeExports.jsx(
+                  SearchForm,
+                  {
+                    data: playList.map((item) => ({
+                      ...item,
+                      creator: item.creator.nickname
+                    })),
+                    options: [
+                      {
+                        label: "歌单名字",
+                        value: "name"
+                      },
+                      {
+                        label: "创建者",
+                        value: "creator"
+                      }
+                    ],
+                    onSearch: handleFilter
+                  }
+                ),
+jsxRuntimeExports.jsx(
+                  Table,
+                  {
+                    dataSource: filteredList,
+                    columns,
+                    rowKey: "id",
+                    size: "small",
+                    loading,
+                    scroll: { y: 400 },
+                    rowSelection
+                  }
+                ),
+jsxRuntimeExports.jsxs("div", { className: styles$6.footer, children: [
+jsxRuntimeExports.jsxs("div", { children: [
+                    "已选择 ",
+                    selectedRows.length,
+                    " 个歌单"
+                  ] }),
+jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(Button, { onClick: () => setCreateModalVisible(true), children: "新建歌单" }),
+jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        danger: true,
+                        disabled: !selectedRows.length,
+                        onClick: handleDelete,
+                        children: "删除歌单"
+                      }
+                    ),
+                    isSelect && jsxRuntimeExports.jsxs(
+                      Button,
+                      {
+                        type: "primary",
+                        onClick: handleConfirm,
+                        disabled: selectedRows.length !== 1,
+                        children: [
+                          "选择(",
+                          selectedRows.length,
+                          ")"
+                        ]
+                      }
+                    )
+                  ] })
+                ] })
+              ]
+            }
+          ),
+jsxRuntimeExports.jsxs(
+            Modal,
+            {
+              title: "新建歌单",
+              open: createModalVisible,
+              onCancel: () => {
+                setCreateModalVisible(false);
+                setName("");
+              },
+              onOk: handleCreate,
+              okText: "确定",
+              cancelText: "取消",
+              centered: true,
+              children: [
+jsxRuntimeExports.jsx(
+                  Input,
+                  {
+                    placeholder: "请输入歌单名称",
+                    value: name2,
+                    onChange: (e) => setName(e.target.value),
+                    onPressEnter: handleCreate,
+                    autoFocus: true,
+                    style: { marginBottom: 16, padding: "4px 8px" }
+                  }
+                ),
+jsxRuntimeExports.jsx(Space, { wrap: true, children: Object.entries(playlistCreationStrategies).map(
+                  ([artistName2, strategy]) => jsxRuntimeExports.jsx(
+                    Tag,
+                    {
+                      color: strategy.color,
+                      style: {
+                        cursor: "pointer",
+                        marginBottom: 8,
+                        borderRadius: "4px",
+                        border: "1px solid #d9d9d9",
+                        transition: "all 0.3s"
+                      },
+                      onClick: () => handleCreateCommonPlaylist(artistName2),
+                      title: strategy.description,
+                      children: artistName2
+                    },
+                    artistName2
+                  )
+                ) })
+              ]
+            }
+          )
+        ] });
+      };
+      const DeleteConfirmContent = ({ playlists }) => {
+        return jsxRuntimeExports.jsxs("div", { className: styles$6.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "总计：" }),
+jsxRuntimeExports.jsx("div", { className: styles$6.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "删除数量：" }),
+jsxRuntimeExports.jsx("span", { className: styles$6.value, children: playlists.length }),
+jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 个歌单" })
+            ] }) })
+          ] }),
+jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsx("div", { className: styles$6.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "即将删除的歌单：" }) }),
+jsxRuntimeExports.jsx("ul", { className: styles$6.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$6.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$6.itemName, children: item.name }),
+              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$6.itemCount, children: [
+                item.trackCount,
+                "首"
+              ] })
+            ] }, item.id)) })
+          ] })
+        ] });
+      };
+      const PlayList$3 = forwardRef(PlayList$2);
+      const Stats = memo(({ selectedRows = [], filteredSongList = [] }) => {
+        return jsxRuntimeExports.jsxs("div", { className: styles$6.stats, children: [
+          "已选择 ",
+jsxRuntimeExports.jsxs(Tag, { color: "blue", children: [
+            selectedRows.length,
+            " 首"
+          ] }),
+          " ",
+jsxRuntimeExports.jsx("span", { className: styles$6.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
+jsxRuntimeExports.jsx("span", { className: styles$6.divider, children: "/" }),
+          "共",
+          " ",
+jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
+            filteredSongList.length,
+            " 首"
+          ] }),
+          " ",
+jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
+        ] });
+      });
+      Stats.displayName = "Stats";
+      const CloudMusicManager = forwardRef((props, ref) => {
+        const { visible, close, reset } = useVisible(
+          {
+            onOpen() {
+              getCloudDataList();
+            }
+          },
+          ref
+        );
+        const [songList2, setSongList] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const getCloudDataList = async () => {
+          try {
+            setLoading(true);
+            const res = await getCloudData(1e4, 0);
+            if (res.code === 200) {
+              console.log("songList", res.data);
+              setSongList(res.data);
+              setFilteredSongList(res.data);
+            }
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const handleMatch = () => {
+          console.log("触发全部匹配事件");
+          emit(EVENT_TYPES.CLOUD_MUSIC_MATCH_ALL, {
+            songList: filteredSongList,
+            timestamp: Date.now()
+          });
+        };
+        const [cancelMatchLoading, setCancelMatchLoading] = useState(false);
+        const handleCancelMatch = async () => {
+          try {
+            setCancelMatchLoading(true);
+            const promises = selectedRowKeys.map((songId) => {
+              return () => matchCloudSong(songId, "0");
+            });
+            const res = await promiseLimit(promises, 6);
+            console.log("res", res);
+            getCloudDataList();
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setCancelMatchLoading(false);
+          }
+        };
+        const filterConfig = {
+          fields: {
+            name: {
+              getValue: (song) => song?.simpleSong?.name
+            },
+            artist: {
+              getValue: getArtistName
+            },
+            album: {
+              getValue: getAlbumName
+            }
+          }
+        };
+        const [searchParams, setSearchParams] = useState({});
+        const {
+          filteredList: filteredSongList,
+          setFilteredList: setFilteredSongList,
+          handleFilter: handleSearch
+        } = useFilter(songList2, filterConfig);
+        useEffect(() => {
+          handleSearch(searchParams);
+        }, [songList2]);
+        const [selectedRows, setSelectedRows] = useState([]);
+        const selectedRowKeys = useMemo(
+          () => selectedRows.map((item) => item.songId),
+          [selectedRows]
+        );
+        const rowSelection = {
+          type: "checkbox",
+          fixed: true,
+          selectedRowKeys,
+          getCheckboxProps: (record) => ({
+            disabled: record.uploaded
+          }),
+          onChange: (selectedRowKeys2, selectedRows2) => {
+            setSelectedRows(selectedRows2);
+          }
+        };
+        const handleTableChange = (pagination, filters, sorter) => {
+          console.log("sorter", sorter);
+          setFilteredSongList((songList22) => {
+            return [...songList22].sort((a, b) => {
+              const order = sorter.order === "ascend" ? 1 : -1;
+              return order * sorter.column?.sorter?.(a, b);
+            });
+          });
+        };
+        const AudioRef = useRef(new Audio());
+        const [playSong, setPlaySong] = useState(null);
+        const [playing, setPlaying] = useState(false);
+        const handlePlaySong = (record) => {
+          if (playSong?.id === record.id) {
+            const audio2 = AudioRef.current;
+            playing ? audio2.pause() : audio2.play();
+            setPlaying(!playing);
+            return;
+          }
+          setPlaySong(record);
+          setPlaying(true);
+        };
+        const play = async () => {
+          try {
+            const res = await getSongUrl([playSong.id]);
+            console.log("res", res);
+            if (res.code !== 200) return msgError("获取歌曲链接失败");
+            const audio2 = AudioRef.current;
+            audio2.src = res.data[0].url;
+            audio2.addEventListener("ended", () => {
+              setPlaySong(null);
+            });
+            audio2.addEventListener("error", () => {
+              setPlaySong(null);
+            });
+            audio2.play();
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        useEffect(() => {
+          if (!playSong) return;
+          play();
+        }, [playSong]);
+        const [pageParams, setPageParams] = useState({
+          page: 1,
+          pageSize: 20
+        });
+        const renderSongInfo = (_, record, index2) => {
+          const isCurrentSong = record.simpleSong?.id === playSong?.id;
+          const artistName2 = getArtistName(record);
+          const albumName = getAlbumName(record);
+          const songName2 = record.simpleSong?.name;
+          const albumPic = record.simpleSong?.al?.picUrl;
+          return jsxRuntimeExports.jsxs("div", { className: styles$6.songInfoColumn, children: [
+jsxRuntimeExports.jsx("div", { className: styles$6.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
+jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: `${styles$6.songCover} ${isCurrentSong ? styles$6.playing : ""}`,
+                onClick: () => handlePlaySong(record.simpleSong),
+                children: [
+jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$6.songCoverImg }),
+jsxRuntimeExports.jsx("div", { className: styles$6.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
+                ]
+              }
+            ),
+jsxRuntimeExports.jsxs("div", { className: styles$6.songInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$6.songName, children: songName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$6.subInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$6.artist, children: artistName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$6.album, children: [
+                  albumName && " - ",
+                  albumName
+                ] })
+              ] })
+            ] })
+          ] });
+        };
+        const columns = [
+          {
+            title: "歌名",
+            dataIndex: "simpleSong",
+            key: "name",
+            width: 300,
+            fixed: !isMobile() ? "left" : void 0,
+            sorter: (a, b) => a.simpleSong.name?.localeCompare(b.simpleSong.name),
+            sortDirections: ["ascend", "descend"],
+            render: renderSongInfo
+          },
+          {
+            title: "歌手",
+            dataIndex: "simpleSong",
+            key: "artists",
+            width: 60,
+            sorter: (a, b) => {
+              const aArtists = a.simpleSong.ar?.map((a2) => a2.name).join(",");
+              const bArtists = b.simpleSong.ar?.map((a2) => a2.name).join(",");
+              return aArtists?.localeCompare(bArtists);
+            },
+            fixed: !isMobile() ? "left" : void 0,
+            sortDirections: ["ascend", "descend"],
+            ellipsis: true,
+            render: null
+          },
+          {
+            title: "专辑",
+            dataIndex: "simpleSong",
+            key: "album",
+            width: 60,
+            fixed: !isMobile() ? "left" : void 0,
+            sorter: (a, b) => a.simpleSong.al?.name?.localeCompare(b.simpleSong.al?.name),
+            sortDirections: ["ascend", "descend"],
+            defaultSortOrder: "ascend",
+            ellipsis: true,
+            render: null
+          },
+{
+            title: "原始专辑",
+            dataIndex: "simpleSong.al.name",
+            width: 160,
+            fixed: "left",
+            ellipsis: true,
+            sorter: (a, b) => {
+              const aOriginalInfo = getOriginalInfo(a);
+              const bOriginalInfo = getOriginalInfo(b);
+              return aOriginalInfo.album?.localeCompare(bOriginalInfo.album);
+            },
+            sortDirections: ["ascend", "descend"],
+            render: (_, record) => {
+              const { song, album: album2, artist: artist2 } = getOriginalInfo(record);
+              return jsxRuntimeExports.jsxs("div", { className: styles$6["original-album"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6["song-info"], title: song, children: [
+                  song,
+                  " ",
+                  artist2 && `· ${artist2}`
+                ] }),
+jsxRuntimeExports.jsx("div", { className: styles$6["album-info"], title: album2, children: album2 })
+              ] });
+            }
+          },
+{
+            title: "手动id匹配",
+            dataIndex: "matchType",
+            key: "matchType",
+            width: 300,
+            sorter: (a, b) => {
+              const isAMatched = a.matchType === "matched";
+              const isBMatched = b.matchType === "matched";
+              if (!isAMatched && !isBMatched) {
+                return 0;
+              }
+              if (!isAMatched && isBMatched) {
+                return 1;
+              }
+              if (isAMatched && !isBMatched) {
+                return -1;
+              }
+              const aAlbum = getAlbumName(a);
+              const bAlbum = getAlbumName(b);
+              const aOriginalAlbum = getOriginalInfo(a).album;
+              const bOriginalAlbum = getOriginalInfo(b).album;
+              const aMatchError = aAlbum !== aOriginalAlbum;
+              const bMatchError = bAlbum !== bOriginalAlbum;
+              if (aMatchError && !bMatchError) {
+                return 1;
+              }
+              if (!aMatchError && bMatchError) {
+                return -1;
+              }
+              return 0;
+            },
+            sortDirections: ["ascend", "descend"],
+            render: (matchType, r) => jsxRuntimeExports.jsx(IdMatch, { data: r, onUpdate: getCloudDataList })
+          },
+{
+            title: "自定义匹配",
+            dataIndex: "customMatch",
+            key: "customMatch",
+            width: 500,
+            render: (_, record) => jsxRuntimeExports.jsx(CustomMatch, { data: record, onUpdate: getCloudDataList })
+          },
+          {
+            title: "大小",
+            dataIndex: "fileSize",
+            key: "fileSize",
+            width: 100,
+            sorter: (a, b) => a.fileSize - b.fileSize,
+            sortDirections: ["ascend", "descend"],
+            render: (size2) => `${(size2 / 1024 / 1024).toFixed(2)}MB`
+          },
+          {
+            title: "比特率",
+            dataIndex: "bitrate",
+            key: "bitrate",
+            width: 100,
+            sorter: (a, b) => a.bitrate - b.bitrate,
+            sortDirections: ["ascend", "descend"],
+            render: (bitrate) => jsxRuntimeExports.jsxs(Tag, { color: "blue", children: [
+              bitrate,
+              "kbps"
+            ] })
+          },
+          {
+            title: "上传时间",
+            dataIndex: "addTime",
+            key: "addTime",
+            width: 150,
+            sorter: (a, b) => a.addTime - b.addTime,
+            sortDirections: ["ascend", "descend"],
+            render: (time) => dayjs(time).format("YYYY-MM-DD HH:mm:ss")
+          }
+        ];
+        const [range, setRange] = useState([]);
+        const handleRangeChoose = () => {
+          console.log("range", range);
+          if (!range[0] || !range[1]) return msgWarning("请输入区间");
+          if (range[0] > range[1]) return msgWarning("区间错误");
+          console.log(
+            "filteredSongList.slice(range[0] - 1, range[1])",
+            filteredSongList,
+            filteredSongList.slice(range[0] - 1, range[1])
+          );
+          setSelectedRows(filteredSongList.slice(range[0] - 1, range[1]));
+        };
+        const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] = useState(false);
+        const handleAddToPlaylistByAlbum = async () => {
+          try {
+            setAddToPlayListByAlbumLoading(true);
+            console.log("自动按专辑添加");
+            const albumMap = new Map();
+            filteredSongList.forEach((song) => {
+              const { simpleSong } = song;
+              const album2 = `${simpleSong.ar?.[0]?.name || ""}-${simpleSong.al?.name}`;
+              if (!albumMap.has(album2)) {
+                albumMap.set(album2, []);
+              }
+              albumMap.get(album2).push(song);
+            });
+            const totalSongs = filteredSongList.length;
+            const albums = Array.from(albumMap.entries()).sort(
+              ([, songsA], [, songsB]) => songsB.length - songsA.length
+            );
+            await confirm(
+jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
+              "自动按专辑添加",
+              {
+                width: "auto"
+              }
+            );
+            const res = await getPlaylistList();
+            console.log("res", res);
+            if (res.code !== 200) return msgError("获取歌单失败");
+            const playlist = res.playlist;
+            for (const [album2, songs2] of albums) {
+              try {
+                const playlistName = album2;
+                console.log("playlistName", playlistName, "songs", songs2);
+                let playlistId = playlist.find((p) => p.name === playlistName)?.id;
+                if (!playlistId) {
+                  const truncatedName = truncateString(playlistName, 40);
+                  const res3 = await createPlaylist(truncatedName);
+                  if (res3.code === 200) {
+                    playlistId = res3.id;
+                  } else {
+                    console.log("res", res3);
+                    debugger;
+                  }
+                  await sleep(1e3);
+                }
+                const songIds = songs2.map((song) => song.songId);
+                const res2 = await addSongToPlaylist(playlistId, songIds);
+                console.log("res", res2);
+                if (res2.code !== 200) {
+                  console.log("添加歌曲失败", res2.message || res2.msg);
+                }
+                await sleep(500);
+              } catch (error) {
+                console.log("error", error);
+              }
+            }
+            setSelectedRows([]);
+            msgSuccess$1("添加成功");
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setAddToPlayListByAlbumLoading(false);
+          }
+        };
+        const handleStoleSong = async () => {
+          console.log("selectedRows", selectedRows);
+          const stolenList = selectedRows.map((item) => {
+            const {
+              artist: artist2,
+              album: album2,
+              ar,
+              simpleSong,
+              privateCloud,
+              songId,
+              fileSize,
+              songName: songName2,
+              fileName,
+              bitrate
+            } = item;
+            return {
+              artist: artist2,
+              artists: ar?.map((a) => a.name) || [artist2],
+              album: album2 || getAlbumName(item),
+              id: songId,
+              size: fileSize,
+              md5: privateCloud.md5,
+              name: songName2,
+              ext: fileName.split(".")[1] || "mp3",
+              bitrate
+            };
+          });
+          downloadJsonFile(stolenList, "stolenList.json");
+        };
+        const playListRef = useRef(null);
+        const handleAddToPlaylist = async () => {
+          try {
+            console.log("添加到歌单");
+            playListRef.current.open("select");
+            const playlist = await playListRef.current.submit();
+            if (!playlist) return;
+            const songIds = selectedRows.map((item) => item.songId);
+            const res = await addSongToPlaylist(playlist.id, songIds);
+            console.log("res", res);
+            if (res.code === 200) {
+              setSelectedRows([]);
+              msgSuccess$1("添加成功");
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const handleCreatePlaylist = () => {
+          playListRef.current.open();
+        };
+        const handleDeleteSong = async () => {
+          try {
+            const confirmContent = jsxRuntimeExports.jsx(
+              DeleteConfirmation,
+              {
+                selectedCount: selectedRows.length,
+                songNames: selectedRows.map((item) => item.simpleSong.name)
+              }
+            );
+            await confirm(confirmContent, "删除确认");
+            const songIds = selectedRows.map((item) => item.songId);
+            const res = await deleteCloudSong(songIds);
+            console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("删除成功");
+              reset();
+              getCloudDataList();
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        return jsxRuntimeExports.jsxs(
+          Modal,
+          {
+            title: "云盘音乐管理",
+            open: visible,
+            onCancel: close,
+            footer: null,
+            centered: true,
+            width: 1700,
+            children: [
+jsxRuntimeExports.jsx(
+                SearchForm,
+                {
+                  onSearch: (values) => {
+                    console.log("values", values);
+                    setSearchParams(values);
+                    handleSearch(values);
+                  },
+                  data: songList2.map((item) => {
+                    return {
+                      ...item,
+                      name: item.simpleSong.name,
+                      artists: getArtistName(item),
+                      album: getAlbumName(item)
+                    };
+                  }),
+                  options: [
+                    { label: "歌曲", value: "name" },
+                    { label: "歌手", value: "artist" },
+                    { label: "专辑", value: "album" }
+                  ]
+                }
+              ),
+jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    gap: 16,
+                    marginBottom: 16
+                  },
+                  children: [
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleMatch, children: "全部匹配" }),
+jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        type: "primary",
+                        disabled: !selectedRows.length,
+                        loading: cancelMatchLoading,
+                        onClick: handleCancelMatch,
+                        children: "全部取消匹配"
+                      }
+                    ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: getCloudDataList, children: "刷新" })
+                  ]
+                }
+              ),
+jsxRuntimeExports.jsx(
+                Table,
+                {
+                  rowSelection,
+                  dataSource: filteredSongList,
+                  columns,
+                  scroll: { y: 500, x: 1e3 },
+                  size: "small",
+                  loading,
+                  rowKey: ({ songId }) => songId,
+                  rowClassName: (record) => {
+                    const { songId } = record;
+                    const classNames2 = [];
+                    if (songId === playSong?.id) {
+                      classNames2.push(styles$6.currentSong);
+                    }
+                    const isMatch = record.matchType === "matched";
+                    const album2 = normalizeString(getAlbumName(record));
+                    const originalAlbum = normalizeString(getOriginalInfo(record)?.album);
+                    if (isMatch && !album2.includes(originalAlbum.slice(0, 3))) {
+                      classNames2.push(styles$6.matchError);
+                    }
+                    return classNames2.join(" ");
+                  },
+                  onChange: handleTableChange,
+                  pagination: {
+                    defaultPageSize: 20,
+                    showQuickJumper: true,
+                    showSizeChanger: true,
+                    onChange: (page, pageSize) => setPageParams({ page, pageSize })
+                  }
+                }
+              ),
+jsxRuntimeExports.jsxs("div", { className: styles$6.footer, children: [
+jsxRuntimeExports.jsx(
+                  Stats,
+                  {
+                    selectedRows,
+                    filteredSongList
+                  }
+                ),
+jsxRuntimeExports.jsxs("div", { className: styles$6.actions, children: [
+jsxRuntimeExports.jsx(
+                    Input,
+                    {
+                      style: {
+                        width: 100
+                      },
+                      value: range[0],
+                      onChange: (e) => {
+                        setRange([+e.target.value || void 0, range[1]]);
+                      },
+                      placeholder: "起始位置"
+                    }
+                  ),
+jsxRuntimeExports.jsx(
+                    Input,
+                    {
+                      style: {
+                        width: 100
+                      },
+                      value: range[1],
+                      onChange: (e) => setRange([range[0], +e.target.value || void 0]),
+                      placeholder: "结束位置"
+                    }
+                  ),
+jsxRuntimeExports.jsx(Button, { onClick: handleRangeChoose, style: { marginRight: 10 }, children: "区间选择" }),
+                  filteredSongList?.length > selectedRows?.length ? jsxRuntimeExports.jsx(Button, { onClick: () => setSelectedRows(filteredSongList), children: "全部选择" }) : jsxRuntimeExports.jsx(Button, { onClick: () => setSelectedRows([]), children: "全部取消" }),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      onClick: () => setSelectedRows(
+                        filteredSongList.filter((item) => !selectedRows.includes(item))
+                      ),
+                      children: "反选"
+                    }
+                  ),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      type: "primary",
+                      onClick: handleAddToPlaylistByAlbum,
+                      loading: addToPlayListByAlbumLoading,
+                      children: "自动按专辑添加"
+                    }
+                  ),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      type: "primary",
+                      disabled: !selectedRows.length,
+                      onClick: handleStoleSong,
+                      children: "偷取资源"
+                    }
+                  ),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      type: "primary",
+                      disabled: !selectedRows.length,
+                      onClick: handleAddToPlaylist,
+                      children: "添加到歌单"
+                    }
+                  ),
+jsxRuntimeExports.jsx(Button, { onClick: handleCreatePlaylist, children: "新建歌单" }),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      type: "primary",
+                      danger: true,
+                      disabled: !selectedRows.length,
+                      onClick: handleDeleteSong,
+                      children: "删除歌曲"
+                    }
+                  )
+                ] })
+              ] }),
+jsxRuntimeExports.jsx(PlayList$3, { ref: playListRef })
+            ]
+          }
+        );
+      });
+      const AutoAddContent = ({ totalSongs, albums }) => {
+        const handleCopy = () => {
+          const text2 = albums.map(([name2, songs2]) => `${name2}（${songs2.length}首）`).join("\n");
+          navigator.clipboard.writeText(text2).then(() => {
+            message.success("复制成功");
+          });
+        };
+        return jsxRuntimeExports.jsxs("div", { className: styles$6.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "总计：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$6.statsContent, children: [
+jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "歌曲数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$6.value, children: totalSongs }),
+jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 首" })
+              ] }),
+jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "歌单数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$6.value, children: albums.length }),
+jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 个" })
+              ] })
+            ] })
+          ] }),
+jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6.listHeader, children: [
+jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "即将创建的歌单：" }),
+jsxRuntimeExports.jsx(
+                Button,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: jsxRuntimeExports.jsx(CopyrightOutlined, {}),
+                  onClick: handleCopy,
+                  children: "复制列表"
+                }
+              )
+            ] }),
+jsxRuntimeExports.jsx("ul", { className: styles$6.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$6.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$6.itemName, children: name2 }),
+jsxRuntimeExports.jsxs("span", { className: styles$6.itemCount, children: [
+                songs2.length,
+                "首"
+              ] })
+            ] }, name2)) })
+          ] })
+        ] });
+      };
+      const DeleteConfirmation = ({ selectedCount, songNames }) => {
+        return jsxRuntimeExports.jsxs("div", { className: styles$6.deleteConfirmation, children: [
+jsxRuntimeExports.jsxs("p", { className: styles$6.title, children: [
+            "您确定要删除以下 ",
+jsxRuntimeExports.jsx("span", { className: styles$6.count, children: selectedCount }),
+            " ",
+            "首歌曲吗？"
+          ] }),
+jsxRuntimeExports.jsx("div", { className: styles$6.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$6.songItem, children: name2 }, index2)) }),
+jsxRuntimeExports.jsx("div", { className: styles$6.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$6.text, children: [
+jsxRuntimeExports.jsx("span", { className: styles$6.icon, children: "!" }),
+            "注意：此操作不可恢复，删除后歌曲将从您的网易云音乐云盘中永久移除。"
+          ] }) })
+        ] });
+      };
+      const getArtistName = (song) => {
+        return song.simpleSong.ar?.map((a) => a.name).filter(Boolean).join(",") || song.artist || "";
+      };
+      const getAlbumName = (song) => {
+        return song.simpleSong.al?.name || song.album || "";
+      };
+      const getOriginalInfo = (record) => {
+        const { simpleSong } = record;
+        const { song, album: album2, artist: artist2 } = simpleSong.privilege?.pc || {};
+        return { song, album: album2, artist: artist2 };
+      };
+      const githubContainer = "_githubContainer_b3krt_2";
+      const userInfo = "_userInfo_b3krt_9";
+      const username = "_username_b3krt_15";
+      const starCount = "_starCount_b3krt_18";
+      const bio = "_bio_b3krt_24";
+      const features = "_features_b3krt_28";
+      const featureList = "_featureList_b3krt_37";
+      const profileButton = "_profileButton_b3krt_61";
+      const styles$5 = {
+        githubContainer,
+        userInfo,
+        username,
+        starCount,
+        bio,
+        features,
+        featureList,
+        profileButton
+      };
+      const fetchGithubData = async () => {
+        try {
+          const owner = "520Qiuyu";
+          const repo = "CloudMusic";
+          const token = "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";
+          const [userResponse, repoResponse] = await Promise.all([
+            fetch(`https://api.github.com/users/${owner}`, {
+              headers: {
+                Accept: "application/vnd.github.v3+json",
+                Authorization: `token ${token}`
+              }
+            }),
+            fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+              headers: {
+                Accept: "application/vnd.github.v3+json",
+                Authorization: `token ${token}`
+              }
+            })
+          ]);
+          if (!userResponse.ok || !repoResponse.ok) {
+            throw new Error("API请求失败");
+          }
+          const userData = await userResponse.json();
+          const repoData = await repoResponse.json();
+          return {
+            avatar_url: userData.avatar_url,
+            stargazers_count: repoData.stargazers_count
+          };
+        } catch (error) {
+          console.error("获取GitHub数据失败:", error);
+          return {
+            avatar_url: "",
+            stargazers_count: 0
+          };
+        }
+      };
+      const { Title, Text } = Typography;
+      const GithubInfo = forwardRef((props, ref) => {
+        const { visible, close } = useVisible({}, ref);
+        const [starCount2, setStarCount] = useState(0);
+        const [avatarUrl, setAvatarUrl] = useState("");
+        useEffect(() => {
+          fetchGithubData().then((data) => {
+            setStarCount(data.stargazers_count);
+            setAvatarUrl(data.avatar_url);
+          });
+        }, []);
+        const githubInfo = {
+          avatar: avatarUrl || "https://avatars.githubusercontent.com/u/520Qiuyu",
+          username: "520Qiuyu",
+          bio: "网易云音乐快速上传助手",
+          profileUrl: "https://github.com/520Qiuyu/CloudMusic",
+          starCount: `⭐ ${starCount2}`,
+          features: [
+            "🚀 云盘快速上传：支持同时选择多个歌手的音乐资源文件按专辑顺序进行上传",
+            "📊 进度显示：实时展示上传进度和状态",
+            "🔍 智能匹配：自动匹配歌曲信息，包括歌手、专辑等",
+            "🎵 文件管理：支持查看已上传文件列表",
+            "🔄 并发控制：智能控制上传并发数，避免服务器压力",
+            "🎵 云盘音乐管理：支持手动将添加的歌曲添加到歌单中",
+            "🔄 偷取资源：支持从其他用户的云盘偷取资源，获得导入JSON文件",
+            "🎯 手动匹配纠正：支持手动匹配纠正歌曲信息",
+            "📤 云盘本地上传：支持将本地音乐文件上传",
+            "📥 云盘JSON文件导入：支持通过JSON文件（偷取资源的JSON）导入到云盘，实现云盘音乐的批量导入"
+          ]
+        };
+        const handleProfileClick = () => {
+          window.open(githubInfo.profileUrl, "_blank");
+        };
+        return jsxRuntimeExports.jsx(
+          Modal,
+          {
+            title: "GitHub 信息",
+            open: visible,
+            onCancel: close,
+            footer: null,
+            centered: true,
+            width: 700,
+            zIndex: 99999,
+            children: jsxRuntimeExports.jsxs("div", { className: styles$5.githubContainer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.userInfo, children: [
+jsxRuntimeExports.jsx(
+                  Avatar,
+                  {
+                    size: 100,
+                    src: githubInfo.avatar,
+                    icon: jsxRuntimeExports.jsx(GithubOutlined, {})
+                  }
+                ),
+jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsx(Title, { level: 4, className: styles$5.username, children: githubInfo.username }),
+jsxRuntimeExports.jsx(Text, { className: styles$5.starCount, children: githubInfo.starCount })
+                ] })
+              ] }),
+jsxRuntimeExports.jsx(Title, { level: 5, className: styles$5.bio, children: githubInfo.bio }),
+jsxRuntimeExports.jsxs("div", { className: styles$5.features, children: [
+jsxRuntimeExports.jsx(Title, { level: 5, children: "✨ 功能特性" }),
+jsxRuntimeExports.jsx("ul", { className: styles$5.featureList, children: githubInfo.features.map((feature, index2) => jsxRuntimeExports.jsx("li", { children: feature }, index2)) })
+              ] }),
+jsxRuntimeExports.jsx(
+                Button,
+                {
+                  type: "primary",
+                  icon: jsxRuntimeExports.jsx(GithubOutlined, {}),
+                  onClick: handleProfileClick,
+                  className: styles$5.profileButton,
+                  children: "查看 GitHub 主页"
+                }
+              )
+            ] })
+          }
+        );
+      });
+      const dragger = "_dragger_1latm_12";
+      const divider$1 = "_divider_1latm_58";
+      const styles$4 = {
+        "local-upload": "_local-upload_1latm_1",
+        "upload-section": "_upload-section_1latm_6",
+        dragger,
+        "upload-icon": "_upload-icon_1latm_26",
+        "upload-text": "_upload-text_1latm_30",
+        "upload-hint": "_upload-hint_1latm_34",
+        "file-list": "_file-list_1latm_39",
+        "upload-stats": "_upload-stats_1latm_49",
+        "size-text": "_size-text_1latm_55",
+        divider: divider$1
+      };
+      const { Dragger } = Upload;
+      const LocalUpload = forwardRef((props, ref) => {
+        const { visible, close } = useVisible(
+          {
+            onReset() {
+              setLoading(false);
+              setFileList([]);
+            }
+          },
+          ref
+        );
+        const [fileList, setFileList] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const [concurrency, setConcurrency] = useState(1);
+        const handleUpload = async () => {
+          try {
+            setLoading(true);
+            const uploadPromises = fileList.map((file) => async () => {
+              try {
+                if (file.status === "done") {
+                  return;
+                }
+                file.status = "uploading";
+                const res2 = await uploadLocalSong(file);
+                console.log("res", res2);
+                file.status = "done";
+                return res2;
+              } catch (e) {
+                file.status = "error";
+                return null;
+              } finally {
+                setFileList((prev) => [...prev]);
+              }
+            });
+            const res = await promiseLimit(uploadPromises, concurrency);
+            console.log("res", res);
+            msgSuccess$1("上传成功");
+            const size2 = res.filter(Boolean).reduce((acc, file) => acc + file.size, 0);
+            const info2 = {
+              list: res.filter(Boolean),
+              count: res.filter(Boolean).length,
+              size: size2,
+              sizeDesc: formatFileSize(size2),
+              artist: res.filter(Boolean)?.[0].artist || ""
+            };
+            downloadJsonFile(info2, info2.artist + ".json");
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const handleFilter = async () => {
+          setFileList((prev) => prev.filter((file) => file.status === "error"));
+        };
+        const [getJsonLoading, setGetJsonLoading] = useState(false);
+        const handleGetJson = async () => {
+          try {
+            setGetJsonLoading(true);
+            const proArr = fileList.map(async (file) => {
+              const ext = file.name.split(".").pop() || "mp3";
+              const bitrate = 999e3;
+              const name2 = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
+              const size2 = file.size;
+              const md52 = await getFileMD5(file);
+              const { album: album2, artist: artist2, artists, title: title2 } = await getAudioMetadata(file);
+              return {
+                size: size2,
+                md5: md52,
+                bitrate,
+                ext,
+                album: album2,
+                artist: artist2,
+                artists,
+                name: title2
+              };
+            });
+            const data = await Promise.all(proArr);
+            console.log("data", data);
+            downloadJsonFile(data, data[0].artist + ".json");
+          } catch (e) {
+            console.log("error", e);
+          } finally {
+            setGetJsonLoading(false);
+          }
+        };
+        const columns = [
+          {
+            title: "文件名",
+            dataIndex: "name",
+            key: "name"
+          },
+          {
+            title: "大小",
+            dataIndex: "size",
+            key: "size",
+            render: (size2) => `${(size2 / 1024 / 1024).toFixed(2)} MB`
+          },
+          {
+            title: "状态",
+            dataIndex: "status",
+            key: "status",
+            render: (status, record) => {
+              if (status === "done") {
+                return jsxRuntimeExports.jsx(Progress, { percent: 100, size: "small", status: "success" });
+              }
+              if (status === "error") {
+                return jsxRuntimeExports.jsx(Progress, { percent: 100, size: "small", status: "exception" });
+              }
+              if (status === "uploading") {
+                return jsxRuntimeExports.jsx(
+                  Progress,
+                  {
+                    percent: record.progress || 0,
+                    size: "small",
+                    status: "active"
+                  }
+                );
+              }
+              return jsxRuntimeExports.jsx(Progress, { percent: 0, size: "small" });
+            }
+          }
+        ];
+        return jsxRuntimeExports.jsx(
+          Modal,
+          {
+            title: "云盘本地上传",
+            open: visible,
+            onCancel: close,
+            onOk: handleUpload,
+            confirmLoading: loading,
+            centered: true,
+            width: 1e3,
+            children: jsxRuntimeExports.jsxs("div", { className: styles$4["local-upload"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4["upload-section"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4["concurrency-control"], children: [
+jsxRuntimeExports.jsx("span", { children: "并发数量：" }),
+jsxRuntimeExports.jsx(
+                    Input,
+                    {
+                      type: "number",
+                      min: 1,
+                      max: 6,
+                      value: concurrency,
+                      onChange: (e) => setConcurrency(parseInt(e.target.value) || 1),
+                      style: { width: 80 }
+                    }
+                  )
+                ] }),
+jsxRuntimeExports.jsxs(
+                  Dragger,
+                  {
+                    className: styles$4.dragger,
+                    multiple: true,
+                    fileList,
+                    beforeUpload: (file) => {
+                      setFileList((prev) => [...prev, file]);
+                      return false;
+                    },
+                    showUploadList: false,
+                    accept: ".mp3,.flac,.wav,.m4a,.ogg",
+                    children: [
+jsxRuntimeExports.jsx("p", { className: styles$4["upload-icon"], children: jsxRuntimeExports.jsx(InboxOutlined, {}) }),
+jsxRuntimeExports.jsx("p", { className: styles$4["upload-text"], children: "点击或拖拽文件到此区域上传" }),
+jsxRuntimeExports.jsx("p", { className: styles$4["upload-hint"], children: "支持 mp3, flac, wav, m4a, ogg 格式的音频文件" })
+                    ]
+                  }
+                )
+              ] }),
+jsxRuntimeExports.jsxs("div", { className: styles$4["file-list"], children: [
+jsxRuntimeExports.jsx(
+                  Table,
+                  {
+                    columns,
+                    dataSource: fileList,
+                    rowKey: (file) => file.uid || file.name,
+                    scroll: { y: 300 },
+                    pagination: false
+                  }
+                ),
+jsxRuntimeExports.jsxs("div", { className: styles$4["upload-stats"], children: [
+jsxRuntimeExports.jsxs("span", { children: [
+                    "共 ",
+                    fileList.length,
+                    " 个文件"
+                  ] }),
+jsxRuntimeExports.jsx("span", { className: styles$4.divider, children: "|" }),
+jsxRuntimeExports.jsxs("span", { className: styles$4["size-text"], children: [
+                    "总大小：",
+                    formatFileSize(
+                      fileList.reduce((acc, file) => acc + file.size, 0)
+                    )
+                  ] }),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      type: "primary",
+                      size: "small",
+                      onClick: () => setFileList([]),
+                      style: { marginLeft: "auto" },
+                      children: "清空列表"
+                    }
+                  ),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      type: "primary",
+                      size: "small",
+                      onClick: handleFilter,
+                      disabled: !fileList.some((file) => file.status !== "error"),
+                      children: "失败过滤"
+                    }
+                  ),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      type: "primary",
+                      size: "small",
+                      onClick: handleGetJson,
+                      loading: getJsonLoading,
+                      children: "直接获取JSON"
+                    }
+                  )
+                ] })
+              ] })
+            ] })
+          }
+        );
+      });
       var duration$2 = { exports: {} };
       var duration$1 = duration$2.exports;
       var hasRequiredDuration;
@@ -21346,14 +23272,14 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
             render: (_, record) => {
               const tags = getQualityTags(record);
               if (tags.length === 0) return "-";
-              return jsxRuntimeExports.jsx("div", { children: tags.map((tag2, index) => jsxRuntimeExports.jsx(
+              return jsxRuntimeExports.jsx("div", { children: tags.map((tag2, index2) => jsxRuntimeExports.jsx(
                 Tag,
                 {
                   color: tag2.color,
                   style: { marginBottom: "4px" },
                   children: tag2.label
                 },
-                index
+                index2
               )) });
             }
           },
@@ -21383,14 +23309,14 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
               if (!mark) return "-";
               const tags = getMarkTags(mark);
               if (tags.length === 0) return "-";
-              return jsxRuntimeExports.jsx("div", { children: tags.map((tag2, index) => jsxRuntimeExports.jsx(
+              return jsxRuntimeExports.jsx("div", { children: tags.map((tag2, index2) => jsxRuntimeExports.jsx(
                 Tag,
                 {
                   color: tag2.color,
                   style: { marginBottom: "4px" },
                   children: tag2.text
                 },
-                index
+                index2
               )) });
             }
           },
@@ -21575,49 +23501,6 @@ jsxRuntimeExports.jsx(
         );
       }
       const SongList$1 = forwardRef(SongList);
-      const formatDuration = (ms2) => {
-        const time = dayjs.duration(ms2);
-        const minutes = time.minutes();
-        const seconds = time.seconds();
-        return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-      };
-      const getMarkTags = (mark) => {
-        const tags = [];
-        if (mark & 131072) tags.push({ text: "纯音乐", color: "#2db7f5" });
-        if (mark & 262144) tags.push({ text: "杜比全景声", color: "#722ed1" });
-        if (mark & 1048576) tags.push({ text: "🅴", color: "#f50" });
-        if (mark & 17179869184) tags.push({ text: "Hi-Res", color: "#f50" });
-        return tags;
-      };
-      const getOriginTag = (originCoverType) => {
-        const types = {
-          0: { text: "未知", color: "#d9d9d9" },
-          1: { text: "原曲", color: "#87d068" },
-          2: { text: "翻唱", color: "#2db7f5" }
-        };
-        return types[originCoverType] || types[0];
-      };
-      const formatPopularity = (pop) => {
-        if (!pop) return "0";
-        return pop.toFixed(1);
-      };
-      const getTypeTag = (t) => {
-        const types = {
-          0: { text: "普通歌曲", color: "#108ee9" },
-          1: { text: "独立云盘", color: "#f50" },
-          2: { text: "云盘歌曲", color: "#87d068" }
-        };
-        return types[t] || types[0];
-      };
-      const getFeeTag = (fee) => {
-        const fees = {
-          0: { text: "免费", color: "#87d068" },
-          1: { text: "VIP", color: "#f50" },
-          4: { text: "专辑购买", color: "#722ed1" },
-          8: { text: "付费/试听", color: "#faad14" }
-        };
-        return fees[fee] || fees[0];
-      };
       const cover = "_cover_15nrq_8";
       const info = "_info_15nrq_40";
       const name = "_name_15nrq_47";
@@ -22341,9 +24224,9 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
             const res = await getSongUrl(ids);
             console.log("res", res);
             if (res.code === 200) {
-              const songs2 = res.data.map((item, index) => ({
+              const songs2 = res.data.map((item, index2) => ({
                 url: item.url,
-                name: filteredSongList[index]?.["name"]
+                name: filteredSongList[index2]?.["name"]
               })).filter((item) => item.url);
               console.log("songs", songs2);
               let count2 = 0;
@@ -22385,17 +24268,17 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
               uploaded: 0,
               toUpload: uploadAlbumList?.flat()
             });
-            let index = 1;
+            let index2 = 1;
             for (const album2 of albumList) {
               msgSuccess$1(
-                `当前正在上传第${index}/${albumList.length}专辑，开始上传专辑: ${album2[0].album}`
+                `当前正在上传第${index2}/${albumList.length}专辑，开始上传专辑: ${album2[0].album}`
               );
               console.log(
-                `当前正在上传第${index}/${albumList.length}专辑，开始上传专辑: ${album2[0].album}`,
+                `当前正在上传第${index2}/${albumList.length}专辑，开始上传专辑: ${album2[0].album}`,
                 album2
               );
               await handleBatchUpload(album2, false);
-              index++;
+              index2++;
             }
             console.log("上传完成");
           } catch (error) {
@@ -22726,6 +24609,14 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             console.log("error", error);
           }
         };
+        const handleGetSongDynamicCover = async () => {
+          try {
+            const res = await getSongDynamicCover(songId);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
         const handleDeleteCloudSong = async () => {
           console.log("删除云盘歌曲");
           try {
@@ -22878,121 +24769,150 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             console.log("error", error);
           }
         };
-        return jsxRuntimeExports.jsxs(
+        const [searchKeyword, setSearchKeyword] = useState("");
+        const handleSearch = async () => {
+          try {
+            const res = await search(searchKeyword);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const handleCloudSearch = async () => {
+          try {
+            const res = await cloudSearch(searchKeyword);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        return jsxRuntimeExports.jsx(
           Modal,
           {
             title: "测试Modal",
             open: visible,
             onCancel: close,
             width: 800,
+            styles: {
+              body: {
+                maxHeight: "75vh",
+                overflowY: "auto"
+              }
+            },
             footer: null,
             centered: true,
-            children: [
-jsxRuntimeExports.jsxs(Form, { children: [
+            children: jsxRuntimeExports.jsxs(Form, { children: [
 jsxRuntimeExports.jsx(Form.Item, { label: "获取用户信息", children: jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetUserAccount, children: "获取用户信息" }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "获取云盘数据", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(Input, { placeholder: "limit", style: { width: 100 } }),
 jsxRuntimeExports.jsx(Input, { placeholder: "offset", style: { width: 100 } }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetCloudData, children: "获取云盘数据" })
-                ] }) }),
+              ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "新建歌单", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      placeholder: "请输入歌单名称",
-                      value: songListName,
-                      onChange: (e) => setSongListName(e.target.value)
-                    }
-                  ),
+                  Input,
+                  {
+                    placeholder: "请输入歌单名称",
+                    value: songListName,
+                    onChange: (e) => setSongListName(e.target.value)
+                  }
+                ),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleCreateSongList, children: "新建歌单" })
-                ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "添加歌曲", children: jsxRuntimeExports.jsxs(Space, { children: [
+              ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "向歌单添加歌曲", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      placeholder: "请输入歌单id",
-                      value: addInfo.playlistId,
-                      onChange: (e) => setAddInfo({ ...addInfo, playlistId: e.target.value })
-                    }
-                  ),
+                  Input,
+                  {
+                    placeholder: "请输入歌单Id",
+                    addonBefore: "歌单id",
+                    value: addInfo.playlistId,
+                    onChange: (e) => setAddInfo({ ...addInfo, playlistId: e.target.value })
+                  }
+                ),
 jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      placeholder: "请输入歌曲id",
-                      value: addInfo.songId,
-                      onChange: (e) => setAddInfo({ ...addInfo, songId: e.target.value })
-                    }
-                  ),
+                  Input,
+                  {
+                    placeholder: "请输入歌曲Id",
+                    addonBefore: "歌曲id",
+                    value: addInfo.songId,
+                    onChange: (e) => setAddInfo({ ...addInfo, songId: e.target.value })
+                  }
+                ),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleAddSong, children: "添加歌曲" })
-                ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "获取歌单列表", children: jsxRuntimeExports.jsxs(Space, { children: [
+              ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "获取用户歌单列表", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      placeholder: "请输入用户id",
-                      value: userId,
-                      onChange: (e) => setUserId(e.target.value)
-                    }
-                  ),
+                  Input,
+                  {
+                    placeholder: "请输入用户Id",
+                    addonBefore: "用户id",
+                    value: userId,
+                    onChange: (e) => setUserId(e.target.value)
+                  }
+                ),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylistList, children: "获取用户歌单列表" })
-                ] }) }),
+              ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "测试获取歌单详情", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      placeholder: "请输入歌单id",
-                      value: playlistId,
-                      onChange: (e) => setPlaylistId(e.target.value)
-                    }
-                  ),
+                  Input,
+                  {
+                    placeholder: "请输入歌单Id",
+                    addonBefore: "歌单Id",
+                    value: playlistId,
+                    onChange: (e) => setPlaylistId(e.target.value)
+                  }
+                ),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" })
-                ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "获取歌曲信息", children: jsxRuntimeExports.jsxs(Space, { children: [
+              ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "获取歌曲信息", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      placeholder: "请输入歌曲id",
-                      value: songId,
-                      onChange: (e) => setSongId(e.target.value)
-                    }
-                  ),
+                  Input,
+                  {
+                    placeholder: "请输入歌曲Id",
+                    addonBefore: "歌曲Id",
+                    value: songId,
+                    onChange: (e) => setSongId(e.target.value)
+                  }
+                ),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongInfo, children: "获取歌曲信息" }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleDeleteCloudSong, children: "删除云盘歌曲" })
-                ] }) }),
+              ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "获取专辑歌曲列表", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      placeholder: "请输入专辑id",
-                      value: albumId,
-                      onChange: (e) => setAlbumId(e.target.value)
-                    }
-                  ),
+                  Input,
+                  {
+                    placeholder: "请输入专辑Id",
+                    addonBefore: "专辑Id",
+                    value: albumId,
+                    onChange: (e) => setAlbumId(e.target.value)
+                  }
+                ),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumSongList, children: "获取专辑歌曲列表" }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumDetail, children: "获取专辑详情" })
-                ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "获取歌手歌曲列表", children: jsxRuntimeExports.jsxs(Space, { children: [
+              ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "获取歌手歌曲列表", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      placeholder: "请输入歌手id",
-                      value: artistId,
-                      onChange: (e) => setArtistId(e.target.value)
-                    }
-                  ),
+                  Input,
+                  {
+                    placeholder: "请输入歌手Id",
+                    addonBefore: "歌手Id",
+                    value: artistId,
+                    onChange: (e) => setArtistId(e.target.value)
+                  }
+                ),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistTopSongList, children: "获取歌手热门歌曲列表" }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbum, children: "获取歌手专辑" }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbumPic, children: "下载专辑封面" }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAllSongList, children: "获取歌手全部歌曲" })
-                ] }) })
-              ] }),
+              ] }) }),
 jsxRuntimeExports.jsxs(Form.Item, { label: "二维码登录", children: [
 jsxRuntimeExports.jsx("div", { id: "qrcode-container" }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleQrLogin, children: "二维码登录" })
               ] }),
-jsxRuntimeExports.jsx(Form.Item, { label: "上传本地歌曲到云盘", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "上传本地歌曲到云盘", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
                   Upload,
                   {
@@ -23011,18 +24931,32 @@ jsxRuntimeExports.jsx(
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleUploadLocalSong, children: "上传本地歌曲到云盘" }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleLocalMatch, children: "测试本地歌曲匹配" })
               ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "测试搜索歌手信息", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "测试搜索歌手信息", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
                   Input,
                   {
                     placeholder: "请输入歌手名称",
+                    addonBefore: "歌手名称",
                     value: searchValue,
                     onChange: (e) => setSearchValue(e.target.value)
                   }
                 ),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearchArtist, children: "搜索歌手信息" })
+              ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "测试搜索接口", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+                  Input,
+                  {
+                    placeholder: "请输入搜索关键词",
+                    addonBefore: "搜索关键词",
+                    value: searchKeyword,
+                    onChange: (e) => setSearchKeyword(e.target.value)
+                  }
+                ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearch, children: "搜索（search）" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleCloudSearch, children: "搜索（cloudSearch）" })
               ] }) })
-            ]
+            ] })
           }
         );
       });
@@ -23041,6 +24975,7 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearchArtist, ch
         };
         const localUploadRef = useRef(null);
         const playListRef = useRef(null);
+        const searchRef = useRef(null);
         const cloudImportRef = useRef(null);
         const handleImport = () => {
           cloudImportRef.current.open();
@@ -23079,12 +25014,14 @@ jsxRuntimeExports.jsx(Tooltip, { title: "云盘JSON导入", placement: "left", c
           false,
           false,
           false,
+          false,
 jsxRuntimeExports.jsx(QuickUpload$1, { ref: quickUploadRef }),
 jsxRuntimeExports.jsx(CloudMusicManager, { ref: cloudMusicManagerRef }),
 jsxRuntimeExports.jsx(LocalUpload, { ref: localUploadRef }),
 jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef }),
 jsxRuntimeExports.jsx(TestModal, { ref: testModalRef }),
 jsxRuntimeExports.jsx(PlayList$1, { ref: playListRef }),
+jsxRuntimeExports.jsx(Search$1, { ref: searchRef }),
 jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef }),
 jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
         ] });
@@ -23620,7 +25557,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-BukFGPWg-DDBd2zMK.js", ['./__monkey.entry-CbrmS8oQ.js', './AbstractID3Parser-B7VwR6zJ-DyKpvr3x.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge', './ID3v2Parser-C0ftDv5F-DzYOtTke.js'], (function (exports, module) {
+System.register("./MpegParser-DoefaO-R-Dj6fQ2f6.js", ['./__monkey.entry-DMnS0z6v.js', './AbstractID3Parser-C1UwexQl-GfZkGUTD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BKLK-CqB-BX_HmeiG.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -24215,7 +26152,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-BVBFrJH0-CYufG09z.js", ['./__monkey.entry-CbrmS8oQ.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge'], (function (exports, module) {
+System.register("./AsfParser-C_SoivlU-DR1Nh8jk.js", ['./__monkey.entry-DMnS0z6v.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -24722,7 +26659,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-DamB4CAg-Cd7Se5Qw.js", ['./__monkey.entry-CbrmS8oQ.js', './ID3v2Parser-C0ftDv5F-DzYOtTke.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge'], (function (exports, module) {
+System.register("./DsdiffParser-CO9Q9Lak-BKPJe17Y.js", ['./__monkey.entry-DMnS0z6v.js', './ID3v2Parser-BKLK-CqB-BX_HmeiG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -24896,7 +26833,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-DzwzTmPQ-B7isKTTv.js", ['./__monkey.entry-CbrmS8oQ.js', './ID3v2Parser-C0ftDv5F-DzYOtTke.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge'], (function (exports, module) {
+System.register("./AiffParser-pgGQg1Gu-B4nNJKbN.js", ['./__monkey.entry-DMnS0z6v.js', './ID3v2Parser-BKLK-CqB-BX_HmeiG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -25067,7 +27004,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-CI2QaBwH-CfnIZiJV.js", ['./__monkey.entry-CbrmS8oQ.js', './AbstractID3Parser-B7VwR6zJ-DyKpvr3x.js', './ID3v2Parser-C0ftDv5F-DzYOtTke.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge'], (function (exports, module) {
+System.register("./DsfParser-WRUWgat8-CBVAJ9lE.js", ['./__monkey.entry-DMnS0z6v.js', './AbstractID3Parser-C1UwexQl-GfZkGUTD.js', './ID3v2Parser-BKLK-CqB-BX_HmeiG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -25165,7 +27102,7 @@ System.register("./DsfParser-CI2QaBwH-CfnIZiJV.js", ['./__monkey.entry-CbrmS8oQ.
   };
 }));
 
-System.register("./FlacParser-B2wTqkGg-Cdj5Wdtk.js", ['./__monkey.entry-CbrmS8oQ.js', './VorbisParser-BAvl3BTy-CNxpzCIg.js', './AbstractID3Parser-B7VwR6zJ-DyKpvr3x.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge', './ID3v2Parser-C0ftDv5F-DzYOtTke.js'], (function (exports, module) {
+System.register("./FlacParser-Dwju9kli-CaJpLZlw.js", ['./__monkey.entry-DMnS0z6v.js', './VorbisParser-DLVR1tl5-CtsXWzrV.js', './AbstractID3Parser-C1UwexQl-GfZkGUTD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BKLK-CqB-BX_HmeiG.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -25317,7 +27254,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-CyBAngFp-Rjnur7Cg.js", ['./__monkey.entry-CbrmS8oQ.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge'], (function (exports, module) {
+System.register("./MatroskaParser-CAlb9_7J-DX8hd5e9.js", ['./__monkey.entry-DMnS0z6v.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -25924,7 +27861,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-DV8PZw-t-GXfp5Xph.js", ['./__monkey.entry-CbrmS8oQ.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge'], (function (exports, module) {
+System.register("./MP4Parser-XjErgjoC-B07oMpe2.js", ['./__monkey.entry-DMnS0z6v.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -26755,7 +28692,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-ZDqdhqug-BXnaj__z.js", ['./__monkey.entry-CbrmS8oQ.js', './AbstractID3Parser-B7VwR6zJ-DyKpvr3x.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge', './ID3v2Parser-C0ftDv5F-DzYOtTke.js'], (function (exports, module) {
+System.register("./MusepackParser-DaGLGWgr-CetFBBBH.js", ['./__monkey.entry-DMnS0z6v.js', './AbstractID3Parser-C1UwexQl-GfZkGUTD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BKLK-CqB-BX_HmeiG.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -27032,7 +28969,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-B7VwR6zJ-DyKpvr3x.js", ['./__monkey.entry-CbrmS8oQ.js', './ID3v2Parser-C0ftDv5F-DzYOtTke.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-C1UwexQl-GfZkGUTD.js", ['./__monkey.entry-DMnS0z6v.js', './ID3v2Parser-BKLK-CqB-BX_HmeiG.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -27096,7 +29033,7 @@ System.register("./AbstractID3Parser-B7VwR6zJ-DyKpvr3x.js", ['./__monkey.entry-C
   };
 }));
 
-System.register("./OggParser-DQnKuRrD-wD8AgtlZ.js", ['./__monkey.entry-CbrmS8oQ.js', './VorbisParser-BAvl3BTy-CNxpzCIg.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge'], (function (exports, module) {
+System.register("./OggParser-rlNoLpfy-BgIxHPJj.js", ['./__monkey.entry-DMnS0z6v.js', './VorbisParser-DLVR1tl5-CtsXWzrV.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -27371,7 +29308,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-BAvl3BTy-CNxpzCIg.js", ['./__monkey.entry-CbrmS8oQ.js'], (function (exports, module) {
+System.register("./VorbisParser-DLVR1tl5-CtsXWzrV.js", ['./__monkey.entry-DMnS0z6v.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -27587,7 +29524,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-BT8abLZ8-ByhulSmO.js", ['./__monkey.entry-CbrmS8oQ.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge'], (function (exports, module) {
+System.register("./WavPackParser-B1W6Q8MY-BHrdBIZ3.js", ['./__monkey.entry-DMnS0z6v.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -27767,7 +29704,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-Chdv5iA--BKlpcD6n.js", ['./__monkey.entry-CbrmS8oQ.js', './ID3v2Parser-C0ftDv5F-DzYOtTke.js', 'react', 'antd', 'react-dom', '@ant-design/icons', 'node-forge'], (function (exports, module) {
+System.register("./WaveParser-CcT8Iu6I-D1UOn_K-.js", ['./__monkey.entry-DMnS0z6v.js', './ID3v2Parser-BKLK-CqB-BX_HmeiG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -28040,7 +29977,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-C0ftDv5F-DzYOtTke.js", ['./__monkey.entry-CbrmS8oQ.js'], (function (exports, module) {
+System.register("./ID3v2Parser-BKLK-CqB-BX_HmeiG.js", ['./__monkey.entry-DMnS0z6v.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
