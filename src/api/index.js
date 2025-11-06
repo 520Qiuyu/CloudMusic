@@ -596,3 +596,13 @@ export const getAlbumDetail = async (id) => {
     },
   });
 };
+
+/** 获取歌曲动态封面 */
+export const getSongDynamicCover = async (songId) => {
+  return weapiRequest('/api/songplay/dynamic-cover', {
+    data: {
+      songId,
+    },
+  });
+};
+

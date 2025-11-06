@@ -1,7 +1,7 @@
 import { getPlaylistAllData } from '@/api';
 import { QUALITY_LEVELS } from '@/constant';
 import { promiseLimit } from '@/utils';
-import { getQualityTags } from '@/utils/musicQuality';
+import { getQualityTags } from '@/utils/music';
 import { useState } from 'react';
 import { usePlayMusic } from './usePlayMusic';
 import { groupBy } from 'lodash';

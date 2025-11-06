@@ -34,6 +34,28 @@ export const QUALITY_WEIGHTS = {
   none: 0,
 };
 
+// 搜索类型
+export const SEARCH_TYPES = {
+  单曲: '1',
+  专辑: '10',
+  歌手: '100',
+  歌单: '1000',
+  用户: '1002'  ,
+  MV: '1004',
+  歌词: '1006',
+  电台: '1009',
+  视频: '1014',
+  1: '单曲',
+  10: '专辑',
+  100: '歌手',
+  1000: '歌单',
+  1002: '用户',
+  1004: 'MV',
+  1006: '歌词',
+  1009: '电台',
+  1014: '视频',
+};
+
 // API相关常量
 export const UPLOAD_CHUNK_SIZE = 8 * 1024 * 1024; // 8MB
 export const PLAY_API_LIMIT = 1000;

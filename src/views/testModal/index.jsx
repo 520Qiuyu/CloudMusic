@@ -17,6 +17,7 @@ import {
   getQrCode,
   getQrKey,
   getQrStatus,
+  getSongDynamicCover,
   getSongInfoList,
   getSongLyric,
   getSongUrl,
@@ -28,6 +29,7 @@ import {
 import { promiseLimit, sleep } from '../../utils';
 import { msgError, msgSuccess } from '../../utils/modal';
 import { downloadFile } from '@/utils/download';
+import { cloudSearch, search } from '@/api/search';
 
 const TestModal = forwardRef((props, ref) => {
   const { visible, open, close } = useVisible({}, ref);
@@ -138,6 +140,16 @@ const TestModal = forwardRef((props, ref) => {
       console.log('error', error);
     }
   };
+
+  // 获取歌曲动态封面
+  const handleGetSongDynamicCover = async () => {
+    try {
+      const res = await getSongDynamicCover(songId);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
   // 删除云盘歌曲
   const handleDeleteCloudSong = async () => {
     console.log('删除云盘歌曲');
@@ -199,12 +211,13 @@ const TestModal = forwardRef((props, ref) => {
     try {
       const res = await getArtistAlbumList(artistId);
       console.log('res', res);
-      if(res.code === 200){
-      const downloadTask = res.map(
-        (item) => () =>
-          downloadFile(item.cover.split('?')[0], item.name + '.jpg'),
-      );
-      await promiseLimit(downloadTask, 1);}
+      if (res.code === 200) {
+        const downloadTask = res.map(
+          (item) => () =>
+            downloadFile(item.cover.split('?')[0], item.name + '.jpg'),
+        );
+        await promiseLimit(downloadTask, 1);
+      }
     } catch (error) {
       console.log('error', error);
     }
@@ -312,12 +325,37 @@ const TestModal = forwardRef((props, ref) => {
     }
   };
 
+  // 测试搜索接口
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const handleSearch = async () => {
+    try {
+      const res = await search(searchKeyword);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+  const handleCloudSearch = async () => {
+    try {
+      const res = await cloudSearch(searchKeyword);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
   return (
     <Modal
       title='测试Modal'
       open={visible}
       onCancel={close}
       width={800}
+      styles={{
+        body: {
+          maxHeight: '75vh',
+          overflowY: 'auto',
+        },
+      }}
       footer={null}
       centered>
       <Form>
@@ -350,18 +388,20 @@ const TestModal = forwardRef((props, ref) => {
             </Button>
           </Space>
         </Form.Item>
-        {/* 测试添加歌曲 */}
-        <Form.Item label='添加歌曲'>
+        {/* 测试向歌单添加歌曲 */}
+        <Form.Item label='向歌单添加歌曲'>
           <Space>
             <Input
-              placeholder='请输入歌单id'
+              placeholder='请输入歌单Id'
+              addonBefore='歌单id'
               value={addInfo.playlistId}
               onChange={(e) =>
                 setAddInfo({ ...addInfo, playlistId: e.target.value })
               }
             />
             <Input
-              placeholder='请输入歌曲id'
+              placeholder='请输入歌曲Id'
+              addonBefore='歌曲id'
               value={addInfo.songId}
               onChange={(e) =>
                 setAddInfo({ ...addInfo, songId: e.target.value })
@@ -372,11 +412,13 @@ const TestModal = forwardRef((props, ref) => {
             </Button>
           </Space>
         </Form.Item>
-        {/* 测试获取歌单列表 */}
-        <Form.Item label='获取歌单列表'>
+
+        {/* 测试获取用户歌单列表 */}
+        <Form.Item label='获取用户歌单列表'>
           <Space>
             <Input
-              placeholder='请输入用户id'
+              placeholder='请输入用户Id'
+              addonBefore='用户id'
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
             />
@@ -385,11 +427,13 @@ const TestModal = forwardRef((props, ref) => {
             </Button>
           </Space>
         </Form.Item>
+
         {/* 测试获取歌单详情 */}
         <Form.Item label='测试获取歌单详情'>
           <Space>
             <Input
-              placeholder='请输入歌单id'
+              placeholder='请输入歌单Id'
+              addonBefore='歌单Id'
               value={playlistId}
               onChange={(e) => setPlaylistId(e.target.value)}
             />
@@ -398,11 +442,13 @@ const TestModal = forwardRef((props, ref) => {
             </Button>
           </Space>
         </Form.Item>
+
         {/* 测试获取歌曲信息 */}
         <Form.Item label='获取歌曲信息'>
-          <Space>
+          <Space wrap>
             <Input
-              placeholder='请输入歌曲id'
+              placeholder='请输入歌曲Id'
+              addonBefore='歌曲Id'
               value={songId}
               onChange={(e) => setSongId(e.target.value)}
             />
@@ -417,16 +463,22 @@ const TestModal = forwardRef((props, ref) => {
             <Button type='primary' onClick={handleGetSongLyric}>
               获取歌曲歌词
             </Button>
+            {/* 获取歌曲动态封面 */}
+            <Button type='primary' onClick={handleGetSongDynamicCover}>
+              获取歌曲动态封面
+            </Button>
             <Button type='primary' onClick={handleDeleteCloudSong}>
               删除云盘歌曲
             </Button>
           </Space>
         </Form.Item>
+
         {/* 测试获取专辑歌曲列表 */}
         <Form.Item label='获取专辑歌曲列表'>
           <Space>
             <Input
-              placeholder='请输入专辑id'
+              placeholder='请输入专辑Id'
+              addonBefore='专辑Id'
               value={albumId}
               onChange={(e) => setAlbumId(e.target.value)}
             />
@@ -439,11 +491,13 @@ const TestModal = forwardRef((props, ref) => {
             </Button>
           </Space>
         </Form.Item>
+
         {/* 测试获取歌手歌曲列表 */}
         <Form.Item label='获取歌手歌曲列表'>
-          <Space>
+          <Space wrap>
             <Input
-              placeholder='请输入歌手id'
+              placeholder='请输入歌手Id'
+              addonBefore='歌手Id'
               value={artistId}
               onChange={(e) => setArtistId(e.target.value)}
             />
@@ -462,51 +516,73 @@ const TestModal = forwardRef((props, ref) => {
             </Button>
           </Space>
         </Form.Item>
+
+        {/* 测试二维码登录 */}
+        <Form.Item label='二维码登录'>
+          <div id='qrcode-container'></div>
+          <Button type='primary' onClick={handleQrLogin}>
+            二维码登录
+          </Button>
+        </Form.Item>
+
+        {/* 测试上传本地歌曲到云盘 */}
+        <Form.Item label='上传本地歌曲到云盘'>
+          <Space wrap>
+            <Upload
+              fileList={fileList}
+              accept='.flac,.mp3,.wav,.aac,.m4a,.ogg,.wma'
+              beforeUpload={(file) => {
+                setFileList([...fileList, file]);
+                return false;
+              }}
+              onRemove={(file) => {
+                setFileList(fileList.filter((f) => f !== file));
+              }}>
+              <Button icon={<UploadOutlined />}>Select File</Button>
+            </Upload>
+            <Button type='primary' onClick={handleUploadLocalSong}>
+              上传本地歌曲到云盘
+            </Button>
+            {/* 测试本地歌曲匹配 */}
+            <Button type='primary' onClick={handleLocalMatch}>
+              测试本地歌曲匹配
+            </Button>
+          </Space>
+        </Form.Item>
+
+        {/* 测试搜索歌手信息 */}
+        <Form.Item label='测试搜索歌手信息'>
+          <Space wrap>
+            <Input
+              placeholder='请输入歌手名称'
+              addonBefore='歌手名称'
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <Button type='primary' onClick={handleSearchArtist}>
+              搜索歌手信息
+            </Button>
+          </Space>
+        </Form.Item>
+
+        {/* 测试搜索接口 */}
+        <Form.Item label='测试搜索接口'>
+          <Space wrap>
+            <Input
+              placeholder='请输入搜索关键词'
+              addonBefore='搜索关键词'
+              value={searchKeyword}
+              onChange={(e) => setSearchKeyword(e.target.value)}
+            />
+            <Button type='primary' onClick={handleSearch}>
+              搜索（search）
+            </Button>
+            <Button type='primary' onClick={handleCloudSearch}>
+              搜索（cloudSearch）
+            </Button>
+          </Space>
+        </Form.Item>
       </Form>
-      {/* 测试二维码登录 */}
-      <Form.Item label='二维码登录'>
-        <div id='qrcode-container'></div>
-        <Button type='primary' onClick={handleQrLogin}>
-          二维码登录
-        </Button>
-      </Form.Item>
-      {/* 测试上传本地歌曲到云盘 */}
-      <Form.Item label='上传本地歌曲到云盘'>
-        <Space>
-          <Upload
-            fileList={fileList}
-            accept='.flac,.mp3,.wav,.aac,.m4a,.ogg,.wma'
-            beforeUpload={(file) => {
-              setFileList([...fileList, file]);
-              return false;
-            }}
-            onRemove={(file) => {
-              setFileList(fileList.filter((f) => f !== file));
-            }}>
-            <Button icon={<UploadOutlined />}>Select File</Button>
-          </Upload>
-          <Button type='primary' onClick={handleUploadLocalSong}>
-            上传本地歌曲到云盘
-          </Button>
-          {/* 测试本地歌曲匹配 */}
-          <Button type='primary' onClick={handleLocalMatch}>
-            测试本地歌曲匹配
-          </Button>
-        </Space>
-      </Form.Item>
-      {/* 测试搜索歌手信息 */}
-      <Form.Item label='测试搜索歌手信息'>
-        <Space>
-          <Input
-            placeholder='请输入歌手名称'
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-          />
-          <Button type='primary' onClick={handleSearchArtist}>
-            搜索歌手信息
-          </Button>
-        </Space>
-      </Form.Item>
     </Modal>
   );
 });

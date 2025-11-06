@@ -1,23 +1,22 @@
-import SearchForm from '@/components/SearchForm';
 import { QUALITY_LEVELS } from '@/constant';
-import useFilter from '@/hooks/useFilter';
-import { useGetSongListDetail } from '@/hooks/useGetSongListDetail';
-import { usePlayMusic } from '@/hooks/usePlayMusic';
-import { useVisible } from '@/hooks/useVisible';
-import { msgWarning } from '@/utils/modal';
-import { formatDuration, getFeeTag, getMarkTags, getOriginTag, getQualityTags, getTypeTag, formatPopularity } from '@/utils/music';
+import { usePlayMusic } from '@/hooks';
+import {
+  formatDuration,
+  formatPopularity,
+  getFeeTag,
+  getMarkTags,
+  getOriginTag,
+  getQualityTags,
+  getTypeTag,
+} from '@/utils/music';
 import {
   DownloadOutlined,
-  FileOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
 } from '@ant-design/icons';
 import {
   Button,
-  Form,
   Image,
-  Input,
-  Modal,
   Select,
   Space,
   Table,
@@ -26,71 +25,23 @@ import {
   Typography,
 } from 'antd';
 import dayjs from 'dayjs';
-import duration from 'dayjs/plugin/duration';
-import { forwardRef, useEffect, useState } from 'react';
-import styles from './index.module.scss';
-dayjs.extend(duration);
+import { useEffect, useState } from 'react';
+import styles from '../index.module.scss';
+import { CopyText } from '@/components';
 
-function SongList(props, ref) {
-  const { visible, open, close } = useVisible(
-    {
-      onOpen(id) {
-        setPlaylistId(id);
-      },
-      onReset() {
-        resetSongList();
-        setPlaylistId(null);
-      },
-    },
-    ref,
-  );
+const SongTab = ({ data, loading }) => {
+  const { play, download, isPlaying, pause, downloading } = usePlayMusic();
 
-  const { getUrl, play, pause, isPlaying, download, playPlayList } =
-    usePlayMusic();
-
-  const {
-    getSongListData,
-    loading,
-    songList,
-    resetSongList,
-    downloadSongList,
-    downloading,
-    downloadSongListAsJson,
-  } = useGetSongListDetail();
-  const [playlistId, setPlaylistId] = useState(null);
-  const [selectedRows, setSelectedRows] = useState([]);
-
+  const [songList, setSongList] = useState(data);
   useEffect(() => {
-    if (playlistId && visible) {
-      getSongListData(playlistId);
-    }
-  }, [playlistId, visible]);
-
-  // 使用useFilter hook处理筛选逻辑
-  const filterConfig = {
-    fields: {
-      name: {
-        getValue: (song) => song.name,
-      },
-      artists: {
-        getValue: (song) => song.ar?.map((artist) => artist.name).join(', '),
-      },
-      album: {
-        getValue: (song) => song.al?.name,
-      },
-    },
-  };
-  const {
-    filteredList: filteredSongList,
-    setFilteredList: setFilteredSongList,
-    handleFilter: handleSearch,
-  } = useFilter(songList, filterConfig);
+    setSongList(data);
+  }, [data]);
 
   /** 选择音质 */
   const handleSelectQuality = (record, value) => {
     console.log('record', record);
     console.log('value', value);
-    setFilteredSongList((prev) => {
+    setSongList((prev) => {
       return prev.map((song) => {
         if (song.id === record.id) {
           return { ...song, level: value };
@@ -119,7 +70,7 @@ function SongList(props, ref) {
     );
   };
 
-  // 表格列配置
+  // 歌曲表格列配置
   const columns = [
     {
       title: '歌曲信息',
@@ -154,7 +105,7 @@ function SongList(props, ref) {
                   src={record.al.picUrl}
                   width={60}
                   height={60}
-                  preview={false}
+                  preview={true}
                   placeholder
                 />
               ) : (
@@ -257,7 +208,47 @@ function SongList(props, ref) {
       dataIndex: ['al', 'id'],
       key: 'albumId',
       width: 120,
-      render: (id) => id || '-',
+      render: (id) => <CopyText text={id} /> || '-',
+    },
+    {
+      title: '音质',
+      key: 'quality',
+      width: 150,
+      render: (_, record) => {
+        const tags = getQualityTags(record);
+        if (tags.length === 0) return '-';
+        return (
+          <div>
+            {tags.map((tag, index) => (
+              <Tag
+                key={index}
+                color={tag.color}
+                style={{ marginBottom: '4px' }}>
+                {tag.label}
+              </Tag>
+            ))}
+          </div>
+        );
+      },
+    },
+    // 选择音质
+    {
+      title: '选择音质',
+      key: 'selectQuality',
+      width: 150,
+      render: (_, record) => {
+        const options = getQualityTags(record);
+        const defaultLevel =
+          options.find((option) => option.value === QUALITY_LEVELS.无损)
+            ?.value || options[0]?.value;
+        return (
+          <Select
+            options={options}
+            value={record.level || defaultLevel}
+            onChange={(value) => handleSelectQuality(record, value)}
+          />
+        );
+      },
     },
     {
       title: '时长',
@@ -385,46 +376,7 @@ function SongList(props, ref) {
         return <Tag color={tag.color}>{tag.text}</Tag>;
       },
     },
-    {
-      title: '音质',
-      key: 'quality',
-      width: 150,
-      render: (_, record) => {
-        const tags = getQualityTags(record);
-        if (tags.length === 0) return '-';
-        return (
-          <div>
-            {tags.map((tag, index) => (
-              <Tag
-                key={index}
-                color={tag.color}
-                style={{ marginBottom: '4px' }}>
-                {tag.label}
-              </Tag>
-            ))}
-          </div>
-        );
-      },
-    },
-    // 选择音质
-    {
-      title: '选择音质',
-      key: 'selectQuality',
-      width: 150,
-      render: (_, record) => {
-        const options = getQualityTags(record);
-        const defaultLevel =
-          options.find((option) => option.value === QUALITY_LEVELS.无损)
-            ?.value || options[0]?.value;
-        return (
-          <Select
-            options={options}
-            value={record.level || defaultLevel}
-            onChange={(value) => handleSelectQuality(record, value)}
-          />
-        );
-      },
-    },
+
     {
       title: '标记',
       dataIndex: 'mark',
@@ -502,6 +454,7 @@ function SongList(props, ref) {
             <Button
               type='link'
               size='small'
+              loading={downloading === record.id}
               icon={<DownloadOutlined />}
               onClick={() => handleDownload(record)}>
               下载
@@ -512,112 +465,17 @@ function SongList(props, ref) {
     },
   ];
 
-  /** 播放当前歌单 */
-  const handlePlayAll = async () => {
-    if (!filteredSongList.length) return;
-    try {
-      await playPlayList(filteredSongList.map((song) => song.id));
-    } catch (error) {
-      console.error('播放歌单失败:', error);
-    }
-  };
-  /** 下载当前歌单 */
-  const handleDownloadAll = async () => {
-    if (!filteredSongList.length) return msgWarning('暂无歌曲下载');
-    try {
-      await downloadSongList(filteredSongList);
-    } catch (error) {
-      console.error('下载歌单失败:', error);
-    }
-  };
-  /** 下载当前歌单JSON */
-  const handleDownloadAllJson = async () => {
-    if (!filteredSongList.length) return;
-    try {
-      await downloadSongListAsJson(filteredSongList);
-    } catch (error) {
-      console.error('下载歌单JSON失败:', error);
-    }
-  };
-
-  const renderFooter = () => {
-    return (
-      <Space>
-        <Button
-          type='primary'
-          icon={<PlayCircleOutlined />}
-          onClick={handlePlayAll}>
-          播放全部
-        </Button>
-        <Button
-          icon={<DownloadOutlined />}
-          loading={downloading}
-          onClick={handleDownloadAll}>
-          下载全部 ({selectedRows.length || filteredSongList.length})
-        </Button>
-        <Button
-          icon={<FileOutlined />}
-          loading={downloading}
-          onClick={handleDownloadAllJson}>
-          下载JSON ({selectedRows.length || filteredSongList.length})
-        </Button>
-      </Space>
-    );
-  };
-
   return (
-    <Modal
-      title='歌曲列表'
-      width='90%'
-      centered
-      open={visible}
-      destroyOnHidden
-      footer={renderFooter()}
-      onCancel={close}>
-      {/* 筛选 */}
-      <SearchForm
-        onSearch={handleSearch}
-        data={songList.map((song) => ({
-          ...song,
-          artists: song.ar?.map((artist) => artist.name).join(', '),
-          album: song.al?.name,
-        }))}
-        options={[
-          { label: '歌曲', value: 'name' },
-          { label: '歌手', value: 'artists' },
-          { label: '专辑', value: 'album' },
-        ]}
-      />
-      <Form.Item label='歌单ID'>
-        <Input
-          className={styles['playlist-id-input']}
-          defaultValue={playlistId}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              setPlaylistId(e.target.value);
-            }
-          }}
-        />
-      </Form.Item>
-
-      <Table
-        columns={columns}
-        dataSource={filteredSongList}
-        rowKey='id'
-        loading={loading}
-        scroll={{ y: 400, x: 2000 }}
-        rowSelection={{
-          type: 'checkbox',
-          fixed: true,
-          preserveSelectedRowKeys: true,
-          onChange: (selectedRowKeys, selectedRows) => {
-            setSelectedRows(selectedRows);
-          },
-        }}
-      />
-    </Modal>
+    <Table
+      columns={columns}
+      dataSource={songList}
+      rowKey='id'
+      loading={loading}
+      scroll={{ y: 500, x: 1000 }}
+      className={styles['song-table']}
+      pagination={false}
+    />
   );
-}
+};
 
-export default forwardRef(SongList);
-
+export default SongTab;

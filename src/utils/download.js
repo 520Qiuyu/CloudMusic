@@ -132,6 +132,40 @@ export const downloadAsJson = (data, filename, options = {}) => {
 };
 
 /**
+ * 将歌词字符串下载为 .lrc 文件
+ * @param {string} lrcContent - 歌词内容
+ * @param {string} filename - 文件名（不需要 .lrc 后缀）
+ * @param {Object} options - 配置项（timestamp 是否在文件名添加时间戳）
+ * @example
+ * downloadAsLRC('[00:00.00] 歌词内容', 'song-title');
+ * downloadAsLRC(lrcText, 'song', { timestamp: true });
+ */
+export const downloadAsLRC = (lrcContent, filename, options = {}) => {
+  try {
+    const { timestamp = false } = options;
+    let finalFilename = filename;
+    if (timestamp) {
+      const now = new Date();
+      const ts = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(
+        now.getDate()
+      ).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(
+        now.getMinutes()
+      ).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
+      finalFilename = `${filename}_${ts}`;
+    }
+    const blob = new Blob([lrcContent], { type: 'text/plain' });
+    const blobUrl = window.URL.createObjectURL(blob);
+    downloadFile(blobUrl, `${finalFilename}.lrc`);
+    window.URL.revokeObjectURL(blobUrl);
+    return true;
+  } catch (error) {
+    console.error('LRC歌词下载失败:', error);
+    return false;
+  }
+};
+
+
+/**
  * 直接下载文件
  * @param {Blob} file - 文件 Blob 对象
  * @param {string} name - 文件名

@@ -2,7 +2,7 @@ import { getAlbumDetail, getSongLyric, getSongUrl } from '@/api';
 import { QUALITY_LEVELS } from '@/constant';
 import { writeFlacTagAndPicture } from '@/libs/flac';
 import { isProduction } from '@/utils';
-import { downloadFileWithBlob, getFileBlob } from '@/utils/download';
+import { downloadAsLRC, downloadFileWithBlob, getFileBlob } from '@/utils/download';
 import { msgError } from '@/utils/modal';
 import { useRef, useState } from 'react';
 
@@ -11,6 +11,7 @@ const audio = new Audio();
 export const usePlayMusic = () => {
   const [currentMid, setCurrentMid] = useState('');
   const [isPlaying, setIsPlaying] = useState();
+  const [downloading, setDownloading] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const urlMap = useRef({});
@@ -22,7 +23,7 @@ export const usePlayMusic = () => {
       return urlMap.current[key];
     }
     const res = await getSongUrl([id], { level });
-    if (res.code !== 200) {
+    if (res.code !== 200 || !res.data[0]?.url) {
       msgError(res.message || res.msg || '获取歌曲链接失败');
       throw new Error(res.message || res.msg || '获取歌曲链接失败');
     }
@@ -86,54 +87,61 @@ export const usePlayMusic = () => {
   };
 
   const download = async (id, name, level = QUALITY_LEVELS.无损, albumMid) => {
-    const url = await getUrl(id, level);
-    console.log(`当前下载歌曲${name},音质为${level},链接为${url}`);
-    /** 获取文件后缀 */
-    const finalExt = url.split('?')[0].split('.').pop();
-    const { blob, response } = await getFileBlob(
-      url.replace('http://', 'https://'),
-    );
-    console.log('blob', blob);
-    const fileName = `${name}.${finalExt}`;
-    /** 输出文件 */
-    let outputFile = blob;
-
-    if (!isProduction()) {
+    try {
+      setDownloading(id);
+      const url = await getUrl(id, level);
+      console.log(`当前下载歌曲${name},音质为${level},链接为${url}`);
+      /** 获取文件后缀 */
+      const finalExt = url.split('?')[0].split('.').pop();
+      const { blob, response } = await getFileBlob(
+        url.replace('http://', 'https://'),
+      );
+      console.log('blob', blob);
+      const fileName = `${name}.${finalExt}`;
+      /** 输出文件 */
+      let outputFile = blob;
       /** 获取歌词 */
       const lyric = await getLyric(id);
 
-      /** 获取封面 */
-      let coverBlob;
-      if (albumMid) {
-        const albumRes = await getAlbumDetail(albumMid);
-        if (albumRes.code === 200) {
-          const albumCover = albumRes.album.blurPicUrl;
-          const { blob, response } = await getFileBlob(
-            albumCover.replace('http://', 'https://'),
-          );
-          coverBlob = blob;
-        }
-      }
+      // if (!isProduction()) {
+      //   /** 获取封面 */
+      //   let coverBlob;
+      //   if (albumMid) {
+      //     const albumRes = await getAlbumDetail(albumMid);
+      //     if (albumRes.code === 200) {
+      //       const albumCover = albumRes.album.blurPicUrl;
+      //       const { blob, response } = await getFileBlob(
+      //         albumCover.replace('http://', 'https://'),
+      //       );
+      //       coverBlob = blob;
+      //     }
+      //   }
 
-      switch (finalExt) {
-        case 'flac':
-          outputFile = await writeFlacTagAndPicture(
-            blob,
-            'lyrics',
-            lyric,
-            coverBlob,
-          );
-          break;
-        /*  case 'mp3':
-          outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
-          break; */
-        default:
-          console.log('当前格式不支持');
-          break;
-      }
+      //   switch (finalExt) {
+      //     case 'flac':
+      //       // TOFIX "wasm streaming compile failed: TypeError: Failed to execute 'compile' on 'WebAssembly': An argument must be provided, which must be a Response or Promise<Response> objectfalling back to ArrayBuffer instantiation"
+      //       /* outputFile = await writeFlacTagAndPicture(
+      //         blob,
+      //         'lyrics',
+      //         lyric,
+      //         coverBlob,
+      //       ); */
+      //       break;
+      //     /*  case 'mp3':
+      //     outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
+      //     break; */
+      //     default:
+      //       console.log('当前格式不支持');
+      //       break;
+      //   }
+      // }
+      downloadAsLRC(lyric, name);
+      downloadFileWithBlob(outputFile, fileName);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setDownloading(undefined);
     }
-
-    downloadFileWithBlob(outputFile, fileName);
   };
 
   const pause = () => {
@@ -152,5 +160,6 @@ export const usePlayMusic = () => {
     pause,
     playPlayList,
     download,
+    downloading,
   };
 };

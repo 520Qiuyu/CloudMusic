@@ -68,8 +68,8 @@ for (let p of paths) {
       __dirname,
       __filename,
     )}自动生成，请勿修改\n${exportStatements}`;
-    fs.writeFileSync(path.resolve(dir, 'index.ts'), exportStatements);
+    fs.writeFileSync(path.resolve(dir, 'index.js'), exportStatements);
   }
 }
 
-console.log('index.ts 文件生成成功');
+console.log('index.js 文件生成成功');

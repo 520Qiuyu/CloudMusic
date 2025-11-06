@@ -1,3 +1,4 @@
+import Search from '@/views/search';
 import {
   CloudUploadOutlined,
   CodeOutlined,
@@ -5,7 +6,8 @@ import {
   GithubOutlined,
   InfoCircleOutlined,
   OrderedListOutlined,
-  UploadOutlined
+  SearchOutlined,
+  UploadOutlined,
 } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
 import { useRef } from 'react';
@@ -44,6 +46,12 @@ const ButtonGroup = () => {
   const playListRef = useRef(null);
   const handlePlayList = () => {
     playListRef.current.open();
+  };
+
+  // 搜索
+  const searchRef = useRef(null);
+  const handleSearch = () => {
+    searchRef.current.open();
   };
 
   // 云盘导入
@@ -120,6 +128,18 @@ const ButtonGroup = () => {
         </Tooltip>
       )}
 
+      {/* 搜索 */}
+      {!isSell && (
+        <Tooltip title={'搜索'} placement='left'>
+          <Button
+            type='primary'
+            icon={<SearchOutlined />}
+            onClick={handleSearch}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
+
       {/* testModal */}
       {!isSell && (
         <Tooltip title={'testModal'} placement='left'>
@@ -153,6 +173,7 @@ const ButtonGroup = () => {
       <TestModal ref={testModalRef} />
       {/* 查看歌单 */}
       <PlayList ref={playListRef} />
+      <Search ref={searchRef} />
       <CloudImport ref={cloudImportRef} />
       <GithubInfo ref={githubInfoRef} />
     </div>

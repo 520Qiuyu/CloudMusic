@@ -1,5 +1,6 @@
 import { CloseOutlined, ExclamationCircleFilled } from '@ant-design/icons';
 import { Modal, message } from 'antd';
+import { nanoid } from 'nanoid';
 import React from 'react';
 
 message.config({
@@ -22,7 +23,19 @@ export const msgWarning = (content) => {
 export const msgError = (content) => {
   message.error(content);
 };
-
+/** 加载中消息提示 */
+export const msgLoading = (loadingContent, completeCallBack) => {
+  const key = nanoid();
+  message
+    .loading({
+      key,
+      content: loadingContent,
+    })
+    .then(() => {
+      completeCallBack?.();
+    });
+  return () => message.destroy(key);
+};
 /** 确认弹窗 */
 export const confirm = (content, title, otherOptions = {}) => {
   return new Promise((resolve, reject) => {
