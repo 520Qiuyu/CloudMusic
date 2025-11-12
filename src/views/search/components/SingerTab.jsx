@@ -2,7 +2,7 @@ import { CopyText } from '@/components';
 import AlbumListModal from '@/views/albumList';
 import HotSongModal from '@/views/hotSong';
 import { PlayCircleOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Image, Space, Table } from 'antd';
+import { Button, Image, Space, Table, Tooltip, Typography } from 'antd';
 import { useRef } from 'react';
 import styles from '../index.module.scss';
 
@@ -11,10 +11,10 @@ const SingerTab = ({ data, loading }) => {
   const hotSongModalRef = useRef();
   const handleHotSong = (record) => {
     hotSongModalRef.current.open({
-      singerId: record.singerID,
-      singerMid: record.singerMID,
-      singerName: record.singerName,
-      singerPic: record.singerPic,
+      singerId: record.id,
+      singerMid: record.id,
+      singerName: record.name,
+      singerPic: record.picUrl || record.img1v1Url,
     });
   };
 
@@ -22,10 +22,10 @@ const SingerTab = ({ data, loading }) => {
   const albumModalRef = useRef();
   const handleAlbum = (record) => {
     albumModalRef.current.open({
-      singerId: record.singerID,
-      singerMid: record.singerMID,
-      singerName: record.singerName,
-      singerPic: record.singerPic,
+      singerId: record.id,
+      singerMid: record.id,
+      singerName: record.name,
+      singerPic: record.picUrl || record.img1v1Url,
     });
   };
 
@@ -33,46 +33,81 @@ const SingerTab = ({ data, loading }) => {
   const columns_singer = [
     {
       title: '歌手信息',
-      dataIndex: 'singerName',
+      dataIndex: 'name',
       width: 300,
       render: (text, record) => (
         <Space size='middle' className={styles['song-info']}>
           <div className={styles['song-cover']}>
-            <Image src={record.singerPic} />
+            <Image
+              src={record.picUrl || record.img1v1Url}
+              width={60}
+              height={60}
+              style={{ objectFit: 'cover' }}
+            />
           </div>
           <div className={styles['song-details']}>
-            <div className={styles['song-name']} title={text}>
-              {text}
-            </div>
+            <Tooltip title={text} placement='top'>
+              <div
+                className={styles['song-name']}
+                tabIndex={0}
+                role='text'
+                aria-label={`歌手名称 ${text}`}>
+                {text}
+              </div>
+            </Tooltip>
+            <Tooltip title={record.id} placement='top'>
+              <Typography.Text
+                className={styles['song-mid-text']}
+                copyable
+                aria-label={`复制歌手ID ${record.id}`}>
+                {record.id}
+              </Typography.Text>
+            </Tooltip>
+            {(record.alias?.length || record.alia?.length) && (
+              <Tooltip
+                title={record.alias?.join('、') || record.alia?.join('、')}
+                placement='top'>
+                <div
+                  className={styles['song-album']}
+                  tabIndex={0}
+                  role='text'
+                  aria-label={`别名 ${record.alias?.[0] || record.alia?.[0]}`}>
+                  {record.alias?.[0] || record.alia?.[0]}
+                </div>
+              </Tooltip>
+            )}
           </div>
         </Space>
       ),
     },
     {
       title: '歌曲数量',
-      dataIndex: 'songNum',
+      dataIndex: 'musicSize',
       width: 100,
       align: 'center',
+      render: (value) => value ?? '-',
     },
     {
       title: '专辑数量',
-      dataIndex: 'albumNum',
+      dataIndex: 'albumSize',
       width: 100,
       align: 'center',
+      render: (value) => value ?? '-',
     },
     {
       title: 'MV数量',
-      dataIndex: 'mvNum',
+      dataIndex: 'mvSize',
       width: 100,
       align: 'center',
+      render: (value) => value ?? '-',
     },
     {
       title: '歌手ID',
-      dataIndex: 'singerMID',
+      dataIndex: 'id',
       width: 200,
       align: 'center',
-      render: (singerMID) => (
-        <CopyText className={styles['song-mid-text']} text={singerMID} />
+      render: (id) => (
+        <CopyText className={styles['song-mid-text']} text={String(id)} />
       ),
     },
     {
@@ -86,15 +121,17 @@ const SingerTab = ({ data, loading }) => {
             type='link'
             size='small'
             icon={<UserOutlined />}
-            onClick={() => handleHotSong(record)}>
-            查看热门歌曲
+            onClick={() => handleHotSong(record)}
+            aria-label={`查看${record.name}的热门歌曲`}>
+            热门歌曲
           </Button>
           <Button
             type='link'
             color='danger'
             size='small'
             icon={<PlayCircleOutlined />}
-            onClick={() => handleAlbum(record)}>
+            onClick={() => handleAlbum(record)}
+            aria-label={`查看${record.name}的专辑`}>
             查看专辑
           </Button>
         </Space>
@@ -107,7 +144,7 @@ const SingerTab = ({ data, loading }) => {
       <Table
         columns={columns_singer}
         dataSource={data}
-        rowKey='singerMID'
+        rowKey='id'
         loading={loading}
         scroll={{ y: 500, x: 1100 }}
         className={styles['song-table']}

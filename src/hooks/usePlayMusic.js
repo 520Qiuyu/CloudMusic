@@ -2,7 +2,11 @@ import { getAlbumDetail, getSongLyric, getSongUrl } from '@/api';
 import { QUALITY_LEVELS } from '@/constant';
 import { writeFlacTagAndPicture } from '@/libs/flac';
 import { isProduction } from '@/utils';
-import { downloadAsLRC, downloadFileWithBlob, getFileBlob } from '@/utils/download';
+import {
+  downloadAsLRC,
+  downloadFileWithBlob,
+  getFileBlob,
+} from '@/utils/download';
 import { msgError } from '@/utils/modal';
 import { useRef, useState } from 'react';
 
@@ -103,38 +107,37 @@ export const usePlayMusic = () => {
       /** 获取歌词 */
       const lyric = await getLyric(id);
 
-      // if (!isProduction()) {
-      //   /** 获取封面 */
-      //   let coverBlob;
-      //   if (albumMid) {
-      //     const albumRes = await getAlbumDetail(albumMid);
-      //     if (albumRes.code === 200) {
-      //       const albumCover = albumRes.album.blurPicUrl;
-      //       const { blob, response } = await getFileBlob(
-      //         albumCover.replace('http://', 'https://'),
-      //       );
-      //       coverBlob = blob;
-      //     }
-      //   }
+      /** 获取封面 */
+      let coverBlob;
+      if (albumMid) {
+        const albumRes = await getAlbumDetail(albumMid);
+        if (albumRes.code === 200) {
+          const albumCover = albumRes.album.blurPicUrl;
+          const { blob, response } = await getFileBlob(
+            albumCover.replace('http://', 'https://'),
+          );
+          coverBlob = blob;
+        }
+      }
 
-      //   switch (finalExt) {
-      //     case 'flac':
-      //       // TOFIX "wasm streaming compile failed: TypeError: Failed to execute 'compile' on 'WebAssembly': An argument must be provided, which must be a Response or Promise<Response> objectfalling back to ArrayBuffer instantiation"
-      //       /* outputFile = await writeFlacTagAndPicture(
-      //         blob,
-      //         'lyrics',
-      //         lyric,
-      //         coverBlob,
-      //       ); */
-      //       break;
-      //     /*  case 'mp3':
-      //     outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
-      //     break; */
-      //     default:
-      //       console.log('当前格式不支持');
-      //       break;
-      //   }
-      // }
+      switch (finalExt) {
+        case 'flac':
+          // TOFIX "wasm streaming compile failed: TypeError: Failed to execute 'compile' on 'WebAssembly': An argument must be provided, which must be a Response or Promise<Response> objectfalling back to ArrayBuffer instantiation"
+          outputFile = await writeFlacTagAndPicture(
+            blob,
+            'lyrics',
+            lyric,
+            coverBlob,
+          );
+          break;
+        /*  case 'mp3':
+          outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
+          break; */
+        default:
+          console.log('当前格式不支持');
+          break;
+      }
+
       downloadAsLRC(lyric, name);
       downloadFileWithBlob(outputFile, fileName);
     } catch (error) {

@@ -1,0 +1,158 @@
+.album-list-modal {
+  :global(.ant-modal-body) {
+    padding: 16px 0 0;
+  }
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 8px;
+}
+
+.title-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.title-text {
+  margin: 0;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.title-stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #595959;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-label {
+  color: #8c8c8c;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #262626;
+}
+
+.album-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.album-cover {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.album-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.album-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover {
+    color: #1890ff;
+  }
+}
+
+.album-alias {
+  font-size: 12px;
+  color: #8c8c8c;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.album-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.album-tag {
+  margin: 0;
+}
+
+.album-company {
+  font-size: 12px;
+  color: #8c8c8c;
+  max-width: 160px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.singer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.singer-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.singer-id {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+.album-id {
+  font-size: 12px;
+}
+
+.album-table {
+  :global(.ant-table-body) {
+    scrollbar-width: thin;
+  }
+}
+
+.search-area {
+  padding: 0 24px 16px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.selected-info {
+  font-size: 13px;
+  color: #595959;
+}
+
+.selected-extra {
+  margin-left: 4px;
+  color: #8c8c8c;
+}

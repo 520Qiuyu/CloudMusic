@@ -4,7 +4,7 @@ import { SEARCH_TYPES } from '@/constant';
 import { useGetData, useVisible } from '@/hooks';
 import { Modal, Pagination, Tabs } from 'antd';
 import { forwardRef, useState } from 'react';
-import { AlbumTab, SongTab } from './components';
+import { AlbumTab, SingerTab, SongTab } from './components';
 import styles from './index.module.scss';
 import { Form } from 'antd';
 import { Input } from 'antd';
@@ -76,7 +76,7 @@ const Search = forwardRef((props, ref) => {
           <AlbumTab data={data?.result?.albums || []} loading={loading} />
         </Tabs.TabPane>
         <Tabs.TabPane tab='歌手' key={SEARCH_TYPES.歌手}>
-          {/* <SingerTab data={data?.result?.artists || []} loading={loading} /> */}
+          <SingerTab data={data?.result?.artists || []} loading={loading} />
         </Tabs.TabPane>
         <Tabs.TabPane tab='歌单' key={SEARCH_TYPES.歌单}></Tabs.TabPane>
         <Tabs.TabPane tab='用户' key={SEARCH_TYPES.用户}></Tabs.TabPane>

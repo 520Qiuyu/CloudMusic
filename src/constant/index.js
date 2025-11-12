@@ -56,6 +56,21 @@ export const SEARCH_TYPES = {
   1014: '视频',
 };
 
+// FLAC标签
+export const FLAC_TAGS = {
+  title: '标题',
+  artist: '艺术家',
+  album: '专辑',
+  year: '年份',
+  genre: '流派',
+  comment: '评论',
+  track: '音轨',
+  disc: '碟片',
+  composer: '作曲',
+  lyricist: '作词',
+  lyrics: '歌词',
+};
+
 // API相关常量
 export const UPLOAD_CHUNK_SIZE = 8 * 1024 * 1024; // 8MB
 export const PLAY_API_LIMIT = 1000;
