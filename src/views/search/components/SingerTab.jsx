@@ -12,7 +12,6 @@ const SingerTab = ({ data, loading }) => {
   const handleHotSong = (record) => {
     hotSongModalRef.current.open({
       singerId: record.id,
-      singerMid: record.id,
       singerName: record.name,
       singerPic: record.picUrl || record.img1v1Url,
     });
@@ -23,7 +22,6 @@ const SingerTab = ({ data, loading }) => {
   const handleAlbum = (record) => {
     albumModalRef.current.open({
       singerId: record.id,
-      singerMid: record.id,
       singerName: record.name,
       singerPic: record.picUrl || record.img1v1Url,
     });

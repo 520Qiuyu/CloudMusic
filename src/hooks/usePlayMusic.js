@@ -1,7 +1,11 @@
-import { getAlbumDetail, getSongLyric, getSongUrl } from '@/api';
+import {
+  getAlbumDetail,
+  getSongInfoList,
+  getSongLyric,
+  getSongUrl,
+} from '@/api';
 import { QUALITY_LEVELS } from '@/constant';
-import { writeFlacTagAndPicture } from '@/libs/flac';
-import { isProduction } from '@/utils';
+import { writeFlacTagAndPicture, writeFlacTags } from '@/libs/flac';
 import {
   downloadAsLRC,
   downloadFileWithBlob,
@@ -10,16 +14,26 @@ import {
 import { msgError } from '@/utils/modal';
 import { useRef, useState } from 'react';
 
+/** 全局音频对象 */
 const audio = new Audio();
 
 export const usePlayMusic = () => {
+  /** 当前播放歌曲id */
   const [currentMid, setCurrentMid] = useState('');
+  /** 是否正在播放 */
   const [isPlaying, setIsPlaying] = useState();
+  /** 下载中 */
   const [downloading, setDownloading] = useState(false);
+  /** 当前播放时间 */
   const [currentTime, setCurrentTime] = useState(0);
+  /** 歌曲时长 */
   const [duration, setDuration] = useState(0);
+  /** url映射 */
   const urlMap = useRef({});
+  /** 歌曲信息映射 */
+  const [songInfoMap, setSongInfoMap] = useState({});
 
+  /** 获取歌曲url */
   const getUrl = async (id, level = QUALITY_LEVELS.无损) => {
     const key = `${id}-${level}`;
     console.log('获取歌曲url的key', key);
@@ -49,6 +63,27 @@ export const usePlayMusic = () => {
     );
     console.log('urls', urls);
     return ids.map((id) => urlMap.current[`${id}-${level}`]);
+  };
+
+  const getSongInfo = async (id) => {
+    if (songInfoMap[id]) return songInfoMap[id];
+    const res = await getSongInfoList([id]);
+    if (res[0].code !== 200) {
+      msgError(res[0].message || res[0].msg || '获取歌曲信息失败');
+      throw new Error(res[0].message || res[0].msg || '获取歌曲信息失败');
+    }
+    setSongInfoMap((prv) => ({ ...prv, [id]: res[0].songs?.[0] }));
+    return res[0].songs?.[0];
+  };
+
+  const getSongInfos = async (ids) => {
+    const noInfoIds = ids.filter((id) => !songInfoMap[id]);
+    const infos = await getSongInfoList(noInfoIds);
+    setSongInfoMap((prv) => ({
+      ...prv,
+      ...Object.fromEntries(infos.map((info) => [info.id, info])),
+    }));
+    return infos;
   };
 
   const play = async (id, level) => {
@@ -90,7 +125,7 @@ export const usePlayMusic = () => {
     return res.lrc?.lyric;
   };
 
-  const download = async (id, name, level = QUALITY_LEVELS.无损, albumMid) => {
+  const download = async (id, name, level = QUALITY_LEVELS.无损) => {
     try {
       setDownloading(id);
       const url = await getUrl(id, level);
@@ -107,12 +142,30 @@ export const usePlayMusic = () => {
       /** 获取歌词 */
       const lyric = await getLyric(id);
 
+      /** 获取歌曲信息 */
+      const songInfo = await getSongInfo(id);
+      console.log('songInfo', songInfo);
+      /** 获取专辑id */
+      const albumId = songInfo?.al?.id;
+      /** 歌手 */
+      const singer = songInfo?.ar?.[0]?.name;
+      /** 专辑 */
+      const album = songInfo?.al?.name;
+      /** 歌曲名称 */
+      const songName = songInfo?.name;
+      /** 标签 */
+      const tags = [
+        { tag: 'title', value: songName },
+        { tag: 'artist', value: singer },
+        { tag: 'album', value: album },
+      ];
+      console.log('tags', tags);
       /** 获取封面 */
       let coverBlob;
-      if (albumMid) {
-        const albumRes = await getAlbumDetail(albumMid);
+      if (albumId) {
+        const albumRes = await getAlbumDetail(albumId);
         if (albumRes.code === 200) {
-          const albumCover = albumRes.album.blurPicUrl;
+          const albumCover = albumRes.album.blurPicUrl + '?param=600y600';
           const { blob, response } = await getFileBlob(
             albumCover.replace('http://', 'https://'),
           );
@@ -122,9 +175,9 @@ export const usePlayMusic = () => {
 
       switch (finalExt) {
         case 'flac':
-          // TOFIX "wasm streaming compile failed: TypeError: Failed to execute 'compile' on 'WebAssembly': An argument must be provided, which must be a Response or Promise<Response> objectfalling back to ArrayBuffer instantiation"
+          outputFile = await writeFlacTags(outputFile, tags);
           outputFile = await writeFlacTagAndPicture(
-            blob,
+            outputFile,
             'lyrics',
             lyric,
             coverBlob,

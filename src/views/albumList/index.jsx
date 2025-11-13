@@ -47,7 +47,7 @@ const AlbumListModal = forwardRef((props, ref) => {
   const { visible, close } = useVisible(
     {
       onOpen: (params) => {
-        params && setSingerInfo(params);
+        params && setSingerInfo(params);tes
       },
       onReset: () => {
         setSingerInfo({});

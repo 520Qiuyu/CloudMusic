@@ -99,6 +99,35 @@ export const writeFlacTag = async (file, tagName, tagValue) => {
 };
 
 /**
+ * 一次性写入多个 flac 标签
+ * @param {Blob} file - FLAC 文件 Blob 对象
+ * @param {Array<{ tag: string, value: string }>} tags - 标签数组，每项形如 { tag, value }
+ * @returns {Promise<Blob|undefined>}
+ * @example
+ * const newFile = await writeFlacTags(file, [
+ *   { tag: 'title', value: '新标题' },
+ *   { tag: 'artist', value: '新歌手' },
+ * ]);
+ */
+export const writeFlacTags = async (file, tags) => {
+  try {
+    const metaflac = await Metaflac.fromBlob(file);
+    // 先移除所有同名标签
+    tags.forEach(({ tag, value }) => {
+      metaflac.removeTag(tag.toUpperCase());
+      metaflac.setTag(`${tag.toUpperCase()}=${value}`);
+    });
+    const newBlob = metaflac.saveAsBlob();
+    console.log('批量写入 FLAC 标签成功');
+    return newBlob;
+  } catch (error) {
+    console.error('批量写入 FLAC 标签失败:', error);
+    throw new Error('批量写入 FLAC 标签失败');
+  }
+};
+
+
+/**
  * 给flac嵌入图片
  * @param {Blob} file - FLAC 文件 Blob 对象
  * @param {Blob} picture - 封面图片 Blob 对象
@@ -150,6 +179,7 @@ export const writeFlacTagAndPicture = async (
     // 嵌入图片
     if (picture) {
       await metaflac.importPictureFromFile(picture);
+      console.log('嵌入图片成功');
     }
 
     // 保存并返回

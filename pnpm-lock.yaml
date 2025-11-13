@@ -27,8 +27,8 @@ dependencies:
     specifier: ^2.3.0
     version: 2.3.0
   metaflac-browser-js:
-    specifier: ^1.0.1
-    version: 1.0.1
+    specifier: ^1.1.4
+    version: 1.1.4
   metaflac.wasm:
     specifier: ^0.4.0
     version: 0.4.0
@@ -1852,8 +1852,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /metaflac-browser-js@1.0.1:
-    resolution: {integrity: sha512-0QK1QLIC5oYhYIvIdlupcAEjEEryySZhbEqEOqE2oJxb4iH/1/r3SujKiqaVH3XE1CBV6oFJtNfa4Y09PjES+g==}
+  /metaflac-browser-js@1.1.4:
+    resolution: {integrity: sha512-Uptgsa+4frrHe+CtWJObcwP8IieQuY0QBbAUlY3KY1NTcPcfCdHKwjO39mdre3vtDlr90k3/NMUPdoMgtrvUqA==}
     dev: false
 
   /metaflac.wasm@0.4.0:

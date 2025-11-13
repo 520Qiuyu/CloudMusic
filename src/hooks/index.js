@@ -1,9 +1,9 @@
-// 由d:\Documents\CloudMusic\scripts\generate-exports.cjs自动生成，请勿修改
+// 由d:\Documents\GitHub\CloudMusic\scripts\generate-exports.cjs自动生成，请勿修改
 export { default as useFilter} from './useFilter.js';
+export { useGetAlbumDetail} from './useGetAlbumDetail.js';
+export { useGetData} from './useGetData.js';
 export { useGetDrop} from './useGetDrop.js';
 export { useGetList} from './useGetList.js';
-export { useGetData} from './useGetData.js';
-export { useGetAlbumDetail} from './useGetAlbumDetail.js';
 export { useGetSingerInfo} from './useGetSingerInfo.js';
 export { useGetSingerList} from './useGetSingerList.js';
 export { useGetSingerSongs} from './useGetSingerSongs.js';

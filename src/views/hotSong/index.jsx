@@ -1,4 +1,4 @@
-import { useVisible } from '@/hooks';
+import { useGetSingerInfo, useVisible } from '@/hooks';
 import { Modal } from 'antd';
 import { forwardRef } from 'react';
 
@@ -7,7 +7,20 @@ import { forwardRef } from 'react';
  * @description 用于显示歌手的热门歌曲列表
  */
 const HotSongModal = forwardRef((props, ref) => {
-  const { visible, open, close } = useVisible({}, ref);
+  const { visible, open, close } = useVisible(
+    {
+      onOpen: (params) => {
+        params && setParams(params);
+      },
+      onReset: () => {
+        setParams({});
+      },
+    },
+    ref,
+  );
+
+  const [params, setParams] = useState();
+  const { singerInfo, singerAlbum, singerAllSong } = useGetSingerInfo(params.singerId);
 
   return (
     <Modal
@@ -24,4 +37,3 @@ const HotSongModal = forwardRef((props, ref) => {
 });
 
 export default HotSongModal;
-

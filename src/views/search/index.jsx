@@ -1,13 +1,10 @@
-import { cloudSearch, search } from '@/api/search';
-import SearchForm from '@/components/SearchForm';
+import { cloudSearch } from '@/api/search';
 import { SEARCH_TYPES } from '@/constant';
 import { useGetData, useVisible } from '@/hooks';
-import { Modal, Pagination, Tabs } from 'antd';
+import { Button, Form, Input, Modal, Pagination, Tabs } from 'antd';
 import { forwardRef, useState } from 'react';
 import { AlbumTab, SingerTab, SongTab } from './components';
 import styles from './index.module.scss';
-import { Form } from 'antd';
-import { Input } from 'antd';
 
 const defaultSearchParams = {
   pageNum: 1,
@@ -16,10 +13,9 @@ const defaultSearchParams = {
 };
 
 const Search = forwardRef((props, ref) => {
-  const { visible, open, close } = useVisible({}, ref);
+  const { visible, close } = useVisible({}, ref);
 
   const [searchParams, setSearchParams] = useState(defaultSearchParams);
-  console.log('searchParams', searchParams);
   const handleSearch = (values) => {
     setSearchParams({ ...searchParams, keyword: values.keyword });
   };
@@ -61,6 +57,16 @@ const Search = forwardRef((props, ref) => {
         {/* 关键词 */}
         <Form.Item label='关键词' name='keyword'>
           <Input placeholder='请输入关键词' />
+        </Form.Item>
+        <Form.Item>
+          <Button type='primary' htmlType='submit'>
+            搜索
+          </Button>
+        </Form.Item>
+        <Form.Item>
+          <Button onClick={() => setSearchParams(defaultSearchParams)}>
+            重置
+          </Button>
         </Form.Item>
       </Form>
 
