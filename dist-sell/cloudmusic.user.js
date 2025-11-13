@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-0ZvTVvnt.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-DKGzKOfj.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,14 +44,14 @@ System.register("./__entry.js", ['./__monkey.entry-0ZvTVvnt.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-0ZvTVvnt.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-DKGzKOfj.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useRef, useState, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Progress, Select, ConfigProvider, Tooltip, Spin, Empty, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, GithubOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CopyrightOutlined, FileOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined;
+  var forwardRef, useRef, useState$1, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Progress, ConfigProvider, Select, Tooltip, Spin, Empty, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, GithubOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CopyrightOutlined, FileOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
       useRef = module.useRef;
-      useState = module.useState;
+      useState$1 = module.useState;
       useMemo = module.useMemo;
       useEffect = module.useEffect;
       memo = module.memo;
@@ -75,8 +75,8 @@ System.register("./__monkey.entry-0ZvTVvnt.js", ['react', 'antd', 'react-dom', '
       Pagination = module.Pagination;
       Upload = module.Upload;
       Progress = module.Progress;
-      Select = module.Select;
       ConfigProvider = module.ConfigProvider;
+      Select = module.Select;
       Tooltip = module.Tooltip;
       Spin = module.Spin;
       Empty = module.Empty;
@@ -120,10 +120,10 @@ System.register("./__monkey.entry-0ZvTVvnt.js", ['react', 'antd', 'react-dom', '
 
       const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
-      importCSS(' @charset "UTF-8";._search-form_1aabt_1{padding:16px 0}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._album-list-modal_tzijq_1 .ant-modal-body{padding:16px 0 0}._modal-title_tzijq_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_tzijq_12{display:flex;align-items:center;gap:16px}._title-text_tzijq_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_tzijq_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_tzijq_32{display:flex;align-items:center;gap:4px}._stat-label_tzijq_38{color:#8c8c8c}._stat-value_tzijq_42{font-weight:600;color:#262626}._album-info_tzijq_47{display:flex;align-items:center;gap:12px}._album-cover_tzijq_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_tzijq_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_tzijq_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_tzijq_68:hover{color:#1890ff}._album-alias_tzijq_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_tzijq_89{display:flex;align-items:center;gap:8px}._album-tag_tzijq_95{margin:0}._album-company_tzijq_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._singer-details_tzijq_109{display:flex;flex-direction:column;gap:2px}._singer-name_tzijq_115{font-size:13px;font-weight:500;color:#262626}._singer-id_tzijq_121{font-size:12px;color:#8c8c8c}._album-id_tzijq_126{font-size:12px}._album-table_tzijq_130 .ant-table-body{scrollbar-width:thin}._search-area_tzijq_134{padding:0 24px 16px}._modal-footer_tzijq_138{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_tzijq_145{font-size:13px;color:#595959}._selected-extra_tzijq_150{margin-left:4px;color:#8c8c8c}._songInfoColumn_18snm_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_18snm_1 ._songIndex_18snm_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_18snm_1 ._songCover_18snm_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover{transform:scale(1.05)}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._btnWrapper_18snm_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._songCoverImg_18snm_33{filter:brightness(.85)}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._songCoverImg_18snm_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_18snm_1 ._songInfo_18snm_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._songName_18snm_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84,._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84{max-width:160px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_18snm_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_18snm_1 10s linear infinite}._currentSong_18snm_102 td{background:var(--background)!important;animation:_rotate_18snm_1 10s linear infinite}@keyframes _rotate_18snm_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_18snm_121{background-color:#f06161}._matchError_18snm_121 td{background-color:#f06161!important}._footer_18snm_128{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_18snm_128 ._actions_18snm_136{display:flex;gap:8px}._stats_18snm_141{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_18snm_141 ._size_18snm_149{color:#666}._stats_18snm_141 ._divider_18snm_152{color:#999;margin:0 4px}._stats_18snm_141 .ant-tag{margin:0}._playlist_18snm_160 .ant-modal-body{padding-bottom:0}._autoAddContent_18snm_164 ._title_18snm_164{font-size:16px;margin-bottom:8px}._autoAddContent_18snm_164 ._statsWrapper_18snm_168{margin-bottom:16px}._autoAddContent_18snm_164 ._statsContent_18snm_171{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._label_18snm_178{color:#666}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._value_18snm_181{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_18snm_164 ._listHeader_18snm_186{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_18snm_164 ._listWrapper_18snm_192{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_18snm_164 ._listItem_18snm_213{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_18snm_164 ._listItem_18snm_213:hover{background:#f5f5f5}._autoAddContent_18snm_164 ._listItem_18snm_213:last-child{margin-bottom:0}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemName_18snm_229{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemCount_18snm_235{color:#1890ff;margin-left:8px}._deleteConfirmation_18snm_240{font-size:14px}._deleteConfirmation_18snm_240 ._title_18snm_164{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_18snm_240 ._title_18snm_164 ._count_18snm_248{color:#1890ff}._deleteConfirmation_18snm_240 ._songs_18snm_251{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:hover{background:#f0f0f0}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:not(:last-child){margin-bottom:4px}._deleteConfirmation_18snm_240 ._warning_18snm_273{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._text_18snm_280{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._icon_18snm_287{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_18snm_301{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_18snm_301 ._singer-option-content_18snm_314{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-name_18snm_329{font-size:14px}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-id_18snm_332{font-size:13px}._singer-option_18snm_301:hover ._singer-option-content_18snm_314{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_18snm_340{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_18snm_340 ._song-name_18snm_346{font-size:14px;color:#333;font-weight:500}._song-label_18snm_340 ._tag-group_18snm_351{display:flex;gap:8px;flex-wrap:wrap}._song-option_18snm_357{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_18snm_357:hover{background-color:#f5f5f5}._song-option_18snm_357 ._song-info_18snm_370{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_18snm_357 ._song-name_18snm_346{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_18snm_357 ._tag-group_18snm_351{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_18snm_357 ._tag-group_18snm_351 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_18snm_357 ._album-cover_18snm_399{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_18snm_357 ._album-cover_18snm_399:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_18snm_415{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_18snm_415 ._song-info_18snm_370{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._artist-info_18snm_431{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._album-info_18snm_439{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._githubContainer_b3krt_2{display:flex;flex-direction:column;align-items:center;padding:20px;text-align:center}._githubContainer_b3krt_2 ._userInfo_b3krt_9{display:flex;align-items:center;gap:16px;margin-bottom:20px}._githubContainer_b3krt_2 ._username_b3krt_15{margin:0}._githubContainer_b3krt_2 ._starCount_b3krt_18{display:block;color:#666;font-size:14px;margin-top:4px}._githubContainer_b3krt_2 ._bio_b3krt_24{color:#666;margin-bottom:20px}._githubContainer_b3krt_2 ._features_b3krt_28{width:100%;margin-bottom:24px;text-align:left}._githubContainer_b3krt_2 ._features_b3krt_28 h5{text-align:center;margin-bottom:16px}._githubContainer_b3krt_2 ._featureList_b3krt_37{list-style:none;padding:0;margin:0;max-height:300px;overflow-y:auto}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar{width:6px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-track{background-color:#f5f5f5}._githubContainer_b3krt_2 ._featureList_b3krt_37 li{margin-bottom:12px;font-size:14px;line-height:1.5;color:#666}._githubContainer_b3krt_2 ._profileButton_b3krt_61{background:#24292e;border-color:#24292e}._githubContainer_b3krt_2 ._profileButton_b3krt_61:hover{background:#2f363d;border-color:#2f363d}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_15nrq_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_15nrq_1 ._cover_15nrq_8{width:60px;height:60px;border-radius:6px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_15nrq_1 ._cover_15nrq_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_15nrq_1 ._cover_15nrq_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_15nrq_1 ._cover_15nrq_8:hover:before{opacity:1}._playlist-info_15nrq_1 ._cover_15nrq_8:active{transform:scale(1.02)}._playlist-info_15nrq_1 ._info_15nrq_40{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_15nrq_1 ._info_15nrq_40 ._name_15nrq_47{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_15nrq_1 ._info_15nrq_40 ._creator_15nrq_58{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-item_15nrq_69{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_15nrq_69:hover{background-color:#fafafa!important}._playlist-item_15nrq_69:active,._playlist-item_15nrq_69:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_1rogj_22 ._select_1rogj_22{width:100%}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26{display:flex;flex-direction:column;justify-content:space-between;height:400px}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26 ._btn-group_1rogj_32{display:flex;justify-content:flex-end}._singer-choose_1rogj_26 ._option-label_1rogj_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._singer-name_1rogj_43{font-weight:500}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._tag-group_1rogj_46 ._tag_1rogj_46:not(:last-child){margin-right:8px}._upload-list_1rogj_50 .ant-table{margin:16px 0}._upload-footer_1rogj_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_1rogj_62{color:#666;font-size:13px;margin-right:auto}._upload-stats_1rogj_62 ._size-text_1rogj_67{color:#999}._upload-stats_1rogj_62 ._divider_1rogj_70{margin:0 8px;color:#d9d9d9}._upload-confirm_1rogj_75{padding:16px 0;font-size:14px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79:last-child{margin-bottom:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._label_1rogj_87{color:#666;width:80px;flex-shrink:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92{color:#333;font-weight:500}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92 ._size_1rogj_67{margin-left:4px;color:#999;font-weight:400}._upload-progress_1rogj_102 ._progress-header_1rogj_102{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._progress-info_1rogj_109{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._percentage_1rogj_113{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_1rogj_102 ._progress-list_1rogj_118{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123:last-child{border-bottom:none}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133{flex:1;min-width:0;padding-right:16px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._name_1rogj_138{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._artist_1rogj_142{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_1rogj_148 .ant-modal-body{padding:24px}._uploadProgressModal_1rogj_148 ._progressContent_1rogj_151{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._detail_1rogj_167{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._label_1rogj_87{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._value_1rogj_92 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193{width:100%}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedTitle_1rogj_196{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._songName_1rogj_208{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._errorMsg_1rogj_213{font-size:12px;color:#ff4d4f}._uploadModal_1rogj_218 .ant-modal-body{padding:24px}._progressSection_1rogj_222{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._progressInfo_1rogj_157 ._count_1rogj_241{font-size:14px;color:#666;margin-top:4px}._statsContainer_1rogj_172{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._statsContainer_1rogj_172 ._statsTag_1rogj_256{padding:4px 12px;font-size:14px}._songList_1rogj_261{max-height:300px;overflow-y:auto;padding-right:4px}._songList_1rogj_261::-webkit-scrollbar{width:6px}._songList_1rogj_261::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_1rogj_261::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_1rogj_277{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_1rogj_277:not(:last-child){margin-bottom:8px}._songItem_1rogj_277:hover{background:#f5f5f5}._songInfo_1rogj_292{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_1rogj_292 ._songName_1rogj_208{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_1rogj_292 ._artistName_1rogj_306{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
+      importCSS(' @charset "UTF-8";._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._search-form_1aabt_1{padding:16px 0}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._album-list-modal_tzijq_1 .ant-modal-body{padding:16px 0 0}._modal-title_tzijq_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_tzijq_12{display:flex;align-items:center;gap:16px}._title-text_tzijq_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_tzijq_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_tzijq_32{display:flex;align-items:center;gap:4px}._stat-label_tzijq_38{color:#8c8c8c}._stat-value_tzijq_42{font-weight:600;color:#262626}._album-info_tzijq_47{display:flex;align-items:center;gap:12px}._album-cover_tzijq_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_tzijq_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_tzijq_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_tzijq_68:hover{color:#1890ff}._album-alias_tzijq_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_tzijq_89{display:flex;align-items:center;gap:8px}._album-tag_tzijq_95{margin:0}._album-company_tzijq_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._singer-details_tzijq_109{display:flex;flex-direction:column;gap:2px}._singer-name_tzijq_115{font-size:13px;font-weight:500;color:#262626}._singer-id_tzijq_121{font-size:12px;color:#8c8c8c}._album-id_tzijq_126{font-size:12px}._album-table_tzijq_130 .ant-table-body{scrollbar-width:thin}._search-area_tzijq_134{padding:0 24px 16px}._modal-footer_tzijq_138{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_tzijq_145{font-size:13px;color:#595959}._selected-extra_tzijq_150{margin-left:4px;color:#8c8c8c}._songInfoColumn_18snm_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_18snm_1 ._songIndex_18snm_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_18snm_1 ._songCover_18snm_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover{transform:scale(1.05)}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._btnWrapper_18snm_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._songCoverImg_18snm_33{filter:brightness(.85)}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._songCoverImg_18snm_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_18snm_1 ._songInfo_18snm_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._songName_18snm_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84,._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84{max-width:160px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_18snm_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_18snm_1 10s linear infinite}._currentSong_18snm_102 td{background:var(--background)!important;animation:_rotate_18snm_1 10s linear infinite}@keyframes _rotate_18snm_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_18snm_121{background-color:#f06161}._matchError_18snm_121 td{background-color:#f06161!important}._footer_18snm_128{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_18snm_128 ._actions_18snm_136{display:flex;gap:8px}._stats_18snm_141{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_18snm_141 ._size_18snm_149{color:#666}._stats_18snm_141 ._divider_18snm_152{color:#999;margin:0 4px}._stats_18snm_141 .ant-tag{margin:0}._playlist_18snm_160 .ant-modal-body{padding-bottom:0}._autoAddContent_18snm_164 ._title_18snm_164{font-size:16px;margin-bottom:8px}._autoAddContent_18snm_164 ._statsWrapper_18snm_168{margin-bottom:16px}._autoAddContent_18snm_164 ._statsContent_18snm_171{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._label_18snm_178{color:#666}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._value_18snm_181{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_18snm_164 ._listHeader_18snm_186{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_18snm_164 ._listWrapper_18snm_192{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_18snm_164 ._listItem_18snm_213{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_18snm_164 ._listItem_18snm_213:hover{background:#f5f5f5}._autoAddContent_18snm_164 ._listItem_18snm_213:last-child{margin-bottom:0}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemName_18snm_229{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemCount_18snm_235{color:#1890ff;margin-left:8px}._deleteConfirmation_18snm_240{font-size:14px}._deleteConfirmation_18snm_240 ._title_18snm_164{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_18snm_240 ._title_18snm_164 ._count_18snm_248{color:#1890ff}._deleteConfirmation_18snm_240 ._songs_18snm_251{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:hover{background:#f0f0f0}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:not(:last-child){margin-bottom:4px}._deleteConfirmation_18snm_240 ._warning_18snm_273{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._text_18snm_280{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._icon_18snm_287{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_18snm_301{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_18snm_301 ._singer-option-content_18snm_314{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-name_18snm_329{font-size:14px}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-id_18snm_332{font-size:13px}._singer-option_18snm_301:hover ._singer-option-content_18snm_314{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_18snm_340{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_18snm_340 ._song-name_18snm_346{font-size:14px;color:#333;font-weight:500}._song-label_18snm_340 ._tag-group_18snm_351{display:flex;gap:8px;flex-wrap:wrap}._song-option_18snm_357{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_18snm_357:hover{background-color:#f5f5f5}._song-option_18snm_357 ._song-info_18snm_370{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_18snm_357 ._song-name_18snm_346{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_18snm_357 ._tag-group_18snm_351{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_18snm_357 ._tag-group_18snm_351 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_18snm_357 ._album-cover_18snm_399{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_18snm_357 ._album-cover_18snm_399:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_18snm_415{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_18snm_415 ._song-info_18snm_370{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._artist-info_18snm_431{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._album-info_18snm_439{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._githubContainer_b3krt_2{display:flex;flex-direction:column;align-items:center;padding:20px;text-align:center}._githubContainer_b3krt_2 ._userInfo_b3krt_9{display:flex;align-items:center;gap:16px;margin-bottom:20px}._githubContainer_b3krt_2 ._username_b3krt_15{margin:0}._githubContainer_b3krt_2 ._starCount_b3krt_18{display:block;color:#666;font-size:14px;margin-top:4px}._githubContainer_b3krt_2 ._bio_b3krt_24{color:#666;margin-bottom:20px}._githubContainer_b3krt_2 ._features_b3krt_28{width:100%;margin-bottom:24px;text-align:left}._githubContainer_b3krt_2 ._features_b3krt_28 h5{text-align:center;margin-bottom:16px}._githubContainer_b3krt_2 ._featureList_b3krt_37{list-style:none;padding:0;margin:0;max-height:300px;overflow-y:auto}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar{width:6px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-track{background-color:#f5f5f5}._githubContainer_b3krt_2 ._featureList_b3krt_37 li{margin-bottom:12px;font-size:14px;line-height:1.5;color:#666}._githubContainer_b3krt_2 ._profileButton_b3krt_61{background:#24292e;border-color:#24292e}._githubContainer_b3krt_2 ._profileButton_b3krt_61:hover{background:#2f363d;border-color:#2f363d}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_15nrq_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_15nrq_1 ._cover_15nrq_8{width:60px;height:60px;border-radius:6px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_15nrq_1 ._cover_15nrq_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_15nrq_1 ._cover_15nrq_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_15nrq_1 ._cover_15nrq_8:hover:before{opacity:1}._playlist-info_15nrq_1 ._cover_15nrq_8:active{transform:scale(1.02)}._playlist-info_15nrq_1 ._info_15nrq_40{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_15nrq_1 ._info_15nrq_40 ._name_15nrq_47{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_15nrq_1 ._info_15nrq_40 ._creator_15nrq_58{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-item_15nrq_69{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_15nrq_69:hover{background-color:#fafafa!important}._playlist-item_15nrq_69:active,._playlist-item_15nrq_69:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_1rogj_22 ._select_1rogj_22{width:100%}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26{display:flex;flex-direction:column;justify-content:space-between;height:400px}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26 ._btn-group_1rogj_32{display:flex;justify-content:flex-end}._singer-choose_1rogj_26 ._option-label_1rogj_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._singer-name_1rogj_43{font-weight:500}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._tag-group_1rogj_46 ._tag_1rogj_46:not(:last-child){margin-right:8px}._upload-list_1rogj_50 .ant-table{margin:16px 0}._upload-footer_1rogj_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_1rogj_62{color:#666;font-size:13px;margin-right:auto}._upload-stats_1rogj_62 ._size-text_1rogj_67{color:#999}._upload-stats_1rogj_62 ._divider_1rogj_70{margin:0 8px;color:#d9d9d9}._upload-confirm_1rogj_75{padding:16px 0;font-size:14px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79:last-child{margin-bottom:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._label_1rogj_87{color:#666;width:80px;flex-shrink:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92{color:#333;font-weight:500}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92 ._size_1rogj_67{margin-left:4px;color:#999;font-weight:400}._upload-progress_1rogj_102 ._progress-header_1rogj_102{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._progress-info_1rogj_109{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._percentage_1rogj_113{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_1rogj_102 ._progress-list_1rogj_118{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123:last-child{border-bottom:none}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133{flex:1;min-width:0;padding-right:16px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._name_1rogj_138{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._artist_1rogj_142{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_1rogj_148 .ant-modal-body{padding:24px}._uploadProgressModal_1rogj_148 ._progressContent_1rogj_151{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._detail_1rogj_167{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._label_1rogj_87{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._value_1rogj_92 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193{width:100%}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedTitle_1rogj_196{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._songName_1rogj_208{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._errorMsg_1rogj_213{font-size:12px;color:#ff4d4f}._uploadModal_1rogj_218 .ant-modal-body{padding:24px}._progressSection_1rogj_222{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._progressInfo_1rogj_157 ._count_1rogj_241{font-size:14px;color:#666;margin-top:4px}._statsContainer_1rogj_172{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._statsContainer_1rogj_172 ._statsTag_1rogj_256{padding:4px 12px;font-size:14px}._songList_1rogj_261{max-height:300px;overflow-y:auto;padding-right:4px}._songList_1rogj_261::-webkit-scrollbar{width:6px}._songList_1rogj_261::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_1rogj_261::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_1rogj_277{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_1rogj_277:not(:last-child){margin-bottom:8px}._songItem_1rogj_277:hover{background:#f5f5f5}._songInfo_1rogj_292{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_1rogj_292 ._songName_1rogj_208{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_1rogj_292 ._artistName_1rogj_306{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
 
       var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
-      function getDefaultExportFromCjs$1(x) {
+      function getDefaultExportFromCjs(x) {
         return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
       }
       var jsxRuntime = { exports: {} };
@@ -179,7 +179,7 @@ System.register("./__monkey.entry-0ZvTVvnt.js", ['react', 'antd', 'react-dom', '
         return client;
       }
       var clientExports = requireClient();
-      const ReactDOM = getDefaultExportFromCjs$1(clientExports);
+      const ReactDOM = getDefaultExportFromCjs(clientExports);
       var _GM_xmlhttpRequest = (() => typeof GM_xmlhttpRequest != "undefined" ? GM_xmlhttpRequest : void 0)();
       var _unsafeWindow = (() => typeof unsafeWindow != "undefined" ? unsafeWindow : void 0)();
       const IV = "0102030405060708";
@@ -329,29 +329,6 @@ redirect: "follow"
           console.error("请求失败:", error);
           throw new Error(`请求失败: ${error.message || "未知错误"}`);
         }
-      };
-      const search = (keyword, options) => {
-        const { type = 1, limit = 30, offset = 0 } = {};
-        return weapiRequest("/api/search/get", {
-          data: {
-            s: keyword,
-            type,
-            limit,
-            offset
-          }
-        });
-      };
-      const cloudSearch = (keyword, options) => {
-        const { type = 1, limit = 30, offset = 0 } = options || {};
-        return weapiRequest("/api/cloudsearch/pc", {
-          data: {
-            s: keyword,
-            type,
-            limit,
-            offset,
-            total: true
-          }
-        });
       };
       var md5$1 = { exports: {} };
       var crypt = { exports: {} };
@@ -601,7 +578,7 @@ bytesToString: function(bytes) {
         return md5$1.exports;
       }
       var md5Exports = requireMd5();
-      const md5 = getDefaultExportFromCjs$1(md5Exports);
+      const md5 = getDefaultExportFromCjs(md5Exports);
       const defaultMessages = "End-Of-Stream";
       class EndOfStreamError extends Error {
         constructor() {
@@ -626,28 +603,28 @@ bytesToString: function(bytes) {
           this.peekQueue.push(uint8Array.subarray(0, bytesRead));
           return bytesRead;
         }
-        async read(buffer2, mayBeLess = false) {
-          if (buffer2.length === 0) {
+        async read(buffer, mayBeLess = false) {
+          if (buffer.length === 0) {
             return 0;
           }
-          let bytesRead = this.readFromPeekBuffer(buffer2);
+          let bytesRead = this.readFromPeekBuffer(buffer);
           if (!this.endOfStream) {
-            bytesRead += await this.readRemainderFromStream(buffer2.subarray(bytesRead), mayBeLess);
+            bytesRead += await this.readRemainderFromStream(buffer.subarray(bytesRead), mayBeLess);
           }
           if (bytesRead === 0) {
             throw new EndOfStreamError();
           }
           return bytesRead;
         }
-readFromPeekBuffer(buffer2) {
-          let remaining = buffer2.length;
+readFromPeekBuffer(buffer) {
+          let remaining = buffer.length;
           let bytesRead = 0;
           while (this.peekQueue.length > 0 && remaining > 0) {
             const peekData = this.peekQueue.pop();
             if (!peekData)
               throw new Error("peekData should be defined");
             const lenCopy = Math.min(peekData.length, remaining);
-            buffer2.set(peekData.subarray(0, lenCopy), bytesRead);
+            buffer.set(peekData.subarray(0, lenCopy), bytesRead);
             bytesRead += lenCopy;
             remaining -= lenCopy;
             if (lenCopy < peekData.length) {
@@ -656,18 +633,18 @@ readFromPeekBuffer(buffer2) {
           }
           return bytesRead;
         }
-        async readRemainderFromStream(buffer2, mayBeLess) {
+        async readRemainderFromStream(buffer, mayBeLess) {
           let bytesRead = 0;
-          while (bytesRead < buffer2.length && !this.endOfStream) {
+          while (bytesRead < buffer.length && !this.endOfStream) {
             if (this.interrupted) {
               throw new AbortError();
             }
-            const chunkLen = await this.readFromStream(buffer2.subarray(bytesRead), mayBeLess);
+            const chunkLen = await this.readFromStream(buffer.subarray(bytesRead), mayBeLess);
             if (chunkLen === 0)
               break;
             bytesRead += chunkLen;
           }
-          if (!mayBeLess && bytesRead < buffer2.length) {
+          if (!mayBeLess && bytesRead < buffer.length) {
             throw new EndOfStreamError();
           }
           return bytesRead;
@@ -686,15 +663,15 @@ readFromPeekBuffer(buffer2) {
         }
       }
       class WebStreamByobReader extends WebStreamReader {
-async readFromStream(buffer2, mayBeLess) {
-          if (buffer2.length === 0)
+async readFromStream(buffer, mayBeLess) {
+          if (buffer.length === 0)
             return 0;
-          const result = await this.reader.read(new Uint8Array(buffer2.length), { min: mayBeLess ? void 0 : buffer2.length });
+          const result = await this.reader.read(new Uint8Array(buffer.length), { min: mayBeLess ? void 0 : buffer.length });
           if (result.done) {
             this.endOfStream = result.done;
           }
           if (result.value) {
-            buffer2.set(result.value);
+            buffer.set(result.value);
             return result.value.length;
           }
           return 0;
@@ -716,21 +693,21 @@ writeChunk(target, chunk) {
           }
           return written;
         }
-async readFromStream(buffer2, mayBeLess) {
-          if (buffer2.length === 0)
+async readFromStream(buffer, mayBeLess) {
+          if (buffer.length === 0)
             return 0;
           let totalBytesRead = 0;
           if (this.buffer) {
-            totalBytesRead += this.writeChunk(buffer2, this.buffer);
+            totalBytesRead += this.writeChunk(buffer, this.buffer);
           }
-          while (totalBytesRead < buffer2.length && !this.endOfStream) {
+          while (totalBytesRead < buffer.length && !this.endOfStream) {
             const result = await this.reader.read();
             if (result.done) {
               this.endOfStream = true;
               break;
             }
             if (result.value) {
-              totalBytesRead += this.writeChunk(buffer2.subarray(totalBytesRead), result.value);
+              totalBytesRead += this.writeChunk(buffer.subarray(totalBytesRead), result.value);
             }
           }
           if (totalBytesRead === 0 && this.endOfStream) {
@@ -965,7 +942,7 @@ var hasRequiredIeee754;
       function requireIeee754() {
         if (hasRequiredIeee754) return ieee754;
         hasRequiredIeee754 = 1;
-        ieee754.read = function(buffer2, offset, isLE, mLen, nBytes) {
+        ieee754.read = function(buffer, offset, isLE, mLen, nBytes) {
           var e, m;
           var eLen = nBytes * 8 - mLen - 1;
           var eMax = (1 << eLen) - 1;
@@ -973,17 +950,17 @@ var hasRequiredIeee754;
           var nBits = -7;
           var i = isLE ? nBytes - 1 : 0;
           var d = isLE ? -1 : 1;
-          var s = buffer2[offset + i];
+          var s = buffer[offset + i];
           i += d;
           e = s & (1 << -nBits) - 1;
           s >>= -nBits;
           nBits += eLen;
-          for (; nBits > 0; e = e * 256 + buffer2[offset + i], i += d, nBits -= 8) {
+          for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {
           }
           m = e & (1 << -nBits) - 1;
           e >>= -nBits;
           nBits += mLen;
-          for (; nBits > 0; m = m * 256 + buffer2[offset + i], i += d, nBits -= 8) {
+          for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {
           }
           if (e === 0) {
             e = 1 - eBias;
@@ -995,7 +972,7 @@ var hasRequiredIeee754;
           }
           return (s ? -1 : 1) * m * Math.pow(2, e - mLen);
         };
-        ieee754.write = function(buffer2, value2, offset, isLE, mLen, nBytes) {
+        ieee754.write = function(buffer, value2, offset, isLE, mLen, nBytes) {
           var e, m, c;
           var eLen = nBytes * 8 - mLen - 1;
           var eMax = (1 << eLen) - 1;
@@ -1034,13 +1011,13 @@ var hasRequiredIeee754;
               e = 0;
             }
           }
-          for (; mLen >= 8; buffer2[offset + i] = m & 255, i += d, m /= 256, mLen -= 8) {
+          for (; mLen >= 8; buffer[offset + i] = m & 255, i += d, m /= 256, mLen -= 8) {
           }
           e = e << mLen | m;
           eLen += mLen;
-          for (; eLen > 0; buffer2[offset + i] = e & 255, i += d, e /= 256, eLen -= 8) {
+          for (; eLen > 0; buffer[offset + i] = e & 255, i += d, e /= 256, eLen -= 8) {
           }
-          buffer2[offset + i - d] |= s * 128;
+          buffer[offset + i - d] |= s * 128;
         };
         return ieee754;
       }
@@ -2229,7 +2206,7 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
         return browser$1.exports;
       }
       var browserExports$1 = requireBrowser$1();
-      const initDebug = exports("i", getDefaultExportFromCjs$1(browserExports$1));
+      const initDebug = exports("i", getDefaultExportFromCjs(browserExports$1));
       const Signature = {
         LocalFileHeader: 67324752,
         DataDescriptor: 134695760,
@@ -2321,10 +2298,10 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
         async findEndOfCentralDirectoryLocator() {
           const randomReadTokenizer = this.tokenizer;
           const chunkLength = Math.min(16 * 1024, randomReadTokenizer.fileInfo.size);
-          const buffer2 = this.syncBuffer.subarray(0, chunkLength);
-          await this.tokenizer.readBuffer(buffer2, { position: randomReadTokenizer.fileInfo.size - chunkLength });
-          for (let i = buffer2.length - 4; i >= 0; i--) {
-            if (buffer2[i] === eocdSignatureBytes[0] && buffer2[i + 1] === eocdSignatureBytes[1] && buffer2[i + 2] === eocdSignatureBytes[2] && buffer2[i + 3] === eocdSignatureBytes[3]) {
+          const buffer = this.syncBuffer.subarray(0, chunkLength);
+          await this.tokenizer.readBuffer(buffer, { position: randomReadTokenizer.fileInfo.size - chunkLength });
+          for (let i = buffer.length - 4; i >= 0; i--) {
+            if (buffer[i] === eocdSignatureBytes[0] && buffer[i + 1] === eocdSignatureBytes[1] && buffer[i + 2] === eocdSignatureBytes[2] && buffer[i + 3] === eocdSignatureBytes[3]) {
               return randomReadTokenizer.fileInfo.size - chunkLength + i;
             }
           }
@@ -2455,15 +2432,15 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
           throw new Error("Unexpected signature");
         }
       }
-      function indexOf$1(buffer2, portion) {
-        const bufferLength = buffer2.length;
+      function indexOf$1(buffer, portion) {
+        const bufferLength = buffer.length;
         const portionLength = portion.length;
         if (portionLength > bufferLength)
           return -1;
         for (let i = 0; i <= bufferLength - portionLength; i++) {
           let found = true;
           for (let j = 0; j < portionLength; j++) {
-            if (buffer2[i + j] !== portion[j]) {
+            if (buffer[i + j] !== portion[j]) {
               found = false;
               break;
             }
@@ -2631,7 +2608,7 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
       function includes(array, value2) {
         return indexOf(array, value2) !== -1;
       }
-      function stringToBytes(string) {
+      function stringToBytes$1(string) {
         return [...string].map((character) => character.charCodeAt(0));
       }
       function tarHeaderChecksumMatches(arrayBuffer, offset = 0) {
@@ -2649,7 +2626,7 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
         return readSum === sum;
       }
       const uint32SyncSafeToken = {
-        get: (buffer2, offset) => buffer2[offset + 3] & 127 | buffer2[offset + 2] << 7 | buffer2[offset + 1] << 14 | buffer2[offset] << 21,
+        get: (buffer, offset) => buffer[offset + 3] & 127 | buffer[offset + 2] << 7 | buffer[offset + 1] << 14 | buffer[offset] << 21,
         len: 4
       };
       const extensions = [
@@ -3136,17 +3113,17 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
             };
         }
       }
-      function _check(buffer2, headers, options) {
+      function _check(buffer, headers, options) {
         options = {
           offset: 0,
           ...options
         };
         for (const [index2, header] of headers.entries()) {
           if (options.mask) {
-            if (header !== (options.mask[index2] & buffer2[index2 + options.offset])) {
+            if (header !== (options.mask[index2] & buffer[index2 + options.offset])) {
               return false;
             }
-          } else if (header !== buffer2[index2 + options.offset]) {
+          } else if (header !== buffer[index2 + options.offset]) {
             return false;
           }
         }
@@ -3179,11 +3156,11 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
           if (!(input instanceof Uint8Array || input instanceof ArrayBuffer)) {
             throw new TypeError(`Expected the \`input\` argument to be of type \`Uint8Array\` or \`ArrayBuffer\`, got \`${typeof input}\``);
           }
-          const buffer2 = input instanceof Uint8Array ? input : new Uint8Array(input);
-          if (!(buffer2?.length > 1)) {
+          const buffer = input instanceof Uint8Array ? input : new Uint8Array(input);
+          if (!(buffer?.length > 1)) {
             return;
           }
-          return this.fromTokenizer(fromBuffer(buffer2, this.tokenizerOptions));
+          return this.fromTokenizer(fromBuffer(buffer, this.tokenizerOptions));
         }
         async fromBlob(blob) {
           return this.fromStream(blob.stream());
@@ -3234,7 +3211,7 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
           return _check(this.buffer, header, options);
         }
         checkString(header, options) {
-          return this.check(stringToBytes(header), options);
+          return this.check(stringToBytes$1(header), options);
         }
 detectConfident = async (tokenizer) => {
           this.buffer = new Uint8Array(reasonableDetectionSizeInBytes);
@@ -3571,9 +3548,9 @@ detectConfident = async (tokenizer) => {
               const skipBytes = 1350;
               if (skipBytes === await tokenizer.ignore(skipBytes)) {
                 const maxBufferSize2 = 10 * 1024 * 1024;
-                const buffer2 = new Uint8Array(Math.min(maxBufferSize2, tokenizer.fileInfo.size - skipBytes));
-                await tokenizer.readBuffer(buffer2, { mayBeLess: true });
-                if (includes(buffer2, new TextEncoder().encode("AIPrivateData"))) {
+                const buffer = new Uint8Array(Math.min(maxBufferSize2, tokenizer.fileInfo.size - skipBytes));
+                await tokenizer.readBuffer(buffer, { mayBeLess: true });
+                if (includes(buffer, new TextEncoder().encode("AIPrivateData"))) {
                   return {
                     ext: "ai",
                     mime: "application/postscript"
@@ -4529,7 +4506,7 @@ var hasRequiredContentType;
         return contentType;
       }
       var contentTypeExports = requireContentType();
-      const ContentType = getDefaultExportFromCjs$1(contentTypeExports);
+      const ContentType = getDefaultExportFromCjs(contentTypeExports);
       var mediaTyper = {};
 var hasRequiredMediaTyper;
       function requireMediaTyper() {
@@ -6058,7 +6035,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-CHUhGk_k-jtD64-rU.js');
+            const { MpegParser } = await module.import('./MpegParser-JllyiexM-VgNDIsls.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -6080,7 +6057,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-CRyegyjY-D3SGHapK.js');
+            const { AsfParser } = await module.import('./AsfParser-BudCl-N_-D3hMnzoN.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -6091,7 +6068,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-jfEeOTyu-H7ys-AxO.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-DAcEdOrd-BNLl7x8d.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -6102,7 +6079,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-nwJ6LE7B-DTVdOK7a.js');
+            const { AIFFParser } = await module.import('./AiffParser-k5RVbd1V-DFexcnYa.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -6113,7 +6090,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-DGEEcICd-DpmFOKjB.js');
+            const { DsfParser } = await module.import('./DsfParser-DDOE63n6-CkJgYhWF.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -6124,7 +6101,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-CWrFhzJI-DBSM-BmE.js');
+            const { FlacParser } = await module.import('./FlacParser-DT9H7OwN-scQ0mcqN.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -6135,7 +6112,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-DpvASoJ1-BK4Ic0DC.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-DjdpXWt2-CffyF-n7.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -6146,7 +6123,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-2h2cNPXB-PXCie8a5.js');
+            const { MP4Parser } = await module.import('./MP4Parser-CH2HMVJ4-BkeOcder.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -6157,7 +6134,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-Zqu4ODNj-BkwZrs09.js');
+            const { MusepackParser } = await module.import('./MusepackParser-DNYedbC3-DH72WD6f.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -6168,7 +6145,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-CTL8T6mz-BpPoJzi0.js');
+            const { OggParser } = await module.import('./OggParser-DHMkXOgp-DGe7sW9U.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -6179,7 +6156,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-hH53WB6d-BujB4spl.js');
+            const { WavPackParser } = await module.import('./WavPackParser-DN5D4tAZ-DRbmvAy3.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -6190,7 +6167,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-ByOOGgDW-C31eDtfN.js');
+            const { WaveParser } = await module.import('./WaveParser-DYqjqe55-DD-H2l5Z.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -6316,11 +6293,11 @@ constructor(metadata, tokenizer, options) {
           }
           return id;
         },
-        put: (buffer2, offset, id) => {
+        put: (buffer, offset, id) => {
           const str = stringToUint8Array(id);
           if (str.length !== 4)
             throw new InternalParserError("Invalid length");
-          buffer2.set(str, offset);
+          buffer.set(str, offset);
           return offset + 4;
         }
       });
@@ -6436,12 +6413,12 @@ static async findApeFooterOffset(tokenizer, offset) {
             }
           }
         }
-        static parseTagFooter(metadata, buffer2, options) {
-          const footer2 = TagFooter.get(buffer2, buffer2.length - TagFooter.len);
+        static parseTagFooter(metadata, buffer, options) {
+          const footer2 = TagFooter.get(buffer, buffer.length - TagFooter.len);
           if (footer2.ID !== preamble)
             throw new ApeContentError("Unexpected APEv2 Footer ID preamble value");
-          fromBuffer(buffer2);
-          const apeParser = new APEv2Parser(metadata, fromBuffer(buffer2), options);
+          fromBuffer(buffer);
+          const apeParser = new APEv2Parser(metadata, fromBuffer(buffer), options);
           return apeParser.parseTags(footer2);
         }
 async tryParseApeHeader() {
@@ -6457,9 +6434,9 @@ async tryParseApeHeader() {
           debug$1(`APEv2 header not found at offset=${this.tokenizer.position}`);
           if (this.tokenizer.fileInfo.size) {
             const remaining = this.tokenizer.fileInfo.size - this.tokenizer.position;
-            const buffer2 = new Uint8Array(remaining);
-            await this.tokenizer.readBuffer(buffer2);
-            return APEv2Parser.parseTagFooter(this.metadata, buffer2, this.options);
+            const buffer = new Uint8Array(remaining);
+            await this.tokenizer.readBuffer(buffer);
+            return APEv2Parser.parseTagFooter(this.metadata, buffer, this.options);
           }
         }
         async parse() {
@@ -7075,57 +7052,55 @@ track: UINT8.get(buf, off2 + 126),
           return result;
         }, o1);
       };
-      const styles$b = {
-        "search-form": "_search-form_1aabt_1"
+      const search = (keyword, options) => {
+        const { type = 1, limit = 30, offset = 0 } = options || {};
+        return weapiRequest("/api/search/get", {
+          data: {
+            s: keyword,
+            type,
+            limit,
+            offset
+          }
+        });
       };
-      const SearchForm = ({ onSearch, data = [], options = [] }) => {
-        const [form] = Form.useForm();
-        const getUniqueOptions = (key) => {
-          const uniqueList = uniqueArrayByKey(data, key);
-          const options2 = uniqueList.map((item) => ({
-            label: item[key],
-            value: item[key]
-          }));
-          return options2;
-        };
-        const handleSearch = () => {
-          const values = form.getFieldsValue();
-          onSearch(values);
-        };
-        const handleReset = () => {
-          form.resetFields();
-          onSearch({});
-        };
-        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$b["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
-          options.map((item) => {
-            return jsxRuntimeExports.jsx(
-              Form.Item,
-              {
-                name: item.value,
-                label: item.label,
-                style: { marginBottom: 0, minWidth: 200 },
-                children: jsxRuntimeExports.jsx(
-                  Select,
-                  {
-                    mode: "multiple",
-                    allowClear: true,
-                    showSearch: true,
-                    placeholder: item.label,
-                    maxTagCount: "responsive",
-                    options: getUniqueOptions(item.value),
-                    filterOption: (input, option) => (option?.label ?? "").toLowerCase().includes(input.toLowerCase())
-                  }
-                )
-              },
-              item.value
-            );
-          }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearch, children: "搜索" }),
-jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
-        ] }) });
+      const cloudSearch = (keyword, options) => {
+        const { type = 1, limit = 30, offset = 0 } = options || {};
+        return weapiRequest("/api/cloudsearch/pc", {
+          data: {
+            s: keyword,
+            type,
+            limit,
+            offset,
+            total: true
+          }
+        });
+      };
+      const searchArtist$1 = (keyword) => weapiRequest("/api/rep/ugc/artist/search", {
+        data: {
+          keyword,
+          limit: 40
+        }
+      });
+      const matchLocalSong = async (files) => {
+        const songs2 = await Promise.all(
+          files.map(async (file) => {
+            const { title: title2, album: album2, artist: artist2, duration: duration2 } = await getAudioMetadata(file);
+            const md52 = await getFileMD5(file);
+            return {
+              title: title2,
+              album: album2,
+              artist: artist2,
+              duration: duration2,
+              persistId: md52
+            };
+          })
+        );
+        return weapiRequest("/api/search/match/new", {
+          data: songs2
+        });
       };
       function useFilter(list, config) {
-        const [filteredList, setFilteredList] = useState(list);
+        const [filteredList, setFilteredList] = useState$1(list);
         useEffect(() => {
           setFilteredList(list);
         }, [list]);
@@ -7145,38 +7120,6 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
         };
         return { filteredList, setFilteredList, handleFilter };
       }
-      const useGetData = (api, params, options) => {
-        const {
-monitors,
-returnFunction,
-initialValue = {},
-callback
-        } = options || {};
-        const [data, setData] = useState(initialValue);
-        const [loading, setLoading] = useState(false);
-        const getData = async () => {
-          try {
-            setLoading(true);
-            const res = await api(params);
-            setData(res || {});
-            callback && callback(res || {});
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        useEffect(() => {
-          if (returnFunction && returnFunction()) return;
-          getData();
-        }, monitors || []);
-        return {
-data,
-setData,
-loading,
-getData
-        };
-      };
       const urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
       let nanoid = (size2 = 21) => {
         let id = "";
@@ -8943,26 +8886,26 @@ pop: function() {
           }
         }
         function createData(version2, errorCorrectionLevel2, segments2) {
-          const buffer2 = new BitBuffer();
+          const buffer = new BitBuffer();
           segments2.forEach(function(data) {
-            buffer2.put(data.mode.bit, 4);
-            buffer2.put(data.getLength(), Mode.getCharCountIndicator(data.mode, version2));
-            data.write(buffer2);
+            buffer.put(data.mode.bit, 4);
+            buffer.put(data.getLength(), Mode.getCharCountIndicator(data.mode, version2));
+            data.write(buffer);
           });
           const totalCodewords = Utils.getSymbolTotalCodewords(version2);
           const ecTotalCodewords = ECCode.getTotalCodewordsCount(version2, errorCorrectionLevel2);
           const dataTotalCodewordsBits = (totalCodewords - ecTotalCodewords) * 8;
-          if (buffer2.getLengthInBits() + 4 <= dataTotalCodewordsBits) {
-            buffer2.put(0, 4);
+          if (buffer.getLengthInBits() + 4 <= dataTotalCodewordsBits) {
+            buffer.put(0, 4);
           }
-          while (buffer2.getLengthInBits() % 8 !== 0) {
-            buffer2.putBit(0);
+          while (buffer.getLengthInBits() % 8 !== 0) {
+            buffer.putBit(0);
           }
-          const remainingByte = (dataTotalCodewordsBits - buffer2.getLengthInBits()) / 8;
+          const remainingByte = (dataTotalCodewordsBits - buffer.getLengthInBits()) / 8;
           for (let i = 0; i < remainingByte; i++) {
-            buffer2.put(i % 2 ? 17 : 236, 8);
+            buffer.put(i % 2 ? 17 : 236, 8);
           }
-          return createCodewords(buffer2, version2, errorCorrectionLevel2);
+          return createCodewords(buffer, version2, errorCorrectionLevel2);
         }
         function createCodewords(bitBuffer2, version2, errorCorrectionLevel2) {
           const totalCodewords = Utils.getSymbolTotalCodewords(version2);
@@ -8980,10 +8923,10 @@ pop: function() {
           const dcData = new Array(ecTotalBlocks);
           const ecData = new Array(ecTotalBlocks);
           let maxDataSize = 0;
-          const buffer2 = new Uint8Array(bitBuffer2.buffer);
+          const buffer = new Uint8Array(bitBuffer2.buffer);
           for (let b = 0; b < ecTotalBlocks; b++) {
             const dataSize = b < blocksInGroup1 ? dataCodewordsInGroup1 : dataCodewordsInGroup2;
-            dcData[b] = buffer2.slice(offset, offset + dataSize);
+            dcData[b] = buffer.slice(offset, offset + dataSize);
             ecData[b] = rs.encode(dcData[b]);
             offset += dataSize;
             maxDataSize = Math.max(maxDataSize, dataSize);
@@ -9345,7 +9288,7 @@ pop: function() {
         return browser;
       }
       var browserExports = requireBrowser();
-      const QRCode = getDefaultExportFromCjs$1(browserExports);
+      const QRCode = getDefaultExportFromCjs(browserExports);
       const generateQRCode = async (text2, options = {}) => {
         try {
           const defaultOptions = {
@@ -9363,30 +9306,13 @@ pop: function() {
           throw error;
         }
       };
-      const getQrKey = () => weapiRequest("/api/login/qrcode/unikey", {
-        data: {
-          noCheckToken: 1,
-          type: 1
-        }
-      });
-      const getQrCode = (key) => {
-        const loginUrl = `https://music.163.com/login?codekey=${key}`;
-        return generateQRCode(loginUrl);
-      };
-      const getQrStatus = (key) => weapiFetch("/api/login/qrcode/client/login", {
-        data: {
-          key,
-          type: 1
-        },
-        originResponse: true
-      });
-      const getUserAccount = () => weapiRequest("/api/nuser/account/get", {
+      const getUserAccount$1 = () => weapiRequest("/api/nuser/account/get", {
         data: {}
       });
       const getArtists = () => fetch(`${BASE_CDN_URL}top.json`).then((res) => res.json());
       const getArtists2 = () => fetch(`${BASE_CDN_URL}summary.json`).then((res) => res.json());
       const getCDNConfig = (artistId) => fetch(`${BASE_CDN_URL}${artistId}.json`).then((res) => res.json());
-      const getSongInfoList = async (songIds) => {
+      const getSongInfoList$1 = async (songIds) => {
         const chunkArr = chunkArray(songIds, 1e3);
         const proArr = chunkArr.map(async (chunk) => {
           return weapiRequest("/api/v3/song/detail", {
@@ -9529,25 +9455,25 @@ expireTime: Date.now() + 6e4,
           throw error;
         }
       };
-      const getCloudData = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
+      const getCloudData$1 = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
         data: {
           limit,
           offset
         }
       });
-      const deleteCloudSong = (songIds) => weapiRequest("/api/cloud/del", {
+      const deleteCloudSong$1 = (songIds) => weapiRequest("/api/cloud/del", {
         data: {
           songIds
         }
       });
-      const getPlaylistList = (uid = getUser().userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
+      const getPlaylistList$1 = (uid = getUser().userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
         data: {
           limit,
           offset,
           uid
         }
       });
-      const createPlaylist = (name2) => weapiRequest("/api/playlist/create", {
+      const createPlaylist$1 = (name2) => weapiRequest("/api/playlist/create", {
         data: {
           name: name2
         }
@@ -9557,30 +9483,23 @@ expireTime: Date.now() + 6e4,
           pid
         }
       });
-      const addSongToPlaylist = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
+      const addSongToPlaylist$1 = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
         data: {
           pid,
 trackIds,
 op: "add"
 }
       });
-      const getAlbumSongList = (id) => weapiRequest(`/api/v1/album/${id}`, {
+      const getAlbumSongList$1 = (id) => weapiRequest(`/api/v1/album/${id}`, {
         data: {}
       });
-      const getSongUrl = (ids, options) => {
+      const getSongUrl$1 = (ids, options) => {
         const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = options || {};
         return weapiRequest("/api/song/enhance/player/url/v1", {
           data: { ids: JSON.stringify(ids), level, encodeType }
         });
       };
-      const getArtistTopSongList = (id) => weapiRequest("/api/artist/top/song", {
-        data: {
-          id,
-          limit: 1e3,
-          offset: 0
-        }
-      });
-      const getArtistAllSongList = async (id) => {
+      const getArtistAllSongList$1 = async (id) => {
         try {
           let more = true;
           const songs2 = [];
@@ -9613,7 +9532,7 @@ offset
           throw error;
         }
       };
-      const getArtistAlbumList = async (id) => {
+      const getArtistAlbumList$1 = async (id) => {
         let more = true;
         let limit = 200;
         let offset = 0;
@@ -9639,7 +9558,7 @@ offset
           data: albumList
         };
       };
-      const uploadLocalSong = async (file) => {
+      const uploadLocalSong$1 = async (file) => {
         let defaultResult = {};
         try {
           const ext = file.name.split(".").pop() || "mp3";
@@ -9776,25 +9695,7 @@ offset
           limit: 40
         }
       });
-      const matchLocalSong = async (files) => {
-        const songs2 = await Promise.all(
-          files.map(async (file) => {
-            const { title: title2, album: album2, artist: artist2, duration: duration2 } = await getAudioMetadata(file);
-            const md52 = await getFileMD5(file);
-            return {
-              title: title2,
-              album: album2,
-              artist: artist2,
-              duration: duration2,
-              persistId: md52
-            };
-          })
-        );
-        return weapiRequest("/api/search/match/new", {
-          data: songs2
-        });
-      };
-      const getPlaylistAllData = async (id) => {
+      const getPlaylistAllData$1 = async (id) => {
         try {
           const detailRes = await weapiRequest("/api/v6/playlist/detail", {
             data: {
@@ -9807,7 +9708,7 @@ offset
           });
           console.log("detailRes", detailRes);
           const trackIds = detailRes.playlist.trackIds.map((item) => item.id);
-          const res = await getSongInfoList(trackIds);
+          const res = await getSongInfoList$1(trackIds);
           if (res[0]?.code != 200) {
             msgError(res[0]?.msg || "获取歌单数据失败");
             throw new Error(res[0]?.msg || "获取歌单数据失败");
@@ -9817,7 +9718,7 @@ offset
           throw error;
         }
       };
-      const getSongLyric = async (id) => {
+      const getSongLyric$1 = async (id) => {
         return weapiRequest("/api/song/lyric", {
           data: {
             id,
@@ -9829,17 +9730,10 @@ offset
           }
         });
       };
-      const getAlbumDetail = async (id) => {
+      const getAlbumDetail$1 = async (id) => {
         return weapiRequest(`/api/album/${id}`, {
           data: {
             id
-          }
-        });
-      };
-      const getSongDynamicCover = async (songId) => {
-        return weapiRequest("/api/songplay/dynamic-cover", {
-          data: {
-            songId
           }
         });
       };
@@ -10127,7 +10021,7 @@ offset
         return dayjs_min$1.exports;
       }
       var dayjs_minExports = requireDayjs_min();
-      const dayjs = getDefaultExportFromCjs$1(dayjs_minExports);
+      const dayjs = getDefaultExportFromCjs(dayjs_minExports);
       const getQualityTags = (song) => {
         const tags = [];
         if (song.hr)
@@ -10185,149 +10079,157 @@ offset
         };
         return fees[fee] || fees[0];
       };
-      function getDefaultExportFromCjs(x) {
-        return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
+      function stringToBytes(str, encoding = "utf8") {
+        if (encoding === "utf8") {
+          const utf8 = unescape(encodeURIComponent(str));
+          const bytes = new Uint8Array(utf8.length);
+          for (let i = 0; i < utf8.length; i++) {
+            bytes[i] = utf8.charCodeAt(i);
+          }
+          return bytes;
+        } else if (encoding === "ascii") {
+          const bytes = new Uint8Array(str.length);
+          for (let i = 0; i < str.length; i++) {
+            bytes[i] = str.charCodeAt(i) & 255;
+          }
+          return bytes;
+        } else if (encoding === "hex") {
+          const bytes = new Uint8Array(str.length / 2);
+          for (let i = 0; i < str.length; i += 2) {
+            bytes[i / 2] = parseInt(str.substr(i, 2), 16);
+          }
+          return bytes;
+        }
+        throw new Error(`Unsupported encoding: ${encoding}`);
       }
-      var buffer;
-      var hasRequiredBuffer;
-      function requireBuffer() {
-        if (hasRequiredBuffer) return buffer;
-        hasRequiredBuffer = 1;
-        function stringToBytes2(str, encoding = "utf8") {
-          if (encoding === "utf8") {
-            const utf8 = unescape(encodeURIComponent(str));
-            const bytes = new Uint8Array(utf8.length);
-            for (let i = 0; i < utf8.length; i++) {
-              bytes[i] = utf8.charCodeAt(i);
-            }
-            return bytes;
-          } else if (encoding === "ascii") {
-            const bytes = new Uint8Array(str.length);
-            for (let i = 0; i < str.length; i++) {
-              bytes[i] = str.charCodeAt(i) & 255;
-            }
-            return bytes;
-          } else if (encoding === "hex") {
-            const bytes = new Uint8Array(str.length / 2);
-            for (let i = 0; i < str.length; i += 2) {
-              bytes[i / 2] = parseInt(str.substr(i, 2), 16);
-            }
-            return bytes;
+      function bytesToString(bytes, encoding = "utf8") {
+        if (encoding === "utf8") {
+          let str = "";
+          for (let i = 0; i < bytes.length; i++) {
+            str += String.fromCharCode(bytes[i]);
           }
-          throw new Error(`Unsupported encoding: ${encoding}`);
-        }
-        function bytesToString(bytes, encoding = "utf8") {
-          if (encoding === "utf8") {
-            let str = "";
-            for (let i = 0; i < bytes.length; i++) {
-              str += String.fromCharCode(bytes[i]);
-            }
-            try {
-              return decodeURIComponent(escape(str));
-            } catch (e) {
-              return str;
-            }
-          } else if (encoding === "ascii") {
-            let str = "";
-            for (let i = 0; i < bytes.length; i++) {
-              str += String.fromCharCode(bytes[i] & 255);
-            }
+          try {
+            return decodeURIComponent(escape(str));
+          } catch (e) {
             return str;
-          } else if (encoding === "hex") {
-            let hex = "";
-            for (let i = 0; i < bytes.length; i++) {
-              const h = bytes[i].toString(16);
-              hex += h.length === 1 ? "0" + h : h;
-            }
-            return hex;
           }
-          throw new Error(`Unsupported encoding: ${encoding}`);
+        } else if (encoding === "ascii") {
+          let str = "";
+          for (let i = 0; i < bytes.length; i++) {
+            str += String.fromCharCode(bytes[i] & 255);
+          }
+          return str;
+        } else if (encoding === "hex") {
+          let hex = "";
+          for (let i = 0; i < bytes.length; i++) {
+            const h = bytes[i].toString(16);
+            hex += h.length === 1 ? "0" + h : h;
+          }
+          return hex;
         }
-        class BrowserBuffer {
-          constructor(data, byteOffset, length) {
-            if (typeof data === "number") {
-              this._data = new Uint8Array(data);
-              this._view = new DataView(this._data.buffer);
-            } else if (data instanceof Uint8Array) {
-              this._data = data;
-              this._view = new DataView(this._data.buffer, data.byteOffset, data.byteLength);
-            } else if (typeof data === "string") {
-              this._data = stringToBytes2(data, byteOffset || "utf8");
-              this._view = new DataView(this._data.buffer);
-            } else if (data instanceof ArrayBuffer) {
-              const offset = byteOffset || 0;
-              const len = length !== void 0 ? length : data.byteLength - offset;
-              this._data = new Uint8Array(data, offset, len);
-              this._view = new DataView(data, offset, len);
-            } else {
-              this._data = new Uint8Array(data);
-              this._view = new DataView(this._data.buffer);
-            }
+        throw new Error(`Unsupported encoding: ${encoding}`);
+      }
+      class BrowserBuffer {
+        constructor(data, byteOffset, length) {
+          if (typeof data === "number") {
+            this._data = new Uint8Array(data);
+            this._view = new DataView(this._data.buffer);
+          } else if (data instanceof Uint8Array) {
+            this._data = data;
+            this._view = new DataView(this._data.buffer, data.byteOffset, data.byteLength);
+          } else if (typeof data === "string") {
+            const encoding = byteOffset || "utf8";
+            this._data = stringToBytes(data, encoding);
+            this._view = new DataView(this._data.buffer);
+          } else if (data instanceof ArrayBuffer) {
+            const offset = byteOffset || 0;
+            const len = length !== void 0 ? length : data.byteLength - offset;
+            this._data = new Uint8Array(data, offset, len);
+            this._view = new DataView(data, offset, len);
+          } else if (data instanceof BrowserBuffer) {
+            this._data = data._data;
+            this._view = data._view;
+          } else if (Array.isArray(data)) {
+            this._data = new Uint8Array(data);
+            this._view = new DataView(this._data.buffer);
+          } else if (data === void 0) {
+            this._data = new Uint8Array(0);
+            this._view = new DataView(this._data.buffer);
+          } else {
+            this._data = new Uint8Array(data);
+            this._view = new DataView(this._data.buffer);
           }
+        }
 readUInt8(offset) {
-            return this._view.getUint8(offset);
-          }
+          return this._view.getUint8(offset);
+        }
 readUInt16BE(offset) {
-            return this._view.getUint16(offset, false);
-          }
+          return this._view.getUint16(offset, false);
+        }
 readUInt16LE(offset) {
-            return this._view.getUint16(offset, true);
-          }
+          return this._view.getUint16(offset, true);
+        }
 readUInt32BE(offset) {
-            return this._view.getUint32(offset, false);
-          }
+          return this._view.getUint32(offset, false);
+        }
 readUInt32LE(offset) {
-            return this._view.getUint32(offset, true);
-          }
+          return this._view.getUint32(offset, true);
+        }
 readUIntBE(offset, byteLength) {
-            let value2 = 0;
-            for (let i = 0; i < byteLength; i++) {
-              value2 = (value2 << 8) + this._view.getUint8(offset + i);
-            }
-            return value2;
+          let value2 = 0;
+          for (let i = 0; i < byteLength; i++) {
+            value2 = (value2 << 8) + this._view.getUint8(offset + i);
           }
+          return value2;
+        }
 writeUInt8(value2, offset) {
-            this._view.setUint8(offset, value2);
-          }
+          this._view.setUint8(offset, value2);
+        }
 writeUInt16BE(value2, offset) {
-            this._view.setUint16(offset, value2, false);
-          }
+          this._view.setUint16(offset, value2, false);
+        }
 writeUInt32BE(value2, offset) {
-            this._view.setUint32(offset, value2, false);
-          }
+          this._view.setUint32(offset, value2, false);
+        }
 writeUInt32LE(value2, offset) {
-            this._view.setUint32(offset, value2, true);
-          }
+          this._view.setUint32(offset, value2, true);
+        }
 writeUIntBE(value2, offset, byteLength) {
-            for (let i = byteLength - 1; i >= 0; i--) {
-              this._view.setUint8(offset + i, value2 & 255);
-              value2 = value2 >> 8;
-            }
-          }
-toString(encoding = "utf8") {
-            return bytesToString(this._data, encoding);
-          }
-slice(start, end) {
-            const sliced = this._data.slice(start, end);
-            return new BrowserBuffer(sliced);
-          }
-get length() {
-            return this._data.length;
-          }
-get buffer() {
-            return this._data.buffer;
-          }
-toUint8Array() {
-            return new Uint8Array(this._data);
-          }
-toArrayBuffer() {
-            return this.buffer.slice(this._data.byteOffset, this._data.byteOffset + this._data.byteLength);
+          for (let i = byteLength - 1; i >= 0; i--) {
+            this._view.setUint8(offset + i, value2 & 255);
+            value2 = value2 >> 8;
           }
         }
-        BrowserBuffer.alloc = function(size2) {
+toString(encoding = "utf8") {
+          return bytesToString(this._data, encoding);
+        }
+slice(start, end) {
+          const sliced = this._data.slice(start, end);
+          return new BrowserBuffer(sliced);
+        }
+get length() {
+          return this._data.length;
+        }
+get buffer() {
+          return this._data.buffer;
+        }
+toUint8Array() {
+          return new Uint8Array(this._data);
+        }
+toArrayBuffer() {
+          const buf = this.buffer;
+          if (typeof SharedArrayBuffer !== "undefined" && buf instanceof SharedArrayBuffer) {
+            throw new Error("Cannot convert SharedArrayBuffer to ArrayBuffer");
+          }
+          return buf.slice(
+            this._data.byteOffset,
+            this._data.byteOffset + this._data.byteLength
+          );
+        }
+static alloc(size2) {
           return new BrowserBuffer(size2);
-        };
-        BrowserBuffer.from = function(data, encoding) {
+        }
+static from(data, encoding) {
           if (data instanceof BrowserBuffer) {
             return data;
           }
@@ -10344,8 +10246,8 @@ toArrayBuffer() {
             return new BrowserBuffer(new Uint8Array(data));
           }
           throw new Error("Unsupported data type");
-        };
-        BrowserBuffer.concat = function(buffers) {
+        }
+static concat(buffers) {
           let totalLength = 0;
           for (let i = 0; i < buffers.length; i++) {
             totalLength += buffers[i].length;
@@ -10363,281 +10265,248 @@ toArrayBuffer() {
             }
           }
           return new BrowserBuffer(result);
-        };
-        buffer = BrowserBuffer;
-        return buffer;
+        }
       }
-      var imageUtils;
-      var hasRequiredImageUtils;
-      function requireImageUtils() {
-        if (hasRequiredImageUtils) return imageUtils;
-        hasRequiredImageUtils = 1;
-        function detectImageType(data) {
-          let bytes;
-          if (data instanceof Uint8Array) {
-            bytes = data;
-          } else if (data instanceof ArrayBuffer) {
-            bytes = new Uint8Array(data);
-          } else if (data.buffer) {
-            bytes = new Uint8Array(data.buffer, data.byteOffset || 0, data.byteLength || data.length);
-          } else {
-            bytes = new Uint8Array(data);
-          }
-          if (bytes.length >= 3 && bytes[0] === 255 && bytes[1] === 216 && bytes[2] === 255) {
-            return { mime: "image/jpeg" };
-          }
-          if (bytes.length >= 8 && bytes[0] === 137 && bytes[1] === 80 && bytes[2] === 78 && bytes[3] === 71 && bytes[4] === 13 && bytes[5] === 10 && bytes[6] === 26 && bytes[7] === 10) {
-            return { mime: "image/png" };
-          }
-          if (bytes.length >= 4 && bytes[0] === 71 && bytes[1] === 73 && bytes[2] === 70 && bytes[3] === 56) {
-            return { mime: "image/gif" };
-          }
-          if (bytes.length >= 12 && bytes[0] === 82 && bytes[1] === 73 && bytes[2] === 70 && bytes[3] === 70 && bytes[8] === 87 && bytes[9] === 69 && bytes[10] === 66 && bytes[11] === 80) {
-            return { mime: "image/webp" };
-          }
-          throw new Error("Unsupported image type");
+      function detectImageType(data) {
+        let bytes;
+        if (data instanceof Uint8Array) {
+          bytes = data;
+        } else if (data instanceof ArrayBuffer) {
+          bytes = new Uint8Array(data);
+        } else if (data instanceof BrowserBuffer) {
+          bytes = data.toUint8Array();
+        } else {
+          bytes = new Uint8Array(data);
         }
-        function parseJpegSize(bytes) {
-          let offset = 2;
-          while (offset < bytes.length) {
-            if (bytes[offset] !== 255) {
-              offset++;
-              continue;
-            }
-            const marker = bytes[offset + 1];
-            if (marker >= 192 && marker <= 195) {
-              const height = bytes[offset + 5] << 8 | bytes[offset + 6];
-              const width = bytes[offset + 7] << 8 | bytes[offset + 8];
-              return { width, height };
-            }
-            if (marker === 216 || marker === 217) {
-              offset += 2;
-            } else if (marker >= 208 && marker <= 215) {
-              offset += 2;
-            } else {
-              const length = bytes[offset + 2] << 8 | bytes[offset + 3];
-              offset += 2 + length;
-            }
-          }
-          throw new Error("Could not determine JPEG dimensions");
+        if (bytes.length >= 3 && bytes[0] === 255 && bytes[1] === 216 && bytes[2] === 255) {
+          return { mime: "image/jpeg" };
         }
-        function parsePngSize(bytes) {
-          if (bytes.length < 24) {
-            throw new Error("Invalid PNG file");
-          }
-          const width = bytes[16] << 24 | bytes[17] << 16 | bytes[18] << 8 | bytes[19];
-          const height = bytes[20] << 24 | bytes[21] << 16 | bytes[22] << 8 | bytes[23];
-          return { width, height };
+        if (bytes.length >= 8 && bytes[0] === 137 && bytes[1] === 80 && bytes[2] === 78 && bytes[3] === 71 && bytes[4] === 13 && bytes[5] === 10 && bytes[6] === 26 && bytes[7] === 10) {
+          return { mime: "image/png" };
         }
-        function getImageSize(data) {
-          let bytes;
-          if (data instanceof Uint8Array) {
-            bytes = data;
-          } else if (data instanceof ArrayBuffer) {
-            bytes = new Uint8Array(data);
-          } else if (data.buffer) {
-            bytes = new Uint8Array(data.buffer, data.byteOffset || 0, data.byteLength || data.length);
-          } else {
-            bytes = new Uint8Array(data);
-          }
-          const type = detectImageType(bytes);
-          if (type.mime === "image/jpeg") {
-            return parseJpegSize(bytes);
-          } else if (type.mime === "image/png") {
-            return parsePngSize(bytes);
-          } else {
-            throw new Error(`Unsupported image type: ${type.mime}`);
-          }
+        if (bytes.length >= 4 && bytes[0] === 71 && bytes[1] === 73 && bytes[2] === 70 && bytes[3] === 56) {
+          return { mime: "image/gif" };
         }
-        function readFileAsArrayBuffer(file) {
-          return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-              resolve(new Uint8Array(e.target.result));
-            };
-            reader.onerror = reject;
-            reader.readAsArrayBuffer(file);
-          });
+        if (bytes.length >= 12 && bytes[0] === 82 && bytes[1] === 73 && bytes[2] === 70 && bytes[3] === 70 && bytes[8] === 87 && bytes[9] === 69 && bytes[10] === 66 && bytes[11] === 80) {
+          return { mime: "image/webp" };
         }
-        imageUtils = {
-          detectImageType,
-          getImageSize,
-          readFileAsArrayBuffer
-        };
-        return imageUtils;
+        throw new Error("Unsupported image type");
       }
-      var formatVorbisComment;
-      var hasRequiredFormatVorbisComment;
-      function requireFormatVorbisComment() {
-        if (hasRequiredFormatVorbisComment) return formatVorbisComment;
-        hasRequiredFormatVorbisComment = 1;
-        const BrowserBuffer = requireBuffer();
-        formatVorbisComment = (vendorString, commentList) => {
-          const bufferArray = [];
-          const vendorStringBuffer = BrowserBuffer.from(vendorString, "utf8");
-          const vendorLengthBuffer = BrowserBuffer.alloc(4);
-          vendorLengthBuffer.writeUInt32LE(vendorStringBuffer.length, 0);
-          const userCommentListLengthBuffer = BrowserBuffer.alloc(4);
-          userCommentListLengthBuffer.writeUInt32LE(commentList.length, 0);
-          bufferArray.push(vendorLengthBuffer, vendorStringBuffer, userCommentListLengthBuffer);
-          for (let i = 0; i < commentList.length; i++) {
-            const comment = commentList[i];
-            const commentBuffer = BrowserBuffer.from(comment, "utf8");
-            const lengthBuffer = BrowserBuffer.alloc(4);
-            lengthBuffer.writeUInt32LE(commentBuffer.length, 0);
-            bufferArray.push(lengthBuffer, commentBuffer);
+      function parseJpegSize(bytes) {
+        let offset = 2;
+        while (offset < bytes.length) {
+          if (bytes[offset] !== 255) {
+            offset++;
+            continue;
           }
-          return BrowserBuffer.concat(bufferArray);
-        };
-        return formatVorbisComment;
-      }
-      var metaflacBrowserJs;
-      var hasRequiredMetaflacBrowserJs;
-      function requireMetaflacBrowserJs() {
-        if (hasRequiredMetaflacBrowserJs) return metaflacBrowserJs;
-        hasRequiredMetaflacBrowserJs = 1;
-        const BrowserBuffer = requireBuffer();
-        const { detectImageType, getImageSize } = requireImageUtils();
-        const formatVorbisComment2 = requireFormatVorbisComment();
-        const STREAMINFO = 0;
-        const PADDING = 1;
-        const APPLICATION = 2;
-        const SEEKTABLE = 3;
-        const VORBIS_COMMENT = 4;
-        const CUESHEET = 5;
-        const PICTURE = 6;
-        async function toBrowserBuffer(data) {
-          if (data instanceof BrowserBuffer) {
-            return data;
+          const marker = bytes[offset + 1];
+          if (marker >= 192 && marker <= 195) {
+            const height = bytes[offset + 5] << 8 | bytes[offset + 6];
+            const width = bytes[offset + 7] << 8 | bytes[offset + 8];
+            return { width, height };
           }
-          if (data instanceof Uint8Array) {
-            return new BrowserBuffer(data);
+          if (marker === 216 || marker === 217) {
+            offset += 2;
+          } else if (marker >= 208 && marker <= 215) {
+            offset += 2;
+          } else {
+            const length = bytes[offset + 2] << 8 | bytes[offset + 3];
+            offset += 2 + length;
           }
-          if (data instanceof ArrayBuffer) {
-            return new BrowserBuffer(data);
-          }
-          if (data instanceof File || data instanceof Blob) {
-            const arrayBuffer = await data.arrayBuffer();
-            return new BrowserBuffer(arrayBuffer);
-          }
-          throw new Error("Unsupported data type. Expected ArrayBuffer, Uint8Array, File, Blob, or BrowserBuffer.");
         }
-        class Metaflac {
+        throw new Error("Could not determine JPEG dimensions");
+      }
+      function parsePngSize(bytes) {
+        if (bytes.length < 24) {
+          throw new Error("Invalid PNG file");
+        }
+        const width = bytes[16] << 24 | bytes[17] << 16 | bytes[18] << 8 | bytes[19];
+        const height = bytes[20] << 24 | bytes[21] << 16 | bytes[22] << 8 | bytes[23];
+        return { width, height };
+      }
+      function getImageSize(data) {
+        let bytes;
+        if (data instanceof Uint8Array) {
+          bytes = data;
+        } else if (data instanceof ArrayBuffer) {
+          bytes = new Uint8Array(data);
+        } else if (data instanceof BrowserBuffer) {
+          bytes = data.toUint8Array();
+        } else {
+          bytes = new Uint8Array(data);
+        }
+        const type = detectImageType(bytes);
+        if (type.mime === "image/jpeg") {
+          return parseJpegSize(bytes);
+        } else if (type.mime === "image/png") {
+          return parsePngSize(bytes);
+        } else {
+          throw new Error(`Unsupported image type: ${type.mime}`);
+        }
+      }
+      function formatVorbisComment(vendorString, commentList) {
+        const bufferArray = [];
+        const vendorStringBuffer = BrowserBuffer.from(vendorString, "utf8");
+        const vendorLengthBuffer = BrowserBuffer.alloc(4);
+        vendorLengthBuffer.writeUInt32LE(vendorStringBuffer.length, 0);
+        const userCommentListLengthBuffer = BrowserBuffer.alloc(4);
+        userCommentListLengthBuffer.writeUInt32LE(commentList.length, 0);
+        bufferArray.push(vendorLengthBuffer, vendorStringBuffer, userCommentListLengthBuffer);
+        for (let i = 0; i < commentList.length; i++) {
+          const comment = commentList[i];
+          const commentBuffer = BrowserBuffer.from(comment, "utf8");
+          const lengthBuffer = BrowserBuffer.alloc(4);
+          lengthBuffer.writeUInt32LE(commentBuffer.length, 0);
+          bufferArray.push(lengthBuffer, commentBuffer);
+        }
+        return BrowserBuffer.concat(bufferArray);
+      }
+      const STREAMINFO = 0;
+      const PADDING = 1;
+      const APPLICATION = 2;
+      const SEEKTABLE = 3;
+      const VORBIS_COMMENT = 4;
+      const CUESHEET = 5;
+      const PICTURE = 6;
+      async function toBrowserBuffer(data) {
+        if (data instanceof BrowserBuffer) {
+          return data;
+        }
+        if (data instanceof Uint8Array) {
+          return new BrowserBuffer(data);
+        }
+        if (data instanceof ArrayBuffer) {
+          return new BrowserBuffer(data);
+        }
+        if (data instanceof File || data instanceof Blob) {
+          const arrayBuffer = await data.arrayBuffer();
+          return new BrowserBuffer(arrayBuffer);
+        }
+        throw new Error(
+          "Unsupported data type. Expected ArrayBuffer, Uint8Array, File, Blob, or BrowserBuffer."
+        );
+      }
+      class Metaflac {
 constructor(flac) {
-            if (flac instanceof File || flac instanceof Blob) {
-              throw new Error("File and Blob objects must be loaded asynchronously. Use Metaflac.fromFile() or Metaflac.fromBlob() instead.");
-            }
-            this.flac = flac;
-            this.buffer = null;
-            this.marker = "";
-            this.streamInfo = null;
-            this.blocks = [];
-            this.padding = null;
-            this.vorbisComment = null;
-            this.vendorString = "";
-            this.tags = [];
-            this.pictures = [];
-            this.picturesSpecs = [];
-            this.picturesDatas = [];
-            this.framesOffset = 0;
-            this.init();
+          this.buffer = null;
+          this.streamInfo = null;
+          this.blocks = [];
+          this.padding = null;
+          this.vorbisComment = null;
+          this.vendorString = "";
+          this.tags = [];
+          this.pictures = [];
+          this.picturesSpecs = [];
+          this.picturesDatas = [];
+          this.framesOffset = 0;
+          if (flac instanceof File || flac instanceof Blob) {
+            throw new Error(
+              "File and Blob objects must be loaded asynchronously. Use Metaflac.fromFile() or Metaflac.fromBlob() instead."
+            );
           }
+          this.flac = flac;
+          this.init();
+        }
 static async fromFile(file) {
-            const buffer2 = await toBrowserBuffer(file);
-            return new Metaflac(buffer2);
-          }
+          const buffer = await toBrowserBuffer(file);
+          return new Metaflac(buffer);
+        }
 static async fromBlob(blob) {
-            const buffer2 = await toBrowserBuffer(blob);
-            return new Metaflac(buffer2);
-          }
+          const buffer = await toBrowserBuffer(blob);
+          return new Metaflac(buffer);
+        }
 static fromArrayBuffer(arrayBuffer) {
-            return new Metaflac(arrayBuffer);
-          }
+          return new Metaflac(arrayBuffer);
+        }
 static fromUint8Array(uint8Array) {
-            return new Metaflac(uint8Array);
+          return new Metaflac(uint8Array);
+        }
+        init() {
+          if (this.flac instanceof BrowserBuffer) {
+            this.buffer = this.flac;
+          } else if (this.flac instanceof Uint8Array) {
+            this.buffer = new BrowserBuffer(this.flac);
+          } else if (this.flac instanceof ArrayBuffer) {
+            this.buffer = new BrowserBuffer(this.flac);
+          } else {
+            throw new Error("Metaflac(flac) flac must be ArrayBuffer, Uint8Array, or BrowserBuffer.");
           }
-          init() {
-            if (this.flac instanceof BrowserBuffer) {
-              this.buffer = this.flac;
-            } else if (this.flac instanceof Uint8Array) {
-              this.buffer = new BrowserBuffer(this.flac);
-            } else if (this.flac instanceof ArrayBuffer) {
-              this.buffer = new BrowserBuffer(this.flac);
-            } else {
-              throw new Error("Metaflac(flac) flac must be ArrayBuffer, Uint8Array, or BrowserBuffer.");
+          let offset = 0;
+          const marker = this.buffer.slice(0, offset += 4).toString("ascii");
+          if (marker !== "fLaC") {
+            throw new Error("The file does not appear to be a FLAC file.");
+          }
+          let blockType = 0;
+          let isLastBlock = false;
+          while (!isLastBlock) {
+            blockType = this.buffer.readUInt8(offset++);
+            isLastBlock = blockType > 128;
+            blockType = blockType % 128;
+            const blockLength = this.buffer.readUIntBE(offset, 3);
+            offset += 3;
+            if (blockType === STREAMINFO) {
+              this.streamInfo = this.buffer.slice(offset, offset + blockLength);
             }
+            if (blockType === PADDING) {
+              this.padding = this.buffer.slice(offset, offset + blockLength);
+            }
+            if (blockType === VORBIS_COMMENT) {
+              this.vorbisComment = this.buffer.slice(offset, offset + blockLength);
+              this.parseVorbisComment();
+            }
+            if (blockType === PICTURE) {
+              this.pictures.push(this.buffer.slice(offset, offset + blockLength));
+              this.parsePictureBlock();
+            }
+            if ([APPLICATION, SEEKTABLE, CUESHEET].includes(blockType)) {
+              this.blocks.push([blockType, this.buffer.slice(offset, offset + blockLength)]);
+            }
+            offset += blockLength;
+          }
+          this.framesOffset = offset;
+        }
+        parseVorbisComment() {
+          if (!this.vorbisComment) {
+            return;
+          }
+          const vendorLength = this.vorbisComment.readUInt32LE(0);
+          this.vendorString = this.vorbisComment.slice(4, vendorLength + 4).toString("utf8");
+          this.vorbisComment.readUInt32LE(4 + vendorLength);
+          const userCommentListBuffer = this.vorbisComment.slice(4 + vendorLength + 4);
+          for (let offset = 0; offset < userCommentListBuffer.length; ) {
+            const length = userCommentListBuffer.readUInt32LE(offset);
+            offset += 4;
+            const comment = userCommentListBuffer.slice(offset, offset + length).toString("utf8");
+            offset += length;
+            this.tags.push(comment);
+          }
+        }
+        parsePictureBlock() {
+          this.pictures.forEach((picture) => {
             let offset = 0;
-            const marker = this.buffer.slice(0, offset += 4).toString("ascii");
-            if (marker !== "fLaC") {
-              throw new Error("The file does not appear to be a FLAC file.");
-            }
-            let blockType = 0;
-            let isLastBlock = false;
-            while (!isLastBlock) {
-              blockType = this.buffer.readUInt8(offset++);
-              isLastBlock = blockType > 128;
-              blockType = blockType % 128;
-              const blockLength = this.buffer.readUIntBE(offset, 3);
-              offset += 3;
-              if (blockType === STREAMINFO) {
-                this.streamInfo = this.buffer.slice(offset, offset + blockLength);
-              }
-              if (blockType === PADDING) {
-                this.padding = this.buffer.slice(offset, offset + blockLength);
-              }
-              if (blockType === VORBIS_COMMENT) {
-                this.vorbisComment = this.buffer.slice(offset, offset + blockLength);
-                this.parseVorbisComment();
-              }
-              if (blockType === PICTURE) {
-                this.pictures.push(this.buffer.slice(offset, offset + blockLength));
-                this.parsePictureBlock();
-              }
-              if ([APPLICATION, SEEKTABLE, CUESHEET].includes(blockType)) {
-                this.blocks.push([blockType, this.buffer.slice(offset, offset + blockLength)]);
-              }
-              offset += blockLength;
-            }
-            this.framesOffset = offset;
-          }
-          parseVorbisComment() {
-            const vendorLength = this.vorbisComment.readUInt32LE(0);
-            this.vendorString = this.vorbisComment.slice(4, vendorLength + 4).toString("utf8");
-            this.vorbisComment.readUInt32LE(4 + vendorLength);
-            const userCommentListBuffer = this.vorbisComment.slice(4 + vendorLength + 4);
-            for (let offset = 0; offset < userCommentListBuffer.length; ) {
-              const length = userCommentListBuffer.readUInt32LE(offset);
-              offset += 4;
-              const comment = userCommentListBuffer.slice(offset, offset + length).toString("utf8");
-              offset += length;
-              this.tags.push(comment);
-            }
-          }
-          parsePictureBlock() {
-            this.pictures.forEach((picture) => {
-              let offset = 0;
-              const type = picture.readUInt32BE(offset);
-              offset += 4;
-              const mimeTypeLength = picture.readUInt32BE(offset);
-              offset += 4;
-              const mime = picture.slice(offset, offset + mimeTypeLength).toString("ascii");
-              offset += mimeTypeLength;
-              const descriptionLength = picture.readUInt32BE(offset);
-              offset += 4;
-              const description = picture.slice(offset, offset + descriptionLength).toString("utf8");
-              offset += descriptionLength;
-              const width = picture.readUInt32BE(offset);
-              offset += 4;
-              const height = picture.readUInt32BE(offset);
-              offset += 4;
-              const depth = picture.readUInt32BE(offset);
-              offset += 4;
-              const colors = picture.readUInt32BE(offset);
-              offset += 4;
-              const pictureDataLength = picture.readUInt32BE(offset);
-              offset += 4;
-              this.picturesDatas.push(picture.slice(offset, offset + pictureDataLength));
-              this.picturesSpecs.push(this.buildSpecification({
+            const type = picture.readUInt32BE(offset);
+            offset += 4;
+            const mimeTypeLength = picture.readUInt32BE(offset);
+            offset += 4;
+            const mime = picture.slice(offset, offset + mimeTypeLength).toString("ascii");
+            offset += mimeTypeLength;
+            const descriptionLength = picture.readUInt32BE(offset);
+            offset += 4;
+            const description = picture.slice(offset, offset + descriptionLength).toString("utf8");
+            offset += descriptionLength;
+            const width = picture.readUInt32BE(offset);
+            offset += 4;
+            const height = picture.readUInt32BE(offset);
+            offset += 4;
+            const depth = picture.readUInt32BE(offset);
+            offset += 4;
+            const colors = picture.readUInt32BE(offset);
+            offset += 4;
+            const pictureDataLength = picture.readUInt32BE(offset);
+            offset += 4;
+            this.picturesDatas.push(picture.slice(offset, offset + pictureDataLength));
+            this.picturesSpecs.push(
+              this.buildSpecification({
                 type,
                 mime,
                 description,
@@ -10645,234 +10514,268 @@ static fromUint8Array(uint8Array) {
                 height,
                 depth,
                 colors
-              }));
-            });
-          }
-          getPicturesSpecs() {
-            return this.picturesSpecs;
-          }
+              })
+            );
+          });
+        }
+getPicturesSpecs() {
+          return this.picturesSpecs;
+        }
 getMd5sum() {
-            return this.streamInfo.slice(18, 34).toString("hex");
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
           }
+          return this.streamInfo.slice(18, 34).toString("hex");
+        }
 getMinBlocksize() {
-            return this.streamInfo.readUInt16BE(0);
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
           }
+          return this.streamInfo.readUInt16BE(0);
+        }
 getMaxBlocksize() {
-            return this.streamInfo.readUInt16BE(2);
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
           }
+          return this.streamInfo.readUInt16BE(2);
+        }
 getMinFramesize() {
-            return this.streamInfo.readUIntBE(4, 3);
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
           }
+          return this.streamInfo.readUIntBE(4, 3);
+        }
 getMaxFramesize() {
-            return this.streamInfo.readUIntBE(7, 3);
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
           }
+          return this.streamInfo.readUIntBE(7, 3);
+        }
 getSampleRate() {
-            return this.streamInfo.readUIntBE(10, 3) >> 4;
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
           }
+          return this.streamInfo.readUIntBE(10, 3) >> 4;
+        }
 getChannels() {
-            return (this.streamInfo.readUIntBE(10, 3) & 15) >> 1;
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
           }
+          return (this.streamInfo.readUIntBE(10, 3) & 15) >> 1;
+        }
 getBps() {
-            return (this.streamInfo.readUIntBE(12, 2) & 496) >> 4;
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
           }
+          return (this.streamInfo.readUIntBE(12, 2) & 496) >> 4;
+        }
 getTotalSamples() {
-            return this.streamInfo.readUIntBE(13, 5) & 68719476735;
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
           }
+          return this.streamInfo.readUIntBE(13, 5) & 68719476735;
+        }
 getVendorTag() {
-            return this.vendorString;
-          }
+          return this.vendorString;
+        }
 getTag(name2) {
-            return this.tags.filter((item) => {
-              const itemName2 = item.split("=")[0];
-              return itemName2 === name2;
-            }).join("\n");
-          }
+          return this.tags.filter((item) => {
+            const itemName2 = item.split("=")[0];
+            return itemName2 === name2;
+          }).join("\n");
+        }
 removeTag(name2) {
-            this.tags = this.tags.filter((item) => {
-              const itemName2 = item.split("=")[0];
-              return itemName2 !== name2;
-            });
-          }
+          this.tags = this.tags.filter((item) => {
+            const itemName2 = item.split("=")[0];
+            return itemName2 !== name2;
+          });
+        }
 removeFirstTag(name2) {
-            const found = this.tags.findIndex((item) => {
-              return item.split("=")[0] === name2;
-            });
-            if (found !== -1) {
-              this.tags.splice(found, 1);
-            }
-          }
-removeAllTags() {
-            this.tags = [];
-          }
-setTag(field) {
-            if (field.indexOf("=") === -1) {
-              throw new Error(`malformed vorbis comment field "${field}", field contains no '=' character`);
-            }
-            this.tags.push(field);
-          }
-importTagsFromString(tagsString) {
-            const tags = tagsString.split("\n").filter((line) => line.trim());
-            tags.forEach((line) => {
-              if (line.indexOf("=") === -1) {
-                throw new Error(`malformed vorbis comment "${line}", contains no '=' character`);
-              }
-            });
-            this.tags = this.tags.concat(tags);
-          }
-exportTagsToString() {
-            return this.tags.join("\n");
-          }
-importPictureFromBuffer(picture) {
-            let pictureBuffer;
-            if (picture instanceof BrowserBuffer) {
-              pictureBuffer = picture;
-            } else if (picture instanceof Uint8Array) {
-              pictureBuffer = new BrowserBuffer(picture);
-            } else if (picture instanceof ArrayBuffer) {
-              pictureBuffer = new BrowserBuffer(picture);
-            } else {
-              throw new Error("Picture must be Uint8Array, ArrayBuffer, or BrowserBuffer");
-            }
-            const pictureArray = pictureBuffer.toUint8Array();
-            const { mime } = detectImageType(pictureArray);
-            if (mime !== "image/jpeg" && mime !== "image/png") {
-              throw new Error(`only support image/jpeg and image/png picture temporarily, current import ${mime}`);
-            }
-            const dimensions = getImageSize(pictureArray);
-            const spec = this.buildSpecification({
-              mime,
-              width: dimensions.width,
-              height: dimensions.height
-            });
-            this.pictures.push(this.buildPictureBlock(pictureBuffer, spec));
-            this.picturesSpecs.push(spec);
-          }
-async importPictureFromFile(file) {
-            const arrayBuffer = await file.arrayBuffer();
-            this.importPictureFromBuffer(arrayBuffer);
-          }
-exportPictureToBlob(index2 = 0) {
-            if (this.picturesDatas.length > index2) {
-              const pictureData = this.picturesDatas[index2];
-              const spec = this.picturesSpecs[index2];
-              return new Blob([pictureData.toArrayBuffer()], { type: spec.mime });
-            }
-            throw new Error(`Picture index ${index2} does not exist`);
-          }
-exportPictureToArrayBuffer(index2 = 0) {
-            if (this.picturesDatas.length > index2) {
-              return this.picturesDatas[index2].toArrayBuffer();
-            }
-            throw new Error(`Picture index ${index2} does not exist`);
-          }
-removePicture(index2 = 0) {
-            if (this.pictures.length > index2) {
-              this.pictures.splice(index2, 1);
-              this.picturesSpecs.splice(index2, 1);
-              this.picturesDatas.splice(index2, 1);
-            } else {
-              throw new Error(`Picture index ${index2} does not exist`);
-            }
-          }
-removeAllPictures() {
-            this.pictures = [];
-            this.picturesSpecs = [];
-            this.picturesDatas = [];
-          }
-getAllTags() {
-            return this.tags;
-          }
-          buildSpecification(spec = {}) {
-            const defaults = {
-              type: 3,
-              mime: "image/jpeg",
-              description: "",
-              width: 0,
-              height: 0,
-              depth: 24,
-              colors: 0
-            };
-            return Object.assign(defaults, spec);
-          }
-buildPictureBlock(picture, specification = {}) {
-            const pictureType = BrowserBuffer.alloc(4);
-            const mimeLength = BrowserBuffer.alloc(4);
-            const mime = BrowserBuffer.from(specification.mime, "ascii");
-            const descriptionLength = BrowserBuffer.alloc(4);
-            const description = BrowserBuffer.from(specification.description, "utf8");
-            const width = BrowserBuffer.alloc(4);
-            const height = BrowserBuffer.alloc(4);
-            const depth = BrowserBuffer.alloc(4);
-            const colors = BrowserBuffer.alloc(4);
-            const pictureLength = BrowserBuffer.alloc(4);
-            pictureType.writeUInt32BE(specification.type, 0);
-            mimeLength.writeUInt32BE(specification.mime.length, 0);
-            descriptionLength.writeUInt32BE(specification.description.length, 0);
-            width.writeUInt32BE(specification.width, 0);
-            height.writeUInt32BE(specification.height, 0);
-            depth.writeUInt32BE(specification.depth, 0);
-            colors.writeUInt32BE(specification.colors, 0);
-            pictureLength.writeUInt32BE(picture.length, 0);
-            return BrowserBuffer.concat([
-              pictureType,
-              mimeLength,
-              mime,
-              descriptionLength,
-              description,
-              width,
-              height,
-              depth,
-              colors,
-              pictureLength,
-              picture
-            ]);
-          }
-          buildMetadataBlock(type, block, isLast = false) {
-            const header = BrowserBuffer.alloc(4);
-            if (isLast) {
-              type += 128;
-            }
-            header.writeUIntBE(type, 0, 1);
-            header.writeUIntBE(block.length, 1, 3);
-            return BrowserBuffer.concat([header, block]);
-          }
-          buildMetadata() {
-            const bufferArray = [];
-            bufferArray.push(this.buildMetadataBlock(STREAMINFO, this.streamInfo));
-            this.blocks.forEach((block) => {
-              bufferArray.push(this.buildMetadataBlock(...block));
-            });
-            bufferArray.push(this.buildMetadataBlock(VORBIS_COMMENT, formatVorbisComment2(this.vendorString, this.tags)));
-            this.pictures.forEach((block) => {
-              bufferArray.push(this.buildMetadataBlock(PICTURE, block));
-            });
-            const padding = this.padding || BrowserBuffer.alloc(4);
-            bufferArray.push(this.buildMetadataBlock(PADDING, padding, true));
-            return bufferArray;
-          }
-          buildStream() {
-            const metadata = this.buildMetadata();
-            return [this.buffer.slice(0, 4), ...metadata, this.buffer.slice(this.framesOffset)];
-          }
-save() {
-            const stream = this.buildStream();
-            const result = BrowserBuffer.concat(stream);
-            return result.toArrayBuffer();
-          }
-saveAsBlob() {
-            const arrayBuffer = this.save();
-            return new Blob([arrayBuffer], { type: "audio/flac" });
-          }
-saveAsBuffer() {
-            const stream = this.buildStream();
-            return BrowserBuffer.concat(stream);
+          const found = this.tags.findIndex((item) => {
+            return item.split("=")[0] === name2;
+          });
+          if (found !== -1) {
+            this.tags.splice(found, 1);
           }
         }
-        metaflacBrowserJs = Metaflac;
-        return metaflacBrowserJs;
+removeAllTags() {
+          this.tags = [];
+        }
+setTag(field) {
+          if (field.indexOf("=") === -1) {
+            throw new Error(`malformed vorbis comment field "${field}", field contains no '=' character`);
+          }
+          this.tags.push(field);
+        }
+importTagsFromString(tagsString) {
+          const tags = tagsString.split("\n").filter((line) => line.trim());
+          tags.forEach((line) => {
+            if (line.indexOf("=") === -1) {
+              throw new Error(`malformed vorbis comment "${line}", contains no '=' character`);
+            }
+          });
+          this.tags = this.tags.concat(tags);
+        }
+exportTagsToString() {
+          return this.tags.join("\n");
+        }
+importPictureFromBuffer(picture) {
+          let pictureBuffer;
+          if (picture instanceof BrowserBuffer) {
+            pictureBuffer = picture;
+          } else if (picture instanceof Uint8Array) {
+            pictureBuffer = new BrowserBuffer(picture);
+          } else if (picture instanceof ArrayBuffer) {
+            pictureBuffer = new BrowserBuffer(picture);
+          } else {
+            throw new Error("Picture must be Uint8Array, ArrayBuffer, or BrowserBuffer");
+          }
+          const pictureArray = pictureBuffer.toUint8Array();
+          const { mime } = detectImageType(pictureArray);
+          if (mime !== "image/jpeg" && mime !== "image/png") {
+            throw new Error(
+              `only support image/jpeg and image/png picture temporarily, current import ${mime}`
+            );
+          }
+          const dimensions = getImageSize(pictureArray);
+          const spec = this.buildSpecification({
+            mime,
+            width: dimensions.width,
+            height: dimensions.height
+          });
+          this.pictures.push(this.buildPictureBlock(pictureBuffer, spec));
+          this.picturesSpecs.push(spec);
+          this.picturesDatas.push(pictureBuffer);
+        }
+async importPictureFromFile(file) {
+          const arrayBuffer = await file.arrayBuffer();
+          this.importPictureFromBuffer(arrayBuffer);
+        }
+exportPictureToBlob(index2 = 0) {
+          if (this.picturesDatas.length > index2) {
+            const pictureData = this.picturesDatas[index2];
+            const spec = this.picturesSpecs[index2];
+            return new Blob([pictureData.toArrayBuffer()], { type: spec.mime });
+          }
+          throw new Error(`Picture index ${index2} does not exist`);
+        }
+exportPictureToArrayBuffer(index2 = 0) {
+          if (this.picturesDatas.length > index2) {
+            return this.picturesDatas[index2].toArrayBuffer();
+          }
+          throw new Error(`Picture index ${index2} does not exist`);
+        }
+removePicture(index2 = 0) {
+          if (this.pictures.length > index2) {
+            this.pictures.splice(index2, 1);
+            this.picturesSpecs.splice(index2, 1);
+            this.picturesDatas.splice(index2, 1);
+          } else {
+            throw new Error(`Picture index ${index2} does not exist`);
+          }
+        }
+removeAllPictures() {
+          this.pictures = [];
+          this.picturesSpecs = [];
+          this.picturesDatas = [];
+        }
+getAllTags() {
+          return this.tags;
+        }
+        buildSpecification(spec = {}) {
+          const defaults = {
+            type: 3,
+            mime: "image/jpeg",
+            description: "",
+            width: 0,
+            height: 0,
+            depth: 24,
+            colors: 0
+          };
+          return Object.assign(defaults, spec);
+        }
+buildPictureBlock(picture, specification) {
+          const pictureType = BrowserBuffer.alloc(4);
+          const mimeLength = BrowserBuffer.alloc(4);
+          const mime = BrowserBuffer.from(specification.mime, "ascii");
+          const descriptionLength = BrowserBuffer.alloc(4);
+          const description = BrowserBuffer.from(specification.description, "utf8");
+          const width = BrowserBuffer.alloc(4);
+          const height = BrowserBuffer.alloc(4);
+          const depth = BrowserBuffer.alloc(4);
+          const colors = BrowserBuffer.alloc(4);
+          const pictureLength = BrowserBuffer.alloc(4);
+          pictureType.writeUInt32BE(specification.type, 0);
+          mimeLength.writeUInt32BE(specification.mime.length, 0);
+          descriptionLength.writeUInt32BE(specification.description.length, 0);
+          width.writeUInt32BE(specification.width, 0);
+          height.writeUInt32BE(specification.height, 0);
+          depth.writeUInt32BE(specification.depth, 0);
+          colors.writeUInt32BE(specification.colors, 0);
+          pictureLength.writeUInt32BE(picture.length, 0);
+          return BrowserBuffer.concat([
+            pictureType,
+            mimeLength,
+            mime,
+            descriptionLength,
+            description,
+            width,
+            height,
+            depth,
+            colors,
+            pictureLength,
+            picture
+          ]);
+        }
+        buildMetadataBlock(type, block, isLast = false) {
+          const header = BrowserBuffer.alloc(4);
+          if (isLast) {
+            type += 128;
+          }
+          header.writeUIntBE(type, 0, 1);
+          header.writeUIntBE(block.length, 1, 3);
+          return BrowserBuffer.concat([header, block]);
+        }
+        buildMetadata() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          const bufferArray = [];
+          bufferArray.push(this.buildMetadataBlock(STREAMINFO, this.streamInfo));
+          this.blocks.forEach((block) => {
+            bufferArray.push(this.buildMetadataBlock(...block));
+          });
+          bufferArray.push(
+            this.buildMetadataBlock(VORBIS_COMMENT, formatVorbisComment(this.vendorString, this.tags))
+          );
+          this.pictures.forEach((block) => {
+            bufferArray.push(this.buildMetadataBlock(PICTURE, block));
+          });
+          const padding = this.padding || BrowserBuffer.alloc(4);
+          bufferArray.push(this.buildMetadataBlock(PADDING, padding, true));
+          return bufferArray;
+        }
+        buildStream() {
+          if (!this.buffer) {
+            throw new Error("Buffer is not available");
+          }
+          const metadata = this.buildMetadata();
+          return [this.buffer.slice(0, 4), ...metadata, this.buffer.slice(this.framesOffset)];
+        }
+save() {
+          const stream = this.buildStream();
+          const result = BrowserBuffer.concat(stream);
+          return result.toArrayBuffer();
+        }
+saveAsBlob() {
+          const arrayBuffer = this.save();
+          return new Blob([arrayBuffer], { type: "audio/flac" });
+        }
+saveAsBuffer() {
+          const stream = this.buildStream();
+          return BrowserBuffer.concat(stream);
+        }
       }
-      var metaflacBrowserJsExports = requireMetaflacBrowserJs();
-      var index$1 = getDefaultExportFromCjs(metaflacBrowserJsExports);
       const parseTags = (tags) => {
         const result = {};
         tags.forEach((tag2) => {
@@ -10891,7 +10794,7 @@ saveAsBuffer() {
       };
       const readAllFlacTag = async (file) => {
         try {
-          const metaflac = await index$1.fromBlob(file);
+          const metaflac = await Metaflac.fromBlob(file);
           const tags = metaflac.getAllTags();
           const parsedTags = parseTags(tags);
           console.log("解析后的标签:", parsedTags);
@@ -10903,7 +10806,7 @@ saveAsBuffer() {
       };
       const readFlacTag = async (file, tagName) => {
         try {
-          const metaflac = await index$1.fromBlob(file);
+          const metaflac = await Metaflac.fromBlob(file);
           const tagString = metaflac.getTag(tagName.toUpperCase());
           if (!tagString) {
             return void 0;
@@ -10923,7 +10826,7 @@ saveAsBuffer() {
       };
       const writeFlacTag = async (file, tagName, tagValue) => {
         try {
-          const metaflac = await index$1.fromBlob(file);
+          const metaflac = await Metaflac.fromBlob(file);
           metaflac.removeTag(tagName.toUpperCase());
           metaflac.setTag(`${tagName.toUpperCase()}=${tagValue}`);
           const newBlob = metaflac.saveAsBlob();
@@ -10934,9 +10837,24 @@ saveAsBuffer() {
           throw new Error("给 FLAC 写标签失败");
         }
       };
+      const writeFlacTags = async (file, tags) => {
+        try {
+          const metaflac = await Metaflac.fromBlob(file);
+          tags.forEach(({ tag: tag2, value: value2 }) => {
+            metaflac.removeTag(tag2.toUpperCase());
+            metaflac.setTag(`${tag2.toUpperCase()}=${value2}`);
+          });
+          const newBlob = metaflac.saveAsBlob();
+          console.log("批量写入 FLAC 标签成功");
+          return newBlob;
+        } catch (error) {
+          console.error("批量写入 FLAC 标签失败:", error);
+          throw new Error("批量写入 FLAC 标签失败");
+        }
+      };
       const embedFlacPicture = async (file, picture) => {
         try {
-          const metaflac = await index$1.fromBlob(file);
+          const metaflac = await Metaflac.fromBlob(file);
           await metaflac.importPictureFromFile(picture);
           const newBlob = metaflac.saveAsBlob();
           console.log("给 FLAC 嵌入图片成功");
@@ -10949,7 +10867,7 @@ saveAsBuffer() {
       const writeFlacTagAndPicture = async (file, tagName, tagValue, picture) => {
         try {
           let outputFile = file;
-          const metaflac = await index$1.fromBlob(file);
+          const metaflac = await Metaflac.fromBlob(file);
           console.log("metaflac", metaflac, metaflac.getAllTags());
           if (tagName && tagValue) {
             metaflac.removeTag(tagName.toUpperCase());
@@ -10957,6 +10875,7 @@ saveAsBuffer() {
           }
           if (picture) {
             await metaflac.importPictureFromFile(picture);
+            console.log("嵌入图片成功");
           }
           outputFile = metaflac.saveAsBlob();
           return outputFile || file;
@@ -11079,19 +10998,20 @@ saveAsBuffer() {
       };
       const audio = new Audio();
       const usePlayMusic = () => {
-        const [currentMid, setCurrentMid] = useState("");
-        const [isPlaying, setIsPlaying] = useState();
-        const [downloading, setDownloading] = useState(false);
-        const [currentTime, setCurrentTime] = useState(0);
-        const [duration2, setDuration] = useState(0);
+        const [currentMid, setCurrentMid] = useState$1("");
+        const [isPlaying, setIsPlaying] = useState$1();
+        const [downloading, setDownloading] = useState$1(false);
+        const [currentTime, setCurrentTime] = useState$1(0);
+        const [duration2, setDuration] = useState$1(0);
         const urlMap = useRef({});
+        const [songInfoMap, setSongInfoMap] = useState$1({});
         const getUrl = async (id, level = QUALITY_LEVELS.无损) => {
           const key = `${id}-${level}`;
           console.log("获取歌曲url的key", key);
           if (urlMap.current[key]) {
             return urlMap.current[key];
           }
-          const res = await getSongUrl([id], { level });
+          const res = await getSongUrl$1([id], { level });
           if (res.code !== 200 || !res.data[0]?.url) {
             msgError(res.message || res.msg || "获取歌曲链接失败");
             throw new Error(res.message || res.msg || "获取歌曲链接失败");
@@ -11099,6 +11019,16 @@ saveAsBuffer() {
           console.log("res", res);
           urlMap.current[key] = res.data[0].url;
           return res.data[0].url;
+        };
+        const getSongInfo = async (id) => {
+          if (songInfoMap[id]) return songInfoMap[id];
+          const res = await getSongInfoList$1([id]);
+          if (res[0].code !== 200) {
+            msgError(res[0].message || res[0].msg || "获取歌曲信息失败");
+            throw new Error(res[0].message || res[0].msg || "获取歌曲信息失败");
+          }
+          setSongInfoMap((prv) => ({ ...prv, [id]: res[0].songs?.[0] }));
+          return res[0].songs?.[0];
         };
         const play = async (id, level) => {
           try {
@@ -11127,7 +11057,7 @@ saveAsBuffer() {
           }
         };
         const getLyric = async (id) => {
-          const res = await getSongLyric(id);
+          const res = await getSongLyric$1(id);
           if (res.code !== 200) {
             msgError(res.message || res.msg || "获取歌曲歌词失败");
             throw new Error(res.message || res.msg || "获取歌曲歌词失败");
@@ -11135,7 +11065,7 @@ saveAsBuffer() {
           console.log("歌词res", res.lrc?.lyric);
           return res.lrc?.lyric;
         };
-        const download = async (id, name2, level = QUALITY_LEVELS.无损, albumMid) => {
+        const download = async (id, name2, level = QUALITY_LEVELS.无损) => {
           try {
             setDownloading(id);
             const url = await getUrl(id, level);
@@ -11148,11 +11078,23 @@ saveAsBuffer() {
             const fileName = `${name2}.${finalExt}`;
             let outputFile = blob;
             const lyric = await getLyric(id);
+            const songInfo2 = await getSongInfo(id);
+            console.log("songInfo", songInfo2);
+            const albumId = songInfo2?.al?.id;
+            const singer = songInfo2?.ar?.[0]?.name;
+            const album2 = songInfo2?.al?.name;
+            const songName2 = songInfo2?.name;
+            const tags = [
+              { tag: "title", value: songName2 },
+              { tag: "artist", value: singer },
+              { tag: "album", value: album2 }
+            ];
+            console.log("tags", tags);
             let coverBlob;
-            if (albumMid) {
-              const albumRes = await getAlbumDetail(albumMid);
+            if (albumId) {
+              const albumRes = await getAlbumDetail$1(albumId);
               if (albumRes.code === 200) {
-                const albumCover = albumRes.album.blurPicUrl;
+                const albumCover = albumRes.album.blurPicUrl + "?param=600y600";
                 const { blob: blob2, response: response2 } = await getFileBlob(
                   albumCover.replace("http://", "https://")
                 );
@@ -11161,8 +11103,9 @@ saveAsBuffer() {
             }
             switch (finalExt) {
               case "flac":
+                outputFile = await writeFlacTags(outputFile, tags);
                 outputFile = await writeFlacTagAndPicture(
-                  blob,
+                  outputFile,
                   "lyrics",
                   lyric,
                   coverBlob
@@ -11199,9 +11142,9 @@ default:
         };
       };
       const useGetAlbumDetail = () => {
-        const [currentId, setCurrentId] = useState("");
-        const [albumInfo, setAlbumInfo] = useState(null);
-        const [isLoading, setIsLoading] = useState(false);
+        const [currentId, setCurrentId] = useState$1("");
+        const [albumInfo, setAlbumInfo] = useState$1(null);
+        const [isLoading, setIsLoading] = useState$1(false);
         const albumInfoMap = useRef({});
         const { play, getUrl, download, getLyric } = usePlayMusic();
         const getAlbumDetailData = async (id) => {
@@ -11214,7 +11157,7 @@ default:
               setCurrentId(idStr);
               return cached;
             }
-            const res = await getAlbumDetail(id);
+            const res = await getAlbumDetail$1(id);
             console.log("专辑详情 res", res);
             if (res.code === 200 && res.album) {
               albumInfoMap.current[idStr] = res.album;
@@ -11234,7 +11177,7 @@ default:
         const getAlbumSongListData = async (id) => {
           try {
             setIsLoading(true);
-            const res = await getAlbumSongList(id);
+            const res = await getAlbumSongList$1(id);
             console.log("专辑歌曲列表 res", res);
             if (res.code === 200 && res.songs) {
               return res.songs;
@@ -11367,9 +11310,52 @@ default:
           getDownLoadJson
         };
       };
+      const useGetData = (api, params, options) => {
+        const {
+monitors,
+returnFunction,
+initialValue = {},
+callback
+        } = options || {};
+        const [data, setData] = useState$1(initialValue);
+        const [loading, setLoading] = useState$1(false);
+        const getData = async () => {
+          try {
+            setLoading(true);
+            const res = await api(params);
+            setData(res || {});
+            callback && callback(res || {});
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        useEffect(() => {
+          if (returnFunction && returnFunction()) return;
+          getData();
+        }, monitors || []);
+        return {
+data,
+setData,
+loading,
+getData
+        };
+      };
+      function useGetSingerInfo(singerId) {
+        const [singerInfo, setSingerInfo] = useState({});
+        const [albumList, setAlbumList] = useState([]);
+        const [hotSongList, setHotSongList] = useState([]);
+        const [allSongList, setAllSongList] = useState([]);
+        return {
+singerInfo,
+albumList,
+hotSongList
+        };
+      }
       const useGetSingerList = () => {
-        const [singerList, setSingerList] = useState([]);
-        const [loading, setLoading] = useState(false);
+        const [singerList, setSingerList] = useState$1([]);
+        const [loading, setLoading] = useState$1(false);
         const getSingerList = async () => {
           try {
             setLoading(true);
@@ -11403,8 +11389,8 @@ default:
 singerIds
         } = options || {};
         useGetSingerList();
-        const [singerMap, setSingerMap] = useState({});
-        const [loading, setLoading] = useState(false);
+        const [singerMap, setSingerMap] = useState$1({});
+        const [loading, setLoading] = useState$1(false);
         const getSingerInfoById = async (singerId) => {
           try {
             if (singerMap[singerId]?.singerInfo)
@@ -11430,7 +11416,7 @@ singerIds
           try {
             setLoading(true);
             if (singerMap[singerId]?.songList) return singerMap[singerId]?.songList;
-            const res = await getArtistAllSongList(singerId);
+            const res = await getArtistAllSongList$1(singerId);
             if (res.code === 200) {
               const songList2 = res.songs;
               setSingerMap((prv) => ({
@@ -11451,7 +11437,7 @@ singerIds
         const getSingerAlbumListById = async (singerId) => {
           try {
             if (singerMap[singerId]?.albumList) return singerMap[singerId]?.albumList;
-            const res = await getArtistAlbumList(singerId);
+            const res = await getArtistAlbumList$1(singerId);
             if (res.code === 200) {
               const albumList = res.data;
               setSingerMap((prv) => ({
@@ -13463,12 +13449,12 @@ isIndex(key, length)))) {
               var clearTimeout = ctxClearTimeout || function(id) {
                 return root.clearTimeout(id);
               };
-              function cloneBuffer(buffer2, isDeep) {
+              function cloneBuffer(buffer, isDeep) {
                 if (isDeep) {
-                  return buffer2.slice();
+                  return buffer.slice();
                 }
-                var length = buffer2.length, result2 = allocUnsafe ? allocUnsafe(length) : new buffer2.constructor(length);
-                buffer2.copy(result2);
+                var length = buffer.length, result2 = allocUnsafe ? allocUnsafe(length) : new buffer.constructor(length);
+                buffer.copy(result2);
                 return result2;
               }
               function cloneArrayBuffer(arrayBuffer) {
@@ -13477,8 +13463,8 @@ isIndex(key, length)))) {
                 return result2;
               }
               function cloneDataView(dataView, isDeep) {
-                var buffer2 = isDeep ? cloneArrayBuffer(dataView.buffer) : dataView.buffer;
-                return new dataView.constructor(buffer2, dataView.byteOffset, dataView.byteLength);
+                var buffer = isDeep ? cloneArrayBuffer(dataView.buffer) : dataView.buffer;
+                return new dataView.constructor(buffer, dataView.byteOffset, dataView.byteLength);
               }
               function cloneRegExp(regexp) {
                 var result2 = new regexp.constructor(regexp.source, reFlags.exec(regexp));
@@ -13489,8 +13475,8 @@ isIndex(key, length)))) {
                 return symbolValueOf ? Object2(symbolValueOf.call(symbol)) : {};
               }
               function cloneTypedArray(typedArray, isDeep) {
-                var buffer2 = isDeep ? cloneArrayBuffer(typedArray.buffer) : typedArray.buffer;
-                return new typedArray.constructor(buffer2, typedArray.byteOffset, typedArray.length);
+                var buffer = isDeep ? cloneArrayBuffer(typedArray.buffer) : typedArray.buffer;
+                return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);
               }
               function compareAscending(value2, other) {
                 if (value2 !== other) {
@@ -16941,15 +16927,15 @@ isIndex(key, length)))) {
       }
       var lodashExports = requireLodash();
       const useGetSongListDetail = () => {
-        const [loading, setLoading] = useState(false);
-        const [songList2, setSongList] = useState([]);
-        const [downloading, setDownloading] = useState(false);
+        const [loading, setLoading] = useState$1(false);
+        const [songList2, setSongList] = useState$1([]);
+        const [downloading, setDownloading] = useState$1(false);
         const { download, getUrl, getLyric } = usePlayMusic();
         const getSongListData = async (playlistId) => {
           if (!playlistId) return;
           try {
             setLoading(true);
-            const res = await getPlaylistAllData(playlistId);
+            const res = await getPlaylistAllData$1(playlistId);
             console.log("res", res);
             setSongList(res);
           } catch (error) {
@@ -17030,8 +17016,8 @@ isIndex(key, length)))) {
         const {
 keywords
         } = options || {};
-        const [singerList, setSingerList] = useState([]);
-        const [loading, setLoading] = useState(false);
+        const [singerList, setSingerList] = useState$1([]);
+        const [loading, setLoading] = useState$1(false);
         const searchSingerList = async (keywords2) => {
           try {
             setLoading(true);
@@ -17075,7 +17061,7 @@ keywords
           resetOnOpen = true,
           resetOnClose = false
         } = props;
-        const [visible, setVisible] = useState(false);
+        const [visible, setVisible] = useState$1(false);
         const resolve = useRef();
         const reject = useRef();
         const open = (value2) => {
@@ -17117,7 +17103,7 @@ keywords
       };
       const NOOP = () => {
       };
-      const styles$a = {
+      const styles$b = {
         "song-search-modal": "_song-search-modal_15iqn_1",
         "modal-title": "_modal-title_15iqn_1",
         "title-content": "_title-content_15iqn_6",
@@ -17129,6 +17115,55 @@ keywords
         "song-name": "_song-name_15iqn_36",
         "song-album": "_song-album_15iqn_46",
         "song-mid-text": "_song-mid-text_15iqn_75"
+      };
+      const styles$a = {
+        "search-form": "_search-form_1aabt_1"
+      };
+      const SearchForm = ({ onSearch, data = [], options = [] }) => {
+        const [form] = Form.useForm();
+        const getUniqueOptions = (key) => {
+          const uniqueList = uniqueArrayByKey(data, key);
+          const options2 = uniqueList.map((item) => ({
+            label: item[key],
+            value: item[key]
+          }));
+          return options2;
+        };
+        const handleSearch = () => {
+          const values = form.getFieldsValue();
+          onSearch(values);
+        };
+        const handleReset = () => {
+          form.resetFields();
+          onSearch({});
+        };
+        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$a["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+          options.map((item) => {
+            return jsxRuntimeExports.jsx(
+              Form.Item,
+              {
+                name: item.value,
+                label: item.label,
+                style: { marginBottom: 0, minWidth: 200 },
+                children: jsxRuntimeExports.jsx(
+                  Select,
+                  {
+                    mode: "multiple",
+                    allowClear: true,
+                    showSearch: true,
+                    placeholder: item.label,
+                    maxTagCount: "responsive",
+                    options: getUniqueOptions(item.value),
+                    filterOption: (input, option) => (option?.label ?? "").toLowerCase().includes(input.toLowerCase())
+                  }
+                )
+              },
+              item.value
+            );
+          }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearch, children: "搜索" }),
+jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
+        ] }) });
       };
       const copy = async (text2, options = {}) => {
         try {
@@ -17225,7 +17260,7 @@ var hasRequiredClassnames;
         return classnames.exports;
       }
       var classnamesExports = requireClassnames();
-      const classNames = getDefaultExportFromCjs$1(classnamesExports);
+      const classNames = getDefaultExportFromCjs(classnamesExports);
       function __read(o, n) {
         var m = typeof Symbol === "function" && o[Symbol.iterator];
         if (!m) return o;
@@ -17329,7 +17364,7 @@ var hasRequiredClassnames;
       var useEffectWithTarget$1 = createEffectWithTarget(useEffect);
       function useRafState(initialState) {
         var ref = useRef(0);
-        var _a2 = __read(useState(initialState), 2), state = _a2[0], setState = _a2[1];
+        var _a2 = __read(useState$1(initialState), 2), state = _a2[0], setState = _a2[1];
         var setRafState = useCallback(function(value2) {
           cancelAnimationFrame(ref.current);
           ref.current = requestAnimationFrame(function() {
@@ -17927,9 +17962,27 @@ jsxRuntimeExports.jsx(
           )
         ] });
       }
-      const SongTab = ({ data, loading }) => {
+      function MyButton(props) {
+        const { loading, onClick, ...rest } = props;
+        const [_loading, setLoading] = useState$1(loading);
+        const handleClick = async () => {
+          try {
+            setLoading(true);
+            await onClick?.();
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        useEffect(() => {
+          setLoading(loading);
+        }, [loading]);
+        return jsxRuntimeExports.jsx(Button, { ...rest, onClick: handleClick, loading: _loading });
+      }
+      const SongTab$1 = ({ data, loading }) => {
         const { play, download, isPlaying, pause, downloading } = usePlayMusic();
-        const [songList2, setSongList] = useState(data);
+        const [songList2, setSongList] = useState$1(data);
         useEffect(() => {
           setSongList(data);
         }, [data]);
@@ -18352,7 +18405,7 @@ jsxRuntimeExports.jsx(
             rowKey: "id",
             loading,
             scroll: { y: 500, x: 1e3 },
-            className: styles$a["song-table"],
+            className: styles$b["song-table"],
             pagination: false
           }
         );
@@ -18372,7 +18425,7 @@ jsxRuntimeExports.jsx(
           }
         );
       });
-      const AlbumTab = ({ data, loading }) => {
+      const AlbumTab$1 = ({ data, loading }) => {
         const albumDetailRef = useRef();
         const { pause, isPlaying } = usePlayMusic();
         const {
@@ -18380,7 +18433,7 @@ jsxRuntimeExports.jsx(
           downloadAlbumSong,
           getDownLoadJson
         } = useGetAlbumDetail();
-        const [playing, setPlaying] = useState(void 0);
+        const [playing, setPlaying] = useState$1(void 0);
         const handlePlay = async (record) => {
           try {
             setPlaying(record.id);
@@ -18394,7 +18447,7 @@ jsxRuntimeExports.jsx(
             setPlaying(void 0);
           }
         };
-        const [downloading, setDownloading] = useState(void 0);
+        const [downloading, setDownloading] = useState$1(void 0);
         const handleDownload = async (record) => {
           try {
             setDownloading(record.id);
@@ -18408,7 +18461,7 @@ jsxRuntimeExports.jsx(
             setDownloading(void 0);
           }
         };
-        const [downloadingJson, setDownloadingJson] = useState(void 0);
+        const [downloadingJson, setDownloadingJson] = useState$1(void 0);
         const handleDownloadJson = async (record) => {
           try {
             setDownloadingJson(record.id);
@@ -18695,7 +18748,7 @@ jsxRuntimeExports.jsx(
               rowKey: "id",
               loading,
               scroll: { y: 500, x: 1200 },
-              className: styles$a["song-table"],
+              className: styles$b["song-table"],
               pagination: false
             }
           ),
@@ -18736,6 +18789,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           {
             onOpen: (params) => {
               params && setSingerInfo(params);
+              tes;
             },
             onReset: () => {
               setSingerInfo({});
@@ -18746,9 +18800,9 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           ref
         );
         const albumDetailRef = useRef();
-        const [singerInfo, setSingerInfo] = useState({});
+        const [singerInfo, setSingerInfo] = useState$1({});
         const { data, loading } = useGetData(
-          getArtistAlbumList,
+          getArtistAlbumList$1,
           singerInfo.singerId,
           {
             monitors: [singerInfo.singerId, visible],
@@ -18758,15 +18812,15 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         );
         const albumList = useMemo(() => data.data || [], [data]);
         console.log("albumList", albumList);
-        const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-        const [selectedRows, setSelectedRows] = useState([]);
+        const [selectedRowKeys, setSelectedRowKeys] = useState$1([]);
+        const [selectedRows, setSelectedRows] = useState$1([]);
         const { playAlbum, downloadAlbumSong, getAlbumDetail: getAlbumDetail2, getAlbumSongList: getAlbumSongList2 } = useGetAlbumDetail();
         const { pause, isPlaying } = usePlayMusic();
-        const [playingAlbumId, setPlayingAlbumId] = useState();
-        const [downloadingAlbumId, setDownloadingAlbumId] = useState();
-        const [downloadingJsonAlbumId, setDownloadingJsonAlbumId] = useState();
-        const [downloadingBatch, setDownloadingBatch] = useState(false);
-        const [downloadingBatchJson, setDownloadingBatchJson] = useState(false);
+        const [playingAlbumId, setPlayingAlbumId] = useState$1();
+        const [downloadingAlbumId, setDownloadingAlbumId] = useState$1();
+        const [downloadingJsonAlbumId, setDownloadingJsonAlbumId] = useState$1();
+        const [downloadingBatch, setDownloadingBatch] = useState$1(false);
+        const [downloadingBatchJson, setDownloadingBatchJson] = useState$1(false);
         const filterConfig = useMemo(
           () => ({
             fields: {
@@ -19243,7 +19297,19 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         );
       });
       const HotSongModal = forwardRef((props, ref) => {
-        const { visible, close } = useVisible({}, ref);
+        const { visible, close } = useVisible(
+          {
+            onOpen: (params2) => {
+              params2 && setParams(params2);
+            },
+            onReset: () => {
+              setParams({});
+            }
+          },
+          ref
+        );
+        const [params, setParams] = useState();
+        useGetSingerInfo(params.singerId);
         return jsxRuntimeExports.jsx(
           Modal,
           {
@@ -19262,7 +19328,6 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         const handleHotSong = (record) => {
           hotSongModalRef.current.open({
             singerId: record.id,
-            singerMid: record.id,
             singerName: record.name,
             singerPic: record.picUrl || record.img1v1Url
           });
@@ -19271,7 +19336,6 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         const handleAlbum = (record) => {
           albumModalRef.current.open({
             singerId: record.id,
-            singerMid: record.id,
             singerName: record.name,
             singerPic: record.picUrl || record.img1v1Url
           });
@@ -19281,8 +19345,8 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             title: "歌手信息",
             dataIndex: "name",
             width: 300,
-            render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$a["song-info"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$a["song-cover"], children: jsxRuntimeExports.jsx(
+            render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$b["song-info"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$b["song-cover"], children: jsxRuntimeExports.jsx(
                 Image,
                 {
                   src: record.picUrl || record.img1v1Url,
@@ -19291,11 +19355,11 @@ jsxRuntimeExports.jsx("div", { className: styles$a["song-cover"], children: jsxR
                   style: { objectFit: "cover" }
                 }
               ) }),
-jsxRuntimeExports.jsxs("div", { className: styles$a["song-details"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b["song-details"], children: [
 jsxRuntimeExports.jsx(Tooltip, { title: text2, placement: "top", children: jsxRuntimeExports.jsx(
                   "div",
                   {
-                    className: styles$a["song-name"],
+                    className: styles$b["song-name"],
                     tabIndex: 0,
                     role: "text",
                     "aria-label": `歌手名称 ${text2}`,
@@ -19305,7 +19369,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: text2, placement: "top", children: jsxRu
 jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: jsxRuntimeExports.jsx(
                   Typography.Text,
                   {
-                    className: styles$a["song-mid-text"],
+                    className: styles$b["song-mid-text"],
                     copyable: true,
                     "aria-label": `复制歌手ID ${record.id}`,
                     children: record.id
@@ -19319,7 +19383,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: j
                     children: jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: styles$a["song-album"],
+                        className: styles$b["song-album"],
                         tabIndex: 0,
                         role: "text",
                         "aria-label": `别名 ${record.alias?.[0] || record.alia?.[0]}`,
@@ -19357,7 +19421,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: j
             dataIndex: "id",
             width: 200,
             align: "center",
-            render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$a["song-mid-text"], text: String(id) })
+            render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$b["song-mid-text"], text: String(id) })
           },
           {
             title: "操作",
@@ -19400,7 +19464,7 @@ jsxRuntimeExports.jsx(
               rowKey: "id",
               loading,
               scroll: { y: 500, x: 1100 },
-              className: styles$a["song-table"],
+              className: styles$b["song-table"],
               pagination: false
             }
           ),
@@ -19415,8 +19479,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
       };
       const Search$1 = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
-        const [searchParams, setSearchParams] = useState(defaultSearchParams);
-        console.log("searchParams", searchParams);
+        const [searchParams, setSearchParams] = useState$1(defaultSearchParams);
         const handleSearch = (values) => {
           setSearchParams({ ...searchParams, keyword: values.keyword });
         };
@@ -19434,7 +19497,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
         );
         console.log("data", data);
         const renderTitle = () => {
-          return jsxRuntimeExports.jsx("div", { className: styles$a["modal-title"], children: jsxRuntimeExports.jsx("div", { className: styles$a["title-content"], children: jsxRuntimeExports.jsx("span", { className: styles$a["title-text"], children: "歌曲查询" }) }) });
+          return jsxRuntimeExports.jsx("div", { className: styles$b["modal-title"], children: jsxRuntimeExports.jsx("div", { className: styles$b["title-content"], children: jsxRuntimeExports.jsx("span", { className: styles$b["title-text"], children: "歌曲查询" }) }) });
         };
         return jsxRuntimeExports.jsxs(
           Modal,
@@ -19444,17 +19507,21 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
             onCancel: close,
             width: 1500,
             centered: true,
-            className: styles$a["song-search-modal"],
+            className: styles$b["song-search-modal"],
             children: [
-jsxRuntimeExports.jsx(Form, { onFinish: handleSearch, layout: "inline", children: jsxRuntimeExports.jsx(Form.Item, { label: "关键词", name: "keyword", children: jsxRuntimeExports.jsx(Input, { placeholder: "请输入关键词" }) }) }),
+jsxRuntimeExports.jsxs(Form, { onFinish: handleSearch, layout: "inline", children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "关键词", name: "keyword", children: jsxRuntimeExports.jsx(Input, { placeholder: "请输入关键词" }) }),
+jsxRuntimeExports.jsx(Form.Item, { children: jsxRuntimeExports.jsx(Button, { type: "primary", htmlType: "submit", children: "搜索" }) }),
+jsxRuntimeExports.jsx(Form.Item, { children: jsxRuntimeExports.jsx(Button, { onClick: () => setSearchParams(defaultSearchParams), children: "重置" }) })
+              ] }),
 jsxRuntimeExports.jsxs(
                 Tabs,
                 {
                   activeKey: searchParams.type,
                   onChange: (key) => setSearchParams({ ...searchParams, type: key, pageNum: 1 }),
                   children: [
-jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "单曲", children: jsxRuntimeExports.jsx(SongTab, { data: data?.result?.songs || [], loading }) }, SEARCH_TYPES.单曲),
-jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "专辑", children: jsxRuntimeExports.jsx(AlbumTab, { data: data?.result?.albums || [], loading }) }, SEARCH_TYPES.专辑),
+jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "单曲", children: jsxRuntimeExports.jsx(SongTab$1, { data: data?.result?.songs || [], loading }) }, SEARCH_TYPES.单曲),
+jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "专辑", children: jsxRuntimeExports.jsx(AlbumTab$1, { data: data?.result?.albums || [], loading }) }, SEARCH_TYPES.专辑),
 jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌手", children: jsxRuntimeExports.jsx(SingerTab, { data: data?.result?.artists || [], loading }) }, SEARCH_TYPES.歌手),
 jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌单" }, SEARCH_TYPES.歌单),
 jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "用户" }, SEARCH_TYPES.用户),
@@ -19514,11 +19581,11 @@ jsxRuntimeExports.jsx(
           },
           ref
         );
-        const [searchText, setSearchText] = useState("");
-        const [audioFormat, setAudioFormat] = useState("all");
-        const [bitrate, setBitrate] = useState("all");
-        const [selectedRows, setSelectedRows] = useState([]);
-        const [tableData, setTableData] = useState([]);
+        const [searchText, setSearchText] = useState$1("");
+        const [audioFormat, setAudioFormat] = useState$1("all");
+        const [bitrate, setBitrate] = useState$1("all");
+        const [selectedRows, setSelectedRows] = useState$1([]);
+        const [tableData, setTableData] = useState$1([]);
         const filterConfig = {
           fields: {
             name: {
@@ -19554,8 +19621,8 @@ jsxRuntimeExports.jsx(
             render: (size2) => formatFileSize(size2)
           }
         ];
-        const [concurrent, setConcurrent] = useState(6);
-        const [loading, setLoading] = useState(false);
+        const [concurrent, setConcurrent] = useState$1(6);
+        const [loading, setLoading] = useState$1(false);
         const handleOk = async () => {
           try {
             setLoading(true);
@@ -19823,19 +19890,19 @@ CLOUD_MUSIC_MATCH_ALL: "cloud_music_match_all"
         "album-info": "_album-info_18snm_439"
       };
       const CustomMatch = ({ data, onUpdate }) => {
-        const [keywords, setKeywords] = useState(getArtistName(data));
-        const [currentSelectSinger, setCurrentSelectSinger] = useState();
-        const [currentSelectSong, setCurrentSelectSong] = useState();
-        const [songSearchValue, setSongSearchValue] = useState(data.name);
-        const [currentSelectSongId, setCurrentSelectSongId] = useState();
+        const [keywords, setKeywords] = useState$1(getArtistName(data));
+        const [currentSelectSinger, setCurrentSelectSinger] = useState$1();
+        const [currentSelectSong, setCurrentSelectSong] = useState$1();
+        const [songSearchValue, setSongSearchValue] = useState$1(data.name);
+        const [currentSelectSongId, setCurrentSelectSongId] = useState$1();
         const { loading: searchSingerLoading, singerList } = useSearchSinger({
           keywords
         });
         const { singerMap, loading: getSongLoading } = useGetSingerSongs({
           singerIds: currentSelectSinger
         });
-        const [updateLoading, setUpdateLoading] = useState(false);
-        const [autoMatchLoading, setAutoMatchLoading] = useState(false);
+        const [updateLoading, setUpdateLoading] = useState$1(false);
+        const [autoMatchLoading, setAutoMatchLoading] = useState$1(false);
         const songOptions = useMemo(() => {
           if (!singerMap[currentSelectSinger]?.songList) return [];
           const allOptions = singerMap[currentSelectSinger]?.songList?.map(
@@ -20049,9 +20116,9 @@ jsxRuntimeExports.jsx(
       const IdMatch = ({ data, onUpdate }) => {
         const { matchType, songId } = data;
         const isMatched = matchType === "matched";
-        const [value2, setValue] = useState(songId);
-        const [loading, setLoading] = useState(false);
-        const [autoMatchLoading, setAutoMatchLoading] = useState(false);
+        const [value2, setValue] = useState$1(songId);
+        const [loading, setLoading] = useState$1(false);
+        const [autoMatchLoading, setAutoMatchLoading] = useState$1(false);
         useEffect(() => {
           const handleMatchAll = async (eventData) => {
             console.log("IdMatch 收到全部匹配事件", eventData);
@@ -20152,8 +20219,8 @@ jsxRuntimeExports.jsx(
         }
       };
       const PlayList$2 = (props, ref) => {
-        const [visible, setVisible] = useState(false);
-        const [mode2, setMode] = useState("edit");
+        const [visible, setVisible] = useState$1(false);
+        const [mode2, setMode] = useState$1("edit");
         const isSelect = mode2 === "select";
         const open = (mode22) => {
           reset();
@@ -20186,14 +20253,14 @@ jsxRuntimeExports.jsx(
           close,
           submit
         }));
-        const [loading, setLoading] = useState(false);
-        const [playList, setPlayList] = useState([]);
+        const [loading, setLoading] = useState$1(false);
+        const [playList, setPlayList] = useState$1([]);
         const handleGetPlayList = async () => {
           setLoading(true);
           try {
             const user = getUser();
             if (!user) return message.error("请先登录");
-            const res2 = await getPlaylistList();
+            const res2 = await getPlaylistList$1();
             console.log("res", res2);
             if (res2.code === 200) {
               setPlayList(res2.playlist);
@@ -20299,7 +20366,7 @@ jsxRuntimeExports.jsx(
             sortDirections: ["descend", "ascend"]
           }
         ];
-        const [selectedRows, setSelectedRows] = useState([]);
+        const [selectedRows, setSelectedRows] = useState$1([]);
         const rowSelection = {
           type: isSelect ? "radio" : "checkbox",
           selectedRowKeys: selectedRows.map((item) => item.id),
@@ -20321,15 +20388,15 @@ jsxRuntimeExports.jsx(
           res.current?.(selectedRows[0]);
           close();
         };
-        const [name2, setName] = useState("");
-        const [createModalVisible, setCreateModalVisible] = useState(false);
+        const [name2, setName] = useState$1("");
+        const [createModalVisible, setCreateModalVisible] = useState$1(false);
         const handleCreate = async () => {
           if (!name2.trim()) {
             msgWarning("请输入歌单名称");
             return;
           }
           try {
-            const res2 = await createPlaylist(name2.trim());
+            const res2 = await createPlaylist$1(name2.trim());
             if (res2.code === 200) {
               msgSuccess$1("新建成功");
               handleGetPlayList();
@@ -20350,7 +20417,7 @@ jsxRuntimeExports.jsx(
           }
           try {
             const playlistName = strategy.getPlaylistName();
-            const res2 = await createPlaylist(playlistName);
+            const res2 = await createPlaylist$1(playlistName);
             if (res2.code === 200) {
               msgSuccess$1(`成功创建"${playlistName}"`);
               handleGetPlayList();
@@ -20564,12 +20631,12 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
           },
           ref
         );
-        const [songList2, setSongList] = useState([]);
-        const [loading, setLoading] = useState(false);
+        const [songList2, setSongList] = useState$1([]);
+        const [loading, setLoading] = useState$1(false);
         const getCloudDataList = async () => {
           try {
             setLoading(true);
-            const res = await getCloudData(1e4, 0);
+            const res = await getCloudData$1(1e4, 0);
             if (res.code === 200) {
               console.log("songList", res.data);
               setSongList(res.data);
@@ -20588,7 +20655,7 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
             timestamp: Date.now()
           });
         };
-        const [cancelMatchLoading, setCancelMatchLoading] = useState(false);
+        const [cancelMatchLoading, setCancelMatchLoading] = useState$1(false);
         const handleCancelMatch = async () => {
           try {
             setCancelMatchLoading(true);
@@ -20617,7 +20684,7 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
             }
           }
         };
-        const [searchParams, setSearchParams] = useState({});
+        const [searchParams, setSearchParams] = useState$1({});
         const {
           filteredList: filteredSongList,
           setFilteredList: setFilteredSongList,
@@ -20626,7 +20693,7 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
         useEffect(() => {
           handleSearch(searchParams);
         }, [songList2]);
-        const [selectedRows, setSelectedRows] = useState([]);
+        const [selectedRows, setSelectedRows] = useState$1([]);
         const selectedRowKeys = useMemo(
           () => selectedRows.map((item) => item.songId),
           [selectedRows]
@@ -20652,8 +20719,8 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
           });
         };
         const AudioRef = useRef(new Audio());
-        const [playSong, setPlaySong] = useState(null);
-        const [playing, setPlaying] = useState(false);
+        const [playSong, setPlaySong] = useState$1(null);
+        const [playing, setPlaying] = useState$1(false);
         const handlePlaySong = (record) => {
           if (playSong?.id === record.id) {
             const audio2 = AudioRef.current;
@@ -20666,7 +20733,7 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
         };
         const play = async () => {
           try {
-            const res = await getSongUrl([playSong.id]);
+            const res = await getSongUrl$1([playSong.id]);
             console.log("res", res);
             if (res.code !== 200) return msgError("获取歌曲链接失败");
             const audio2 = AudioRef.current;
@@ -20686,7 +20753,7 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
           if (!playSong) return;
           play();
         }, [playSong]);
-        const [pageParams, setPageParams] = useState({
+        const [pageParams, setPageParams] = useState$1({
           page: 1,
           pageSize: 20
         });
@@ -20855,7 +20922,7 @@ jsxRuntimeExports.jsx("div", { className: styles$6["album-info"], title: album2,
             render: (time) => dayjs(time).format("YYYY-MM-DD HH:mm:ss")
           }
         ];
-        const [range, setRange] = useState([]);
+        const [range, setRange] = useState$1([]);
         const handleRangeChoose = () => {
           console.log("range", range);
           if (!range[0] || !range[1]) return msgWarning("请输入区间");
@@ -20867,7 +20934,7 @@ jsxRuntimeExports.jsx("div", { className: styles$6["album-info"], title: album2,
           );
           setSelectedRows(filteredSongList.slice(range[0] - 1, range[1]));
         };
-        const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] = useState(false);
+        const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] = useState$1(false);
         const handleAddToPlaylistByAlbum = async () => {
           try {
             setAddToPlayListByAlbumLoading(true);
@@ -20892,7 +20959,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
                 width: "auto"
               }
             );
-            const res = await getPlaylistList();
+            const res = await getPlaylistList$1();
             console.log("res", res);
             if (res.code !== 200) return msgError("获取歌单失败");
             const playlist = res.playlist;
@@ -20903,7 +20970,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
                 let playlistId = playlist.find((p) => p.name === playlistName)?.id;
                 if (!playlistId) {
                   const truncatedName = truncateString(playlistName, 40);
-                  const res3 = await createPlaylist(truncatedName);
+                  const res3 = await createPlaylist$1(truncatedName);
                   if (res3.code === 200) {
                     playlistId = res3.id;
                   } else {
@@ -20913,7 +20980,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
                   await sleep(1e3);
                 }
                 const songIds = songs2.map((song) => song.songId);
-                const res2 = await addSongToPlaylist(playlistId, songIds);
+                const res2 = await addSongToPlaylist$1(playlistId, songIds);
                 console.log("res", res2);
                 if (res2.code !== 200) {
                   console.log("添加歌曲失败", res2.message || res2.msg);
@@ -20968,7 +21035,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
             const playlist = await playListRef.current.submit();
             if (!playlist) return;
             const songIds = selectedRows.map((item) => item.songId);
-            const res = await addSongToPlaylist(playlist.id, songIds);
+            const res = await addSongToPlaylist$1(playlist.id, songIds);
             console.log("res", res);
             if (res.code === 200) {
               setSelectedRows([]);
@@ -20992,7 +21059,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
             );
             await confirm(confirmContent, "删除确认");
             const songIds = selectedRows.map((item) => item.songId);
-            const res = await deleteCloudSong(songIds);
+            const res = await deleteCloudSong$1(songIds);
             console.log("res", res);
             if (res.code === 200) {
               msgSuccess$1("删除成功");
@@ -21313,8 +21380,8 @@ jsxRuntimeExports.jsx("span", { className: styles$6.icon, children: "!" }),
       const { Title, Text } = Typography;
       const GithubInfo = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
-        const [starCount2, setStarCount] = useState(0);
-        const [avatarUrl, setAvatarUrl] = useState("");
+        const [starCount2, setStarCount] = useState$1(0);
+        const [avatarUrl, setAvatarUrl] = useState$1("");
         useEffect(() => {
           fetchGithubData().then((data) => {
             setStarCount(data.stargazers_count);
@@ -21412,9 +21479,9 @@ jsxRuntimeExports.jsx(
           },
           ref
         );
-        const [fileList, setFileList] = useState([]);
-        const [loading, setLoading] = useState(false);
-        const [concurrency, setConcurrency] = useState(1);
+        const [fileList, setFileList] = useState$1([]);
+        const [loading, setLoading] = useState$1(false);
+        const [concurrency, setConcurrency] = useState$1(1);
         const handleUpload = async () => {
           try {
             setLoading(true);
@@ -21424,7 +21491,7 @@ jsxRuntimeExports.jsx(
                   return;
                 }
                 file.status = "uploading";
-                const res2 = await uploadLocalSong(file);
+                const res2 = await uploadLocalSong$1(file);
                 console.log("res", res2);
                 file.status = "done";
                 return res2;
@@ -21456,7 +21523,7 @@ jsxRuntimeExports.jsx(
         const handleFilter = async () => {
           setFileList((prev) => prev.filter((file) => file.status === "error"));
         };
-        const [getJsonLoading, setGetJsonLoading] = useState(false);
+        const [getJsonLoading, setGetJsonLoading] = useState$1(false);
         const handleGetJson = async () => {
           try {
             setGetJsonLoading(true);
@@ -21768,7 +21835,7 @@ jsxRuntimeExports.jsx(
         return duration$2.exports;
       }
       var durationExports = requireDuration();
-      const duration = getDefaultExportFromCjs$1(durationExports);
+      const duration = getDefaultExportFromCjs(durationExports);
       const styles$3 = {
         "playlist-id-input": "_playlist-id-input_1r0t2_5"
       };
@@ -21796,8 +21863,8 @@ jsxRuntimeExports.jsx(
           downloading,
           downloadSongListAsJson
         } = useGetSongListDetail();
-        const [playlistId, setPlaylistId] = useState(null);
-        const [selectedRows, setSelectedRows] = useState([]);
+        const [playlistId, setPlaylistId] = useState$1(null);
+        const [selectedRows, setSelectedRows] = useState$1([]);
         useEffect(() => {
           if (playlistId && visible) {
             getSongListData(playlistId);
@@ -22380,13 +22447,13 @@ jsxRuntimeExports.jsx(
           },
           ref
         );
-        const [loading, setLoading] = useState(false);
-        const [playList, setPlayList] = useState([]);
+        const [loading, setLoading] = useState$1(false);
+        const [playList, setPlayList] = useState$1([]);
         const songListRef = useRef();
         const getPlayListData = async () => {
           try {
             setLoading(true);
-            const res = await getPlaylistList();
+            const res = await getPlaylistList$1();
             if (res.code === 200) {
               setPlayList(res.playlist || []);
             }
@@ -22631,7 +22698,7 @@ jsxRuntimeExports.jsx(Form.Item, { style: { marginBottom: 0 }, children: jsxRunt
       }
       const UploadProgress = forwardRef(
         ({ uploadedList, total, uploadFailedSongList, onClose }, ref) => {
-          const [visible, setVisible] = useState(false);
+          const [visible, setVisible] = useState$1(false);
           const open = () => setVisible(true);
           const close = () => {
             setVisible(false);
@@ -22758,8 +22825,8 @@ jsxRuntimeExports.jsx("span", { className: styles$1["size-text"], children: form
       });
       UploadStats.displayName = "UploadStats";
       function UploadList({ singerList }) {
-        const [songList2, setSongList] = useState([]);
-        const [loading, setLoading] = useState(false);
+        const [songList2, setSongList] = useState$1([]);
+        const [loading, setLoading] = useState$1(false);
         const getSongList = async (ids) => {
           try {
             setLoading(true);
@@ -22776,7 +22843,7 @@ jsxRuntimeExports.jsx("span", { className: styles$1["size-text"], children: form
             const allConfigMap = Object.fromEntries(
               allConfig.map((item) => [item.id, item])
             );
-            const allInfo = await getSongInfoList(allConfig.map((item) => item.id));
+            const allInfo = await getSongInfoList$1(allConfig.map((item) => item.id));
             const songList22 = [];
             allInfo.map(({ privileges, songs: songs2 }) => {
               privileges.forEach((p) => {
@@ -22850,7 +22917,7 @@ dt: formatDuration$1(0),
             }
           }
         };
-        const [searchParams, setSearchParams] = useState({});
+        const [searchParams, setSearchParams] = useState$1({});
         const {
           filteredList: filteredSongList,
           setFilteredList: setFilteredSongList,
@@ -22859,7 +22926,7 @@ dt: formatDuration$1(0),
         useEffect(() => {
           handleSearch(searchParams);
         }, [songList2]);
-        const [selectedRows, setSelectedRows] = useState([]);
+        const [selectedRows, setSelectedRows] = useState$1([]);
         const rowSelection = {
           type: "checkbox",
           fixed: true,
@@ -23014,11 +23081,11 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
           });
         };
         const uploadProgressRef = useRef(null);
-        const [uploadedSongList, setUploadedSongList] = useState([]);
-        const [uploadFailedSongList, setUploadFailedSongList] = useState([]);
-        const [toUploadingSongList, setToUploadingSongList] = useState([]);
-        const [uploading, setUploading] = useState(false);
-        const [concurrency, setConcurrency] = useState(6);
+        const [uploadedSongList, setUploadedSongList] = useState$1([]);
+        const [uploadFailedSongList, setUploadFailedSongList] = useState$1([]);
+        const [toUploadingSongList, setToUploadingSongList] = useState$1([]);
+        const [uploading, setUploading] = useState$1(false);
+        const [concurrency, setConcurrency] = useState$1(6);
         const resetData = () => {
           setUploadedSongList([]);
           setToUploadingSongList([]);
@@ -23070,13 +23137,13 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
         const handleUploadSelected = async () => {
           handleBatchUpload(selectedRows);
         };
-        const [downloading, setDownloading] = useState(false);
+        const [downloading, setDownloading] = useState$1(false);
         const handleDownloadAll = async () => {
           try {
             setDownloading(true);
             const ids = filteredSongList.map((item) => item.id);
             console.log("ids", ids);
-            const res = await getSongUrl(ids);
+            const res = await getSongUrl$1(ids);
             console.log("res", res);
             if (res.code === 200) {
               const songs2 = res.data.map((item, index2) => ({
@@ -23309,15 +23376,15 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
           },
           ref
         );
-        const [currentTab, setCurrentTab] = useState("1");
+        const [currentTab, setCurrentTab] = useState$1("1");
         const handleTabChange = (key) => {
           if (key !== "1" && !chooseList.length) {
             return msgError("请选择歌手");
           }
           setCurrentTab(key);
         };
-        const [singerList, setSingerList] = useState([]);
-        const [loading, setLoading] = useState(false);
+        const [singerList, setSingerList] = useState$1([]);
+        const [loading, setLoading] = useState$1(false);
         const getSingerList = async () => {
           try {
             setLoading(true);
@@ -23335,7 +23402,7 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
             setLoading(false);
           }
         };
-        const [chooseList, setChooseList] = useState([]);
+        const [chooseList, setChooseList] = useState$1([]);
         const handleChoose = (value2) => {
           console.log(value2);
           setChooseList(value2);
@@ -23374,114 +23441,18 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
         );
       }
       const QuickUpload$1 = forwardRef(QuickUpload);
-      const TestModal = forwardRef((props, ref) => {
-        const { visible, close } = useVisible({}, ref);
-        const handleGetUserAccount = async () => {
-          console.log("获取用户信息");
-          try {
-            const res = await getUserAccount();
-            console.log("res", res);
-          } catch (error) {
-            console.log("error", error);
+      const getAlbumSongList = (id) => weapiRequest(`/api/v1/album/${id}`, {
+        data: {}
+      });
+      const getAlbumDetail = async (id) => {
+        return weapiRequest(`/api/album/${id}`, {
+          data: {
+            id
           }
-        };
-        const [pageData, setPageData] = useState({
-          limit: 500,
-          offset: 0
         });
-        const handleGetCloudData = async () => {
-          console.log("获取云盘数据");
-          try {
-            const res = await getCloudData(pageData.limit, pageData.offset);
-            console.log("res", res);
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const [songListName, setSongListName] = useState("");
-        const handleCreateSongList = async () => {
-          console.log("新建歌单");
-          try {
-            const res = await createPlaylist(songListName);
-            console.log("res", res);
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const [addInfo, setAddInfo] = useState({
-          songId: "185620",
-          playlistId: "12999288729"
-        });
-        const handleAddSong = async () => {
-          console.log("添加歌曲");
-          try {
-            const res = await addSongToPlaylist(addInfo.playlistId, [addInfo.songId]);
-            console.log("res", res);
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const [userId, setUserId] = useState("12999288729");
-        const handleGetPlaylistList = async () => {
-          console.log("获取歌单列表");
-          try {
-            const res = await getPlaylistList(userId);
-            console.log("res", res);
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const [songId, setSongId] = useState("2608471890");
-        const handleGetSongUrl = async () => {
-          console.log("获取歌曲URL");
-          try {
-            const res = await getSongUrl([songId]);
-            console.log("res", res);
-            if (res.code === 200) {
-              const url = res.data[0].url;
-              await navigator.clipboard.writeText(url);
-              msgSuccess$1("获取成功,已复制到剪切板");
-            }
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const handleGetSongInfo = async () => {
-          console.log("获取歌曲信息");
-          try {
-            const res = await getSongInfoList([songId]);
-            console.log("res", res);
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const handleGetSongLyric = async () => {
-          console.log("获取歌曲歌词");
-          try {
-            const res = await getSongLyric(songId);
-            console.log("res", res);
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const handleGetSongDynamicCover = async () => {
-          try {
-            const res = await getSongDynamicCover(songId);
-            console.log("res", res);
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const handleDeleteCloudSong = async () => {
-          console.log("删除云盘歌曲");
-          try {
-            const res = await deleteCloudSong([songId]);
-            console.log("res", res);
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const [albumId, setAlbumId] = useState("242274622");
+      };
+      const AlbumTab = () => {
+        const [albumId, setAlbumId] = useState$1("242274622");
         const handleGetAlbumSongList = async () => {
           console.log("获取专辑歌曲列表");
           try {
@@ -23500,7 +23471,88 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             console.log("error", error);
           }
         };
-        const [artistId, setArtistId] = useState("3684");
+        return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取专辑歌曲列表", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(
+            Input,
+            {
+              placeholder: "请输入专辑Id",
+              addonBefore: "专辑Id",
+              value: albumId,
+              onChange: (e) => setAlbumId(e.target.value)
+            }
+          ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumSongList, children: "获取专辑歌曲列表" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumDetail, children: "获取专辑详情" })
+        ] }) }) });
+      };
+      const getArtistTopSongList = (id) => weapiRequest("/api/artist/top/song", {
+        data: {
+          id,
+          limit: 1e3,
+          offset: 0
+        }
+      });
+      const getArtistAllSongList = async (id) => {
+        try {
+          let more = true;
+          const songs2 = [];
+          let offset = 0;
+          while (more) {
+            const res = await weapiRequest("/api/v1/artist/songs", {
+              data: {
+                id,
+                limit: 200,
+                private_cloud: "true",
+                work_type: 1,
+                order: "hot",
+offset
+              }
+            });
+            if (res.code != 200) {
+              throw new Error(res.message || res.msg || "获取歌手全部歌曲失败");
+            }
+            songs2.push(...res.songs);
+            more = res.more;
+            offset += 200;
+          }
+          return {
+            code: 200,
+            msg: "获取歌手全部歌曲成功",
+            songs: songs2
+          };
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
+      };
+      const getArtistAlbumList = async (id) => {
+        let more = true;
+        let limit = 200;
+        let offset = 0;
+        const albumList = [];
+        while (more) {
+          const res = await weapiRequest(`/api/artist/albums/${id}`, {
+            data: {
+              id,
+              limit,
+              offset
+            }
+          });
+          if (res.code != 200) {
+            throw new Error(res.message || res.msg || "获取歌手专辑失败");
+          }
+          albumList.push(...res.hotAlbums);
+          more = res.more;
+          offset += limit;
+        }
+        return {
+          code: 200,
+          msg: "获取歌手专辑成功",
+          data: albumList
+        };
+      };
+      const ArtistTab = () => {
+        const [artistId, setArtistId] = useState$1("3684");
         const handleGetArtistTopSongList = async () => {
           console.log("获取歌手歌曲列表");
           try {
@@ -23525,8 +23577,8 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             const res = await getArtistAlbumList(artistId);
             console.log("res", res);
             if (res.code === 200) {
-              const downloadTask = res.map(
-                (item) => () => downloadFile(item.cover.split("?")[0], item.name + ".jpg")
+              const downloadTask = res.data.map(
+                (item) => () => downloadFile(item.picUrl?.split("?")[0] || item.cover?.split("?")[0], item.name + ".jpg")
               );
               await promiseLimit(downloadTask, 1);
             }
@@ -23543,47 +23595,262 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             console.log("error", error);
           }
         };
-        const handleQrLogin = async () => {
-          console.log("二维码登录");
-          try {
-            const keyRes = await getQrKey();
-            if (keyRes.code !== 200) return msgError("获取二维码key失败");
-            const key = keyRes.unikey;
-            console.log("key", key);
-            const qrcode2 = await getQrCode(key);
-            const qrImg = document.createElement("img");
-            qrImg.src = qrcode2;
-            qrImg.style.width = "200px";
-            qrImg.style.height = "200px";
-            document.getElementById("qrcode-container").innerHTML = "";
-            document.getElementById("qrcode-container").appendChild(qrImg);
-            const timeOutTime = Date.now() + 2 * 60 * 1e3;
-            while (Date.now() < timeOutTime) {
-              const qrStatusRes = await getQrStatus(key);
-              console.log("qrStatus", qrStatusRes);
-              const { code } = qrStatusRes.response;
-              if (code === 801) {
-                console.log("等待扫码");
-              } else if (code === 802) {
-                console.log("授权中");
-              } else if (code === 803) {
-                console.log("授权成功");
-                console.log("qrStatusRes", qrStatusRes);
-                break;
-              } else if (code === 800) {
-                console.log("不存在或失效");
-                break;
+        return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取歌手歌曲列表", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+            Input,
+            {
+              placeholder: "请输入歌手Id",
+              addonBefore: "歌手Id",
+              value: artistId,
+              onChange: (e) => setArtistId(e.target.value)
+            }
+          ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistTopSongList, children: "获取歌手热门歌曲列表" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbum, children: "获取歌手专辑" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbumPic, children: "下载专辑封面" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAllSongList, children: "获取歌手全部歌曲" })
+        ] }) }) });
+      };
+      const getCloudData = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
+        data: {
+          limit,
+          offset
+        }
+      });
+      const deleteCloudSong = (songIds) => weapiRequest("/api/cloud/del", {
+        data: {
+          songIds
+        }
+      });
+      const uploadLocalSong = async (file) => {
+        let defaultResult = {};
+        try {
+          const ext = file.name.split(".").pop() || "mp3";
+          const fileMd5 = await getFileMD5(file);
+          const bitrate = 999e3;
+          const filename = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
+          const checkRes = await weapiRequest("/api/cloud/upload/check", {
+            data: {
+              ext: "",
+              bitrate: String(bitrate),
+              md5: fileMd5,
+              length: file.size,
+              songId: "0",
+              version: 1
+            }
+          });
+          console.log("checkRes", checkRes);
+          if (checkRes.code != 200) {
+            msgError("文件检查失败：" + checkRes.message || checkRes.msg || "");
+            throw new Error(checkRes.message || checkRes.msg || "文件检查失败");
+          }
+          const { needUpload, songId } = checkRes;
+          if (needUpload) {
+            const bucket2 = "jd-musicrep-privatecloud-audio-public";
+            const tokenRes2 = await weapiRequest("/api/nos/token/alloc", {
+              data: {
+                bucket: bucket2,
+                ext,
+                filename,
+                local: false,
+                nos_product: 3,
+                type: "audio",
+                md5: fileMd5
               }
-              await sleep(1e3);
+            });
+            const objectKey2 = tokenRes2.body.result.objectKey.replace("/", "%2F");
+            const lbs = await (await fetch(
+              `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket2}`
+            )).json();
+            const formData = new FormData();
+            formData.append("songFile", file);
+            await fetch(
+              `${lbs.upload[0]}/${bucket2}/${objectKey2}?offset=0&complete=true&version=1.0`,
+              {
+                method: "post",
+                headers: {
+                  "x-nos-token": tokenRes2.body.result.token,
+                  "Content-MD5": fileMd5,
+                  "Content-Type": "audio/mpeg",
+                  "Content-Length": String(file.size)
+                },
+                data: formData,
+                maxContentLength: Infinity,
+                maxBodyLength: Infinity
+              }
+            );
+          }
+          const tokenRes = await weapiRequest("/api/nos/token/alloc", {
+            data: {
+              bucket: "",
+              ext,
+              filename,
+              local: false,
+              nos_product: 3,
+              type: "audio",
+              md5: fileMd5
+            }
+          });
+          console.log("tokenRes", tokenRes);
+          if (tokenRes.code != 200) {
+            msgError("获取上传token失败");
+            throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
+          }
+          const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
+          const { album: album2, artist: artist2, artists, title: title2 } = await getAudioMetadata(file);
+          defaultResult = {
+            ...defaultResult,
+            artist: artist2,
+            artists,
+            album: album2,
+            md5: fileMd5,
+            ext,
+            bitrate
+          };
+          const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
+            data: {
+              md5: fileMd5,
+              songid: songId,
+              filename,
+              song: title2 || filename,
+              album: album2 || "未知专辑",
+              artist: artist2 || artists.join(",") || "未知歌手",
+              bitrate: String(bitrate),
+              resourceId
+            }
+          });
+          console.log("uploadInfoRes", uploadInfoRes);
+          defaultResult = {
+            ...defaultResult,
+            id: uploadInfoRes.songId
+          };
+          if (uploadInfoRes.code != 200) {
+            msgError("获取上传信息失败");
+            throw new Error(
+              uploadInfoRes.message || uploadInfoRes.msg || "获取上传信息失败"
+            );
+          }
+          const pubRes = await weapiRequest("/api/cloud/pub/v2", {
+            data: {
+              songid: uploadInfoRes.songId
+            }
+          });
+          console.log("pubRes", pubRes);
+          if (![200, 201].includes(pubRes.code)) {
+            msgError(`歌曲： ${file.name} 发布失败`);
+            throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
+          }
+          const { songName: songName2, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
+          defaultResult = {
+            ...defaultResult,
+            name: songName2,
+            size: fileSize,
+            bitrate: realBitrate
+          };
+          return defaultResult;
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
+      };
+      const CloudTab = () => {
+        const [pageData, setPageData] = useState$1({
+          limit: 500,
+          offset: 0
+        });
+        const handleGetCloudData = async () => {
+          console.log("获取云盘数据");
+          try {
+            const res = await getCloudData(pageData.limit, pageData.offset);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const [songId, setSongId] = useState$1("2608471890");
+        const handleDeleteCloudSong = async () => {
+          console.log("删除云盘歌曲");
+          try {
+            const res = await deleteCloudSong([songId]);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const [fileList, setFileList] = useState$1([]);
+        const handleUploadLocalSong = async () => {
+          try {
+            console.log("fileList", fileList);
+            if (!fileList.length) return msgError("请选择文件");
+            for (let i = 0; i < fileList.length; i++) {
+              const file = fileList[i];
+              const res = await uploadLocalSong(file);
+              console.log("res", res);
+              console.log(JSON.stringify(res, null, 2));
             }
           } catch (error) {
             console.log("error", error);
           }
         };
-        const [flacFile, setFlacFile] = useState(null);
-        const [flacTagName, setFlacTagName] = useState("all");
-        const [flacTagValue, setFlacTagValue] = useState("");
-        const [flacPicture, setFlacPicture] = useState(null);
+        return jsxRuntimeExports.jsxs(Form, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "获取云盘数据", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "limit",
+                style: { width: 100 },
+                value: pageData.limit,
+                onChange: (e) => setPageData({ ...pageData, limit: Number(e.target.value) })
+              }
+            ),
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "offset",
+                style: { width: 100 },
+                value: pageData.offset,
+                onChange: (e) => setPageData({ ...pageData, offset: Number(e.target.value) })
+              }
+            ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetCloudData, children: "获取云盘数据" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "删除云盘歌曲", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "请输入歌曲Id",
+                addonBefore: "歌曲Id",
+                value: songId,
+                onChange: (e) => setSongId(e.target.value)
+              }
+            ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleDeleteCloudSong, children: "删除云盘歌曲" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "上传本地歌曲到云盘", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+              Upload,
+              {
+                fileList,
+                accept: ".flac,.mp3,.wav,.aac,.m4a,.ogg,.wma",
+                beforeUpload: (file) => {
+                  setFileList([...fileList, file]);
+                  return false;
+                },
+                onRemove: (file) => {
+                  setFileList(fileList.filter((f) => f !== file));
+                },
+                children: jsxRuntimeExports.jsx(Button, { icon: jsxRuntimeExports.jsx(UploadOutlined, {}), children: "Select File" })
+              }
+            ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleUploadLocalSong, children: "上传本地歌曲到云盘" })
+          ] }) })
+        ] });
+      };
+      const FlacTab = () => {
+        const [flacFile, setFlacFile] = useState$1(null);
+        const [flacTagName, setFlacTagName] = useState$1("all");
+        const [flacTagValue, setFlacTagValue] = useState$1("");
+        const [flacPicture, setFlacPicture] = useState$1(null);
         const handleReadFlacTag = async () => {
           try {
             console.log("flacFile", flacFile);
@@ -23629,42 +23896,251 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             console.log("error", error);
           }
         };
-        const [fileList, setFileList] = useState([]);
-        const handleUploadLocalSong = async () => {
-          try {
-            console.log("fileList", fileList);
-            if (!fileList.length) return msgError("请选择文件");
-            for (let i = 0; i < fileList.length; i++) {
-              const file = fileList[i];
-              const res = await uploadLocalSong(file);
-              console.log("res", res);
-              console.log(JSON.stringify(res, null, 2));
-              if (res.artist) {
-                setSearchValue(res.artist);
+        return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "测试flac标签", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+            "input",
+            {
+              type: "file",
+              accept: ".flac",
+              onChange: (e) => {
+                setFlacFile(e.target.files[0]);
               }
+            }
+          ),
+jsxRuntimeExports.jsx(
+            Select,
+            {
+              style: { width: 100 },
+              options: [
+                { label: "全部", value: "all" },
+                ...Object.entries(FLAC_TAGS).map(([key, value2]) => ({
+                  label: value2,
+                  value: key
+                }))
+              ],
+              value: flacTagName,
+              onChange: (value2) => setFlacTagName(value2)
+            }
+          ),
+jsxRuntimeExports.jsx(
+            Input,
+            {
+              placeholder: "请输入flac标签",
+              value: flacTagValue,
+              onChange: (e) => setFlacTagValue(e.target.value)
+            }
+          ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleReadFlacTag, children: "读取flac标签" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleWriteFlacTag, children: "写入flac标签" }),
+jsxRuntimeExports.jsx(
+            "input",
+            {
+              type: "file",
+              accept: ".jpg,.png,.jpeg",
+              onChange: (e) => {
+                setFlacPicture(e.target.files[0]);
+              }
+            }
+          ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleEmbedFlacPicture, children: "嵌入flac图片" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" })
+        ] }) }) });
+      };
+      const getQrKey = () => weapiRequest("/api/login/qrcode/unikey", {
+        data: {
+          noCheckToken: 1,
+          type: 1
+        }
+      });
+      const getQrCode = (key) => {
+        const loginUrl = `https://music.163.com/login?codekey=${key}`;
+        return generateQRCode(loginUrl);
+      };
+      const getQrStatus = (key) => weapiFetch("/api/login/qrcode/client/login", {
+        data: {
+          key,
+          type: 1
+        },
+        originResponse: true
+      });
+      const getUserAccount = () => weapiRequest("/api/nuser/account/get", {
+        data: {}
+      });
+      const LoginTab = () => {
+        const handleGetUserAccount = async () => {
+          console.log("获取用户信息");
+          try {
+            const res = await getUserAccount();
+            console.log("res", res);
+            if (res.code !== 200) return msgError("获取用户信息失败");
+            msgSuccess$1("获取用户信息成功,请打开控制台查看！");
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const handleQrLogin = async () => {
+          console.log("二维码登录");
+          try {
+            const keyRes = await getQrKey();
+            if (keyRes.code !== 200) return msgError("获取二维码key失败");
+            const key = keyRes.unikey;
+            console.log("获取key成功：", key);
+            const qrcode2 = await getQrCode(key);
+            displayQrCode(qrcode2);
+            const timeOutTime = Date.now() + 2 * 60 * 1e3;
+            while (Date.now() < timeOutTime) {
+              const qrStatusRes = await getQrStatus(key);
+              console.log("qrStatus", qrStatusRes);
+              const { code } = qrStatusRes;
+              if (code === 801) {
+                console.log("等待扫码");
+              } else if (code === 802) {
+                console.log("授权中");
+              } else if (code === 803) {
+                console.log("授权成功");
+                console.log("qrStatusRes", qrStatusRes);
+                break;
+              } else if (code === 800) {
+                console.log("不存在或失效");
+                break;
+              }
+              await sleep(1e3);
             }
           } catch (error) {
             console.log("error", error);
           }
         };
-        const handleLocalMatch = async () => {
+        return jsxRuntimeExports.jsxs(Form, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "获取用户信息", children: jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetUserAccount, children: "获取用户信息" }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "二维码登录", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleQrLogin, children: "二维码登录" }),
+jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
+          ] }) })
+        ] });
+      };
+      const displayQrCode = (qrcode2) => {
+        const qrImg = document.createElement("img");
+        qrImg.src = qrcode2;
+        qrImg.style.width = "200px";
+        qrImg.style.height = "200px";
+        document.getElementById("qrcode-container").innerHTML = "";
+        document.getElementById("qrcode-container").appendChild(qrImg);
+      };
+      const getSongInfoList = async (songIds) => {
+        const chunkArr = chunkArray(songIds, 1e3);
+        const proArr = chunkArr.map(async (chunk) => {
+          return weapiRequest("/api/v3/song/detail", {
+            data: {
+              c: JSON.stringify(chunk.map((item) => ({ id: item })))
+            }
+          });
+        });
+        const allInfo = await Promise.all(proArr);
+        console.log("allInfo", allInfo);
+        return allInfo.flat();
+      };
+      const getSongUrl = (ids, options) => {
+        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = {};
+        return weapiRequest("/api/song/enhance/player/url/v1", {
+          data: { ids: JSON.stringify(ids), level, encodeType }
+        });
+      };
+      const getSongLyric = async (id) => {
+        return weapiRequest("/api/song/lyric", {
+          data: {
+            id,
+            tv: -1,
+            lv: -1,
+            rv: -1,
+            kv: -1,
+            _nmclfl: 1
+          }
+        });
+      };
+      const getSongDynamicCover = async (songId) => {
+        return weapiRequest("/api/songplay/dynamic-cover", {
+          data: {
+            songId
+          }
+        });
+      };
+      const getPlaylistList = (uid = getUser().userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
+        data: {
+          limit,
+          offset,
+          uid
+        }
+      });
+      const createPlaylist = (name2) => weapiRequest("/api/playlist/create", {
+        data: {
+          name: name2
+        }
+      });
+      const addSongToPlaylist = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
+        data: {
+          pid,
+trackIds,
+op: "add"
+}
+      });
+      const getPlaylistAllData = async (id) => {
+        try {
+          const detailRes = await weapiRequest("/api/v6/playlist/detail", {
+            data: {
+              id,
+              offset: 0,
+              total: true,
+              n: 1e5,
+              s: 8
+            }
+          });
+          console.log("detailRes", detailRes);
+          const trackIds = detailRes.playlist.trackIds.map((item) => item.id);
+          const res = await getSongInfoList(trackIds);
+          if (res[0]?.code != 200) {
+            msgError(res[0]?.msg || "获取歌单数据失败");
+            throw new Error(res[0]?.msg || "获取歌单数据失败");
+          }
+          return res[0].songs;
+        } catch (error) {
+          throw error;
+        }
+      };
+      const PlaylistTab = () => {
+        const [songListName, setSongListName] = useState$1("");
+        const handleCreateSongList = async () => {
+          console.log("新建歌单");
           try {
-            const res = await matchLocalSong(fileList);
+            const res = await createPlaylist(songListName);
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
           }
         };
-        const [searchValue, setSearchValue] = useState("");
-        const handleSearchArtist = async () => {
+        const [addInfo, setAddInfo] = useState$1({
+          songId: "185620",
+          playlistId: "12999288729"
+        });
+        const handleAddSong = async () => {
+          console.log("添加歌曲");
           try {
-            const res = await searchArtist(searchValue);
+            const res = await addSongToPlaylist(addInfo.playlistId, [addInfo.songId]);
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
           }
         };
-        const [playlistId, setPlaylistId] = useState("13508631377");
+        const [userId, setUserId] = useState$1("12999288729");
+        const handleGetPlaylistList = async () => {
+          console.log("获取歌单列表");
+          try {
+            const res = await getPlaylistList(userId);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const [playlistId, setPlaylistId] = useState$1("13508631377");
         const handleGetPlaylist = async () => {
           try {
             const res = await getPlaylistAllData(playlistId);
@@ -23673,30 +24149,315 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             console.log("error", error);
           }
         };
-        const [searchKeyword, setSearchKeyword] = useState("");
+        return jsxRuntimeExports.jsxs(Form, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "新建歌单", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "请输入歌单名称",
+                value: songListName,
+                onChange: (e) => setSongListName(e.target.value)
+              }
+            ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleCreateSongList, children: "新建歌单" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "向歌单添加歌曲", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "请输入歌单Id",
+                addonBefore: "歌单id",
+                value: addInfo.playlistId,
+                onChange: (e) => setAddInfo({ ...addInfo, playlistId: e.target.value })
+              }
+            ),
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "请输入歌曲Id",
+                addonBefore: "歌曲id",
+                value: addInfo.songId,
+                onChange: (e) => setAddInfo({ ...addInfo, songId: e.target.value })
+              }
+            ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleAddSong, children: "添加歌曲" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "获取用户歌单列表", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "请输入用户Id",
+                addonBefore: "用户id",
+                value: userId,
+                onChange: (e) => setUserId(e.target.value)
+              }
+            ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylistList, children: "获取用户歌单列表" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "测试获取歌单详情", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "请输入歌单Id",
+                addonBefore: "歌单Id",
+                value: playlistId,
+                onChange: (e) => setPlaylistId(e.target.value)
+              }
+            ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" })
+          ] }) })
+        ] });
+      };
+      const SearchTab = () => {
+        const [searchKeyword, setSearchKeyword] = useState$1("");
+        const [searchType, setSearchType] = useState$1("1");
         const handleSearch = async () => {
           try {
-            const res = await search(searchKeyword);
+            const res = await search(searchKeyword, { type: searchType });
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("搜索成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
           }
         };
         const handleCloudSearch = async () => {
           try {
-            const res = await cloudSearch(searchKeyword);
+            const res = await cloudSearch(searchKeyword, { type: searchType });
+            console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("搜索成功,请打开控制台查看！");
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const [searchValue, setSearchValue] = useState$1("");
+        const handleSearchArtist = async () => {
+          try {
+            const res = await searchArtist$1(searchValue);
+            console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("搜索成功,请打开控制台查看！");
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const [fileList, setFileList] = useState$1([]);
+        const handleLocalMatch = async () => {
+          try {
+            if (!fileList.length) return msgError("请选择文件");
+            const res = await matchLocalSong(fileList);
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
           }
         };
+        return jsxRuntimeExports.jsxs(Form, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "测试搜索接口", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsxs(Space.Compact, { children: [
+jsxRuntimeExports.jsx(
+                Select,
+                {
+                  options: searchTypeOptions,
+                  style: { width: 150 },
+                  value: searchType,
+                  onChange: (value2) => setSearchType(value2)
+                }
+              ),
+jsxRuntimeExports.jsx(
+                Input,
+                {
+                  placeholder: "请输入搜索关键词",
+                  value: searchKeyword,
+                  onChange: (e) => setSearchKeyword(e.target.value)
+                }
+              )
+            ] }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleSearch, children: "搜索（search）" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCloudSearch, children: "搜索（cloudSearch）" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "测试搜索歌手信息", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "请输入歌手名称",
+                addonBefore: "歌手名称",
+                value: searchValue,
+                onChange: (e) => setSearchValue(e.target.value)
+              }
+            ),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleSearchArtist, children: "搜索歌手信息" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "测试本地歌曲匹配", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+              Upload,
+              {
+                fileList,
+                accept: ".flac,.mp3,.wav,.aac,.m4a,.ogg,.wma",
+                beforeUpload: (file) => {
+                  setFileList([...fileList, file]);
+                  return false;
+                },
+                onRemove: (file) => {
+                  setFileList(fileList.filter((f) => f !== file));
+                },
+                children: jsxRuntimeExports.jsx(MyButton, { icon: jsxRuntimeExports.jsx(UploadOutlined, {}), children: "Select File" })
+              }
+            ),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleLocalMatch, children: "测试本地歌曲匹配" })
+          ] }) })
+        ] });
+      };
+      const searchTypeOptions = [
+        {
+          label: "单曲",
+          value: "1"
+        },
+        {
+          label: "专辑",
+          value: "10"
+        },
+        {
+          label: "歌手",
+          value: "100"
+        },
+        {
+          label: "歌单",
+          value: "1000"
+        },
+        {
+          label: "用户",
+          value: "1002"
+        },
+        {
+          label: "MV",
+          value: "1004"
+        },
+        {
+          label: "歌词",
+          value: "1006"
+        },
+        {
+          label: "电台",
+          value: "1009"
+        },
+        {
+          label: "视频",
+          value: "1014"
+        }
+      ];
+      const SongTab = () => {
+        const [songId, setSongId] = useState$1("2608471890");
+        const handleGetSongUrl = async () => {
+          console.log("获取歌曲URL");
+          try {
+            const res = await getSongUrl([songId]);
+            console.log("res", res);
+            if (res.code === 200) {
+              const url = res.data[0].url;
+              await navigator.clipboard.writeText(url);
+              msgSuccess$1("获取成功,已复制到剪切板");
+            }
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const handleGetSongInfo = async () => {
+          console.log("获取歌曲信息");
+          try {
+            const res = await getSongInfoList([songId]);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const handleGetSongLyric = async () => {
+          console.log("获取歌曲歌词");
+          try {
+            const res = await getSongLyric(songId);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const handleGetSongDynamicCover = async () => {
+          try {
+            const res = await getSongDynamicCover(songId);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取歌曲信息", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+            Input,
+            {
+              placeholder: "请输入歌曲Id",
+              addonBefore: "歌曲Id",
+              value: songId,
+              onChange: (e) => setSongId(e.target.value)
+            }
+          ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongInfo, children: "获取歌曲信息" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" })
+        ] }) }) });
+      };
+      const TestModal = forwardRef((props, ref) => {
+        const { visible, close } = useVisible({}, ref);
+        const tabItems = [
+          {
+            key: "login",
+            label: "登录",
+            children: jsxRuntimeExports.jsx(LoginTab, {})
+          },
+          {
+            key: "search",
+            label: "搜索",
+            children: jsxRuntimeExports.jsx(SearchTab, {})
+          },
+          {
+            key: "artist",
+            label: "歌手",
+            children: jsxRuntimeExports.jsx(ArtistTab, {})
+          },
+          {
+            key: "song",
+            label: "歌曲",
+            children: jsxRuntimeExports.jsx(SongTab, {})
+          },
+          {
+            key: "cloud",
+            label: "云盘",
+            children: jsxRuntimeExports.jsx(CloudTab, {})
+          },
+          {
+            key: "playlist",
+            label: "歌单",
+            children: jsxRuntimeExports.jsx(PlaylistTab, {})
+          },
+          {
+            key: "album",
+            label: "专辑",
+            children: jsxRuntimeExports.jsx(AlbumTab, {})
+          },
+          {
+            key: "flac",
+            label: "FLAC",
+            children: jsxRuntimeExports.jsx(FlacTab, {})
+          }
+        ];
         return jsxRuntimeExports.jsx(
           Modal,
           {
             title: "测试Modal",
             open: visible,
             onCancel: close,
-            width: 800,
+            width: 1200,
             styles: {
               body: {
                 maxHeight: "75vh",
@@ -23705,211 +24466,7 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             },
             footer: null,
             centered: true,
-            children: jsxRuntimeExports.jsxs(Form, { children: [
-jsxRuntimeExports.jsx(Form.Item, { label: "获取用户信息", children: jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetUserAccount, children: "获取用户信息" }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "获取云盘数据", children: jsxRuntimeExports.jsxs(Space, { children: [
-jsxRuntimeExports.jsx(Input, { placeholder: "limit", style: { width: 100 } }),
-jsxRuntimeExports.jsx(Input, { placeholder: "offset", style: { width: 100 } }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetCloudData, children: "获取云盘数据" })
-              ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "新建歌单", children: jsxRuntimeExports.jsxs(Space, { children: [
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入歌单名称",
-                    value: songListName,
-                    onChange: (e) => setSongListName(e.target.value)
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleCreateSongList, children: "新建歌单" })
-              ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "向歌单添加歌曲", children: jsxRuntimeExports.jsxs(Space, { children: [
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入歌单Id",
-                    addonBefore: "歌单id",
-                    value: addInfo.playlistId,
-                    onChange: (e) => setAddInfo({ ...addInfo, playlistId: e.target.value })
-                  }
-                ),
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入歌曲Id",
-                    addonBefore: "歌曲id",
-                    value: addInfo.songId,
-                    onChange: (e) => setAddInfo({ ...addInfo, songId: e.target.value })
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleAddSong, children: "添加歌曲" })
-              ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "获取用户歌单列表", children: jsxRuntimeExports.jsxs(Space, { children: [
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入用户Id",
-                    addonBefore: "用户id",
-                    value: userId,
-                    onChange: (e) => setUserId(e.target.value)
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylistList, children: "获取用户歌单列表" })
-              ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "测试获取歌单详情", children: jsxRuntimeExports.jsxs(Space, { children: [
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入歌单Id",
-                    addonBefore: "歌单Id",
-                    value: playlistId,
-                    onChange: (e) => setPlaylistId(e.target.value)
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" })
-              ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "获取歌曲信息", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入歌曲Id",
-                    addonBefore: "歌曲Id",
-                    value: songId,
-                    onChange: (e) => setSongId(e.target.value)
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongInfo, children: "获取歌曲信息" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleDeleteCloudSong, children: "删除云盘歌曲" })
-              ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "获取专辑歌曲列表", children: jsxRuntimeExports.jsxs(Space, { children: [
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入专辑Id",
-                    addonBefore: "专辑Id",
-                    value: albumId,
-                    onChange: (e) => setAlbumId(e.target.value)
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumSongList, children: "获取专辑歌曲列表" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumDetail, children: "获取专辑详情" })
-              ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "获取歌手歌曲列表", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入歌手Id",
-                    addonBefore: "歌手Id",
-                    value: artistId,
-                    onChange: (e) => setArtistId(e.target.value)
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistTopSongList, children: "获取歌手热门歌曲列表" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbum, children: "获取歌手专辑" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbumPic, children: "下载专辑封面" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAllSongList, children: "获取歌手全部歌曲" })
-              ] }) }),
-jsxRuntimeExports.jsxs(Form.Item, { label: "二维码登录", children: [
-jsxRuntimeExports.jsx("div", { id: "qrcode-container" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleQrLogin, children: "二维码登录" })
-              ] }),
-jsxRuntimeExports.jsx(Form.Item, { label: "测试flac标签", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
-jsxRuntimeExports.jsx(
-                  "input",
-                  {
-                    type: "file",
-                    accept: ".flac",
-                    onChange: (e) => {
-                      setFlacFile(e.target.files[0]);
-                    }
-                  }
-                ),
-jsxRuntimeExports.jsx(
-                  Select,
-                  {
-                    style: { width: 100 },
-                    options: [
-                      { label: "全部", value: "all" },
-                      ...Object.entries(FLAC_TAGS).map(([key, value2]) => ({
-                        label: value2,
-                        value: key
-                      }))
-                    ],
-                    value: flacTagName,
-                    onChange: (value2) => setFlacTagName(value2)
-                  }
-                ),
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入flac标签",
-                    value: flacTagValue,
-                    onChange: (e) => setFlacTagValue(e.target.value)
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleReadFlacTag, children: "读取flac标签" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleWriteFlacTag, children: "写入flac标签" }),
-jsxRuntimeExports.jsx(
-                  "input",
-                  {
-                    type: "file",
-                    accept: ".jpg,.png,.jpeg",
-                    onChange: (e) => {
-                      setFlacPicture(e.target.files[0]);
-                    }
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleEmbedFlacPicture, children: "嵌入flac图片" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" })
-              ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "上传本地歌曲到云盘", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
-jsxRuntimeExports.jsx(
-                  Upload,
-                  {
-                    fileList,
-                    accept: ".flac,.mp3,.wav,.aac,.m4a,.ogg,.wma",
-                    beforeUpload: (file) => {
-                      setFileList([...fileList, file]);
-                      return false;
-                    },
-                    onRemove: (file) => {
-                      setFileList(fileList.filter((f) => f !== file));
-                    },
-                    children: jsxRuntimeExports.jsx(Button, { icon: jsxRuntimeExports.jsx(UploadOutlined, {}), children: "Select File" })
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleUploadLocalSong, children: "上传本地歌曲到云盘" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleLocalMatch, children: "测试本地歌曲匹配" })
-              ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "测试搜索歌手信息", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入歌手名称",
-                    addonBefore: "歌手名称",
-                    value: searchValue,
-                    onChange: (e) => setSearchValue(e.target.value)
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearchArtist, children: "搜索歌手信息" })
-              ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "测试搜索接口", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
-jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入搜索关键词",
-                    addonBefore: "搜索关键词",
-                    value: searchKeyword,
-                    onChange: (e) => setSearchKeyword(e.target.value)
-                  }
-                ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearch, children: "搜索（search）" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleCloudSearch, children: "搜索（cloudSearch）" })
-              ] }) })
-            ] })
+            children: jsxRuntimeExports.jsx(Tabs, { items: tabItems })
           }
         );
       });
@@ -23982,7 +24539,7 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
       function App() {
         const getUserInfo = async () => {
           try {
-            const res = await getUserAccount();
+            const res = await getUserAccount$1();
             console.log("res", res);
             if (res.code === 200) {
               const globalThis2 = getGlobalThis();
@@ -24495,7 +25052,7 @@ global: {
         return zh_CN;
       }
       var zh_CNExports = requireZh_CN();
-      const zhCN = getDefaultExportFromCjs$1(zh_CNExports);
+      const zhCN = getDefaultExportFromCjs(zh_CNExports);
       ReactDOM.createRoot(
         (() => {
           const app = document.createElement("div");
@@ -24510,7 +25067,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-CHUhGk_k-jtD64-rU.js", ['./__monkey.entry-0ZvTVvnt.js', './AbstractID3Parser-a88-W9cf-C1O-NYZo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Dw4_u986-D0MOfMg_.js'], (function (exports, module) {
+System.register("./MpegParser-JllyiexM-VgNDIsls.js", ['./__monkey.entry-DKGzKOfj.js', './AbstractID3Parser-D1YMZBHY-B9btG523.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Bmx8U78W-DinX75R9.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -25105,7 +25662,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-CRyegyjY-D3SGHapK.js", ['./__monkey.entry-0ZvTVvnt.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-BudCl-N_-D3hMnzoN.js", ['./__monkey.entry-DKGzKOfj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -25612,7 +26169,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-jfEeOTyu-H7ys-AxO.js", ['./__monkey.entry-0ZvTVvnt.js', './ID3v2Parser-Dw4_u986-D0MOfMg_.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-DAcEdOrd-BNLl7x8d.js", ['./__monkey.entry-DKGzKOfj.js', './ID3v2Parser-Bmx8U78W-DinX75R9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -25786,7 +26343,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-nwJ6LE7B-DTVdOK7a.js", ['./__monkey.entry-0ZvTVvnt.js', './ID3v2Parser-Dw4_u986-D0MOfMg_.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-k5RVbd1V-DFexcnYa.js", ['./__monkey.entry-DKGzKOfj.js', './ID3v2Parser-Bmx8U78W-DinX75R9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -25957,7 +26514,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-DGEEcICd-DpmFOKjB.js", ['./__monkey.entry-0ZvTVvnt.js', './AbstractID3Parser-a88-W9cf-C1O-NYZo.js', './ID3v2Parser-Dw4_u986-D0MOfMg_.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-DDOE63n6-CkJgYhWF.js", ['./__monkey.entry-DKGzKOfj.js', './AbstractID3Parser-D1YMZBHY-B9btG523.js', './ID3v2Parser-Bmx8U78W-DinX75R9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -26055,7 +26612,7 @@ System.register("./DsfParser-DGEEcICd-DpmFOKjB.js", ['./__monkey.entry-0ZvTVvnt.
   };
 }));
 
-System.register("./FlacParser-CWrFhzJI-DBSM-BmE.js", ['./__monkey.entry-0ZvTVvnt.js', './VorbisParser-hnsRez8q-RAqlEv1h.js', './AbstractID3Parser-a88-W9cf-C1O-NYZo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Dw4_u986-D0MOfMg_.js'], (function (exports, module) {
+System.register("./FlacParser-DT9H7OwN-scQ0mcqN.js", ['./__monkey.entry-DKGzKOfj.js', './VorbisParser-Cxn9l2cN-rfNm5abg.js', './AbstractID3Parser-D1YMZBHY-B9btG523.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Bmx8U78W-DinX75R9.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -26207,7 +26764,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-DpvASoJ1-BK4Ic0DC.js", ['./__monkey.entry-0ZvTVvnt.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-DjdpXWt2-CffyF-n7.js", ['./__monkey.entry-DKGzKOfj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -26814,7 +27371,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-2h2cNPXB-PXCie8a5.js", ['./__monkey.entry-0ZvTVvnt.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-CH2HMVJ4-BkeOcder.js", ['./__monkey.entry-DKGzKOfj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -27645,7 +28202,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-Zqu4ODNj-BkwZrs09.js", ['./__monkey.entry-0ZvTVvnt.js', './AbstractID3Parser-a88-W9cf-C1O-NYZo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Dw4_u986-D0MOfMg_.js'], (function (exports, module) {
+System.register("./MusepackParser-DNYedbC3-DH72WD6f.js", ['./__monkey.entry-DKGzKOfj.js', './AbstractID3Parser-D1YMZBHY-B9btG523.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Bmx8U78W-DinX75R9.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -27922,7 +28479,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-a88-W9cf-C1O-NYZo.js", ['./__monkey.entry-0ZvTVvnt.js', './ID3v2Parser-Dw4_u986-D0MOfMg_.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-D1YMZBHY-B9btG523.js", ['./__monkey.entry-DKGzKOfj.js', './ID3v2Parser-Bmx8U78W-DinX75R9.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -27986,7 +28543,7 @@ System.register("./AbstractID3Parser-a88-W9cf-C1O-NYZo.js", ['./__monkey.entry-0
   };
 }));
 
-System.register("./OggParser-CTL8T6mz-BpPoJzi0.js", ['./__monkey.entry-0ZvTVvnt.js', './VorbisParser-hnsRez8q-RAqlEv1h.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-DHMkXOgp-DGe7sW9U.js", ['./__monkey.entry-DKGzKOfj.js', './VorbisParser-Cxn9l2cN-rfNm5abg.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -28261,7 +28818,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-hnsRez8q-RAqlEv1h.js", ['./__monkey.entry-0ZvTVvnt.js'], (function (exports, module) {
+System.register("./VorbisParser-Cxn9l2cN-rfNm5abg.js", ['./__monkey.entry-DKGzKOfj.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -28477,7 +29034,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-hH53WB6d-BujB4spl.js", ['./__monkey.entry-0ZvTVvnt.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-DN5D4tAZ-DRbmvAy3.js", ['./__monkey.entry-DKGzKOfj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -28657,7 +29214,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-ByOOGgDW-C31eDtfN.js", ['./__monkey.entry-0ZvTVvnt.js', './ID3v2Parser-Dw4_u986-D0MOfMg_.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-DYqjqe55-DD-H2l5Z.js", ['./__monkey.entry-DKGzKOfj.js', './ID3v2Parser-Bmx8U78W-DinX75R9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -28930,7 +29487,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-Dw4_u986-D0MOfMg_.js", ['./__monkey.entry-0ZvTVvnt.js'], (function (exports, module) {
+System.register("./ID3v2Parser-Bmx8U78W-DinX75R9.js", ['./__monkey.entry-DKGzKOfj.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
