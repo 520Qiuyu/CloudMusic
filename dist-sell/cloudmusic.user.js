@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-DKGzKOfj.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-ucemSt9a.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,7 +44,7 @@ System.register("./__entry.js", ['./__monkey.entry-DKGzKOfj.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-DKGzKOfj.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-ucemSt9a.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var forwardRef, useRef, useState$1, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Progress, ConfigProvider, Select, Tooltip, Spin, Empty, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, GithubOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CopyrightOutlined, FileOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined;
   return {
@@ -6035,7 +6035,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-JllyiexM-VgNDIsls.js');
+            const { MpegParser } = await module.import('./MpegParser-fijEDUkS-Btds6QFq.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -6057,7 +6057,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-BudCl-N_-D3hMnzoN.js');
+            const { AsfParser } = await module.import('./AsfParser-BHAKpQrM-mZ-bXpsP.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -6068,7 +6068,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-DAcEdOrd-BNLl7x8d.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-Chmtic8g-NwbtTKYu.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -6079,7 +6079,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-k5RVbd1V-DFexcnYa.js');
+            const { AIFFParser } = await module.import('./AiffParser-tLWgD7Q3-CNNv3rxN.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -6090,7 +6090,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-DDOE63n6-CkJgYhWF.js');
+            const { DsfParser } = await module.import('./DsfParser-CSbkxoAz-Cf7YlM74.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -6101,7 +6101,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-DT9H7OwN-scQ0mcqN.js');
+            const { FlacParser } = await module.import('./FlacParser-DVsN4-Yg-MIeQffqw.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -6112,7 +6112,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-DjdpXWt2-CffyF-n7.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-Dfcnu8Ii-BMVcYXGf.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -6123,7 +6123,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-CH2HMVJ4-BkeOcder.js');
+            const { MP4Parser } = await module.import('./MP4Parser-DCTVVhRS-VKXjSfcz.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -6134,7 +6134,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-DNYedbC3-DH72WD6f.js');
+            const { MusepackParser } = await module.import('./MusepackParser-BDSoOa2H-DyaZ8pg1.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -6145,7 +6145,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-DHMkXOgp-DGe7sW9U.js');
+            const { OggParser } = await module.import('./OggParser-DmwXEWHr-C79M4iGG.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -6156,7 +6156,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-DN5D4tAZ-DRbmvAy3.js');
+            const { WavPackParser } = await module.import('./WavPackParser-CP0_mtDg-CPn9QAJI.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -6167,7 +6167,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-DYqjqe55-DD-H2l5Z.js');
+            const { WaveParser } = await module.import('./WaveParser-CespDsAF-5WViinAB.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -9557,137 +9557,6 @@ offset
           msg: "获取歌手专辑成功",
           data: albumList
         };
-      };
-      const uploadLocalSong$1 = async (file) => {
-        let defaultResult = {};
-        try {
-          const ext = file.name.split(".").pop() || "mp3";
-          const fileMd5 = await getFileMD5(file);
-          const bitrate = 999e3;
-          const filename = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
-          const checkRes = await weapiRequest("/api/cloud/upload/check", {
-            data: {
-              ext: "",
-              bitrate: String(bitrate),
-              md5: fileMd5,
-              length: file.size,
-              songId: "0",
-              version: 1
-            }
-          });
-          console.log("checkRes", checkRes);
-          if (checkRes.code != 200) {
-            msgError("文件检查失败：" + checkRes.message || checkRes.msg || "");
-            throw new Error(checkRes.message || checkRes.msg || "文件检查失败");
-          }
-          const { needUpload, songId } = checkRes;
-          if (needUpload) {
-            const bucket2 = "jd-musicrep-privatecloud-audio-public";
-            const tokenRes2 = await weapiRequest("/api/nos/token/alloc", {
-              data: {
-                bucket: bucket2,
-                ext,
-                filename,
-                local: false,
-                nos_product: 3,
-                type: "audio",
-                md5: fileMd5
-              }
-            });
-            const objectKey2 = tokenRes2.body.result.objectKey.replace("/", "%2F");
-            const lbs = await (await fetch(
-              `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket2}`
-            )).json();
-            const formData = new FormData();
-            formData.append("songFile", file);
-            await fetch(
-              `${lbs.upload[0]}/${bucket2}/${objectKey2}?offset=0&complete=true&version=1.0`,
-              {
-                method: "post",
-                headers: {
-                  "x-nos-token": tokenRes2.body.result.token,
-                  "Content-MD5": fileMd5,
-                  "Content-Type": "audio/mpeg",
-                  "Content-Length": String(file.size)
-                },
-                data: formData,
-                maxContentLength: Infinity,
-                maxBodyLength: Infinity
-              }
-            );
-          }
-          const tokenRes = await weapiRequest("/api/nos/token/alloc", {
-            data: {
-              bucket: "",
-              ext,
-              filename,
-              local: false,
-              nos_product: 3,
-              type: "audio",
-              md5: fileMd5
-            }
-          });
-          console.log("tokenRes", tokenRes);
-          if (tokenRes.code != 200) {
-            msgError("获取上传token失败");
-            throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
-          }
-          const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
-          const { album: album2, artist: artist2, artists, title: title2 } = await getAudioMetadata(file);
-          defaultResult = {
-            ...defaultResult,
-            artist: artist2,
-            artists,
-            album: album2,
-            md5: fileMd5,
-            ext,
-            bitrate
-          };
-          const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
-            data: {
-              md5: fileMd5,
-              songid: songId,
-              filename,
-              song: title2 || filename,
-              album: album2 || "未知专辑",
-              artist: artist2 || artists.join(",") || "未知歌手",
-              bitrate: String(bitrate),
-              resourceId
-            }
-          });
-          console.log("uploadInfoRes", uploadInfoRes);
-          defaultResult = {
-            ...defaultResult,
-            id: uploadInfoRes.songId
-          };
-          if (uploadInfoRes.code != 200) {
-            msgError("获取上传信息失败");
-            throw new Error(
-              uploadInfoRes.message || uploadInfoRes.msg || "获取上传信息失败"
-            );
-          }
-          const pubRes = await weapiRequest("/api/cloud/pub/v2", {
-            data: {
-              songid: uploadInfoRes.songId
-            }
-          });
-          console.log("pubRes", pubRes);
-          if (![200, 201].includes(pubRes.code)) {
-            msgError(`歌曲： ${file.name} 发布失败`);
-            throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
-          }
-          const { songName: songName2, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
-          defaultResult = {
-            ...defaultResult,
-            name: songName2,
-            size: fileSize,
-            bitrate: realBitrate
-          };
-          return defaultResult;
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
       };
       const searchArtist = (keyword) => weapiRequest("/api/rep/ugc/artist/search", {
         data: {
@@ -19477,7 +19346,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
         pageSize: 20,
         type: SEARCH_TYPES.单曲
       };
-      const Search$1 = forwardRef((props, ref) => {
+      const Search = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
         const [searchParams, setSearchParams] = useState$1(defaultSearchParams);
         const handleSearch = (values) => {
@@ -19564,7 +19433,6 @@ jsxRuntimeExports.jsx(
           }
         );
       });
-      const { Search } = Input;
       const CloudImport = forwardRef((props, ref) => {
         const { visible, close } = useVisible(
           {
@@ -21454,6 +21322,215 @@ jsxRuntimeExports.jsx(
           }
         );
       });
+      const getSongInfoList = async (songIds) => {
+        const chunkArr = chunkArray(songIds, 1e3);
+        const proArr = chunkArr.map(async (chunk) => {
+          return weapiRequest("/api/v3/song/detail", {
+            data: {
+              c: JSON.stringify(chunk.map((item) => ({ id: item })))
+            }
+          });
+        });
+        const allInfo = await Promise.all(proArr);
+        console.log("allInfo", allInfo);
+        return allInfo.flat();
+      };
+      const getSongUrl = (ids, options) => {
+        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = {};
+        return weapiRequest("/api/song/enhance/player/url/v1", {
+          data: { ids: JSON.stringify(ids), level, encodeType }
+        });
+      };
+      const getSongLyric = async (id) => {
+        return weapiRequest("/api/song/lyric", {
+          data: {
+            id,
+            tv: -1,
+            lv: -1,
+            rv: -1,
+            kv: -1,
+            _nmclfl: 1
+          }
+        });
+      };
+      const getSongDynamicCover = async (songId) => {
+        return weapiRequest("/api/songplay/dynamic-cover", {
+          data: {
+            songId
+          }
+        });
+      };
+      const BUCKET = "jd-musicrep-privatecloud-audio-public";
+      const uploadAudioToNos = async ({
+        file,
+        bucket,
+        objectKey,
+        token,
+        fileMd5,
+        contentType: contentType2
+      }) => {
+        const lbsUrl = `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket}`;
+        const lbs = await (await fetch(lbsUrl)).json();
+        const safeObjectKey = objectKey.replace("/", "%2F");
+        const uploadUrl = `${lbs.upload[0]}/${bucket}/${safeObjectKey}?offset=0&complete=true&version=1.0`.replace(
+          "http://",
+          "https://"
+        );
+        const response = await fetch(uploadUrl, {
+          method: "post",
+          headers: {
+            "x-nos-token": token,
+            "Content-MD5": fileMd5,
+            "Content-Type": contentType2
+          },
+          body: file
+        });
+        let result = {};
+        try {
+          result = await response.json();
+        } catch (error) {
+          console.log("uploadAudioToNos parse error", error);
+        }
+        if (!response.ok) {
+          msgError("上传失败：文件未通过 NOS 校验");
+          throw new Error(result?.message || "上传失败：文件未通过 NOS 校验");
+        }
+        return result;
+      };
+      const getCloudData = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
+        data: {
+          limit,
+          offset
+        }
+      });
+      const deleteCloudSong = (songIds) => weapiRequest("/api/cloud/del", {
+        data: {
+          songIds
+        }
+      });
+      const uploadLocalSong = async (file) => {
+        let defaultResult = {};
+        try {
+          const ext = file.name.split(".").pop() || "mp3";
+          const fileMd5 = await getFileMD5(file);
+          const bitrate = 999e3;
+          const filename = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
+          const contentType2 = file.type || "audio/mpeg";
+          const checkRes = await weapiRequest("/api/cloud/upload/check", {
+            data: {
+              ext: "",
+              bitrate: String(bitrate),
+              md5: fileMd5,
+              length: file.size,
+              songId: "0",
+              version: 1
+            }
+          });
+          console.log("checkRes", checkRes);
+          if (checkRes.code != 200) {
+            msgError("文件检查失败：" + checkRes.message || checkRes.msg || "");
+            throw new Error(checkRes.message || checkRes.msg || "文件检查失败");
+          }
+          const { needUpload, songId } = checkRes;
+          if (needUpload) {
+            const uploadTokenRes = await weapiRequest("/api/nos/token/alloc", {
+              data: {
+                bucket: BUCKET,
+                ext,
+                filename,
+                local: false,
+                nos_product: 3,
+                type: "audio",
+                md5: fileMd5
+              }
+            });
+            if (uploadTokenRes.code !== 200) {
+              msgError("上传授权失败");
+              throw new Error(uploadTokenRes.message || "上传授权失败");
+            }
+            console.log("uploadTokenRes", uploadTokenRes);
+            await uploadAudioToNos({
+              file,
+              bucket: BUCKET,
+              objectKey: uploadTokenRes.result.objectKey,
+              token: uploadTokenRes.result.token,
+              fileMd5,
+              contentType: contentType2
+            });
+          }
+          const tokenRes = await weapiRequest("/api/nos/token/alloc", {
+            data: {
+              bucket: "",
+              ext,
+              filename,
+              local: false,
+              nos_product: 3,
+              type: "audio",
+              md5: fileMd5
+            }
+          });
+          console.log("tokenRes", tokenRes);
+          if (tokenRes.code != 200) {
+            msgError("获取上传token失败");
+            throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
+          }
+          const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
+          const { album: album2, artist: artist2, artists = [], title: title2 } = await getAudioMetadata(file);
+          defaultResult = {
+            ...defaultResult,
+            artist: artist2,
+            artists,
+            album: album2,
+            md5: fileMd5,
+            ext,
+            bitrate
+          };
+          const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
+            data: {
+              md5: fileMd5,
+              songid: songId,
+              filename,
+              song: title2 || filename,
+              album: album2 || "未知专辑",
+              artist: artist2 || artists.join(",") || "未知歌手",
+              bitrate: String(bitrate),
+              resourceId
+            }
+          });
+          console.log("uploadInfoRes", uploadInfoRes);
+          defaultResult = {
+            ...defaultResult,
+            id: uploadInfoRes.songId
+          };
+          if (uploadInfoRes.code != 200) {
+            msgError("获取上传信息失败");
+            throw new Error(
+              uploadInfoRes.message || uploadInfoRes.msg || "获取上传信息失败"
+            );
+          }
+          const pubRes = await weapiRequest("/api/cloud/pub/v2", {
+            data: {
+              songid: uploadInfoRes.songId
+            }
+          });
+          console.log("pubRes", pubRes);
+          if (![200, 201].includes(pubRes.code)) {
+            msgError(`歌曲： ${file.name} 发布失败`);
+            throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
+          }
+          const { songName: songName2, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
+          defaultResult = {
+            ...defaultResult,
+            name: songName2,
+            size: fileSize,
+            bitrate: realBitrate
+          };
+          return defaultResult;
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
+      };
       const dragger = "_dragger_1latm_12";
       const divider$1 = "_divider_1latm_58";
       const styles$4 = {
@@ -21490,8 +21567,9 @@ jsxRuntimeExports.jsx(
                 if (file.status === "done") {
                   return;
                 }
+                console.log("file", file);
                 file.status = "uploading";
-                const res2 = await uploadLocalSong$1(file);
+                const res2 = await uploadLocalSong(file);
                 console.log("res", res2);
                 file.status = "done";
                 return res2;
@@ -21624,6 +21702,7 @@ jsxRuntimeExports.jsxs(
                     multiple: true,
                     fileList,
                     beforeUpload: (file) => {
+                      console.log("file", file);
                       setFileList((prev) => [...prev, file]);
                       return false;
                     },
@@ -23554,10 +23633,13 @@ offset
       const ArtistTab = () => {
         const [artistId, setArtistId] = useState$1("3684");
         const handleGetArtistTopSongList = async () => {
-          console.log("获取歌手歌曲列表");
+          console.log("获取歌手热门歌曲列表");
           try {
             const res = await getArtistTopSongList(artistId);
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取歌手热门歌曲列表成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
           }
@@ -23578,7 +23660,10 @@ offset
             console.log("res", res);
             if (res.code === 200) {
               const downloadTask = res.data.map(
-                (item) => () => downloadFile(item.picUrl?.split("?")[0] || item.cover?.split("?")[0], item.name + ".jpg")
+                (item) => () => downloadFile(
+                  item.picUrl?.split("?")[0] || item.cover?.split("?")[0],
+                  item.name + ".jpg"
+                )
               );
               await promiseLimit(downloadTask, 1);
             }
@@ -23610,148 +23695,6 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbum, 
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbumPic, children: "下载专辑封面" }),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAllSongList, children: "获取歌手全部歌曲" })
         ] }) }) });
-      };
-      const getCloudData = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
-        data: {
-          limit,
-          offset
-        }
-      });
-      const deleteCloudSong = (songIds) => weapiRequest("/api/cloud/del", {
-        data: {
-          songIds
-        }
-      });
-      const uploadLocalSong = async (file) => {
-        let defaultResult = {};
-        try {
-          const ext = file.name.split(".").pop() || "mp3";
-          const fileMd5 = await getFileMD5(file);
-          const bitrate = 999e3;
-          const filename = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
-          const checkRes = await weapiRequest("/api/cloud/upload/check", {
-            data: {
-              ext: "",
-              bitrate: String(bitrate),
-              md5: fileMd5,
-              length: file.size,
-              songId: "0",
-              version: 1
-            }
-          });
-          console.log("checkRes", checkRes);
-          if (checkRes.code != 200) {
-            msgError("文件检查失败：" + checkRes.message || checkRes.msg || "");
-            throw new Error(checkRes.message || checkRes.msg || "文件检查失败");
-          }
-          const { needUpload, songId } = checkRes;
-          if (needUpload) {
-            const bucket2 = "jd-musicrep-privatecloud-audio-public";
-            const tokenRes2 = await weapiRequest("/api/nos/token/alloc", {
-              data: {
-                bucket: bucket2,
-                ext,
-                filename,
-                local: false,
-                nos_product: 3,
-                type: "audio",
-                md5: fileMd5
-              }
-            });
-            const objectKey2 = tokenRes2.body.result.objectKey.replace("/", "%2F");
-            const lbs = await (await fetch(
-              `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket2}`
-            )).json();
-            const formData = new FormData();
-            formData.append("songFile", file);
-            await fetch(
-              `${lbs.upload[0]}/${bucket2}/${objectKey2}?offset=0&complete=true&version=1.0`,
-              {
-                method: "post",
-                headers: {
-                  "x-nos-token": tokenRes2.body.result.token,
-                  "Content-MD5": fileMd5,
-                  "Content-Type": "audio/mpeg",
-                  "Content-Length": String(file.size)
-                },
-                data: formData,
-                maxContentLength: Infinity,
-                maxBodyLength: Infinity
-              }
-            );
-          }
-          const tokenRes = await weapiRequest("/api/nos/token/alloc", {
-            data: {
-              bucket: "",
-              ext,
-              filename,
-              local: false,
-              nos_product: 3,
-              type: "audio",
-              md5: fileMd5
-            }
-          });
-          console.log("tokenRes", tokenRes);
-          if (tokenRes.code != 200) {
-            msgError("获取上传token失败");
-            throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
-          }
-          const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
-          const { album: album2, artist: artist2, artists, title: title2 } = await getAudioMetadata(file);
-          defaultResult = {
-            ...defaultResult,
-            artist: artist2,
-            artists,
-            album: album2,
-            md5: fileMd5,
-            ext,
-            bitrate
-          };
-          const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
-            data: {
-              md5: fileMd5,
-              songid: songId,
-              filename,
-              song: title2 || filename,
-              album: album2 || "未知专辑",
-              artist: artist2 || artists.join(",") || "未知歌手",
-              bitrate: String(bitrate),
-              resourceId
-            }
-          });
-          console.log("uploadInfoRes", uploadInfoRes);
-          defaultResult = {
-            ...defaultResult,
-            id: uploadInfoRes.songId
-          };
-          if (uploadInfoRes.code != 200) {
-            msgError("获取上传信息失败");
-            throw new Error(
-              uploadInfoRes.message || uploadInfoRes.msg || "获取上传信息失败"
-            );
-          }
-          const pubRes = await weapiRequest("/api/cloud/pub/v2", {
-            data: {
-              songid: uploadInfoRes.songId
-            }
-          });
-          console.log("pubRes", pubRes);
-          if (![200, 201].includes(pubRes.code)) {
-            msgError(`歌曲： ${file.name} 发布失败`);
-            throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
-          }
-          const { songName: songName2, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
-          defaultResult = {
-            ...defaultResult,
-            name: songName2,
-            size: fileSize,
-            bitrate: realBitrate
-          };
-          return defaultResult;
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
       };
       const CloudTab = () => {
         const [pageData, setPageData] = useState$1({
@@ -23788,6 +23731,15 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAllSong
               console.log("res", res);
               console.log(JSON.stringify(res, null, 2));
             }
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const [neteaseCloudSongId, setNeteaseCloudSongId] = useState$1("");
+        const handleNeteaseCloudToCloud = async () => {
+          try {
+            const res = await neteaseCloudToCloud(neteaseCloudSongId);
+            console.log("res", res);
           } catch (error) {
             console.log("error", error);
           }
@@ -23843,6 +23795,10 @@ jsxRuntimeExports.jsx(
               }
             ),
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleUploadLocalSong, children: "上传本地歌曲到云盘" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "测试网易云音乐转存云盘", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(Input, { placeholder: "请输入网易云音乐歌曲Id" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleNeteaseCloudToCloud, children: "测试网易云音乐转存云盘" })
           ] }) })
         ] });
       };
@@ -24025,44 +23981,6 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
         qrImg.style.height = "200px";
         document.getElementById("qrcode-container").innerHTML = "";
         document.getElementById("qrcode-container").appendChild(qrImg);
-      };
-      const getSongInfoList = async (songIds) => {
-        const chunkArr = chunkArray(songIds, 1e3);
-        const proArr = chunkArr.map(async (chunk) => {
-          return weapiRequest("/api/v3/song/detail", {
-            data: {
-              c: JSON.stringify(chunk.map((item) => ({ id: item })))
-            }
-          });
-        });
-        const allInfo = await Promise.all(proArr);
-        console.log("allInfo", allInfo);
-        return allInfo.flat();
-      };
-      const getSongUrl = (ids, options) => {
-        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = {};
-        return weapiRequest("/api/song/enhance/player/url/v1", {
-          data: { ids: JSON.stringify(ids), level, encodeType }
-        });
-      };
-      const getSongLyric = async (id) => {
-        return weapiRequest("/api/song/lyric", {
-          data: {
-            id,
-            tv: -1,
-            lv: -1,
-            rv: -1,
-            kv: -1,
-            _nmclfl: 1
-          }
-        });
-      };
-      const getSongDynamicCover = async (songId) => {
-        return weapiRequest("/api/songplay/dynamic-cover", {
-          data: {
-            songId
-          }
-        });
       };
       const getPlaylistList = (uid = getUser().userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
         data: {
@@ -24531,7 +24449,7 @@ jsxRuntimeExports.jsx(LocalUpload, { ref: localUploadRef }),
 jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef }),
 jsxRuntimeExports.jsx(TestModal, { ref: testModalRef }),
 jsxRuntimeExports.jsx(PlayList$1, { ref: playListRef }),
-jsxRuntimeExports.jsx(Search$1, { ref: searchRef }),
+jsxRuntimeExports.jsx(Search, { ref: searchRef }),
 jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef }),
 jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
         ] });
@@ -25067,7 +24985,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-JllyiexM-VgNDIsls.js", ['./__monkey.entry-DKGzKOfj.js', './AbstractID3Parser-D1YMZBHY-B9btG523.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Bmx8U78W-DinX75R9.js'], (function (exports, module) {
+System.register("./MpegParser-fijEDUkS-Btds6QFq.js", ['./__monkey.entry-ucemSt9a.js', './AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -25662,7 +25580,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-BudCl-N_-D3hMnzoN.js", ['./__monkey.entry-DKGzKOfj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-BHAKpQrM-mZ-bXpsP.js", ['./__monkey.entry-ucemSt9a.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -26169,7 +26087,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-DAcEdOrd-BNLl7x8d.js", ['./__monkey.entry-DKGzKOfj.js', './ID3v2Parser-Bmx8U78W-DinX75R9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-Chmtic8g-NwbtTKYu.js", ['./__monkey.entry-ucemSt9a.js', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -26343,7 +26261,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-k5RVbd1V-DFexcnYa.js", ['./__monkey.entry-DKGzKOfj.js', './ID3v2Parser-Bmx8U78W-DinX75R9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-tLWgD7Q3-CNNv3rxN.js", ['./__monkey.entry-ucemSt9a.js', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -26514,7 +26432,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-DDOE63n6-CkJgYhWF.js", ['./__monkey.entry-DKGzKOfj.js', './AbstractID3Parser-D1YMZBHY-B9btG523.js', './ID3v2Parser-Bmx8U78W-DinX75R9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-CSbkxoAz-Cf7YlM74.js", ['./__monkey.entry-ucemSt9a.js', './AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -26612,7 +26530,7 @@ System.register("./DsfParser-DDOE63n6-CkJgYhWF.js", ['./__monkey.entry-DKGzKOfj.
   };
 }));
 
-System.register("./FlacParser-DT9H7OwN-scQ0mcqN.js", ['./__monkey.entry-DKGzKOfj.js', './VorbisParser-Cxn9l2cN-rfNm5abg.js', './AbstractID3Parser-D1YMZBHY-B9btG523.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Bmx8U78W-DinX75R9.js'], (function (exports, module) {
+System.register("./FlacParser-DVsN4-Yg-MIeQffqw.js", ['./__monkey.entry-ucemSt9a.js', './VorbisParser-DnSn1p2N-DCPV-YE-.js', './AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -26764,7 +26682,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-DjdpXWt2-CffyF-n7.js", ['./__monkey.entry-DKGzKOfj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-Dfcnu8Ii-BMVcYXGf.js", ['./__monkey.entry-ucemSt9a.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -27371,7 +27289,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-CH2HMVJ4-BkeOcder.js", ['./__monkey.entry-DKGzKOfj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-DCTVVhRS-VKXjSfcz.js", ['./__monkey.entry-ucemSt9a.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -28202,7 +28120,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-DNYedbC3-DH72WD6f.js", ['./__monkey.entry-DKGzKOfj.js', './AbstractID3Parser-D1YMZBHY-B9btG523.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Bmx8U78W-DinX75R9.js'], (function (exports, module) {
+System.register("./MusepackParser-BDSoOa2H-DyaZ8pg1.js", ['./__monkey.entry-ucemSt9a.js', './AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -28479,7 +28397,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-D1YMZBHY-B9btG523.js", ['./__monkey.entry-DKGzKOfj.js', './ID3v2Parser-Bmx8U78W-DinX75R9.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js", ['./__monkey.entry-ucemSt9a.js', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -28543,7 +28461,7 @@ System.register("./AbstractID3Parser-D1YMZBHY-B9btG523.js", ['./__monkey.entry-D
   };
 }));
 
-System.register("./OggParser-DHMkXOgp-DGe7sW9U.js", ['./__monkey.entry-DKGzKOfj.js', './VorbisParser-Cxn9l2cN-rfNm5abg.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-DmwXEWHr-C79M4iGG.js", ['./__monkey.entry-ucemSt9a.js', './VorbisParser-DnSn1p2N-DCPV-YE-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -28818,7 +28736,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-Cxn9l2cN-rfNm5abg.js", ['./__monkey.entry-DKGzKOfj.js'], (function (exports, module) {
+System.register("./VorbisParser-DnSn1p2N-DCPV-YE-.js", ['./__monkey.entry-ucemSt9a.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -29034,7 +28952,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-DN5D4tAZ-DRbmvAy3.js", ['./__monkey.entry-DKGzKOfj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-CP0_mtDg-CPn9QAJI.js", ['./__monkey.entry-ucemSt9a.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -29214,7 +29132,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-DYqjqe55-DD-H2l5Z.js", ['./__monkey.entry-DKGzKOfj.js', './ID3v2Parser-Bmx8U78W-DinX75R9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-CespDsAF-5WViinAB.js", ['./__monkey.entry-ucemSt9a.js', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -29487,7 +29405,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-Bmx8U78W-DinX75R9.js", ['./__monkey.entry-DKGzKOfj.js'], (function (exports, module) {
+System.register("./ID3v2Parser-BZQPrvNU-B7n0XwO5.js", ['./__monkey.entry-ucemSt9a.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
