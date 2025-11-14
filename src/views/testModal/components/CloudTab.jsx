@@ -54,6 +54,17 @@ const CloudTab = () => {
     }
   };
 
+  // 测试网易云音乐转存云盘'
+  const [neteaseCloudSongId, setNeteaseCloudSongId] = useState('');
+  const handleNeteaseCloudToCloud = async () => {
+    try {
+      const res = await neteaseCloudToCloud(neteaseCloudSongId);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
   return (
     <Form>
       {/* 测试获取云盘数据 */}
@@ -116,9 +127,18 @@ const CloudTab = () => {
           </Button>
         </Space>
       </Form.Item>
+
+      {/* 测试网易云音乐转存云盘 */}
+      <Form.Item label='测试网易云音乐转存云盘'>
+        <Space>
+          <Input placeholder='请输入网易云音乐歌曲Id' />
+          <Button type='primary' onClick={handleNeteaseCloudToCloud}>
+            测试网易云音乐转存云盘
+          </Button>
+        </Space>
+      </Form.Item>
     </Form>
   );
 };
 
 export default CloudTab;
-

@@ -1,6 +1,67 @@
+import { getAudioMetadata, getFileMD5 } from '../utils';
 import { msgError } from '../utils/modal';
 import { weapiRequest } from '../utils/request';
-import { getAudioMetadata, getFileMD5 } from '../utils';
+import { getSongInfoList } from './song';
+
+const BUCKET = 'jd-musicrep-privatecloud-audio-public';
+
+/**
+ * 上传音频文件到 NOS
+ * @param {object} params 配置项
+ * @param {File} params.file 文件对象
+ * @param {string} params.bucket 存储桶名称
+ * @param {string} params.objectKey 文件 key
+ * @param {string} params.token nos token
+ * @param {string} params.fileMd5 文件 MD5
+ * @param {string} params.contentType 文件类型
+ * @returns {Promise<object>} 上传结果
+ * @example
+ * const res = await uploadAudioToNos({
+ *   file,
+ *   bucket: 'jd-musicrep-privatecloud-audio-public',
+ *   objectKey: 'path%2Ffile.mp3',
+ *   token: 'token',
+ *   fileMd5: 'md5',
+ *   contentType: 'audio/mpeg',
+ * });
+ */
+const uploadAudioToNos = async ({
+  file,
+  bucket,
+  objectKey,
+  token,
+  fileMd5,
+  contentType,
+}) => {
+  const lbsUrl = `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket}`;
+  const lbs = await (await fetch(lbsUrl)).json();
+  const safeObjectKey = objectKey.replace('/', '%2F');
+  const uploadUrl =
+    `${lbs.upload[0]}/${bucket}/${safeObjectKey}?offset=0&complete=true&version=1.0`.replace(
+      'http://',
+      'https://',
+    );
+  const response = await fetch(uploadUrl, {
+    method: 'post',
+    headers: {
+      'x-nos-token': token,
+      'Content-MD5': fileMd5,
+      'Content-Type': contentType,
+    },
+    body: file,
+  });
+  let result = {};
+  try {
+    result = await response.json();
+  } catch (error) {
+    console.log('uploadAudioToNos parse error', error);
+  }
+  if (!response.ok) {
+    msgError('上传失败：文件未通过 NOS 校验');
+    throw new Error(result?.message || '上传失败：文件未通过 NOS 校验');
+  }
+  return result;
+};
 
 /**
  * 匹配歌曲信息 将云盘歌曲匹配网易的歌，关联起来
@@ -120,7 +181,7 @@ export const uploadSong = async (song) => {
           ext: song.ext,
           md5: song.md5,
           type: 'audio',
-          bucket: 'jd-musicrep-privatecloud-audio-public',
+          bucket: BUCKET,
           local: false,
           nos_product: 3,
         },
@@ -229,6 +290,7 @@ export const uploadLocalSong = async (file) => {
       .replace('.' + ext, '')
       .replace(/\s/g, '')
       .replace(/\./g, '_');
+    const contentType = file.type || 'audio/mpeg';
 
     // 1、首选检查文件
     const checkRes = await weapiRequest('/api/cloud/upload/check', {
@@ -250,10 +312,9 @@ export const uploadLocalSong = async (file) => {
 
     // 2.1、 云盘没有该文件，需要上传文件
     if (needUpload) {
-      const bucket = 'jd-musicrep-privatecloud-audio-public';
-      const tokenRes = await weapiRequest('/api/nos/token/alloc', {
+      const uploadTokenRes = await weapiRequest('/api/nos/token/alloc', {
         data: {
-          bucket,
+          bucket: BUCKET,
           ext,
           filename,
           local: false,
@@ -262,30 +323,19 @@ export const uploadLocalSong = async (file) => {
           md5: fileMd5,
         },
       });
-      // 上传
-      const objectKey = tokenRes.body.result.objectKey.replace('/', '%2F');
-      const lbs = await (
-        await fetch(
-          `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket}`,
-        )
-      ).json();
-      const formData = new FormData();
-      formData.append('songFile', file);
-      await fetch(
-        `${lbs.upload[0]}/${bucket}/${objectKey}?offset=0&complete=true&version=1.0`,
-        {
-          method: 'post',
-          headers: {
-            'x-nos-token': tokenRes.body.result.token,
-            'Content-MD5': fileMd5,
-            'Content-Type': 'audio/mpeg',
-            'Content-Length': String(file.size),
-          },
-          data: formData,
-          maxContentLength: Infinity,
-          maxBodyLength: Infinity,
-        },
-      );
+      if (uploadTokenRes.code !== 200) {
+        msgError('上传授权失败');
+        throw new Error(uploadTokenRes.message || '上传授权失败');
+      }
+      console.log('uploadTokenRes', uploadTokenRes);
+      await uploadAudioToNos({
+        file,
+        bucket: BUCKET,
+        objectKey: uploadTokenRes.result.objectKey,
+        token: uploadTokenRes.result.token,
+        fileMd5,
+        contentType,
+      });
     }
 
     // 2、申请上传token
@@ -309,7 +359,7 @@ export const uploadLocalSong = async (file) => {
       tokenRes.result;
 
     // 3、获取上传信息
-    const { album, artist, artists, title } = await getAudioMetadata(file);
+    const { album, artist, artists = [], title } = await getAudioMetadata(file);
     defaultResult = {
       ...defaultResult,
       artist,
@@ -369,3 +419,20 @@ export const uploadLocalSong = async (file) => {
   }
 };
 
+/**
+ * 网易云音乐转存云盘
+ * @param {number[]} songIds 网易云音乐歌曲ID数组
+ * @returns {Promise} 返回转存结果
+ * @example
+ * const result = await neteaseMusicToCloud([123456, 789012]);
+ */
+export const neteaseMusicToCloud = async (songIds) => {
+  try {
+    // 1、获取歌曲信息
+    const songInfoRes = await getSongInfoList(songIds);
+    console.log('songInfoRes', songInfoRes);
+  } catch (error) {
+    console.log('error', error);
+    throw error;
+  }
+};

@@ -1,14 +1,12 @@
-import React, { forwardRef, useImperativeHandle, useState } from 'react';
-import { Modal, Input, Select, Table, Button, Upload, message } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
-import { formatFileSize, promiseLimit } from '@/utils';
-import SearchForm from '@/components/SearchForm';
 import { uploadSong } from '@/api';
-import { msgSuccess } from '@/utils/modal';
+import SearchForm from '@/components/SearchForm';
 import useFilter from '@/hooks/useFilter';
 import { useVisible } from '@/hooks/useVisible';
-
-const { Search } = Input;
+import { formatFileSize, promiseLimit } from '@/utils';
+import { msgSuccess } from '@/utils/modal';
+import { UploadOutlined } from '@ant-design/icons';
+import { Button, Input, Modal, Table, Upload, message } from 'antd';
+import { forwardRef, useState } from 'react';
 
 const CloudImport = forwardRef((props, ref) => {
   const { visible, open, close } = useVisible(
@@ -163,8 +161,7 @@ ${JSON.stringify(
       width={1000}
       onOk={handleOk}
       onClose={close}
-      confirmLoading={loading}
-    >
+      confirmLoading={loading}>
       <SearchForm
         data={tableData}
         options={[
@@ -211,8 +208,7 @@ ${JSON.stringify(
             };
             reader.readAsText(file);
             return false;
-          }}
-        >
+          }}>
           <Button icon={<UploadOutlined />}>选择JSON文件</Button>
         </Upload>
 
@@ -220,8 +216,7 @@ ${JSON.stringify(
         <Button
           style={{ marginLeft: 6, color: '#C20C0C' }}
           onClick={handleWatchJSON}
-          type='link'
-        >
+          type='link'>
           查看JSON示例
         </Button>
       </div>

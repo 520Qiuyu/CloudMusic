@@ -7,6 +7,7 @@ import { downloadFile } from '@/utils/download';
 import { promiseLimit } from '@/utils';
 import { Button, Form, Input, Space } from 'antd';
 import { useState } from 'react';
+import { msgSuccess } from '@/utils/modal';
 
 /**
  * 歌手相关测试组件
@@ -15,12 +16,15 @@ const ArtistTab = () => {
   // 歌手id
   const [artistId, setArtistId] = useState('3684');
 
-  // 获取歌手歌曲列表
+  // 获取歌手热门歌曲列表
   const handleGetArtistTopSongList = async () => {
-    console.log('获取歌手歌曲列表');
+    console.log('获取歌手热门歌曲列表');
     try {
       const res = await getArtistTopSongList(artistId);
       console.log('res', res);
+      if (res.code === 200) {
+        msgSuccess('获取歌手热门歌曲列表成功,请打开控制台查看！');
+      }
     } catch (error) {
       console.log('error', error);
     }
@@ -46,7 +50,10 @@ const ArtistTab = () => {
       if (res.code === 200) {
         const downloadTask = res.data.map(
           (item) => () =>
-            downloadFile(item.picUrl?.split('?')[0] || item.cover?.split('?')[0], item.name + '.jpg'),
+            downloadFile(
+              item.picUrl?.split('?')[0] || item.cover?.split('?')[0],
+              item.name + '.jpg',
+            ),
         );
         await promiseLimit(downloadTask, 1);
       }
@@ -97,4 +104,3 @@ const ArtistTab = () => {
 };
 
 export default ArtistTab;
-

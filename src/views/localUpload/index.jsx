@@ -1,23 +1,22 @@
-import { uploadLocalSong } from '@/api';
+import { uploadLocalSong } from '@/api/cloud';
+import { useVisible } from '@/hooks/useVisible';
 import {
   formatFileSize,
   getAudioMetadata,
   getFileMD5,
   promiseLimit,
-  sleep,
 } from '@/utils';
 import { downloadJsonFile } from '@/utils/download';
 import { msgSuccess } from '@/utils/modal';
 import { InboxOutlined } from '@ant-design/icons';
 import { Button, Input, Modal, Progress, Table, Upload } from 'antd';
-import { forwardRef, useImperativeHandle, useState } from 'react';
+import { forwardRef, useState } from 'react';
 import styles from './index.module.scss';
-import { useVisible } from '@/hooks/useVisible';
 
 const { Dragger } = Upload;
 
 const LocalUpload = forwardRef((props, ref) => {
-  const { visible, open, close, reset } = useVisible(
+  const { visible, close } = useVisible(
     {
       onReset() {
         setLoading(false);
@@ -40,6 +39,7 @@ const LocalUpload = forwardRef((props, ref) => {
           if (file.status === 'done') {
             return;
           }
+          console.log('file',file)
           file.status = 'uploading';
           const res = await uploadLocalSong(file);
           console.log('res', res);
@@ -159,8 +159,7 @@ const LocalUpload = forwardRef((props, ref) => {
       onOk={handleUpload}
       confirmLoading={loading}
       centered
-      width={1000}
-    >
+      width={1000}>
       <div className={styles['local-upload']}>
         <div className={styles['upload-section']}>
           <div className={styles['concurrency-control']}>
@@ -179,12 +178,12 @@ const LocalUpload = forwardRef((props, ref) => {
             multiple
             fileList={fileList}
             beforeUpload={(file) => {
+              console.log('file',file)
               setFileList((prev) => [...prev, file]);
               return false;
             }}
             showUploadList={false}
-            accept='.mp3,.flac,.wav,.m4a,.ogg'
-          >
+            accept='.mp3,.flac,.wav,.m4a,.ogg'>
             <p className={styles['upload-icon']}>
               <InboxOutlined />
             </p>
@@ -216,8 +215,7 @@ const LocalUpload = forwardRef((props, ref) => {
               type='primary'
               size='small'
               onClick={() => setFileList([])}
-              style={{ marginLeft: 'auto' }}
-            >
+              style={{ marginLeft: 'auto' }}>
               清空列表
             </Button>
             {/* 失败重传 */}
@@ -225,8 +223,7 @@ const LocalUpload = forwardRef((props, ref) => {
               type='primary'
               size='small'
               onClick={handleFilter}
-              disabled={!fileList.some((file) => file.status !== 'error')}
-            >
+              disabled={!fileList.some((file) => file.status !== 'error')}>
               失败过滤
             </Button>
             {/* 直接获取JSON */}
@@ -234,8 +231,7 @@ const LocalUpload = forwardRef((props, ref) => {
               type='primary'
               size='small'
               onClick={handleGetJson}
-              loading={getJsonLoading}
-            >
+              loading={getJsonLoading}>
               直接获取JSON
             </Button>
           </div>
