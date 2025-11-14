@@ -13,15 +13,23 @@ export const getSongInfoList = async (songIds) => {
   // 此处一次最大1000条
   const chunkArr = chunkArray(songIds, 1000);
   const proArr = chunkArr.map(async (chunk) => {
-    return weapiRequest('/api/v3/song/detail', {
+    const res = await weapiRequest('/api/v3/song/detail', {
       data: {
         c: JSON.stringify(chunk.map((item) => ({ id: item }))),
       },
     });
+    console.log('res', res);
+    if (res.code === 200) {
+      return res;
+    }
+    throw new Error(res.message || res.msg || '获取歌曲信息失败');
   });
   const allInfo = await Promise.all(proArr);
-  console.log('allInfo', allInfo);
-  return allInfo.flat();
+  return {
+    code: 200,
+    privileges: allInfo.map((item) => item.privileges).flat(),
+    songs: allInfo.map((item) => item.songs).flat(),
+  };
 };
 
 /**
@@ -91,4 +99,3 @@ export const getSongDynamicCover = async (songId) => {
     },
   });
 };
-

@@ -1,4 +1,9 @@
-import { deleteCloudSong, getCloudData, uploadLocalSong } from '@/api/cloud';
+import {
+  deleteCloudSong,
+  getCloudData,
+  neteaseMusicToCloud,
+  uploadLocalSong,
+} from '@/api/cloud';
 import { msgError } from '@/utils/modal';
 import { Button, Form, Input, Space, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
@@ -55,10 +60,10 @@ const CloudTab = () => {
   };
 
   // 测试网易云音乐转存云盘'
-  const [neteaseCloudSongId, setNeteaseCloudSongId] = useState('');
-  const handleNeteaseCloudToCloud = async () => {
+  const [neteaseMusicSongId, setNeteaseMusicSongId] = useState('1846094285');
+  const handleNeteaseMusicToCloud = async () => {
     try {
-      const res = await neteaseCloudToCloud(neteaseCloudSongId);
+      const res = await neteaseMusicToCloud(neteaseMusicSongId.split(','));
       console.log('res', res);
     } catch (error) {
       console.log('error', error);
@@ -131,8 +136,13 @@ const CloudTab = () => {
       {/* 测试网易云音乐转存云盘 */}
       <Form.Item label='测试网易云音乐转存云盘'>
         <Space>
-          <Input placeholder='请输入网易云音乐歌曲Id' />
-          <Button type='primary' onClick={handleNeteaseCloudToCloud}>
+          <Input
+            addonBefore='歌曲Id'
+            placeholder='请输入网易云音乐歌曲Id'
+            value={neteaseMusicSongId}
+            onChange={(e) => setNeteaseMusicSongId(e.target.value)}
+          />
+          <Button type='primary' onClick={handleNeteaseMusicToCloud}>
             测试网易云音乐转存云盘
           </Button>
         </Space>

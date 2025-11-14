@@ -4,8 +4,9 @@ import {
   getSongLyric,
   getSongUrl,
 } from '@/api/song';
+import { MyButton } from '@/components';
 import { msgSuccess } from '@/utils/modal';
-import { Button, Form, Input, Space } from 'antd';
+import { Form, Input, Space } from 'antd';
 import { useState } from 'react';
 
 /**
@@ -13,7 +14,7 @@ import { useState } from 'react';
  */
 const SongTab = () => {
   // 歌曲id
-  const [songId, setSongId] = useState('2608471890');
+  const [songId, setSongId] = useState('2608471890,1846094285');
 
   // 获取歌曲URL
   const handleGetSongUrl = async () => {
@@ -35,8 +36,11 @@ const SongTab = () => {
   const handleGetSongInfo = async () => {
     console.log('获取歌曲信息');
     try {
-      const res = await getSongInfoList([songId]);
+      const res = await getSongInfoList(songId.split(','));
       console.log('res', res);
+      if (res.code === 200) {
+        msgSuccess('获取成功,请打开控制台查看！');
+      }
     } catch (error) {
       console.log('error', error);
     }
@@ -74,21 +78,21 @@ const SongTab = () => {
             value={songId}
             onChange={(e) => setSongId(e.target.value)}
           />
-          <Button type='primary' onClick={handleGetSongUrl}>
+          <MyButton type='primary' onClick={handleGetSongUrl}>
             获取歌曲URL
-          </Button>
+          </MyButton>
           {/* 获取歌曲信息 */}
-          <Button type='primary' onClick={handleGetSongInfo}>
+          <MyButton type='primary' onClick={handleGetSongInfo}>
             获取歌曲信息
-          </Button>
+          </MyButton>
           {/* 获取歌曲歌词 */}
-          <Button type='primary' onClick={handleGetSongLyric}>
+          <MyButton type='primary' onClick={handleGetSongLyric}>
             获取歌曲歌词
-          </Button>
+          </MyButton>
           {/* 获取歌曲动态封面 */}
-          <Button type='primary' onClick={handleGetSongDynamicCover}>
+          <MyButton type='primary' onClick={handleGetSongDynamicCover}>
             获取歌曲动态封面
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
     </Form>
@@ -96,4 +100,3 @@ const SongTab = () => {
 };
 
 export default SongTab;
-

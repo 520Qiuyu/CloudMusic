@@ -1,6 +1,5 @@
-import { getArtists, getArtists2 } from '@/api';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { getArtists } from '@/api';
+import { useEffect, useState } from 'react';
 
 /**  */
 export const useGetSingerList = () => {
@@ -11,11 +10,8 @@ export const useGetSingerList = () => {
   const getSingerList = async () => {
     try {
       setLoading(true);
-      const res = await getArtists();
-      const res2 = await getArtists2();
-      const list = [
-        ...new Map([...res2, ...res].map((item) => [item.id, item])).values(),
-      ];
+      const list = await getArtists();
+      console.log(`歌手列表(${list.length})`, list);
       setSingerList(list);
     } catch (error) {
       console.log('error', error);

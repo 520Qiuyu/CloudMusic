@@ -1,7 +1,8 @@
-import { getAudioMetadata, getFileMD5 } from '../utils';
-import { msgError } from '../utils/modal';
-import { weapiRequest } from '../utils/request';
-import { getSongInfoList } from './song';
+import { QUALITY_LEVELS } from '@/constant';
+import { getAudioMetadata, getFileMD5, promiseLimit } from '@/utils';
+import { msgError } from '@/utils/modal';
+import { weapiRequest } from '@/utils/request';
+import { getSongInfoList, getSongUrl } from './song';
 
 const BUCKET = 'jd-musicrep-privatecloud-audio-public';
 
@@ -79,13 +80,18 @@ export const matchCloudSong = async (cloudSongId, id, song) => {
         adjustSongId: id,
       },
     });
+    console.log('res', res);
     if (res.code != 200 || res.data.length < 1) {
       msgError(`歌曲"${song?.name}" 匹配失败：${res.message || res.msg}`);
       throw new Error(res.message || res.msg || '歌曲匹配失败');
     }
     return res;
   }
-  return;
+  return {
+    code: 200,
+    msg: '歌曲匹配成功',
+    data: song,
+  };
 };
 
 /**
@@ -276,16 +282,30 @@ export const deleteCloudSong = (songIds) =>
 /**
  * 上传本地歌曲
  * @param {File} file 文件对象
+ * @param {object} options 选项
+ * @param {number} options.defaultBitrate 默认比特率，默认999000
+ * @param {string} options.defaultAlbum 默认专辑，默认'未知专辑'
+ * @param {string} options.defaultArtist 默认歌手，默认'未知歌手'
+ * @param {string} options.defaultTitle 默认歌曲名，默认'未知歌曲'
+ * @param {string[]} options.defaultArtists 默认歌手列表，默认[]
  * @returns {Promise} 返回上传结果
  * @example
  * const result = await uploadLocalSong(file);
  */
-export const uploadLocalSong = async (file) => {
+export const uploadLocalSong = async (file, options = {}) => {
+  const {
+    defaultBitrate = 999000,
+    defaultAlbum,
+    defaultArtist,
+    defaultTitle,
+    defaultArtists = [],
+    matchId,
+  } = options || {};
   let defaultResult = {};
   try {
     const ext = file.name.split('.').pop() || 'mp3';
     const fileMd5 = await getFileMD5(file);
-    const bitrate = 999000;
+    const bitrate = defaultBitrate;
     const filename = file.name
       .replace('.' + ext, '')
       .replace(/\s/g, '')
@@ -359,7 +379,12 @@ export const uploadLocalSong = async (file) => {
       tokenRes.result;
 
     // 3、获取上传信息
-    const { album, artist, artists = [], title } = await getAudioMetadata(file);
+    const {
+      album = defaultAlbum,
+      artist = defaultArtist,
+      artists = defaultArtists,
+      title = defaultTitle,
+    } = await getAudioMetadata(file);
     defaultResult = {
       ...defaultResult,
       artist,
@@ -412,6 +437,25 @@ export const uploadLocalSong = async (file) => {
       size: fileSize,
       bitrate: realBitrate,
     };
+
+    // 5、匹配歌曲信息
+    if (matchId) {
+      try {
+        console.log(`开始匹配歌曲: ${songName}`, defaultResult);
+        const res = await matchCloudSong(
+          pubRes.privateCloud.songId,
+          matchId,
+          defaultResult,
+        );
+        if (res.code != 200) {
+          msgError('歌曲匹配失败');
+        }
+        console.log(`歌曲匹配成功: ${songName}`, defaultResult);
+      } catch (error) {
+        console.log('error', error);
+      }
+    }
+
     return defaultResult;
   } catch (error) {
     console.log('error', error);
@@ -422,15 +466,122 @@ export const uploadLocalSong = async (file) => {
 /**
  * 网易云音乐转存云盘
  * @param {number[]} songIds 网易云音乐歌曲ID数组
+ * @param {object} options 选项
+ * @param {number} options.level 音质等级，默认无损
+ * @param {number} options.concurrent 并发数量，默认6
+ * @param {function} options.onChange 上传进度回调
  * @returns {Promise} 返回转存结果
  * @example
  * const result = await neteaseMusicToCloud([123456, 789012]);
  */
-export const neteaseMusicToCloud = async (songIds) => {
+export const neteaseMusicToCloud = async (songIds, options = {}) => {
+  const {
+    level = QUALITY_LEVELS.无损,
+    concurrent = 6,
+    onChange,
+    onComplete,
+  } = options || {};
   try {
     // 1、获取歌曲信息
     const songInfoRes = await getSongInfoList(songIds);
-    console.log('songInfoRes', songInfoRes);
+    if (songInfoRes.code != 200) {
+      msgError('获取歌曲信息失败');
+      throw new Error(
+        songInfoRes.message || songInfoRes.msg || '获取歌曲信息失败',
+      );
+    }
+    const songs = songInfoRes.songs;
+    console.log(`获取歌曲信息, 共${songs.length}首`, songs);
+
+    // 2、获取歌曲链接
+    const urls = await Promise.all(
+      songs.map(async (song) => {
+        const res = await getSongUrl([song.id], { level });
+        if (res.code != 200) {
+          msgError('获取歌曲链接失败');
+          throw new Error(res.message || res.msg || '获取歌曲链接失败');
+        }
+        const url = res.data[0].url;
+        song.url = url;
+        return url;
+      }),
+    );
+    console.log(`获取歌曲链接, 共${urls.length}首`, urls);
+
+    // 3、上传歌曲
+    let count = 0;
+    const success = [];
+    const failed = [];
+    const tasks = songs.map((song, index) => async () => {
+      try {
+        // 3.1 检查歌曲链接
+        if (!song.url) throw new Error(`歌曲链接不存在: ${song.name}`);
+
+        // 3.2 获取文件对象
+        const file = await fetch(song.url);
+        const blob = await file.blob();
+        const fileObj = new File([blob], song.name, { type: song.type });
+        const songInfo = {
+          album: song.al?.name,
+          artist: song.ar?.map((ar) => ar.name).join(','),
+          title: song.name,
+          artists: song.ar?.map((ar) => ar.name),
+        };
+
+        // 3.3 上传歌曲
+        const res = await uploadLocalSong(fileObj, {
+          defaultAlbum: songInfo.album,
+          defaultArtist: songInfo.artist,
+          defaultTitle: songInfo.title,
+          defaultArtists: songInfo.artists,
+          matchId: song.id,
+        });
+
+        // 3.4 上传完成
+        console.log(
+          `第${index + 1}首歌曲上传完成: ${song.name} 共${songs.length}首, 已上传${count}首`,
+          songInfo,
+          res,
+        );
+        onChange?.({
+          current: index + 1,
+          total: songs.length,
+          success: true,
+          successCount: count,
+          index,
+          song,
+        });
+        count++;
+        success.push(song);
+        return res;
+      } catch (error) {
+        // 3.5 上传失败
+        console.log('error', error, song);
+        onChange?.({
+          current: index + 1,
+          total: songs.length,
+          success: false,
+          successCount: count,
+          index,
+          song,
+        });
+        failed.push(song);
+      }
+    });
+    const results = await promiseLimit(tasks, concurrent);
+    console.log(
+      `上传完成, 共${songs.length}首, 已上传${count}首, 上传失败结果: ${songs?.length - count}首`,
+      results,
+    );
+    onComplete?.({
+      total: songs.length,
+      successCount: count,
+      failedCount: songs.length - count,
+      success,
+      failed,
+      results,
+    });
+    return results;
   } catch (error) {
     console.log('error', error);
     throw error;

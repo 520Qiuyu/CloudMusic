@@ -1,9 +1,11 @@
-import React from 'react';
-import { useMemo } from 'react';
-import { Form, Select, Spin, Tag, Button } from 'antd';
+import { useGetSingerList } from '@/hooks';
+import { Button, Form, Select, Spin, Tag } from 'antd';
+import { useMemo, useState } from 'react';
 import styles from '../index.module.scss';
 
-export default function SingerChoose({ singerList, onChoose, loading }) {
+export default function SingerChoose({ defaultSingerList, onChoose }) {
+  const { singerList, loading } = useGetSingerList();
+
   /** 渲染歌手列表 */
   const renderSingerList = useMemo(() => {
     return singerList.map((item) => {
@@ -35,6 +37,20 @@ export default function SingerChoose({ singerList, onChoose, loading }) {
     const { singer } = values;
     onChoose([...singer]);
   };
+
+  const [quickImportLoading, setQuickImportLoading] = useState(false);
+  const handleQuickImport = async () => {
+    try {
+      setQuickImportLoading(true);
+      const values = await formRef.getFieldsValue();
+      const { singer } = values;
+      console.log('singer', singer);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setQuickImportLoading(false);
+    }
+  };
   return (
     <div className={styles['singer-choose']}>
       {loading ? (
@@ -44,7 +60,7 @@ export default function SingerChoose({ singerList, onChoose, loading }) {
           form={formRef}
           onFinish={handleChoose}
           className={styles['singer-choose-form']}
-        >
+          initialValues={{ singer: defaultSingerList }}>
           {/* 歌手 */}
           <Form.Item name='singer' label='歌手'>
             <Select
@@ -61,12 +77,29 @@ export default function SingerChoose({ singerList, onChoose, loading }) {
           </Form.Item>
 
           {/* 按钮 */}
-          <Form.Item style={{ marginBottom: 0 }}>
-            <div className={styles['btn-group']}>
-              <Button type='primary' htmlType='submit'>
-                选择
-              </Button>
-            </div>
+          <Form.Item noStyle shouldUpdate>
+            {({ getFieldValue }) => {
+              const singer = getFieldValue('singer') || [];
+              return (
+                <div
+                  className={styles['btn-group']}
+                  style={{ marginTop: 'auto' }}>
+                  <Button
+                    type='primary'
+                    onClick={handleQuickImport}
+                    loading={quickImportLoading}
+                    disabled={!singer.length}>
+                    一键导入
+                  </Button>
+                  <Button
+                    type='primary'
+                    htmlType='submit'
+                    disabled={!singer.length}>
+                    选择
+                  </Button>
+                </div>
+              );
+            }}
           </Form.Item>
         </Form>
       )}

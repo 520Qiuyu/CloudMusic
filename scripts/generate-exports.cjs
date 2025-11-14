@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // 生成统一导出的路径
-const paths = ['../src/hooks', '../src/components'];
+const paths = ['../src/hooks', '../src/components', '../src/api'];
 
 for (let p of paths) {
   const dir = path.resolve(__dirname, p);

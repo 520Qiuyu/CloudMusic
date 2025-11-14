@@ -6,14 +6,7 @@ import { weapiRequest } from '../utils/request';
  * @returns {Promise} 返回歌手列表
  */
 export const getArtists = () =>
-  fetch(`${BASE_CDN_URL}top.json`).then((res) => res.json());
-
-/**
- * 获取歌手列表2
- * @returns {Promise} 返回歌手列表
- */
-export const getArtists2 = () =>
-  fetch(`${BASE_CDN_URL}summary.json`).then((res) => res.json());
+  fetch(`${BASE_CDN_URL}artist.json`).then((res) => res.json());
 
 /**
  * 获取歌手热门歌曲
@@ -105,4 +98,3 @@ export const getArtistAlbumList = async (id) => {
     data: albumList,
   };
 };
-

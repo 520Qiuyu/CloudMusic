@@ -3,11 +3,12 @@ import {
   getArtistAllSongList,
   getArtistTopSongList,
 } from '@/api/artist';
-import { downloadFile } from '@/utils/download';
+import { MyButton } from '@/components';
 import { promiseLimit } from '@/utils';
-import { Button, Form, Input, Space } from 'antd';
-import { useState } from 'react';
+import { downloadFile } from '@/utils/download';
 import { msgSuccess } from '@/utils/modal';
+import { Form, Input, Space } from 'antd';
+import { useState } from 'react';
 
 /**
  * 歌手相关测试组件
@@ -36,6 +37,9 @@ const ArtistTab = () => {
     try {
       const res = await getArtistAlbumList(artistId);
       console.log('res', res);
+      if (res.code === 200) {
+        msgSuccess('获取歌手专辑成功,请打开控制台查看！');
+      }
     } catch (error) {
       console.log('error', error);
     }
@@ -68,6 +72,9 @@ const ArtistTab = () => {
     try {
       const res = await getArtistAllSongList(artistId);
       console.log('res', res);
+      if (res.code === 200) {
+        msgSuccess('获取歌手全部歌曲成功,请打开控制台查看！');
+      }
     } catch (error) {
       console.log('error', error);
     }
@@ -84,19 +91,19 @@ const ArtistTab = () => {
             value={artistId}
             onChange={(e) => setArtistId(e.target.value)}
           />
-          <Button type='primary' onClick={handleGetArtistTopSongList}>
+          <MyButton type='primary' onClick={handleGetArtistTopSongList}>
             获取歌手热门歌曲列表
-          </Button>
-          <Button type='primary' onClick={handleGetArtistAlbum}>
+          </MyButton>
+          <MyButton type='primary' onClick={handleGetArtistAlbum}>
             获取歌手专辑
-          </Button>
+          </MyButton>
           {/* 下载专辑封面 */}
-          <Button type='primary' onClick={handleGetArtistAlbumPic}>
+          <MyButton type='primary' onClick={handleGetArtistAlbumPic}>
             下载专辑封面
-          </Button>
-          <Button type='primary' onClick={handleGetArtistAllSongList}>
+          </MyButton>
+          <MyButton type='primary' onClick={handleGetArtistAllSongList}>
             获取歌手全部歌曲
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
     </Form>
