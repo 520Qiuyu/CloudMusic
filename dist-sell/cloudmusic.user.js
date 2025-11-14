@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-ucemSt9a.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-67YxFqLk.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,7 +44,7 @@ System.register("./__entry.js", ['./__monkey.entry-ucemSt9a.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-ucemSt9a.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-67YxFqLk.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var forwardRef, useRef, useState$1, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Progress, ConfigProvider, Select, Tooltip, Spin, Empty, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, GithubOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CopyrightOutlined, FileOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined;
   return {
@@ -120,7 +120,7 @@ System.register("./__monkey.entry-ucemSt9a.js", ['react', 'antd', 'react-dom', '
 
       const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
-      importCSS(' @charset "UTF-8";._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._search-form_1aabt_1{padding:16px 0}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._album-list-modal_tzijq_1 .ant-modal-body{padding:16px 0 0}._modal-title_tzijq_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_tzijq_12{display:flex;align-items:center;gap:16px}._title-text_tzijq_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_tzijq_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_tzijq_32{display:flex;align-items:center;gap:4px}._stat-label_tzijq_38{color:#8c8c8c}._stat-value_tzijq_42{font-weight:600;color:#262626}._album-info_tzijq_47{display:flex;align-items:center;gap:12px}._album-cover_tzijq_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_tzijq_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_tzijq_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_tzijq_68:hover{color:#1890ff}._album-alias_tzijq_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_tzijq_89{display:flex;align-items:center;gap:8px}._album-tag_tzijq_95{margin:0}._album-company_tzijq_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._singer-details_tzijq_109{display:flex;flex-direction:column;gap:2px}._singer-name_tzijq_115{font-size:13px;font-weight:500;color:#262626}._singer-id_tzijq_121{font-size:12px;color:#8c8c8c}._album-id_tzijq_126{font-size:12px}._album-table_tzijq_130 .ant-table-body{scrollbar-width:thin}._search-area_tzijq_134{padding:0 24px 16px}._modal-footer_tzijq_138{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_tzijq_145{font-size:13px;color:#595959}._selected-extra_tzijq_150{margin-left:4px;color:#8c8c8c}._songInfoColumn_18snm_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_18snm_1 ._songIndex_18snm_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_18snm_1 ._songCover_18snm_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover{transform:scale(1.05)}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._btnWrapper_18snm_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._songCoverImg_18snm_33{filter:brightness(.85)}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._songCoverImg_18snm_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_18snm_1 ._songInfo_18snm_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._songName_18snm_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84,._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84{max-width:160px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_18snm_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_18snm_1 10s linear infinite}._currentSong_18snm_102 td{background:var(--background)!important;animation:_rotate_18snm_1 10s linear infinite}@keyframes _rotate_18snm_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_18snm_121{background-color:#f06161}._matchError_18snm_121 td{background-color:#f06161!important}._footer_18snm_128{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_18snm_128 ._actions_18snm_136{display:flex;gap:8px}._stats_18snm_141{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_18snm_141 ._size_18snm_149{color:#666}._stats_18snm_141 ._divider_18snm_152{color:#999;margin:0 4px}._stats_18snm_141 .ant-tag{margin:0}._playlist_18snm_160 .ant-modal-body{padding-bottom:0}._autoAddContent_18snm_164 ._title_18snm_164{font-size:16px;margin-bottom:8px}._autoAddContent_18snm_164 ._statsWrapper_18snm_168{margin-bottom:16px}._autoAddContent_18snm_164 ._statsContent_18snm_171{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._label_18snm_178{color:#666}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._value_18snm_181{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_18snm_164 ._listHeader_18snm_186{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_18snm_164 ._listWrapper_18snm_192{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_18snm_164 ._listItem_18snm_213{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_18snm_164 ._listItem_18snm_213:hover{background:#f5f5f5}._autoAddContent_18snm_164 ._listItem_18snm_213:last-child{margin-bottom:0}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemName_18snm_229{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemCount_18snm_235{color:#1890ff;margin-left:8px}._deleteConfirmation_18snm_240{font-size:14px}._deleteConfirmation_18snm_240 ._title_18snm_164{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_18snm_240 ._title_18snm_164 ._count_18snm_248{color:#1890ff}._deleteConfirmation_18snm_240 ._songs_18snm_251{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:hover{background:#f0f0f0}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:not(:last-child){margin-bottom:4px}._deleteConfirmation_18snm_240 ._warning_18snm_273{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._text_18snm_280{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._icon_18snm_287{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_18snm_301{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_18snm_301 ._singer-option-content_18snm_314{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-name_18snm_329{font-size:14px}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-id_18snm_332{font-size:13px}._singer-option_18snm_301:hover ._singer-option-content_18snm_314{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_18snm_340{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_18snm_340 ._song-name_18snm_346{font-size:14px;color:#333;font-weight:500}._song-label_18snm_340 ._tag-group_18snm_351{display:flex;gap:8px;flex-wrap:wrap}._song-option_18snm_357{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_18snm_357:hover{background-color:#f5f5f5}._song-option_18snm_357 ._song-info_18snm_370{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_18snm_357 ._song-name_18snm_346{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_18snm_357 ._tag-group_18snm_351{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_18snm_357 ._tag-group_18snm_351 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_18snm_357 ._album-cover_18snm_399{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_18snm_357 ._album-cover_18snm_399:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_18snm_415{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_18snm_415 ._song-info_18snm_370{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._artist-info_18snm_431{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._album-info_18snm_439{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._githubContainer_b3krt_2{display:flex;flex-direction:column;align-items:center;padding:20px;text-align:center}._githubContainer_b3krt_2 ._userInfo_b3krt_9{display:flex;align-items:center;gap:16px;margin-bottom:20px}._githubContainer_b3krt_2 ._username_b3krt_15{margin:0}._githubContainer_b3krt_2 ._starCount_b3krt_18{display:block;color:#666;font-size:14px;margin-top:4px}._githubContainer_b3krt_2 ._bio_b3krt_24{color:#666;margin-bottom:20px}._githubContainer_b3krt_2 ._features_b3krt_28{width:100%;margin-bottom:24px;text-align:left}._githubContainer_b3krt_2 ._features_b3krt_28 h5{text-align:center;margin-bottom:16px}._githubContainer_b3krt_2 ._featureList_b3krt_37{list-style:none;padding:0;margin:0;max-height:300px;overflow-y:auto}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar{width:6px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-track{background-color:#f5f5f5}._githubContainer_b3krt_2 ._featureList_b3krt_37 li{margin-bottom:12px;font-size:14px;line-height:1.5;color:#666}._githubContainer_b3krt_2 ._profileButton_b3krt_61{background:#24292e;border-color:#24292e}._githubContainer_b3krt_2 ._profileButton_b3krt_61:hover{background:#2f363d;border-color:#2f363d}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_15nrq_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_15nrq_1 ._cover_15nrq_8{width:60px;height:60px;border-radius:6px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_15nrq_1 ._cover_15nrq_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_15nrq_1 ._cover_15nrq_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_15nrq_1 ._cover_15nrq_8:hover:before{opacity:1}._playlist-info_15nrq_1 ._cover_15nrq_8:active{transform:scale(1.02)}._playlist-info_15nrq_1 ._info_15nrq_40{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_15nrq_1 ._info_15nrq_40 ._name_15nrq_47{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_15nrq_1 ._info_15nrq_40 ._creator_15nrq_58{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-item_15nrq_69{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_15nrq_69:hover{background-color:#fafafa!important}._playlist-item_15nrq_69:active,._playlist-item_15nrq_69:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_1rogj_22 ._select_1rogj_22{width:100%}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26{display:flex;flex-direction:column;justify-content:space-between;height:400px}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26 ._btn-group_1rogj_32{display:flex;justify-content:flex-end}._singer-choose_1rogj_26 ._option-label_1rogj_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._singer-name_1rogj_43{font-weight:500}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._tag-group_1rogj_46 ._tag_1rogj_46:not(:last-child){margin-right:8px}._upload-list_1rogj_50 .ant-table{margin:16px 0}._upload-footer_1rogj_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_1rogj_62{color:#666;font-size:13px;margin-right:auto}._upload-stats_1rogj_62 ._size-text_1rogj_67{color:#999}._upload-stats_1rogj_62 ._divider_1rogj_70{margin:0 8px;color:#d9d9d9}._upload-confirm_1rogj_75{padding:16px 0;font-size:14px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79:last-child{margin-bottom:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._label_1rogj_87{color:#666;width:80px;flex-shrink:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92{color:#333;font-weight:500}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92 ._size_1rogj_67{margin-left:4px;color:#999;font-weight:400}._upload-progress_1rogj_102 ._progress-header_1rogj_102{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._progress-info_1rogj_109{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._percentage_1rogj_113{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_1rogj_102 ._progress-list_1rogj_118{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123:last-child{border-bottom:none}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133{flex:1;min-width:0;padding-right:16px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._name_1rogj_138{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._artist_1rogj_142{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_1rogj_148 .ant-modal-body{padding:24px}._uploadProgressModal_1rogj_148 ._progressContent_1rogj_151{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._detail_1rogj_167{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._label_1rogj_87{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._value_1rogj_92 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193{width:100%}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedTitle_1rogj_196{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._songName_1rogj_208{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._errorMsg_1rogj_213{font-size:12px;color:#ff4d4f}._uploadModal_1rogj_218 .ant-modal-body{padding:24px}._progressSection_1rogj_222{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._progressInfo_1rogj_157 ._count_1rogj_241{font-size:14px;color:#666;margin-top:4px}._statsContainer_1rogj_172{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._statsContainer_1rogj_172 ._statsTag_1rogj_256{padding:4px 12px;font-size:14px}._songList_1rogj_261{max-height:300px;overflow-y:auto;padding-right:4px}._songList_1rogj_261::-webkit-scrollbar{width:6px}._songList_1rogj_261::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_1rogj_261::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_1rogj_277{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_1rogj_277:not(:last-child){margin-bottom:8px}._songItem_1rogj_277:hover{background:#f5f5f5}._songInfo_1rogj_292{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_1rogj_292 ._songName_1rogj_208{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_1rogj_292 ._artistName_1rogj_306{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
+      importCSS(' @charset "UTF-8";._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._search-form_1aabt_1{padding:16px 0}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._album-list-modal_tzijq_1 .ant-modal-body{padding:16px 0 0}._modal-title_tzijq_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_tzijq_12{display:flex;align-items:center;gap:16px}._title-text_tzijq_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_tzijq_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_tzijq_32{display:flex;align-items:center;gap:4px}._stat-label_tzijq_38{color:#8c8c8c}._stat-value_tzijq_42{font-weight:600;color:#262626}._album-info_tzijq_47{display:flex;align-items:center;gap:12px}._album-cover_tzijq_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_tzijq_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_tzijq_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_tzijq_68:hover{color:#1890ff}._album-alias_tzijq_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_tzijq_89{display:flex;align-items:center;gap:8px}._album-tag_tzijq_95{margin:0}._album-company_tzijq_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._singer-details_tzijq_109{display:flex;flex-direction:column;gap:2px}._singer-name_tzijq_115{font-size:13px;font-weight:500;color:#262626}._singer-id_tzijq_121{font-size:12px;color:#8c8c8c}._album-id_tzijq_126{font-size:12px}._album-table_tzijq_130 .ant-table-body{scrollbar-width:thin}._search-area_tzijq_134{padding:0 24px 16px}._modal-footer_tzijq_138{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_tzijq_145{font-size:13px;color:#595959}._selected-extra_tzijq_150{margin-left:4px;color:#8c8c8c}._songInfoColumn_18snm_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_18snm_1 ._songIndex_18snm_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_18snm_1 ._songCover_18snm_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover{transform:scale(1.05)}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._btnWrapper_18snm_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._songCoverImg_18snm_33{filter:brightness(.85)}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._songCoverImg_18snm_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_18snm_1 ._songInfo_18snm_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._songName_18snm_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84,._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84{max-width:160px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_18snm_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_18snm_1 10s linear infinite}._currentSong_18snm_102 td{background:var(--background)!important;animation:_rotate_18snm_1 10s linear infinite}@keyframes _rotate_18snm_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_18snm_121{background-color:#f06161}._matchError_18snm_121 td{background-color:#f06161!important}._footer_18snm_128{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_18snm_128 ._actions_18snm_136{display:flex;gap:8px}._stats_18snm_141{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_18snm_141 ._size_18snm_149{color:#666}._stats_18snm_141 ._divider_18snm_152{color:#999;margin:0 4px}._stats_18snm_141 .ant-tag{margin:0}._playlist_18snm_160 .ant-modal-body{padding-bottom:0}._autoAddContent_18snm_164 ._title_18snm_164{font-size:16px;margin-bottom:8px}._autoAddContent_18snm_164 ._statsWrapper_18snm_168{margin-bottom:16px}._autoAddContent_18snm_164 ._statsContent_18snm_171{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._label_18snm_178{color:#666}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._value_18snm_181{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_18snm_164 ._listHeader_18snm_186{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_18snm_164 ._listWrapper_18snm_192{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_18snm_164 ._listItem_18snm_213{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_18snm_164 ._listItem_18snm_213:hover{background:#f5f5f5}._autoAddContent_18snm_164 ._listItem_18snm_213:last-child{margin-bottom:0}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemName_18snm_229{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemCount_18snm_235{color:#1890ff;margin-left:8px}._deleteConfirmation_18snm_240{font-size:14px}._deleteConfirmation_18snm_240 ._title_18snm_164{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_18snm_240 ._title_18snm_164 ._count_18snm_248{color:#1890ff}._deleteConfirmation_18snm_240 ._songs_18snm_251{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:hover{background:#f0f0f0}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:not(:last-child){margin-bottom:4px}._deleteConfirmation_18snm_240 ._warning_18snm_273{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._text_18snm_280{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._icon_18snm_287{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_18snm_301{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_18snm_301 ._singer-option-content_18snm_314{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-name_18snm_329{font-size:14px}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-id_18snm_332{font-size:13px}._singer-option_18snm_301:hover ._singer-option-content_18snm_314{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_18snm_340{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_18snm_340 ._song-name_18snm_346{font-size:14px;color:#333;font-weight:500}._song-label_18snm_340 ._tag-group_18snm_351{display:flex;gap:8px;flex-wrap:wrap}._song-option_18snm_357{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_18snm_357:hover{background-color:#f5f5f5}._song-option_18snm_357 ._song-info_18snm_370{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_18snm_357 ._song-name_18snm_346{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_18snm_357 ._tag-group_18snm_351{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_18snm_357 ._tag-group_18snm_351 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_18snm_357 ._album-cover_18snm_399{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_18snm_357 ._album-cover_18snm_399:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_18snm_415{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_18snm_415 ._song-info_18snm_370{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._artist-info_18snm_431{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._album-info_18snm_439{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._githubContainer_b3krt_2{display:flex;flex-direction:column;align-items:center;padding:20px;text-align:center}._githubContainer_b3krt_2 ._userInfo_b3krt_9{display:flex;align-items:center;gap:16px;margin-bottom:20px}._githubContainer_b3krt_2 ._username_b3krt_15{margin:0}._githubContainer_b3krt_2 ._starCount_b3krt_18{display:block;color:#666;font-size:14px;margin-top:4px}._githubContainer_b3krt_2 ._bio_b3krt_24{color:#666;margin-bottom:20px}._githubContainer_b3krt_2 ._features_b3krt_28{width:100%;margin-bottom:24px;text-align:left}._githubContainer_b3krt_2 ._features_b3krt_28 h5{text-align:center;margin-bottom:16px}._githubContainer_b3krt_2 ._featureList_b3krt_37{list-style:none;padding:0;margin:0;max-height:300px;overflow-y:auto}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar{width:6px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-track{background-color:#f5f5f5}._githubContainer_b3krt_2 ._featureList_b3krt_37 li{margin-bottom:12px;font-size:14px;line-height:1.5;color:#666}._githubContainer_b3krt_2 ._profileButton_b3krt_61{background:#24292e;border-color:#24292e}._githubContainer_b3krt_2 ._profileButton_b3krt_61:hover{background:#2f363d;border-color:#2f363d}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_15nrq_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_15nrq_1 ._cover_15nrq_8{width:60px;height:60px;border-radius:6px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_15nrq_1 ._cover_15nrq_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_15nrq_1 ._cover_15nrq_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_15nrq_1 ._cover_15nrq_8:hover:before{opacity:1}._playlist-info_15nrq_1 ._cover_15nrq_8:active{transform:scale(1.02)}._playlist-info_15nrq_1 ._info_15nrq_40{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_15nrq_1 ._info_15nrq_40 ._name_15nrq_47{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_15nrq_1 ._info_15nrq_40 ._creator_15nrq_58{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-item_15nrq_69{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_15nrq_69:hover{background-color:#fafafa!important}._playlist-item_15nrq_69:active,._playlist-item_15nrq_69:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_11inc_22 ._select_11inc_22{width:100%}._singer-choose_11inc_26 ._singer-choose-form_11inc_26{display:flex;flex-direction:column;height:400px}._singer-choose_11inc_26 ._singer-choose-form_11inc_26 ._btn-group_11inc_31{display:flex;justify-content:flex-end;gap:16px}._singer-choose_11inc_26 ._option-label_11inc_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_11inc_26 ._option-label_11inc_36 ._singer-name_11inc_43{font-weight:500}._singer-choose_11inc_26 ._option-label_11inc_36 ._tag-group_11inc_46 ._tag_11inc_46:not(:last-child){margin-right:8px}._upload-list_11inc_50 .ant-table{margin:16px 0}._upload-footer_11inc_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_11inc_62{color:#666;font-size:13px;margin-right:auto}._upload-stats_11inc_62 ._size-text_11inc_67{color:#999}._upload-stats_11inc_62 ._divider_11inc_70{margin:0 8px;color:#d9d9d9}._upload-confirm_11inc_75{padding:16px 0;font-size:14px}._upload-confirm_11inc_75 ._confirm-item_11inc_79{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_11inc_75 ._confirm-item_11inc_79:last-child{margin-bottom:0}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._label_11inc_87{color:#666;width:80px;flex-shrink:0}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._value_11inc_92{color:#333;font-weight:500}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._value_11inc_92 ._size_11inc_67{margin-left:4px;color:#999;font-weight:400}._upload-progress_11inc_102 ._progress-header_11inc_102{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_11inc_102 ._progress-header_11inc_102 ._progress-info_11inc_109{font-size:14px;color:#333}._upload-progress_11inc_102 ._progress-header_11inc_102 ._percentage_11inc_113{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_11inc_102 ._progress-list_11inc_118{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123:last-child{border-bottom:none}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133{flex:1;min-width:0;padding-right:16px}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133 ._name_11inc_138{font-size:14px;color:#333}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133 ._artist_11inc_142{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_11inc_148 .ant-modal-body{padding:24px}._uploadProgressModal_11inc_148 ._progressContent_11inc_151{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157 ._percentage_11inc_113{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157 ._detail_11inc_167{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180{text-align:center}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180 ._label_11inc_87{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180 ._value_11inc_92 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_11inc_148 ._failedList_11inc_193{width:100%}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedTitle_11inc_196{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202 ._songName_11inc_208{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202 ._errorMsg_11inc_213{font-size:12px;color:#ff4d4f}._uploadModal_11inc_218 .ant-modal-body{padding:24px}._progressSection_11inc_222{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_11inc_157{display:flex;flex-direction:column;align-items:center}._progressInfo_11inc_157 ._percentage_11inc_113{font-size:24px;font-weight:500;color:#333}._progressInfo_11inc_157 ._count_11inc_241{font-size:14px;color:#666;margin-top:4px}._statsContainer_11inc_172{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_11inc_172 ._statsItem_11inc_180{text-align:center}._statsContainer_11inc_172 ._statsTag_11inc_256{padding:4px 12px;font-size:14px}._songList_11inc_261{max-height:300px;overflow-y:auto;padding-right:4px}._songList_11inc_261::-webkit-scrollbar{width:6px}._songList_11inc_261::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_11inc_261::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_11inc_277{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_11inc_277:not(:last-child){margin-bottom:8px}._songItem_11inc_277:hover{background:#f5f5f5}._songInfo_11inc_292{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_11inc_292 ._songName_11inc_208{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_11inc_292 ._artistName_11inc_306{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
 
       var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
       function getDefaultExportFromCjs(x) {
@@ -6035,7 +6035,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-fijEDUkS-Btds6QFq.js');
+            const { MpegParser } = await module.import('./MpegParser-Q4kvrWBl-BcEvWihY.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -6057,7 +6057,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-BHAKpQrM-mZ-bXpsP.js');
+            const { AsfParser } = await module.import('./AsfParser-DkGIK_Vu-CxV7Zevj.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -6068,7 +6068,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-Chmtic8g-NwbtTKYu.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-hKq1cQbV-CAPaXNLr.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -6079,7 +6079,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-tLWgD7Q3-CNNv3rxN.js');
+            const { AIFFParser } = await module.import('./AiffParser-BWfPctLm-C2upB9H_.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -6090,7 +6090,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CSbkxoAz-Cf7YlM74.js');
+            const { DsfParser } = await module.import('./DsfParser-CTOVHjAB-CGP3l0RO.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -6101,7 +6101,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-DVsN4-Yg-MIeQffqw.js');
+            const { FlacParser } = await module.import('./FlacParser-tejzzs9v-BcHagXDf.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -6112,7 +6112,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-Dfcnu8Ii-BMVcYXGf.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-iCDETFuS-BibFNF4D.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -6123,7 +6123,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-DCTVVhRS-VKXjSfcz.js');
+            const { MP4Parser } = await module.import('./MP4Parser-CoQTT_aD-D5SsE88J.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -6134,7 +6134,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-BDSoOa2H-DyaZ8pg1.js');
+            const { MusepackParser } = await module.import('./MusepackParser-CjWD1NEC-CAQSE6X9.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -6145,7 +6145,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-DmwXEWHr-C79M4iGG.js');
+            const { OggParser } = await module.import('./OggParser-YkLKbfKp-m4PsLIWx.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -6156,7 +6156,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-CP0_mtDg-CPn9QAJI.js');
+            const { WavPackParser } = await module.import('./WavPackParser-Au4rlAy0-D3lWIREv.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -6167,7 +6167,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-CespDsAF-5WViinAB.js');
+            const { WaveParser } = await module.import('./WaveParser-CEx990qn-Db8cPsuQ.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -7075,7 +7075,7 @@ track: UINT8.get(buf, off2 + 126),
           }
         });
       };
-      const searchArtist$1 = (keyword) => weapiRequest("/api/rep/ugc/artist/search", {
+      const searchArtist = (keyword) => weapiRequest("/api/rep/ugc/artist/search", {
         data: {
           keyword,
           limit: 40
@@ -7120,6 +7120,84 @@ track: UINT8.get(buf, off2 + 126),
         };
         return { filteredList, setFilteredList, handleFilter };
       }
+      const getAlbumSongList = (id) => weapiRequest(`/api/v1/album/${id}`, {
+        data: {}
+      });
+      const getAlbumDetail = async (id) => {
+        return weapiRequest(`/api/album/${id}`, {
+          data: {
+            id
+          }
+        });
+      };
+      const getArtists = () => fetch(`${BASE_CDN_URL}artist.json`).then((res) => res.json());
+      const getArtistTopSongList = (id) => weapiRequest("/api/artist/top/song", {
+        data: {
+          id,
+          limit: 1e3,
+          offset: 0
+        }
+      });
+      const getArtistAllSongList = async (id) => {
+        try {
+          let more = true;
+          const songs2 = [];
+          let offset = 0;
+          while (more) {
+            const res = await weapiRequest("/api/v1/artist/songs", {
+              data: {
+                id,
+                limit: 200,
+                private_cloud: "true",
+                work_type: 1,
+                order: "hot",
+offset
+              }
+            });
+            if (res.code != 200) {
+              throw new Error(res.message || res.msg || "获取歌手全部歌曲失败");
+            }
+            songs2.push(...res.songs);
+            more = res.more;
+            offset += 200;
+          }
+          return {
+            code: 200,
+            msg: "获取歌手全部歌曲成功",
+            songs: songs2
+          };
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
+      };
+      const getArtistAlbumList = async (id) => {
+        let more = true;
+        let limit = 200;
+        let offset = 0;
+        const albumList = [];
+        while (more) {
+          const res = await weapiRequest(`/api/artist/albums/${id}`, {
+            data: {
+              id,
+              limit,
+              offset
+            }
+          });
+          if (res.code != 200) {
+            throw new Error(res.message || res.msg || "获取歌手专辑失败");
+          }
+          albumList.push(...res.hotAlbums);
+          more = res.more;
+          offset += limit;
+        }
+        return {
+          code: 200,
+          msg: "获取歌手专辑成功",
+          data: albumList
+        };
+      };
+      const getCDNConfig = (artistId) => fetch(`${BASE_CDN_URL}${artistId}.json`).then((res) => res.json());
       const urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
       let nanoid = (size2 = 21) => {
         let id = "";
@@ -7178,6 +7256,487 @@ track: UINT8.get(buf, off2 + 126),
             ...otherOptions
           });
         });
+      };
+      const getSongInfoList = async (songIds) => {
+        const chunkArr = chunkArray(songIds, 1e3);
+        const proArr = chunkArr.map(async (chunk) => {
+          const res = await weapiRequest("/api/v3/song/detail", {
+            data: {
+              c: JSON.stringify(chunk.map((item) => ({ id: item })))
+            }
+          });
+          console.log("res", res);
+          if (res.code === 200) {
+            return res;
+          }
+          throw new Error(res.message || res.msg || "获取歌曲信息失败");
+        });
+        const allInfo = await Promise.all(proArr);
+        return {
+          code: 200,
+          privileges: allInfo.map((item) => item.privileges).flat(),
+          songs: allInfo.map((item) => item.songs).flat()
+        };
+      };
+      const getSongUrl$1 = (ids, options) => {
+        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = options || {};
+        return weapiRequest("/api/song/enhance/player/url/v1", {
+          data: { ids: JSON.stringify(ids), level, encodeType }
+        });
+      };
+      const getSongLyric = async (id) => {
+        return weapiRequest("/api/song/lyric", {
+          data: {
+            id,
+            tv: -1,
+            lv: -1,
+            rv: -1,
+            kv: -1,
+            _nmclfl: 1
+          }
+        });
+      };
+      const getSongDynamicCover = async (songId) => {
+        return weapiRequest("/api/songplay/dynamic-cover", {
+          data: {
+            songId
+          }
+        });
+      };
+      const BUCKET = "jd-musicrep-privatecloud-audio-public";
+      const uploadAudioToNos = async ({
+        file,
+        bucket,
+        objectKey,
+        token,
+        fileMd5,
+        contentType: contentType2
+      }) => {
+        const lbsUrl = `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket}`;
+        const lbs = await (await fetch(lbsUrl)).json();
+        const safeObjectKey = objectKey.replace("/", "%2F");
+        const uploadUrl = `${lbs.upload[0]}/${bucket}/${safeObjectKey}?offset=0&complete=true&version=1.0`.replace(
+          "http://",
+          "https://"
+        );
+        const response = await fetch(uploadUrl, {
+          method: "post",
+          headers: {
+            "x-nos-token": token,
+            "Content-MD5": fileMd5,
+            "Content-Type": contentType2
+          },
+          body: file
+        });
+        let result = {};
+        try {
+          result = await response.json();
+        } catch (error) {
+          console.log("uploadAudioToNos parse error", error);
+        }
+        if (!response.ok) {
+          msgError("上传失败：文件未通过 NOS 校验");
+          throw new Error(result?.message || "上传失败：文件未通过 NOS 校验");
+        }
+        return result;
+      };
+      const matchCloudSong = async (cloudSongId, id, song) => {
+        if (cloudSongId != id) {
+          const res = await weapiRequest("/api/cloud/user/song/match", {
+            data: {
+              songId: cloudSongId,
+              adjustSongId: id
+            }
+          });
+          console.log("res", res);
+          if (res.code != 200 || res.data.length < 1) {
+            msgError(`歌曲"${song?.name}" 匹配失败：${res.message || res.msg}`);
+            throw new Error(res.message || res.msg || "歌曲匹配失败");
+          }
+          return res;
+        }
+        return {
+          code: 200,
+          msg: "歌曲匹配成功",
+          data: song
+        };
+      };
+      const uploadSong = async (song) => {
+        try {
+          console.log("song", song);
+          let res = await weapiRequest("/api/cloud/upload/check/v2", {
+            data: {
+              uploadType: 0,
+              songs: JSON.stringify([
+                {
+                  md5: song.md5,
+                  songId: song.id,
+                  bitrate: song.bitrate,
+                  fileSize: song.size
+                }
+              ])
+            }
+          });
+          if (res.code != 200 || res.data.length < 1) {
+            msgError(`资源检查失败,请检查歌曲：${song.name}是否已存在！`);
+            throw new Error(res.message || res.msg || "资源检查失败");
+          }
+          console.log("res", res);
+          const cloudId = res.data[0].songId;
+          if (res.data[0].upload == 1) {
+            const importRes = await weapiRequest("/api/cloud/user/song/import", {
+              data: {
+                uploadType: 0,
+                songs: JSON.stringify([
+                  {
+                    songId: cloudId,
+                    bitrate: song.bitrate,
+                    song: song.filename,
+                    artist: song.artists,
+                    album: song.album,
+                    fileName: song.filename
+                  }
+                ])
+              }
+            });
+            console.log("importRes", importRes);
+            if (importRes.code != 200 || importRes.data.successSongs.length < 1) {
+              msgError(`歌曲： ${song.name} 上传失败`);
+              throw new Error(importRes.message || importRes.msg || "歌曲上传失败");
+            }
+            const cloudSongId = importRes.data.successSongs[0].song.songId;
+            await matchCloudSong(cloudSongId, song.id, song);
+            return {
+              code: 200,
+              msg: "歌曲上传成功",
+              data: { song }
+            };
+          } else {
+            const tokenRes = await weapiRequest("/api/nos/token/alloc", {
+              data: {
+                filename: song.filename,
+                length: song.size,
+                ext: song.ext,
+                md5: song.md5,
+                type: "audio",
+                bucket: BUCKET,
+                local: false,
+                nos_product: 3
+              }
+            });
+            console.log("tokenRes", tokenRes);
+            if (tokenRes.code != 200) {
+              msgError("获取上传token失败");
+              throw new Error(
+                tokenRes.message || tokenRes.msg || "获取上传token失败"
+              );
+            }
+            song.resourceId = tokenRes.result.resourceId;
+            const uploadRes = await weapiRequest("/api/upload/cloud/info/v2", {
+              data: {
+                token: tokenRes.result.token,
+                objectKey: tokenRes.result.objectKey,
+                resourceId: tokenRes.result.resourceId,
+expireTime: Date.now() + 6e4,
+                fileSize: song.size,
+                md5: song.md5,
+                songid: cloudId,
+                filename: song.filename,
+                song: song.name,
+                album: song.album,
+                artist: song.artists,
+                bitrate: String(song.bitrate || 128),
+                resourceId: song.resourceId
+              }
+            });
+            console.log("uploadRes", uploadRes);
+            if (uploadRes.code != 200) {
+              msgError(`歌曲： ${song.name} 上传失败`);
+            }
+            const pubRes = await weapiRequest("/api/cloud/pub/v2", {
+              data: {
+                songid: uploadRes.songId
+              }
+            });
+            if (![200, 201].includes(pubRes.code)) {
+              msgError(`歌曲： ${song.name} 发布失败`);
+              throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
+            }
+            const cloudSongId = pubRes.privateCloud.songId;
+            await matchCloudSong(cloudSongId, song.id, song);
+            return {
+              code: 200,
+              msg: "歌曲上传成功",
+              data: { song }
+            };
+          }
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
+      };
+      const getCloudData = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
+        data: {
+          limit,
+          offset
+        }
+      });
+      const deleteCloudSong = (songIds) => weapiRequest("/api/cloud/del", {
+        data: {
+          songIds
+        }
+      });
+      const uploadLocalSong = async (file, options = {}) => {
+        const {
+          defaultBitrate = 999e3,
+          defaultAlbum,
+          defaultArtist,
+          defaultTitle,
+          defaultArtists = [],
+          matchId
+        } = options || {};
+        let defaultResult = {};
+        try {
+          const ext = file.name.split(".").pop() || "mp3";
+          const fileMd5 = await getFileMD5(file);
+          const bitrate = defaultBitrate;
+          const filename = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
+          const contentType2 = file.type || "audio/mpeg";
+          const checkRes = await weapiRequest("/api/cloud/upload/check", {
+            data: {
+              ext: "",
+              bitrate: String(bitrate),
+              md5: fileMd5,
+              length: file.size,
+              songId: "0",
+              version: 1
+            }
+          });
+          console.log("checkRes", checkRes);
+          if (checkRes.code != 200) {
+            msgError("文件检查失败：" + checkRes.message || checkRes.msg || "");
+            throw new Error(checkRes.message || checkRes.msg || "文件检查失败");
+          }
+          const { needUpload, songId } = checkRes;
+          if (needUpload) {
+            const uploadTokenRes = await weapiRequest("/api/nos/token/alloc", {
+              data: {
+                bucket: BUCKET,
+                ext,
+                filename,
+                local: false,
+                nos_product: 3,
+                type: "audio",
+                md5: fileMd5
+              }
+            });
+            if (uploadTokenRes.code !== 200) {
+              msgError("上传授权失败");
+              throw new Error(uploadTokenRes.message || "上传授权失败");
+            }
+            console.log("uploadTokenRes", uploadTokenRes);
+            await uploadAudioToNos({
+              file,
+              bucket: BUCKET,
+              objectKey: uploadTokenRes.result.objectKey,
+              token: uploadTokenRes.result.token,
+              fileMd5,
+              contentType: contentType2
+            });
+          }
+          const tokenRes = await weapiRequest("/api/nos/token/alloc", {
+            data: {
+              bucket: "",
+              ext,
+              filename,
+              local: false,
+              nos_product: 3,
+              type: "audio",
+              md5: fileMd5
+            }
+          });
+          console.log("tokenRes", tokenRes);
+          if (tokenRes.code != 200) {
+            msgError("获取上传token失败");
+            throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
+          }
+          const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
+          const {
+            album: album2 = defaultAlbum,
+            artist: artist2 = defaultArtist,
+            artists = defaultArtists,
+            title: title2 = defaultTitle
+          } = await getAudioMetadata(file);
+          defaultResult = {
+            ...defaultResult,
+            artist: artist2,
+            artists,
+            album: album2,
+            md5: fileMd5,
+            ext,
+            bitrate
+          };
+          const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
+            data: {
+              md5: fileMd5,
+              songid: songId,
+              filename,
+              song: title2 || filename,
+              album: album2 || "未知专辑",
+              artist: artist2 || artists.join(",") || "未知歌手",
+              bitrate: String(bitrate),
+              resourceId
+            }
+          });
+          console.log("uploadInfoRes", uploadInfoRes);
+          defaultResult = {
+            ...defaultResult,
+            id: uploadInfoRes.songId
+          };
+          if (uploadInfoRes.code != 200) {
+            msgError("获取上传信息失败");
+            throw new Error(
+              uploadInfoRes.message || uploadInfoRes.msg || "获取上传信息失败"
+            );
+          }
+          const pubRes = await weapiRequest("/api/cloud/pub/v2", {
+            data: {
+              songid: uploadInfoRes.songId
+            }
+          });
+          console.log("pubRes", pubRes);
+          if (![200, 201].includes(pubRes.code)) {
+            msgError(`歌曲： ${file.name} 发布失败`);
+            throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
+          }
+          const { songName: songName2, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
+          defaultResult = {
+            ...defaultResult,
+            name: songName2,
+            size: fileSize,
+            bitrate: realBitrate
+          };
+          if (matchId) {
+            try {
+              console.log(`开始匹配歌曲: ${songName2}`, defaultResult);
+              const res = await matchCloudSong(
+                pubRes.privateCloud.songId,
+                matchId,
+                defaultResult
+              );
+              if (res.code != 200) {
+                msgError("歌曲匹配失败");
+              }
+              console.log(`歌曲匹配成功: ${songName2}`, defaultResult);
+            } catch (error) {
+              console.log("error", error);
+            }
+          }
+          return defaultResult;
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
+      };
+      const neteaseMusicToCloud = async (songIds, options = {}) => {
+        const {
+          level = QUALITY_LEVELS.无损,
+          concurrent = 6,
+          onChange,
+          onComplete
+        } = options || {};
+        try {
+          const songInfoRes = await getSongInfoList(songIds);
+          if (songInfoRes.code != 200) {
+            msgError("获取歌曲信息失败");
+            throw new Error(
+              songInfoRes.message || songInfoRes.msg || "获取歌曲信息失败"
+            );
+          }
+          const songs2 = songInfoRes.songs;
+          console.log(`获取歌曲信息, 共${songs2.length}首`, songs2);
+          const urls = await Promise.all(
+            songs2.map(async (song) => {
+              const res = await getSongUrl$1([song.id], { level });
+              if (res.code != 200) {
+                msgError("获取歌曲链接失败");
+                throw new Error(res.message || res.msg || "获取歌曲链接失败");
+              }
+              const url = res.data[0].url;
+              song.url = url;
+              return url;
+            })
+          );
+          console.log(`获取歌曲链接, 共${urls.length}首`, urls);
+          let count2 = 0;
+          const success = [];
+          const failed = [];
+          const tasks = songs2.map((song, index2) => async () => {
+            try {
+              if (!song.url) throw new Error(`歌曲链接不存在: ${song.name}`);
+              const file = await fetch(song.url);
+              const blob = await file.blob();
+              const fileObj = new File([blob], song.name, { type: song.type });
+              const songInfo2 = {
+                album: song.al?.name,
+                artist: song.ar?.map((ar) => ar.name).join(","),
+                title: song.name,
+                artists: song.ar?.map((ar) => ar.name)
+              };
+              const res = await uploadLocalSong(fileObj, {
+                defaultAlbum: songInfo2.album,
+                defaultArtist: songInfo2.artist,
+                defaultTitle: songInfo2.title,
+                defaultArtists: songInfo2.artists,
+                matchId: song.id
+              });
+              console.log(
+                `第${index2 + 1}首歌曲上传完成: ${song.name} 共${songs2.length}首, 已上传${count2}首`,
+                songInfo2,
+                res
+              );
+              onChange?.({
+                current: index2 + 1,
+                total: songs2.length,
+                success: true,
+                successCount: count2,
+                index: index2,
+                song
+              });
+              count2++;
+              success.push(song);
+              return res;
+            } catch (error) {
+              console.log("error", error, song);
+              onChange?.({
+                current: index2 + 1,
+                total: songs2.length,
+                success: false,
+                successCount: count2,
+                index: index2,
+                song
+              });
+              failed.push(song);
+            }
+          });
+          const results = await promiseLimit(tasks, concurrent);
+          console.log(
+            `上传完成, 共${songs2.length}首, 已上传${count2}首, 上传失败结果: ${songs2?.length - count2}首`,
+            results
+          );
+          onComplete?.({
+            total: songs2.length,
+            successCount: count2,
+            failedCount: songs2.length - count2,
+            success,
+            failed,
+            results
+          });
+          return results;
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
       };
       var browser = {};
       var canPromise;
@@ -9306,174 +9865,34 @@ pop: function() {
           throw error;
         }
       };
-      const getUserAccount$1 = () => weapiRequest("/api/nuser/account/get", {
+      const getQrKey = () => weapiRequest("/api/login/qrcode/unikey", {
+        data: {
+          noCheckToken: 1,
+          type: 1
+        }
+      });
+      const getQrCode = (key) => {
+        const loginUrl = `https://music.163.com/login?codekey=${key}`;
+        return generateQRCode(loginUrl);
+      };
+      const getQrStatus = (key) => weapiFetch("/api/login/qrcode/client/login", {
+        data: {
+          key,
+          type: 1
+        },
+        originResponse: true
+      });
+      const getUserAccount = () => weapiRequest("/api/nuser/account/get", {
         data: {}
       });
-      const getArtists = () => fetch(`${BASE_CDN_URL}top.json`).then((res) => res.json());
-      const getArtists2 = () => fetch(`${BASE_CDN_URL}summary.json`).then((res) => res.json());
-      const getCDNConfig = (artistId) => fetch(`${BASE_CDN_URL}${artistId}.json`).then((res) => res.json());
-      const getSongInfoList$1 = async (songIds) => {
-        const chunkArr = chunkArray(songIds, 1e3);
-        const proArr = chunkArr.map(async (chunk) => {
-          return weapiRequest("/api/v3/song/detail", {
-            data: {
-              c: JSON.stringify(chunk.map((item) => ({ id: item })))
-            }
-          });
-        });
-        const allInfo = await Promise.all(proArr);
-        console.log("allInfo", allInfo);
-        return allInfo.flat();
-      };
-      const matchCloudSong = async (cloudSongId, id, song) => {
-        if (cloudSongId != id) {
-          const res = await weapiRequest("/api/cloud/user/song/match", {
-            data: {
-              songId: cloudSongId,
-              adjustSongId: id
-            }
-          });
-          if (res.code != 200 || res.data.length < 1) {
-            msgError(`歌曲“${song?.name}” 匹配失败：${res.message || res.msg}`);
-            throw new Error(res.message || res.msg || "歌曲匹配失败");
-          }
-          return res;
-        }
-        return;
-      };
-      const uploadSong = async (song) => {
-        try {
-          console.log("song", song);
-          let res = await weapiRequest("/api/cloud/upload/check/v2", {
-            data: {
-              uploadType: 0,
-              songs: JSON.stringify([
-                {
-                  md5: song.md5,
-                  songId: song.id,
-                  bitrate: song.bitrate,
-                  fileSize: song.size
-                }
-              ])
-            }
-          });
-          if (res.code != 200 || res.data.length < 1) {
-            msgError(`资源检查失败,请检查歌曲：${song.name}是否已存在！`);
-            throw new Error(res.message || res.msg || "资源检查失败");
-          }
-          console.log("res", res);
-          const cloudId = res.data[0].songId;
-          if (res.data[0].upload == 1) {
-            const importRes = await weapiRequest("/api/cloud/user/song/import", {
-              data: {
-                uploadType: 0,
-                songs: JSON.stringify([
-                  {
-                    songId: cloudId,
-                    bitrate: song.bitrate,
-                    song: song.filename,
-                    artist: song.artists,
-                    album: song.album,
-                    fileName: song.filename
-                  }
-                ])
-              }
-            });
-            console.log("importRes", importRes);
-            if (importRes.code != 200 || importRes.data.successSongs.length < 1) {
-              msgError(`歌曲： ${song.name} 上传失败`);
-              throw new Error(importRes.message || importRes.msg || "歌曲上传失败");
-            }
-            const cloudSongId = importRes.data.successSongs[0].song.songId;
-            await matchCloudSong(cloudSongId, song.id, song);
-            return {
-              code: 200,
-              msg: "歌曲上传成功",
-              data: { song }
-            };
-          } else {
-            const tokenRes = await weapiRequest("/api/nos/token/alloc", {
-              data: {
-                filename: song.filename,
-                length: song.size,
-                ext: song.ext,
-                md5: song.md5,
-                type: "audio",
-                bucket: "jd-musicrep-privatecloud-audio-public",
-                local: false,
-                nos_product: 3
-              }
-            });
-            console.log("tokenRes", tokenRes);
-            if (tokenRes.code != 200) {
-              msgError("获取上传token失败");
-              throw new Error(
-                tokenRes.message || tokenRes.msg || "获取上传token失败"
-              );
-            }
-            song.resourceId = tokenRes.result.resourceId;
-            const uploadRes = await weapiRequest("/api/upload/cloud/info/v2", {
-              data: {
-                token: tokenRes.result.token,
-                objectKey: tokenRes.result.objectKey,
-                resourceId: tokenRes.result.resourceId,
-expireTime: Date.now() + 6e4,
-                fileSize: song.size,
-                md5: song.md5,
-                songid: cloudId,
-                filename: song.filename,
-                song: song.name,
-                album: song.album,
-                artist: song.artists,
-                bitrate: String(song.bitrate || 128),
-                resourceId: song.resourceId
-              }
-            });
-            console.log("uploadRes", uploadRes);
-            if (uploadRes.code != 200) {
-              msgError(`歌曲： ${song.name} 上传失败`);
-            }
-            const pubRes = await weapiRequest("/api/cloud/pub/v2", {
-              data: {
-                songid: uploadRes.songId
-              }
-            });
-            if (![200, 201].includes(pubRes.code)) {
-              msgError(`歌曲： ${song.name} 发布失败`);
-              throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
-            }
-            const cloudSongId = pubRes.privateCloud.songId;
-            await matchCloudSong(cloudSongId, song.id, song);
-            return {
-              code: 200,
-              msg: "歌曲上传成功",
-              data: { song }
-            };
-          }
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
-      };
-      const getCloudData$1 = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
-        data: {
-          limit,
-          offset
-        }
-      });
-      const deleteCloudSong$1 = (songIds) => weapiRequest("/api/cloud/del", {
-        data: {
-          songIds
-        }
-      });
-      const getPlaylistList$1 = (uid = getUser().userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
+      const getPlaylistList = (uid = getUser().userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
         data: {
           limit,
           offset,
           uid
         }
       });
-      const createPlaylist$1 = (name2) => weapiRequest("/api/playlist/create", {
+      const createPlaylist = (name2) => weapiRequest("/api/playlist/create", {
         data: {
           name: name2
         }
@@ -9483,88 +9902,14 @@ expireTime: Date.now() + 6e4,
           pid
         }
       });
-      const addSongToPlaylist$1 = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
+      const addSongToPlaylist = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
         data: {
           pid,
 trackIds,
 op: "add"
 }
       });
-      const getAlbumSongList$1 = (id) => weapiRequest(`/api/v1/album/${id}`, {
-        data: {}
-      });
-      const getSongUrl$1 = (ids, options) => {
-        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = options || {};
-        return weapiRequest("/api/song/enhance/player/url/v1", {
-          data: { ids: JSON.stringify(ids), level, encodeType }
-        });
-      };
-      const getArtistAllSongList$1 = async (id) => {
-        try {
-          let more = true;
-          const songs2 = [];
-          let offset = 0;
-          while (more) {
-            const res = await weapiRequest("/api/v1/artist/songs", {
-              data: {
-                id,
-                limit: 200,
-                private_cloud: "true",
-                work_type: 1,
-                order: "hot",
-offset
-              }
-            });
-            if (res.code != 200) {
-              throw new Error(res.message || res.msg || "获取歌手全部歌曲失败");
-            }
-            songs2.push(...res.songs);
-            more = res.more;
-            offset += 200;
-          }
-          return {
-            code: 200,
-            msg: "获取歌手全部歌曲成功",
-            songs: songs2
-          };
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
-      };
-      const getArtistAlbumList$1 = async (id) => {
-        let more = true;
-        let limit = 200;
-        let offset = 0;
-        const albumList = [];
-        while (more) {
-          const res = await weapiRequest(`/api/artist/albums/${id}`, {
-            data: {
-              id,
-              limit,
-              offset
-            }
-          });
-          if (res.code != 200) {
-            throw new Error(res.message || res.msg || "获取歌手专辑失败");
-          }
-          albumList.push(...res.hotAlbums);
-          more = res.more;
-          offset += limit;
-        }
-        return {
-          code: 200,
-          msg: "获取歌手专辑成功",
-          data: albumList
-        };
-      };
-      const searchArtist = (keyword) => weapiRequest("/api/rep/ugc/artist/search", {
-        data: {
-          keyword,
-          limit: 40
-        }
-      });
-      const getPlaylistAllData$1 = async (id) => {
+      const getPlaylistAllData = async (id) => {
         try {
           const detailRes = await weapiRequest("/api/v6/playlist/detail", {
             data: {
@@ -9577,34 +9922,15 @@ offset
           });
           console.log("detailRes", detailRes);
           const trackIds = detailRes.playlist.trackIds.map((item) => item.id);
-          const res = await getSongInfoList$1(trackIds);
-          if (res[0]?.code != 200) {
-            msgError(res[0]?.msg || "获取歌单数据失败");
-            throw new Error(res[0]?.msg || "获取歌单数据失败");
+          const res = await getSongInfoList(trackIds);
+          if (res?.code != 200) {
+            msgError(res?.msg || "获取歌单数据失败");
+            throw new Error(res?.msg || "获取歌单数据失败");
           }
-          return res[0].songs;
+          return res.songs;
         } catch (error) {
           throw error;
         }
-      };
-      const getSongLyric$1 = async (id) => {
-        return weapiRequest("/api/song/lyric", {
-          data: {
-            id,
-            tv: -1,
-            lv: -1,
-            rv: -1,
-            kv: -1,
-            _nmclfl: 1
-          }
-        });
-      };
-      const getAlbumDetail$1 = async (id) => {
-        return weapiRequest(`/api/album/${id}`, {
-          data: {
-            id
-          }
-        });
       };
       var dayjs_min$1 = { exports: {} };
       var dayjs_min = dayjs_min$1.exports;
@@ -10891,13 +11217,13 @@ saveAsBuffer() {
         };
         const getSongInfo = async (id) => {
           if (songInfoMap[id]) return songInfoMap[id];
-          const res = await getSongInfoList$1([id]);
-          if (res[0].code !== 200) {
-            msgError(res[0].message || res[0].msg || "获取歌曲信息失败");
-            throw new Error(res[0].message || res[0].msg || "获取歌曲信息失败");
+          const res = await getSongInfoList([id]);
+          if (res.code !== 200) {
+            msgError(res.message || res.msg || "获取歌曲信息失败");
+            throw new Error(res.message || res.msg || "获取歌曲信息失败");
           }
-          setSongInfoMap((prv) => ({ ...prv, [id]: res[0].songs?.[0] }));
-          return res[0].songs?.[0];
+          setSongInfoMap((prv) => ({ ...prv, [id]: res.songs?.[0] }));
+          return res.songs?.[0];
         };
         const play = async (id, level) => {
           try {
@@ -10926,7 +11252,7 @@ saveAsBuffer() {
           }
         };
         const getLyric = async (id) => {
-          const res = await getSongLyric$1(id);
+          const res = await getSongLyric(id);
           if (res.code !== 200) {
             msgError(res.message || res.msg || "获取歌曲歌词失败");
             throw new Error(res.message || res.msg || "获取歌曲歌词失败");
@@ -10961,7 +11287,7 @@ saveAsBuffer() {
             console.log("tags", tags);
             let coverBlob;
             if (albumId) {
-              const albumRes = await getAlbumDetail$1(albumId);
+              const albumRes = await getAlbumDetail(albumId);
               if (albumRes.code === 200) {
                 const albumCover = albumRes.album.blurPicUrl + "?param=600y600";
                 const { blob: blob2, response: response2 } = await getFileBlob(
@@ -11026,7 +11352,7 @@ default:
               setCurrentId(idStr);
               return cached;
             }
-            const res = await getAlbumDetail$1(id);
+            const res = await getAlbumDetail(id);
             console.log("专辑详情 res", res);
             if (res.code === 200 && res.album) {
               albumInfoMap.current[idStr] = res.album;
@@ -11046,7 +11372,7 @@ default:
         const getAlbumSongListData = async (id) => {
           try {
             setIsLoading(true);
-            const res = await getAlbumSongList$1(id);
+            const res = await getAlbumSongList(id);
             console.log("专辑歌曲列表 res", res);
             if (res.code === 200 && res.songs) {
               return res.songs;
@@ -11228,11 +11554,8 @@ hotSongList
         const getSingerList = async () => {
           try {
             setLoading(true);
-            const res = await getArtists();
-            const res2 = await getArtists2();
-            const list = [
-              ...new Map([...res2, ...res].map((item) => [item.id, item])).values()
-            ];
+            const list = await getArtists();
+            console.log(`歌手列表(${list.length})`, list);
             setSingerList(list);
           } catch (error) {
             console.log("error", error);
@@ -11285,7 +11608,7 @@ singerIds
           try {
             setLoading(true);
             if (singerMap[singerId]?.songList) return singerMap[singerId]?.songList;
-            const res = await getArtistAllSongList$1(singerId);
+            const res = await getArtistAllSongList(singerId);
             if (res.code === 200) {
               const songList2 = res.songs;
               setSingerMap((prv) => ({
@@ -11306,7 +11629,7 @@ singerIds
         const getSingerAlbumListById = async (singerId) => {
           try {
             if (singerMap[singerId]?.albumList) return singerMap[singerId]?.albumList;
-            const res = await getArtistAlbumList$1(singerId);
+            const res = await getArtistAlbumList(singerId);
             if (res.code === 200) {
               const albumList = res.data;
               setSingerMap((prv) => ({
@@ -16804,7 +17127,7 @@ isIndex(key, length)))) {
           if (!playlistId) return;
           try {
             setLoading(true);
-            const res = await getPlaylistAllData$1(playlistId);
+            const res = await getPlaylistAllData(playlistId);
             console.log("res", res);
             setSongList(res);
           } catch (error) {
@@ -18671,7 +18994,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         const albumDetailRef = useRef();
         const [singerInfo, setSingerInfo] = useState$1({});
         const { data, loading } = useGetData(
-          getArtistAlbumList$1,
+          getArtistAlbumList,
           singerInfo.singerId,
           {
             monitors: [singerInfo.singerId, visible],
@@ -20128,7 +20451,7 @@ jsxRuntimeExports.jsx(
           try {
             const user = getUser();
             if (!user) return message.error("请先登录");
-            const res2 = await getPlaylistList$1();
+            const res2 = await getPlaylistList();
             console.log("res", res2);
             if (res2.code === 200) {
               setPlayList(res2.playlist);
@@ -20264,7 +20587,7 @@ jsxRuntimeExports.jsx(
             return;
           }
           try {
-            const res2 = await createPlaylist$1(name2.trim());
+            const res2 = await createPlaylist(name2.trim());
             if (res2.code === 200) {
               msgSuccess$1("新建成功");
               handleGetPlayList();
@@ -20285,7 +20608,7 @@ jsxRuntimeExports.jsx(
           }
           try {
             const playlistName = strategy.getPlaylistName();
-            const res2 = await createPlaylist$1(playlistName);
+            const res2 = await createPlaylist(playlistName);
             if (res2.code === 200) {
               msgSuccess$1(`成功创建"${playlistName}"`);
               handleGetPlayList();
@@ -20504,7 +20827,7 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
         const getCloudDataList = async () => {
           try {
             setLoading(true);
-            const res = await getCloudData$1(1e4, 0);
+            const res = await getCloudData(1e4, 0);
             if (res.code === 200) {
               console.log("songList", res.data);
               setSongList(res.data);
@@ -20827,7 +21150,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
                 width: "auto"
               }
             );
-            const res = await getPlaylistList$1();
+            const res = await getPlaylistList();
             console.log("res", res);
             if (res.code !== 200) return msgError("获取歌单失败");
             const playlist = res.playlist;
@@ -20838,7 +21161,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
                 let playlistId = playlist.find((p) => p.name === playlistName)?.id;
                 if (!playlistId) {
                   const truncatedName = truncateString(playlistName, 40);
-                  const res3 = await createPlaylist$1(truncatedName);
+                  const res3 = await createPlaylist(truncatedName);
                   if (res3.code === 200) {
                     playlistId = res3.id;
                   } else {
@@ -20848,7 +21171,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
                   await sleep(1e3);
                 }
                 const songIds = songs2.map((song) => song.songId);
-                const res2 = await addSongToPlaylist$1(playlistId, songIds);
+                const res2 = await addSongToPlaylist(playlistId, songIds);
                 console.log("res", res2);
                 if (res2.code !== 200) {
                   console.log("添加歌曲失败", res2.message || res2.msg);
@@ -20903,7 +21226,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
             const playlist = await playListRef.current.submit();
             if (!playlist) return;
             const songIds = selectedRows.map((item) => item.songId);
-            const res = await addSongToPlaylist$1(playlist.id, songIds);
+            const res = await addSongToPlaylist(playlist.id, songIds);
             console.log("res", res);
             if (res.code === 200) {
               setSelectedRows([]);
@@ -20927,7 +21250,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
             );
             await confirm(confirmContent, "删除确认");
             const songIds = selectedRows.map((item) => item.songId);
-            const res = await deleteCloudSong$1(songIds);
+            const res = await deleteCloudSong(songIds);
             console.log("res", res);
             if (res.code === 200) {
               msgSuccess$1("删除成功");
@@ -21322,215 +21645,6 @@ jsxRuntimeExports.jsx(
           }
         );
       });
-      const getSongInfoList = async (songIds) => {
-        const chunkArr = chunkArray(songIds, 1e3);
-        const proArr = chunkArr.map(async (chunk) => {
-          return weapiRequest("/api/v3/song/detail", {
-            data: {
-              c: JSON.stringify(chunk.map((item) => ({ id: item })))
-            }
-          });
-        });
-        const allInfo = await Promise.all(proArr);
-        console.log("allInfo", allInfo);
-        return allInfo.flat();
-      };
-      const getSongUrl = (ids, options) => {
-        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = {};
-        return weapiRequest("/api/song/enhance/player/url/v1", {
-          data: { ids: JSON.stringify(ids), level, encodeType }
-        });
-      };
-      const getSongLyric = async (id) => {
-        return weapiRequest("/api/song/lyric", {
-          data: {
-            id,
-            tv: -1,
-            lv: -1,
-            rv: -1,
-            kv: -1,
-            _nmclfl: 1
-          }
-        });
-      };
-      const getSongDynamicCover = async (songId) => {
-        return weapiRequest("/api/songplay/dynamic-cover", {
-          data: {
-            songId
-          }
-        });
-      };
-      const BUCKET = "jd-musicrep-privatecloud-audio-public";
-      const uploadAudioToNos = async ({
-        file,
-        bucket,
-        objectKey,
-        token,
-        fileMd5,
-        contentType: contentType2
-      }) => {
-        const lbsUrl = `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket}`;
-        const lbs = await (await fetch(lbsUrl)).json();
-        const safeObjectKey = objectKey.replace("/", "%2F");
-        const uploadUrl = `${lbs.upload[0]}/${bucket}/${safeObjectKey}?offset=0&complete=true&version=1.0`.replace(
-          "http://",
-          "https://"
-        );
-        const response = await fetch(uploadUrl, {
-          method: "post",
-          headers: {
-            "x-nos-token": token,
-            "Content-MD5": fileMd5,
-            "Content-Type": contentType2
-          },
-          body: file
-        });
-        let result = {};
-        try {
-          result = await response.json();
-        } catch (error) {
-          console.log("uploadAudioToNos parse error", error);
-        }
-        if (!response.ok) {
-          msgError("上传失败：文件未通过 NOS 校验");
-          throw new Error(result?.message || "上传失败：文件未通过 NOS 校验");
-        }
-        return result;
-      };
-      const getCloudData = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
-        data: {
-          limit,
-          offset
-        }
-      });
-      const deleteCloudSong = (songIds) => weapiRequest("/api/cloud/del", {
-        data: {
-          songIds
-        }
-      });
-      const uploadLocalSong = async (file) => {
-        let defaultResult = {};
-        try {
-          const ext = file.name.split(".").pop() || "mp3";
-          const fileMd5 = await getFileMD5(file);
-          const bitrate = 999e3;
-          const filename = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
-          const contentType2 = file.type || "audio/mpeg";
-          const checkRes = await weapiRequest("/api/cloud/upload/check", {
-            data: {
-              ext: "",
-              bitrate: String(bitrate),
-              md5: fileMd5,
-              length: file.size,
-              songId: "0",
-              version: 1
-            }
-          });
-          console.log("checkRes", checkRes);
-          if (checkRes.code != 200) {
-            msgError("文件检查失败：" + checkRes.message || checkRes.msg || "");
-            throw new Error(checkRes.message || checkRes.msg || "文件检查失败");
-          }
-          const { needUpload, songId } = checkRes;
-          if (needUpload) {
-            const uploadTokenRes = await weapiRequest("/api/nos/token/alloc", {
-              data: {
-                bucket: BUCKET,
-                ext,
-                filename,
-                local: false,
-                nos_product: 3,
-                type: "audio",
-                md5: fileMd5
-              }
-            });
-            if (uploadTokenRes.code !== 200) {
-              msgError("上传授权失败");
-              throw new Error(uploadTokenRes.message || "上传授权失败");
-            }
-            console.log("uploadTokenRes", uploadTokenRes);
-            await uploadAudioToNos({
-              file,
-              bucket: BUCKET,
-              objectKey: uploadTokenRes.result.objectKey,
-              token: uploadTokenRes.result.token,
-              fileMd5,
-              contentType: contentType2
-            });
-          }
-          const tokenRes = await weapiRequest("/api/nos/token/alloc", {
-            data: {
-              bucket: "",
-              ext,
-              filename,
-              local: false,
-              nos_product: 3,
-              type: "audio",
-              md5: fileMd5
-            }
-          });
-          console.log("tokenRes", tokenRes);
-          if (tokenRes.code != 200) {
-            msgError("获取上传token失败");
-            throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
-          }
-          const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
-          const { album: album2, artist: artist2, artists = [], title: title2 } = await getAudioMetadata(file);
-          defaultResult = {
-            ...defaultResult,
-            artist: artist2,
-            artists,
-            album: album2,
-            md5: fileMd5,
-            ext,
-            bitrate
-          };
-          const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
-            data: {
-              md5: fileMd5,
-              songid: songId,
-              filename,
-              song: title2 || filename,
-              album: album2 || "未知专辑",
-              artist: artist2 || artists.join(",") || "未知歌手",
-              bitrate: String(bitrate),
-              resourceId
-            }
-          });
-          console.log("uploadInfoRes", uploadInfoRes);
-          defaultResult = {
-            ...defaultResult,
-            id: uploadInfoRes.songId
-          };
-          if (uploadInfoRes.code != 200) {
-            msgError("获取上传信息失败");
-            throw new Error(
-              uploadInfoRes.message || uploadInfoRes.msg || "获取上传信息失败"
-            );
-          }
-          const pubRes = await weapiRequest("/api/cloud/pub/v2", {
-            data: {
-              songid: uploadInfoRes.songId
-            }
-          });
-          console.log("pubRes", pubRes);
-          if (![200, 201].includes(pubRes.code)) {
-            msgError(`歌曲： ${file.name} 发布失败`);
-            throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
-          }
-          const { songName: songName2, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
-          defaultResult = {
-            ...defaultResult,
-            name: songName2,
-            size: fileSize,
-            bitrate: realBitrate
-          };
-          return defaultResult;
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
-      };
       const dragger = "_dragger_1latm_12";
       const divider$1 = "_divider_1latm_58";
       const styles$4 = {
@@ -22532,7 +22646,7 @@ jsxRuntimeExports.jsx(
         const getPlayListData = async () => {
           try {
             setLoading(true);
-            const res = await getPlaylistList$1();
+            const res = await getPlaylistList();
             if (res.code === 200) {
               setPlayList(res.playlist || []);
             }
@@ -22673,42 +22787,42 @@ jsxRuntimeExports.jsx(SongList$1, { ref: songListRef })
         ] });
       }
       const PlayList$1 = forwardRef(PlayList);
-      const select = "_select_1rogj_22";
-      const tag = "_tag_1rogj_46";
-      const divider = "_divider_1rogj_70";
-      const label = "_label_1rogj_87";
-      const value = "_value_1rogj_92";
-      const size = "_size_1rogj_67";
-      const percentage = "_percentage_1rogj_113";
-      const progressInfo = "_progressInfo_1rogj_157";
-      const statsContainer = "_statsContainer_1rogj_172";
-      const statsItem = "_statsItem_1rogj_180";
-      const songName = "_songName_1rogj_208";
-      const uploadModal = "_uploadModal_1rogj_218";
-      const progressSection = "_progressSection_1rogj_222";
-      const count = "_count_1rogj_241";
-      const statsTag = "_statsTag_1rogj_256";
-      const songList = "_songList_1rogj_261";
-      const songItem = "_songItem_1rogj_277";
-      const songInfo = "_songInfo_1rogj_292";
-      const artistName = "_artistName_1rogj_306";
+      const select = "_select_11inc_22";
+      const tag = "_tag_11inc_46";
+      const divider = "_divider_11inc_70";
+      const label = "_label_11inc_87";
+      const value = "_value_11inc_92";
+      const size = "_size_11inc_67";
+      const percentage = "_percentage_11inc_113";
+      const progressInfo = "_progressInfo_11inc_157";
+      const statsContainer = "_statsContainer_11inc_172";
+      const statsItem = "_statsItem_11inc_180";
+      const songName = "_songName_11inc_208";
+      const uploadModal = "_uploadModal_11inc_218";
+      const progressSection = "_progressSection_11inc_222";
+      const count = "_count_11inc_241";
+      const statsTag = "_statsTag_11inc_256";
+      const songList = "_songList_11inc_261";
+      const songItem = "_songItem_11inc_277";
+      const songInfo = "_songInfo_11inc_292";
+      const artistName = "_artistName_11inc_306";
       const styles$1 = {
-        "quick-upload-tabs": "_quick-upload-tabs_1rogj_22",
+        "quick-upload-tabs": "_quick-upload-tabs_11inc_22",
         select,
-        "singer-choose": "_singer-choose_1rogj_26",
-        "singer-choose-form": "_singer-choose-form_1rogj_26",
-        "btn-group": "_btn-group_1rogj_32",
-        "option-label": "_option-label_1rogj_36",
-        "singer-name": "_singer-name_1rogj_43",
-        "tag-group": "_tag-group_1rogj_46",
+        "singer-choose": "_singer-choose_11inc_26",
+        "singer-choose-form": "_singer-choose-form_11inc_26",
+        "btn-group": "_btn-group_11inc_31",
+        "option-label": "_option-label_11inc_36",
+        "singer-name": "_singer-name_11inc_43",
+        "tag-group": "_tag-group_11inc_46",
         tag,
-        "upload-list": "_upload-list_1rogj_50",
-        "upload-footer": "_upload-footer_1rogj_54",
-        "upload-stats": "_upload-stats_1rogj_62",
-        "size-text": "_size-text_1rogj_67",
+        "upload-list": "_upload-list_11inc_50",
+        "upload-footer": "_upload-footer_11inc_54",
+        "upload-stats": "_upload-stats_11inc_62",
+        "size-text": "_size-text_11inc_67",
         divider,
-        "upload-confirm": "_upload-confirm_1rogj_75",
-        "confirm-item": "_confirm-item_1rogj_79",
+        "upload-confirm": "_upload-confirm_11inc_75",
+        "confirm-item": "_confirm-item_11inc_79",
         label,
         value,
         size,
@@ -22726,7 +22840,8 @@ jsxRuntimeExports.jsx(SongList$1, { ref: songListRef })
         songInfo,
         artistName
       };
-      function SingerChoose({ singerList, onChoose, loading }) {
+      function SingerChoose({ defaultSingerList, onChoose }) {
+        const { singerList, loading } = useGetSingerList();
         const renderSingerList = useMemo(() => {
           return singerList.map((item) => {
             const { id, name: name2, count: count2, size: size2, sizeDesc } = item;
@@ -22751,12 +22866,26 @@ jsxRuntimeExports.jsx(Tag, { color: "green", className: styles$1["tag"], childre
           const { singer } = values;
           onChoose([...singer]);
         };
+        const [quickImportLoading, setQuickImportLoading] = useState$1(false);
+        const handleQuickImport = async () => {
+          try {
+            setQuickImportLoading(true);
+            const values = await formRef.getFieldsValue();
+            const { singer } = values;
+            console.log("singer", singer);
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setQuickImportLoading(false);
+          }
+        };
         return jsxRuntimeExports.jsx("div", { className: styles$1["singer-choose"], children: loading ? jsxRuntimeExports.jsx(Spin, { tip: "正在加载中" }) : jsxRuntimeExports.jsxs(
           Form,
           {
             form: formRef,
             onFinish: handleChoose,
             className: styles$1["singer-choose-form"],
+            initialValues: { singer: defaultSingerList },
             children: [
 jsxRuntimeExports.jsx(Form.Item, { name: "singer", label: "歌手", children: jsxRuntimeExports.jsx(
                 Select,
@@ -22770,7 +22899,37 @@ jsxRuntimeExports.jsx(Form.Item, { name: "singer", label: "歌手", children: js
                   getPopupContainer: (trigger) => trigger.parentNode
                 }
               ) }),
-jsxRuntimeExports.jsx(Form.Item, { style: { marginBottom: 0 }, children: jsxRuntimeExports.jsx("div", { className: styles$1["btn-group"], children: jsxRuntimeExports.jsx(Button, { type: "primary", htmlType: "submit", children: "选择" }) }) })
+jsxRuntimeExports.jsx(Form.Item, { noStyle: true, shouldUpdate: true, children: ({ getFieldValue }) => {
+                const singer = getFieldValue("singer") || [];
+                return jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: styles$1["btn-group"],
+                    style: { marginTop: "auto" },
+                    children: [
+jsxRuntimeExports.jsx(
+                        Button,
+                        {
+                          type: "primary",
+                          onClick: handleQuickImport,
+                          loading: quickImportLoading,
+                          disabled: !singer.length,
+                          children: "一键导入"
+                        }
+                      ),
+jsxRuntimeExports.jsx(
+                        Button,
+                        {
+                          type: "primary",
+                          htmlType: "submit",
+                          disabled: !singer.length,
+                          children: "选择"
+                        }
+                      )
+                    ]
+                  }
+                );
+              } })
             ]
           }
         ) });
@@ -22914,64 +23073,67 @@ jsxRuntimeExports.jsx("span", { className: styles$1["size-text"], children: form
               return;
             }
             const proArr = ids.map(async (id) => {
-              const res = await getCDNConfig(id);
-              return res.data;
+              const res2 = await getCDNConfig(id);
+              return res2.data;
             });
             let allConfig = await Promise.all(proArr);
             allConfig = allConfig.flat();
             const allConfigMap = Object.fromEntries(
               allConfig.map((item) => [item.id, item])
             );
-            const allInfo = await getSongInfoList$1(allConfig.map((item) => item.id));
+            const privileges = [];
+            const songs2 = [];
+            const res = await getSongInfoList(allConfig.map((item) => item.id));
+            if (res.code === 200) {
+              privileges.push(...res.privileges);
+              songs2.push(...res.songs);
+            }
+            const songsMap = Object.fromEntries(songs2.map((s) => [s.id, s]));
             const songList22 = [];
-            allInfo.map(({ privileges, songs: songs2 }) => {
-              privileges.forEach((p) => {
-                const otherInfo = allConfigMap[p.id] || {};
-                const defaultItem = mergeObjects(
-                  { ...otherInfo, artists: void 0 },
-                  {
-                    id: p.id,
-                    name: "",
-                    album: "",
-                    albumid: 0,
-                    artists: "",
-                    bitrate: 9e4,
-                    tns: "",
+            privileges.forEach((p) => {
+              const otherInfo = allConfigMap[p.id] || {};
+              const defaultItem = mergeObjects(
+                { ...otherInfo, artists: void 0 },
+                {
+                  id: p.id,
+                  name: "",
+                  album: "",
+                  albumid: 0,
+                  artists: "",
+                  bitrate: 9e4,
+                  tns: "",
 dt: formatDuration$1(0),
-                    filename: "",
-                    picUrl: "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
-                    isNoCopyright: p.st < 0,
-                    isVIP: false,
-                    isPay: false,
-                    uploaded: p.cs,
-                    needMatch: otherInfo.name == void 0
-                  }
-                );
-                const songsMap = Object.fromEntries(songs2.map((s) => [s.id, s]));
-                const song = songsMap[p.id];
-                if (song) {
-                  const artists = getArtistTextInSongDetail(song);
-                  mergeObjects(defaultItem, song, {
-                    album: getAlbumTextInSongDetail(song),
-                    artists,
-                    dt: formatDuration$1(song.dt),
-                    filename: song.name ? `${song.name}` : void 0,
-                    picUrl: song.al?.picUrl || "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
-                    isVIP: song.fee === 1,
-                    isPay: song.fee === 4
-                  });
+                  filename: "",
+                  picUrl: "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
+                  isNoCopyright: p.st < 0,
+                  isVIP: false,
+                  isPay: false,
+                  uploaded: p.cs,
+                  needMatch: otherInfo.name == void 0
                 }
-                if (otherInfo.name) {
-                  defaultItem.name = otherInfo.name;
-                  defaultItem.album ||= otherInfo.al?.name || otherInfo.album || "";
-                  defaultItem.artists ||= otherInfo.ar || otherInfo.artists?.join?.();
-                  defaultItem.filename ||= `${defaultItem.name}.${otherInfo.ext}` || "未知.flac";
-                }
-                songList22.push(defaultItem);
-              });
+              );
+              const song = songsMap[p.id];
+              if (song) {
+                const artists = getArtistTextInSongDetail(song);
+                mergeObjects(defaultItem, song, {
+                  album: getAlbumTextInSongDetail(song),
+                  artists,
+                  dt: formatDuration$1(song.dt),
+                  filename: song.name ? `${song.name}` : void 0,
+                  picUrl: song.al?.picUrl || "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
+                  isVIP: song.fee === 1,
+                  isPay: song.fee === 4
+                });
+              }
+              if (otherInfo.name) {
+                defaultItem.name = otherInfo.name;
+                defaultItem.album ||= otherInfo.al?.name || otherInfo.album || "";
+                defaultItem.artists ||= otherInfo.ar || otherInfo.artists?.join?.();
+                defaultItem.filename ||= `${defaultItem.name}.${otherInfo.ext}` || "未知.flac";
+              }
+              songList22.push(defaultItem);
             });
             setSongList(songList22);
-            setFilteredSongList(songList22);
           } catch (error) {
             console.log("error", error);
             message.error("获取歌曲信息失败", error.message);
@@ -22980,7 +23142,6 @@ dt: formatDuration$1(0),
           }
         };
         useEffect(() => {
-          console.log("singerList", singerList);
           getSongList(singerList);
         }, [singerList]);
         const filterConfig = {
@@ -23222,7 +23383,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
             setDownloading(true);
             const ids = filteredSongList.map((item) => item.id);
             console.log("ids", ids);
-            const res = await getSongUrl$1(ids);
+            const res = await getSongUrl(ids);
             console.log("res", res);
             if (res.code === 200) {
               const songs2 = res.data.map((item, index2) => ({
@@ -23446,10 +23607,8 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
         const { visible, close } = useVisible(
           {
             onOpen() {
-              getSingerList();
             },
             onReset() {
-              setSingerList([]);
               setCurrentTab("1");
             }
           },
@@ -23461,25 +23620,6 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
             return msgError("请选择歌手");
           }
           setCurrentTab(key);
-        };
-        const [singerList, setSingerList] = useState$1([]);
-        const [loading, setLoading] = useState$1(false);
-        const getSingerList = async () => {
-          try {
-            setLoading(true);
-            const res = await getArtists();
-            const res2 = await getArtists2();
-            console.log("res2", res2);
-            const list = [
-              ...new Map([...res2, ...res].map((item) => [item.id, item])).values()
-            ];
-            console.log("list", list);
-            setSingerList(list);
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
         };
         const [chooseList, setChooseList] = useState$1([]);
         const handleChoose = (value2) => {
@@ -23495,6 +23635,7 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
             centered: true,
             open: visible,
             footer: null,
+            destroyOnHidden: true,
             onCancel: close,
             children: jsxRuntimeExports.jsxs(
               Tabs,
@@ -23507,12 +23648,11 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
 jsxRuntimeExports.jsx(TabPane, { tab: "歌曲选择", children: jsxRuntimeExports.jsx(
                     SingerChoose,
                     {
-                      singerList,
-                      loading,
+                      defaultSingerList: chooseList,
                       onChoose: handleChoose
                     }
                   ) }, "1"),
-jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExports.jsx(UploadList, { singerList: chooseList }, currentTab) }, "2")
+jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExports.jsx(UploadList, { singerList: chooseList }) }, "2")
                 ]
               }
             )
@@ -23520,16 +23660,6 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
         );
       }
       const QuickUpload$1 = forwardRef(QuickUpload);
-      const getAlbumSongList = (id) => weapiRequest(`/api/v1/album/${id}`, {
-        data: {}
-      });
-      const getAlbumDetail = async (id) => {
-        return weapiRequest(`/api/album/${id}`, {
-          data: {
-            id
-          }
-        });
-      };
       const AlbumTab = () => {
         const [albumId, setAlbumId] = useState$1("242274622");
         const handleGetAlbumSongList = async () => {
@@ -23564,72 +23694,6 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumSongList
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumDetail, children: "获取专辑详情" })
         ] }) }) });
       };
-      const getArtistTopSongList = (id) => weapiRequest("/api/artist/top/song", {
-        data: {
-          id,
-          limit: 1e3,
-          offset: 0
-        }
-      });
-      const getArtistAllSongList = async (id) => {
-        try {
-          let more = true;
-          const songs2 = [];
-          let offset = 0;
-          while (more) {
-            const res = await weapiRequest("/api/v1/artist/songs", {
-              data: {
-                id,
-                limit: 200,
-                private_cloud: "true",
-                work_type: 1,
-                order: "hot",
-offset
-              }
-            });
-            if (res.code != 200) {
-              throw new Error(res.message || res.msg || "获取歌手全部歌曲失败");
-            }
-            songs2.push(...res.songs);
-            more = res.more;
-            offset += 200;
-          }
-          return {
-            code: 200,
-            msg: "获取歌手全部歌曲成功",
-            songs: songs2
-          };
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
-      };
-      const getArtistAlbumList = async (id) => {
-        let more = true;
-        let limit = 200;
-        let offset = 0;
-        const albumList = [];
-        while (more) {
-          const res = await weapiRequest(`/api/artist/albums/${id}`, {
-            data: {
-              id,
-              limit,
-              offset
-            }
-          });
-          if (res.code != 200) {
-            throw new Error(res.message || res.msg || "获取歌手专辑失败");
-          }
-          albumList.push(...res.hotAlbums);
-          more = res.more;
-          offset += limit;
-        }
-        return {
-          code: 200,
-          msg: "获取歌手专辑成功",
-          data: albumList
-        };
-      };
       const ArtistTab = () => {
         const [artistId, setArtistId] = useState$1("3684");
         const handleGetArtistTopSongList = async () => {
@@ -23649,6 +23713,9 @@ offset
           try {
             const res = await getArtistAlbumList(artistId);
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取歌手专辑成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
           }
@@ -23676,6 +23743,9 @@ offset
           try {
             const res = await getArtistAllSongList(artistId);
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取歌手全部歌曲成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
           }
@@ -23690,10 +23760,10 @@ jsxRuntimeExports.jsx(
               onChange: (e) => setArtistId(e.target.value)
             }
           ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistTopSongList, children: "获取歌手热门歌曲列表" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbum, children: "获取歌手专辑" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbumPic, children: "下载专辑封面" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAllSongList, children: "获取歌手全部歌曲" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistTopSongList, children: "获取歌手热门歌曲列表" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAlbum, children: "获取歌手专辑" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAlbumPic, children: "下载专辑封面" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAllSongList, children: "获取歌手全部歌曲" })
         ] }) }) });
       };
       const CloudTab = () => {
@@ -23735,10 +23805,10 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAllSong
             console.log("error", error);
           }
         };
-        const [neteaseCloudSongId, setNeteaseCloudSongId] = useState$1("");
-        const handleNeteaseCloudToCloud = async () => {
+        const [neteaseMusicSongId, setNeteaseMusicSongId] = useState$1("1846094285");
+        const handleNeteaseMusicToCloud = async () => {
           try {
-            const res = await neteaseCloudToCloud(neteaseCloudSongId);
+            const res = await neteaseMusicToCloud(neteaseMusicSongId.split(","));
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
@@ -23797,8 +23867,16 @@ jsxRuntimeExports.jsx(
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleUploadLocalSong, children: "上传本地歌曲到云盘" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "测试网易云音乐转存云盘", children: jsxRuntimeExports.jsxs(Space, { children: [
-jsxRuntimeExports.jsx(Input, { placeholder: "请输入网易云音乐歌曲Id" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleNeteaseCloudToCloud, children: "测试网易云音乐转存云盘" })
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                addonBefore: "歌曲Id",
+                placeholder: "请输入网易云音乐歌曲Id",
+                value: neteaseMusicSongId,
+                onChange: (e) => setNeteaseMusicSongId(e.target.value)
+              }
+            ),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleNeteaseMusicToCloud, children: "测试网易云音乐转存云盘" })
           ] }) })
         ] });
       };
@@ -23902,26 +23980,6 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleEmbedFlacPicture
 jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" })
         ] }) }) });
       };
-      const getQrKey = () => weapiRequest("/api/login/qrcode/unikey", {
-        data: {
-          noCheckToken: 1,
-          type: 1
-        }
-      });
-      const getQrCode = (key) => {
-        const loginUrl = `https://music.163.com/login?codekey=${key}`;
-        return generateQRCode(loginUrl);
-      };
-      const getQrStatus = (key) => weapiFetch("/api/login/qrcode/client/login", {
-        data: {
-          key,
-          type: 1
-        },
-        originResponse: true
-      });
-      const getUserAccount = () => weapiRequest("/api/nuser/account/get", {
-        data: {}
-      });
       const LoginTab = () => {
         const handleGetUserAccount = async () => {
           console.log("获取用户信息");
@@ -23982,48 +24040,6 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
         document.getElementById("qrcode-container").innerHTML = "";
         document.getElementById("qrcode-container").appendChild(qrImg);
       };
-      const getPlaylistList = (uid = getUser().userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
-        data: {
-          limit,
-          offset,
-          uid
-        }
-      });
-      const createPlaylist = (name2) => weapiRequest("/api/playlist/create", {
-        data: {
-          name: name2
-        }
-      });
-      const addSongToPlaylist = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
-        data: {
-          pid,
-trackIds,
-op: "add"
-}
-      });
-      const getPlaylistAllData = async (id) => {
-        try {
-          const detailRes = await weapiRequest("/api/v6/playlist/detail", {
-            data: {
-              id,
-              offset: 0,
-              total: true,
-              n: 1e5,
-              s: 8
-            }
-          });
-          console.log("detailRes", detailRes);
-          const trackIds = detailRes.playlist.trackIds.map((item) => item.id);
-          const res = await getSongInfoList(trackIds);
-          if (res[0]?.code != 200) {
-            msgError(res[0]?.msg || "获取歌单数据失败");
-            throw new Error(res[0]?.msg || "获取歌单数据失败");
-          }
-          return res[0].songs;
-        } catch (error) {
-          throw error;
-        }
-      };
       const PlaylistTab = () => {
         const [songListName, setSongListName] = useState$1("");
         const handleCreateSongList = async () => {
@@ -24061,10 +24077,45 @@ op: "add"
         const [playlistId, setPlaylistId] = useState$1("13508631377");
         const handleGetPlaylist = async () => {
           try {
-            const res = await getPlaylistAllData(playlistId);
+            const songs2 = await getPlaylistAllData(playlistId);
+            console.log("songs", songs2);
+            msgSuccess$1(
+              "获取歌单信息成功, 共" + songs2.length + "首歌曲, 请打开控制台查看。"
+            );
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const handlePlaylistToCloud = async () => {
+          console.log("歌单歌曲转云盘");
+          const uploadMessageKey = "playlist-to-cloud";
+          try {
+            const songs2 = await getPlaylistAllData(playlistId);
+            const songIds = songs2.map((song) => song.id);
+            message.loading({
+              content: "开始上传歌单歌曲到云盘，请稍候...",
+              key: uploadMessageKey,
+              duration: 0
+            });
+            const res = await neteaseMusicToCloud(songIds, {
+              onChange: (progress) => {
+                message.loading({
+                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首`,
+                  key: uploadMessageKey,
+                  duration: 0
+                });
+              },
+              onComplete: (result) => {
+                message.destroy(uploadMessageKey);
+                msgSuccess$1(
+                  `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.failedCount}首`
+                );
+              }
+            });
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
+            message.destroy(uploadMessageKey);
           }
         };
         return jsxRuntimeExports.jsxs(Form, { children: [
@@ -24122,7 +24173,8 @@ jsxRuntimeExports.jsx(
                 onChange: (e) => setPlaylistId(e.target.value)
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" })
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" }),
+jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handlePlaylistToCloud, children: "歌单歌曲转云盘" })
           ] }) })
         ] });
       };
@@ -24154,7 +24206,7 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylist, chi
         const [searchValue, setSearchValue] = useState$1("");
         const handleSearchArtist = async () => {
           try {
-            const res = await searchArtist$1(searchValue);
+            const res = await searchArtist(searchValue);
             console.log("res", res);
             if (res.code === 200) {
               msgSuccess$1("搜索成功,请打开控制台查看！");
@@ -24268,11 +24320,11 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleLocalMatch, ch
         }
       ];
       const SongTab = () => {
-        const [songId, setSongId] = useState$1("2608471890");
+        const [songId, setSongId] = useState$1("2608471890,1846094285");
         const handleGetSongUrl = async () => {
           console.log("获取歌曲URL");
           try {
-            const res = await getSongUrl([songId]);
+            const res = await getSongUrl$1([songId]);
             console.log("res", res);
             if (res.code === 200) {
               const url = res.data[0].url;
@@ -24286,8 +24338,11 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleLocalMatch, ch
         const handleGetSongInfo = async () => {
           console.log("获取歌曲信息");
           try {
-            const res = await getSongInfoList([songId]);
+            const res = await getSongInfoList(songId.split(","));
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
           }
@@ -24319,10 +24374,10 @@ jsxRuntimeExports.jsx(
               onChange: (e) => setSongId(e.target.value)
             }
           ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongInfo, children: "获取歌曲信息" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongInfo, children: "获取歌曲信息" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" })
         ] }) }) });
       };
       const TestModal = forwardRef((props, ref) => {
@@ -24457,7 +24512,7 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
       function App() {
         const getUserInfo = async () => {
           try {
-            const res = await getUserAccount$1();
+            const res = await getUserAccount();
             console.log("res", res);
             if (res.code === 200) {
               const globalThis2 = getGlobalThis();
@@ -24985,7 +25040,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-fijEDUkS-Btds6QFq.js", ['./__monkey.entry-ucemSt9a.js', './AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js'], (function (exports, module) {
+System.register("./MpegParser-Q4kvrWBl-BcEvWihY.js", ['./__monkey.entry-67YxFqLk.js', './AbstractID3Parser-BNs0Y4wp-hI-hajNW.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-rrGf87Wx-8_PR7UY8.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -25580,7 +25635,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-BHAKpQrM-mZ-bXpsP.js", ['./__monkey.entry-ucemSt9a.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-DkGIK_Vu-CxV7Zevj.js", ['./__monkey.entry-67YxFqLk.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -26087,7 +26142,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-Chmtic8g-NwbtTKYu.js", ['./__monkey.entry-ucemSt9a.js', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-hKq1cQbV-CAPaXNLr.js", ['./__monkey.entry-67YxFqLk.js', './ID3v2Parser-rrGf87Wx-8_PR7UY8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -26261,7 +26316,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-tLWgD7Q3-CNNv3rxN.js", ['./__monkey.entry-ucemSt9a.js', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-BWfPctLm-C2upB9H_.js", ['./__monkey.entry-67YxFqLk.js', './ID3v2Parser-rrGf87Wx-8_PR7UY8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -26432,7 +26487,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-CSbkxoAz-Cf7YlM74.js", ['./__monkey.entry-ucemSt9a.js', './AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-CTOVHjAB-CGP3l0RO.js", ['./__monkey.entry-67YxFqLk.js', './AbstractID3Parser-BNs0Y4wp-hI-hajNW.js', './ID3v2Parser-rrGf87Wx-8_PR7UY8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -26530,7 +26585,7 @@ System.register("./DsfParser-CSbkxoAz-Cf7YlM74.js", ['./__monkey.entry-ucemSt9a.
   };
 }));
 
-System.register("./FlacParser-DVsN4-Yg-MIeQffqw.js", ['./__monkey.entry-ucemSt9a.js', './VorbisParser-DnSn1p2N-DCPV-YE-.js', './AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js'], (function (exports, module) {
+System.register("./FlacParser-tejzzs9v-BcHagXDf.js", ['./__monkey.entry-67YxFqLk.js', './VorbisParser-vW_cCQ_W--vzSlwX0.js', './AbstractID3Parser-BNs0Y4wp-hI-hajNW.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-rrGf87Wx-8_PR7UY8.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -26682,7 +26737,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-Dfcnu8Ii-BMVcYXGf.js", ['./__monkey.entry-ucemSt9a.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-iCDETFuS-BibFNF4D.js", ['./__monkey.entry-67YxFqLk.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -27289,7 +27344,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-DCTVVhRS-VKXjSfcz.js", ['./__monkey.entry-ucemSt9a.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-CoQTT_aD-D5SsE88J.js", ['./__monkey.entry-67YxFqLk.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -28120,7 +28175,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-BDSoOa2H-DyaZ8pg1.js", ['./__monkey.entry-ucemSt9a.js', './AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js'], (function (exports, module) {
+System.register("./MusepackParser-CjWD1NEC-CAQSE6X9.js", ['./__monkey.entry-67YxFqLk.js', './AbstractID3Parser-BNs0Y4wp-hI-hajNW.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-rrGf87Wx-8_PR7UY8.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -28397,7 +28452,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js", ['./__monkey.entry-ucemSt9a.js', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-BNs0Y4wp-hI-hajNW.js", ['./__monkey.entry-67YxFqLk.js', './ID3v2Parser-rrGf87Wx-8_PR7UY8.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -28461,7 +28516,7 @@ System.register("./AbstractID3Parser-DnPZ_fIs-iEjrkqJQ.js", ['./__monkey.entry-u
   };
 }));
 
-System.register("./OggParser-DmwXEWHr-C79M4iGG.js", ['./__monkey.entry-ucemSt9a.js', './VorbisParser-DnSn1p2N-DCPV-YE-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-YkLKbfKp-m4PsLIWx.js", ['./__monkey.entry-67YxFqLk.js', './VorbisParser-vW_cCQ_W--vzSlwX0.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -28736,7 +28791,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-DnSn1p2N-DCPV-YE-.js", ['./__monkey.entry-ucemSt9a.js'], (function (exports, module) {
+System.register("./VorbisParser-vW_cCQ_W--vzSlwX0.js", ['./__monkey.entry-67YxFqLk.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -28952,7 +29007,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-CP0_mtDg-CPn9QAJI.js", ['./__monkey.entry-ucemSt9a.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-Au4rlAy0-D3lWIREv.js", ['./__monkey.entry-67YxFqLk.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -29132,7 +29187,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-CespDsAF-5WViinAB.js", ['./__monkey.entry-ucemSt9a.js', './ID3v2Parser-BZQPrvNU-B7n0XwO5.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-CEx990qn-Db8cPsuQ.js", ['./__monkey.entry-67YxFqLk.js', './ID3v2Parser-rrGf87Wx-8_PR7UY8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -29405,7 +29460,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-BZQPrvNU-B7n0XwO5.js", ['./__monkey.entry-ucemSt9a.js'], (function (exports, module) {
+System.register("./ID3v2Parser-rrGf87Wx-8_PR7UY8.js", ['./__monkey.entry-67YxFqLk.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
