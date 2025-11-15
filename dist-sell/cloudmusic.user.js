@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-CIDf52ym.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-COjCwD6V.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,9 +44,9 @@ System.register("./__entry.js", ['./__monkey.entry-CIDf52ym.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-CIDf52ym.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-COjCwD6V.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useRef, useState$1, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Progress, ConfigProvider, Select, Tooltip, Spin, Empty, Card, Descriptions, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, GithubOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CopyrightOutlined, FileOutlined, PictureOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined;
+  var forwardRef, useRef, useState$1, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Spin, Descriptions, Progress, ConfigProvider, Select, Tooltip, Empty, Card, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CopyrightOutlined, FileOutlined, PictureOutlined, CheckOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
@@ -74,14 +74,14 @@ System.register("./__monkey.entry-CIDf52ym.js", ['react', 'antd', 'react-dom', '
       Tabs = module.Tabs;
       Pagination = module.Pagination;
       Upload = module.Upload;
+      Spin = module.Spin;
+      Descriptions = module.Descriptions;
       Progress = module.Progress;
       ConfigProvider = module.ConfigProvider;
       Select = module.Select;
       Tooltip = module.Tooltip;
-      Spin = module.Spin;
       Empty = module.Empty;
       Card = module.Card;
-      Descriptions = module.Descriptions;
     }, module => {
       require$$0$1 = module.default;
     }, module => {
@@ -93,7 +93,11 @@ System.register("./__monkey.entry-CIDf52ym.js", ['react', 'antd', 'react-dom', '
       SaveOutlined = module.SaveOutlined;
       DownloadOutlined = module.DownloadOutlined;
       UploadOutlined = module.UploadOutlined;
+      LinkOutlined = module.LinkOutlined;
       GithubOutlined = module.GithubOutlined;
+      StarOutlined = module.StarOutlined;
+      ForkOutlined = module.ForkOutlined;
+      EyeOutlined = module.EyeOutlined;
       InboxOutlined = module.InboxOutlined;
       CopyOutlined = module.CopyOutlined;
       PauseCircleFilled = module.PauseCircleFilled;
@@ -101,6 +105,7 @@ System.register("./__monkey.entry-CIDf52ym.js", ['react', 'antd', 'react-dom', '
       CopyrightOutlined = module.CopyrightOutlined;
       FileOutlined = module.FileOutlined;
       PictureOutlined = module.PictureOutlined;
+      CheckOutlined = module.CheckOutlined;
       CloudUploadOutlined = module.CloudUploadOutlined;
       CustomerServiceOutlined = module.CustomerServiceOutlined;
       CodeOutlined = module.CodeOutlined;
@@ -123,7 +128,7 @@ System.register("./__monkey.entry-CIDf52ym.js", ['react', 'antd', 'react-dom', '
 
       const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
-      importCSS(' @charset "UTF-8";._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._search-form_1aabt_1{padding:16px 0}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._album-list-modal_tzijq_1 .ant-modal-body{padding:16px 0 0}._modal-title_tzijq_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_tzijq_12{display:flex;align-items:center;gap:16px}._title-text_tzijq_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_tzijq_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_tzijq_32{display:flex;align-items:center;gap:4px}._stat-label_tzijq_38{color:#8c8c8c}._stat-value_tzijq_42{font-weight:600;color:#262626}._album-info_tzijq_47{display:flex;align-items:center;gap:12px}._album-cover_tzijq_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_tzijq_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_tzijq_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_tzijq_68:hover{color:#1890ff}._album-alias_tzijq_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_tzijq_89{display:flex;align-items:center;gap:8px}._album-tag_tzijq_95{margin:0}._album-company_tzijq_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._singer-details_tzijq_109{display:flex;flex-direction:column;gap:2px}._singer-name_tzijq_115{font-size:13px;font-weight:500;color:#262626}._singer-id_tzijq_121{font-size:12px;color:#8c8c8c}._album-id_tzijq_126{font-size:12px}._album-table_tzijq_130 .ant-table-body{scrollbar-width:thin}._search-area_tzijq_134{padding:0 24px 16px}._modal-footer_tzijq_138{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_tzijq_145{font-size:13px;color:#595959}._selected-extra_tzijq_150{margin-left:4px;color:#8c8c8c}._songInfoColumn_18snm_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_18snm_1 ._songIndex_18snm_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_18snm_1 ._songCover_18snm_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover{transform:scale(1.05)}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._btnWrapper_18snm_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._songCoverImg_18snm_33{filter:brightness(.85)}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._songCoverImg_18snm_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_18snm_1 ._songInfo_18snm_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._songName_18snm_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84,._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84{max-width:160px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_18snm_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_18snm_1 10s linear infinite}._currentSong_18snm_102 td{background:var(--background)!important;animation:_rotate_18snm_1 10s linear infinite}@keyframes _rotate_18snm_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_18snm_121{background-color:#f06161}._matchError_18snm_121 td{background-color:#f06161!important}._footer_18snm_128{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_18snm_128 ._actions_18snm_136{display:flex;gap:8px}._stats_18snm_141{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_18snm_141 ._size_18snm_149{color:#666}._stats_18snm_141 ._divider_18snm_152{color:#999;margin:0 4px}._stats_18snm_141 .ant-tag{margin:0}._playlist_18snm_160 .ant-modal-body{padding-bottom:0}._autoAddContent_18snm_164 ._title_18snm_164{font-size:16px;margin-bottom:8px}._autoAddContent_18snm_164 ._statsWrapper_18snm_168{margin-bottom:16px}._autoAddContent_18snm_164 ._statsContent_18snm_171{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._label_18snm_178{color:#666}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._value_18snm_181{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_18snm_164 ._listHeader_18snm_186{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_18snm_164 ._listWrapper_18snm_192{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_18snm_164 ._listItem_18snm_213{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_18snm_164 ._listItem_18snm_213:hover{background:#f5f5f5}._autoAddContent_18snm_164 ._listItem_18snm_213:last-child{margin-bottom:0}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemName_18snm_229{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemCount_18snm_235{color:#1890ff;margin-left:8px}._deleteConfirmation_18snm_240{font-size:14px}._deleteConfirmation_18snm_240 ._title_18snm_164{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_18snm_240 ._title_18snm_164 ._count_18snm_248{color:#1890ff}._deleteConfirmation_18snm_240 ._songs_18snm_251{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:hover{background:#f0f0f0}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:not(:last-child){margin-bottom:4px}._deleteConfirmation_18snm_240 ._warning_18snm_273{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._text_18snm_280{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._icon_18snm_287{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_18snm_301{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_18snm_301 ._singer-option-content_18snm_314{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-name_18snm_329{font-size:14px}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-id_18snm_332{font-size:13px}._singer-option_18snm_301:hover ._singer-option-content_18snm_314{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_18snm_340{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_18snm_340 ._song-name_18snm_346{font-size:14px;color:#333;font-weight:500}._song-label_18snm_340 ._tag-group_18snm_351{display:flex;gap:8px;flex-wrap:wrap}._song-option_18snm_357{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_18snm_357:hover{background-color:#f5f5f5}._song-option_18snm_357 ._song-info_18snm_370{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_18snm_357 ._song-name_18snm_346{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_18snm_357 ._tag-group_18snm_351{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_18snm_357 ._tag-group_18snm_351 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_18snm_357 ._album-cover_18snm_399{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_18snm_357 ._album-cover_18snm_399:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_18snm_415{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_18snm_415 ._song-info_18snm_370{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._artist-info_18snm_431{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._album-info_18snm_439{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._githubContainer_b3krt_2{display:flex;flex-direction:column;align-items:center;padding:20px;text-align:center}._githubContainer_b3krt_2 ._userInfo_b3krt_9{display:flex;align-items:center;gap:16px;margin-bottom:20px}._githubContainer_b3krt_2 ._username_b3krt_15{margin:0}._githubContainer_b3krt_2 ._starCount_b3krt_18{display:block;color:#666;font-size:14px;margin-top:4px}._githubContainer_b3krt_2 ._bio_b3krt_24{color:#666;margin-bottom:20px}._githubContainer_b3krt_2 ._features_b3krt_28{width:100%;margin-bottom:24px;text-align:left}._githubContainer_b3krt_2 ._features_b3krt_28 h5{text-align:center;margin-bottom:16px}._githubContainer_b3krt_2 ._featureList_b3krt_37{list-style:none;padding:0;margin:0;max-height:300px;overflow-y:auto}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar{width:6px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-track{background-color:#f5f5f5}._githubContainer_b3krt_2 ._featureList_b3krt_37 li{margin-bottom:12px;font-size:14px;line-height:1.5;color:#666}._githubContainer_b3krt_2 ._profileButton_b3krt_61{background:#24292e;border-color:#24292e}._githubContainer_b3krt_2 ._profileButton_b3krt_61:hover{background:#2f363d;border-color:#2f363d}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_15nrq_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_15nrq_1 ._cover_15nrq_8{width:60px;height:60px;border-radius:6px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_15nrq_1 ._cover_15nrq_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_15nrq_1 ._cover_15nrq_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_15nrq_1 ._cover_15nrq_8:hover:before{opacity:1}._playlist-info_15nrq_1 ._cover_15nrq_8:active{transform:scale(1.02)}._playlist-info_15nrq_1 ._info_15nrq_40{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_15nrq_1 ._info_15nrq_40 ._name_15nrq_47{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_15nrq_1 ._info_15nrq_40 ._creator_15nrq_58{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-item_15nrq_69{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_15nrq_69:hover{background-color:#fafafa!important}._playlist-item_15nrq_69:active,._playlist-item_15nrq_69:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_11inc_22 ._select_11inc_22{width:100%}._singer-choose_11inc_26 ._singer-choose-form_11inc_26{display:flex;flex-direction:column;height:400px}._singer-choose_11inc_26 ._singer-choose-form_11inc_26 ._btn-group_11inc_31{display:flex;justify-content:flex-end;gap:16px}._singer-choose_11inc_26 ._option-label_11inc_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_11inc_26 ._option-label_11inc_36 ._singer-name_11inc_43{font-weight:500}._singer-choose_11inc_26 ._option-label_11inc_36 ._tag-group_11inc_46 ._tag_11inc_46:not(:last-child){margin-right:8px}._upload-list_11inc_50 .ant-table{margin:16px 0}._upload-footer_11inc_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_11inc_62{color:#666;font-size:13px;margin-right:auto}._upload-stats_11inc_62 ._size-text_11inc_67{color:#999}._upload-stats_11inc_62 ._divider_11inc_70{margin:0 8px;color:#d9d9d9}._upload-confirm_11inc_75{padding:16px 0;font-size:14px}._upload-confirm_11inc_75 ._confirm-item_11inc_79{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_11inc_75 ._confirm-item_11inc_79:last-child{margin-bottom:0}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._label_11inc_87{color:#666;width:80px;flex-shrink:0}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._value_11inc_92{color:#333;font-weight:500}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._value_11inc_92 ._size_11inc_67{margin-left:4px;color:#999;font-weight:400}._upload-progress_11inc_102 ._progress-header_11inc_102{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_11inc_102 ._progress-header_11inc_102 ._progress-info_11inc_109{font-size:14px;color:#333}._upload-progress_11inc_102 ._progress-header_11inc_102 ._percentage_11inc_113{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_11inc_102 ._progress-list_11inc_118{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123:last-child{border-bottom:none}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133{flex:1;min-width:0;padding-right:16px}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133 ._name_11inc_138{font-size:14px;color:#333}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133 ._artist_11inc_142{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_11inc_148 .ant-modal-body{padding:24px}._uploadProgressModal_11inc_148 ._progressContent_11inc_151{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157 ._percentage_11inc_113{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157 ._detail_11inc_167{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180{text-align:center}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180 ._label_11inc_87{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180 ._value_11inc_92 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_11inc_148 ._failedList_11inc_193{width:100%}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedTitle_11inc_196{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202 ._songName_11inc_208{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202 ._errorMsg_11inc_213{font-size:12px;color:#ff4d4f}._uploadModal_11inc_218 .ant-modal-body{padding:24px}._progressSection_11inc_222{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_11inc_157{display:flex;flex-direction:column;align-items:center}._progressInfo_11inc_157 ._percentage_11inc_113{font-size:24px;font-weight:500;color:#333}._progressInfo_11inc_157 ._count_11inc_241{font-size:14px;color:#666;margin-top:4px}._statsContainer_11inc_172{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_11inc_172 ._statsItem_11inc_180{text-align:center}._statsContainer_11inc_172 ._statsTag_11inc_256{padding:4px 12px;font-size:14px}._songList_11inc_261{max-height:300px;overflow-y:auto;padding-right:4px}._songList_11inc_261::-webkit-scrollbar{width:6px}._songList_11inc_261::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_11inc_261::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_11inc_277{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_11inc_277:not(:last-child){margin-bottom:8px}._songItem_11inc_277:hover{background:#f5f5f5}._songInfo_11inc_292{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_11inc_292 ._songName_11inc_208{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_11inc_292 ._artistName_11inc_306{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
+      importCSS(' ._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._search-form_1aabt_1{padding:16px 0}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._album-list-modal_tzijq_1 .ant-modal-body{padding:16px 0 0}._modal-title_tzijq_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_tzijq_12{display:flex;align-items:center;gap:16px}._title-text_tzijq_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_tzijq_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_tzijq_32{display:flex;align-items:center;gap:4px}._stat-label_tzijq_38{color:#8c8c8c}._stat-value_tzijq_42{font-weight:600;color:#262626}._album-info_tzijq_47{display:flex;align-items:center;gap:12px}._album-cover_tzijq_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_tzijq_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_tzijq_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_tzijq_68:hover{color:#1890ff}._album-alias_tzijq_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_tzijq_89{display:flex;align-items:center;gap:8px}._album-tag_tzijq_95{margin:0}._album-company_tzijq_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._singer-details_tzijq_109{display:flex;flex-direction:column;gap:2px}._singer-name_tzijq_115{font-size:13px;font-weight:500;color:#262626}._singer-id_tzijq_121{font-size:12px;color:#8c8c8c}._album-id_tzijq_126{font-size:12px}._album-table_tzijq_130 .ant-table-body{scrollbar-width:thin}._search-area_tzijq_134{padding:0 24px 16px}._modal-footer_tzijq_138{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_tzijq_145{font-size:13px;color:#595959}._selected-extra_tzijq_150{margin-left:4px;color:#8c8c8c}._songInfoColumn_18snm_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_18snm_1 ._songIndex_18snm_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_18snm_1 ._songCover_18snm_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover{transform:scale(1.05)}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._btnWrapper_18snm_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._songCoverImg_18snm_33{filter:brightness(.85)}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._songCoverImg_18snm_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_18snm_1 ._songInfo_18snm_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._songName_18snm_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84,._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84{max-width:160px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_18snm_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_18snm_1 10s linear infinite}._currentSong_18snm_102 td{background:var(--background)!important;animation:_rotate_18snm_1 10s linear infinite}@keyframes _rotate_18snm_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_18snm_121{background-color:#f06161}._matchError_18snm_121 td{background-color:#f06161!important}._footer_18snm_128{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_18snm_128 ._actions_18snm_136{display:flex;gap:8px}._stats_18snm_141{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_18snm_141 ._size_18snm_149{color:#666}._stats_18snm_141 ._divider_18snm_152{color:#999;margin:0 4px}._stats_18snm_141 .ant-tag{margin:0}._playlist_18snm_160 .ant-modal-body{padding-bottom:0}._autoAddContent_18snm_164 ._title_18snm_164{font-size:16px;margin-bottom:8px}._autoAddContent_18snm_164 ._statsWrapper_18snm_168{margin-bottom:16px}._autoAddContent_18snm_164 ._statsContent_18snm_171{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._label_18snm_178{color:#666}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._value_18snm_181{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_18snm_164 ._listHeader_18snm_186{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_18snm_164 ._listWrapper_18snm_192{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_18snm_164 ._listItem_18snm_213{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_18snm_164 ._listItem_18snm_213:hover{background:#f5f5f5}._autoAddContent_18snm_164 ._listItem_18snm_213:last-child{margin-bottom:0}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemName_18snm_229{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemCount_18snm_235{color:#1890ff;margin-left:8px}._deleteConfirmation_18snm_240{font-size:14px}._deleteConfirmation_18snm_240 ._title_18snm_164{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_18snm_240 ._title_18snm_164 ._count_18snm_248{color:#1890ff}._deleteConfirmation_18snm_240 ._songs_18snm_251{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:hover{background:#f0f0f0}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:not(:last-child){margin-bottom:4px}._deleteConfirmation_18snm_240 ._warning_18snm_273{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._text_18snm_280{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._icon_18snm_287{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_18snm_301{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_18snm_301 ._singer-option-content_18snm_314{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-name_18snm_329{font-size:14px}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-id_18snm_332{font-size:13px}._singer-option_18snm_301:hover ._singer-option-content_18snm_314{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_18snm_340{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_18snm_340 ._song-name_18snm_346{font-size:14px;color:#333;font-weight:500}._song-label_18snm_340 ._tag-group_18snm_351{display:flex;gap:8px;flex-wrap:wrap}._song-option_18snm_357{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_18snm_357:hover{background-color:#f5f5f5}._song-option_18snm_357 ._song-info_18snm_370{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_18snm_357 ._song-name_18snm_346{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_18snm_357 ._tag-group_18snm_351{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_18snm_357 ._tag-group_18snm_351 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_18snm_357 ._album-cover_18snm_399{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_18snm_357 ._album-cover_18snm_399:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_18snm_415{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_18snm_415 ._song-info_18snm_370{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._artist-info_18snm_431{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._album-info_18snm_439{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_15nrq_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_15nrq_1 ._cover_15nrq_8{width:60px;height:60px;border-radius:6px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_15nrq_1 ._cover_15nrq_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_15nrq_1 ._cover_15nrq_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_15nrq_1 ._cover_15nrq_8:hover:before{opacity:1}._playlist-info_15nrq_1 ._cover_15nrq_8:active{transform:scale(1.02)}._playlist-info_15nrq_1 ._info_15nrq_40{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_15nrq_1 ._info_15nrq_40 ._name_15nrq_47{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_15nrq_1 ._info_15nrq_40 ._creator_15nrq_58{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-item_15nrq_69{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_15nrq_69:hover{background-color:#fafafa!important}._playlist-item_15nrq_69:active,._playlist-item_15nrq_69:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_11inc_22 ._select_11inc_22{width:100%}._singer-choose_11inc_26 ._singer-choose-form_11inc_26{display:flex;flex-direction:column;height:400px}._singer-choose_11inc_26 ._singer-choose-form_11inc_26 ._btn-group_11inc_31{display:flex;justify-content:flex-end;gap:16px}._singer-choose_11inc_26 ._option-label_11inc_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_11inc_26 ._option-label_11inc_36 ._singer-name_11inc_43{font-weight:500}._singer-choose_11inc_26 ._option-label_11inc_36 ._tag-group_11inc_46 ._tag_11inc_46:not(:last-child){margin-right:8px}._upload-list_11inc_50 .ant-table{margin:16px 0}._upload-footer_11inc_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_11inc_62{color:#666;font-size:13px;margin-right:auto}._upload-stats_11inc_62 ._size-text_11inc_67{color:#999}._upload-stats_11inc_62 ._divider_11inc_70{margin:0 8px;color:#d9d9d9}._upload-confirm_11inc_75{padding:16px 0;font-size:14px}._upload-confirm_11inc_75 ._confirm-item_11inc_79{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_11inc_75 ._confirm-item_11inc_79:last-child{margin-bottom:0}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._label_11inc_87{color:#666;width:80px;flex-shrink:0}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._value_11inc_92{color:#333;font-weight:500}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._value_11inc_92 ._size_11inc_67{margin-left:4px;color:#999;font-weight:400}._upload-progress_11inc_102 ._progress-header_11inc_102{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_11inc_102 ._progress-header_11inc_102 ._progress-info_11inc_109{font-size:14px;color:#333}._upload-progress_11inc_102 ._progress-header_11inc_102 ._percentage_11inc_113{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_11inc_102 ._progress-list_11inc_118{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123:last-child{border-bottom:none}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133{flex:1;min-width:0;padding-right:16px}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133 ._name_11inc_138{font-size:14px;color:#333}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133 ._artist_11inc_142{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_11inc_148 .ant-modal-body{padding:24px}._uploadProgressModal_11inc_148 ._progressContent_11inc_151{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157 ._percentage_11inc_113{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157 ._detail_11inc_167{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180{text-align:center}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180 ._label_11inc_87{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180 ._value_11inc_92 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_11inc_148 ._failedList_11inc_193{width:100%}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedTitle_11inc_196{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202 ._songName_11inc_208{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202 ._errorMsg_11inc_213{font-size:12px;color:#ff4d4f}._uploadModal_11inc_218 .ant-modal-body{padding:24px}._progressSection_11inc_222{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_11inc_157{display:flex;flex-direction:column;align-items:center}._progressInfo_11inc_157 ._percentage_11inc_113{font-size:24px;font-weight:500;color:#333}._progressInfo_11inc_157 ._count_11inc_241{font-size:14px;color:#666;margin-top:4px}._statsContainer_11inc_172{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_11inc_172 ._statsItem_11inc_180{text-align:center}._statsContainer_11inc_172 ._statsTag_11inc_256{padding:4px 12px;font-size:14px}._songList_11inc_261{max-height:300px;overflow-y:auto;padding-right:4px}._songList_11inc_261::-webkit-scrollbar{width:6px}._songList_11inc_261::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_11inc_261::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_11inc_277{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_11inc_277:not(:last-child){margin-bottom:8px}._songItem_11inc_277:hover{background:#f5f5f5}._songInfo_11inc_292{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_11inc_292 ._songName_11inc_208{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_11inc_292 ._artistName_11inc_306{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
 
       var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
       function getDefaultExportFromCjs(x) {
@@ -6038,7 +6043,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-DH1CNXzG-Bs3HPICM.js');
+            const { MpegParser } = await module.import('./MpegParser-ChX6IoHK-BMgI9OxQ.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -6060,7 +6065,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-q_-eS3Pq-BSUh0j8X.js');
+            const { AsfParser } = await module.import('./AsfParser-FjU502d3-C1YGtDLx.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -6071,7 +6076,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-DgJXVVMB-btZP15uP.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-DxEmeYXK-jonIxzol.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -6082,7 +6087,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-CxXmCPpp-CKynO0b2.js');
+            const { AIFFParser } = await module.import('./AiffParser-HV-RycrF-COHHRDPt.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -6093,7 +6098,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-Bk_LorFx-DReupgPA.js');
+            const { DsfParser } = await module.import('./DsfParser-CswLikju-coD6QZUz.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -6104,7 +6109,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-DvbXO7Vd-PTrMWQzl.js');
+            const { FlacParser } = await module.import('./FlacParser-CbQoapER-C50ojhAJ.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -6115,7 +6120,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-BYsu5PxZ-BqZuW6dj.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-CQPZBiy8-hzpw1LNK.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -6126,7 +6131,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-4cyfAkns-BlixGZA3.js');
+            const { MP4Parser } = await module.import('./MP4Parser-Ci6P44zD-DJS-UAMx.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -6137,7 +6142,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-B6SVadKG-D6jaXN5b.js');
+            const { MusepackParser } = await module.import('./MusepackParser-MkvK05u1-DRyQ_g9u.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -6148,7 +6153,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-B6gMgS6f-DJ_Yjm4d.js');
+            const { OggParser } = await module.import('./OggParser-sp1EMdgq-OXad7bHN.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -6159,7 +6164,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-Bv0PlGcS-DoblAnHp.js');
+            const { WavPackParser } = await module.import('./WavPackParser-C60JTOHK-DxZF22kn.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -6170,7 +6175,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-DzOiUF5A-D-vzKcjB.js');
+            const { WaveParser } = await module.import('./WaveParser-DBYAsSwP-CsEsTz5g.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -17335,7 +17340,7 @@ keywords
       };
       const NOOP = () => {
       };
-      const styles$b = {
+      const styles$a = {
         "song-search-modal": "_song-search-modal_15iqn_1",
         "modal-title": "_modal-title_15iqn_1",
         "title-content": "_title-content_15iqn_6",
@@ -17348,7 +17353,7 @@ keywords
         "song-album": "_song-album_15iqn_46",
         "song-mid-text": "_song-mid-text_15iqn_75"
       };
-      const styles$a = {
+      const styles$9 = {
         "search-form": "_search-form_1aabt_1"
       };
       const SearchForm = ({ onSearch, data = [], options = [] }) => {
@@ -17369,7 +17374,7 @@ keywords
           form.resetFields();
           onSearch({});
         };
-        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$a["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$9["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
           options.map((item) => {
             return jsxRuntimeExports.jsx(
               Form.Item,
@@ -17429,7 +17434,7 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
           );
         }
       };
-      const styles$9 = {
+      const styles$8 = {
         "copy-text": "_copy-text_1att4_1",
         "copy-btn": "_copy-btn_1att4_12"
       };
@@ -18118,7 +18123,7 @@ get: function() {
         }, [], target);
         return state;
       }
-      const styles$8 = {
+      const styles$7 = {
         "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
       };
       function TextOverflowShowTips({
@@ -18146,7 +18151,7 @@ get: function() {
           "div",
           {
             ...restProps,
-            className: classNames(styles$8["text-overflow-show-tips-container"], className),
+            className: classNames(styles$7["text-overflow-show-tips-container"], className),
             children: jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text2 })
           }
         ) }) : jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text2 });
@@ -18171,7 +18176,7 @@ get: function() {
           copy(text2);
           msgSuccess$1("复制成功");
         };
-        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$9["copy-text"], className), ...rest, children: [
+        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$8["copy-text"], className), ...rest, children: [
 jsxRuntimeExports.jsx(
             TextOverflowShowTips,
             {
@@ -18189,7 +18194,7 @@ jsxRuntimeExports.jsx(
               type: "link",
               icon: jsxRuntimeExports.jsx(CopyOutlined, {}),
               onClick: handleCopy,
-              className: styles$9["copy-btn"]
+              className: styles$8["copy-btn"]
             }
           )
         ] });
@@ -18637,7 +18642,7 @@ jsxRuntimeExports.jsx(
             rowKey: "id",
             loading,
             scroll: { y: 500, x: 1e3 },
-            className: styles$b["song-table"],
+            className: styles$a["song-table"],
             pagination: false
           }
         );
@@ -18980,14 +18985,14 @@ jsxRuntimeExports.jsx(
               rowKey: "id",
               loading,
               scroll: { y: 500, x: 1200 },
-              className: styles$b["song-table"],
+              className: styles$a["song-table"],
               pagination: false
             }
           ),
 jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         ] });
       };
-      const styles$7 = {
+      const styles$6 = {
         "album-list-modal": "_album-list-modal_tzijq_1",
         "modal-title": "_modal-title_tzijq_5",
         "title-content": "_title-content_tzijq_12",
@@ -19014,7 +19019,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         "selected-info": "_selected-info_tzijq_145",
         "selected-extra": "_selected-extra_tzijq_150"
       };
-      const { Text: Text$1, Title: Title$1 } = Typography;
+      const { Text: Text$1, Title } = Typography;
       const getAlbumKey = (album2) => String(album2?.id ?? album2?.albumId ?? album2?.albumMid ?? album2?.picId ?? "");
       const AlbumListModal = forwardRef((props, ref) => {
         const { visible, close } = useVisible(
@@ -19233,8 +19238,8 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
               dataIndex: "name",
               key: "name",
               width: 320,
-              render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$7["album-info"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$7["album-cover"], children: jsxRuntimeExports.jsx(
+              render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$6["album-info"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$6["album-cover"], children: jsxRuntimeExports.jsx(
                   Image,
                   {
                     src: record.picUrl,
@@ -19246,11 +19251,11 @@ jsxRuntimeExports.jsx("div", { className: styles$7["album-cover"], children: jsx
                     alt: text2
                   }
                 ) }),
-jsxRuntimeExports.jsxs("div", { className: styles$7["album-details"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6["album-details"], children: [
 jsxRuntimeExports.jsx(
                     "div",
                     {
-                      className: styles$7["album-name"],
+                      className: styles$6["album-name"],
                       tabIndex: 0,
                       role: "button",
                       "aria-label": `查看《${text2}》详情`,
@@ -19258,13 +19263,13 @@ jsxRuntimeExports.jsx(
                       children: text2
                     }
                   ),
-                  !!record.alias?.length && jsxRuntimeExports.jsx("div", { className: styles$7["album-alias"], title: record.alias[0], children: record.alias[0] }),
-jsxRuntimeExports.jsxs("div", { className: styles$7["album-meta"], children: [
-jsxRuntimeExports.jsx(Tag, { color: "blue", className: styles$7["album-tag"], children: record.type || "专辑" }),
+                  !!record.alias?.length && jsxRuntimeExports.jsx("div", { className: styles$6["album-alias"], title: record.alias[0], children: record.alias[0] }),
+jsxRuntimeExports.jsxs("div", { className: styles$6["album-meta"], children: [
+jsxRuntimeExports.jsx(Tag, { color: "blue", className: styles$6["album-tag"], children: record.type || "专辑" }),
 jsxRuntimeExports.jsx(
                       Text$1,
                       {
-                        className: styles$7["album-company"],
+                        className: styles$6["album-company"],
                         title: record.company,
                         children: record.company || "未知公司"
                       }
@@ -19288,11 +19293,11 @@ jsxRuntimeExports.jsx(
                     alt: singerInfo?.singerName || "歌手头像"
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$7["singer-details"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6["singer-details"], children: [
 jsxRuntimeExports.jsx(
                     "div",
                     {
-                      className: styles$7["singer-name"],
+                      className: styles$6["singer-name"],
                       title: singerInfo?.singerName,
                       children: singerInfo?.singerName || "未知歌手"
                     }
@@ -19300,7 +19305,7 @@ jsxRuntimeExports.jsx(
 jsxRuntimeExports.jsx(
                     "div",
                     {
-                      className: styles$7["singer-id"],
+                      className: styles$6["singer-id"],
                       title: String(singerInfo?.singerId || ""),
                       children: singerInfo?.singerId || "-"
                     }
@@ -19333,7 +19338,7 @@ jsxRuntimeExports.jsx(
               key: "id",
               width: 160,
               align: "center",
-              render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$7["album-id"], text: String(id) })
+              render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$6["album-id"], text: String(id) })
             },
             {
               title: "操作",
@@ -19419,25 +19424,25 @@ jsxRuntimeExports.jsx(
           (sum, album2) => sum + (album2?.size ?? album2?.songCount ?? 0),
           0
         );
-        const renderTitle = () => jsxRuntimeExports.jsx("div", { className: styles$7["modal-title"], children: jsxRuntimeExports.jsxs("div", { className: styles$7["title-content"], children: [
-jsxRuntimeExports.jsx(Title$1, { level: 4, className: styles$7["title-text"], children: singerInfo?.singerName || "专辑列表" }),
-jsxRuntimeExports.jsxs("div", { className: styles$7["title-stats"], children: [
-jsxRuntimeExports.jsxs("span", { className: styles$7["stat-item"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$7["stat-label"], children: "专辑" }),
-jsxRuntimeExports.jsx("span", { className: styles$7["stat-value"], children: albumCount })
+        const renderTitle = () => jsxRuntimeExports.jsx("div", { className: styles$6["modal-title"], children: jsxRuntimeExports.jsxs("div", { className: styles$6["title-content"], children: [
+jsxRuntimeExports.jsx(Title, { level: 4, className: styles$6["title-text"], children: singerInfo?.singerName || "专辑列表" }),
+jsxRuntimeExports.jsxs("div", { className: styles$6["title-stats"], children: [
+jsxRuntimeExports.jsxs("span", { className: styles$6["stat-item"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$6["stat-label"], children: "专辑" }),
+jsxRuntimeExports.jsx("span", { className: styles$6["stat-value"], children: albumCount })
             ] }),
-jsxRuntimeExports.jsxs("span", { className: styles$7["stat-item"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$7["stat-label"], children: "歌曲" }),
-jsxRuntimeExports.jsx("span", { className: styles$7["stat-value"], children: songCount })
+jsxRuntimeExports.jsxs("span", { className: styles$6["stat-item"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$6["stat-label"], children: "歌曲" }),
+jsxRuntimeExports.jsx("span", { className: styles$6["stat-value"], children: songCount })
             ] })
           ] })
         ] }) });
-        const renderFooter = () => jsxRuntimeExports.jsxs("div", { className: styles$7["modal-footer"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$7["selected-info"], children: [
+        const renderFooter = () => jsxRuntimeExports.jsxs("div", { className: styles$6["modal-footer"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6["selected-info"], children: [
             "已选择 ",
             selectedRows.length,
             " 张专辑",
-            selectedRows.length > 0 && jsxRuntimeExports.jsxs("span", { className: styles$7["selected-extra"], children: [
+            selectedRows.length > 0 && jsxRuntimeExports.jsxs("span", { className: styles$6["selected-extra"], children: [
               "（共",
               " ",
               selectedRows.reduce(
@@ -19495,9 +19500,9 @@ jsxRuntimeExports.jsxs(
             width: 1500,
             centered: true,
             footer: renderFooter(),
-            className: styles$7["album-list-modal"],
+            className: styles$6["album-list-modal"],
             children: [
-jsxRuntimeExports.jsx("div", { className: styles$7["search-area"], children: jsxRuntimeExports.jsx(
+jsxRuntimeExports.jsx("div", { className: styles$6["search-area"], children: jsxRuntimeExports.jsx(
                 SearchForm,
                 {
                   data: albumList,
@@ -19514,7 +19519,7 @@ jsxRuntimeExports.jsx(
                   rowKey: getAlbumKey,
                   loading,
                   scroll: { y: 500, x: 1100 },
-                  className: styles$7["album-table"],
+                  className: styles$6["album-table"],
                   pagination: {
                     showSizeChanger: true,
                     showQuickJumper: true,
@@ -19577,8 +19582,8 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             title: "歌手信息",
             dataIndex: "name",
             width: 300,
-            render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$b["song-info"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$b["song-cover"], children: jsxRuntimeExports.jsx(
+            render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$a["song-info"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$a["song-cover"], children: jsxRuntimeExports.jsx(
                 Image,
                 {
                   src: record.picUrl || record.img1v1Url,
@@ -19587,11 +19592,11 @@ jsxRuntimeExports.jsx("div", { className: styles$b["song-cover"], children: jsxR
                   style: { objectFit: "cover" }
                 }
               ) }),
-jsxRuntimeExports.jsxs("div", { className: styles$b["song-details"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$a["song-details"], children: [
 jsxRuntimeExports.jsx(Tooltip, { title: text2, placement: "top", children: jsxRuntimeExports.jsx(
                   "div",
                   {
-                    className: styles$b["song-name"],
+                    className: styles$a["song-name"],
                     tabIndex: 0,
                     role: "text",
                     "aria-label": `歌手名称 ${text2}`,
@@ -19601,7 +19606,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: text2, placement: "top", children: jsxRu
 jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: jsxRuntimeExports.jsx(
                   Typography.Text,
                   {
-                    className: styles$b["song-mid-text"],
+                    className: styles$a["song-mid-text"],
                     copyable: true,
                     "aria-label": `复制歌手ID ${record.id}`,
                     children: record.id
@@ -19615,7 +19620,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: j
                     children: jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: styles$b["song-album"],
+                        className: styles$a["song-album"],
                         tabIndex: 0,
                         role: "text",
                         "aria-label": `别名 ${record.alias?.[0] || record.alia?.[0]}`,
@@ -19653,7 +19658,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: j
             dataIndex: "id",
             width: 200,
             align: "center",
-            render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$b["song-mid-text"], text: String(id) })
+            render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$a["song-mid-text"], text: String(id) })
           },
           {
             title: "操作",
@@ -19696,7 +19701,7 @@ jsxRuntimeExports.jsx(
               rowKey: "id",
               loading,
               scroll: { y: 500, x: 1100 },
-              className: styles$b["song-table"],
+              className: styles$a["song-table"],
               pagination: false
             }
           ),
@@ -19729,7 +19734,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
         );
         console.log("data", data);
         const renderTitle = () => {
-          return jsxRuntimeExports.jsx("div", { className: styles$b["modal-title"], children: jsxRuntimeExports.jsx("div", { className: styles$b["title-content"], children: jsxRuntimeExports.jsx("span", { className: styles$b["title-text"], children: "歌曲查询" }) }) });
+          return jsxRuntimeExports.jsx("div", { className: styles$a["modal-title"], children: jsxRuntimeExports.jsx("div", { className: styles$a["title-content"], children: jsxRuntimeExports.jsx("span", { className: styles$a["title-text"], children: "歌曲查询" }) }) });
         };
         return jsxRuntimeExports.jsxs(
           Modal,
@@ -19739,7 +19744,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
             onCancel: close,
             width: 1500,
             centered: true,
-            className: styles$b["song-search-modal"],
+            className: styles$a["song-search-modal"],
             children: [
 jsxRuntimeExports.jsxs(Form, { onFinish: handleSearch, layout: "inline", children: [
 jsxRuntimeExports.jsx(Form.Item, { label: "关键词", name: "keyword", children: jsxRuntimeExports.jsx(Input, { placeholder: "请输入关键词" }) }),
@@ -20072,7 +20077,7 @@ CLOUD_MUSIC_MATCH_ALL: "cloud_music_match_all"
       const warning = "_warning_18snm_273";
       const text = "_text_18snm_280";
       const icon = "_icon_18snm_287";
-      const styles$6 = {
+      const styles$5 = {
         songInfoColumn,
         songIndex,
         songCover,
@@ -20237,13 +20242,13 @@ jsxRuntimeExports.jsx(
                     return jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: styles$6["singer-option"],
+                        className: styles$5["singer-option"],
                         style: {
                           "--avatar-url": `url(${artistAvatarPicUrl})`
                         },
-                        children: jsxRuntimeExports.jsxs("div", { className: styles$6["singer-option-content"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$6["singer-option-name"], children: artistName2 }),
-jsxRuntimeExports.jsx("div", { className: styles$6["singer-option-id"], children: artistId })
+                        children: jsxRuntimeExports.jsxs("div", { className: styles$5["singer-option-content"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$5["singer-option-name"], children: artistName2 }),
+jsxRuntimeExports.jsx("div", { className: styles$5["singer-option-id"], children: artistId })
                         ] })
                       }
                     );
@@ -20292,12 +20297,12 @@ jsxRuntimeExports.jsx(
                     return jsxRuntimeExports.jsxs(
                       "div",
                       {
-                        className: styles$6["song-option"],
+                        className: styles$5["song-option"],
                         onClick: () => console.log("option", data2, option, singerMap),
                         children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6["song-info"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$6["song-name"], children: option.label }),
-jsxRuntimeExports.jsxs("div", { className: styles$6["tag-group"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5["song-info"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$5["song-name"], children: option.label }),
+jsxRuntimeExports.jsxs("div", { className: styles$5["tag-group"], children: [
                               data2.al?.name && jsxRuntimeExports.jsx(Tag, { color: "blue", children: data2.al?.name }),
                               data2.ar?.length && data2.ar?.map((artist2, index2) => jsxRuntimeExports.jsx(Tag, { color: "green", children: artist2.name }, index2))
                             ] })
@@ -20305,7 +20310,7 @@ jsxRuntimeExports.jsxs("div", { className: styles$6["tag-group"], children: [
                           singerMap[currentSelectSinger]?.albumMap?.[data2.al?.id]?.picUrl && jsxRuntimeExports.jsx(
                             "img",
                             {
-                              className: styles$6["album-cover"],
+                              className: styles$5["album-cover"],
                               src: singerMap[currentSelectSinger]?.albumMap[data2.al?.id]?.picUrl,
                               alt: data2.al?.name
                             }
@@ -20725,7 +20730,7 @@ jsxRuntimeExports.jsx(
                     rowSelection
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.footer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.footer, children: [
 jsxRuntimeExports.jsxs("div", { children: [
                     "已选择 ",
                     selectedRows.length,
@@ -20810,20 +20815,20 @@ jsxRuntimeExports.jsx(Space, { wrap: true, children: Object.entries(playlistCrea
         ] });
       };
       const DeleteConfirmContent = ({ playlists }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "总计：" }),
-jsxRuntimeExports.jsx("div", { className: styles$6.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "删除数量：" }),
-jsxRuntimeExports.jsx("span", { className: styles$6.value, children: playlists.length }),
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 个歌单" })
+        return jsxRuntimeExports.jsxs("div", { className: styles$5.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.title, children: "总计：" }),
+jsxRuntimeExports.jsx("div", { className: styles$5.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: "删除数量：" }),
+jsxRuntimeExports.jsx("span", { className: styles$5.value, children: playlists.length }),
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: " 个歌单" })
             ] }) })
           ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "即将删除的歌单：" }) }),
-jsxRuntimeExports.jsx("ul", { className: styles$6.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$6.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.itemName, children: item.name }),
-              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$6.itemCount, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$5.title, children: "即将删除的歌单：" }) }),
+jsxRuntimeExports.jsx("ul", { className: styles$5.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$5.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$5.itemName, children: item.name }),
+              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$5.itemCount, children: [
                 item.trackCount,
                 "首"
               ] })
@@ -20833,15 +20838,15 @@ jsxRuntimeExports.jsx("span", { className: styles$6.itemName, children: item.nam
       };
       const PlayList$3 = forwardRef(PlayList$2);
       const Stats = memo(({ selectedRows = [], filteredSongList = [] }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.stats, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$5.stats, children: [
           "已选择 ",
 jsxRuntimeExports.jsxs(Tag, { color: "blue", children: [
             selectedRows.length,
             " 首"
           ] }),
           " ",
-jsxRuntimeExports.jsx("span", { className: styles$6.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
-jsxRuntimeExports.jsx("span", { className: styles$6.divider, children: "/" }),
+jsxRuntimeExports.jsx("span", { className: styles$5.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
+jsxRuntimeExports.jsx("span", { className: styles$5.divider, children: "/" }),
           "共",
           " ",
 jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
@@ -20849,7 +20854,7 @@ jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
             " 首"
           ] }),
           " ",
-jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
+jsxRuntimeExports.jsx("span", { className: styles$5.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
         ] });
       });
       Stats.displayName = "Stats";
@@ -20994,24 +20999,24 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
           const albumName = getAlbumName(record);
           const songName2 = record.simpleSong?.name;
           const albumPic = record.simpleSong?.al?.picUrl;
-          return jsxRuntimeExports.jsxs("div", { className: styles$6.songInfoColumn, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
+          return jsxRuntimeExports.jsxs("div", { className: styles$5.songInfoColumn, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
 jsxRuntimeExports.jsxs(
               "div",
               {
-                className: `${styles$6.songCover} ${isCurrentSong ? styles$6.playing : ""}`,
+                className: `${styles$5.songCover} ${isCurrentSong ? styles$5.playing : ""}`,
                 onClick: () => handlePlaySong(record.simpleSong),
                 children: [
-jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$6.songCoverImg }),
-jsxRuntimeExports.jsx("div", { className: styles$6.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
+jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$5.songCoverImg }),
+jsxRuntimeExports.jsx("div", { className: styles$5.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
                 ]
               }
             ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.songInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.songName, children: songName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$6.subInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.artist, children: artistName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$6.album, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.songInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.songName, children: songName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$5.subInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.artist, children: artistName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$5.album, children: [
                   albumName && " - ",
                   albumName
                 ] })
@@ -21071,13 +21076,13 @@ jsxRuntimeExports.jsxs("div", { className: styles$6.album, children: [
             sortDirections: ["ascend", "descend"],
             render: (_, record) => {
               const { song, album: album2, artist: artist2 } = getOriginalInfo(record);
-              return jsxRuntimeExports.jsxs("div", { className: styles$6["original-album"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6["song-info"], title: song, children: [
+              return jsxRuntimeExports.jsxs("div", { className: styles$5["original-album"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5["song-info"], title: song, children: [
                   song,
                   " ",
                   artist2 && `· ${artist2}`
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$6["album-info"], title: album2, children: album2 })
+jsxRuntimeExports.jsx("div", { className: styles$5["album-info"], title: album2, children: album2 })
               ] });
             }
           },
@@ -21373,13 +21378,13 @@ jsxRuntimeExports.jsx(
                     const { songId } = record;
                     const classNames2 = [];
                     if (songId === playSong?.id) {
-                      classNames2.push(styles$6.currentSong);
+                      classNames2.push(styles$5.currentSong);
                     }
                     const isMatch = record.matchType === "matched";
                     const album2 = normalizeString(getAlbumName(record));
                     const originalAlbum = normalizeString(getOriginalInfo(record)?.album);
                     if (isMatch && !album2.includes(originalAlbum.slice(0, 3))) {
-                      classNames2.push(styles$6.matchError);
+                      classNames2.push(styles$5.matchError);
                     }
                     return classNames2.join(" ");
                   },
@@ -21392,7 +21397,7 @@ jsxRuntimeExports.jsx(
                   }
                 }
               ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.footer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.footer, children: [
 jsxRuntimeExports.jsx(
                   Stats,
                   {
@@ -21400,7 +21405,7 @@ jsxRuntimeExports.jsx(
                     filteredSongList
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.actions, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.actions, children: [
 jsxRuntimeExports.jsx(
                     Input,
                     {
@@ -21488,25 +21493,25 @@ jsxRuntimeExports.jsx(PlayList$3, { ref: playListRef })
             message.success("复制成功");
           });
         };
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "总计：" }),
-jsxRuntimeExports.jsxs("div", { className: styles$6.statsContent, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$5.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.title, children: "总计：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$5.statsContent, children: [
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "歌曲数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$6.value, children: totalSongs }),
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 首" })
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: "歌曲数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$5.value, children: totalSongs }),
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: " 首" })
               ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "歌单数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$6.value, children: albums.length }),
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 个" })
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: "歌单数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$5.value, children: albums.length }),
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: " 个" })
               ] })
             ] })
           ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6.listHeader, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "即将创建的歌单：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$5.listHeader, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.title, children: "即将创建的歌单：" }),
 jsxRuntimeExports.jsx(
                 Button,
                 {
@@ -21518,9 +21523,9 @@ jsxRuntimeExports.jsx(
                 }
               )
             ] }),
-jsxRuntimeExports.jsx("ul", { className: styles$6.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$6.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.itemName, children: name2 }),
-jsxRuntimeExports.jsxs("span", { className: styles$6.itemCount, children: [
+jsxRuntimeExports.jsx("ul", { className: styles$5.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$5.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$5.itemName, children: name2 }),
+jsxRuntimeExports.jsxs("span", { className: styles$5.itemCount, children: [
                 songs2.length,
                 "首"
               ] })
@@ -21529,16 +21534,16 @@ jsxRuntimeExports.jsxs("span", { className: styles$6.itemCount, children: [
         ] });
       };
       const DeleteConfirmation = ({ selectedCount, songNames }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.deleteConfirmation, children: [
-jsxRuntimeExports.jsxs("p", { className: styles$6.title, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$5.deleteConfirmation, children: [
+jsxRuntimeExports.jsxs("p", { className: styles$5.title, children: [
             "您确定要删除以下 ",
-jsxRuntimeExports.jsx("span", { className: styles$6.count, children: selectedCount }),
+jsxRuntimeExports.jsx("span", { className: styles$5.count, children: selectedCount }),
             " ",
             "首歌曲吗？"
           ] }),
-jsxRuntimeExports.jsx("div", { className: styles$6.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$6.songItem, children: name2 }, index2)) }),
-jsxRuntimeExports.jsx("div", { className: styles$6.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$6.text, children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.icon, children: "!" }),
+jsxRuntimeExports.jsx("div", { className: styles$5.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$5.songItem, children: name2 }, index2)) }),
+jsxRuntimeExports.jsx("div", { className: styles$5.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$5.text, children: [
+jsxRuntimeExports.jsx("span", { className: styles$5.icon, children: "!" }),
             "注意：此操作不可恢复，删除后歌曲将从您的网易云音乐云盘中永久移除。"
           ] }) })
         ] });
@@ -21554,134 +21559,185 @@ jsxRuntimeExports.jsx("span", { className: styles$6.icon, children: "!" }),
         const { song, album: album2, artist: artist2 } = simpleSong.privilege?.pc || {};
         return { song, album: album2, artist: artist2 };
       };
-      const githubContainer = "_githubContainer_b3krt_2";
-      const userInfo = "_userInfo_b3krt_9";
-      const username = "_username_b3krt_15";
-      const starCount = "_starCount_b3krt_18";
-      const bio = "_bio_b3krt_24";
-      const features = "_features_b3krt_28";
-      const featureList = "_featureList_b3krt_37";
-      const profileButton = "_profileButton_b3krt_61";
-      const styles$5 = {
-        githubContainer,
-        userInfo,
-        username,
-        starCount,
-        bio,
-        features,
-        featureList,
-        profileButton
+      const { Link, Text } = Typography;
+      const GITHUB_CONFIG = {
+        owner: "520Qiuyu",
+        repo: "CloudMusic",
+        homepage: "https://github.com/520Qiuyu/CloudMusic",
+        authorUrl: "https://github.com/520Qiuyu",
+        scriptUrl: "https://raw.githubusercontent.com/520Qiuyu/CloudMusic/main/dist/cloudmusic.user.js"
       };
-      const fetchGithubData = async () => {
-        try {
-          const owner = "520Qiuyu";
-          const repo = "CloudMusic";
-          const token = "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";
-          const [userResponse, repoResponse] = await Promise.all([
-            fetch(`https://api.github.com/users/${owner}`, {
-              headers: {
-                Accept: "application/vnd.github.v3+json",
-                Authorization: `token ${token}`
-              }
-            }),
-            fetch(`https://api.github.com/repos/${owner}/${repo}`, {
-              headers: {
-                Accept: "application/vnd.github.v3+json",
-                Authorization: `token ${token}`
-              }
-            })
-          ]);
-          if (!userResponse.ok || !repoResponse.ok) {
-            throw new Error("API请求失败");
-          }
-          const userData = await userResponse.json();
-          const repoData = await repoResponse.json();
-          return {
-            avatar_url: userData.avatar_url,
-            stargazers_count: repoData.stargazers_count
-          };
-        } catch (error) {
-          console.error("获取GitHub数据失败:", error);
-          return {
-            avatar_url: "",
-            stargazers_count: 0
-          };
-        }
-      };
-      const { Title, Text } = Typography;
       const GithubInfo = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
-        const [starCount2, setStarCount] = useState$1(0);
-        const [avatarUrl, setAvatarUrl] = useState$1("");
-        useEffect(() => {
-          fetchGithubData().then((data) => {
-            setStarCount(data.stargazers_count);
-            setAvatarUrl(data.avatar_url);
-          });
-        }, []);
-        const githubInfo = {
-          avatar: avatarUrl || "https://avatars.githubusercontent.com/u/520Qiuyu",
-          username: "520Qiuyu",
-          bio: "网易云音乐快速上传助手",
-          profileUrl: "https://github.com/520Qiuyu/CloudMusic",
-          starCount: `⭐ ${starCount2}`,
-          features: [
-            "🚀 云盘快速上传：支持同时选择多个歌手的音乐资源文件按专辑顺序进行上传",
-            "📊 进度显示：实时展示上传进度和状态",
-            "🔍 智能匹配：自动匹配歌曲信息，包括歌手、专辑等",
-            "🎵 文件管理：支持查看已上传文件列表",
-            "🔄 并发控制：智能控制上传并发数，避免服务器压力",
-            "🎵 云盘音乐管理：支持手动将添加的歌曲添加到歌单中",
-            "🔄 偷取资源：支持从其他用户的云盘偷取资源，获得导入JSON文件",
-            "🎯 手动匹配纠正：支持手动匹配纠正歌曲信息",
-            "📤 云盘本地上传：支持将本地音乐文件上传",
-            "📥 云盘JSON文件导入：支持通过JSON文件（偷取资源的JSON）导入到云盘，实现云盘音乐的批量导入"
-          ]
+        const [repoInfo, setRepoInfo] = useState$1(null);
+        const [loading, setLoading] = useState$1(false);
+        const fetchRepoInfo = async () => {
+          setLoading(true);
+          try {
+            const response = await fetch(
+              `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}`
+            );
+            if (response.ok) {
+              const data = await response.json();
+              setRepoInfo({
+                stars: data.stargazers_count || 0,
+                forks: data.forks_count || 0,
+                watchers: data.watchers_count || 0,
+                description: data.description || "",
+                language: data.language || "",
+                updatedAt: data.updated_at || "",
+                createdAt: data.created_at || "",
+                openIssues: data.open_issues_count || 0,
+                license: data.license?.name || "无",
+                defaultBranch: data.default_branch || "main",
+                avatarUrl: data.owner?.avatar_url || "",
+                authorName: data.owner?.login || GITHUB_CONFIG.owner
+              });
+            }
+          } catch (error) {
+            console.error("获取 GitHub 信息失败:", error);
+          } finally {
+            setLoading(false);
+          }
         };
-        const handleProfileClick = () => {
-          window.open(githubInfo.profileUrl, "_blank");
+        useEffect(() => {
+          if (visible) {
+            fetchRepoInfo();
+          }
+        }, [visible]);
+        const formatDate = (dateString) => {
+          if (!dateString) return "-";
+          const date = new Date(dateString);
+          return date.toLocaleDateString("zh-CN", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          });
         };
         return jsxRuntimeExports.jsx(
           Modal,
           {
-            title: "GitHub 信息",
+            title: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(GithubOutlined, {}),
+jsxRuntimeExports.jsx("span", { children: "GitHub 信息" })
+            ] }),
             open: visible,
             onCancel: close,
             footer: null,
             centered: true,
             width: 700,
             zIndex: 99999,
-            children: jsxRuntimeExports.jsxs("div", { className: styles$5.githubContainer, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$5.userInfo, children: [
+            children: jsxRuntimeExports.jsx(Spin, { spinning: loading, children: jsxRuntimeExports.jsxs(
+              Descriptions,
+              {
+                column: 1,
+                bordered: true,
+                size: "small",
+                labelStyle: { width: 120 },
+                children: [
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目主页", children: jsxRuntimeExports.jsx(Space, { children: jsxRuntimeExports.jsxs(
+                    Link,
+                    {
+                      href: GITHUB_CONFIG.homepage,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      children: [
+jsxRuntimeExports.jsx(LinkOutlined, {}),
+                        " ",
+                        GITHUB_CONFIG.homepage
+                      ]
+                    }
+                  ) }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "作者主页", children: jsxRuntimeExports.jsxs(Space, { children: [
+                    repoInfo?.avatarUrl && jsxRuntimeExports.jsx(
+                      Image,
+                      {
+                        src: repoInfo.avatarUrl,
+                        alt: repoInfo.authorName || "作者头像",
+                        width: 60,
+                        height: 60,
+                        style: {
+                          borderRadius: "50%",
+                          objectFit: "cover",
+                          cursor: "pointer"
+                        }
+                      }
+                    ),
+jsxRuntimeExports.jsxs(
+                      Link,
+                      {
+                        href: GITHUB_CONFIG.authorUrl,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: [
+jsxRuntimeExports.jsx(GithubOutlined, {}),
+                          " ",
+                          GITHUB_CONFIG.authorUrl
+                        ]
+                      }
+                    )
+                  ] }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目描述", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.description || "暂无描述" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "统计信息", children: jsxRuntimeExports.jsxs(Space, { size: "large", children: [
+jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(StarOutlined, { style: { color: "#faad14" } }),
+jsxRuntimeExports.jsx(Text, { strong: true, children: repoInfo?.stars || 0 }),
+jsxRuntimeExports.jsx(Text, { type: "secondary", children: "Stars" })
+                    ] }),
+jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(ForkOutlined, { style: { color: "#1890ff" } }),
+jsxRuntimeExports.jsx(Text, { strong: true, children: repoInfo?.forks || 0 }),
+jsxRuntimeExports.jsx(Text, { type: "secondary", children: "Forks" })
+                    ] }),
+jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(EyeOutlined, { style: { color: "#52c41a" } }),
+jsxRuntimeExports.jsx(Text, { strong: true, children: repoInfo?.watchers || 0 }),
+jsxRuntimeExports.jsx(Text, { type: "secondary", children: "Watchers" })
+                    ] })
+                  ] }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "主要语言", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.language || "未知" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "默认分支", children: jsxRuntimeExports.jsx(Text, { code: true, children: repoInfo?.defaultBranch || "main" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "许可证", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.license || "无" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "开放 Issues", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.openIssues || 0 }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "创建时间", children: jsxRuntimeExports.jsx(Text, { children: formatDate(repoInfo?.createdAt) }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "更新时间", children: jsxRuntimeExports.jsx(Text, { children: formatDate(repoInfo?.updatedAt) }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "操作", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
-                  Avatar,
-                  {
-                    size: 100,
-                    src: githubInfo.avatar,
-                    icon: jsxRuntimeExports.jsx(GithubOutlined, {})
-                  }
-                ),
-jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx(Title, { level: 4, className: styles$5.username, children: githubInfo.username }),
-jsxRuntimeExports.jsx(Text, { className: styles$5.starCount, children: githubInfo.starCount })
-                ] })
-              ] }),
-jsxRuntimeExports.jsx(Title, { level: 5, className: styles$5.bio, children: githubInfo.bio }),
-jsxRuntimeExports.jsxs("div", { className: styles$5.features, children: [
-jsxRuntimeExports.jsx(Title, { level: 5, children: "✨ 功能特性" }),
-jsxRuntimeExports.jsx("ul", { className: styles$5.featureList, children: githubInfo.features.map((feature, index2) => jsxRuntimeExports.jsx("li", { children: feature }, index2)) })
-              ] }),
+                      Button,
+                      {
+                        type: "primary",
+                        icon: jsxRuntimeExports.jsx(GithubOutlined, {}),
+                        href: GITHUB_CONFIG.homepage,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: "访问仓库"
+                      }
+                    ),
 jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "primary",
-                  icon: jsxRuntimeExports.jsx(GithubOutlined, {}),
-                  onClick: handleProfileClick,
-                  className: styles$5.profileButton,
-                  children: "查看 GitHub 主页"
-                }
-              )
-            ] })
+                      Button,
+                      {
+                        icon: jsxRuntimeExports.jsx(StarOutlined, {}),
+                        href: `${GITHUB_CONFIG.homepage}/stargazers`,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: "查看 Stars"
+                      }
+                    ),
+jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        type: "primary",
+                        icon: jsxRuntimeExports.jsx(UploadOutlined, {}),
+                        href: GITHUB_CONFIG.scriptUrl,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: "更新脚本"
+                      }
+                    )
+                  ] }) })
+                ]
+              }
+            ) })
           }
         );
       });
@@ -24577,6 +24633,40 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongLyric, 
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" })
         ] }) }) });
       };
+      const { Item } = Descriptions;
+      const SettingTab = () => {
+        const githubInfoRef = useRef();
+        const handleCheckUpdate = () => {
+          console.log("检查更新");
+        };
+        const handleOpenGithubInfo = () => {
+          githubInfoRef.current?.open();
+        };
+        return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+jsxRuntimeExports.jsxs(Descriptions, { column: 1, size: "large", children: [
+jsxRuntimeExports.jsx(Item, { label: "GitHub", children: jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                icon: jsxRuntimeExports.jsx(GithubOutlined, {}),
+                type: "primary",
+                onClick: handleOpenGithubInfo,
+                children: "查看 GitHub 信息"
+              }
+            ) }),
+jsxRuntimeExports.jsx(Item, { label: "更新日志", children: jsxRuntimeExports.jsx(Input, {}) }),
+jsxRuntimeExports.jsx(Item, { label: "检查更新", children: jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                icon: jsxRuntimeExports.jsx(CheckOutlined, {}),
+                type: "primary",
+                onClick: handleCheckUpdate,
+                children: "检查更新"
+              }
+            ) })
+          ] }),
+jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
+        ] });
+      };
       const TestModal = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
         const tabItems = [
@@ -24619,6 +24709,11 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamic
             key: "flac",
             label: "FLAC",
             children: jsxRuntimeExports.jsx(FlacTab, {})
+          },
+          {
+            key: "setting",
+            label: "设置",
+            children: jsxRuntimeExports.jsx(SettingTab, {})
           }
         ];
         return jsxRuntimeExports.jsx(
@@ -25237,7 +25332,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-DH1CNXzG-Bs3HPICM.js", ['./__monkey.entry-CIDf52ym.js', './AbstractID3Parser-BNPPFYbG-DnJ0gpvZ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Cmc35lQE-CtyrTQNn.js'], (function (exports, module) {
+System.register("./MpegParser-ChX6IoHK-BMgI9OxQ.js", ['./__monkey.entry-COjCwD6V.js', './AbstractID3Parser-Bjiti78u-C3HquIBh.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-7-DwTqOo-C9dbZY1I.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -25832,7 +25927,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-q_-eS3Pq-BSUh0j8X.js", ['./__monkey.entry-CIDf52ym.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-FjU502d3-C1YGtDLx.js", ['./__monkey.entry-COjCwD6V.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -26339,7 +26434,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-DgJXVVMB-btZP15uP.js", ['./__monkey.entry-CIDf52ym.js', './ID3v2Parser-Cmc35lQE-CtyrTQNn.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-DxEmeYXK-jonIxzol.js", ['./__monkey.entry-COjCwD6V.js', './ID3v2Parser-7-DwTqOo-C9dbZY1I.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -26513,7 +26608,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-CxXmCPpp-CKynO0b2.js", ['./__monkey.entry-CIDf52ym.js', './ID3v2Parser-Cmc35lQE-CtyrTQNn.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-HV-RycrF-COHHRDPt.js", ['./__monkey.entry-COjCwD6V.js', './ID3v2Parser-7-DwTqOo-C9dbZY1I.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -26684,7 +26779,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-Bk_LorFx-DReupgPA.js", ['./__monkey.entry-CIDf52ym.js', './AbstractID3Parser-BNPPFYbG-DnJ0gpvZ.js', './ID3v2Parser-Cmc35lQE-CtyrTQNn.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-CswLikju-coD6QZUz.js", ['./__monkey.entry-COjCwD6V.js', './AbstractID3Parser-Bjiti78u-C3HquIBh.js', './ID3v2Parser-7-DwTqOo-C9dbZY1I.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -26782,7 +26877,7 @@ System.register("./DsfParser-Bk_LorFx-DReupgPA.js", ['./__monkey.entry-CIDf52ym.
   };
 }));
 
-System.register("./FlacParser-DvbXO7Vd-PTrMWQzl.js", ['./__monkey.entry-CIDf52ym.js', './VorbisParser-CTr3udD6-ClY8rE7W.js', './AbstractID3Parser-BNPPFYbG-DnJ0gpvZ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Cmc35lQE-CtyrTQNn.js'], (function (exports, module) {
+System.register("./FlacParser-CbQoapER-C50ojhAJ.js", ['./__monkey.entry-COjCwD6V.js', './VorbisParser-CdbiLKsQ-CrPAuSlq.js', './AbstractID3Parser-Bjiti78u-C3HquIBh.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-7-DwTqOo-C9dbZY1I.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -26934,7 +27029,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-BYsu5PxZ-BqZuW6dj.js", ['./__monkey.entry-CIDf52ym.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-CQPZBiy8-hzpw1LNK.js", ['./__monkey.entry-COjCwD6V.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -27541,7 +27636,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-4cyfAkns-BlixGZA3.js", ['./__monkey.entry-CIDf52ym.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-Ci6P44zD-DJS-UAMx.js", ['./__monkey.entry-COjCwD6V.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -28372,7 +28467,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-B6SVadKG-D6jaXN5b.js", ['./__monkey.entry-CIDf52ym.js', './AbstractID3Parser-BNPPFYbG-DnJ0gpvZ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Cmc35lQE-CtyrTQNn.js'], (function (exports, module) {
+System.register("./MusepackParser-MkvK05u1-DRyQ_g9u.js", ['./__monkey.entry-COjCwD6V.js', './AbstractID3Parser-Bjiti78u-C3HquIBh.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-7-DwTqOo-C9dbZY1I.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -28649,7 +28744,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-BNPPFYbG-DnJ0gpvZ.js", ['./__monkey.entry-CIDf52ym.js', './ID3v2Parser-Cmc35lQE-CtyrTQNn.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-Bjiti78u-C3HquIBh.js", ['./__monkey.entry-COjCwD6V.js', './ID3v2Parser-7-DwTqOo-C9dbZY1I.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -28713,7 +28808,7 @@ System.register("./AbstractID3Parser-BNPPFYbG-DnJ0gpvZ.js", ['./__monkey.entry-C
   };
 }));
 
-System.register("./OggParser-B6gMgS6f-DJ_Yjm4d.js", ['./__monkey.entry-CIDf52ym.js', './VorbisParser-CTr3udD6-ClY8rE7W.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-sp1EMdgq-OXad7bHN.js", ['./__monkey.entry-COjCwD6V.js', './VorbisParser-CdbiLKsQ-CrPAuSlq.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -28988,7 +29083,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-CTr3udD6-ClY8rE7W.js", ['./__monkey.entry-CIDf52ym.js'], (function (exports, module) {
+System.register("./VorbisParser-CdbiLKsQ-CrPAuSlq.js", ['./__monkey.entry-COjCwD6V.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -29204,7 +29299,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-Bv0PlGcS-DoblAnHp.js", ['./__monkey.entry-CIDf52ym.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-C60JTOHK-DxZF22kn.js", ['./__monkey.entry-COjCwD6V.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -29384,7 +29479,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-DzOiUF5A-D-vzKcjB.js", ['./__monkey.entry-CIDf52ym.js', './ID3v2Parser-Cmc35lQE-CtyrTQNn.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-DBYAsSwP-CsEsTz5g.js", ['./__monkey.entry-COjCwD6V.js', './ID3v2Parser-7-DwTqOo-C9dbZY1I.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -29657,7 +29752,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-Cmc35lQE-CtyrTQNn.js", ['./__monkey.entry-CIDf52ym.js'], (function (exports, module) {
+System.register("./ID3v2Parser-7-DwTqOo-C9dbZY1I.js", ['./__monkey.entry-COjCwD6V.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
