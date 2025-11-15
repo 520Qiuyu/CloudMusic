@@ -3,6 +3,7 @@ import { getAudioMetadata, getFileMD5, promiseLimit } from '@/utils';
 import { msgError } from '@/utils/modal';
 import { weapiRequest } from '@/utils/request';
 import { getSongInfoList, getSongUrl } from './song';
+import { getQualityTags } from '@/utils/music';
 
 const BUCKET = 'jd-musicrep-privatecloud-audio-public';
 
@@ -478,6 +479,7 @@ export const neteaseMusicToCloud = async (songIds, options = {}) => {
   const {
     level = QUALITY_LEVELS.无损,
     concurrent = 6,
+    onStart,
     onChange,
     onComplete,
   } = options || {};
@@ -490,13 +492,44 @@ export const neteaseMusicToCloud = async (songIds, options = {}) => {
         songInfoRes.message || songInfoRes.msg || '获取歌曲信息失败',
       );
     }
-    const songs = songInfoRes.songs;
-    console.log(`获取歌曲信息, 共${songs.length}首`, songs);
+    const allPrivileges = songInfoRes.privileges;
+    const allSongs = songInfoRes.songs;
+    const songsMap = Object.fromEntries(
+      allSongs.map((song) => [song.id, song]),
+    );
+    const songs = allPrivileges
+      .filter((privilege) => !privilege.cs)
+      .map((privilege) => songsMap[privilege.id]);
+    const existSongs = allPrivileges
+      .filter((privilege) => privilege.cs)
+      .map((privilege) => songsMap[privilege.id]);
+    console.log(
+      `获取歌曲信息, 共${allSongs.length}首，待上传${songs.length}首，已上传${existSongs.length}首`,
+      allSongs,
+      songs,
+      existSongs,
+    );
+    onStart?.({
+      allSongs,
+      allPrivileges,
+      existSongs,
+      songs,
+    });
 
     // 2、获取歌曲链接
     const urls = await Promise.all(
       songs.map(async (song) => {
-        const res = await getSongUrl([song.id], { level });
+        const qualityTags = getQualityTags(song);
+        console.log('qualityTags', qualityTags);
+        const hasTheLevel = qualityTags.some((tag) => tag.value === level);
+        if (!hasTheLevel) {
+          msgError(
+            `歌曲： ${song.name} 音质等级不支持: ${level}, 当前音质等级: ${qualityTags.map((tag) => tag.label).join(',')},已降至${qualityTags[0]?.label}`,
+          );
+        }
+        const res = await getSongUrl([song.id], {
+          level: hasTheLevel ? level : qualityTags[0]?.value,
+        });
         if (res.code != 200) {
           msgError('获取歌曲链接失败');
           throw new Error(res.message || res.msg || '获取歌曲链接失败');
@@ -509,7 +542,6 @@ export const neteaseMusicToCloud = async (songIds, options = {}) => {
     console.log(`获取歌曲链接, 共${urls.length}首`, urls);
 
     // 3、上传歌曲
-    let count = 0;
     const success = [];
     const failed = [];
     const tasks = songs.map((song, index) => async () => {
@@ -538,45 +570,46 @@ export const neteaseMusicToCloud = async (songIds, options = {}) => {
         });
 
         // 3.4 上传完成
+        success.push(song);
         console.log(
-          `第${index + 1}首歌曲上传完成: ${song.name} 共${songs.length}首, 已上传${count}首`,
+          `第${index + 1}首歌曲上传完成: ${song.name} 共${songs.length}首, 已上传${success.length}首`,
           songInfo,
           res,
         );
         onChange?.({
           current: index + 1,
           total: songs.length,
-          success: true,
-          successCount: count,
+          errorCount: failed.length,
+          type: 'success',
+          successCount: success.length,
           index,
           song,
         });
-        count++;
-        success.push(song);
         return res;
       } catch (error) {
         // 3.5 上传失败
+        failed.push(song);
         console.log('error', error, song);
         onChange?.({
           current: index + 1,
           total: songs.length,
-          success: false,
-          successCount: count,
+          type: 'failed',
+          successCount: success.length,
+          errorCount: failed.length,
           index,
           song,
         });
-        failed.push(song);
       }
     });
     const results = await promiseLimit(tasks, concurrent);
     console.log(
-      `上传完成, 共${songs.length}首, 已上传${count}首, 上传失败结果: ${songs?.length - count}首`,
+      `上传完成, 共${songs.length}首, 已上传${success.length}首, 上传失败结果: ${failed.length}首`,
       results,
     );
     onComplete?.({
       total: songs.length,
-      successCount: count,
-      failedCount: songs.length - count,
+      successCount: success.length,
+      errorCount: failed.length,
       success,
       failed,
       results,

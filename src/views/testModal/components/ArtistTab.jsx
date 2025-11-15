@@ -1,3 +1,4 @@
+import { neteaseMusicToCloud } from '@/api';
 import {
   getArtistAlbumList,
   getArtistAllSongList,
@@ -7,6 +8,7 @@ import { MyButton } from '@/components';
 import { promiseLimit } from '@/utils';
 import { downloadFile } from '@/utils/download';
 import { msgSuccess } from '@/utils/modal';
+import { message } from 'antd';
 import { Form, Input, Space } from 'antd';
 import { useState } from 'react';
 
@@ -80,6 +82,46 @@ const ArtistTab = () => {
     }
   };
 
+  // 获取歌手全部歌曲并转云盘
+  const handleGetArtistAllSongListToCloud = async () => {
+    console.log('获取歌手全部歌曲并转云盘');
+    const uploadMessageKey = 'artist-all-song-list-to-cloud';
+    try {
+      const songRes = await getArtistAllSongList(artistId);
+      if (songRes.code !== 200) {
+        throw new Error('获取歌手全部歌曲失败');
+      }
+      const songs = songRes.songs;
+      const songIds = songs.map((song) => song.id);
+      message.loading({
+        content: '开始上传歌手全部歌曲到云盘，请稍候...',
+        key: uploadMessageKey,
+        duration: 0,
+      });
+      const res = await neteaseMusicToCloud(songIds, {
+        onChange: (progress) => {
+          message.loading({
+            content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+            key: uploadMessageKey,
+            duration: 0,
+          });
+        },
+        onComplete: (result) => {
+          message.destroy(uploadMessageKey);
+          msgSuccess(
+            `歌手全部歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
+          );
+        },
+      });
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+      message.destroy(uploadMessageKey);
+    }finally{
+      message.destroy(uploadMessageKey);
+    }
+  };
+
   return (
     <Form>
       {/* 测试获取歌手歌曲列表 */}
@@ -103,6 +145,9 @@ const ArtistTab = () => {
           </MyButton>
           <MyButton type='primary' onClick={handleGetArtistAllSongList}>
             获取歌手全部歌曲
+          </MyButton>
+          <MyButton type='primary' onClick={handleGetArtistAllSongListToCloud}>
+            获取歌手全部歌曲并转云盘
           </MyButton>
         </Space>
       </Form.Item>

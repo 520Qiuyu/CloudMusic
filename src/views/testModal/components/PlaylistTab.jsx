@@ -5,8 +5,9 @@ import {
   getPlaylistAllData,
   getPlaylistList,
 } from '@/api/playlist';
+import { MyButton } from '@/components';
 import { msgSuccess } from '@/utils/modal';
-import { Button, Form, Input, Space, message } from 'antd';
+import { Form, Input, Space, message } from 'antd';
 import { useState } from 'react';
 
 /**
@@ -84,21 +85,24 @@ const PlaylistTab = () => {
       const res = await neteaseMusicToCloud(songIds, {
         onChange: (progress) => {
           message.loading({
-            content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首`,
+            content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
             key: uploadMessageKey,
             duration: 0,
           });
         },
         onComplete: (result) => {
           message.destroy(uploadMessageKey);
+          console.log('result', result);
           msgSuccess(
-            `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.failedCount}首`,
+            `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
           );
         },
       });
       console.log('res', res);
     } catch (error) {
       console.log('error', error);
+      message.destroy(uploadMessageKey);
+    } finally {
       message.destroy(uploadMessageKey);
     }
   };
@@ -113,9 +117,9 @@ const PlaylistTab = () => {
             value={songListName}
             onChange={(e) => setSongListName(e.target.value)}
           />
-          <Button type='primary' onClick={handleCreateSongList}>
+          <MyButton type='primary' onClick={handleCreateSongList}>
             新建歌单
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -136,9 +140,9 @@ const PlaylistTab = () => {
             value={addInfo.songId}
             onChange={(e) => setAddInfo({ ...addInfo, songId: e.target.value })}
           />
-          <Button type='primary' onClick={handleAddSong}>
+          <MyButton type='primary' onClick={handleAddSong}>
             添加歌曲
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -151,9 +155,9 @@ const PlaylistTab = () => {
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
           />
-          <Button type='primary' onClick={handleGetPlaylistList}>
+          <MyButton type='primary' onClick={handleGetPlaylistList}>
             获取用户歌单列表
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -166,12 +170,12 @@ const PlaylistTab = () => {
             value={playlistId}
             onChange={(e) => setPlaylistId(e.target.value)}
           />
-          <Button type='primary' onClick={handleGetPlaylist}>
+          <MyButton type='primary' onClick={handleGetPlaylist}>
             获取歌单详情
-          </Button>
-          <Button type='primary' onClick={handlePlaylistToCloud}>
+          </MyButton>
+          <MyButton type='primary' onClick={handlePlaylistToCloud}>
             歌单歌曲转云盘
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
     </Form>

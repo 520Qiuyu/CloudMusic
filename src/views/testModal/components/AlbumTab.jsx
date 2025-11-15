@@ -1,5 +1,8 @@
+import { neteaseMusicToCloud } from '@/api';
 import { getAlbumDetail, getAlbumSongList } from '@/api/album';
-import { Button, Form, Input, Space } from 'antd';
+import { MyButton } from '@/components';
+import { msgSuccess } from '@/utils/modal';
+import { Form, Input, Space, message } from 'antd';
 import { useState } from 'react';
 
 /**
@@ -14,6 +17,9 @@ const AlbumTab = () => {
     try {
       const res = await getAlbumSongList(albumId);
       console.log('res', res);
+      if (res.code === 200) {
+        msgSuccess('获取专辑歌曲列表成功,请打开控制台查看！');
+      }
     } catch (error) {
       console.log('error', error);
     }
@@ -25,8 +31,47 @@ const AlbumTab = () => {
     try {
       const res = await getAlbumDetail(albumId);
       console.log('res', res);
+      if (res.code === 200) {
+        msgSuccess('获取专辑详情成功,请打开控制台查看！');
+      }
     } catch (error) {
       console.log('error', error);
+    }
+  };
+
+  // 专辑歌曲转云盘
+  const handleNeteaseMusicToCloud = async () => {
+    console.log('专辑歌曲转云盘');
+    const uploadMessageKey = 'album-to-cloud';
+    try {
+      // 获取专辑歌曲列表
+      const res = await getAlbumSongList(albumId);
+      console.log('res', res);
+      if (res.code === 200) {
+        const songs = res.songs;
+        const songIds = songs.map((song) => song.id);
+        await neteaseMusicToCloud(songIds, {
+          onChange: (progress) => {
+            console.log('progress', progress);
+            message.loading({
+              content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+              key: uploadMessageKey,
+              duration: 0,
+            });
+          },
+          onComplete: (result) => {
+            console.log('result', result);
+            message.destroy(uploadMessageKey);
+            msgSuccess(
+              `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
+            );
+          },
+        });
+      }
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      message.destroy(uploadMessageKey);
     }
   };
 
@@ -41,13 +86,16 @@ const AlbumTab = () => {
             value={albumId}
             onChange={(e) => setAlbumId(e.target.value)}
           />
-          <Button type='primary' onClick={handleGetAlbumSongList}>
+          <MyButton type='primary' onClick={handleGetAlbumSongList}>
             获取专辑歌曲列表
-          </Button>
+          </MyButton>
           {/* 获取专辑详情 */}
-          <Button type='primary' onClick={handleGetAlbumDetail}>
+          <MyButton type='primary' onClick={handleGetAlbumDetail}>
             获取专辑详情
-          </Button>
+          </MyButton>
+          <MyButton type='primary' onClick={handleNeteaseMusicToCloud}>
+            专辑歌曲转云盘
+          </MyButton>
         </Space>
       </Form.Item>
     </Form>
@@ -55,4 +103,3 @@ const AlbumTab = () => {
 };
 
 export default AlbumTab;
-

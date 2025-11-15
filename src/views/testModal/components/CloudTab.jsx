@@ -8,6 +8,7 @@ import { msgError } from '@/utils/modal';
 import { Button, Form, Input, Space, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { useState } from 'react';
+import { MyButton } from '@/components';
 
 /**
  * 云盘相关测试组件
@@ -91,9 +92,9 @@ const CloudTab = () => {
               setPageData({ ...pageData, offset: Number(e.target.value) })
             }
           />
-          <Button type='primary' onClick={handleGetCloudData}>
+          <MyButton type='primary' onClick={handleGetCloudData}>
             获取云盘数据
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -106,9 +107,9 @@ const CloudTab = () => {
             value={songId}
             onChange={(e) => setSongId(e.target.value)}
           />
-          <Button type='primary' onClick={handleDeleteCloudSong}>
+          <MyButton type='primary' onClick={handleDeleteCloudSong}>
             删除云盘歌曲
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -127,9 +128,9 @@ const CloudTab = () => {
             }}>
             <Button icon={<UploadOutlined />}>Select File</Button>
           </Upload>
-          <Button type='primary' onClick={handleUploadLocalSong}>
+          <MyButton type='primary' onClick={handleUploadLocalSong}>
             上传本地歌曲到云盘
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -142,9 +143,9 @@ const CloudTab = () => {
             value={neteaseMusicSongId}
             onChange={(e) => setNeteaseMusicSongId(e.target.value)}
           />
-          <Button type='primary' onClick={handleNeteaseMusicToCloud}>
+          <MyButton type='primary' onClick={handleNeteaseMusicToCloud}>
             测试网易云音乐转存云盘
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
     </Form>

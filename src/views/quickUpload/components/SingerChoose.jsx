@@ -84,13 +84,13 @@ export default function SingerChoose({ defaultSingerList, onChoose }) {
                 <div
                   className={styles['btn-group']}
                   style={{ marginTop: 'auto' }}>
-                  <Button
+                  {/* <Button
                     type='primary'
                     onClick={handleQuickImport}
                     loading={quickImportLoading}
                     disabled={!singer.length}>
                     一键导入
-                  </Button>
+                  </Button> */}
                   <Button
                     type='primary'
                     htmlType='submit'
