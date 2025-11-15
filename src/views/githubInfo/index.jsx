@@ -1,136 +1,222 @@
 import { useVisible } from '@/hooks/useVisible';
-import { GithubOutlined } from '@ant-design/icons';
-import { Avatar, Button, Modal, Typography } from 'antd';
+import {
+  EyeOutlined,
+  ForkOutlined,
+  GithubOutlined,
+  LinkOutlined,
+  StarOutlined,
+  UploadOutlined,
+} from '@ant-design/icons';
+import {
+  Button,
+  Descriptions,
+  Image,
+  Modal,
+  Space,
+  Spin,
+  Typography,
+} from 'antd';
 import { forwardRef, useEffect, useState } from 'react';
-import styles from './index.module.scss';
 
-// GitHub API请求函数
-const fetchGithubData = async () => {
-  try {
-    const owner = '520Qiuyu';
-    const repo = 'CloudMusic';
-    const token = import.meta.env.VITE_GITHUB_TOKEN;
-    const [userResponse, repoResponse] = await Promise.all([
-      fetch(`https://api.github.com/users/${owner}`, {
-        headers: {
-          Accept: 'application/vnd.github.v3+json',
-          Authorization: `token ${token}`,
-        },
-      }),
-      fetch(`https://api.github.com/repos/${owner}/${repo}`, {
-        headers: {
-          Accept: 'application/vnd.github.v3+json',
-          Authorization: `token ${token}`,
-        },
-      }),
-    ]);
+const { Link, Text } = Typography;
 
-    if (!userResponse.ok || !repoResponse.ok) {
-      throw new Error('API请求失败');
-    }
-
-    const userData = await userResponse.json();
-    const repoData = await repoResponse.json();
-
-    return {
-      avatar_url: userData.avatar_url,
-      stargazers_count: repoData.stargazers_count,
-    };
-  } catch (error) {
-    console.error('获取GitHub数据失败:', error);
-    return {
-      avatar_url: '',
-      stargazers_count: 0,
-    };
-  }
+// GitHub 仓库信息配置
+const GITHUB_CONFIG = {
+  owner: '520Qiuyu',
+  repo: 'CloudMusic',
+  homepage: 'https://github.com/520Qiuyu/CloudMusic',
+  authorUrl: 'https://github.com/520Qiuyu',
+  scriptUrl:
+    'https://raw.githubusercontent.com/520Qiuyu/CloudMusic/main/dist/cloudmusic.user.js',
 };
 
-const { Title, Text } = Typography;
-
+/**
+ * GitHub 信息组件
+ */
 const GithubInfo = forwardRef((props, ref) => {
-  const { visible, open, close } = useVisible({}, ref);
-  const [starCount, setStarCount] = useState(0);
-  const [avatarUrl, setAvatarUrl] = useState('');
+  const { visible, close } = useVisible({}, ref);
+  const [repoInfo, setRepoInfo] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    // 获取GitHub数据
-    fetchGithubData().then((data) => {
-      setStarCount(data.stargazers_count);
-      setAvatarUrl(data.avatar_url);
-    });
-  }, []);
-
-  // GitHub个人信息
-  const githubInfo = {
-    avatar: avatarUrl || 'https://avatars.githubusercontent.com/u/520Qiuyu',
-    username: '520Qiuyu',
-    bio: '网易云音乐快速上传助手',
-    profileUrl: 'https://github.com/520Qiuyu/CloudMusic',
-    starCount: `⭐ ${starCount}`,
-    features: [
-      '🚀 云盘快速上传：支持同时选择多个歌手的音乐资源文件按专辑顺序进行上传',
-      '📊 进度显示：实时展示上传进度和状态',
-      '🔍 智能匹配：自动匹配歌曲信息，包括歌手、专辑等',
-      '🎵 文件管理：支持查看已上传文件列表',
-      '🔄 并发控制：智能控制上传并发数，避免服务器压力',
-      '🎵 云盘音乐管理：支持手动将添加的歌曲添加到歌单中',
-      '🔄 偷取资源：支持从其他用户的云盘偷取资源，获得导入JSON文件',
-      '🎯 手动匹配纠正：支持手动匹配纠正歌曲信息',
-      '📤 云盘本地上传：支持将本地音乐文件上传',
-      '📥 云盘JSON文件导入：支持通过JSON文件（偷取资源的JSON）导入到云盘，实现云盘音乐的批量导入',
-    ],
+  // 获取 GitHub 仓库信息
+  const fetchRepoInfo = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(
+        `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}`,
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setRepoInfo({
+          stars: data.stargazers_count || 0,
+          forks: data.forks_count || 0,
+          watchers: data.watchers_count || 0,
+          description: data.description || '',
+          language: data.language || '',
+          updatedAt: data.updated_at || '',
+          createdAt: data.created_at || '',
+          openIssues: data.open_issues_count || 0,
+          license: data.license?.name || '无',
+          defaultBranch: data.default_branch || 'main',
+          avatarUrl: data.owner?.avatar_url || '',
+          authorName: data.owner?.login || GITHUB_CONFIG.owner,
+        });
+      }
+    } catch (error) {
+      console.error('获取 GitHub 信息失败:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleProfileClick = () => {
-    window.open(githubInfo.profileUrl, '_blank');
+  useEffect(() => {
+    if (visible) {
+      fetchRepoInfo();
+    }
+  }, [visible]);
+
+  const formatDate = (dateString) => {
+    if (!dateString) return '-';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('zh-CN', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
   };
 
   return (
     <Modal
-      title='GitHub 信息'
+      title={
+        <Space>
+          <GithubOutlined />
+          <span>GitHub 信息</span>
+        </Space>
+      }
       open={visible}
       onCancel={close}
       footer={null}
       centered
       width={700}
-      zIndex={99999}
-    >
-      <div className={styles.githubContainer}>
-        <div className={styles.userInfo}>
-          <Avatar
-            size={100}
-            src={githubInfo.avatar}
-            icon={<GithubOutlined />}
-          />
-          <div>
-            <Title level={4} className={styles.username}>
-              {githubInfo.username}
-            </Title>
-            <Text className={styles.starCount}>{githubInfo.starCount}</Text>
-          </div>
-        </div>
-        <Title level={5} className={styles.bio}>
-          {githubInfo.bio}
-        </Title>
+      zIndex={99999}>
+      <Spin spinning={loading}>
+        <Descriptions
+          column={1}
+          bordered
+          size='small'
+          labelStyle={{ width: 120 }}>
+          <Descriptions.Item label='项目主页'>
+            <Space>
+              <Link
+                href={GITHUB_CONFIG.homepage}
+                target='_blank'
+                rel='noopener noreferrer'>
+                <LinkOutlined /> {GITHUB_CONFIG.homepage}
+              </Link>
+            </Space>
+          </Descriptions.Item>
 
-        <div className={styles.features}>
-          <Title level={5}>✨ 功能特性</Title>
-          <ul className={styles.featureList}>
-            {githubInfo.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-        </div>
+          <Descriptions.Item label='作者主页'>
+            <Space>
+              {repoInfo?.avatarUrl && (
+                <Image
+                  src={repoInfo.avatarUrl}
+                  alt={repoInfo.authorName || '作者头像'}
+                  width={60}
+                  height={60}
+                  style={{
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    cursor: 'pointer',
+                  }}
+                />
+              )}
+              <Link
+                href={GITHUB_CONFIG.authorUrl}
+                target='_blank'
+                rel='noopener noreferrer'>
+                <GithubOutlined /> {GITHUB_CONFIG.authorUrl}
+              </Link>
+            </Space>
+          </Descriptions.Item>
 
-        <Button
-          type='primary'
-          icon={<GithubOutlined />}
-          onClick={handleProfileClick}
-          className={styles.profileButton}
-        >
-          查看 GitHub 主页
-        </Button>
-      </div>
+          <Descriptions.Item label='项目描述'>
+            <Text>{repoInfo?.description || '暂无描述'}</Text>
+          </Descriptions.Item>
+
+          <Descriptions.Item label='统计信息'>
+            <Space size='large'>
+              <Space>
+                <StarOutlined style={{ color: '#faad14' }} />
+                <Text strong>{repoInfo?.stars || 0}</Text>
+                <Text type='secondary'>Stars</Text>
+              </Space>
+              <Space>
+                <ForkOutlined style={{ color: '#1890ff' }} />
+                <Text strong>{repoInfo?.forks || 0}</Text>
+                <Text type='secondary'>Forks</Text>
+              </Space>
+              <Space>
+                <EyeOutlined style={{ color: '#52c41a' }} />
+                <Text strong>{repoInfo?.watchers || 0}</Text>
+                <Text type='secondary'>Watchers</Text>
+              </Space>
+            </Space>
+          </Descriptions.Item>
+
+          <Descriptions.Item label='主要语言'>
+            <Text>{repoInfo?.language || '未知'}</Text>
+          </Descriptions.Item>
+
+          <Descriptions.Item label='默认分支'>
+            <Text code>{repoInfo?.defaultBranch || 'main'}</Text>
+          </Descriptions.Item>
+
+          <Descriptions.Item label='许可证'>
+            <Text>{repoInfo?.license || '无'}</Text>
+          </Descriptions.Item>
+
+          <Descriptions.Item label='开放 Issues'>
+            <Text>{repoInfo?.openIssues || 0}</Text>
+          </Descriptions.Item>
+
+          <Descriptions.Item label='创建时间'>
+            <Text>{formatDate(repoInfo?.createdAt)}</Text>
+          </Descriptions.Item>
+
+          <Descriptions.Item label='更新时间'>
+            <Text>{formatDate(repoInfo?.updatedAt)}</Text>
+          </Descriptions.Item>
+
+          <Descriptions.Item label='操作'>
+            <Space>
+              <Button
+                type='primary'
+                icon={<GithubOutlined />}
+                href={GITHUB_CONFIG.homepage}
+                target='_blank'
+                rel='noopener noreferrer'>
+                访问仓库
+              </Button>
+              <Button
+                icon={<StarOutlined />}
+                href={`${GITHUB_CONFIG.homepage}/stargazers`}
+                target='_blank'
+                rel='noopener noreferrer'>
+                查看 Stars
+              </Button>
+              <Button
+                type='primary'
+                icon={<UploadOutlined />}
+                href={GITHUB_CONFIG.scriptUrl}
+                target='_blank'
+                rel='noopener noreferrer'>
+                更新脚本
+              </Button>
+            </Space>
+          </Descriptions.Item>
+        </Descriptions>
+      </Spin>
     </Modal>
   );
 });
