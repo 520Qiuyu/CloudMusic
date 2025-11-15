@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-BU3WRVkk.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-Cq3mGERQ.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,9 +44,9 @@ System.register("./__entry.js", ['./__monkey.entry-BU3WRVkk.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-BU3WRVkk.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-Cq3mGERQ.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useRef, useState$1, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Progress, ConfigProvider, Select, Tooltip, Spin, Empty, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, GithubOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CopyrightOutlined, FileOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
+  var forwardRef, useRef, useState$1, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Progress, ConfigProvider, Select, Tooltip, Spin, Empty, Card, Descriptions, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, GithubOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CopyrightOutlined, FileOutlined, PictureOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
@@ -80,6 +80,8 @@ System.register("./__monkey.entry-BU3WRVkk.js", ['react', 'antd', 'react-dom', '
       Tooltip = module.Tooltip;
       Spin = module.Spin;
       Empty = module.Empty;
+      Card = module.Card;
+      Descriptions = module.Descriptions;
     }, module => {
       require$$0$1 = module.default;
     }, module => {
@@ -98,6 +100,7 @@ System.register("./__monkey.entry-BU3WRVkk.js", ['react', 'antd', 'react-dom', '
       PlayCircleFilled = module.PlayCircleFilled;
       CopyrightOutlined = module.CopyrightOutlined;
       FileOutlined = module.FileOutlined;
+      PictureOutlined = module.PictureOutlined;
       CloudUploadOutlined = module.CloudUploadOutlined;
       CustomerServiceOutlined = module.CustomerServiceOutlined;
       CodeOutlined = module.CodeOutlined;
@@ -6038,7 +6041,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-CWwmr373-pfsaCsMl.js');
+            const { MpegParser } = await module.import('./MpegParser-C2wRC5c_-Co_o_K-R.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -6060,7 +6063,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-j7bJwLX6-Z_V_Zddk.js');
+            const { AsfParser } = await module.import('./AsfParser-CwlBDbsy-BBMnJC66.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -6071,7 +6074,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-C99ebTpH-CftCBxeB.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-CfPn3tGq-Bv4ydt7O.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -6082,7 +6085,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-CSxNZFOZ-CL6E21XA.js');
+            const { AIFFParser } = await module.import('./AiffParser-CfkkY9Ea-FxDa1nC6.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -6093,7 +6096,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-IIfKTV94-hxhKiXMs.js');
+            const { DsfParser } = await module.import('./DsfParser-jWgXAuQ1-nEozhMqG.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -6104,7 +6107,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-C6V1z6Zn-rts-rACF.js');
+            const { FlacParser } = await module.import('./FlacParser-xW7ugK0B-BGHVXJbO.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -6115,7 +6118,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-CPEWDOof-DFDstbbN.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-DgAoxNec-DL5DuJk9.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -6126,7 +6129,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-XYVvPRsI-D_7QeppT.js');
+            const { MP4Parser } = await module.import('./MP4Parser-C8vsJZ2u-CivepcPD.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -6137,7 +6140,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-m_RlPPIE-sr7FFEvk.js');
+            const { MusepackParser } = await module.import('./MusepackParser-BFqMYajl-DwZvKQFg.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -6148,7 +6151,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-xUvJjYl0-CzOEIR-I.js');
+            const { OggParser } = await module.import('./OggParser-iuyXaCFD-Bhbu80Y2.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -6159,7 +6162,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-DFEIRSVG-DGouTCbA.js');
+            const { WavPackParser } = await module.import('./WavPackParser-CfEUvpIp-r-BGGSrM.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -6170,7 +6173,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-V-5pXBwO-BSOC_nD3.js');
+            const { WaveParser } = await module.import('./WaveParser-CTf1aOfl-C3ZuLkn5.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -7306,6 +7309,348 @@ offset
           }
         });
       };
+      var dayjs_min$1 = { exports: {} };
+      var dayjs_min = dayjs_min$1.exports;
+      var hasRequiredDayjs_min;
+      function requireDayjs_min() {
+        if (hasRequiredDayjs_min) return dayjs_min$1.exports;
+        hasRequiredDayjs_min = 1;
+        (function(module, exports) {
+          !(function(t, e) {
+            module.exports = e();
+          })(dayjs_min, (function() {
+            var t = 1e3, e = 6e4, n = 36e5, r = "millisecond", i = "second", s = "minute", u = "hour", a = "day", o = "week", c = "month", f = "quarter", h = "year", d = "date", l = "Invalid Date", $ = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, y = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, M = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(t2) {
+              var e2 = ["th", "st", "nd", "rd"], n2 = t2 % 100;
+              return "[" + t2 + (e2[(n2 - 20) % 10] || e2[n2] || e2[0]) + "]";
+            } }, m = function(t2, e2, n2) {
+              var r2 = String(t2);
+              return !r2 || r2.length >= e2 ? t2 : "" + Array(e2 + 1 - r2.length).join(n2) + t2;
+            }, v = { s: m, z: function(t2) {
+              var e2 = -t2.utcOffset(), n2 = Math.abs(e2), r2 = Math.floor(n2 / 60), i2 = n2 % 60;
+              return (e2 <= 0 ? "+" : "-") + m(r2, 2, "0") + ":" + m(i2, 2, "0");
+            }, m: function t2(e2, n2) {
+              if (e2.date() < n2.date()) return -t2(n2, e2);
+              var r2 = 12 * (n2.year() - e2.year()) + (n2.month() - e2.month()), i2 = e2.clone().add(r2, c), s2 = n2 - i2 < 0, u2 = e2.clone().add(r2 + (s2 ? -1 : 1), c);
+              return +(-(r2 + (n2 - i2) / (s2 ? i2 - u2 : u2 - i2)) || 0);
+            }, a: function(t2) {
+              return t2 < 0 ? Math.ceil(t2) || 0 : Math.floor(t2);
+            }, p: function(t2) {
+              return { M: c, y: h, w: o, d: a, D: d, h: u, m: s, s: i, ms: r, Q: f }[t2] || String(t2 || "").toLowerCase().replace(/s$/, "");
+            }, u: function(t2) {
+              return void 0 === t2;
+            } }, g = "en", D = {};
+            D[g] = M;
+            var p = "$isDayjsObject", S = function(t2) {
+              return t2 instanceof _ || !(!t2 || !t2[p]);
+            }, w = function t2(e2, n2, r2) {
+              var i2;
+              if (!e2) return g;
+              if ("string" == typeof e2) {
+                var s2 = e2.toLowerCase();
+                D[s2] && (i2 = s2), n2 && (D[s2] = n2, i2 = s2);
+                var u2 = e2.split("-");
+                if (!i2 && u2.length > 1) return t2(u2[0]);
+              } else {
+                var a2 = e2.name;
+                D[a2] = e2, i2 = a2;
+              }
+              return !r2 && i2 && (g = i2), i2 || !r2 && g;
+            }, O = function(t2, e2) {
+              if (S(t2)) return t2.clone();
+              var n2 = "object" == typeof e2 ? e2 : {};
+              return n2.date = t2, n2.args = arguments, new _(n2);
+            }, b = v;
+            b.l = w, b.i = S, b.w = function(t2, e2) {
+              return O(t2, { locale: e2.$L, utc: e2.$u, x: e2.$x, $offset: e2.$offset });
+            };
+            var _ = (function() {
+              function M2(t2) {
+                this.$L = w(t2.locale, null, true), this.parse(t2), this.$x = this.$x || t2.x || {}, this[p] = true;
+              }
+              var m2 = M2.prototype;
+              return m2.parse = function(t2) {
+                this.$d = (function(t3) {
+                  var e2 = t3.date, n2 = t3.utc;
+                  if (null === e2) return new Date(NaN);
+                  if (b.u(e2)) return new Date();
+                  if (e2 instanceof Date) return new Date(e2);
+                  if ("string" == typeof e2 && !/Z$/i.test(e2)) {
+                    var r2 = e2.match($);
+                    if (r2) {
+                      var i2 = r2[2] - 1 || 0, s2 = (r2[7] || "0").substring(0, 3);
+                      return n2 ? new Date(Date.UTC(r2[1], i2, r2[3] || 1, r2[4] || 0, r2[5] || 0, r2[6] || 0, s2)) : new Date(r2[1], i2, r2[3] || 1, r2[4] || 0, r2[5] || 0, r2[6] || 0, s2);
+                    }
+                  }
+                  return new Date(e2);
+                })(t2), this.init();
+              }, m2.init = function() {
+                var t2 = this.$d;
+                this.$y = t2.getFullYear(), this.$M = t2.getMonth(), this.$D = t2.getDate(), this.$W = t2.getDay(), this.$H = t2.getHours(), this.$m = t2.getMinutes(), this.$s = t2.getSeconds(), this.$ms = t2.getMilliseconds();
+              }, m2.$utils = function() {
+                return b;
+              }, m2.isValid = function() {
+                return !(this.$d.toString() === l);
+              }, m2.isSame = function(t2, e2) {
+                var n2 = O(t2);
+                return this.startOf(e2) <= n2 && n2 <= this.endOf(e2);
+              }, m2.isAfter = function(t2, e2) {
+                return O(t2) < this.startOf(e2);
+              }, m2.isBefore = function(t2, e2) {
+                return this.endOf(e2) < O(t2);
+              }, m2.$g = function(t2, e2, n2) {
+                return b.u(t2) ? this[e2] : this.set(n2, t2);
+              }, m2.unix = function() {
+                return Math.floor(this.valueOf() / 1e3);
+              }, m2.valueOf = function() {
+                return this.$d.getTime();
+              }, m2.startOf = function(t2, e2) {
+                var n2 = this, r2 = !!b.u(e2) || e2, f2 = b.p(t2), l2 = function(t3, e3) {
+                  var i2 = b.w(n2.$u ? Date.UTC(n2.$y, e3, t3) : new Date(n2.$y, e3, t3), n2);
+                  return r2 ? i2 : i2.endOf(a);
+                }, $2 = function(t3, e3) {
+                  return b.w(n2.toDate()[t3].apply(n2.toDate("s"), (r2 ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e3)), n2);
+                }, y2 = this.$W, M3 = this.$M, m3 = this.$D, v2 = "set" + (this.$u ? "UTC" : "");
+                switch (f2) {
+                  case h:
+                    return r2 ? l2(1, 0) : l2(31, 11);
+                  case c:
+                    return r2 ? l2(1, M3) : l2(0, M3 + 1);
+                  case o:
+                    var g2 = this.$locale().weekStart || 0, D2 = (y2 < g2 ? y2 + 7 : y2) - g2;
+                    return l2(r2 ? m3 - D2 : m3 + (6 - D2), M3);
+                  case a:
+                  case d:
+                    return $2(v2 + "Hours", 0);
+                  case u:
+                    return $2(v2 + "Minutes", 1);
+                  case s:
+                    return $2(v2 + "Seconds", 2);
+                  case i:
+                    return $2(v2 + "Milliseconds", 3);
+                  default:
+                    return this.clone();
+                }
+              }, m2.endOf = function(t2) {
+                return this.startOf(t2, false);
+              }, m2.$set = function(t2, e2) {
+                var n2, o2 = b.p(t2), f2 = "set" + (this.$u ? "UTC" : ""), l2 = (n2 = {}, n2[a] = f2 + "Date", n2[d] = f2 + "Date", n2[c] = f2 + "Month", n2[h] = f2 + "FullYear", n2[u] = f2 + "Hours", n2[s] = f2 + "Minutes", n2[i] = f2 + "Seconds", n2[r] = f2 + "Milliseconds", n2)[o2], $2 = o2 === a ? this.$D + (e2 - this.$W) : e2;
+                if (o2 === c || o2 === h) {
+                  var y2 = this.clone().set(d, 1);
+                  y2.$d[l2]($2), y2.init(), this.$d = y2.set(d, Math.min(this.$D, y2.daysInMonth())).$d;
+                } else l2 && this.$d[l2]($2);
+                return this.init(), this;
+              }, m2.set = function(t2, e2) {
+                return this.clone().$set(t2, e2);
+              }, m2.get = function(t2) {
+                return this[b.p(t2)]();
+              }, m2.add = function(r2, f2) {
+                var d2, l2 = this;
+                r2 = Number(r2);
+                var $2 = b.p(f2), y2 = function(t2) {
+                  var e2 = O(l2);
+                  return b.w(e2.date(e2.date() + Math.round(t2 * r2)), l2);
+                };
+                if ($2 === c) return this.set(c, this.$M + r2);
+                if ($2 === h) return this.set(h, this.$y + r2);
+                if ($2 === a) return y2(1);
+                if ($2 === o) return y2(7);
+                var M3 = (d2 = {}, d2[s] = e, d2[u] = n, d2[i] = t, d2)[$2] || 1, m3 = this.$d.getTime() + r2 * M3;
+                return b.w(m3, this);
+              }, m2.subtract = function(t2, e2) {
+                return this.add(-1 * t2, e2);
+              }, m2.format = function(t2) {
+                var e2 = this, n2 = this.$locale();
+                if (!this.isValid()) return n2.invalidDate || l;
+                var r2 = t2 || "YYYY-MM-DDTHH:mm:ssZ", i2 = b.z(this), s2 = this.$H, u2 = this.$m, a2 = this.$M, o2 = n2.weekdays, c2 = n2.months, f2 = n2.meridiem, h2 = function(t3, n3, i3, s3) {
+                  return t3 && (t3[n3] || t3(e2, r2)) || i3[n3].slice(0, s3);
+                }, d2 = function(t3) {
+                  return b.s(s2 % 12 || 12, t3, "0");
+                }, $2 = f2 || function(t3, e3, n3) {
+                  var r3 = t3 < 12 ? "AM" : "PM";
+                  return n3 ? r3.toLowerCase() : r3;
+                };
+                return r2.replace(y, (function(t3, r3) {
+                  return r3 || (function(t4) {
+                    switch (t4) {
+                      case "YY":
+                        return String(e2.$y).slice(-2);
+                      case "YYYY":
+                        return b.s(e2.$y, 4, "0");
+                      case "M":
+                        return a2 + 1;
+                      case "MM":
+                        return b.s(a2 + 1, 2, "0");
+                      case "MMM":
+                        return h2(n2.monthsShort, a2, c2, 3);
+                      case "MMMM":
+                        return h2(c2, a2);
+                      case "D":
+                        return e2.$D;
+                      case "DD":
+                        return b.s(e2.$D, 2, "0");
+                      case "d":
+                        return String(e2.$W);
+                      case "dd":
+                        return h2(n2.weekdaysMin, e2.$W, o2, 2);
+                      case "ddd":
+                        return h2(n2.weekdaysShort, e2.$W, o2, 3);
+                      case "dddd":
+                        return o2[e2.$W];
+                      case "H":
+                        return String(s2);
+                      case "HH":
+                        return b.s(s2, 2, "0");
+                      case "h":
+                        return d2(1);
+                      case "hh":
+                        return d2(2);
+                      case "a":
+                        return $2(s2, u2, true);
+                      case "A":
+                        return $2(s2, u2, false);
+                      case "m":
+                        return String(u2);
+                      case "mm":
+                        return b.s(u2, 2, "0");
+                      case "s":
+                        return String(e2.$s);
+                      case "ss":
+                        return b.s(e2.$s, 2, "0");
+                      case "SSS":
+                        return b.s(e2.$ms, 3, "0");
+                      case "Z":
+                        return i2;
+                    }
+                    return null;
+                  })(t3) || i2.replace(":", "");
+                }));
+              }, m2.utcOffset = function() {
+                return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
+              }, m2.diff = function(r2, d2, l2) {
+                var $2, y2 = this, M3 = b.p(d2), m3 = O(r2), v2 = (m3.utcOffset() - this.utcOffset()) * e, g2 = this - m3, D2 = function() {
+                  return b.m(y2, m3);
+                };
+                switch (M3) {
+                  case h:
+                    $2 = D2() / 12;
+                    break;
+                  case c:
+                    $2 = D2();
+                    break;
+                  case f:
+                    $2 = D2() / 3;
+                    break;
+                  case o:
+                    $2 = (g2 - v2) / 6048e5;
+                    break;
+                  case a:
+                    $2 = (g2 - v2) / 864e5;
+                    break;
+                  case u:
+                    $2 = g2 / n;
+                    break;
+                  case s:
+                    $2 = g2 / e;
+                    break;
+                  case i:
+                    $2 = g2 / t;
+                    break;
+                  default:
+                    $2 = g2;
+                }
+                return l2 ? $2 : b.a($2);
+              }, m2.daysInMonth = function() {
+                return this.endOf(c).$D;
+              }, m2.$locale = function() {
+                return D[this.$L];
+              }, m2.locale = function(t2, e2) {
+                if (!t2) return this.$L;
+                var n2 = this.clone(), r2 = w(t2, e2, true);
+                return r2 && (n2.$L = r2), n2;
+              }, m2.clone = function() {
+                return b.w(this.$d, this);
+              }, m2.toDate = function() {
+                return new Date(this.valueOf());
+              }, m2.toJSON = function() {
+                return this.isValid() ? this.toISOString() : null;
+              }, m2.toISOString = function() {
+                return this.$d.toISOString();
+              }, m2.toString = function() {
+                return this.$d.toUTCString();
+              }, M2;
+            })(), k = _.prototype;
+            return O.prototype = k, [["$ms", r], ["$s", i], ["$m", s], ["$H", u], ["$W", a], ["$M", c], ["$y", h], ["$D", d]].forEach((function(t2) {
+              k[t2[1]] = function(e2) {
+                return this.$g(e2, t2[0], t2[1]);
+              };
+            })), O.extend = function(t2, e2) {
+              return t2.$i || (t2(e2, _, O), t2.$i = true), O;
+            }, O.locale = w, O.isDayjs = S, O.unix = function(t2) {
+              return O(1e3 * t2);
+            }, O.en = D[g], O.Ls = D, O.p = {}, O;
+          }));
+        })(dayjs_min$1);
+        return dayjs_min$1.exports;
+      }
+      var dayjs_minExports = requireDayjs_min();
+      const dayjs = getDefaultExportFromCjs(dayjs_minExports);
+      const getQualityTags = (song) => {
+        const tags = [];
+        if (song.hr)
+          tags.push({
+            label: "Hi-Res",
+            color: "#f50",
+            value: QUALITY_LEVELS["Hi-Res"]
+          });
+        if (song.sq)
+          tags.push({ label: "SQ", color: "#87d068", value: QUALITY_LEVELS.无损 });
+        if (song.h)
+          tags.push({ label: "HQ", color: "#2db7f5", value: QUALITY_LEVELS.较高 });
+        return tags;
+      };
+      const formatDuration = (ms2) => {
+        const time = dayjs.duration(ms2);
+        const minutes = time.minutes();
+        const seconds = time.seconds();
+        return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+      };
+      const getMarkTags = (mark) => {
+        const tags = [];
+        if (mark & 131072) tags.push({ text: "纯音乐", color: "#2db7f5" });
+        if (mark & 262144) tags.push({ text: "杜比全景声", color: "#722ed1" });
+        if (mark & 1048576) tags.push({ text: "🅴", color: "#f50" });
+        if (mark & 17179869184) tags.push({ text: "Hi-Res", color: "#f50" });
+        return tags;
+      };
+      const getOriginTag = (originCoverType) => {
+        const types = {
+          0: { text: "未知", color: "#d9d9d9" },
+          1: { text: "原曲", color: "#87d068" },
+          2: { text: "翻唱", color: "#2db7f5" }
+        };
+        return types[originCoverType] || types[0];
+      };
+      const formatPopularity = (pop) => {
+        if (!pop) return "0";
+        return pop.toFixed(1);
+      };
+      const getTypeTag = (t) => {
+        const types = {
+          0: { text: "普通歌曲", color: "#108ee9" },
+          1: { text: "独立云盘", color: "#f50" },
+          2: { text: "云盘歌曲", color: "#87d068" }
+        };
+        return types[t] || types[0];
+      };
+      const getFeeTag = (fee) => {
+        const fees = {
+          0: { text: "免费", color: "#87d068" },
+          1: { text: "VIP", color: "#f50" },
+          4: { text: "专辑购买", color: "#722ed1" },
+          8: { text: "付费/试听", color: "#faad14" }
+        };
+        return fees[fee] || fees[0];
+      };
       const BUCKET = "jd-musicrep-privatecloud-audio-public";
       const uploadAudioToNos = async ({
         file,
@@ -7645,6 +7990,7 @@ expireTime: Date.now() + 6e4,
         const {
           level = QUALITY_LEVELS.无损,
           concurrent = 6,
+          onStart,
           onChange,
           onComplete
         } = options || {};
@@ -7656,11 +8002,38 @@ expireTime: Date.now() + 6e4,
               songInfoRes.message || songInfoRes.msg || "获取歌曲信息失败"
             );
           }
-          const songs2 = songInfoRes.songs;
-          console.log(`获取歌曲信息, 共${songs2.length}首`, songs2);
+          const allPrivileges = songInfoRes.privileges;
+          const allSongs = songInfoRes.songs;
+          const songsMap = Object.fromEntries(
+            allSongs.map((song) => [song.id, song])
+          );
+          const songs2 = allPrivileges.filter((privilege) => !privilege.cs).map((privilege) => songsMap[privilege.id]);
+          const existSongs = allPrivileges.filter((privilege) => privilege.cs).map((privilege) => songsMap[privilege.id]);
+          console.log(
+            `获取歌曲信息, 共${allSongs.length}首，待上传${songs2.length}首，已上传${existSongs.length}首`,
+            allSongs,
+            songs2,
+            existSongs
+          );
+          onStart?.({
+            allSongs,
+            allPrivileges,
+            existSongs,
+            songs: songs2
+          });
           const urls = await Promise.all(
             songs2.map(async (song) => {
-              const res = await getSongUrl$1([song.id], { level });
+              const qualityTags = getQualityTags(song);
+              console.log("qualityTags", qualityTags);
+              const hasTheLevel = qualityTags.some((tag2) => tag2.value === level);
+              if (!hasTheLevel) {
+                msgError(
+                  `歌曲： ${song.name} 音质等级不支持: ${level}, 当前音质等级: ${qualityTags.map((tag2) => tag2.label).join(",")},已降至${qualityTags[0]?.label}`
+                );
+              }
+              const res = await getSongUrl$1([song.id], {
+                level: hasTheLevel ? level : qualityTags[0]?.value
+              });
               if (res.code != 200) {
                 msgError("获取歌曲链接失败");
                 throw new Error(res.message || res.msg || "获取歌曲链接失败");
@@ -7671,7 +8044,6 @@ expireTime: Date.now() + 6e4,
             })
           );
           console.log(`获取歌曲链接, 共${urls.length}首`, urls);
-          let count2 = 0;
           const success = [];
           const failed = [];
           const tasks = songs2.map((song, index2) => async () => {
@@ -7693,44 +8065,45 @@ expireTime: Date.now() + 6e4,
                 defaultArtists: songInfo2.artists,
                 matchId: song.id
               });
+              success.push(song);
               console.log(
-                `第${index2 + 1}首歌曲上传完成: ${song.name} 共${songs2.length}首, 已上传${count2}首`,
+                `第${index2 + 1}首歌曲上传完成: ${song.name} 共${songs2.length}首, 已上传${success.length}首`,
                 songInfo2,
                 res
               );
               onChange?.({
                 current: index2 + 1,
                 total: songs2.length,
-                success: true,
-                successCount: count2,
+                errorCount: failed.length,
+                type: "success",
+                successCount: success.length,
                 index: index2,
                 song
               });
-              count2++;
-              success.push(song);
               return res;
             } catch (error) {
+              failed.push(song);
               console.log("error", error, song);
               onChange?.({
                 current: index2 + 1,
                 total: songs2.length,
-                success: false,
-                successCount: count2,
+                type: "failed",
+                successCount: success.length,
+                errorCount: failed.length,
                 index: index2,
                 song
               });
-              failed.push(song);
             }
           });
           const results = await promiseLimit(tasks, concurrent);
           console.log(
-            `上传完成, 共${songs2.length}首, 已上传${count2}首, 上传失败结果: ${songs2?.length - count2}首`,
+            `上传完成, 共${songs2.length}首, 已上传${success.length}首, 上传失败结果: ${failed.length}首`,
             results
           );
           onComplete?.({
             total: songs2.length,
-            successCount: count2,
-            failedCount: songs2.length - count2,
+            successCount: success.length,
+            errorCount: failed.length,
             success,
             failed,
             results
@@ -9935,348 +10308,6 @@ op: "add"
           throw error;
         }
       };
-      var dayjs_min$1 = { exports: {} };
-      var dayjs_min = dayjs_min$1.exports;
-      var hasRequiredDayjs_min;
-      function requireDayjs_min() {
-        if (hasRequiredDayjs_min) return dayjs_min$1.exports;
-        hasRequiredDayjs_min = 1;
-        (function(module, exports) {
-          !(function(t, e) {
-            module.exports = e();
-          })(dayjs_min, (function() {
-            var t = 1e3, e = 6e4, n = 36e5, r = "millisecond", i = "second", s = "minute", u = "hour", a = "day", o = "week", c = "month", f = "quarter", h = "year", d = "date", l = "Invalid Date", $ = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, y = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, M = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(t2) {
-              var e2 = ["th", "st", "nd", "rd"], n2 = t2 % 100;
-              return "[" + t2 + (e2[(n2 - 20) % 10] || e2[n2] || e2[0]) + "]";
-            } }, m = function(t2, e2, n2) {
-              var r2 = String(t2);
-              return !r2 || r2.length >= e2 ? t2 : "" + Array(e2 + 1 - r2.length).join(n2) + t2;
-            }, v = { s: m, z: function(t2) {
-              var e2 = -t2.utcOffset(), n2 = Math.abs(e2), r2 = Math.floor(n2 / 60), i2 = n2 % 60;
-              return (e2 <= 0 ? "+" : "-") + m(r2, 2, "0") + ":" + m(i2, 2, "0");
-            }, m: function t2(e2, n2) {
-              if (e2.date() < n2.date()) return -t2(n2, e2);
-              var r2 = 12 * (n2.year() - e2.year()) + (n2.month() - e2.month()), i2 = e2.clone().add(r2, c), s2 = n2 - i2 < 0, u2 = e2.clone().add(r2 + (s2 ? -1 : 1), c);
-              return +(-(r2 + (n2 - i2) / (s2 ? i2 - u2 : u2 - i2)) || 0);
-            }, a: function(t2) {
-              return t2 < 0 ? Math.ceil(t2) || 0 : Math.floor(t2);
-            }, p: function(t2) {
-              return { M: c, y: h, w: o, d: a, D: d, h: u, m: s, s: i, ms: r, Q: f }[t2] || String(t2 || "").toLowerCase().replace(/s$/, "");
-            }, u: function(t2) {
-              return void 0 === t2;
-            } }, g = "en", D = {};
-            D[g] = M;
-            var p = "$isDayjsObject", S = function(t2) {
-              return t2 instanceof _ || !(!t2 || !t2[p]);
-            }, w = function t2(e2, n2, r2) {
-              var i2;
-              if (!e2) return g;
-              if ("string" == typeof e2) {
-                var s2 = e2.toLowerCase();
-                D[s2] && (i2 = s2), n2 && (D[s2] = n2, i2 = s2);
-                var u2 = e2.split("-");
-                if (!i2 && u2.length > 1) return t2(u2[0]);
-              } else {
-                var a2 = e2.name;
-                D[a2] = e2, i2 = a2;
-              }
-              return !r2 && i2 && (g = i2), i2 || !r2 && g;
-            }, O = function(t2, e2) {
-              if (S(t2)) return t2.clone();
-              var n2 = "object" == typeof e2 ? e2 : {};
-              return n2.date = t2, n2.args = arguments, new _(n2);
-            }, b = v;
-            b.l = w, b.i = S, b.w = function(t2, e2) {
-              return O(t2, { locale: e2.$L, utc: e2.$u, x: e2.$x, $offset: e2.$offset });
-            };
-            var _ = (function() {
-              function M2(t2) {
-                this.$L = w(t2.locale, null, true), this.parse(t2), this.$x = this.$x || t2.x || {}, this[p] = true;
-              }
-              var m2 = M2.prototype;
-              return m2.parse = function(t2) {
-                this.$d = (function(t3) {
-                  var e2 = t3.date, n2 = t3.utc;
-                  if (null === e2) return new Date(NaN);
-                  if (b.u(e2)) return new Date();
-                  if (e2 instanceof Date) return new Date(e2);
-                  if ("string" == typeof e2 && !/Z$/i.test(e2)) {
-                    var r2 = e2.match($);
-                    if (r2) {
-                      var i2 = r2[2] - 1 || 0, s2 = (r2[7] || "0").substring(0, 3);
-                      return n2 ? new Date(Date.UTC(r2[1], i2, r2[3] || 1, r2[4] || 0, r2[5] || 0, r2[6] || 0, s2)) : new Date(r2[1], i2, r2[3] || 1, r2[4] || 0, r2[5] || 0, r2[6] || 0, s2);
-                    }
-                  }
-                  return new Date(e2);
-                })(t2), this.init();
-              }, m2.init = function() {
-                var t2 = this.$d;
-                this.$y = t2.getFullYear(), this.$M = t2.getMonth(), this.$D = t2.getDate(), this.$W = t2.getDay(), this.$H = t2.getHours(), this.$m = t2.getMinutes(), this.$s = t2.getSeconds(), this.$ms = t2.getMilliseconds();
-              }, m2.$utils = function() {
-                return b;
-              }, m2.isValid = function() {
-                return !(this.$d.toString() === l);
-              }, m2.isSame = function(t2, e2) {
-                var n2 = O(t2);
-                return this.startOf(e2) <= n2 && n2 <= this.endOf(e2);
-              }, m2.isAfter = function(t2, e2) {
-                return O(t2) < this.startOf(e2);
-              }, m2.isBefore = function(t2, e2) {
-                return this.endOf(e2) < O(t2);
-              }, m2.$g = function(t2, e2, n2) {
-                return b.u(t2) ? this[e2] : this.set(n2, t2);
-              }, m2.unix = function() {
-                return Math.floor(this.valueOf() / 1e3);
-              }, m2.valueOf = function() {
-                return this.$d.getTime();
-              }, m2.startOf = function(t2, e2) {
-                var n2 = this, r2 = !!b.u(e2) || e2, f2 = b.p(t2), l2 = function(t3, e3) {
-                  var i2 = b.w(n2.$u ? Date.UTC(n2.$y, e3, t3) : new Date(n2.$y, e3, t3), n2);
-                  return r2 ? i2 : i2.endOf(a);
-                }, $2 = function(t3, e3) {
-                  return b.w(n2.toDate()[t3].apply(n2.toDate("s"), (r2 ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e3)), n2);
-                }, y2 = this.$W, M3 = this.$M, m3 = this.$D, v2 = "set" + (this.$u ? "UTC" : "");
-                switch (f2) {
-                  case h:
-                    return r2 ? l2(1, 0) : l2(31, 11);
-                  case c:
-                    return r2 ? l2(1, M3) : l2(0, M3 + 1);
-                  case o:
-                    var g2 = this.$locale().weekStart || 0, D2 = (y2 < g2 ? y2 + 7 : y2) - g2;
-                    return l2(r2 ? m3 - D2 : m3 + (6 - D2), M3);
-                  case a:
-                  case d:
-                    return $2(v2 + "Hours", 0);
-                  case u:
-                    return $2(v2 + "Minutes", 1);
-                  case s:
-                    return $2(v2 + "Seconds", 2);
-                  case i:
-                    return $2(v2 + "Milliseconds", 3);
-                  default:
-                    return this.clone();
-                }
-              }, m2.endOf = function(t2) {
-                return this.startOf(t2, false);
-              }, m2.$set = function(t2, e2) {
-                var n2, o2 = b.p(t2), f2 = "set" + (this.$u ? "UTC" : ""), l2 = (n2 = {}, n2[a] = f2 + "Date", n2[d] = f2 + "Date", n2[c] = f2 + "Month", n2[h] = f2 + "FullYear", n2[u] = f2 + "Hours", n2[s] = f2 + "Minutes", n2[i] = f2 + "Seconds", n2[r] = f2 + "Milliseconds", n2)[o2], $2 = o2 === a ? this.$D + (e2 - this.$W) : e2;
-                if (o2 === c || o2 === h) {
-                  var y2 = this.clone().set(d, 1);
-                  y2.$d[l2]($2), y2.init(), this.$d = y2.set(d, Math.min(this.$D, y2.daysInMonth())).$d;
-                } else l2 && this.$d[l2]($2);
-                return this.init(), this;
-              }, m2.set = function(t2, e2) {
-                return this.clone().$set(t2, e2);
-              }, m2.get = function(t2) {
-                return this[b.p(t2)]();
-              }, m2.add = function(r2, f2) {
-                var d2, l2 = this;
-                r2 = Number(r2);
-                var $2 = b.p(f2), y2 = function(t2) {
-                  var e2 = O(l2);
-                  return b.w(e2.date(e2.date() + Math.round(t2 * r2)), l2);
-                };
-                if ($2 === c) return this.set(c, this.$M + r2);
-                if ($2 === h) return this.set(h, this.$y + r2);
-                if ($2 === a) return y2(1);
-                if ($2 === o) return y2(7);
-                var M3 = (d2 = {}, d2[s] = e, d2[u] = n, d2[i] = t, d2)[$2] || 1, m3 = this.$d.getTime() + r2 * M3;
-                return b.w(m3, this);
-              }, m2.subtract = function(t2, e2) {
-                return this.add(-1 * t2, e2);
-              }, m2.format = function(t2) {
-                var e2 = this, n2 = this.$locale();
-                if (!this.isValid()) return n2.invalidDate || l;
-                var r2 = t2 || "YYYY-MM-DDTHH:mm:ssZ", i2 = b.z(this), s2 = this.$H, u2 = this.$m, a2 = this.$M, o2 = n2.weekdays, c2 = n2.months, f2 = n2.meridiem, h2 = function(t3, n3, i3, s3) {
-                  return t3 && (t3[n3] || t3(e2, r2)) || i3[n3].slice(0, s3);
-                }, d2 = function(t3) {
-                  return b.s(s2 % 12 || 12, t3, "0");
-                }, $2 = f2 || function(t3, e3, n3) {
-                  var r3 = t3 < 12 ? "AM" : "PM";
-                  return n3 ? r3.toLowerCase() : r3;
-                };
-                return r2.replace(y, (function(t3, r3) {
-                  return r3 || (function(t4) {
-                    switch (t4) {
-                      case "YY":
-                        return String(e2.$y).slice(-2);
-                      case "YYYY":
-                        return b.s(e2.$y, 4, "0");
-                      case "M":
-                        return a2 + 1;
-                      case "MM":
-                        return b.s(a2 + 1, 2, "0");
-                      case "MMM":
-                        return h2(n2.monthsShort, a2, c2, 3);
-                      case "MMMM":
-                        return h2(c2, a2);
-                      case "D":
-                        return e2.$D;
-                      case "DD":
-                        return b.s(e2.$D, 2, "0");
-                      case "d":
-                        return String(e2.$W);
-                      case "dd":
-                        return h2(n2.weekdaysMin, e2.$W, o2, 2);
-                      case "ddd":
-                        return h2(n2.weekdaysShort, e2.$W, o2, 3);
-                      case "dddd":
-                        return o2[e2.$W];
-                      case "H":
-                        return String(s2);
-                      case "HH":
-                        return b.s(s2, 2, "0");
-                      case "h":
-                        return d2(1);
-                      case "hh":
-                        return d2(2);
-                      case "a":
-                        return $2(s2, u2, true);
-                      case "A":
-                        return $2(s2, u2, false);
-                      case "m":
-                        return String(u2);
-                      case "mm":
-                        return b.s(u2, 2, "0");
-                      case "s":
-                        return String(e2.$s);
-                      case "ss":
-                        return b.s(e2.$s, 2, "0");
-                      case "SSS":
-                        return b.s(e2.$ms, 3, "0");
-                      case "Z":
-                        return i2;
-                    }
-                    return null;
-                  })(t3) || i2.replace(":", "");
-                }));
-              }, m2.utcOffset = function() {
-                return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
-              }, m2.diff = function(r2, d2, l2) {
-                var $2, y2 = this, M3 = b.p(d2), m3 = O(r2), v2 = (m3.utcOffset() - this.utcOffset()) * e, g2 = this - m3, D2 = function() {
-                  return b.m(y2, m3);
-                };
-                switch (M3) {
-                  case h:
-                    $2 = D2() / 12;
-                    break;
-                  case c:
-                    $2 = D2();
-                    break;
-                  case f:
-                    $2 = D2() / 3;
-                    break;
-                  case o:
-                    $2 = (g2 - v2) / 6048e5;
-                    break;
-                  case a:
-                    $2 = (g2 - v2) / 864e5;
-                    break;
-                  case u:
-                    $2 = g2 / n;
-                    break;
-                  case s:
-                    $2 = g2 / e;
-                    break;
-                  case i:
-                    $2 = g2 / t;
-                    break;
-                  default:
-                    $2 = g2;
-                }
-                return l2 ? $2 : b.a($2);
-              }, m2.daysInMonth = function() {
-                return this.endOf(c).$D;
-              }, m2.$locale = function() {
-                return D[this.$L];
-              }, m2.locale = function(t2, e2) {
-                if (!t2) return this.$L;
-                var n2 = this.clone(), r2 = w(t2, e2, true);
-                return r2 && (n2.$L = r2), n2;
-              }, m2.clone = function() {
-                return b.w(this.$d, this);
-              }, m2.toDate = function() {
-                return new Date(this.valueOf());
-              }, m2.toJSON = function() {
-                return this.isValid() ? this.toISOString() : null;
-              }, m2.toISOString = function() {
-                return this.$d.toISOString();
-              }, m2.toString = function() {
-                return this.$d.toUTCString();
-              }, M2;
-            })(), k = _.prototype;
-            return O.prototype = k, [["$ms", r], ["$s", i], ["$m", s], ["$H", u], ["$W", a], ["$M", c], ["$y", h], ["$D", d]].forEach((function(t2) {
-              k[t2[1]] = function(e2) {
-                return this.$g(e2, t2[0], t2[1]);
-              };
-            })), O.extend = function(t2, e2) {
-              return t2.$i || (t2(e2, _, O), t2.$i = true), O;
-            }, O.locale = w, O.isDayjs = S, O.unix = function(t2) {
-              return O(1e3 * t2);
-            }, O.en = D[g], O.Ls = D, O.p = {}, O;
-          }));
-        })(dayjs_min$1);
-        return dayjs_min$1.exports;
-      }
-      var dayjs_minExports = requireDayjs_min();
-      const dayjs = getDefaultExportFromCjs(dayjs_minExports);
-      const getQualityTags = (song) => {
-        const tags = [];
-        if (song.hr)
-          tags.push({
-            label: "Hi-Res",
-            color: "#f50",
-            value: QUALITY_LEVELS["Hi-Res"]
-          });
-        if (song.sq)
-          tags.push({ label: "SQ", color: "#87d068", value: QUALITY_LEVELS.无损 });
-        if (song.h)
-          tags.push({ label: "HQ", color: "#2db7f5", value: QUALITY_LEVELS.较高 });
-        return tags;
-      };
-      const formatDuration = (ms2) => {
-        const time = dayjs.duration(ms2);
-        const minutes = time.minutes();
-        const seconds = time.seconds();
-        return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-      };
-      const getMarkTags = (mark) => {
-        const tags = [];
-        if (mark & 131072) tags.push({ text: "纯音乐", color: "#2db7f5" });
-        if (mark & 262144) tags.push({ text: "杜比全景声", color: "#722ed1" });
-        if (mark & 1048576) tags.push({ text: "🅴", color: "#f50" });
-        if (mark & 17179869184) tags.push({ text: "Hi-Res", color: "#f50" });
-        return tags;
-      };
-      const getOriginTag = (originCoverType) => {
-        const types = {
-          0: { text: "未知", color: "#d9d9d9" },
-          1: { text: "原曲", color: "#87d068" },
-          2: { text: "翻唱", color: "#2db7f5" }
-        };
-        return types[originCoverType] || types[0];
-      };
-      const formatPopularity = (pop) => {
-        if (!pop) return "0";
-        return pop.toFixed(1);
-      };
-      const getTypeTag = (t) => {
-        const types = {
-          0: { text: "普通歌曲", color: "#108ee9" },
-          1: { text: "独立云盘", color: "#f50" },
-          2: { text: "云盘歌曲", color: "#87d068" }
-        };
-        return types[t] || types[0];
-      };
-      const getFeeTag = (fee) => {
-        const fees = {
-          0: { text: "免费", color: "#87d068" },
-          1: { text: "VIP", color: "#f50" },
-          4: { text: "专辑购买", color: "#722ed1" },
-          8: { text: "付费/试听", color: "#faad14" }
-        };
-        return fees[fee] || fees[0];
-      };
       function stringToBytes(str, encoding = "utf8") {
         if (encoding === "utf8") {
           const utf8 = unescape(encodeURIComponent(str));
@@ -10977,7 +11008,6 @@ saveAsBuffer() {
       const parseTags = (tags) => {
         const result = {};
         tags.forEach((tag2) => {
-          usr;
           const equalIndex = tag2.indexOf("=");
           if (equalIndex === -1) return;
           const name2 = tag2.substring(0, equalIndex).toLowerCase();
@@ -11048,6 +11078,16 @@ saveAsBuffer() {
         } catch (error) {
           console.error("批量写入 FLAC 标签失败:", error);
           throw new Error("批量写入 FLAC 标签失败");
+        }
+      };
+      const readFlacPictures = async (file) => {
+        try {
+          const metaflac = await Metaflac.fromBlob(file);
+          const pictures = metaflac.getPicturesSpecs?.() || [];
+          return pictures.map((_, index2) => metaflac.exportPictureToBlob(index2));
+        } catch (error) {
+          console.error("读取 FLAC 封面图片失败:", error);
+          return null;
         }
       };
       const embedFlacPicture = async (file, picture) => {
@@ -19503,7 +19543,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           },
           ref
         );
-        const [params, setParams] = useState();
+        const [params, setParams] = useState$1();
         useGetSingerInfo(params.singerId);
         return jsxRuntimeExports.jsx(
           Modal,
@@ -21286,7 +21326,7 @@ jsxRuntimeExports.jsx(
                     return {
                       ...item,
                       name: item.simpleSong.name,
-                      artists: getArtistName(item),
+                      artist: getArtistName(item),
                       album: getAlbumName(item)
                     };
                   }),
@@ -22870,18 +22910,6 @@ jsxRuntimeExports.jsx(Tag, { color: "green", className: styles$1["tag"], childre
           onChoose([...singer]);
         };
         const [quickImportLoading, setQuickImportLoading] = useState$1(false);
-        const handleQuickImport = async () => {
-          try {
-            setQuickImportLoading(true);
-            const values = await formRef.getFieldsValue();
-            const { singer } = values;
-            console.log("singer", singer);
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setQuickImportLoading(false);
-          }
-        };
         return jsxRuntimeExports.jsx("div", { className: styles$1["singer-choose"], children: loading ? jsxRuntimeExports.jsx(Spin, { tip: "正在加载中" }) : jsxRuntimeExports.jsxs(
           Form,
           {
@@ -22904,32 +22932,20 @@ jsxRuntimeExports.jsx(Form.Item, { name: "singer", label: "歌手", children: js
               ) }),
 jsxRuntimeExports.jsx(Form.Item, { noStyle: true, shouldUpdate: true, children: ({ getFieldValue }) => {
                 const singer = getFieldValue("singer") || [];
-                return jsxRuntimeExports.jsxs(
+                return jsxRuntimeExports.jsx(
                   "div",
                   {
                     className: styles$1["btn-group"],
                     style: { marginTop: "auto" },
-                    children: [
-jsxRuntimeExports.jsx(
-                        Button,
-                        {
-                          type: "primary",
-                          onClick: handleQuickImport,
-                          loading: quickImportLoading,
-                          disabled: !singer.length,
-                          children: "一键导入"
-                        }
-                      ),
-jsxRuntimeExports.jsx(
-                        Button,
-                        {
-                          type: "primary",
-                          htmlType: "submit",
-                          disabled: !singer.length,
-                          children: "选择"
-                        }
-                      )
-                    ]
+                    children: jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        type: "primary",
+                        htmlType: "submit",
+                        disabled: !singer.length,
+                        children: "选择"
+                      }
+                    )
                   }
                 );
               } })
@@ -23670,6 +23686,9 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
           try {
             const res = await getAlbumSongList(albumId);
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取专辑歌曲列表成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
           }
@@ -23679,8 +23698,44 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
           try {
             const res = await getAlbumDetail(albumId);
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取专辑详情成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
+          }
+        };
+        const handleNeteaseMusicToCloud = async () => {
+          console.log("专辑歌曲转云盘");
+          const uploadMessageKey = "album-to-cloud";
+          try {
+            const res = await getAlbumSongList(albumId);
+            console.log("res", res);
+            if (res.code === 200) {
+              const songs2 = res.songs;
+              const songIds = songs2.map((song) => song.id);
+              await neteaseMusicToCloud(songIds, {
+                onChange: (progress) => {
+                  console.log("progress", progress);
+                  message.loading({
+                    content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                    key: uploadMessageKey,
+                    duration: 0
+                  });
+                },
+                onComplete: (result) => {
+                  console.log("result", result);
+                  message.destroy(uploadMessageKey);
+                  msgSuccess$1(
+                    `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                  );
+                }
+              });
+            }
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            message.destroy(uploadMessageKey);
           }
         };
         return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取专辑歌曲列表", children: jsxRuntimeExports.jsxs(Space, { children: [
@@ -23693,8 +23748,9 @@ jsxRuntimeExports.jsx(
               onChange: (e) => setAlbumId(e.target.value)
             }
           ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumSongList, children: "获取专辑歌曲列表" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumDetail, children: "获取专辑详情" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetAlbumSongList, children: "获取专辑歌曲列表" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetAlbumDetail, children: "获取专辑详情" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicToCloud, children: "专辑歌曲转云盘" })
         ] }) }) });
       };
       const ArtistTab = () => {
@@ -23753,6 +23809,44 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumDetail, 
             console.log("error", error);
           }
         };
+        const handleGetArtistAllSongListToCloud = async () => {
+          console.log("获取歌手全部歌曲并转云盘");
+          const uploadMessageKey = "artist-all-song-list-to-cloud";
+          try {
+            const songRes = await getArtistAllSongList(artistId);
+            if (songRes.code !== 200) {
+              throw new Error("获取歌手全部歌曲失败");
+            }
+            const songs2 = songRes.songs;
+            const songIds = songs2.map((song) => song.id);
+            message.loading({
+              content: "开始上传歌手全部歌曲到云盘，请稍候...",
+              key: uploadMessageKey,
+              duration: 0
+            });
+            const res = await neteaseMusicToCloud(songIds, {
+              onChange: (progress) => {
+                message.loading({
+                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                  key: uploadMessageKey,
+                  duration: 0
+                });
+              },
+              onComplete: (result) => {
+                message.destroy(uploadMessageKey);
+                msgSuccess$1(
+                  `歌手全部歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                );
+              }
+            });
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+            message.destroy(uploadMessageKey);
+          } finally {
+            message.destroy(uploadMessageKey);
+          }
+        };
         return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取歌手歌曲列表", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
             Input,
@@ -23766,7 +23860,8 @@ jsxRuntimeExports.jsx(
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistTopSongList, children: "获取歌手热门歌曲列表" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAlbum, children: "获取歌手专辑" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAlbumPic, children: "下载专辑封面" }),
-jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAllSongList, children: "获取歌手全部歌曲" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAllSongList, children: "获取歌手全部歌曲" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAllSongListToCloud, children: "获取歌手全部歌曲并转云盘" })
         ] }) }) });
       };
       const CloudTab = () => {
@@ -23837,7 +23932,7 @@ jsxRuntimeExports.jsx(
                 onChange: (e) => setPageData({ ...pageData, offset: Number(e.target.value) })
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetCloudData, children: "获取云盘数据" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetCloudData, children: "获取云盘数据" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "删除云盘歌曲", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
@@ -23849,7 +23944,7 @@ jsxRuntimeExports.jsx(
                 onChange: (e) => setSongId(e.target.value)
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleDeleteCloudSong, children: "删除云盘歌曲" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleDeleteCloudSong, children: "删除云盘歌曲" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "上传本地歌曲到云盘", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
@@ -23867,7 +23962,7 @@ jsxRuntimeExports.jsx(
                 children: jsxRuntimeExports.jsx(Button, { icon: jsxRuntimeExports.jsx(UploadOutlined, {}), children: "Select File" })
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleUploadLocalSong, children: "上传本地歌曲到云盘" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleUploadLocalSong, children: "上传本地歌曲到云盘" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "测试网易云音乐转存云盘", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
@@ -23879,7 +23974,7 @@ jsxRuntimeExports.jsx(
                 onChange: (e) => setNeteaseMusicSongId(e.target.value)
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleNeteaseMusicToCloud, children: "测试网易云音乐转存云盘" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicToCloud, children: "测试网易云音乐转存云盘" })
           ] }) })
         ] });
       };
@@ -23888,30 +23983,89 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleNeteaseMusicToCl
         const [flacTagName, setFlacTagName] = useState$1("all");
         const [flacTagValue, setFlacTagValue] = useState$1("");
         const [flacPicture, setFlacPicture] = useState$1(null);
+        const [picturePreview, setPicturePreview] = useState$1(null);
+        const [flacTags, setFlacTags] = useState$1({});
+        const [flacFileList, setFlacFileList] = useState$1([]);
+        const [pictureFileList, setPictureFileList] = useState$1([]);
+        const loadFlacTags = async (file) => {
+          if (!file) return;
+          try {
+            if (flacTags.cover) {
+              URL.revokeObjectURL(flacTags.cover);
+            }
+            const tags = await readAllFlacTag(file);
+            const covers = await readFlacPictures(file) || [];
+            const cover2 = covers.at(-1) ? URL.createObjectURL(covers.at(-1)) : null;
+            setFlacTags({
+              ...tags,
+              cover: cover2
+            });
+            console.log("FLAC 标签:", tags);
+          } catch (error) {
+            console.error("读取 FLAC 标签失败:", error);
+            msgError("读取 FLAC 标签失败");
+          }
+        };
+        useEffect(() => {
+          if (flacFile) {
+            loadFlacTags(flacFile);
+          }
+        }, [flacFile]);
+        const handleFlacFileChange = ({ fileList }) => {
+          setFlacFileList(fileList);
+          if (fileList.length > 0 && fileList[0].originFileObj) {
+            const file = fileList[0].originFileObj;
+            setFlacFile(file);
+          } else {
+            setFlacFile(null);
+            setFlacTags({});
+          }
+        };
+        const handlePictureChange = ({ fileList }) => {
+          setPictureFileList(fileList);
+          if (fileList.length > 0 && fileList[0].originFileObj) {
+            const file = fileList[0].originFileObj;
+            setFlacPicture(file);
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              setPicturePreview(e.target.result);
+            };
+            reader.readAsDataURL(file);
+          } else {
+            setFlacPicture(null);
+            setPicturePreview(null);
+          }
+        };
         const handleReadFlacTag = async () => {
           try {
-            console.log("flacFile", flacFile);
             if (!flacFile) return msgError("请选择文件");
             if (flacTagName === "all") {
               const res = await readAllFlacTag(flacFile);
+              setFlacTags(res);
+              msgSuccess$1("读取所有标签成功，请查看下方信息");
               console.log("res", res);
             } else {
               const res = await readFlacTag(flacFile, flacTagName);
+              msgSuccess$1(`读取标签 ${FLAC_TAGS[flacTagName]} 成功: ${res || "无值"}`);
               console.log("res", res);
             }
           } catch (error) {
             console.log("error", error);
+            msgError("读取标签失败");
           }
         };
         const handleWriteFlacTag = async () => {
           try {
             if (!flacFile) return msgError("请选择文件");
             if (flacTagName === "all") return msgError("请选择具体标签");
+            if (!flacTagValue.trim()) return msgError("请输入标签值");
             const res = await writeFlacTag(flacFile, flacTagName, flacTagValue);
             console.log("res", res);
             setFlacFile(res);
+            msgSuccess$1("写入标签成功");
           } catch (error) {
             console.log("error", error);
+            msgError("写入标签失败");
           }
         };
         const handleEmbedFlacPicture = async () => {
@@ -23921,67 +24075,107 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleNeteaseMusicToCl
             const res = await embedFlacPicture(flacFile, flacPicture);
             console.log("res", res);
             setFlacFile(res);
+            msgSuccess$1("嵌入图片成功");
           } catch (error) {
             console.log("error", error);
+            msgError("嵌入图片失败");
           }
         };
         const handleDownloadFlacFile = async () => {
           try {
             if (!flacFile) return msgError("请选择文件");
             downloadFileWithBlob(flacFile, "test.flac");
+            msgSuccess$1("文件下载成功");
           } catch (error) {
             console.log("error", error);
+            msgError("文件下载失败");
           }
         };
-        return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "测试flac标签", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
-jsxRuntimeExports.jsx(
-            "input",
+        return jsxRuntimeExports.jsxs(Form, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "FLAC 文件", children: jsxRuntimeExports.jsx(
+            Upload,
             {
-              type: "file",
+              fileList: flacFileList,
               accept: ".flac",
-              onChange: (e) => {
-                setFlacFile(e.target.files[0]);
+              maxCount: 1,
+              beforeUpload: () => false,
+              onChange: handleFlacFileChange,
+              children: jsxRuntimeExports.jsx(MyButton, { icon: jsxRuntimeExports.jsx(UploadOutlined, {}), children: "选择 FLAC 文件" })
+            }
+          ) }),
+          Object.keys(flacTags).length > 0 && jsxRuntimeExports.jsx(Form.Item, { label: "FLAC 标签信息", children: jsxRuntimeExports.jsx(Card, { size: "small", children: jsxRuntimeExports.jsx(Descriptions, { column: 2, size: "small", children: Object.entries(flacTags).map(([key, value2]) => jsxRuntimeExports.jsx(
+            Descriptions.Item,
+            {
+              label: FLAC_TAGS[key] || key.toUpperCase(),
+              children: key === "cover" && value2 ? jsxRuntimeExports.jsx(
+                Image,
+                {
+                  src: value2,
+                  alt: "封面",
+                  width: 100,
+                  height: 100,
+                  style: { objectFit: "cover", borderRadius: 4 },
+                  preview: true
+                }
+              ) : key === "cover" ? "无封面" : value2
+            },
+            key
+          )) }) }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "标签操作", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+              Select,
+              {
+                style: { width: 150 },
+                options: [
+                  { label: "全部", value: "all" },
+                  ...Object.entries(FLAC_TAGS).map(([key, value2]) => ({
+                    label: value2,
+                    value: key
+                  }))
+                ],
+                value: flacTagName,
+                onChange: (value2) => setFlacTagName(value2)
               }
-            }
-          ),
+            ),
 jsxRuntimeExports.jsx(
-            Select,
-            {
-              style: { width: 100 },
-              options: [
-                { label: "全部", value: "all" },
-                ...Object.entries(FLAC_TAGS).map(([key, value2]) => ({
-                  label: value2,
-                  value: key
-                }))
-              ],
-              value: flacTagName,
-              onChange: (value2) => setFlacTagName(value2)
-            }
-          ),
-jsxRuntimeExports.jsx(
-            Input,
-            {
-              placeholder: "请输入flac标签",
-              value: flacTagValue,
-              onChange: (e) => setFlacTagValue(e.target.value)
-            }
-          ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleReadFlacTag, children: "读取flac标签" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleWriteFlacTag, children: "写入flac标签" }),
-jsxRuntimeExports.jsx(
-            "input",
-            {
-              type: "file",
-              accept: ".jpg,.png,.jpeg",
-              onChange: (e) => {
-                setFlacPicture(e.target.files[0]);
+              Input,
+              {
+                placeholder: "请输入标签值",
+                value: flacTagValue,
+                onChange: (e) => setFlacTagValue(e.target.value),
+                style: { width: 200 }
               }
-            }
-          ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleEmbedFlacPicture, children: "嵌入flac图片" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" })
-        ] }) }) });
+            ),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleReadFlacTag, children: "读取标签" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleWriteFlacTag, children: "写入标签" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "封面图片", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+              Upload,
+              {
+                fileList: pictureFileList,
+                accept: ".jpg,.png,.jpeg",
+                maxCount: 1,
+                beforeUpload: () => false,
+                onChange: handlePictureChange,
+                children: jsxRuntimeExports.jsx(MyButton, { icon: jsxRuntimeExports.jsx(PictureOutlined, {}), children: "选择图片" })
+              }
+            ),
+            picturePreview && jsxRuntimeExports.jsx(
+              Image,
+              {
+                src: picturePreview,
+                alt: "封面预览",
+                width: 100,
+                height: 100,
+                style: { objectFit: "cover", borderRadius: 4 },
+                preview: true
+              }
+            ),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleEmbedFlacPicture, children: "嵌入图片" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "文件操作", children: jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" }) })
+        ] });
       };
       const LoginTab = () => {
         const handleGetUserAccount = async () => {
@@ -24103,21 +24297,24 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
             const res = await neteaseMusicToCloud(songIds, {
               onChange: (progress) => {
                 message.loading({
-                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首`,
+                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey,
                   duration: 0
                 });
               },
               onComplete: (result) => {
                 message.destroy(uploadMessageKey);
+                console.log("result", result);
                 msgSuccess$1(
-                  `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.failedCount}首`
+                  `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
             });
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
+            message.destroy(uploadMessageKey);
+          } finally {
             message.destroy(uploadMessageKey);
           }
         };
@@ -24131,7 +24328,7 @@ jsxRuntimeExports.jsx(
                 onChange: (e) => setSongListName(e.target.value)
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleCreateSongList, children: "新建歌单" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCreateSongList, children: "新建歌单" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "向歌单添加歌曲", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
@@ -24152,7 +24349,7 @@ jsxRuntimeExports.jsx(
                 onChange: (e) => setAddInfo({ ...addInfo, songId: e.target.value })
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleAddSong, children: "添加歌曲" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleAddSong, children: "添加歌曲" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "获取用户歌单列表", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
@@ -24164,7 +24361,7 @@ jsxRuntimeExports.jsx(
                 onChange: (e) => setUserId(e.target.value)
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylistList, children: "获取用户歌单列表" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetPlaylistList, children: "获取用户歌单列表" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "测试获取歌单详情", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
@@ -24176,8 +24373,8 @@ jsxRuntimeExports.jsx(
                 onChange: (e) => setPlaylistId(e.target.value)
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handlePlaylistToCloud, children: "歌单歌曲转云盘" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handlePlaylistToCloud, children: "歌单歌曲转云盘" })
           ] }) })
         ] });
       };
@@ -25098,7 +25295,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-CWwmr373-pfsaCsMl.js", ['./__monkey.entry-BU3WRVkk.js', './AbstractID3Parser-B4pS--jj-BDaFrr2B.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CXFCj3tc-DPjdhUJ8.js'], (function (exports, module) {
+System.register("./MpegParser-C2wRC5c_-Co_o_K-R.js", ['./__monkey.entry-Cq3mGERQ.js', './AbstractID3Parser-BeLwBmW9-BGVvawc-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CQY3P_YR-BTQxhw25.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -25693,7 +25890,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-j7bJwLX6-Z_V_Zddk.js", ['./__monkey.entry-BU3WRVkk.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-CwlBDbsy-BBMnJC66.js", ['./__monkey.entry-Cq3mGERQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -26200,7 +26397,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-C99ebTpH-CftCBxeB.js", ['./__monkey.entry-BU3WRVkk.js', './ID3v2Parser-CXFCj3tc-DPjdhUJ8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-CfPn3tGq-Bv4ydt7O.js", ['./__monkey.entry-Cq3mGERQ.js', './ID3v2Parser-CQY3P_YR-BTQxhw25.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -26374,7 +26571,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-CSxNZFOZ-CL6E21XA.js", ['./__monkey.entry-BU3WRVkk.js', './ID3v2Parser-CXFCj3tc-DPjdhUJ8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-CfkkY9Ea-FxDa1nC6.js", ['./__monkey.entry-Cq3mGERQ.js', './ID3v2Parser-CQY3P_YR-BTQxhw25.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -26545,7 +26742,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-IIfKTV94-hxhKiXMs.js", ['./__monkey.entry-BU3WRVkk.js', './AbstractID3Parser-B4pS--jj-BDaFrr2B.js', './ID3v2Parser-CXFCj3tc-DPjdhUJ8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-jWgXAuQ1-nEozhMqG.js", ['./__monkey.entry-Cq3mGERQ.js', './AbstractID3Parser-BeLwBmW9-BGVvawc-.js', './ID3v2Parser-CQY3P_YR-BTQxhw25.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -26643,7 +26840,7 @@ System.register("./DsfParser-IIfKTV94-hxhKiXMs.js", ['./__monkey.entry-BU3WRVkk.
   };
 }));
 
-System.register("./FlacParser-C6V1z6Zn-rts-rACF.js", ['./__monkey.entry-BU3WRVkk.js', './VorbisParser-CCpJN0BX-B5TaQwID.js', './AbstractID3Parser-B4pS--jj-BDaFrr2B.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CXFCj3tc-DPjdhUJ8.js'], (function (exports, module) {
+System.register("./FlacParser-xW7ugK0B-BGHVXJbO.js", ['./__monkey.entry-Cq3mGERQ.js', './VorbisParser-CpIbt4d7-BjxaCFbH.js', './AbstractID3Parser-BeLwBmW9-BGVvawc-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CQY3P_YR-BTQxhw25.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -26795,7 +26992,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-CPEWDOof-DFDstbbN.js", ['./__monkey.entry-BU3WRVkk.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-DgAoxNec-DL5DuJk9.js", ['./__monkey.entry-Cq3mGERQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -27402,7 +27599,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-XYVvPRsI-D_7QeppT.js", ['./__monkey.entry-BU3WRVkk.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-C8vsJZ2u-CivepcPD.js", ['./__monkey.entry-Cq3mGERQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -28233,7 +28430,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-m_RlPPIE-sr7FFEvk.js", ['./__monkey.entry-BU3WRVkk.js', './AbstractID3Parser-B4pS--jj-BDaFrr2B.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CXFCj3tc-DPjdhUJ8.js'], (function (exports, module) {
+System.register("./MusepackParser-BFqMYajl-DwZvKQFg.js", ['./__monkey.entry-Cq3mGERQ.js', './AbstractID3Parser-BeLwBmW9-BGVvawc-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CQY3P_YR-BTQxhw25.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -28510,7 +28707,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-B4pS--jj-BDaFrr2B.js", ['./__monkey.entry-BU3WRVkk.js', './ID3v2Parser-CXFCj3tc-DPjdhUJ8.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-BeLwBmW9-BGVvawc-.js", ['./__monkey.entry-Cq3mGERQ.js', './ID3v2Parser-CQY3P_YR-BTQxhw25.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -28574,7 +28771,7 @@ System.register("./AbstractID3Parser-B4pS--jj-BDaFrr2B.js", ['./__monkey.entry-B
   };
 }));
 
-System.register("./OggParser-xUvJjYl0-CzOEIR-I.js", ['./__monkey.entry-BU3WRVkk.js', './VorbisParser-CCpJN0BX-B5TaQwID.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-iuyXaCFD-Bhbu80Y2.js", ['./__monkey.entry-Cq3mGERQ.js', './VorbisParser-CpIbt4d7-BjxaCFbH.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -28849,7 +29046,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-CCpJN0BX-B5TaQwID.js", ['./__monkey.entry-BU3WRVkk.js'], (function (exports, module) {
+System.register("./VorbisParser-CpIbt4d7-BjxaCFbH.js", ['./__monkey.entry-Cq3mGERQ.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -29065,7 +29262,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-DFEIRSVG-DGouTCbA.js", ['./__monkey.entry-BU3WRVkk.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-CfEUvpIp-r-BGGSrM.js", ['./__monkey.entry-Cq3mGERQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -29245,7 +29442,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-V-5pXBwO-BSOC_nD3.js", ['./__monkey.entry-BU3WRVkk.js', './ID3v2Parser-CXFCj3tc-DPjdhUJ8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-CTf1aOfl-C3ZuLkn5.js", ['./__monkey.entry-Cq3mGERQ.js', './ID3v2Parser-CQY3P_YR-BTQxhw25.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -29518,7 +29715,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-CXFCj3tc-DPjdhUJ8.js", ['./__monkey.entry-BU3WRVkk.js'], (function (exports, module) {
+System.register("./ID3v2Parser-CQY3P_YR-BTQxhw25.js", ['./__monkey.entry-Cq3mGERQ.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
