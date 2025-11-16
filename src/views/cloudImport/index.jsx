@@ -5,19 +5,17 @@ import { useVisible } from '@/hooks/useVisible';
 import { formatFileSize, promiseLimit } from '@/utils';
 import { msgSuccess } from '@/utils/modal';
 import { UploadOutlined } from '@ant-design/icons';
-import { Button, Input, Modal, Table, Upload, message } from 'antd';
+import { Space } from 'antd';
+import { Button, Modal, Table, Upload, message } from 'antd';
 import { forwardRef, useState } from 'react';
 
 const CloudImport = forwardRef((props, ref) => {
-  const { visible, open, close } = useVisible(
+  const { visible, close } = useVisible(
     {
       onOpen() {
         // getSingerList();
       },
       onReset() {
-        setSearchText('');
-        setAudioFormat('all');
-        setBitrate('all');
         setTableData([]);
         setSelectedRows([]);
         setLoading(false);
@@ -25,9 +23,7 @@ const CloudImport = forwardRef((props, ref) => {
     },
     ref,
   );
-  const [searchText, setSearchText] = useState('');
-  const [audioFormat, setAudioFormat] = useState('all');
-  const [bitrate, setBitrate] = useState('all');
+
   const [selectedRows, setSelectedRows] = useState([]);
   const [tableData, setTableData] = useState([]);
 
@@ -152,6 +148,24 @@ ${JSON.stringify(
     });
   };
 
+  const renderFooter = () => {
+    return (
+      <Space>
+        {/* 全部选择 */}
+        <Button onClick={() => setSelectedRows(filteredList)}>全部选择</Button>
+        {/* 取消 */}
+        <Button onClick={close}>取消</Button>
+        {/* 导入 */}
+        <Button
+          type='primary'
+          onClick={handleOk}
+          disabled={!selectedRows.length}>
+          导入 {selectedRows.length} 首
+        </Button>
+      </Space>
+    );
+  };
+
   return (
     <Modal
       title='云盘JSON导入'
@@ -161,7 +175,8 @@ ${JSON.stringify(
       width={1000}
       onOk={handleOk}
       onClose={close}
-      confirmLoading={loading}>
+      confirmLoading={loading}
+      footer={renderFooter()}>
       <SearchForm
         data={tableData}
         options={[
@@ -200,7 +215,7 @@ ${JSON.stringify(
             reader.onload = (e) => {
               try {
                 const jsonData = JSON.parse(e.target.result);
-                setTableData(jsonData);
+                setTableData(jsonData?.data || jsonData || []);
                 message.success('JSON文件解析成功');
               } catch (error) {
                 message.error('JSON文件解析失败');

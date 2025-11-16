@@ -67,6 +67,9 @@
     }
 
     .creator {
+      display: flex;
+      align-items: center;
+      gap: 4px;
       font-size: 12px;
       color: #8c8c8c;
       overflow: hidden;
@@ -98,4 +101,3 @@
     }
   }
 }
-

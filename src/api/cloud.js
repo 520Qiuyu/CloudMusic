@@ -550,7 +550,7 @@ export const neteaseMusicToCloud = async (songIds, options = {}) => {
         if (!song.url) throw new Error(`歌曲链接不存在: ${song.name}`);
 
         // 3.2 获取文件对象
-        const file = await fetch(song.url);
+        const file = await fetch(song.url.replace('http://', 'https://'));
         const blob = await file.blob();
         const fileObj = new File([blob], song.name, { type: song.type });
         const songInfo = {

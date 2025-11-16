@@ -39,10 +39,8 @@ const LocalUpload = forwardRef((props, ref) => {
           if (file.status === 'done') {
             return;
           }
-          console.log('file',file)
           file.status = 'uploading';
           const res = await uploadLocalSong(file);
-          console.log('res', res);
           file.status = 'done';
           return res;
         } catch (e) {
@@ -104,7 +102,6 @@ const LocalUpload = forwardRef((props, ref) => {
         };
       });
       const data = await Promise.all(proArr);
-      console.log('data', data);
       // 下载JSON文件
       downloadJsonFile(data, data[0].artist + '.json');
     } catch (e) {
@@ -178,7 +175,6 @@ const LocalUpload = forwardRef((props, ref) => {
             multiple
             fileList={fileList}
             beforeUpload={(file) => {
-              console.log('file',file)
               setFileList((prev) => [...prev, file]);
               return false;
             }}
@@ -200,7 +196,6 @@ const LocalUpload = forwardRef((props, ref) => {
             dataSource={fileList}
             rowKey={(file) => file.uid || file.name}
             scroll={{ y: 300 }}
-            pagination={false}
           />
           <div className={styles['upload-stats']}>
             <span>共 {fileList.length} 个文件</span>

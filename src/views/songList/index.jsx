@@ -1,22 +1,33 @@
+import { neteaseMusicToCloud } from '@/api';
+import { MyButton } from '@/components';
 import SearchForm from '@/components/SearchForm';
 import { QUALITY_LEVELS } from '@/constant';
 import useFilter from '@/hooks/useFilter';
 import { useGetSongListDetail } from '@/hooks/useGetSongListDetail';
 import { usePlayMusic } from '@/hooks/usePlayMusic';
 import { useVisible } from '@/hooks/useVisible';
-import { msgWarning } from '@/utils/modal';
-import { formatDuration, getFeeTag, getMarkTags, getOriginTag, getQualityTags, getTypeTag, formatPopularity } from '@/utils/music';
+import { msgError, msgSuccess, msgWarning } from '@/utils/modal';
 import {
+  formatDuration,
+  formatPopularity,
+  getFeeTag,
+  getMarkTags,
+  getOriginTag,
+  getQualityTags,
+  getTypeTag,
+} from '@/utils/music';
+import {
+  CloudUploadOutlined,
   DownloadOutlined,
   FileOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
 } from '@ant-design/icons';
 import {
-  Button,
   Form,
   Image,
   Input,
+  message,
   Modal,
   Select,
   Space,
@@ -117,6 +128,32 @@ function SongList(props, ref) {
       record.level || QUALITY_LEVELS.无损,
       record.al?.id,
     );
+  };
+  /** 转存云盘 */
+  const handleSaveToCloud = async (record) => {
+    const uploadMessageKey = 'song-to-cloud';
+    try {
+      const res = await neteaseMusicToCloud([record.id], {
+        onChange: (progress) => {
+          message.loading({
+            content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+            key: uploadMessageKey,
+            duration: 0,
+          });
+        },
+        onComplete: (result) => {
+          message.destroy(uploadMessageKey);
+          msgSuccess(
+            `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
+          );
+        },
+      });
+    } catch (error) {
+      console.log('error', error);
+      msgError(`歌曲转存云盘失败: ${error.message}`);
+    } finally {
+      message.destroy(uploadMessageKey);
+    }
   };
 
   // 表格列配置
@@ -480,13 +517,13 @@ function SongList(props, ref) {
     {
       title: '操作',
       key: 'action',
-      width: 200,
+      width: 300,
       align: 'center',
       fixed: 'right',
       render: (_, record) => {
         return (
           <Space>
-            <Button
+            <MyButton
               type='link'
               size='small'
               icon={
@@ -498,14 +535,21 @@ function SongList(props, ref) {
               }
               onClick={() => handlePlay(record)}>
               播放
-            </Button>
-            <Button
+            </MyButton>
+            <MyButton
               type='link'
               size='small'
               icon={<DownloadOutlined />}
               onClick={() => handleDownload(record)}>
               下载
-            </Button>
+            </MyButton>
+            <MyButton
+              type='link'
+              size='small'
+              icon={<CloudUploadOutlined />}
+              onClick={() => handleSaveToCloud(e, record)}>
+              转存云盘
+            </MyButton>
           </Space>
         );
       },
@@ -540,27 +584,63 @@ function SongList(props, ref) {
     }
   };
 
+  /** 转存云盘全部 */
+  const handleSaveToCloudAll = async () => {
+    const uploadMessageKey = 'song-to-cloud-all';
+    try {
+      await neteaseMusicToCloud(
+        filteredSongList.map((song) => song.id),
+        {
+          onChange: (progress) => {
+            message.loading({
+              content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+              key: uploadMessageKey,
+              duration: 0,
+            });
+          },
+          onComplete: (result) => {
+            message.destroy(uploadMessageKey);
+            msgSuccess(
+              `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
+            );
+          },
+        },
+      );
+      msgSuccess(`歌曲转存云盘完成`);
+    } catch (error) {
+      console.error('转存云盘全部失败:', error);
+      msgError(`歌曲转存云盘失败: ${error.message}`);
+    } finally {
+      message.destroy(uploadMessageKey);
+    }
+  };
   const renderFooter = () => {
     return (
       <Space>
-        <Button
+        <MyButton
           type='primary'
           icon={<PlayCircleOutlined />}
           onClick={handlePlayAll}>
           播放全部
-        </Button>
-        <Button
+        </MyButton>
+        <MyButton
+          type='primary'
+          icon={<CloudUploadOutlined />}
+          onClick={handleSaveToCloudAll}>
+          转存云盘全部
+        </MyButton>
+        <MyButton
           icon={<DownloadOutlined />}
           loading={downloading}
           onClick={handleDownloadAll}>
           下载全部 ({selectedRows.length || filteredSongList.length})
-        </Button>
-        <Button
+        </MyButton>
+        <MyButton
           icon={<FileOutlined />}
           loading={downloading}
           onClick={handleDownloadAllJson}>
           下载JSON ({selectedRows.length || filteredSongList.length})
-        </Button>
+        </MyButton>
       </Space>
     );
   };
@@ -620,4 +700,3 @@ function SongList(props, ref) {
 }
 
 export default forwardRef(SongList);
-
