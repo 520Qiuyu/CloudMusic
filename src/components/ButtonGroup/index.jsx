@@ -52,7 +52,7 @@ const ButtonGroup = () => {
     localUploadRef.current.open();
   };
 
-  // 查看歌单
+  // 歌单管理
   const playListRef = useRef(null);
   const handlePlayList = () => {
     playListRef.current.open();
@@ -128,9 +128,9 @@ const ButtonGroup = () => {
           />
         </Tooltip>
       )}
-      {/* 查看歌单 */}
+      {/* 歌单管理 */}
       {enablePlayList && (
-        <Tooltip title={'查看歌单'} placement='left'>
+        <Tooltip title={'歌单管理'} placement='left'>
           <Button
             type='primary'
             icon={<OrderedListOutlined />}
@@ -181,7 +181,7 @@ const ButtonGroup = () => {
       <LocalUpload ref={localUploadRef} />
       {/* 云盘导入 */}
       <CloudImport ref={cloudImportRef} />
-      {/* 查看歌单 */}
+      {/* 歌单管理 */}
       <PlayList ref={playListRef} />
       {/* 搜索 */}
       <Search ref={searchRef} />

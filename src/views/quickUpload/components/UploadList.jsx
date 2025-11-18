@@ -3,7 +3,6 @@ import { getCDNConfig } from '@/api/cdn';
 import { getSongInfoList } from '@/api/song';
 import SearchForm from '@/components/SearchForm';
 import useFilter from '@/hooks/useFilter';
-import { downloadFile } from '@/utils/download';
 import {
   formatDuration,
   formatFileSize,
@@ -18,6 +17,8 @@ import { useEffect, useRef, useState } from 'react';
 import styles from '../index.module.scss';
 import UploadProgress from './UploadProgress';
 import UploadStats from './UploadStats';
+
+const uploadMessageKey = 'upload-song';
 
 export default function UploadList({ singerList }) {
   // 所有歌曲列表
@@ -347,31 +348,47 @@ export default function UploadList({ singerList }) {
           toUpload: uploadSongList,
         });
       }
+      let successCount = 0;
+      let failedCount = 0;
       // 显示上传进度
       uploadProgressRef.current?.open();
       // 并发限制上传
       const tasks = uploadSongList.map((song) => async () => {
         try {
           const res = await uploadSong(song);
+          successCount++;
           song.uploaded = true;
           setUploadedSongList((list) => [...list, song]);
+          message.loading({
+            content: `第${successCount}首歌曲上传完成: ${song.name}。共${songs.length}首, 已上传${successCount}首, 上传失败${failedCount}首`,
+            key: uploadMessageKey,
+            color: 'green',
+            duration: 0,
+          });
           return res;
         } catch (error) {
           song.uploaded = true;
           setUploadFailedSongList((list) => [...list, song]);
+          failedCount++;
+          message.loading({
+            content: `第${failedCount}首歌曲上传失败: ${song.name}。共${songs.length}首, 已上传${successCount}首, 上传失败${failedCount}首`,
+            color: 'red',
+            key: uploadMessageKey,
+            duration: 0,
+          });
           return error;
         }
       });
-      const results = await promiseLimit(tasks, concurrency || 6);
+      await promiseLimit(tasks, concurrency || 6);
       // 刷新列表
       getSongList(singerList);
-      const successCount = results.filter((r) => !(r instanceof Error)).length;
-      const failedCount = results.length - successCount;
       msgSuccess(`上传完成: 成功${successCount}首，失败${failedCount}首`);
     } catch (error) {
       console.log('error', error);
+      msgError(`上传失败: ${error.message}`);
     } finally {
       setUploading(false);
+      message.destroy(uploadMessageKey);
     }
   };
   /** 全部上传 */
@@ -381,43 +398,6 @@ export default function UploadList({ singerList }) {
   /** 上传选中的 */
   const handleUploadSelected = async () => {
     handleBatchUpload(selectedRows);
-  };
-
-  /** 直接下载 */
-  const [downloading, setDownloading] = useState(false);
-  const handleDownloadAll = async () => {
-    try {
-      setDownloading(true);
-      const ids = filteredSongList.map((item) => item.id);
-      console.log('ids', ids);
-      const res = await getSongUrl(ids);
-      console.log('res', res);
-      if (res.code === 200) {
-        const songs = res.data
-          .map((item, index) => ({
-            url: item.url,
-            name: filteredSongList[index]?.['name'],
-          }))
-          .filter((item) => item.url);
-        console.log('songs', songs);
-        let count = 0;
-        // 全部下载
-        const proArr = songs.map(async ({ url, name }) => {
-          const res = await downloadFile(url, name);
-          count++;
-          msgSuccess({
-            content: `下载完成: ${count}/${songs.length}`,
-            key: 'batchDownload',
-          });
-          return res;
-        });
-        await promiseLimit(proArr, concurrency || 6);
-      }
-    } catch (error) {
-      console.log('error', error);
-    } finally {
-      setDownloading(false);
-    }
   };
 
   /** 按专辑上传 */
@@ -526,13 +506,6 @@ export default function UploadList({ singerList }) {
               onClick={() => handleUploadAll()}
               loading={uploading}>
               全部上传
-            </Button>
-            {/* 直接下载 */}
-            <Button
-              type='primary'
-              onClick={() => handleDownloadAll()}
-              loading={downloading}>
-              直接下载
             </Button>
             {/* 按专辑上传 */}
             <Button

@@ -70,5 +70,9 @@ export const defaultConfig = {
      * 是否开启下载设置
      */
     enableDownloadSetting: isDev,
+    /**
+     * 并发上传歌曲数量
+     */
+    uploadConcurrency: 6,
   },
 };

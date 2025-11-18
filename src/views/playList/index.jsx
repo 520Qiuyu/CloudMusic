@@ -1,4 +1,5 @@
 import {
+  deletePlaylist,
   getPlaylistAllData,
   getPlaylistList,
   neteaseMusicToCloud,
@@ -7,15 +8,25 @@ import { MyButton } from '@/components';
 import SearchForm from '@/components/SearchForm';
 import useFilter from '@/hooks/useFilter';
 import { useVisible } from '@/hooks/useVisible';
-import { msgError, msgSuccess } from '@/utils/modal';
-import { Avatar, Image, message, Modal, Table, Tooltip, Typography } from 'antd';
+import { confirm, msgError, msgSuccess } from '@/utils/modal';
+import {
+  Avatar,
+  Image,
+  message,
+  Modal,
+  Table,
+  Tooltip,
+  Typography,
+} from 'antd';
 import dayjs from 'dayjs';
 import { forwardRef, useRef, useState } from 'react';
 import SongList from '../songList';
 import styles from './index.module.scss';
+import { Tag } from 'antd';
+import { CloudUploadOutlined, DeleteOutlined } from '@ant-design/icons';
 
 function PlayList(props, ref) {
-  const { visible, open, close } = useVisible(
+  const { visible, close } = useVisible(
     {
       onOpen() {
         getPlayListData();
@@ -71,8 +82,6 @@ function PlayList(props, ref) {
   // 转存云盘
   const handleSaveToCloud = async (e, record) => {
     e.stopPropagation();
-    console.log('record', record);
-    console.log('歌单歌曲转云盘');
     const uploadMessageKey = 'playlist-to-cloud';
     try {
       const songs = await getPlaylistAllData(record.id);
@@ -104,6 +113,25 @@ function PlayList(props, ref) {
       msgError(`歌单歌曲转云盘失败: ${error.message}`);
     } finally {
       message.destroy(uploadMessageKey);
+    }
+  };
+
+  // 删除歌单
+  const handleDelete = async (e, record) => {
+    e.stopPropagation();
+    try {
+      await confirm(`确定删除《${record.name}》歌单吗？`, '删除歌单');
+      const res = await deletePlaylist(record.id);
+      console.log('res', res);
+      if (res.code === 200) {
+        msgSuccess('删除歌单成功');
+        getPlayListData();
+      } else {
+        msgError(`删除歌单失败: ${res.message}`);
+      }
+    } catch (error) {
+      console.log('error', error);
+      msgError(`删除歌单失败: ${error.message}`);
     }
   };
 
@@ -143,6 +171,8 @@ function PlayList(props, ref) {
       dataIndex: 'trackCount',
       key: 'trackCount',
       width: 100,
+      align: 'center',
+      render: (trackCount) => <Tag color='#c20c0c'>{trackCount}</Tag>,
     },
     // 歌单id
     {
@@ -178,14 +208,24 @@ function PlayList(props, ref) {
       key: 'action',
       align: 'center',
       fixed: 'right',
-      width: 100,
+      width: 200,
       render: (_, record) => (
-        <MyButton
-          type='link'
-          onClick={(e) => handleSaveToCloud(e, record)}
-          size='small'>
-          转存云盘
-        </MyButton>
+        <>
+          <MyButton
+            type='link'
+            icon={<CloudUploadOutlined />}
+            onClick={(e) => handleSaveToCloud(e, record)}
+            size='small'>
+            转存云盘
+          </MyButton>
+          <MyButton
+            type='link'
+            icon={<DeleteOutlined />}
+            onClick={(e) => handleDelete(e, record)}
+            size='small'>
+            删除
+          </MyButton>
+        </>
       ),
     },
   ];
@@ -229,6 +269,7 @@ function PlayList(props, ref) {
           pagination={{
             showQuickJumper: true,
             showSizeChanger: true,
+            showTotal: (total) => `共 ${total} 个歌单`,
           }}
         />
       </Modal>

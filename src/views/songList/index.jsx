@@ -1,5 +1,5 @@
 import { neteaseMusicToCloud } from '@/api';
-import { MyButton } from '@/components';
+import { CopyText, MyButton } from '@/components';
 import SearchForm from '@/components/SearchForm';
 import { QUALITY_LEVELS } from '@/constant';
 import useFilter from '@/hooks/useFilter';
@@ -161,7 +161,7 @@ function SongList(props, ref) {
     {
       title: '歌曲信息',
       key: 'songInfo',
-      width: 350,
+      width: 280,
       fixed: 'left',
       sorter: (a, b) => a.name?.localeCompare(b.name),
       sortDirections: ['ascend', 'descend'],
@@ -293,8 +293,8 @@ function SongList(props, ref) {
       title: '专辑ID',
       dataIndex: ['al', 'id'],
       key: 'albumId',
-      width: 120,
-      render: (id) => id || '-',
+      width: 140,
+      render: (id) => <CopyText text={id} /> || '-',
     },
     {
       title: '时长',
@@ -686,6 +686,11 @@ function SongList(props, ref) {
         rowKey='id'
         loading={loading}
         scroll={{ y: 400, x: 2000 }}
+        pagination={{
+          showQuickJumper: true,
+          showSizeChanger: true,
+          showTotal: (total) => `共 ${total} 首歌曲`,
+        }}
         rowSelection={{
           type: 'checkbox',
           fixed: true,

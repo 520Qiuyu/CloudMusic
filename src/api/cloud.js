@@ -4,7 +4,10 @@ import { msgError } from '@/utils/modal';
 import { weapiRequest } from '@/utils/request';
 import { getSongInfoList, getSongUrl } from './song';
 import { getQualityTags } from '@/utils/music';
+import { defaultConfig } from '@/config';
 
+const { uploadConcurrency } = defaultConfig.function;
+const { quality } = defaultConfig.download;
 const BUCKET = 'jd-musicrep-privatecloud-audio-public';
 
 /**
@@ -142,7 +145,7 @@ export const uploadSong = async (song) => {
       msgError(`资源检查失败,请检查歌曲：${song.name}是否已存在！`);
       throw new Error(res.message || res.msg || '资源检查失败');
     }
-    console.log('res', res);
+    console.log('checkRes', res);
     const cloudId = res.data[0].songId;
     // 2、判断状态， upload 0:文件可导入,1:文件已在云盘,2:不能导入
     // 2.1 已在云盘 直接通过云盘id导入
@@ -478,7 +481,7 @@ export const uploadLocalSong = async (file, options = {}) => {
 export const neteaseMusicToCloud = async (songIds, options = {}) => {
   const {
     level = QUALITY_LEVELS.无损,
-    concurrent = 6,
+    concurrent = uploadConcurrency,
     onStart,
     onChange,
     onComplete,
