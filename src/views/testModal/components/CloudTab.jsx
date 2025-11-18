@@ -1,8 +1,14 @@
-import { deleteCloudSong, getCloudData, uploadLocalSong } from '@/api/cloud';
+import {
+  deleteCloudSong,
+  getCloudData,
+  neteaseMusicToCloud,
+  uploadLocalSong,
+} from '@/api/cloud';
 import { msgError } from '@/utils/modal';
 import { Button, Form, Input, Space, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { useState } from 'react';
+import { MyButton } from '@/components';
 
 /**
  * 云盘相关测试组件
@@ -55,10 +61,10 @@ const CloudTab = () => {
   };
 
   // 测试网易云音乐转存云盘'
-  const [neteaseCloudSongId, setNeteaseCloudSongId] = useState('');
-  const handleNeteaseCloudToCloud = async () => {
+  const [neteaseMusicSongId, setNeteaseMusicSongId] = useState('1846094285');
+  const handleNeteaseMusicToCloud = async () => {
     try {
-      const res = await neteaseCloudToCloud(neteaseCloudSongId);
+      const res = await neteaseMusicToCloud(neteaseMusicSongId.split(','));
       console.log('res', res);
     } catch (error) {
       console.log('error', error);
@@ -86,9 +92,9 @@ const CloudTab = () => {
               setPageData({ ...pageData, offset: Number(e.target.value) })
             }
           />
-          <Button type='primary' onClick={handleGetCloudData}>
+          <MyButton type='primary' onClick={handleGetCloudData}>
             获取云盘数据
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -101,9 +107,9 @@ const CloudTab = () => {
             value={songId}
             onChange={(e) => setSongId(e.target.value)}
           />
-          <Button type='primary' onClick={handleDeleteCloudSong}>
+          <MyButton type='primary' onClick={handleDeleteCloudSong}>
             删除云盘歌曲
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -122,19 +128,24 @@ const CloudTab = () => {
             }}>
             <Button icon={<UploadOutlined />}>Select File</Button>
           </Upload>
-          <Button type='primary' onClick={handleUploadLocalSong}>
+          <MyButton type='primary' onClick={handleUploadLocalSong}>
             上传本地歌曲到云盘
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
       {/* 测试网易云音乐转存云盘 */}
       <Form.Item label='测试网易云音乐转存云盘'>
         <Space>
-          <Input placeholder='请输入网易云音乐歌曲Id' />
-          <Button type='primary' onClick={handleNeteaseCloudToCloud}>
+          <Input
+            addonBefore='歌曲Id'
+            placeholder='请输入网易云音乐歌曲Id'
+            value={neteaseMusicSongId}
+            onChange={(e) => setNeteaseMusicSongId(e.target.value)}
+          />
+          <MyButton type='primary' onClick={handleNeteaseMusicToCloud}>
             测试网易云音乐转存云盘
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
     </Form>

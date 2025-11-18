@@ -597,7 +597,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
           return {
             ...item,
             name: item.simpleSong.name,
-            artists: getArtistName(item),
+            artist: getArtistName(item),
             album: getAlbumName(item),
           };
         })}

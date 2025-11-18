@@ -5,10 +5,10 @@ export default function MyButton(props) {
   const { loading, onClick, ...rest } = props;
 
   const [_loading, setLoading] = useState(loading);
-  const handleClick = async () => {
+  const handleClick = async (...args) => {
     try {
       setLoading(true);
-      await onClick?.();
+      await onClick?.(...args);
     } catch (error) {
       console.log('error', error);
     } finally {

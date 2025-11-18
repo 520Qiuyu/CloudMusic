@@ -1,10 +1,13 @@
+import { neteaseMusicToCloud } from '@/api';
 import {
   addSongToPlaylist,
   createPlaylist,
   getPlaylistAllData,
   getPlaylistList,
 } from '@/api/playlist';
-import { Button, Form, Input, Space } from 'antd';
+import { MyButton } from '@/components';
+import { msgSuccess } from '@/utils/modal';
+import { Form, Input, Space, message } from 'antd';
 import { useState } from 'react';
 
 /**
@@ -57,10 +60,50 @@ const PlaylistTab = () => {
   const [playlistId, setPlaylistId] = useState('13508631377');
   const handleGetPlaylist = async () => {
     try {
-      const res = await getPlaylistAllData(playlistId);
+      const songs = await getPlaylistAllData(playlistId);
+      console.log('songs', songs);
+      msgSuccess(
+        '获取歌单信息成功, 共' + songs.length + '首歌曲, 请打开控制台查看。',
+      );
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  // 歌单歌曲转云盘
+  const handlePlaylistToCloud = async () => {
+    console.log('歌单歌曲转云盘');
+    const uploadMessageKey = 'playlist-to-cloud';
+    try {
+      const songs = await getPlaylistAllData(playlistId);
+      const songIds = songs.map((song) => song.id);
+      message.loading({
+        content: '开始上传歌单歌曲到云盘，请稍候...',
+        key: uploadMessageKey,
+        duration: 0,
+      });
+      const res = await neteaseMusicToCloud(songIds, {
+        onChange: (progress) => {
+          message.loading({
+            content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+            key: uploadMessageKey,
+            duration: 0,
+          });
+        },
+        onComplete: (result) => {
+          message.destroy(uploadMessageKey);
+          console.log('result', result);
+          msgSuccess(
+            `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
+          );
+        },
+      });
       console.log('res', res);
     } catch (error) {
       console.log('error', error);
+      message.destroy(uploadMessageKey);
+    } finally {
+      message.destroy(uploadMessageKey);
     }
   };
 
@@ -74,9 +117,9 @@ const PlaylistTab = () => {
             value={songListName}
             onChange={(e) => setSongListName(e.target.value)}
           />
-          <Button type='primary' onClick={handleCreateSongList}>
+          <MyButton type='primary' onClick={handleCreateSongList}>
             新建歌单
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -95,13 +138,11 @@ const PlaylistTab = () => {
             placeholder='请输入歌曲Id'
             addonBefore='歌曲id'
             value={addInfo.songId}
-            onChange={(e) =>
-              setAddInfo({ ...addInfo, songId: e.target.value })
-            }
+            onChange={(e) => setAddInfo({ ...addInfo, songId: e.target.value })}
           />
-          <Button type='primary' onClick={handleAddSong}>
+          <MyButton type='primary' onClick={handleAddSong}>
             添加歌曲
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -114,9 +155,9 @@ const PlaylistTab = () => {
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
           />
-          <Button type='primary' onClick={handleGetPlaylistList}>
+          <MyButton type='primary' onClick={handleGetPlaylistList}>
             获取用户歌单列表
-          </Button>
+          </MyButton>
         </Space>
       </Form.Item>
 
@@ -129,9 +170,12 @@ const PlaylistTab = () => {
             value={playlistId}
             onChange={(e) => setPlaylistId(e.target.value)}
           />
-          <Button type='primary' onClick={handleGetPlaylist}>
+          <MyButton type='primary' onClick={handleGetPlaylist}>
             获取歌单详情
-          </Button>
+          </MyButton>
+          <MyButton type='primary' onClick={handlePlaylistToCloud}>
+            歌单歌曲转云盘
+          </MyButton>
         </Space>
       </Form.Item>
     </Form>
@@ -139,4 +183,3 @@ const PlaylistTab = () => {
 };
 
 export default PlaylistTab;
-

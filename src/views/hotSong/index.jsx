@@ -1,5 +1,6 @@
 import { useGetSingerInfo, useVisible } from '@/hooks';
 import { Modal } from 'antd';
+import { useState } from 'react';
 import { forwardRef } from 'react';
 
 /**

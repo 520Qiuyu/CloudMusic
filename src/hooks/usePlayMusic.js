@@ -68,22 +68,26 @@ export const usePlayMusic = () => {
   const getSongInfo = async (id) => {
     if (songInfoMap[id]) return songInfoMap[id];
     const res = await getSongInfoList([id]);
-    if (res[0].code !== 200) {
-      msgError(res[0].message || res[0].msg || '获取歌曲信息失败');
-      throw new Error(res[0].message || res[0].msg || '获取歌曲信息失败');
+    if (res.code !== 200) {
+      msgError(res.message || res.msg || '获取歌曲信息失败');
+      throw new Error(res.message || res.msg || '获取歌曲信息失败');
     }
-    setSongInfoMap((prv) => ({ ...prv, [id]: res[0].songs?.[0] }));
-    return res[0].songs?.[0];
+    setSongInfoMap((prv) => ({ ...prv, [id]: res.songs?.[0] }));
+    return res.songs?.[0];
   };
 
   const getSongInfos = async (ids) => {
     const noInfoIds = ids.filter((id) => !songInfoMap[id]);
-    const infos = await getSongInfoList(noInfoIds);
+    const res = await getSongInfoList(noInfoIds);
+    if (res.code !== 200) {
+      msgError(res.message || res.msg || '获取歌曲信息失败');
+      throw new Error(res.message || res.msg || '获取歌曲信息失败');
+    }
     setSongInfoMap((prv) => ({
       ...prv,
-      ...Object.fromEntries(infos.map((info) => [info.id, info])),
+      ...Object.fromEntries(res.songs.map((info) => [info.id, info])),
     }));
-    return infos;
+    return res.songs;
   };
 
   const play = async (id, level) => {

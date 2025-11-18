@@ -34,12 +34,12 @@
   .singer-choose-form {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 400px;
 
     .btn-group {
       display: flex;
       justify-content: flex-end;
+      gap: 16px;
     }
   }
 

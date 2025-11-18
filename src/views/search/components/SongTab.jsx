@@ -1,5 +1,8 @@
+import { neteaseMusicToCloud } from '@/api';
+import { CopyText, MyButton } from '@/components';
 import { QUALITY_LEVELS } from '@/constant';
 import { usePlayMusic } from '@/hooks';
+import { msgError, msgSuccess } from '@/utils/modal';
 import {
   formatDuration,
   formatPopularity,
@@ -10,6 +13,7 @@ import {
   getTypeTag,
 } from '@/utils/music';
 import {
+  CloudUploadOutlined,
   DownloadOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
@@ -17,6 +21,7 @@ import {
 import {
   Button,
   Image,
+  message,
   Select,
   Space,
   Table,
@@ -27,7 +32,6 @@ import {
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import styles from '../index.module.scss';
-import { CopyText } from '@/components';
 
 const SongTab = ({ data, loading }) => {
   const { play, download, isPlaying, pause, downloading } = usePlayMusic();
@@ -68,6 +72,33 @@ const SongTab = ({ data, loading }) => {
       record.level || QUALITY_LEVELS.无损,
       record.al?.id,
     );
+  };
+  /** 转存云盘 */
+  const handleSaveToCloud = async (record) => {
+    console.log('record', record);
+    const uploadMessageKey = 'song-to-cloud';
+    try {
+      const res = await neteaseMusicToCloud([record.id], {
+        onChange: (progress) => {
+          message.loading({
+            content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+            key: uploadMessageKey,
+            duration: 0,
+          });
+        },
+        onComplete: (result) => {
+          message.destroy(uploadMessageKey);
+          msgSuccess(
+            `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
+          );
+        },
+      });
+    } catch (error) {
+      console.log('error', error);
+      msgError(`歌曲转存云盘失败: ${error.message}`);
+    } finally {
+      message.destroy(uploadMessageKey);
+    }
   };
 
   // 歌曲表格列配置
@@ -432,7 +463,7 @@ const SongTab = ({ data, loading }) => {
     {
       title: '操作',
       key: 'action',
-      width: 200,
+      width: 300,
       align: 'center',
       fixed: 'right',
       render: (_, record) => {
@@ -459,6 +490,13 @@ const SongTab = ({ data, loading }) => {
               onClick={() => handleDownload(record)}>
               下载
             </Button>
+            <MyButton
+              type='link'
+              size='small'
+              icon={<CloudUploadOutlined />}
+              onClick={() => handleSaveToCloud(record)}>
+              转存云盘
+            </MyButton>
           </Space>
         );
       },

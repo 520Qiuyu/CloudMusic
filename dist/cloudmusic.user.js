@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-CmhYwoN8.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-BY6xKHF9.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,9 +44,9 @@ System.register("./__entry.js", ['./__monkey.entry-CmhYwoN8.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-CmhYwoN8.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-BY6xKHF9.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useRef, useState$1, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Progress, ConfigProvider, Select, Tooltip, Spin, Empty, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, GithubOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CopyrightOutlined, FileOutlined, CloudUploadOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
+  var forwardRef, useRef, useState$1, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Spin, Descriptions, Progress, ConfigProvider, Select, Tooltip, Empty, Card, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CloudUploadOutlined, CopyrightOutlined, FileOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
@@ -74,12 +74,14 @@ System.register("./__monkey.entry-CmhYwoN8.js", ['react', 'antd', 'react-dom', '
       Tabs = module.Tabs;
       Pagination = module.Pagination;
       Upload = module.Upload;
+      Spin = module.Spin;
+      Descriptions = module.Descriptions;
       Progress = module.Progress;
       ConfigProvider = module.ConfigProvider;
       Select = module.Select;
       Tooltip = module.Tooltip;
-      Spin = module.Spin;
       Empty = module.Empty;
+      Card = module.Card;
     }, module => {
       require$$0$1 = module.default;
     }, module => {
@@ -91,14 +93,20 @@ System.register("./__monkey.entry-CmhYwoN8.js", ['react', 'antd', 'react-dom', '
       SaveOutlined = module.SaveOutlined;
       DownloadOutlined = module.DownloadOutlined;
       UploadOutlined = module.UploadOutlined;
+      LinkOutlined = module.LinkOutlined;
       GithubOutlined = module.GithubOutlined;
+      StarOutlined = module.StarOutlined;
+      ForkOutlined = module.ForkOutlined;
+      EyeOutlined = module.EyeOutlined;
       InboxOutlined = module.InboxOutlined;
       CopyOutlined = module.CopyOutlined;
       PauseCircleFilled = module.PauseCircleFilled;
       PlayCircleFilled = module.PlayCircleFilled;
+      CloudUploadOutlined = module.CloudUploadOutlined;
       CopyrightOutlined = module.CopyrightOutlined;
       FileOutlined = module.FileOutlined;
-      CloudUploadOutlined = module.CloudUploadOutlined;
+      PictureOutlined = module.PictureOutlined;
+      CheckOutlined = module.CheckOutlined;
       CustomerServiceOutlined = module.CustomerServiceOutlined;
       CodeOutlined = module.CodeOutlined;
       OrderedListOutlined = module.OrderedListOutlined;
@@ -123,7 +131,7 @@ System.register("./__monkey.entry-CmhYwoN8.js", ['react', 'antd', 'react-dom', '
 
       const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
-      importCSS(' @charset "UTF-8";._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._search-form_1aabt_1{padding:16px 0}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._album-list-modal_tzijq_1 .ant-modal-body{padding:16px 0 0}._modal-title_tzijq_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_tzijq_12{display:flex;align-items:center;gap:16px}._title-text_tzijq_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_tzijq_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_tzijq_32{display:flex;align-items:center;gap:4px}._stat-label_tzijq_38{color:#8c8c8c}._stat-value_tzijq_42{font-weight:600;color:#262626}._album-info_tzijq_47{display:flex;align-items:center;gap:12px}._album-cover_tzijq_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_tzijq_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_tzijq_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_tzijq_68:hover{color:#1890ff}._album-alias_tzijq_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_tzijq_89{display:flex;align-items:center;gap:8px}._album-tag_tzijq_95{margin:0}._album-company_tzijq_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._singer-details_tzijq_109{display:flex;flex-direction:column;gap:2px}._singer-name_tzijq_115{font-size:13px;font-weight:500;color:#262626}._singer-id_tzijq_121{font-size:12px;color:#8c8c8c}._album-id_tzijq_126{font-size:12px}._album-table_tzijq_130 .ant-table-body{scrollbar-width:thin}._search-area_tzijq_134{padding:0 24px 16px}._modal-footer_tzijq_138{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_tzijq_145{font-size:13px;color:#595959}._selected-extra_tzijq_150{margin-left:4px;color:#8c8c8c}._songInfoColumn_18snm_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_18snm_1 ._songIndex_18snm_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_18snm_1 ._songCover_18snm_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover{transform:scale(1.05)}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._btnWrapper_18snm_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._songCoverImg_18snm_33{filter:brightness(.85)}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._songCoverImg_18snm_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_18snm_1 ._songInfo_18snm_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._songName_18snm_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84,._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84{max-width:160px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_18snm_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_18snm_1 10s linear infinite}._currentSong_18snm_102 td{background:var(--background)!important;animation:_rotate_18snm_1 10s linear infinite}@keyframes _rotate_18snm_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_18snm_121{background-color:#f06161}._matchError_18snm_121 td{background-color:#f06161!important}._footer_18snm_128{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_18snm_128 ._actions_18snm_136{display:flex;gap:8px}._stats_18snm_141{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_18snm_141 ._size_18snm_149{color:#666}._stats_18snm_141 ._divider_18snm_152{color:#999;margin:0 4px}._stats_18snm_141 .ant-tag{margin:0}._playlist_18snm_160 .ant-modal-body{padding-bottom:0}._autoAddContent_18snm_164 ._title_18snm_164{font-size:16px;margin-bottom:8px}._autoAddContent_18snm_164 ._statsWrapper_18snm_168{margin-bottom:16px}._autoAddContent_18snm_164 ._statsContent_18snm_171{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._label_18snm_178{color:#666}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._value_18snm_181{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_18snm_164 ._listHeader_18snm_186{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_18snm_164 ._listWrapper_18snm_192{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_18snm_164 ._listItem_18snm_213{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_18snm_164 ._listItem_18snm_213:hover{background:#f5f5f5}._autoAddContent_18snm_164 ._listItem_18snm_213:last-child{margin-bottom:0}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemName_18snm_229{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemCount_18snm_235{color:#1890ff;margin-left:8px}._deleteConfirmation_18snm_240{font-size:14px}._deleteConfirmation_18snm_240 ._title_18snm_164{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_18snm_240 ._title_18snm_164 ._count_18snm_248{color:#1890ff}._deleteConfirmation_18snm_240 ._songs_18snm_251{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:hover{background:#f0f0f0}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:not(:last-child){margin-bottom:4px}._deleteConfirmation_18snm_240 ._warning_18snm_273{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._text_18snm_280{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._icon_18snm_287{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_18snm_301{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_18snm_301 ._singer-option-content_18snm_314{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-name_18snm_329{font-size:14px}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-id_18snm_332{font-size:13px}._singer-option_18snm_301:hover ._singer-option-content_18snm_314{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_18snm_340{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_18snm_340 ._song-name_18snm_346{font-size:14px;color:#333;font-weight:500}._song-label_18snm_340 ._tag-group_18snm_351{display:flex;gap:8px;flex-wrap:wrap}._song-option_18snm_357{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_18snm_357:hover{background-color:#f5f5f5}._song-option_18snm_357 ._song-info_18snm_370{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_18snm_357 ._song-name_18snm_346{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_18snm_357 ._tag-group_18snm_351{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_18snm_357 ._tag-group_18snm_351 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_18snm_357 ._album-cover_18snm_399{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_18snm_357 ._album-cover_18snm_399:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_18snm_415{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_18snm_415 ._song-info_18snm_370{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._artist-info_18snm_431{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._album-info_18snm_439{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._githubContainer_b3krt_2{display:flex;flex-direction:column;align-items:center;padding:20px;text-align:center}._githubContainer_b3krt_2 ._userInfo_b3krt_9{display:flex;align-items:center;gap:16px;margin-bottom:20px}._githubContainer_b3krt_2 ._username_b3krt_15{margin:0}._githubContainer_b3krt_2 ._starCount_b3krt_18{display:block;color:#666;font-size:14px;margin-top:4px}._githubContainer_b3krt_2 ._bio_b3krt_24{color:#666;margin-bottom:20px}._githubContainer_b3krt_2 ._features_b3krt_28{width:100%;margin-bottom:24px;text-align:left}._githubContainer_b3krt_2 ._features_b3krt_28 h5{text-align:center;margin-bottom:16px}._githubContainer_b3krt_2 ._featureList_b3krt_37{list-style:none;padding:0;margin:0;max-height:300px;overflow-y:auto}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar{width:6px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._githubContainer_b3krt_2 ._featureList_b3krt_37::-webkit-scrollbar-track{background-color:#f5f5f5}._githubContainer_b3krt_2 ._featureList_b3krt_37 li{margin-bottom:12px;font-size:14px;line-height:1.5;color:#666}._githubContainer_b3krt_2 ._profileButton_b3krt_61{background:#24292e;border-color:#24292e}._githubContainer_b3krt_2 ._profileButton_b3krt_61:hover{background:#2f363d;border-color:#2f363d}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_15nrq_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_15nrq_1 ._cover_15nrq_8{width:60px;height:60px;border-radius:6px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_15nrq_1 ._cover_15nrq_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_15nrq_1 ._cover_15nrq_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_15nrq_1 ._cover_15nrq_8:hover:before{opacity:1}._playlist-info_15nrq_1 ._cover_15nrq_8:active{transform:scale(1.02)}._playlist-info_15nrq_1 ._info_15nrq_40{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_15nrq_1 ._info_15nrq_40 ._name_15nrq_47{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_15nrq_1 ._info_15nrq_40 ._creator_15nrq_58{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-item_15nrq_69{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_15nrq_69:hover{background-color:#fafafa!important}._playlist-item_15nrq_69:active,._playlist-item_15nrq_69:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_1rogj_22 ._select_1rogj_22{width:100%}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26{display:flex;flex-direction:column;justify-content:space-between;height:400px}._singer-choose_1rogj_26 ._singer-choose-form_1rogj_26 ._btn-group_1rogj_32{display:flex;justify-content:flex-end}._singer-choose_1rogj_26 ._option-label_1rogj_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._singer-name_1rogj_43{font-weight:500}._singer-choose_1rogj_26 ._option-label_1rogj_36 ._tag-group_1rogj_46 ._tag_1rogj_46:not(:last-child){margin-right:8px}._upload-list_1rogj_50 .ant-table{margin:16px 0}._upload-footer_1rogj_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_1rogj_62{color:#666;font-size:13px;margin-right:auto}._upload-stats_1rogj_62 ._size-text_1rogj_67{color:#999}._upload-stats_1rogj_62 ._divider_1rogj_70{margin:0 8px;color:#d9d9d9}._upload-confirm_1rogj_75{padding:16px 0;font-size:14px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79:last-child{margin-bottom:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._label_1rogj_87{color:#666;width:80px;flex-shrink:0}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92{color:#333;font-weight:500}._upload-confirm_1rogj_75 ._confirm-item_1rogj_79 ._value_1rogj_92 ._size_1rogj_67{margin-left:4px;color:#999;font-weight:400}._upload-progress_1rogj_102 ._progress-header_1rogj_102{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._progress-info_1rogj_109{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-header_1rogj_102 ._percentage_1rogj_113{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_1rogj_102 ._progress-list_1rogj_118{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123:last-child{border-bottom:none}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133{flex:1;min-width:0;padding-right:16px}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._name_1rogj_138{font-size:14px;color:#333}._upload-progress_1rogj_102 ._progress-list_1rogj_118 ._progress-item_1rogj_123 ._song-info_1rogj_133 ._artist_1rogj_142{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_1rogj_148 .ant-modal-body{padding:24px}._uploadProgressModal_1rogj_148 ._progressContent_1rogj_151{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_1rogj_148 ._progressInfo_1rogj_157 ._detail_1rogj_167{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._label_1rogj_87{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._statsContainer_1rogj_172 ._statsItem_1rogj_180 ._value_1rogj_92 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193{width:100%}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedTitle_1rogj_196{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._songName_1rogj_208{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_1rogj_148 ._failedList_1rogj_193 ._failedItem_1rogj_202 ._errorMsg_1rogj_213{font-size:12px;color:#ff4d4f}._uploadModal_1rogj_218 .ant-modal-body{padding:24px}._progressSection_1rogj_222{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_1rogj_157{display:flex;flex-direction:column;align-items:center}._progressInfo_1rogj_157 ._percentage_1rogj_113{font-size:24px;font-weight:500;color:#333}._progressInfo_1rogj_157 ._count_1rogj_241{font-size:14px;color:#666;margin-top:4px}._statsContainer_1rogj_172{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_1rogj_172 ._statsItem_1rogj_180{text-align:center}._statsContainer_1rogj_172 ._statsTag_1rogj_256{padding:4px 12px;font-size:14px}._songList_1rogj_261{max-height:300px;overflow-y:auto;padding-right:4px}._songList_1rogj_261::-webkit-scrollbar{width:6px}._songList_1rogj_261::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_1rogj_261::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_1rogj_277{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_1rogj_277:not(:last-child){margin-bottom:8px}._songItem_1rogj_277:hover{background:#f5f5f5}._songInfo_1rogj_292{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_1rogj_292 ._songName_1rogj_208{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_1rogj_292 ._artistName_1rogj_306{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
+      importCSS(' ._search-form_1aabt_1{padding:16px 0}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._album-list-modal_tzijq_1 .ant-modal-body{padding:16px 0 0}._modal-title_tzijq_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_tzijq_12{display:flex;align-items:center;gap:16px}._title-text_tzijq_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_tzijq_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_tzijq_32{display:flex;align-items:center;gap:4px}._stat-label_tzijq_38{color:#8c8c8c}._stat-value_tzijq_42{font-weight:600;color:#262626}._album-info_tzijq_47{display:flex;align-items:center;gap:12px}._album-cover_tzijq_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_tzijq_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_tzijq_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_tzijq_68:hover{color:#1890ff}._album-alias_tzijq_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_tzijq_89{display:flex;align-items:center;gap:8px}._album-tag_tzijq_95{margin:0}._album-company_tzijq_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._singer-details_tzijq_109{display:flex;flex-direction:column;gap:2px}._singer-name_tzijq_115{font-size:13px;font-weight:500;color:#262626}._singer-id_tzijq_121{font-size:12px;color:#8c8c8c}._album-id_tzijq_126{font-size:12px}._album-table_tzijq_130 .ant-table-body{scrollbar-width:thin}._search-area_tzijq_134{padding:0 24px 16px}._modal-footer_tzijq_138{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_tzijq_145{font-size:13px;color:#595959}._selected-extra_tzijq_150{margin-left:4px;color:#8c8c8c}._songInfoColumn_18snm_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_18snm_1 ._songIndex_18snm_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_18snm_1 ._songCover_18snm_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover{transform:scale(1.05)}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._btnWrapper_18snm_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_18snm_1 ._songCover_18snm_16:hover ._songCoverImg_18snm_33{filter:brightness(.85)}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._songCoverImg_18snm_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_18snm_1 ._songCover_18snm_16 ._btnWrapper_18snm_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_18snm_1 ._songInfo_18snm_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._songName_18snm_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84,._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._artist_18snm_84{max-width:160px}._songInfoColumn_18snm_1 ._songInfo_18snm_1 ._subInfo_18snm_76 ._album_18snm_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_18snm_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_18snm_1 10s linear infinite}._currentSong_18snm_102 td{background:var(--background)!important;animation:_rotate_18snm_1 10s linear infinite}@keyframes _rotate_18snm_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_18snm_121{background-color:#f06161}._matchError_18snm_121 td{background-color:#f06161!important}._footer_18snm_128{margin-top:16px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding:16px 0}._footer_18snm_128 ._actions_18snm_136{display:flex;gap:8px}._stats_18snm_141{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_18snm_141 ._size_18snm_149{color:#666}._stats_18snm_141 ._divider_18snm_152{color:#999;margin:0 4px}._stats_18snm_141 .ant-tag{margin:0}._playlist_18snm_160 .ant-modal-body{padding-bottom:0}._autoAddContent_18snm_164 ._title_18snm_164{font-size:16px;margin-bottom:8px}._autoAddContent_18snm_164 ._statsWrapper_18snm_168{margin-bottom:16px}._autoAddContent_18snm_164 ._statsContent_18snm_171{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._label_18snm_178{color:#666}._autoAddContent_18snm_164 ._statsContent_18snm_171 ._value_18snm_181{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_18snm_164 ._listHeader_18snm_186{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_18snm_164 ._listWrapper_18snm_192{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_18snm_164 ._listWrapper_18snm_192::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_18snm_164 ._listItem_18snm_213{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_18snm_164 ._listItem_18snm_213:hover{background:#f5f5f5}._autoAddContent_18snm_164 ._listItem_18snm_213:last-child{margin-bottom:0}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemName_18snm_229{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_18snm_164 ._listItem_18snm_213 ._itemCount_18snm_235{color:#1890ff;margin-left:8px}._deleteConfirmation_18snm_240{font-size:14px}._deleteConfirmation_18snm_240 ._title_18snm_164{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_18snm_240 ._title_18snm_164 ._count_18snm_248{color:#1890ff}._deleteConfirmation_18snm_240 ._songs_18snm_251{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:hover{background:#f0f0f0}._deleteConfirmation_18snm_240 ._songs_18snm_251 ._songItem_18snm_262:not(:last-child){margin-bottom:4px}._deleteConfirmation_18snm_240 ._warning_18snm_273{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._text_18snm_280{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_18snm_240 ._warning_18snm_273 ._icon_18snm_287{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_18snm_301{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_18snm_301 ._singer-option-content_18snm_314{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-name_18snm_329{font-size:14px}._singer-option_18snm_301 ._singer-option-content_18snm_314 ._singer-option-id_18snm_332{font-size:13px}._singer-option_18snm_301:hover ._singer-option-content_18snm_314{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_18snm_340{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_18snm_340 ._song-name_18snm_346{font-size:14px;color:#333;font-weight:500}._song-label_18snm_340 ._tag-group_18snm_351{display:flex;gap:8px;flex-wrap:wrap}._song-option_18snm_357{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_18snm_357:hover{background-color:#f5f5f5}._song-option_18snm_357 ._song-info_18snm_370{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_18snm_357 ._song-name_18snm_346{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_18snm_357 ._tag-group_18snm_351{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_18snm_357 ._tag-group_18snm_351 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_18snm_357 ._album-cover_18snm_399{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_18snm_357 ._album-cover_18snm_399:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_18snm_415{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_18snm_415 ._song-info_18snm_370{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._artist-info_18snm_431{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_18snm_415 ._album-info_18snm_439{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_1w0du_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_1w0du_1 ._cover_1w0du_8{width:60px;height:60px;border-radius:6px;flex-shrink:0;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_1w0du_1 ._cover_1w0du_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_1w0du_1 ._cover_1w0du_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_1w0du_1 ._cover_1w0du_8:hover:before{opacity:1}._playlist-info_1w0du_1 ._cover_1w0du_8:active{transform:scale(1.02)}._playlist-info_1w0du_1 ._info_1w0du_40{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_1w0du_1 ._info_1w0du_40 ._name_1w0du_47{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_1w0du_1 ._info_1w0du_40 ._creator_1w0du_58{display:flex;align-items:center;gap:4px;font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-item_1w0du_72{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_1w0du_72:hover{background-color:#fafafa!important}._playlist-item_1w0du_72:active,._playlist-item_1w0du_72:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_11inc_22 ._select_11inc_22{width:100%}._singer-choose_11inc_26 ._singer-choose-form_11inc_26{display:flex;flex-direction:column;height:400px}._singer-choose_11inc_26 ._singer-choose-form_11inc_26 ._btn-group_11inc_31{display:flex;justify-content:flex-end;gap:16px}._singer-choose_11inc_26 ._option-label_11inc_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_11inc_26 ._option-label_11inc_36 ._singer-name_11inc_43{font-weight:500}._singer-choose_11inc_26 ._option-label_11inc_36 ._tag-group_11inc_46 ._tag_11inc_46:not(:last-child){margin-right:8px}._upload-list_11inc_50 .ant-table{margin:16px 0}._upload-footer_11inc_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_11inc_62{color:#666;font-size:13px;margin-right:auto}._upload-stats_11inc_62 ._size-text_11inc_67{color:#999}._upload-stats_11inc_62 ._divider_11inc_70{margin:0 8px;color:#d9d9d9}._upload-confirm_11inc_75{padding:16px 0;font-size:14px}._upload-confirm_11inc_75 ._confirm-item_11inc_79{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_11inc_75 ._confirm-item_11inc_79:last-child{margin-bottom:0}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._label_11inc_87{color:#666;width:80px;flex-shrink:0}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._value_11inc_92{color:#333;font-weight:500}._upload-confirm_11inc_75 ._confirm-item_11inc_79 ._value_11inc_92 ._size_11inc_67{margin-left:4px;color:#999;font-weight:400}._upload-progress_11inc_102 ._progress-header_11inc_102{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_11inc_102 ._progress-header_11inc_102 ._progress-info_11inc_109{font-size:14px;color:#333}._upload-progress_11inc_102 ._progress-header_11inc_102 ._percentage_11inc_113{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_11inc_102 ._progress-list_11inc_118{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123:last-child{border-bottom:none}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133{flex:1;min-width:0;padding-right:16px}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133 ._name_11inc_138{font-size:14px;color:#333}._upload-progress_11inc_102 ._progress-list_11inc_118 ._progress-item_11inc_123 ._song-info_11inc_133 ._artist_11inc_142{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_11inc_148 .ant-modal-body{padding:24px}._uploadProgressModal_11inc_148 ._progressContent_11inc_151{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157 ._percentage_11inc_113{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_11inc_148 ._progressInfo_11inc_157 ._detail_11inc_167{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180{text-align:center}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180 ._label_11inc_87{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_11inc_148 ._statsContainer_11inc_172 ._statsItem_11inc_180 ._value_11inc_92 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_11inc_148 ._failedList_11inc_193{width:100%}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedTitle_11inc_196{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202 ._songName_11inc_208{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_11inc_148 ._failedList_11inc_193 ._failedItem_11inc_202 ._errorMsg_11inc_213{font-size:12px;color:#ff4d4f}._uploadModal_11inc_218 .ant-modal-body{padding:24px}._progressSection_11inc_222{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_11inc_157{display:flex;flex-direction:column;align-items:center}._progressInfo_11inc_157 ._percentage_11inc_113{font-size:24px;font-weight:500;color:#333}._progressInfo_11inc_157 ._count_11inc_241{font-size:14px;color:#666;margin-top:4px}._statsContainer_11inc_172{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_11inc_172 ._statsItem_11inc_180{text-align:center}._statsContainer_11inc_172 ._statsTag_11inc_256{padding:4px 12px;font-size:14px}._songList_11inc_261{max-height:300px;overflow-y:auto;padding-right:4px}._songList_11inc_261::-webkit-scrollbar{width:6px}._songList_11inc_261::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_11inc_261::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_11inc_277{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_11inc_277:not(:last-child){margin-bottom:8px}._songItem_11inc_277:hover{background:#f5f5f5}._songInfo_11inc_292{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_11inc_292 ._songName_11inc_208{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_11inc_292 ._artistName_11inc_306{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
 
       var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
       function getDefaultExportFromCjs(x) {
@@ -146,13 +154,13 @@ System.register("./__monkey.entry-CmhYwoN8.js", ['react', 'antd', 'react-dom', '
         hasRequiredReactJsxRuntime_production_min = 1;
         var f = require$$0, k = Symbol.for("react.element"), l = Symbol.for("react.fragment"), m = Object.prototype.hasOwnProperty, n = f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p = { key: true, ref: true, __self: true, __source: true };
         function q(c, a, g) {
-          var b, d = {}, e = null, h = null;
-          void 0 !== g && (e = "" + g);
-          void 0 !== a.key && (e = "" + a.key);
+          var b, d = {}, e2 = null, h = null;
+          void 0 !== g && (e2 = "" + g);
+          void 0 !== a.key && (e2 = "" + a.key);
           void 0 !== a.ref && (h = a.ref);
           for (b in a) m.call(a, b) && !p.hasOwnProperty(b) && (d[b] = a[b]);
           if (c && c.defaultProps) for (b in a = c.defaultProps, a) void 0 === d[b] && (d[b] = a[b]);
-          return { $$typeof: k, type: c, key: e, ref: h, props: d, _owner: n.current };
+          return { $$typeof: k, type: c, key: e2, ref: h, props: d, _owner: n.current };
         }
         reactJsxRuntime_production_min.Fragment = l;
         reactJsxRuntime_production_min.jsx = q;
@@ -946,7 +954,7 @@ var hasRequiredIeee754;
         if (hasRequiredIeee754) return ieee754;
         hasRequiredIeee754 = 1;
         ieee754.read = function(buffer, offset, isLE, mLen, nBytes) {
-          var e, m;
+          var e2, m;
           var eLen = nBytes * 8 - mLen - 1;
           var eMax = (1 << eLen) - 1;
           var eBias = eMax >> 1;
@@ -955,28 +963,28 @@ var hasRequiredIeee754;
           var d = isLE ? -1 : 1;
           var s = buffer[offset + i];
           i += d;
-          e = s & (1 << -nBits) - 1;
+          e2 = s & (1 << -nBits) - 1;
           s >>= -nBits;
           nBits += eLen;
-          for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {
+          for (; nBits > 0; e2 = e2 * 256 + buffer[offset + i], i += d, nBits -= 8) {
           }
-          m = e & (1 << -nBits) - 1;
-          e >>= -nBits;
+          m = e2 & (1 << -nBits) - 1;
+          e2 >>= -nBits;
           nBits += mLen;
           for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {
           }
-          if (e === 0) {
-            e = 1 - eBias;
-          } else if (e === eMax) {
+          if (e2 === 0) {
+            e2 = 1 - eBias;
+          } else if (e2 === eMax) {
             return m ? NaN : (s ? -1 : 1) * Infinity;
           } else {
             m = m + Math.pow(2, mLen);
-            e = e - eBias;
+            e2 = e2 - eBias;
           }
-          return (s ? -1 : 1) * m * Math.pow(2, e - mLen);
+          return (s ? -1 : 1) * m * Math.pow(2, e2 - mLen);
         };
         ieee754.write = function(buffer, value2, offset, isLE, mLen, nBytes) {
-          var e, m, c;
+          var e2, m, c;
           var eLen = nBytes * 8 - mLen - 1;
           var eMax = (1 << eLen) - 1;
           var eBias = eMax >> 1;
@@ -987,38 +995,38 @@ var hasRequiredIeee754;
           value2 = Math.abs(value2);
           if (isNaN(value2) || value2 === Infinity) {
             m = isNaN(value2) ? 1 : 0;
-            e = eMax;
+            e2 = eMax;
           } else {
-            e = Math.floor(Math.log(value2) / Math.LN2);
-            if (value2 * (c = Math.pow(2, -e)) < 1) {
-              e--;
+            e2 = Math.floor(Math.log(value2) / Math.LN2);
+            if (value2 * (c = Math.pow(2, -e2)) < 1) {
+              e2--;
               c *= 2;
             }
-            if (e + eBias >= 1) {
+            if (e2 + eBias >= 1) {
               value2 += rt / c;
             } else {
               value2 += rt * Math.pow(2, 1 - eBias);
             }
             if (value2 * c >= 2) {
-              e++;
+              e2++;
               c /= 2;
             }
-            if (e + eBias >= eMax) {
+            if (e2 + eBias >= eMax) {
               m = 0;
-              e = eMax;
-            } else if (e + eBias >= 1) {
+              e2 = eMax;
+            } else if (e2 + eBias >= 1) {
               m = (value2 * c - 1) * Math.pow(2, mLen);
-              e = e + eBias;
+              e2 = e2 + eBias;
             } else {
               m = value2 * Math.pow(2, eBias - 1) * Math.pow(2, mLen);
-              e = 0;
+              e2 = 0;
             }
           }
           for (; mLen >= 8; buffer[offset + i] = m & 255, i += d, m /= 256, mLen -= 8) {
           }
-          e = e << mLen | m;
+          e2 = e2 << mLen | m;
           eLen += mLen;
-          for (; eLen > 0; buffer[offset + i] = e & 255, i += d, e /= 256, eLen -= 8) {
+          for (; eLen > 0; buffer[offset + i] = e2 & 255, i += d, e2 /= 256, eLen -= 8) {
           }
           buffer[offset + i - d] |= s * 128;
         };
@@ -1523,10 +1531,10 @@ get(array, off2) {
       var shft = function(p) {
         return (p + 7) / 8 | 0;
       };
-      var slc = function(v, s, e) {
-        if (e == null || e > v.length)
-          e = v.length;
-        return new u8(v.subarray(s, e));
+      var slc = function(v, s, e2) {
+        if (e2 == null || e2 > v.length)
+          e2 = v.length;
+        return new u8(v.subarray(s, e2));
       };
       var ec = [
         "unexpected EOF",
@@ -1545,13 +1553,13 @@ get(array, off2) {
         "invalid zip data"
 ];
       var err = function(ind, msg, nt) {
-        var e = new Error(msg || ec[ind]);
-        e.code = ind;
+        var e2 = new Error(msg || ec[ind]);
+        e2.code = ind;
         if (Error.captureStackTrace)
-          Error.captureStackTrace(e, err);
+          Error.captureStackTrace(e2, err);
         if (!nt)
-          throw e;
-        return e;
+          throw e2;
+        return e2;
       };
       var inflt = function(dat, st, buf, dict) {
         var sl = dat.length, dl = 0;
@@ -1737,7 +1745,7 @@ get(array, off2) {
       try {
         td.decode(et, { stream: true });
         tds = 1;
-      } catch (e) {
+      } catch (e2) {
       }
       var browser$1 = { exports: {} };
       var ms;
@@ -6038,7 +6046,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-B3Y2RgWi-DraWQVFj.js');
+            const { MpegParser } = await module.import('./MpegParser-BJRcgYSu-Ct_XYpjN.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -6060,7 +6068,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-b0tTtyzp-BNXJA94u.js');
+            const { AsfParser } = await module.import('./AsfParser-B7L65o0i-CIqIHX47.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -6071,7 +6079,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-kiT7AtEN-BFHStqyl.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-7nZ6Vsmf-C-nxl2g7.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -6082,7 +6090,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-Dx6r28SR-BmNA9QXh.js');
+            const { AIFFParser } = await module.import('./AiffParser-BiQKfjq_-BX8rRRrA.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -6093,7 +6101,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-Dudh5RtA-FLbZV3x5.js');
+            const { DsfParser } = await module.import('./DsfParser-DiNxWLPC-D13a0X_L.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -6104,7 +6112,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-Cn9tcqcb-CtfcS4d_.js');
+            const { FlacParser } = await module.import('./FlacParser-BTb079Xp-9V4Zycek.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -6115,7 +6123,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-cZJDwoc3-DtvrAdCw.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-DltAzkd7-CWRCugkp.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -6126,7 +6134,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-CXGVGnek-B2622Q7B.js');
+            const { MP4Parser } = await module.import('./MP4Parser-Cm1XzOIt-DzntF9Ho.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -6137,7 +6145,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-Bh50AYrd-OKZof9S7.js');
+            const { MusepackParser } = await module.import('./MusepackParser-Ct7HQKlr-D-trXx-z.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -6148,7 +6156,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-D7m1AO5L-DvnBThN2.js');
+            const { OggParser } = await module.import('./OggParser-CCJzDdbp-Bpnql55v.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -6159,7 +6167,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-C10rFHOX-BSuk3WjC.js');
+            const { WavPackParser } = await module.import('./WavPackParser-DvCGtJgl-BAuGgRN5.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -6170,7 +6178,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-DoXsnta--CCvDKzF8.js');
+            const { WaveParser } = await module.import('./WaveParser-BdfZyGag-2MYRWBDU.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -7078,7 +7086,7 @@ track: UINT8.get(buf, off2 + 126),
           }
         });
       };
-      const searchArtist$1 = (keyword) => weapiRequest("/api/rep/ugc/artist/search", {
+      const searchArtist = (keyword) => weapiRequest("/api/rep/ugc/artist/search", {
         data: {
           keyword,
           limit: 40
@@ -7123,6 +7131,84 @@ track: UINT8.get(buf, off2 + 126),
         };
         return { filteredList, setFilteredList, handleFilter };
       }
+      const getAlbumSongList = (id) => weapiRequest(`/api/v1/album/${id}`, {
+        data: {}
+      });
+      const getAlbumDetail = async (id) => {
+        return weapiRequest(`/api/album/${id}`, {
+          data: {
+            id
+          }
+        });
+      };
+      const getArtists = () => fetch(`${BASE_CDN_URL}artist.json`).then((res) => res.json());
+      const getArtistTopSongList = (id) => weapiRequest("/api/artist/top/song", {
+        data: {
+          id,
+          limit: 1e3,
+          offset: 0
+        }
+      });
+      const getArtistAllSongList = async (id) => {
+        try {
+          let more = true;
+          const songs2 = [];
+          let offset = 0;
+          while (more) {
+            const res = await weapiRequest("/api/v1/artist/songs", {
+              data: {
+                id,
+                limit: 200,
+                private_cloud: "true",
+                work_type: 1,
+                order: "hot",
+offset
+              }
+            });
+            if (res.code != 200) {
+              throw new Error(res.message || res.msg || "获取歌手全部歌曲失败");
+            }
+            songs2.push(...res.songs);
+            more = res.more;
+            offset += 200;
+          }
+          return {
+            code: 200,
+            msg: "获取歌手全部歌曲成功",
+            songs: songs2
+          };
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
+      };
+      const getArtistAlbumList = async (id) => {
+        let more = true;
+        let limit = 200;
+        let offset = 0;
+        const albumList = [];
+        while (more) {
+          const res = await weapiRequest(`/api/artist/albums/${id}`, {
+            data: {
+              id,
+              limit,
+              offset
+            }
+          });
+          if (res.code != 200) {
+            throw new Error(res.message || res.msg || "获取歌手专辑失败");
+          }
+          albumList.push(...res.hotAlbums);
+          more = res.more;
+          offset += limit;
+        }
+        return {
+          code: 200,
+          msg: "获取歌手专辑成功",
+          data: albumList
+        };
+      };
+      const getCDNConfig = (artistId) => fetch(`${BASE_CDN_URL}${artistId}.json`).then((res) => res.json());
       const urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
       let nanoid = (size2 = 21) => {
         let id = "";
@@ -7181,6 +7267,857 @@ track: UINT8.get(buf, off2 + 126),
             ...otherOptions
           });
         });
+      };
+      const getSongInfoList = async (songIds) => {
+        const chunkArr = chunkArray(songIds, 1e3);
+        const proArr = chunkArr.map(async (chunk) => {
+          const res = await weapiRequest("/api/v3/song/detail", {
+            data: {
+              c: JSON.stringify(chunk.map((item) => ({ id: item })))
+            }
+          });
+          console.log("res", res);
+          if (res.code === 200) {
+            return res;
+          }
+          throw new Error(res.message || res.msg || "获取歌曲信息失败");
+        });
+        const allInfo = await Promise.all(proArr);
+        return {
+          code: 200,
+          privileges: allInfo.map((item) => item.privileges).flat(),
+          songs: allInfo.map((item) => item.songs).flat()
+        };
+      };
+      const getSongUrl$1 = (ids, options) => {
+        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = options || {};
+        return weapiRequest("/api/song/enhance/player/url/v1", {
+          data: { ids: JSON.stringify(ids), level, encodeType }
+        });
+      };
+      const getSongLyric = async (id) => {
+        return weapiRequest("/api/song/lyric", {
+          data: {
+            id,
+            tv: -1,
+            lv: -1,
+            rv: -1,
+            kv: -1,
+            _nmclfl: 1
+          }
+        });
+      };
+      const getSongDynamicCover = async (songId) => {
+        return weapiRequest("/api/songplay/dynamic-cover", {
+          data: {
+            songId
+          }
+        });
+      };
+      var dayjs_min$1 = { exports: {} };
+      var dayjs_min = dayjs_min$1.exports;
+      var hasRequiredDayjs_min;
+      function requireDayjs_min() {
+        if (hasRequiredDayjs_min) return dayjs_min$1.exports;
+        hasRequiredDayjs_min = 1;
+        (function(module, exports) {
+          !(function(t, e2) {
+            module.exports = e2();
+          })(dayjs_min, (function() {
+            var t = 1e3, e2 = 6e4, n = 36e5, r = "millisecond", i = "second", s = "minute", u = "hour", a = "day", o = "week", c = "month", f = "quarter", h = "year", d = "date", l = "Invalid Date", $ = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, y = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, M = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(t2) {
+              var e3 = ["th", "st", "nd", "rd"], n2 = t2 % 100;
+              return "[" + t2 + (e3[(n2 - 20) % 10] || e3[n2] || e3[0]) + "]";
+            } }, m = function(t2, e3, n2) {
+              var r2 = String(t2);
+              return !r2 || r2.length >= e3 ? t2 : "" + Array(e3 + 1 - r2.length).join(n2) + t2;
+            }, v = { s: m, z: function(t2) {
+              var e3 = -t2.utcOffset(), n2 = Math.abs(e3), r2 = Math.floor(n2 / 60), i2 = n2 % 60;
+              return (e3 <= 0 ? "+" : "-") + m(r2, 2, "0") + ":" + m(i2, 2, "0");
+            }, m: function t2(e3, n2) {
+              if (e3.date() < n2.date()) return -t2(n2, e3);
+              var r2 = 12 * (n2.year() - e3.year()) + (n2.month() - e3.month()), i2 = e3.clone().add(r2, c), s2 = n2 - i2 < 0, u2 = e3.clone().add(r2 + (s2 ? -1 : 1), c);
+              return +(-(r2 + (n2 - i2) / (s2 ? i2 - u2 : u2 - i2)) || 0);
+            }, a: function(t2) {
+              return t2 < 0 ? Math.ceil(t2) || 0 : Math.floor(t2);
+            }, p: function(t2) {
+              return { M: c, y: h, w: o, d: a, D: d, h: u, m: s, s: i, ms: r, Q: f }[t2] || String(t2 || "").toLowerCase().replace(/s$/, "");
+            }, u: function(t2) {
+              return void 0 === t2;
+            } }, g = "en", D = {};
+            D[g] = M;
+            var p = "$isDayjsObject", S = function(t2) {
+              return t2 instanceof _ || !(!t2 || !t2[p]);
+            }, w = function t2(e3, n2, r2) {
+              var i2;
+              if (!e3) return g;
+              if ("string" == typeof e3) {
+                var s2 = e3.toLowerCase();
+                D[s2] && (i2 = s2), n2 && (D[s2] = n2, i2 = s2);
+                var u2 = e3.split("-");
+                if (!i2 && u2.length > 1) return t2(u2[0]);
+              } else {
+                var a2 = e3.name;
+                D[a2] = e3, i2 = a2;
+              }
+              return !r2 && i2 && (g = i2), i2 || !r2 && g;
+            }, O = function(t2, e3) {
+              if (S(t2)) return t2.clone();
+              var n2 = "object" == typeof e3 ? e3 : {};
+              return n2.date = t2, n2.args = arguments, new _(n2);
+            }, b = v;
+            b.l = w, b.i = S, b.w = function(t2, e3) {
+              return O(t2, { locale: e3.$L, utc: e3.$u, x: e3.$x, $offset: e3.$offset });
+            };
+            var _ = (function() {
+              function M2(t2) {
+                this.$L = w(t2.locale, null, true), this.parse(t2), this.$x = this.$x || t2.x || {}, this[p] = true;
+              }
+              var m2 = M2.prototype;
+              return m2.parse = function(t2) {
+                this.$d = (function(t3) {
+                  var e3 = t3.date, n2 = t3.utc;
+                  if (null === e3) return new Date(NaN);
+                  if (b.u(e3)) return new Date();
+                  if (e3 instanceof Date) return new Date(e3);
+                  if ("string" == typeof e3 && !/Z$/i.test(e3)) {
+                    var r2 = e3.match($);
+                    if (r2) {
+                      var i2 = r2[2] - 1 || 0, s2 = (r2[7] || "0").substring(0, 3);
+                      return n2 ? new Date(Date.UTC(r2[1], i2, r2[3] || 1, r2[4] || 0, r2[5] || 0, r2[6] || 0, s2)) : new Date(r2[1], i2, r2[3] || 1, r2[4] || 0, r2[5] || 0, r2[6] || 0, s2);
+                    }
+                  }
+                  return new Date(e3);
+                })(t2), this.init();
+              }, m2.init = function() {
+                var t2 = this.$d;
+                this.$y = t2.getFullYear(), this.$M = t2.getMonth(), this.$D = t2.getDate(), this.$W = t2.getDay(), this.$H = t2.getHours(), this.$m = t2.getMinutes(), this.$s = t2.getSeconds(), this.$ms = t2.getMilliseconds();
+              }, m2.$utils = function() {
+                return b;
+              }, m2.isValid = function() {
+                return !(this.$d.toString() === l);
+              }, m2.isSame = function(t2, e3) {
+                var n2 = O(t2);
+                return this.startOf(e3) <= n2 && n2 <= this.endOf(e3);
+              }, m2.isAfter = function(t2, e3) {
+                return O(t2) < this.startOf(e3);
+              }, m2.isBefore = function(t2, e3) {
+                return this.endOf(e3) < O(t2);
+              }, m2.$g = function(t2, e3, n2) {
+                return b.u(t2) ? this[e3] : this.set(n2, t2);
+              }, m2.unix = function() {
+                return Math.floor(this.valueOf() / 1e3);
+              }, m2.valueOf = function() {
+                return this.$d.getTime();
+              }, m2.startOf = function(t2, e3) {
+                var n2 = this, r2 = !!b.u(e3) || e3, f2 = b.p(t2), l2 = function(t3, e4) {
+                  var i2 = b.w(n2.$u ? Date.UTC(n2.$y, e4, t3) : new Date(n2.$y, e4, t3), n2);
+                  return r2 ? i2 : i2.endOf(a);
+                }, $2 = function(t3, e4) {
+                  return b.w(n2.toDate()[t3].apply(n2.toDate("s"), (r2 ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e4)), n2);
+                }, y2 = this.$W, M3 = this.$M, m3 = this.$D, v2 = "set" + (this.$u ? "UTC" : "");
+                switch (f2) {
+                  case h:
+                    return r2 ? l2(1, 0) : l2(31, 11);
+                  case c:
+                    return r2 ? l2(1, M3) : l2(0, M3 + 1);
+                  case o:
+                    var g2 = this.$locale().weekStart || 0, D2 = (y2 < g2 ? y2 + 7 : y2) - g2;
+                    return l2(r2 ? m3 - D2 : m3 + (6 - D2), M3);
+                  case a:
+                  case d:
+                    return $2(v2 + "Hours", 0);
+                  case u:
+                    return $2(v2 + "Minutes", 1);
+                  case s:
+                    return $2(v2 + "Seconds", 2);
+                  case i:
+                    return $2(v2 + "Milliseconds", 3);
+                  default:
+                    return this.clone();
+                }
+              }, m2.endOf = function(t2) {
+                return this.startOf(t2, false);
+              }, m2.$set = function(t2, e3) {
+                var n2, o2 = b.p(t2), f2 = "set" + (this.$u ? "UTC" : ""), l2 = (n2 = {}, n2[a] = f2 + "Date", n2[d] = f2 + "Date", n2[c] = f2 + "Month", n2[h] = f2 + "FullYear", n2[u] = f2 + "Hours", n2[s] = f2 + "Minutes", n2[i] = f2 + "Seconds", n2[r] = f2 + "Milliseconds", n2)[o2], $2 = o2 === a ? this.$D + (e3 - this.$W) : e3;
+                if (o2 === c || o2 === h) {
+                  var y2 = this.clone().set(d, 1);
+                  y2.$d[l2]($2), y2.init(), this.$d = y2.set(d, Math.min(this.$D, y2.daysInMonth())).$d;
+                } else l2 && this.$d[l2]($2);
+                return this.init(), this;
+              }, m2.set = function(t2, e3) {
+                return this.clone().$set(t2, e3);
+              }, m2.get = function(t2) {
+                return this[b.p(t2)]();
+              }, m2.add = function(r2, f2) {
+                var d2, l2 = this;
+                r2 = Number(r2);
+                var $2 = b.p(f2), y2 = function(t2) {
+                  var e3 = O(l2);
+                  return b.w(e3.date(e3.date() + Math.round(t2 * r2)), l2);
+                };
+                if ($2 === c) return this.set(c, this.$M + r2);
+                if ($2 === h) return this.set(h, this.$y + r2);
+                if ($2 === a) return y2(1);
+                if ($2 === o) return y2(7);
+                var M3 = (d2 = {}, d2[s] = e2, d2[u] = n, d2[i] = t, d2)[$2] || 1, m3 = this.$d.getTime() + r2 * M3;
+                return b.w(m3, this);
+              }, m2.subtract = function(t2, e3) {
+                return this.add(-1 * t2, e3);
+              }, m2.format = function(t2) {
+                var e3 = this, n2 = this.$locale();
+                if (!this.isValid()) return n2.invalidDate || l;
+                var r2 = t2 || "YYYY-MM-DDTHH:mm:ssZ", i2 = b.z(this), s2 = this.$H, u2 = this.$m, a2 = this.$M, o2 = n2.weekdays, c2 = n2.months, f2 = n2.meridiem, h2 = function(t3, n3, i3, s3) {
+                  return t3 && (t3[n3] || t3(e3, r2)) || i3[n3].slice(0, s3);
+                }, d2 = function(t3) {
+                  return b.s(s2 % 12 || 12, t3, "0");
+                }, $2 = f2 || function(t3, e4, n3) {
+                  var r3 = t3 < 12 ? "AM" : "PM";
+                  return n3 ? r3.toLowerCase() : r3;
+                };
+                return r2.replace(y, (function(t3, r3) {
+                  return r3 || (function(t4) {
+                    switch (t4) {
+                      case "YY":
+                        return String(e3.$y).slice(-2);
+                      case "YYYY":
+                        return b.s(e3.$y, 4, "0");
+                      case "M":
+                        return a2 + 1;
+                      case "MM":
+                        return b.s(a2 + 1, 2, "0");
+                      case "MMM":
+                        return h2(n2.monthsShort, a2, c2, 3);
+                      case "MMMM":
+                        return h2(c2, a2);
+                      case "D":
+                        return e3.$D;
+                      case "DD":
+                        return b.s(e3.$D, 2, "0");
+                      case "d":
+                        return String(e3.$W);
+                      case "dd":
+                        return h2(n2.weekdaysMin, e3.$W, o2, 2);
+                      case "ddd":
+                        return h2(n2.weekdaysShort, e3.$W, o2, 3);
+                      case "dddd":
+                        return o2[e3.$W];
+                      case "H":
+                        return String(s2);
+                      case "HH":
+                        return b.s(s2, 2, "0");
+                      case "h":
+                        return d2(1);
+                      case "hh":
+                        return d2(2);
+                      case "a":
+                        return $2(s2, u2, true);
+                      case "A":
+                        return $2(s2, u2, false);
+                      case "m":
+                        return String(u2);
+                      case "mm":
+                        return b.s(u2, 2, "0");
+                      case "s":
+                        return String(e3.$s);
+                      case "ss":
+                        return b.s(e3.$s, 2, "0");
+                      case "SSS":
+                        return b.s(e3.$ms, 3, "0");
+                      case "Z":
+                        return i2;
+                    }
+                    return null;
+                  })(t3) || i2.replace(":", "");
+                }));
+              }, m2.utcOffset = function() {
+                return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
+              }, m2.diff = function(r2, d2, l2) {
+                var $2, y2 = this, M3 = b.p(d2), m3 = O(r2), v2 = (m3.utcOffset() - this.utcOffset()) * e2, g2 = this - m3, D2 = function() {
+                  return b.m(y2, m3);
+                };
+                switch (M3) {
+                  case h:
+                    $2 = D2() / 12;
+                    break;
+                  case c:
+                    $2 = D2();
+                    break;
+                  case f:
+                    $2 = D2() / 3;
+                    break;
+                  case o:
+                    $2 = (g2 - v2) / 6048e5;
+                    break;
+                  case a:
+                    $2 = (g2 - v2) / 864e5;
+                    break;
+                  case u:
+                    $2 = g2 / n;
+                    break;
+                  case s:
+                    $2 = g2 / e2;
+                    break;
+                  case i:
+                    $2 = g2 / t;
+                    break;
+                  default:
+                    $2 = g2;
+                }
+                return l2 ? $2 : b.a($2);
+              }, m2.daysInMonth = function() {
+                return this.endOf(c).$D;
+              }, m2.$locale = function() {
+                return D[this.$L];
+              }, m2.locale = function(t2, e3) {
+                if (!t2) return this.$L;
+                var n2 = this.clone(), r2 = w(t2, e3, true);
+                return r2 && (n2.$L = r2), n2;
+              }, m2.clone = function() {
+                return b.w(this.$d, this);
+              }, m2.toDate = function() {
+                return new Date(this.valueOf());
+              }, m2.toJSON = function() {
+                return this.isValid() ? this.toISOString() : null;
+              }, m2.toISOString = function() {
+                return this.$d.toISOString();
+              }, m2.toString = function() {
+                return this.$d.toUTCString();
+              }, M2;
+            })(), k = _.prototype;
+            return O.prototype = k, [["$ms", r], ["$s", i], ["$m", s], ["$H", u], ["$W", a], ["$M", c], ["$y", h], ["$D", d]].forEach((function(t2) {
+              k[t2[1]] = function(e3) {
+                return this.$g(e3, t2[0], t2[1]);
+              };
+            })), O.extend = function(t2, e3) {
+              return t2.$i || (t2(e3, _, O), t2.$i = true), O;
+            }, O.locale = w, O.isDayjs = S, O.unix = function(t2) {
+              return O(1e3 * t2);
+            }, O.en = D[g], O.Ls = D, O.p = {}, O;
+          }));
+        })(dayjs_min$1);
+        return dayjs_min$1.exports;
+      }
+      var dayjs_minExports = requireDayjs_min();
+      const dayjs = getDefaultExportFromCjs(dayjs_minExports);
+      const getQualityTags = (song) => {
+        const tags = [];
+        if (song.hr)
+          tags.push({
+            label: "Hi-Res",
+            color: "#f50",
+            value: QUALITY_LEVELS["Hi-Res"]
+          });
+        if (song.sq)
+          tags.push({ label: "SQ", color: "#87d068", value: QUALITY_LEVELS.无损 });
+        if (song.h)
+          tags.push({ label: "HQ", color: "#2db7f5", value: QUALITY_LEVELS.较高 });
+        return tags;
+      };
+      const formatDuration = (ms2) => {
+        const time = dayjs.duration(ms2);
+        const minutes = time.minutes();
+        const seconds = time.seconds();
+        return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+      };
+      const getMarkTags = (mark) => {
+        const tags = [];
+        if (mark & 131072) tags.push({ text: "纯音乐", color: "#2db7f5" });
+        if (mark & 262144) tags.push({ text: "杜比全景声", color: "#722ed1" });
+        if (mark & 1048576) tags.push({ text: "🅴", color: "#f50" });
+        if (mark & 17179869184) tags.push({ text: "Hi-Res", color: "#f50" });
+        return tags;
+      };
+      const getOriginTag = (originCoverType) => {
+        const types = {
+          0: { text: "未知", color: "#d9d9d9" },
+          1: { text: "原曲", color: "#87d068" },
+          2: { text: "翻唱", color: "#2db7f5" }
+        };
+        return types[originCoverType] || types[0];
+      };
+      const formatPopularity = (pop) => {
+        if (!pop) return "0";
+        return pop.toFixed(1);
+      };
+      const getTypeTag = (t) => {
+        const types = {
+          0: { text: "普通歌曲", color: "#108ee9" },
+          1: { text: "独立云盘", color: "#f50" },
+          2: { text: "云盘歌曲", color: "#87d068" }
+        };
+        return types[t] || types[0];
+      };
+      const getFeeTag = (fee) => {
+        const fees = {
+          0: { text: "免费", color: "#87d068" },
+          1: { text: "VIP", color: "#f50" },
+          4: { text: "专辑购买", color: "#722ed1" },
+          8: { text: "付费/试听", color: "#faad14" }
+        };
+        return fees[fee] || fees[0];
+      };
+      const BUCKET = "jd-musicrep-privatecloud-audio-public";
+      const uploadAudioToNos = async ({
+        file,
+        bucket,
+        objectKey,
+        token,
+        fileMd5,
+        contentType: contentType2
+      }) => {
+        const lbsUrl = `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket}`;
+        const lbs = await (await fetch(lbsUrl)).json();
+        const safeObjectKey = objectKey.replace("/", "%2F");
+        const uploadUrl = `${lbs.upload[0]}/${bucket}/${safeObjectKey}?offset=0&complete=true&version=1.0`.replace(
+          "http://",
+          "https://"
+        );
+        const response = await fetch(uploadUrl, {
+          method: "post",
+          headers: {
+            "x-nos-token": token,
+            "Content-MD5": fileMd5,
+            "Content-Type": contentType2
+          },
+          body: file
+        });
+        let result = {};
+        try {
+          result = await response.json();
+        } catch (error) {
+          console.log("uploadAudioToNos parse error", error);
+        }
+        if (!response.ok) {
+          msgError("上传失败：文件未通过 NOS 校验");
+          throw new Error(result?.message || "上传失败：文件未通过 NOS 校验");
+        }
+        return result;
+      };
+      const matchCloudSong = async (cloudSongId, id, song) => {
+        if (cloudSongId != id) {
+          const res = await weapiRequest("/api/cloud/user/song/match", {
+            data: {
+              songId: cloudSongId,
+              adjustSongId: id
+            }
+          });
+          console.log("res", res);
+          if (res.code != 200 || res.data.length < 1) {
+            msgError(`歌曲"${song?.name}" 匹配失败：${res.message || res.msg}`);
+            throw new Error(res.message || res.msg || "歌曲匹配失败");
+          }
+          return res;
+        }
+        return {
+          code: 200,
+          msg: "歌曲匹配成功",
+          data: song
+        };
+      };
+      const uploadSong = async (song) => {
+        try {
+          console.log("song", song);
+          let res = await weapiRequest("/api/cloud/upload/check/v2", {
+            data: {
+              uploadType: 0,
+              songs: JSON.stringify([
+                {
+                  md5: song.md5,
+                  songId: song.id,
+                  bitrate: song.bitrate,
+                  fileSize: song.size
+                }
+              ])
+            }
+          });
+          if (res.code != 200 || res.data.length < 1) {
+            msgError(`资源检查失败,请检查歌曲：${song.name}是否已存在！`);
+            throw new Error(res.message || res.msg || "资源检查失败");
+          }
+          console.log("res", res);
+          const cloudId = res.data[0].songId;
+          if (res.data[0].upload == 1) {
+            const importRes = await weapiRequest("/api/cloud/user/song/import", {
+              data: {
+                uploadType: 0,
+                songs: JSON.stringify([
+                  {
+                    songId: cloudId,
+                    bitrate: song.bitrate,
+                    song: song.filename,
+                    artist: song.artists,
+                    album: song.album,
+                    fileName: song.filename
+                  }
+                ])
+              }
+            });
+            console.log("importRes", importRes);
+            if (importRes.code != 200 || importRes.data.successSongs.length < 1) {
+              msgError(`歌曲： ${song.name} 上传失败`);
+              throw new Error(importRes.message || importRes.msg || "歌曲上传失败");
+            }
+            const cloudSongId = importRes.data.successSongs[0].song.songId;
+            await matchCloudSong(cloudSongId, song.id, song);
+            return {
+              code: 200,
+              msg: "歌曲上传成功",
+              data: { song }
+            };
+          } else {
+            const tokenRes = await weapiRequest("/api/nos/token/alloc", {
+              data: {
+                filename: song.filename,
+                length: song.size,
+                ext: song.ext,
+                md5: song.md5,
+                type: "audio",
+                bucket: BUCKET,
+                local: false,
+                nos_product: 3
+              }
+            });
+            console.log("tokenRes", tokenRes);
+            if (tokenRes.code != 200) {
+              msgError("获取上传token失败");
+              throw new Error(
+                tokenRes.message || tokenRes.msg || "获取上传token失败"
+              );
+            }
+            song.resourceId = tokenRes.result.resourceId;
+            const uploadRes = await weapiRequest("/api/upload/cloud/info/v2", {
+              data: {
+                token: tokenRes.result.token,
+                objectKey: tokenRes.result.objectKey,
+                resourceId: tokenRes.result.resourceId,
+expireTime: Date.now() + 6e4,
+                fileSize: song.size,
+                md5: song.md5,
+                songid: cloudId,
+                filename: song.filename,
+                song: song.name,
+                album: song.album,
+                artist: song.artists,
+                bitrate: String(song.bitrate || 128),
+                resourceId: song.resourceId
+              }
+            });
+            console.log("uploadRes", uploadRes);
+            if (uploadRes.code != 200) {
+              msgError(`歌曲： ${song.name} 上传失败`);
+            }
+            const pubRes = await weapiRequest("/api/cloud/pub/v2", {
+              data: {
+                songid: uploadRes.songId
+              }
+            });
+            if (![200, 201].includes(pubRes.code)) {
+              msgError(`歌曲： ${song.name} 发布失败`);
+              throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
+            }
+            const cloudSongId = pubRes.privateCloud.songId;
+            await matchCloudSong(cloudSongId, song.id, song);
+            return {
+              code: 200,
+              msg: "歌曲上传成功",
+              data: { song }
+            };
+          }
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
+      };
+      const getCloudData = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
+        data: {
+          limit,
+          offset
+        }
+      });
+      const deleteCloudSong = (songIds) => weapiRequest("/api/cloud/del", {
+        data: {
+          songIds
+        }
+      });
+      const uploadLocalSong = async (file, options = {}) => {
+        const {
+          defaultBitrate = 999e3,
+          defaultAlbum,
+          defaultArtist,
+          defaultTitle,
+          defaultArtists = [],
+          matchId
+        } = options || {};
+        let defaultResult = {};
+        try {
+          const ext = file.name.split(".").pop() || "mp3";
+          const fileMd5 = await getFileMD5(file);
+          const bitrate = defaultBitrate;
+          const filename = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
+          const contentType2 = file.type || "audio/mpeg";
+          const checkRes = await weapiRequest("/api/cloud/upload/check", {
+            data: {
+              ext: "",
+              bitrate: String(bitrate),
+              md5: fileMd5,
+              length: file.size,
+              songId: "0",
+              version: 1
+            }
+          });
+          console.log("checkRes", checkRes);
+          if (checkRes.code != 200) {
+            msgError("文件检查失败：" + checkRes.message || checkRes.msg || "");
+            throw new Error(checkRes.message || checkRes.msg || "文件检查失败");
+          }
+          const { needUpload, songId } = checkRes;
+          if (needUpload) {
+            const uploadTokenRes = await weapiRequest("/api/nos/token/alloc", {
+              data: {
+                bucket: BUCKET,
+                ext,
+                filename,
+                local: false,
+                nos_product: 3,
+                type: "audio",
+                md5: fileMd5
+              }
+            });
+            if (uploadTokenRes.code !== 200) {
+              msgError("上传授权失败");
+              throw new Error(uploadTokenRes.message || "上传授权失败");
+            }
+            console.log("uploadTokenRes", uploadTokenRes);
+            await uploadAudioToNos({
+              file,
+              bucket: BUCKET,
+              objectKey: uploadTokenRes.result.objectKey,
+              token: uploadTokenRes.result.token,
+              fileMd5,
+              contentType: contentType2
+            });
+          }
+          const tokenRes = await weapiRequest("/api/nos/token/alloc", {
+            data: {
+              bucket: "",
+              ext,
+              filename,
+              local: false,
+              nos_product: 3,
+              type: "audio",
+              md5: fileMd5
+            }
+          });
+          console.log("tokenRes", tokenRes);
+          if (tokenRes.code != 200) {
+            msgError("获取上传token失败");
+            throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
+          }
+          const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
+          const {
+            album: album2 = defaultAlbum,
+            artist: artist2 = defaultArtist,
+            artists = defaultArtists,
+            title: title2 = defaultTitle
+          } = await getAudioMetadata(file);
+          defaultResult = {
+            ...defaultResult,
+            artist: artist2,
+            artists,
+            album: album2,
+            md5: fileMd5,
+            ext,
+            bitrate
+          };
+          const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
+            data: {
+              md5: fileMd5,
+              songid: songId,
+              filename,
+              song: title2 || filename,
+              album: album2 || "未知专辑",
+              artist: artist2 || artists.join(",") || "未知歌手",
+              bitrate: String(bitrate),
+              resourceId
+            }
+          });
+          console.log("uploadInfoRes", uploadInfoRes);
+          defaultResult = {
+            ...defaultResult,
+            id: uploadInfoRes.songId
+          };
+          if (uploadInfoRes.code != 200) {
+            msgError("获取上传信息失败");
+            throw new Error(
+              uploadInfoRes.message || uploadInfoRes.msg || "获取上传信息失败"
+            );
+          }
+          const pubRes = await weapiRequest("/api/cloud/pub/v2", {
+            data: {
+              songid: uploadInfoRes.songId
+            }
+          });
+          console.log("pubRes", pubRes);
+          if (![200, 201].includes(pubRes.code)) {
+            msgError(`歌曲： ${file.name} 发布失败`);
+            throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
+          }
+          const { songName: songName2, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
+          defaultResult = {
+            ...defaultResult,
+            name: songName2,
+            size: fileSize,
+            bitrate: realBitrate
+          };
+          if (matchId) {
+            try {
+              console.log(`开始匹配歌曲: ${songName2}`, defaultResult);
+              const res = await matchCloudSong(
+                pubRes.privateCloud.songId,
+                matchId,
+                defaultResult
+              );
+              if (res.code != 200) {
+                msgError("歌曲匹配失败");
+              }
+              console.log(`歌曲匹配成功: ${songName2}`, defaultResult);
+            } catch (error) {
+              console.log("error", error);
+            }
+          }
+          return defaultResult;
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
+      };
+      const neteaseMusicToCloud = async (songIds, options = {}) => {
+        const {
+          level = QUALITY_LEVELS.无损,
+          concurrent = 6,
+          onStart,
+          onChange,
+          onComplete
+        } = options || {};
+        try {
+          const songInfoRes = await getSongInfoList(songIds);
+          if (songInfoRes.code != 200) {
+            msgError("获取歌曲信息失败");
+            throw new Error(
+              songInfoRes.message || songInfoRes.msg || "获取歌曲信息失败"
+            );
+          }
+          const allPrivileges = songInfoRes.privileges;
+          const allSongs = songInfoRes.songs;
+          const songsMap = Object.fromEntries(
+            allSongs.map((song) => [song.id, song])
+          );
+          const songs2 = allPrivileges.filter((privilege) => !privilege.cs).map((privilege) => songsMap[privilege.id]);
+          const existSongs = allPrivileges.filter((privilege) => privilege.cs).map((privilege) => songsMap[privilege.id]);
+          console.log(
+            `获取歌曲信息, 共${allSongs.length}首，待上传${songs2.length}首，已上传${existSongs.length}首`,
+            allSongs,
+            songs2,
+            existSongs
+          );
+          onStart?.({
+            allSongs,
+            allPrivileges,
+            existSongs,
+            songs: songs2
+          });
+          const urls = await Promise.all(
+            songs2.map(async (song) => {
+              const qualityTags = getQualityTags(song);
+              console.log("qualityTags", qualityTags);
+              const hasTheLevel = qualityTags.some((tag2) => tag2.value === level);
+              if (!hasTheLevel) {
+                msgError(
+                  `歌曲： ${song.name} 音质等级不支持: ${level}, 当前音质等级: ${qualityTags.map((tag2) => tag2.label).join(",")},已降至${qualityTags[0]?.label}`
+                );
+              }
+              const res = await getSongUrl$1([song.id], {
+                level: hasTheLevel ? level : qualityTags[0]?.value
+              });
+              if (res.code != 200) {
+                msgError("获取歌曲链接失败");
+                throw new Error(res.message || res.msg || "获取歌曲链接失败");
+              }
+              const url = res.data[0].url;
+              song.url = url;
+              return url;
+            })
+          );
+          console.log(`获取歌曲链接, 共${urls.length}首`, urls);
+          const success = [];
+          const failed = [];
+          const tasks = songs2.map((song, index2) => async () => {
+            try {
+              if (!song.url) throw new Error(`歌曲链接不存在: ${song.name}`);
+              const file = await fetch(song.url.replace("http://", "https://"));
+              const blob = await file.blob();
+              const fileObj = new File([blob], song.name, { type: song.type });
+              const songInfo2 = {
+                album: song.al?.name,
+                artist: song.ar?.map((ar) => ar.name).join(","),
+                title: song.name,
+                artists: song.ar?.map((ar) => ar.name)
+              };
+              const res = await uploadLocalSong(fileObj, {
+                defaultAlbum: songInfo2.album,
+                defaultArtist: songInfo2.artist,
+                defaultTitle: songInfo2.title,
+                defaultArtists: songInfo2.artists,
+                matchId: song.id
+              });
+              success.push(song);
+              console.log(
+                `第${index2 + 1}首歌曲上传完成: ${song.name} 共${songs2.length}首, 已上传${success.length}首`,
+                songInfo2,
+                res
+              );
+              onChange?.({
+                current: index2 + 1,
+                total: songs2.length,
+                errorCount: failed.length,
+                type: "success",
+                successCount: success.length,
+                index: index2,
+                song
+              });
+              return res;
+            } catch (error) {
+              failed.push(song);
+              console.log("error", error, song);
+              onChange?.({
+                current: index2 + 1,
+                total: songs2.length,
+                type: "failed",
+                successCount: success.length,
+                errorCount: failed.length,
+                index: index2,
+                song
+              });
+            }
+          });
+          const results = await promiseLimit(tasks, concurrent);
+          console.log(
+            `上传完成, 共${songs2.length}首, 已上传${success.length}首, 上传失败结果: ${failed.length}首`,
+            results
+          );
+          onComplete?.({
+            total: songs2.length,
+            successCount: success.length,
+            errorCount: failed.length,
+            success,
+            failed,
+            results
+          });
+          return results;
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
       };
       var browser = {};
       var canPromise;
@@ -7314,7 +8251,7 @@ track: UINT8.get(buf, off2 + 126),
             }
             try {
               return fromString(value2);
-            } catch (e) {
+            } catch (e2) {
               return defaultValue;
             }
           };
@@ -8170,7 +9107,7 @@ i === posLength - 1 && j === 0) {
             }
             try {
               return fromString(value2);
-            } catch (e) {
+            } catch (e2) {
               return defaultValue;
             }
           };
@@ -9123,7 +10060,7 @@ pop: function() {
           function getCanvasElement() {
             try {
               return document.createElement("canvas");
-            } catch (e) {
+            } catch (e2) {
               throw new Error("You need to specify a canvas element");
             }
           }
@@ -9270,16 +10207,16 @@ pop: function() {
               try {
                 const data = QRCode2.create(text2, opts);
                 resolve(renderFunc(data, canvas2, opts));
-              } catch (e) {
-                reject(e);
+              } catch (e2) {
+                reject(e2);
               }
             });
           }
           try {
             const data = QRCode2.create(text2, opts);
             cb(null, renderFunc(data, canvas2, opts));
-          } catch (e) {
-            cb(e);
+          } catch (e2) {
+            cb(e2);
           }
         }
         browser.create = QRCode2.create;
@@ -9309,174 +10246,34 @@ pop: function() {
           throw error;
         }
       };
-      const getUserAccount$1 = () => weapiRequest("/api/nuser/account/get", {
+      const getQrKey = () => weapiRequest("/api/login/qrcode/unikey", {
+        data: {
+          noCheckToken: 1,
+          type: 1
+        }
+      });
+      const getQrCode = (key) => {
+        const loginUrl = `https://music.163.com/login?codekey=${key}`;
+        return generateQRCode(loginUrl);
+      };
+      const getQrStatus = (key) => weapiFetch("/api/login/qrcode/client/login", {
+        data: {
+          key,
+          type: 1
+        },
+        originResponse: true
+      });
+      const getUserAccount = () => weapiRequest("/api/nuser/account/get", {
         data: {}
       });
-      const getArtists = () => fetch(`${BASE_CDN_URL}top.json`).then((res) => res.json());
-      const getArtists2 = () => fetch(`${BASE_CDN_URL}summary.json`).then((res) => res.json());
-      const getCDNConfig = (artistId) => fetch(`${BASE_CDN_URL}${artistId}.json`).then((res) => res.json());
-      const getSongInfoList$1 = async (songIds) => {
-        const chunkArr = chunkArray(songIds, 1e3);
-        const proArr = chunkArr.map(async (chunk) => {
-          return weapiRequest("/api/v3/song/detail", {
-            data: {
-              c: JSON.stringify(chunk.map((item) => ({ id: item })))
-            }
-          });
-        });
-        const allInfo = await Promise.all(proArr);
-        console.log("allInfo", allInfo);
-        return allInfo.flat();
-      };
-      const matchCloudSong = async (cloudSongId, id, song) => {
-        if (cloudSongId != id) {
-          const res = await weapiRequest("/api/cloud/user/song/match", {
-            data: {
-              songId: cloudSongId,
-              adjustSongId: id
-            }
-          });
-          if (res.code != 200 || res.data.length < 1) {
-            msgError(`歌曲“${song?.name}” 匹配失败：${res.message || res.msg}`);
-            throw new Error(res.message || res.msg || "歌曲匹配失败");
-          }
-          return res;
-        }
-        return;
-      };
-      const uploadSong = async (song) => {
-        try {
-          console.log("song", song);
-          let res = await weapiRequest("/api/cloud/upload/check/v2", {
-            data: {
-              uploadType: 0,
-              songs: JSON.stringify([
-                {
-                  md5: song.md5,
-                  songId: song.id,
-                  bitrate: song.bitrate,
-                  fileSize: song.size
-                }
-              ])
-            }
-          });
-          if (res.code != 200 || res.data.length < 1) {
-            msgError(`资源检查失败,请检查歌曲：${song.name}是否已存在！`);
-            throw new Error(res.message || res.msg || "资源检查失败");
-          }
-          console.log("res", res);
-          const cloudId = res.data[0].songId;
-          if (res.data[0].upload == 1) {
-            const importRes = await weapiRequest("/api/cloud/user/song/import", {
-              data: {
-                uploadType: 0,
-                songs: JSON.stringify([
-                  {
-                    songId: cloudId,
-                    bitrate: song.bitrate,
-                    song: song.filename,
-                    artist: song.artists,
-                    album: song.album,
-                    fileName: song.filename
-                  }
-                ])
-              }
-            });
-            console.log("importRes", importRes);
-            if (importRes.code != 200 || importRes.data.successSongs.length < 1) {
-              msgError(`歌曲： ${song.name} 上传失败`);
-              throw new Error(importRes.message || importRes.msg || "歌曲上传失败");
-            }
-            const cloudSongId = importRes.data.successSongs[0].song.songId;
-            await matchCloudSong(cloudSongId, song.id, song);
-            return {
-              code: 200,
-              msg: "歌曲上传成功",
-              data: { song }
-            };
-          } else {
-            const tokenRes = await weapiRequest("/api/nos/token/alloc", {
-              data: {
-                filename: song.filename,
-                length: song.size,
-                ext: song.ext,
-                md5: song.md5,
-                type: "audio",
-                bucket: "jd-musicrep-privatecloud-audio-public",
-                local: false,
-                nos_product: 3
-              }
-            });
-            console.log("tokenRes", tokenRes);
-            if (tokenRes.code != 200) {
-              msgError("获取上传token失败");
-              throw new Error(
-                tokenRes.message || tokenRes.msg || "获取上传token失败"
-              );
-            }
-            song.resourceId = tokenRes.result.resourceId;
-            const uploadRes = await weapiRequest("/api/upload/cloud/info/v2", {
-              data: {
-                token: tokenRes.result.token,
-                objectKey: tokenRes.result.objectKey,
-                resourceId: tokenRes.result.resourceId,
-expireTime: Date.now() + 6e4,
-                fileSize: song.size,
-                md5: song.md5,
-                songid: cloudId,
-                filename: song.filename,
-                song: song.name,
-                album: song.album,
-                artist: song.artists,
-                bitrate: String(song.bitrate || 128),
-                resourceId: song.resourceId
-              }
-            });
-            console.log("uploadRes", uploadRes);
-            if (uploadRes.code != 200) {
-              msgError(`歌曲： ${song.name} 上传失败`);
-            }
-            const pubRes = await weapiRequest("/api/cloud/pub/v2", {
-              data: {
-                songid: uploadRes.songId
-              }
-            });
-            if (![200, 201].includes(pubRes.code)) {
-              msgError(`歌曲： ${song.name} 发布失败`);
-              throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
-            }
-            const cloudSongId = pubRes.privateCloud.songId;
-            await matchCloudSong(cloudSongId, song.id, song);
-            return {
-              code: 200,
-              msg: "歌曲上传成功",
-              data: { song }
-            };
-          }
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
-      };
-      const getCloudData$1 = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
-        data: {
-          limit,
-          offset
-        }
-      });
-      const deleteCloudSong$1 = (songIds) => weapiRequest("/api/cloud/del", {
-        data: {
-          songIds
-        }
-      });
-      const getPlaylistList$1 = (uid = getUser().userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
+      const getPlaylistList = (uid = getUser().userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
         data: {
           limit,
           offset,
           uid
         }
       });
-      const createPlaylist$1 = (name2) => weapiRequest("/api/playlist/create", {
+      const createPlaylist = (name2) => weapiRequest("/api/playlist/create", {
         data: {
           name: name2
         }
@@ -9486,219 +10283,14 @@ expireTime: Date.now() + 6e4,
           pid
         }
       });
-      const addSongToPlaylist$1 = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
+      const addSongToPlaylist = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
         data: {
           pid,
 trackIds,
 op: "add"
 }
       });
-      const getAlbumSongList$1 = (id) => weapiRequest(`/api/v1/album/${id}`, {
-        data: {}
-      });
-      const getSongUrl$1 = (ids, options) => {
-        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = options || {};
-        return weapiRequest("/api/song/enhance/player/url/v1", {
-          data: { ids: JSON.stringify(ids), level, encodeType }
-        });
-      };
-      const getArtistAllSongList$1 = async (id) => {
-        try {
-          let more = true;
-          const songs2 = [];
-          let offset = 0;
-          while (more) {
-            const res = await weapiRequest("/api/v1/artist/songs", {
-              data: {
-                id,
-                limit: 200,
-                private_cloud: "true",
-                work_type: 1,
-                order: "hot",
-offset
-              }
-            });
-            if (res.code != 200) {
-              throw new Error(res.message || res.msg || "获取歌手全部歌曲失败");
-            }
-            songs2.push(...res.songs);
-            more = res.more;
-            offset += 200;
-          }
-          return {
-            code: 200,
-            msg: "获取歌手全部歌曲成功",
-            songs: songs2
-          };
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
-      };
-      const getArtistAlbumList$1 = async (id) => {
-        let more = true;
-        let limit = 200;
-        let offset = 0;
-        const albumList = [];
-        while (more) {
-          const res = await weapiRequest(`/api/artist/albums/${id}`, {
-            data: {
-              id,
-              limit,
-              offset
-            }
-          });
-          if (res.code != 200) {
-            throw new Error(res.message || res.msg || "获取歌手专辑失败");
-          }
-          albumList.push(...res.hotAlbums);
-          more = res.more;
-          offset += limit;
-        }
-        return {
-          code: 200,
-          msg: "获取歌手专辑成功",
-          data: albumList
-        };
-      };
-      const uploadLocalSong$1 = async (file) => {
-        let defaultResult = {};
-        try {
-          const ext = file.name.split(".").pop() || "mp3";
-          const fileMd5 = await getFileMD5(file);
-          const bitrate = 999e3;
-          const filename = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
-          const checkRes = await weapiRequest("/api/cloud/upload/check", {
-            data: {
-              ext: "",
-              bitrate: String(bitrate),
-              md5: fileMd5,
-              length: file.size,
-              songId: "0",
-              version: 1
-            }
-          });
-          console.log("checkRes", checkRes);
-          if (checkRes.code != 200) {
-            msgError("文件检查失败：" + checkRes.message || checkRes.msg || "");
-            throw new Error(checkRes.message || checkRes.msg || "文件检查失败");
-          }
-          const { needUpload, songId } = checkRes;
-          if (needUpload) {
-            const bucket2 = "jd-musicrep-privatecloud-audio-public";
-            const tokenRes2 = await weapiRequest("/api/nos/token/alloc", {
-              data: {
-                bucket: bucket2,
-                ext,
-                filename,
-                local: false,
-                nos_product: 3,
-                type: "audio",
-                md5: fileMd5
-              }
-            });
-            const objectKey2 = tokenRes2.body.result.objectKey.replace("/", "%2F");
-            const lbs = await (await fetch(
-              `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket2}`
-            )).json();
-            const formData = new FormData();
-            formData.append("songFile", file);
-            await fetch(
-              `${lbs.upload[0]}/${bucket2}/${objectKey2}?offset=0&complete=true&version=1.0`,
-              {
-                method: "post",
-                headers: {
-                  "x-nos-token": tokenRes2.body.result.token,
-                  "Content-MD5": fileMd5,
-                  "Content-Type": "audio/mpeg",
-                  "Content-Length": String(file.size)
-                },
-                data: formData,
-                maxContentLength: Infinity,
-                maxBodyLength: Infinity
-              }
-            );
-          }
-          const tokenRes = await weapiRequest("/api/nos/token/alloc", {
-            data: {
-              bucket: "",
-              ext,
-              filename,
-              local: false,
-              nos_product: 3,
-              type: "audio",
-              md5: fileMd5
-            }
-          });
-          console.log("tokenRes", tokenRes);
-          if (tokenRes.code != 200) {
-            msgError("获取上传token失败");
-            throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
-          }
-          const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
-          const { album: album2, artist: artist2, artists, title: title2 } = await getAudioMetadata(file);
-          defaultResult = {
-            ...defaultResult,
-            artist: artist2,
-            artists,
-            album: album2,
-            md5: fileMd5,
-            ext,
-            bitrate
-          };
-          const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
-            data: {
-              md5: fileMd5,
-              songid: songId,
-              filename,
-              song: title2 || filename,
-              album: album2 || "未知专辑",
-              artist: artist2 || artists.join(",") || "未知歌手",
-              bitrate: String(bitrate),
-              resourceId
-            }
-          });
-          console.log("uploadInfoRes", uploadInfoRes);
-          defaultResult = {
-            ...defaultResult,
-            id: uploadInfoRes.songId
-          };
-          if (uploadInfoRes.code != 200) {
-            msgError("获取上传信息失败");
-            throw new Error(
-              uploadInfoRes.message || uploadInfoRes.msg || "获取上传信息失败"
-            );
-          }
-          const pubRes = await weapiRequest("/api/cloud/pub/v2", {
-            data: {
-              songid: uploadInfoRes.songId
-            }
-          });
-          console.log("pubRes", pubRes);
-          if (![200, 201].includes(pubRes.code)) {
-            msgError(`歌曲： ${file.name} 发布失败`);
-            throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
-          }
-          const { songName: songName2, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
-          defaultResult = {
-            ...defaultResult,
-            name: songName2,
-            size: fileSize,
-            bitrate: realBitrate
-          };
-          return defaultResult;
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
-      };
-      const searchArtist = (keyword) => weapiRequest("/api/rep/ugc/artist/search", {
-        data: {
-          keyword,
-          limit: 40
-        }
-      });
-      const getPlaylistAllData$1 = async (id) => {
+      const getPlaylistAllData = async (id) => {
         try {
           const detailRes = await weapiRequest("/api/v6/playlist/detail", {
             data: {
@@ -9711,376 +10303,15 @@ offset
           });
           console.log("detailRes", detailRes);
           const trackIds = detailRes.playlist.trackIds.map((item) => item.id);
-          const res = await getSongInfoList$1(trackIds);
-          if (res[0]?.code != 200) {
-            msgError(res[0]?.msg || "获取歌单数据失败");
-            throw new Error(res[0]?.msg || "获取歌单数据失败");
+          const res = await getSongInfoList(trackIds);
+          if (res?.code != 200) {
+            msgError(res?.msg || "获取歌单数据失败");
+            throw new Error(res?.msg || "获取歌单数据失败");
           }
-          return res[0].songs;
+          return res.songs;
         } catch (error) {
           throw error;
         }
-      };
-      const getSongLyric$1 = async (id) => {
-        return weapiRequest("/api/song/lyric", {
-          data: {
-            id,
-            tv: -1,
-            lv: -1,
-            rv: -1,
-            kv: -1,
-            _nmclfl: 1
-          }
-        });
-      };
-      const getAlbumDetail$1 = async (id) => {
-        return weapiRequest(`/api/album/${id}`, {
-          data: {
-            id
-          }
-        });
-      };
-      var dayjs_min$1 = { exports: {} };
-      var dayjs_min = dayjs_min$1.exports;
-      var hasRequiredDayjs_min;
-      function requireDayjs_min() {
-        if (hasRequiredDayjs_min) return dayjs_min$1.exports;
-        hasRequiredDayjs_min = 1;
-        (function(module, exports) {
-          !(function(t, e) {
-            module.exports = e();
-          })(dayjs_min, (function() {
-            var t = 1e3, e = 6e4, n = 36e5, r = "millisecond", i = "second", s = "minute", u = "hour", a = "day", o = "week", c = "month", f = "quarter", h = "year", d = "date", l = "Invalid Date", $ = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, y = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, M = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(t2) {
-              var e2 = ["th", "st", "nd", "rd"], n2 = t2 % 100;
-              return "[" + t2 + (e2[(n2 - 20) % 10] || e2[n2] || e2[0]) + "]";
-            } }, m = function(t2, e2, n2) {
-              var r2 = String(t2);
-              return !r2 || r2.length >= e2 ? t2 : "" + Array(e2 + 1 - r2.length).join(n2) + t2;
-            }, v = { s: m, z: function(t2) {
-              var e2 = -t2.utcOffset(), n2 = Math.abs(e2), r2 = Math.floor(n2 / 60), i2 = n2 % 60;
-              return (e2 <= 0 ? "+" : "-") + m(r2, 2, "0") + ":" + m(i2, 2, "0");
-            }, m: function t2(e2, n2) {
-              if (e2.date() < n2.date()) return -t2(n2, e2);
-              var r2 = 12 * (n2.year() - e2.year()) + (n2.month() - e2.month()), i2 = e2.clone().add(r2, c), s2 = n2 - i2 < 0, u2 = e2.clone().add(r2 + (s2 ? -1 : 1), c);
-              return +(-(r2 + (n2 - i2) / (s2 ? i2 - u2 : u2 - i2)) || 0);
-            }, a: function(t2) {
-              return t2 < 0 ? Math.ceil(t2) || 0 : Math.floor(t2);
-            }, p: function(t2) {
-              return { M: c, y: h, w: o, d: a, D: d, h: u, m: s, s: i, ms: r, Q: f }[t2] || String(t2 || "").toLowerCase().replace(/s$/, "");
-            }, u: function(t2) {
-              return void 0 === t2;
-            } }, g = "en", D = {};
-            D[g] = M;
-            var p = "$isDayjsObject", S = function(t2) {
-              return t2 instanceof _ || !(!t2 || !t2[p]);
-            }, w = function t2(e2, n2, r2) {
-              var i2;
-              if (!e2) return g;
-              if ("string" == typeof e2) {
-                var s2 = e2.toLowerCase();
-                D[s2] && (i2 = s2), n2 && (D[s2] = n2, i2 = s2);
-                var u2 = e2.split("-");
-                if (!i2 && u2.length > 1) return t2(u2[0]);
-              } else {
-                var a2 = e2.name;
-                D[a2] = e2, i2 = a2;
-              }
-              return !r2 && i2 && (g = i2), i2 || !r2 && g;
-            }, O = function(t2, e2) {
-              if (S(t2)) return t2.clone();
-              var n2 = "object" == typeof e2 ? e2 : {};
-              return n2.date = t2, n2.args = arguments, new _(n2);
-            }, b = v;
-            b.l = w, b.i = S, b.w = function(t2, e2) {
-              return O(t2, { locale: e2.$L, utc: e2.$u, x: e2.$x, $offset: e2.$offset });
-            };
-            var _ = (function() {
-              function M2(t2) {
-                this.$L = w(t2.locale, null, true), this.parse(t2), this.$x = this.$x || t2.x || {}, this[p] = true;
-              }
-              var m2 = M2.prototype;
-              return m2.parse = function(t2) {
-                this.$d = (function(t3) {
-                  var e2 = t3.date, n2 = t3.utc;
-                  if (null === e2) return new Date(NaN);
-                  if (b.u(e2)) return new Date();
-                  if (e2 instanceof Date) return new Date(e2);
-                  if ("string" == typeof e2 && !/Z$/i.test(e2)) {
-                    var r2 = e2.match($);
-                    if (r2) {
-                      var i2 = r2[2] - 1 || 0, s2 = (r2[7] || "0").substring(0, 3);
-                      return n2 ? new Date(Date.UTC(r2[1], i2, r2[3] || 1, r2[4] || 0, r2[5] || 0, r2[6] || 0, s2)) : new Date(r2[1], i2, r2[3] || 1, r2[4] || 0, r2[5] || 0, r2[6] || 0, s2);
-                    }
-                  }
-                  return new Date(e2);
-                })(t2), this.init();
-              }, m2.init = function() {
-                var t2 = this.$d;
-                this.$y = t2.getFullYear(), this.$M = t2.getMonth(), this.$D = t2.getDate(), this.$W = t2.getDay(), this.$H = t2.getHours(), this.$m = t2.getMinutes(), this.$s = t2.getSeconds(), this.$ms = t2.getMilliseconds();
-              }, m2.$utils = function() {
-                return b;
-              }, m2.isValid = function() {
-                return !(this.$d.toString() === l);
-              }, m2.isSame = function(t2, e2) {
-                var n2 = O(t2);
-                return this.startOf(e2) <= n2 && n2 <= this.endOf(e2);
-              }, m2.isAfter = function(t2, e2) {
-                return O(t2) < this.startOf(e2);
-              }, m2.isBefore = function(t2, e2) {
-                return this.endOf(e2) < O(t2);
-              }, m2.$g = function(t2, e2, n2) {
-                return b.u(t2) ? this[e2] : this.set(n2, t2);
-              }, m2.unix = function() {
-                return Math.floor(this.valueOf() / 1e3);
-              }, m2.valueOf = function() {
-                return this.$d.getTime();
-              }, m2.startOf = function(t2, e2) {
-                var n2 = this, r2 = !!b.u(e2) || e2, f2 = b.p(t2), l2 = function(t3, e3) {
-                  var i2 = b.w(n2.$u ? Date.UTC(n2.$y, e3, t3) : new Date(n2.$y, e3, t3), n2);
-                  return r2 ? i2 : i2.endOf(a);
-                }, $2 = function(t3, e3) {
-                  return b.w(n2.toDate()[t3].apply(n2.toDate("s"), (r2 ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e3)), n2);
-                }, y2 = this.$W, M3 = this.$M, m3 = this.$D, v2 = "set" + (this.$u ? "UTC" : "");
-                switch (f2) {
-                  case h:
-                    return r2 ? l2(1, 0) : l2(31, 11);
-                  case c:
-                    return r2 ? l2(1, M3) : l2(0, M3 + 1);
-                  case o:
-                    var g2 = this.$locale().weekStart || 0, D2 = (y2 < g2 ? y2 + 7 : y2) - g2;
-                    return l2(r2 ? m3 - D2 : m3 + (6 - D2), M3);
-                  case a:
-                  case d:
-                    return $2(v2 + "Hours", 0);
-                  case u:
-                    return $2(v2 + "Minutes", 1);
-                  case s:
-                    return $2(v2 + "Seconds", 2);
-                  case i:
-                    return $2(v2 + "Milliseconds", 3);
-                  default:
-                    return this.clone();
-                }
-              }, m2.endOf = function(t2) {
-                return this.startOf(t2, false);
-              }, m2.$set = function(t2, e2) {
-                var n2, o2 = b.p(t2), f2 = "set" + (this.$u ? "UTC" : ""), l2 = (n2 = {}, n2[a] = f2 + "Date", n2[d] = f2 + "Date", n2[c] = f2 + "Month", n2[h] = f2 + "FullYear", n2[u] = f2 + "Hours", n2[s] = f2 + "Minutes", n2[i] = f2 + "Seconds", n2[r] = f2 + "Milliseconds", n2)[o2], $2 = o2 === a ? this.$D + (e2 - this.$W) : e2;
-                if (o2 === c || o2 === h) {
-                  var y2 = this.clone().set(d, 1);
-                  y2.$d[l2]($2), y2.init(), this.$d = y2.set(d, Math.min(this.$D, y2.daysInMonth())).$d;
-                } else l2 && this.$d[l2]($2);
-                return this.init(), this;
-              }, m2.set = function(t2, e2) {
-                return this.clone().$set(t2, e2);
-              }, m2.get = function(t2) {
-                return this[b.p(t2)]();
-              }, m2.add = function(r2, f2) {
-                var d2, l2 = this;
-                r2 = Number(r2);
-                var $2 = b.p(f2), y2 = function(t2) {
-                  var e2 = O(l2);
-                  return b.w(e2.date(e2.date() + Math.round(t2 * r2)), l2);
-                };
-                if ($2 === c) return this.set(c, this.$M + r2);
-                if ($2 === h) return this.set(h, this.$y + r2);
-                if ($2 === a) return y2(1);
-                if ($2 === o) return y2(7);
-                var M3 = (d2 = {}, d2[s] = e, d2[u] = n, d2[i] = t, d2)[$2] || 1, m3 = this.$d.getTime() + r2 * M3;
-                return b.w(m3, this);
-              }, m2.subtract = function(t2, e2) {
-                return this.add(-1 * t2, e2);
-              }, m2.format = function(t2) {
-                var e2 = this, n2 = this.$locale();
-                if (!this.isValid()) return n2.invalidDate || l;
-                var r2 = t2 || "YYYY-MM-DDTHH:mm:ssZ", i2 = b.z(this), s2 = this.$H, u2 = this.$m, a2 = this.$M, o2 = n2.weekdays, c2 = n2.months, f2 = n2.meridiem, h2 = function(t3, n3, i3, s3) {
-                  return t3 && (t3[n3] || t3(e2, r2)) || i3[n3].slice(0, s3);
-                }, d2 = function(t3) {
-                  return b.s(s2 % 12 || 12, t3, "0");
-                }, $2 = f2 || function(t3, e3, n3) {
-                  var r3 = t3 < 12 ? "AM" : "PM";
-                  return n3 ? r3.toLowerCase() : r3;
-                };
-                return r2.replace(y, (function(t3, r3) {
-                  return r3 || (function(t4) {
-                    switch (t4) {
-                      case "YY":
-                        return String(e2.$y).slice(-2);
-                      case "YYYY":
-                        return b.s(e2.$y, 4, "0");
-                      case "M":
-                        return a2 + 1;
-                      case "MM":
-                        return b.s(a2 + 1, 2, "0");
-                      case "MMM":
-                        return h2(n2.monthsShort, a2, c2, 3);
-                      case "MMMM":
-                        return h2(c2, a2);
-                      case "D":
-                        return e2.$D;
-                      case "DD":
-                        return b.s(e2.$D, 2, "0");
-                      case "d":
-                        return String(e2.$W);
-                      case "dd":
-                        return h2(n2.weekdaysMin, e2.$W, o2, 2);
-                      case "ddd":
-                        return h2(n2.weekdaysShort, e2.$W, o2, 3);
-                      case "dddd":
-                        return o2[e2.$W];
-                      case "H":
-                        return String(s2);
-                      case "HH":
-                        return b.s(s2, 2, "0");
-                      case "h":
-                        return d2(1);
-                      case "hh":
-                        return d2(2);
-                      case "a":
-                        return $2(s2, u2, true);
-                      case "A":
-                        return $2(s2, u2, false);
-                      case "m":
-                        return String(u2);
-                      case "mm":
-                        return b.s(u2, 2, "0");
-                      case "s":
-                        return String(e2.$s);
-                      case "ss":
-                        return b.s(e2.$s, 2, "0");
-                      case "SSS":
-                        return b.s(e2.$ms, 3, "0");
-                      case "Z":
-                        return i2;
-                    }
-                    return null;
-                  })(t3) || i2.replace(":", "");
-                }));
-              }, m2.utcOffset = function() {
-                return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
-              }, m2.diff = function(r2, d2, l2) {
-                var $2, y2 = this, M3 = b.p(d2), m3 = O(r2), v2 = (m3.utcOffset() - this.utcOffset()) * e, g2 = this - m3, D2 = function() {
-                  return b.m(y2, m3);
-                };
-                switch (M3) {
-                  case h:
-                    $2 = D2() / 12;
-                    break;
-                  case c:
-                    $2 = D2();
-                    break;
-                  case f:
-                    $2 = D2() / 3;
-                    break;
-                  case o:
-                    $2 = (g2 - v2) / 6048e5;
-                    break;
-                  case a:
-                    $2 = (g2 - v2) / 864e5;
-                    break;
-                  case u:
-                    $2 = g2 / n;
-                    break;
-                  case s:
-                    $2 = g2 / e;
-                    break;
-                  case i:
-                    $2 = g2 / t;
-                    break;
-                  default:
-                    $2 = g2;
-                }
-                return l2 ? $2 : b.a($2);
-              }, m2.daysInMonth = function() {
-                return this.endOf(c).$D;
-              }, m2.$locale = function() {
-                return D[this.$L];
-              }, m2.locale = function(t2, e2) {
-                if (!t2) return this.$L;
-                var n2 = this.clone(), r2 = w(t2, e2, true);
-                return r2 && (n2.$L = r2), n2;
-              }, m2.clone = function() {
-                return b.w(this.$d, this);
-              }, m2.toDate = function() {
-                return new Date(this.valueOf());
-              }, m2.toJSON = function() {
-                return this.isValid() ? this.toISOString() : null;
-              }, m2.toISOString = function() {
-                return this.$d.toISOString();
-              }, m2.toString = function() {
-                return this.$d.toUTCString();
-              }, M2;
-            })(), k = _.prototype;
-            return O.prototype = k, [["$ms", r], ["$s", i], ["$m", s], ["$H", u], ["$W", a], ["$M", c], ["$y", h], ["$D", d]].forEach((function(t2) {
-              k[t2[1]] = function(e2) {
-                return this.$g(e2, t2[0], t2[1]);
-              };
-            })), O.extend = function(t2, e2) {
-              return t2.$i || (t2(e2, _, O), t2.$i = true), O;
-            }, O.locale = w, O.isDayjs = S, O.unix = function(t2) {
-              return O(1e3 * t2);
-            }, O.en = D[g], O.Ls = D, O.p = {}, O;
-          }));
-        })(dayjs_min$1);
-        return dayjs_min$1.exports;
-      }
-      var dayjs_minExports = requireDayjs_min();
-      const dayjs = getDefaultExportFromCjs(dayjs_minExports);
-      const getQualityTags = (song) => {
-        const tags = [];
-        if (song.hr)
-          tags.push({
-            label: "Hi-Res",
-            color: "#f50",
-            value: QUALITY_LEVELS["Hi-Res"]
-          });
-        if (song.sq)
-          tags.push({ label: "SQ", color: "#87d068", value: QUALITY_LEVELS.无损 });
-        if (song.h)
-          tags.push({ label: "HQ", color: "#2db7f5", value: QUALITY_LEVELS.较高 });
-        return tags;
-      };
-      const formatDuration = (ms2) => {
-        const time = dayjs.duration(ms2);
-        const minutes = time.minutes();
-        const seconds = time.seconds();
-        return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-      };
-      const getMarkTags = (mark) => {
-        const tags = [];
-        if (mark & 131072) tags.push({ text: "纯音乐", color: "#2db7f5" });
-        if (mark & 262144) tags.push({ text: "杜比全景声", color: "#722ed1" });
-        if (mark & 1048576) tags.push({ text: "🅴", color: "#f50" });
-        if (mark & 17179869184) tags.push({ text: "Hi-Res", color: "#f50" });
-        return tags;
-      };
-      const getOriginTag = (originCoverType) => {
-        const types = {
-          0: { text: "未知", color: "#d9d9d9" },
-          1: { text: "原曲", color: "#87d068" },
-          2: { text: "翻唱", color: "#2db7f5" }
-        };
-        return types[originCoverType] || types[0];
-      };
-      const formatPopularity = (pop) => {
-        if (!pop) return "0";
-        return pop.toFixed(1);
-      };
-      const getTypeTag = (t) => {
-        const types = {
-          0: { text: "普通歌曲", color: "#108ee9" },
-          1: { text: "独立云盘", color: "#f50" },
-          2: { text: "云盘歌曲", color: "#87d068" }
-        };
-        return types[t] || types[0];
-      };
-      const getFeeTag = (fee) => {
-        const fees = {
-          0: { text: "免费", color: "#87d068" },
-          1: { text: "VIP", color: "#f50" },
-          4: { text: "专辑购买", color: "#722ed1" },
-          8: { text: "付费/试听", color: "#faad14" }
-        };
-        return fees[fee] || fees[0];
       };
       function stringToBytes(str, encoding = "utf8") {
         if (encoding === "utf8") {
@@ -10113,7 +10344,7 @@ offset
           }
           try {
             return decodeURIComponent(escape(str));
-          } catch (e) {
+          } catch (e2) {
             return str;
           }
         } else if (encoding === "ascii") {
@@ -10782,7 +11013,6 @@ saveAsBuffer() {
       const parseTags = (tags) => {
         const result = {};
         tags.forEach((tag2) => {
-          usr;
           const equalIndex = tag2.indexOf("=");
           if (equalIndex === -1) return;
           const name2 = tag2.substring(0, equalIndex).toLowerCase();
@@ -10855,6 +11085,16 @@ saveAsBuffer() {
           throw new Error("批量写入 FLAC 标签失败");
         }
       };
+      const readFlacPictures = async (file) => {
+        try {
+          const metaflac = await Metaflac.fromBlob(file);
+          const pictures = metaflac.getPicturesSpecs?.() || [];
+          return pictures.map((_, index2) => metaflac.exportPictureToBlob(index2));
+        } catch (error) {
+          console.error("读取 FLAC 封面图片失败:", error);
+          return null;
+        }
+      };
       const embedFlacPicture = async (file, picture) => {
         try {
           const metaflac = await Metaflac.fromBlob(file);
@@ -10909,8 +11149,8 @@ saveAsBuffer() {
           link.style.display = "none";
           link.style.position = "absolute";
           link.style.left = "-9999px";
-          const handleClick = (e) => {
-            e.stopPropagation();
+          const handleClick = (e2) => {
+            e2.stopPropagation();
           };
           link.addEventListener("click", handleClick, true);
           link.click();
@@ -10987,8 +11227,8 @@ saveAsBuffer() {
         a.style.display = "none";
         a.style.position = "absolute";
         a.style.left = "-9999px";
-        const handleClick = (e) => {
-          e.stopPropagation();
+        const handleClick = (e2) => {
+          e2.stopPropagation();
         };
         a.addEventListener("click", handleClick, true);
         document.body.appendChild(a);
@@ -11025,13 +11265,13 @@ saveAsBuffer() {
         };
         const getSongInfo = async (id) => {
           if (songInfoMap[id]) return songInfoMap[id];
-          const res = await getSongInfoList$1([id]);
-          if (res[0].code !== 200) {
-            msgError(res[0].message || res[0].msg || "获取歌曲信息失败");
-            throw new Error(res[0].message || res[0].msg || "获取歌曲信息失败");
+          const res = await getSongInfoList([id]);
+          if (res.code !== 200) {
+            msgError(res.message || res.msg || "获取歌曲信息失败");
+            throw new Error(res.message || res.msg || "获取歌曲信息失败");
           }
-          setSongInfoMap((prv) => ({ ...prv, [id]: res[0].songs?.[0] }));
-          return res[0].songs?.[0];
+          setSongInfoMap((prv) => ({ ...prv, [id]: res.songs?.[0] }));
+          return res.songs?.[0];
         };
         const play = async (id, level) => {
           try {
@@ -11060,7 +11300,7 @@ saveAsBuffer() {
           }
         };
         const getLyric = async (id) => {
-          const res = await getSongLyric$1(id);
+          const res = await getSongLyric(id);
           if (res.code !== 200) {
             msgError(res.message || res.msg || "获取歌曲歌词失败");
             throw new Error(res.message || res.msg || "获取歌曲歌词失败");
@@ -11095,7 +11335,7 @@ saveAsBuffer() {
             console.log("tags", tags);
             let coverBlob;
             if (albumId) {
-              const albumRes = await getAlbumDetail$1(albumId);
+              const albumRes = await getAlbumDetail(albumId);
               if (albumRes.code === 200) {
                 const albumCover = albumRes.album.blurPicUrl + "?param=600y600";
                 const { blob: blob2, response: response2 } = await getFileBlob(
@@ -11160,7 +11400,7 @@ default:
               setCurrentId(idStr);
               return cached;
             }
-            const res = await getAlbumDetail$1(id);
+            const res = await getAlbumDetail(id);
             console.log("专辑详情 res", res);
             if (res.code === 200 && res.album) {
               albumInfoMap.current[idStr] = res.album;
@@ -11180,7 +11420,7 @@ default:
         const getAlbumSongListData = async (id) => {
           try {
             setIsLoading(true);
-            const res = await getAlbumSongList$1(id);
+            const res = await getAlbumSongList(id);
             console.log("专辑歌曲列表 res", res);
             if (res.code === 200 && res.songs) {
               return res.songs;
@@ -11362,11 +11602,8 @@ hotSongList
         const getSingerList = async () => {
           try {
             setLoading(true);
-            const res = await getArtists();
-            const res2 = await getArtists2();
-            const list = [
-              ...new Map([...res2, ...res].map((item) => [item.id, item])).values()
-            ];
+            const list = await getArtists();
+            console.log(`歌手列表(${list.length})`, list);
             setSingerList(list);
           } catch (error) {
             console.log("error", error);
@@ -11419,7 +11656,7 @@ singerIds
           try {
             setLoading(true);
             if (singerMap[singerId]?.songList) return singerMap[singerId]?.songList;
-            const res = await getArtistAllSongList$1(singerId);
+            const res = await getArtistAllSongList(singerId);
             if (res.code === 200) {
               const songList2 = res.songs;
               setSingerMap((prv) => ({
@@ -11440,7 +11677,7 @@ singerIds
         const getSingerAlbumListById = async (singerId) => {
           try {
             if (singerMap[singerId]?.albumList) return singerMap[singerId]?.albumList;
-            const res = await getArtistAlbumList$1(singerId);
+            const res = await getArtistAlbumList(singerId);
             if (res.code === 200) {
               const albumList = res.data;
               setSingerMap((prv) => ({
@@ -11830,7 +12067,7 @@ singerIds
                   return types;
                 }
                 return freeProcess && freeProcess.binding && freeProcess.binding("util");
-              } catch (e) {
+              } catch (e2) {
               }
             })();
             var nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer, nodeIsDate = nodeUtil && nodeUtil.isDate, nodeIsMap = nodeUtil && nodeUtil.isMap, nodeIsRegExp = nodeUtil && nodeUtil.isRegExp, nodeIsSet = nodeUtil && nodeUtil.isSet, nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -12202,7 +12439,7 @@ singerIds
                   var func = getNative(Object2, "defineProperty");
                   func({}, "", {});
                   return func;
-                } catch (e) {
+                } catch (e2) {
                 }
               })();
               var ctxClearTimeout = context.clearTimeout !== root.clearTimeout && context.clearTimeout, ctxNow = Date2 && Date2.now !== root.Date.now && Date2.now, ctxSetTimeout = context.setTimeout !== root.setTimeout && context.setTimeout;
@@ -14198,7 +14435,7 @@ isIndex(key, length)))) {
                 try {
                   value2[symToStringTag] = undefined$1;
                   var unmasked = true;
-                } catch (e) {
+                } catch (e2) {
                 }
                 var result2 = nativeObjectToString.call(value2);
                 if (unmasked) {
@@ -14555,11 +14792,11 @@ isIndex(key, length)))) {
                 if (func != null) {
                   try {
                     return funcToString.call(func);
-                  } catch (e) {
+                  } catch (e2) {
                   }
                   try {
                     return func + "";
-                  } catch (e) {
+                  } catch (e2) {
                   }
                 }
                 return "";
@@ -16246,8 +16483,8 @@ isIndex(key, length)))) {
               var attempt = baseRest(function(func, args) {
                 try {
                   return apply(func, undefined$1, args);
-                } catch (e) {
-                  return isError(e) ? e : new Error2(e);
+                } catch (e2) {
+                  return isError(e2) ? e2 : new Error2(e2);
                 }
               });
               var bindAll = flatRest(function(object, methodNames) {
@@ -16938,7 +17175,7 @@ isIndex(key, length)))) {
           if (!playlistId) return;
           try {
             setLoading(true);
-            const res = await getPlaylistAllData$1(playlistId);
+            const res = await getPlaylistAllData(playlistId);
             console.log("res", res);
             setSongList(res);
           } catch (error) {
@@ -17106,19 +17343,6 @@ keywords
       };
       const NOOP = () => {
       };
-      const styles$b = {
-        "song-search-modal": "_song-search-modal_15iqn_1",
-        "modal-title": "_modal-title_15iqn_1",
-        "title-content": "_title-content_15iqn_6",
-        "title-text": "_title-text_15iqn_11",
-        "song-table": "_song-table_15iqn_16",
-        "song-info": "_song-info_15iqn_16",
-        "song-cover": "_song-cover_15iqn_21",
-        "song-details": "_song-details_15iqn_31",
-        "song-name": "_song-name_15iqn_36",
-        "song-album": "_song-album_15iqn_46",
-        "song-mid-text": "_song-mid-text_15iqn_75"
-      };
       const styles$a = {
         "search-form": "_search-form_1aabt_1"
       };
@@ -17267,23 +17491,23 @@ var hasRequiredClassnames;
       function __read(o, n) {
         var m = typeof Symbol === "function" && o[Symbol.iterator];
         if (!m) return o;
-        var i = m.call(o), r, ar = [], e;
+        var i = m.call(o), r, ar = [], e2;
         try {
           while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
         } catch (error) {
-          e = { error };
+          e2 = { error };
         } finally {
           try {
             if (r && !r.done && (m = i["return"])) m.call(i);
           } finally {
-            if (e) throw e.error;
+            if (e2) throw e2.error;
           }
         }
         return ar;
       }
       typeof SuppressedError === "function" ? SuppressedError : function(error, suppressed, message2) {
-        var e = new Error(message2);
-        return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
+        var e2 = new Error(message2);
+        return e2.name = "SuppressedError", e2.error = error, e2.suppressed = suppressed, e2;
       };
       var isFunction = function(value2) {
         return typeof value2 === "function";
@@ -17968,10 +18192,10 @@ jsxRuntimeExports.jsx(
       function MyButton(props) {
         const { loading, onClick, ...rest } = props;
         const [_loading, setLoading] = useState$1(loading);
-        const handleClick = async () => {
+        const handleClick = async (...args) => {
           try {
             setLoading(true);
-            await onClick?.();
+            await onClick?.(...args);
           } catch (error) {
             console.log("error", error);
           } finally {
@@ -17983,6 +18207,19 @@ jsxRuntimeExports.jsx(
         }, [loading]);
         return jsxRuntimeExports.jsx(Button, { ...rest, onClick: handleClick, loading: _loading });
       }
+      const styles$7 = {
+        "song-search-modal": "_song-search-modal_15iqn_1",
+        "modal-title": "_modal-title_15iqn_1",
+        "title-content": "_title-content_15iqn_6",
+        "title-text": "_title-text_15iqn_11",
+        "song-table": "_song-table_15iqn_16",
+        "song-info": "_song-info_15iqn_16",
+        "song-cover": "_song-cover_15iqn_21",
+        "song-details": "_song-details_15iqn_31",
+        "song-name": "_song-name_15iqn_36",
+        "song-album": "_song-album_15iqn_46",
+        "song-mid-text": "_song-mid-text_15iqn_75"
+      };
       const SongTab$1 = ({ data, loading }) => {
         const { play, download, isPlaying, pause, downloading } = usePlayMusic();
         const [songList2, setSongList] = useState$1(data);
@@ -18018,6 +18255,32 @@ jsxRuntimeExports.jsx(
             record.al?.id
           );
         };
+        const handleSaveToCloud = async (record) => {
+          console.log("record", record);
+          const uploadMessageKey = "song-to-cloud";
+          try {
+            const res = await neteaseMusicToCloud([record.id], {
+              onChange: (progress) => {
+                message.loading({
+                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                  key: uploadMessageKey,
+                  duration: 0
+                });
+              },
+              onComplete: (result) => {
+                message.destroy(uploadMessageKey);
+                msgSuccess$1(
+                  `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                );
+              }
+            });
+          } catch (error) {
+            console.log("error", error);
+            msgError(`歌曲转存云盘失败: ${error.message}`);
+          } finally {
+            message.destroy(uploadMessageKey);
+          }
+        };
         const columns = [
           {
             title: "歌曲信息",
@@ -18049,7 +18312,7 @@ jsxRuntimeExports.jsx(
                           overflow: "hidden",
                           cursor: "pointer"
                         },
-                        onClick: (e) => e.stopPropagation(),
+                        onClick: (e2) => e2.stopPropagation(),
                         children: record.al?.picUrl ? jsxRuntimeExports.jsx(
                           Image,
                           {
@@ -18370,7 +18633,7 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
 {
             title: "操作",
             key: "action",
-            width: 200,
+            width: 300,
             align: "center",
             fixed: "right",
             render: (_, record) => {
@@ -18395,6 +18658,16 @@ jsxRuntimeExports.jsx(
                     onClick: () => handleDownload(record),
                     children: "下载"
                   }
+                ),
+jsxRuntimeExports.jsx(
+                  MyButton,
+                  {
+                    type: "link",
+                    size: "small",
+                    icon: jsxRuntimeExports.jsx(CloudUploadOutlined, {}),
+                    onClick: () => handleSaveToCloud(record),
+                    children: "转存云盘"
+                  }
                 )
               ] });
             }
@@ -18408,7 +18681,7 @@ jsxRuntimeExports.jsx(
             rowKey: "id",
             loading,
             scroll: { y: 500, x: 1e3 },
-            className: styles$b["song-table"],
+            className: styles$7["song-table"],
             pagination: false
           }
         );
@@ -18509,7 +18782,7 @@ jsxRuntimeExports.jsx(
                           overflow: "hidden",
                           cursor: "pointer"
                         },
-                        onClick: (e) => e.stopPropagation(),
+                        onClick: (e2) => e2.stopPropagation(),
                         children: record.picUrl ? jsxRuntimeExports.jsx(
                           Image,
                           {
@@ -18751,14 +19024,14 @@ jsxRuntimeExports.jsx(
               rowKey: "id",
               loading,
               scroll: { y: 500, x: 1200 },
-              className: styles$b["song-table"],
+              className: styles$7["song-table"],
               pagination: false
             }
           ),
 jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         ] });
       };
-      const styles$7 = {
+      const styles$6 = {
         "album-list-modal": "_album-list-modal_tzijq_1",
         "modal-title": "_modal-title_tzijq_5",
         "title-content": "_title-content_tzijq_12",
@@ -18785,7 +19058,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         "selected-info": "_selected-info_tzijq_145",
         "selected-extra": "_selected-extra_tzijq_150"
       };
-      const { Text: Text$1, Title: Title$1 } = Typography;
+      const { Text: Text$1, Title } = Typography;
       const getAlbumKey = (album2) => String(album2?.id ?? album2?.albumId ?? album2?.albumMid ?? album2?.picId ?? "");
       const AlbumListModal = forwardRef((props, ref) => {
         const { visible, close } = useVisible(
@@ -18805,7 +19078,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         const albumDetailRef = useRef();
         const [singerInfo, setSingerInfo] = useState$1({});
         const { data, loading } = useGetData(
-          getArtistAlbumList$1,
+          getArtistAlbumList,
           singerInfo.singerId,
           {
             monitors: [singerInfo.singerId, visible],
@@ -19004,8 +19277,8 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
               dataIndex: "name",
               key: "name",
               width: 320,
-              render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$7["album-info"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$7["album-cover"], children: jsxRuntimeExports.jsx(
+              render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$6["album-info"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$6["album-cover"], children: jsxRuntimeExports.jsx(
                   Image,
                   {
                     src: record.picUrl,
@@ -19017,11 +19290,11 @@ jsxRuntimeExports.jsx("div", { className: styles$7["album-cover"], children: jsx
                     alt: text2
                   }
                 ) }),
-jsxRuntimeExports.jsxs("div", { className: styles$7["album-details"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6["album-details"], children: [
 jsxRuntimeExports.jsx(
                     "div",
                     {
-                      className: styles$7["album-name"],
+                      className: styles$6["album-name"],
                       tabIndex: 0,
                       role: "button",
                       "aria-label": `查看《${text2}》详情`,
@@ -19029,13 +19302,13 @@ jsxRuntimeExports.jsx(
                       children: text2
                     }
                   ),
-                  !!record.alias?.length && jsxRuntimeExports.jsx("div", { className: styles$7["album-alias"], title: record.alias[0], children: record.alias[0] }),
-jsxRuntimeExports.jsxs("div", { className: styles$7["album-meta"], children: [
-jsxRuntimeExports.jsx(Tag, { color: "blue", className: styles$7["album-tag"], children: record.type || "专辑" }),
+                  !!record.alias?.length && jsxRuntimeExports.jsx("div", { className: styles$6["album-alias"], title: record.alias[0], children: record.alias[0] }),
+jsxRuntimeExports.jsxs("div", { className: styles$6["album-meta"], children: [
+jsxRuntimeExports.jsx(Tag, { color: "blue", className: styles$6["album-tag"], children: record.type || "专辑" }),
 jsxRuntimeExports.jsx(
                       Text$1,
                       {
-                        className: styles$7["album-company"],
+                        className: styles$6["album-company"],
                         title: record.company,
                         children: record.company || "未知公司"
                       }
@@ -19059,11 +19332,11 @@ jsxRuntimeExports.jsx(
                     alt: singerInfo?.singerName || "歌手头像"
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$7["singer-details"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6["singer-details"], children: [
 jsxRuntimeExports.jsx(
                     "div",
                     {
-                      className: styles$7["singer-name"],
+                      className: styles$6["singer-name"],
                       title: singerInfo?.singerName,
                       children: singerInfo?.singerName || "未知歌手"
                     }
@@ -19071,7 +19344,7 @@ jsxRuntimeExports.jsx(
 jsxRuntimeExports.jsx(
                     "div",
                     {
-                      className: styles$7["singer-id"],
+                      className: styles$6["singer-id"],
                       title: String(singerInfo?.singerId || ""),
                       children: singerInfo?.singerId || "-"
                     }
@@ -19104,7 +19377,7 @@ jsxRuntimeExports.jsx(
               key: "id",
               width: 160,
               align: "center",
-              render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$7["album-id"], text: String(id) })
+              render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$6["album-id"], text: String(id) })
             },
             {
               title: "操作",
@@ -19190,25 +19463,25 @@ jsxRuntimeExports.jsx(
           (sum, album2) => sum + (album2?.size ?? album2?.songCount ?? 0),
           0
         );
-        const renderTitle = () => jsxRuntimeExports.jsx("div", { className: styles$7["modal-title"], children: jsxRuntimeExports.jsxs("div", { className: styles$7["title-content"], children: [
-jsxRuntimeExports.jsx(Title$1, { level: 4, className: styles$7["title-text"], children: singerInfo?.singerName || "专辑列表" }),
-jsxRuntimeExports.jsxs("div", { className: styles$7["title-stats"], children: [
-jsxRuntimeExports.jsxs("span", { className: styles$7["stat-item"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$7["stat-label"], children: "专辑" }),
-jsxRuntimeExports.jsx("span", { className: styles$7["stat-value"], children: albumCount })
+        const renderTitle = () => jsxRuntimeExports.jsx("div", { className: styles$6["modal-title"], children: jsxRuntimeExports.jsxs("div", { className: styles$6["title-content"], children: [
+jsxRuntimeExports.jsx(Title, { level: 4, className: styles$6["title-text"], children: singerInfo?.singerName || "专辑列表" }),
+jsxRuntimeExports.jsxs("div", { className: styles$6["title-stats"], children: [
+jsxRuntimeExports.jsxs("span", { className: styles$6["stat-item"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$6["stat-label"], children: "专辑" }),
+jsxRuntimeExports.jsx("span", { className: styles$6["stat-value"], children: albumCount })
             ] }),
-jsxRuntimeExports.jsxs("span", { className: styles$7["stat-item"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$7["stat-label"], children: "歌曲" }),
-jsxRuntimeExports.jsx("span", { className: styles$7["stat-value"], children: songCount })
+jsxRuntimeExports.jsxs("span", { className: styles$6["stat-item"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$6["stat-label"], children: "歌曲" }),
+jsxRuntimeExports.jsx("span", { className: styles$6["stat-value"], children: songCount })
             ] })
           ] })
         ] }) });
-        const renderFooter = () => jsxRuntimeExports.jsxs("div", { className: styles$7["modal-footer"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$7["selected-info"], children: [
+        const renderFooter = () => jsxRuntimeExports.jsxs("div", { className: styles$6["modal-footer"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$6["selected-info"], children: [
             "已选择 ",
             selectedRows.length,
             " 张专辑",
-            selectedRows.length > 0 && jsxRuntimeExports.jsxs("span", { className: styles$7["selected-extra"], children: [
+            selectedRows.length > 0 && jsxRuntimeExports.jsxs("span", { className: styles$6["selected-extra"], children: [
               "（共",
               " ",
               selectedRows.reduce(
@@ -19266,9 +19539,9 @@ jsxRuntimeExports.jsxs(
             width: 1500,
             centered: true,
             footer: renderFooter(),
-            className: styles$7["album-list-modal"],
+            className: styles$6["album-list-modal"],
             children: [
-jsxRuntimeExports.jsx("div", { className: styles$7["search-area"], children: jsxRuntimeExports.jsx(
+jsxRuntimeExports.jsx("div", { className: styles$6["search-area"], children: jsxRuntimeExports.jsx(
                 SearchForm,
                 {
                   data: albumList,
@@ -19285,7 +19558,7 @@ jsxRuntimeExports.jsx(
                   rowKey: getAlbumKey,
                   loading,
                   scroll: { y: 500, x: 1100 },
-                  className: styles$7["album-table"],
+                  className: styles$6["album-table"],
                   pagination: {
                     showSizeChanger: true,
                     showQuickJumper: true,
@@ -19311,7 +19584,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           },
           ref
         );
-        const [params, setParams] = useState();
+        const [params, setParams] = useState$1();
         useGetSingerInfo(params.singerId);
         return jsxRuntimeExports.jsx(
           Modal,
@@ -19348,8 +19621,8 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             title: "歌手信息",
             dataIndex: "name",
             width: 300,
-            render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$b["song-info"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$b["song-cover"], children: jsxRuntimeExports.jsx(
+            render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$7["song-info"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$7["song-cover"], children: jsxRuntimeExports.jsx(
                 Image,
                 {
                   src: record.picUrl || record.img1v1Url,
@@ -19358,11 +19631,11 @@ jsxRuntimeExports.jsx("div", { className: styles$b["song-cover"], children: jsxR
                   style: { objectFit: "cover" }
                 }
               ) }),
-jsxRuntimeExports.jsxs("div", { className: styles$b["song-details"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$7["song-details"], children: [
 jsxRuntimeExports.jsx(Tooltip, { title: text2, placement: "top", children: jsxRuntimeExports.jsx(
                   "div",
                   {
-                    className: styles$b["song-name"],
+                    className: styles$7["song-name"],
                     tabIndex: 0,
                     role: "text",
                     "aria-label": `歌手名称 ${text2}`,
@@ -19372,7 +19645,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: text2, placement: "top", children: jsxRu
 jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: jsxRuntimeExports.jsx(
                   Typography.Text,
                   {
-                    className: styles$b["song-mid-text"],
+                    className: styles$7["song-mid-text"],
                     copyable: true,
                     "aria-label": `复制歌手ID ${record.id}`,
                     children: record.id
@@ -19386,7 +19659,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: j
                     children: jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: styles$b["song-album"],
+                        className: styles$7["song-album"],
                         tabIndex: 0,
                         role: "text",
                         "aria-label": `别名 ${record.alias?.[0] || record.alia?.[0]}`,
@@ -19424,7 +19697,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: j
             dataIndex: "id",
             width: 200,
             align: "center",
-            render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$b["song-mid-text"], text: String(id) })
+            render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$7["song-mid-text"], text: String(id) })
           },
           {
             title: "操作",
@@ -19467,7 +19740,7 @@ jsxRuntimeExports.jsx(
               rowKey: "id",
               loading,
               scroll: { y: 500, x: 1100 },
-              className: styles$b["song-table"],
+              className: styles$7["song-table"],
               pagination: false
             }
           ),
@@ -19480,7 +19753,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
         pageSize: 20,
         type: SEARCH_TYPES.单曲
       };
-      const Search$1 = forwardRef((props, ref) => {
+      const Search = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
         const [searchParams, setSearchParams] = useState$1(defaultSearchParams);
         const handleSearch = (values) => {
@@ -19500,7 +19773,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
         );
         console.log("data", data);
         const renderTitle = () => {
-          return jsxRuntimeExports.jsx("div", { className: styles$b["modal-title"], children: jsxRuntimeExports.jsx("div", { className: styles$b["title-content"], children: jsxRuntimeExports.jsx("span", { className: styles$b["title-text"], children: "歌曲查询" }) }) });
+          return jsxRuntimeExports.jsx("div", { className: styles$7["modal-title"], children: jsxRuntimeExports.jsx("div", { className: styles$7["title-content"], children: jsxRuntimeExports.jsx("span", { className: styles$7["title-text"], children: "歌曲查询" }) }) });
         };
         return jsxRuntimeExports.jsxs(
           Modal,
@@ -19510,7 +19783,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
             onCancel: close,
             width: 1500,
             centered: true,
-            className: styles$b["song-search-modal"],
+            className: styles$7["song-search-modal"],
             children: [
 jsxRuntimeExports.jsxs(Form, { onFinish: handleSearch, layout: "inline", children: [
 jsxRuntimeExports.jsx(Form.Item, { label: "关键词", name: "keyword", children: jsxRuntimeExports.jsx(Input, { placeholder: "请输入关键词" }) }),
@@ -19567,16 +19840,12 @@ jsxRuntimeExports.jsx(
           }
         );
       });
-      const { Search } = Input;
       const CloudImport = forwardRef((props, ref) => {
         const { visible, close } = useVisible(
           {
             onOpen() {
             },
             onReset() {
-              setSearchText("");
-              setAudioFormat("all");
-              setBitrate("all");
               setTableData([]);
               setSelectedRows([]);
               setLoading(false);
@@ -19584,9 +19853,6 @@ jsxRuntimeExports.jsx(
           },
           ref
         );
-        const [searchText, setSearchText] = useState$1("");
-        const [audioFormat, setAudioFormat] = useState$1("all");
-        const [bitrate, setBitrate] = useState$1("all");
         const [selectedRows, setSelectedRows] = useState$1([]);
         const [tableData, setTableData] = useState$1([]);
         const filterConfig = {
@@ -19698,6 +19964,25 @@ bitrate: 321
             }
           });
         };
+        const renderFooter = () => {
+          return jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(Button, { onClick: () => setSelectedRows(filteredList), children: "全部选择" }),
+jsxRuntimeExports.jsx(Button, { onClick: close, children: "取消" }),
+jsxRuntimeExports.jsxs(
+              Button,
+              {
+                type: "primary",
+                onClick: handleOk,
+                disabled: !selectedRows.length,
+                children: [
+                  "导入 ",
+                  selectedRows.length,
+                  " 首"
+                ]
+              }
+            )
+          ] });
+        };
         return jsxRuntimeExports.jsxs(
           Modal,
           {
@@ -19709,6 +19994,7 @@ bitrate: 321
             onOk: handleOk,
             onClose: close,
             confirmLoading: loading,
+            footer: renderFooter(),
             children: [
 jsxRuntimeExports.jsx(
                 SearchForm,
@@ -19751,10 +20037,10 @@ jsxRuntimeExports.jsx(
                     showUploadList: false,
                     beforeUpload: (file) => {
                       const reader = new FileReader();
-                      reader.onload = (e) => {
+                      reader.onload = (e2) => {
                         try {
-                          const jsonData = JSON.parse(e.target.result);
-                          setTableData(jsonData);
+                          const jsonData = JSON.parse(e2.target.result);
+                          setTableData(jsonData?.data || jsonData || []);
                           message.success("JSON文件解析成功");
                         } catch (error) {
                           message.error("JSON文件解析失败");
@@ -19781,18 +20067,18 @@ jsxRuntimeExports.jsx(
         );
       });
       function mitt(n) {
-        return { all: n = n || new Map(), on: function(t, e) {
+        return { all: n = n || new Map(), on: function(t, e2) {
           var i = n.get(t);
-          i ? i.push(e) : n.set(t, [e]);
-        }, off: function(t, e) {
+          i ? i.push(e2) : n.set(t, [e2]);
+        }, off: function(t, e2) {
           var i = n.get(t);
-          i && (e ? i.splice(i.indexOf(e) >>> 0, 1) : n.set(t, []));
-        }, emit: function(t, e) {
+          i && (e2 ? i.splice(i.indexOf(e2) >>> 0, 1) : n.set(t, []));
+        }, emit: function(t, e2) {
           var i = n.get(t);
           i && i.slice().map(function(n2) {
-            n2(e);
+            n2(e2);
           }), (i = n.get("*")) && i.slice().map(function(n2) {
-            n2(t, e);
+            n2(t, e2);
           });
         } };
       }
@@ -19844,7 +20130,7 @@ CLOUD_MUSIC_MATCH_ALL: "cloud_music_match_all"
       const warning = "_warning_18snm_273";
       const text = "_text_18snm_280";
       const icon = "_icon_18snm_287";
-      const styles$6 = {
+      const styles$5 = {
         songInfoColumn,
         songIndex,
         songCover,
@@ -19977,9 +20263,9 @@ jsxRuntimeExports.jsx(
                   },
                   defaultValue: keywords,
                   placeholder: "请输入歌手名",
-                  onPressEnter: (e) => {
-                    console.log("e", e);
-                    setKeywords(e.target.value);
+                  onPressEnter: (e2) => {
+                    console.log("e", e2);
+                    setKeywords(e2.target.value);
                   }
                 }
               ),
@@ -20009,13 +20295,13 @@ jsxRuntimeExports.jsx(
                     return jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: styles$6["singer-option"],
+                        className: styles$5["singer-option"],
                         style: {
                           "--avatar-url": `url(${artistAvatarPicUrl})`
                         },
-                        children: jsxRuntimeExports.jsxs("div", { className: styles$6["singer-option-content"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$6["singer-option-name"], children: artistName2 }),
-jsxRuntimeExports.jsx("div", { className: styles$6["singer-option-id"], children: artistId })
+                        children: jsxRuntimeExports.jsxs("div", { className: styles$5["singer-option-content"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$5["singer-option-name"], children: artistName2 }),
+jsxRuntimeExports.jsx("div", { className: styles$5["singer-option-id"], children: artistId })
                         ] })
                       }
                     );
@@ -20064,12 +20350,12 @@ jsxRuntimeExports.jsx(
                     return jsxRuntimeExports.jsxs(
                       "div",
                       {
-                        className: styles$6["song-option"],
+                        className: styles$5["song-option"],
                         onClick: () => console.log("option", data2, option, singerMap),
                         children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6["song-info"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$6["song-name"], children: option.label }),
-jsxRuntimeExports.jsxs("div", { className: styles$6["tag-group"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5["song-info"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$5["song-name"], children: option.label }),
+jsxRuntimeExports.jsxs("div", { className: styles$5["tag-group"], children: [
                               data2.al?.name && jsxRuntimeExports.jsx(Tag, { color: "blue", children: data2.al?.name }),
                               data2.ar?.length && data2.ar?.map((artist2, index2) => jsxRuntimeExports.jsx(Tag, { color: "green", children: artist2.name }, index2))
                             ] })
@@ -20077,7 +20363,7 @@ jsxRuntimeExports.jsxs("div", { className: styles$6["tag-group"], children: [
                           singerMap[currentSelectSinger]?.albumMap?.[data2.al?.id]?.picUrl && jsxRuntimeExports.jsx(
                             "img",
                             {
-                              className: styles$6["album-cover"],
+                              className: styles$5["album-cover"],
                               src: singerMap[currentSelectSinger]?.albumMap[data2.al?.id]?.picUrl,
                               alt: data2.al?.name
                             }
@@ -20171,12 +20457,12 @@ jsxRuntimeExports.jsx(
             Input,
             {
               value: value2,
-              onChange: (e) => {
-                setValue(e.target.value);
+              onChange: (e2) => {
+                setValue(e2.target.value);
               },
               size: "small",
-              onKeyDown: (e) => {
-                if (e.key === "Enter") {
+              onKeyDown: (e2) => {
+                if (e2.key === "Enter") {
                   handleUpdate();
                 }
               },
@@ -20263,7 +20549,7 @@ jsxRuntimeExports.jsx(
           try {
             const user = getUser();
             if (!user) return message.error("请先登录");
-            const res2 = await getPlaylistList$1();
+            const res2 = await getPlaylistList();
             console.log("res", res2);
             if (res2.code === 200) {
               setPlayList(res2.playlist);
@@ -20399,7 +20685,7 @@ jsxRuntimeExports.jsx(
             return;
           }
           try {
-            const res2 = await createPlaylist$1(name2.trim());
+            const res2 = await createPlaylist(name2.trim());
             if (res2.code === 200) {
               msgSuccess$1("新建成功");
               handleGetPlayList();
@@ -20420,7 +20706,7 @@ jsxRuntimeExports.jsx(
           }
           try {
             const playlistName = strategy.getPlaylistName();
-            const res2 = await createPlaylist$1(playlistName);
+            const res2 = await createPlaylist(playlistName);
             if (res2.code === 200) {
               msgSuccess$1(`成功创建"${playlistName}"`);
               handleGetPlayList();
@@ -20497,7 +20783,7 @@ jsxRuntimeExports.jsx(
                     rowSelection
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.footer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.footer, children: [
 jsxRuntimeExports.jsxs("div", { children: [
                     "已选择 ",
                     selectedRows.length,
@@ -20551,7 +20837,7 @@ jsxRuntimeExports.jsx(
                   {
                     placeholder: "请输入歌单名称",
                     value: name2,
-                    onChange: (e) => setName(e.target.value),
+                    onChange: (e2) => setName(e2.target.value),
                     onPressEnter: handleCreate,
                     autoFocus: true,
                     style: { marginBottom: 16, padding: "4px 8px" }
@@ -20582,20 +20868,20 @@ jsxRuntimeExports.jsx(Space, { wrap: true, children: Object.entries(playlistCrea
         ] });
       };
       const DeleteConfirmContent = ({ playlists }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "总计：" }),
-jsxRuntimeExports.jsx("div", { className: styles$6.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "删除数量：" }),
-jsxRuntimeExports.jsx("span", { className: styles$6.value, children: playlists.length }),
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 个歌单" })
+        return jsxRuntimeExports.jsxs("div", { className: styles$5.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.title, children: "总计：" }),
+jsxRuntimeExports.jsx("div", { className: styles$5.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: "删除数量：" }),
+jsxRuntimeExports.jsx("span", { className: styles$5.value, children: playlists.length }),
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: " 个歌单" })
             ] }) })
           ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "即将删除的歌单：" }) }),
-jsxRuntimeExports.jsx("ul", { className: styles$6.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$6.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.itemName, children: item.name }),
-              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$6.itemCount, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$5.title, children: "即将删除的歌单：" }) }),
+jsxRuntimeExports.jsx("ul", { className: styles$5.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$5.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$5.itemName, children: item.name }),
+              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$5.itemCount, children: [
                 item.trackCount,
                 "首"
               ] })
@@ -20605,15 +20891,15 @@ jsxRuntimeExports.jsx("span", { className: styles$6.itemName, children: item.nam
       };
       const PlayList$3 = forwardRef(PlayList$2);
       const Stats = memo(({ selectedRows = [], filteredSongList = [] }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.stats, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$5.stats, children: [
           "已选择 ",
 jsxRuntimeExports.jsxs(Tag, { color: "blue", children: [
             selectedRows.length,
             " 首"
           ] }),
           " ",
-jsxRuntimeExports.jsx("span", { className: styles$6.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
-jsxRuntimeExports.jsx("span", { className: styles$6.divider, children: "/" }),
+jsxRuntimeExports.jsx("span", { className: styles$5.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
+jsxRuntimeExports.jsx("span", { className: styles$5.divider, children: "/" }),
           "共",
           " ",
 jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
@@ -20621,7 +20907,7 @@ jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
             " 首"
           ] }),
           " ",
-jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
+jsxRuntimeExports.jsx("span", { className: styles$5.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
         ] });
       });
       Stats.displayName = "Stats";
@@ -20639,7 +20925,7 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
         const getCloudDataList = async () => {
           try {
             setLoading(true);
-            const res = await getCloudData$1(1e4, 0);
+            const res = await getCloudData(1e4, 0);
             if (res.code === 200) {
               console.log("songList", res.data);
               setSongList(res.data);
@@ -20766,24 +21052,24 @@ jsxRuntimeExports.jsx("span", { className: styles$6.size, children: filteredSong
           const albumName = getAlbumName(record);
           const songName2 = record.simpleSong?.name;
           const albumPic = record.simpleSong?.al?.picUrl;
-          return jsxRuntimeExports.jsxs("div", { className: styles$6.songInfoColumn, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
+          return jsxRuntimeExports.jsxs("div", { className: styles$5.songInfoColumn, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
 jsxRuntimeExports.jsxs(
               "div",
               {
-                className: `${styles$6.songCover} ${isCurrentSong ? styles$6.playing : ""}`,
+                className: `${styles$5.songCover} ${isCurrentSong ? styles$5.playing : ""}`,
                 onClick: () => handlePlaySong(record.simpleSong),
                 children: [
-jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$6.songCoverImg }),
-jsxRuntimeExports.jsx("div", { className: styles$6.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
+jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$5.songCoverImg }),
+jsxRuntimeExports.jsx("div", { className: styles$5.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
                 ]
               }
             ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.songInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.songName, children: songName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$6.subInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.artist, children: artistName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$6.album, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.songInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.songName, children: songName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$5.subInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.artist, children: artistName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$5.album, children: [
                   albumName && " - ",
                   albumName
                 ] })
@@ -20843,13 +21129,13 @@ jsxRuntimeExports.jsxs("div", { className: styles$6.album, children: [
             sortDirections: ["ascend", "descend"],
             render: (_, record) => {
               const { song, album: album2, artist: artist2 } = getOriginalInfo(record);
-              return jsxRuntimeExports.jsxs("div", { className: styles$6["original-album"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6["song-info"], title: song, children: [
+              return jsxRuntimeExports.jsxs("div", { className: styles$5["original-album"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5["song-info"], title: song, children: [
                   song,
                   " ",
                   artist2 && `· ${artist2}`
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$6["album-info"], title: album2, children: album2 })
+jsxRuntimeExports.jsx("div", { className: styles$5["album-info"], title: album2, children: album2 })
               ] });
             }
           },
@@ -20962,7 +21248,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
                 width: "auto"
               }
             );
-            const res = await getPlaylistList$1();
+            const res = await getPlaylistList();
             console.log("res", res);
             if (res.code !== 200) return msgError("获取歌单失败");
             const playlist = res.playlist;
@@ -20973,7 +21259,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
                 let playlistId = playlist.find((p) => p.name === playlistName)?.id;
                 if (!playlistId) {
                   const truncatedName = truncateString(playlistName, 40);
-                  const res3 = await createPlaylist$1(truncatedName);
+                  const res3 = await createPlaylist(truncatedName);
                   if (res3.code === 200) {
                     playlistId = res3.id;
                   } else {
@@ -20983,7 +21269,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
                   await sleep(1e3);
                 }
                 const songIds = songs2.map((song) => song.songId);
-                const res2 = await addSongToPlaylist$1(playlistId, songIds);
+                const res2 = await addSongToPlaylist(playlistId, songIds);
                 console.log("res", res2);
                 if (res2.code !== 200) {
                   console.log("添加歌曲失败", res2.message || res2.msg);
@@ -21038,7 +21324,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
             const playlist = await playListRef.current.submit();
             if (!playlist) return;
             const songIds = selectedRows.map((item) => item.songId);
-            const res = await addSongToPlaylist$1(playlist.id, songIds);
+            const res = await addSongToPlaylist(playlist.id, songIds);
             console.log("res", res);
             if (res.code === 200) {
               setSelectedRows([]);
@@ -21062,7 +21348,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
             );
             await confirm(confirmContent, "删除确认");
             const songIds = selectedRows.map((item) => item.songId);
-            const res = await deleteCloudSong$1(songIds);
+            const res = await deleteCloudSong(songIds);
             console.log("res", res);
             if (res.code === 200) {
               msgSuccess$1("删除成功");
@@ -21095,7 +21381,7 @@ jsxRuntimeExports.jsx(
                     return {
                       ...item,
                       name: item.simpleSong.name,
-                      artists: getArtistName(item),
+                      artist: getArtistName(item),
                       album: getAlbumName(item)
                     };
                   }),
@@ -21145,13 +21431,13 @@ jsxRuntimeExports.jsx(
                     const { songId } = record;
                     const classNames2 = [];
                     if (songId === playSong?.id) {
-                      classNames2.push(styles$6.currentSong);
+                      classNames2.push(styles$5.currentSong);
                     }
                     const isMatch = record.matchType === "matched";
                     const album2 = normalizeString(getAlbumName(record));
                     const originalAlbum = normalizeString(getOriginalInfo(record)?.album);
                     if (isMatch && !album2.includes(originalAlbum.slice(0, 3))) {
-                      classNames2.push(styles$6.matchError);
+                      classNames2.push(styles$5.matchError);
                     }
                     return classNames2.join(" ");
                   },
@@ -21164,7 +21450,7 @@ jsxRuntimeExports.jsx(
                   }
                 }
               ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.footer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.footer, children: [
 jsxRuntimeExports.jsx(
                   Stats,
                   {
@@ -21172,7 +21458,7 @@ jsxRuntimeExports.jsx(
                     filteredSongList
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$6.actions, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.actions, children: [
 jsxRuntimeExports.jsx(
                     Input,
                     {
@@ -21180,8 +21466,8 @@ jsxRuntimeExports.jsx(
                         width: 100
                       },
                       value: range[0],
-                      onChange: (e) => {
-                        setRange([+e.target.value || void 0, range[1]]);
+                      onChange: (e2) => {
+                        setRange([+e2.target.value || void 0, range[1]]);
                       },
                       placeholder: "起始位置"
                     }
@@ -21193,7 +21479,7 @@ jsxRuntimeExports.jsx(
                         width: 100
                       },
                       value: range[1],
-                      onChange: (e) => setRange([range[0], +e.target.value || void 0]),
+                      onChange: (e2) => setRange([range[0], +e2.target.value || void 0]),
                       placeholder: "结束位置"
                     }
                   ),
@@ -21260,25 +21546,25 @@ jsxRuntimeExports.jsx(PlayList$3, { ref: playListRef })
             message.success("复制成功");
           });
         };
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "总计：" }),
-jsxRuntimeExports.jsxs("div", { className: styles$6.statsContent, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$5.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.title, children: "总计：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$5.statsContent, children: [
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "歌曲数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$6.value, children: totalSongs }),
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 首" })
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: "歌曲数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$5.value, children: totalSongs }),
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: " 首" })
               ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: "歌单数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$6.value, children: albums.length }),
-jsxRuntimeExports.jsx("span", { className: styles$6.label, children: " 个" })
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: "歌单数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$5.value, children: albums.length }),
+jsxRuntimeExports.jsx("span", { className: styles$5.label, children: " 个" })
               ] })
             ] })
           ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6.listHeader, children: [
-jsxRuntimeExports.jsx("div", { className: styles$6.title, children: "即将创建的歌单：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$5.listHeader, children: [
+jsxRuntimeExports.jsx("div", { className: styles$5.title, children: "即将创建的歌单：" }),
 jsxRuntimeExports.jsx(
                 Button,
                 {
@@ -21290,9 +21576,9 @@ jsxRuntimeExports.jsx(
                 }
               )
             ] }),
-jsxRuntimeExports.jsx("ul", { className: styles$6.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$6.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.itemName, children: name2 }),
-jsxRuntimeExports.jsxs("span", { className: styles$6.itemCount, children: [
+jsxRuntimeExports.jsx("ul", { className: styles$5.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$5.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$5.itemName, children: name2 }),
+jsxRuntimeExports.jsxs("span", { className: styles$5.itemCount, children: [
                 songs2.length,
                 "首"
               ] })
@@ -21301,16 +21587,16 @@ jsxRuntimeExports.jsxs("span", { className: styles$6.itemCount, children: [
         ] });
       };
       const DeleteConfirmation = ({ selectedCount, songNames }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$6.deleteConfirmation, children: [
-jsxRuntimeExports.jsxs("p", { className: styles$6.title, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$5.deleteConfirmation, children: [
+jsxRuntimeExports.jsxs("p", { className: styles$5.title, children: [
             "您确定要删除以下 ",
-jsxRuntimeExports.jsx("span", { className: styles$6.count, children: selectedCount }),
+jsxRuntimeExports.jsx("span", { className: styles$5.count, children: selectedCount }),
             " ",
             "首歌曲吗？"
           ] }),
-jsxRuntimeExports.jsx("div", { className: styles$6.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$6.songItem, children: name2 }, index2)) }),
-jsxRuntimeExports.jsx("div", { className: styles$6.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$6.text, children: [
-jsxRuntimeExports.jsx("span", { className: styles$6.icon, children: "!" }),
+jsxRuntimeExports.jsx("div", { className: styles$5.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$5.songItem, children: name2 }, index2)) }),
+jsxRuntimeExports.jsx("div", { className: styles$5.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$5.text, children: [
+jsxRuntimeExports.jsx("span", { className: styles$5.icon, children: "!" }),
             "注意：此操作不可恢复，删除后歌曲将从您的网易云音乐云盘中永久移除。"
           ] }) })
         ] });
@@ -21326,134 +21612,185 @@ jsxRuntimeExports.jsx("span", { className: styles$6.icon, children: "!" }),
         const { song, album: album2, artist: artist2 } = simpleSong.privilege?.pc || {};
         return { song, album: album2, artist: artist2 };
       };
-      const githubContainer = "_githubContainer_b3krt_2";
-      const userInfo = "_userInfo_b3krt_9";
-      const username = "_username_b3krt_15";
-      const starCount = "_starCount_b3krt_18";
-      const bio = "_bio_b3krt_24";
-      const features = "_features_b3krt_28";
-      const featureList = "_featureList_b3krt_37";
-      const profileButton = "_profileButton_b3krt_61";
-      const styles$5 = {
-        githubContainer,
-        userInfo,
-        username,
-        starCount,
-        bio,
-        features,
-        featureList,
-        profileButton
+      const { Link, Text } = Typography;
+      const GITHUB_CONFIG = {
+        owner: "520Qiuyu",
+        repo: "CloudMusic",
+        homepage: "https://github.com/520Qiuyu/CloudMusic",
+        authorUrl: "https://github.com/520Qiuyu",
+        scriptUrl: "https://raw.githubusercontent.com/520Qiuyu/CloudMusic/main/dist/cloudmusic.user.js"
       };
-      const fetchGithubData = async () => {
-        try {
-          const owner = "520Qiuyu";
-          const repo = "CloudMusic";
-          const token = "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";
-          const [userResponse, repoResponse] = await Promise.all([
-            fetch(`https://api.github.com/users/${owner}`, {
-              headers: {
-                Accept: "application/vnd.github.v3+json",
-                Authorization: `token ${token}`
-              }
-            }),
-            fetch(`https://api.github.com/repos/${owner}/${repo}`, {
-              headers: {
-                Accept: "application/vnd.github.v3+json",
-                Authorization: `token ${token}`
-              }
-            })
-          ]);
-          if (!userResponse.ok || !repoResponse.ok) {
-            throw new Error("API请求失败");
-          }
-          const userData = await userResponse.json();
-          const repoData = await repoResponse.json();
-          return {
-            avatar_url: userData.avatar_url,
-            stargazers_count: repoData.stargazers_count
-          };
-        } catch (error) {
-          console.error("获取GitHub数据失败:", error);
-          return {
-            avatar_url: "",
-            stargazers_count: 0
-          };
-        }
-      };
-      const { Title, Text } = Typography;
       const GithubInfo = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
-        const [starCount2, setStarCount] = useState$1(0);
-        const [avatarUrl, setAvatarUrl] = useState$1("");
-        useEffect(() => {
-          fetchGithubData().then((data) => {
-            setStarCount(data.stargazers_count);
-            setAvatarUrl(data.avatar_url);
-          });
-        }, []);
-        const githubInfo = {
-          avatar: avatarUrl || "https://avatars.githubusercontent.com/u/520Qiuyu",
-          username: "520Qiuyu",
-          bio: "网易云音乐快速上传助手",
-          profileUrl: "https://github.com/520Qiuyu/CloudMusic",
-          starCount: `⭐ ${starCount2}`,
-          features: [
-            "🚀 云盘快速上传：支持同时选择多个歌手的音乐资源文件按专辑顺序进行上传",
-            "📊 进度显示：实时展示上传进度和状态",
-            "🔍 智能匹配：自动匹配歌曲信息，包括歌手、专辑等",
-            "🎵 文件管理：支持查看已上传文件列表",
-            "🔄 并发控制：智能控制上传并发数，避免服务器压力",
-            "🎵 云盘音乐管理：支持手动将添加的歌曲添加到歌单中",
-            "🔄 偷取资源：支持从其他用户的云盘偷取资源，获得导入JSON文件",
-            "🎯 手动匹配纠正：支持手动匹配纠正歌曲信息",
-            "📤 云盘本地上传：支持将本地音乐文件上传",
-            "📥 云盘JSON文件导入：支持通过JSON文件（偷取资源的JSON）导入到云盘，实现云盘音乐的批量导入"
-          ]
+        const [repoInfo, setRepoInfo] = useState$1(null);
+        const [loading, setLoading] = useState$1(false);
+        const fetchRepoInfo = async () => {
+          setLoading(true);
+          try {
+            const response = await fetch(
+              `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}`
+            );
+            if (response.ok) {
+              const data = await response.json();
+              setRepoInfo({
+                stars: data.stargazers_count || 0,
+                forks: data.forks_count || 0,
+                watchers: data.watchers_count || 0,
+                description: data.description || "",
+                language: data.language || "",
+                updatedAt: data.updated_at || "",
+                createdAt: data.created_at || "",
+                openIssues: data.open_issues_count || 0,
+                license: data.license?.name || "无",
+                defaultBranch: data.default_branch || "main",
+                avatarUrl: data.owner?.avatar_url || "",
+                authorName: data.owner?.login || GITHUB_CONFIG.owner
+              });
+            }
+          } catch (error) {
+            console.error("获取 GitHub 信息失败:", error);
+          } finally {
+            setLoading(false);
+          }
         };
-        const handleProfileClick = () => {
-          window.open(githubInfo.profileUrl, "_blank");
+        useEffect(() => {
+          if (visible) {
+            fetchRepoInfo();
+          }
+        }, [visible]);
+        const formatDate = (dateString) => {
+          if (!dateString) return "-";
+          const date = new Date(dateString);
+          return date.toLocaleDateString("zh-CN", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          });
         };
         return jsxRuntimeExports.jsx(
           Modal,
           {
-            title: "GitHub 信息",
+            title: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(GithubOutlined, {}),
+jsxRuntimeExports.jsx("span", { children: "GitHub 信息" })
+            ] }),
             open: visible,
             onCancel: close,
             footer: null,
             centered: true,
             width: 700,
             zIndex: 99999,
-            children: jsxRuntimeExports.jsxs("div", { className: styles$5.githubContainer, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$5.userInfo, children: [
+            children: jsxRuntimeExports.jsx(Spin, { spinning: loading, children: jsxRuntimeExports.jsxs(
+              Descriptions,
+              {
+                column: 1,
+                bordered: true,
+                size: "small",
+                labelStyle: { width: 120 },
+                children: [
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目主页", children: jsxRuntimeExports.jsx(Space, { children: jsxRuntimeExports.jsxs(
+                    Link,
+                    {
+                      href: GITHUB_CONFIG.homepage,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      children: [
+jsxRuntimeExports.jsx(LinkOutlined, {}),
+                        " ",
+                        GITHUB_CONFIG.homepage
+                      ]
+                    }
+                  ) }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "作者主页", children: jsxRuntimeExports.jsxs(Space, { children: [
+                    repoInfo?.avatarUrl && jsxRuntimeExports.jsx(
+                      Image,
+                      {
+                        src: repoInfo.avatarUrl,
+                        alt: repoInfo.authorName || "作者头像",
+                        width: 60,
+                        height: 60,
+                        style: {
+                          borderRadius: "50%",
+                          objectFit: "cover",
+                          cursor: "pointer"
+                        }
+                      }
+                    ),
+jsxRuntimeExports.jsxs(
+                      Link,
+                      {
+                        href: GITHUB_CONFIG.authorUrl,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: [
+jsxRuntimeExports.jsx(GithubOutlined, {}),
+                          " ",
+                          GITHUB_CONFIG.authorUrl
+                        ]
+                      }
+                    )
+                  ] }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目描述", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.description || "暂无描述" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "统计信息", children: jsxRuntimeExports.jsxs(Space, { size: "large", children: [
+jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(StarOutlined, { style: { color: "#faad14" } }),
+jsxRuntimeExports.jsx(Text, { strong: true, children: repoInfo?.stars || 0 }),
+jsxRuntimeExports.jsx(Text, { type: "secondary", children: "Stars" })
+                    ] }),
+jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(ForkOutlined, { style: { color: "#1890ff" } }),
+jsxRuntimeExports.jsx(Text, { strong: true, children: repoInfo?.forks || 0 }),
+jsxRuntimeExports.jsx(Text, { type: "secondary", children: "Forks" })
+                    ] }),
+jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(EyeOutlined, { style: { color: "#52c41a" } }),
+jsxRuntimeExports.jsx(Text, { strong: true, children: repoInfo?.watchers || 0 }),
+jsxRuntimeExports.jsx(Text, { type: "secondary", children: "Watchers" })
+                    ] })
+                  ] }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "主要语言", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.language || "未知" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "默认分支", children: jsxRuntimeExports.jsx(Text, { code: true, children: repoInfo?.defaultBranch || "main" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "许可证", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.license || "无" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "开放 Issues", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.openIssues || 0 }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "创建时间", children: jsxRuntimeExports.jsx(Text, { children: formatDate(repoInfo?.createdAt) }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "更新时间", children: jsxRuntimeExports.jsx(Text, { children: formatDate(repoInfo?.updatedAt) }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "操作", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
-                  Avatar,
-                  {
-                    size: 100,
-                    src: githubInfo.avatar,
-                    icon: jsxRuntimeExports.jsx(GithubOutlined, {})
-                  }
-                ),
-jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx(Title, { level: 4, className: styles$5.username, children: githubInfo.username }),
-jsxRuntimeExports.jsx(Text, { className: styles$5.starCount, children: githubInfo.starCount })
-                ] })
-              ] }),
-jsxRuntimeExports.jsx(Title, { level: 5, className: styles$5.bio, children: githubInfo.bio }),
-jsxRuntimeExports.jsxs("div", { className: styles$5.features, children: [
-jsxRuntimeExports.jsx(Title, { level: 5, children: "✨ 功能特性" }),
-jsxRuntimeExports.jsx("ul", { className: styles$5.featureList, children: githubInfo.features.map((feature, index2) => jsxRuntimeExports.jsx("li", { children: feature }, index2)) })
-              ] }),
+                      Button,
+                      {
+                        type: "primary",
+                        icon: jsxRuntimeExports.jsx(GithubOutlined, {}),
+                        href: GITHUB_CONFIG.homepage,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: "访问仓库"
+                      }
+                    ),
 jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "primary",
-                  icon: jsxRuntimeExports.jsx(GithubOutlined, {}),
-                  onClick: handleProfileClick,
-                  className: styles$5.profileButton,
-                  children: "查看 GitHub 主页"
-                }
-              )
-            ] })
+                      Button,
+                      {
+                        icon: jsxRuntimeExports.jsx(StarOutlined, {}),
+                        href: `${GITHUB_CONFIG.homepage}/stargazers`,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: "查看 Stars"
+                      }
+                    ),
+jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        type: "primary",
+                        icon: jsxRuntimeExports.jsx(UploadOutlined, {}),
+                        href: GITHUB_CONFIG.scriptUrl,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        children: "更新脚本"
+                      }
+                    )
+                  ] }) })
+                ]
+              }
+            ) })
           }
         );
       });
@@ -21494,11 +21831,10 @@ jsxRuntimeExports.jsx(
                   return;
                 }
                 file.status = "uploading";
-                const res2 = await uploadLocalSong$1(file);
-                console.log("res", res2);
+                const res2 = await uploadLocalSong(file);
                 file.status = "done";
                 return res2;
-              } catch (e) {
+              } catch (e2) {
                 file.status = "error";
                 return null;
               } finally {
@@ -21549,10 +21885,9 @@ jsxRuntimeExports.jsx(
               };
             });
             const data = await Promise.all(proArr);
-            console.log("data", data);
             downloadJsonFile(data, data[0].artist + ".json");
-          } catch (e) {
-            console.log("error", e);
+          } catch (e2) {
+            console.log("error", e2);
           } finally {
             setGetJsonLoading(false);
           }
@@ -21615,7 +21950,7 @@ jsxRuntimeExports.jsx(
                       min: 1,
                       max: 6,
                       value: concurrency,
-                      onChange: (e) => setConcurrency(parseInt(e.target.value) || 1),
+                      onChange: (e2) => setConcurrency(parseInt(e2.target.value) || 1),
                       style: { width: 80 }
                     }
                   )
@@ -21647,8 +21982,7 @@ jsxRuntimeExports.jsx(
                     columns,
                     dataSource: fileList,
                     rowKey: (file) => file.uid || file.name,
-                    scroll: { y: 300 },
-                    pagination: false
+                    scroll: { y: 300 }
                   }
                 ),
 jsxRuntimeExports.jsxs("div", { className: styles$4["upload-stats"], children: [
@@ -21710,7 +22044,7 @@ jsxRuntimeExports.jsx(
           !(function(t, s) {
             module.exports = s();
           })(duration$1, (function() {
-            var t, s, n = 1e3, i = 6e4, e = 36e5, r = 864e5, o = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, u = 31536e6, d = 2628e6, a = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/, h = { years: u, months: d, days: r, hours: e, minutes: i, seconds: n, milliseconds: 1, weeks: 6048e5 }, c = function(t2) {
+            var t, s, n = 1e3, i = 6e4, e2 = 36e5, r = 864e5, o = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, u = 31536e6, d = 2628e6, a = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/, h = { years: u, months: d, days: r, hours: e2, minutes: i, seconds: n, milliseconds: 1, weeks: 6048e5 }, c = function(t2) {
               return t2 instanceof g;
             }, f = function(t2, s2, n2) {
               return new g(t2, n2, s2.$l);
@@ -21733,9 +22067,9 @@ jsxRuntimeExports.jsx(
                   i2.$d[m(s3)] = t2[s3];
                 })), this.calMilliseconds(), this;
                 if ("string" == typeof t2) {
-                  var e2 = t2.match(a);
-                  if (e2) {
-                    var r2 = e2.slice(2).map((function(t3) {
+                  var e3 = t2.match(a);
+                  if (e3) {
+                    var r2 = e3.slice(2).map((function(t3) {
                       return null != t3 ? Number(t3) : 0;
                     }));
                     return this.$d.years = r2[0], this.$d.months = r2[1], this.$d.weeks = r2[2], this.$d.days = r2[3], this.$d.hours = r2[4], this.$d.minutes = r2[5], this.$d.seconds = r2[6], this.calMilliseconds(), this;
@@ -21751,13 +22085,13 @@ jsxRuntimeExports.jsx(
                 }), 0);
               }, y2.parseFromMilliseconds = function() {
                 var t2 = this.$ms;
-                this.$d.years = $(t2 / u), t2 %= u, this.$d.months = $(t2 / d), t2 %= d, this.$d.days = $(t2 / r), t2 %= r, this.$d.hours = $(t2 / e), t2 %= e, this.$d.minutes = $(t2 / i), t2 %= i, this.$d.seconds = $(t2 / n), t2 %= n, this.$d.milliseconds = t2;
+                this.$d.years = $(t2 / u), t2 %= u, this.$d.months = $(t2 / d), t2 %= d, this.$d.days = $(t2 / r), t2 %= r, this.$d.hours = $(t2 / e2), t2 %= e2, this.$d.minutes = $(t2 / i), t2 %= i, this.$d.seconds = $(t2 / n), t2 %= n, this.$d.milliseconds = t2;
               }, y2.toISOString = function() {
                 var t2 = v(this.$d.years, "Y"), s2 = v(this.$d.months, "M"), n2 = +this.$d.days || 0;
                 this.$d.weeks && (n2 += 7 * this.$d.weeks);
-                var i2 = v(n2, "D"), e2 = v(this.$d.hours, "H"), r2 = v(this.$d.minutes, "M"), o2 = this.$d.seconds || 0;
+                var i2 = v(n2, "D"), e3 = v(this.$d.hours, "H"), r2 = v(this.$d.minutes, "M"), o2 = this.$d.seconds || 0;
                 this.$d.milliseconds && (o2 += this.$d.milliseconds / 1e3, o2 = Math.round(1e3 * o2) / 1e3);
-                var u2 = v(o2, "S"), d2 = t2.negative || s2.negative || i2.negative || e2.negative || r2.negative || u2.negative, a2 = e2.format || r2.format || u2.format ? "T" : "", h2 = (d2 ? "-" : "") + "P" + t2.format + s2.format + i2.format + a2 + e2.format + r2.format + u2.format;
+                var u2 = v(o2, "S"), d2 = t2.negative || s2.negative || i2.negative || e3.negative || r2.negative || u2.negative, a2 = e3.format || r2.format || u2.format ? "T" : "", h2 = (d2 ? "-" : "") + "P" + t2.format + s2.format + i2.format + a2 + e3.format + r2.format + u2.format;
                 return "P" === h2 || "-P" === h2 ? "P0D" : h2;
               }, y2.toJSON = function() {
                 return this.toISOString();
@@ -21821,11 +22155,11 @@ jsxRuntimeExports.jsx(
             })(), p = function(t2, s2, n2) {
               return t2.add(s2.years() * n2, "y").add(s2.months() * n2, "M").add(s2.days() * n2, "d").add(s2.hours() * n2, "h").add(s2.minutes() * n2, "m").add(s2.seconds() * n2, "s").add(s2.milliseconds() * n2, "ms");
             };
-            return function(n2, i2, e2) {
-              t = e2, s = e2().$utils(), e2.duration = function(t2, s2) {
-                var n3 = e2.locale();
+            return function(n2, i2, e3) {
+              t = e3, s = e3().$utils(), e3.duration = function(t2, s2) {
+                var n3 = e3.locale();
                 return f(t2, { $l: n3 }, s2);
-              }, e2.isDuration = c;
+              }, e3.isDuration = c;
               var r2 = i2.prototype.add, o2 = i2.prototype.subtract;
               i2.prototype.add = function(t2, s2) {
                 return c(t2) ? p(this, t2, 1) : r2.bind(this)(t2, s2);
@@ -21920,6 +22254,31 @@ jsxRuntimeExports.jsx(
             record.al?.id
           );
         };
+        const handleSaveToCloud = async (record) => {
+          const uploadMessageKey = "song-to-cloud";
+          try {
+            const res = await neteaseMusicToCloud([record.id], {
+              onChange: (progress) => {
+                message.loading({
+                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                  key: uploadMessageKey,
+                  duration: 0
+                });
+              },
+              onComplete: (result) => {
+                message.destroy(uploadMessageKey);
+                msgSuccess$1(
+                  `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                );
+              }
+            });
+          } catch (error) {
+            console.log("error", error);
+            msgError(`歌曲转存云盘失败: ${error.message}`);
+          } finally {
+            message.destroy(uploadMessageKey);
+          }
+        };
         const columns = [
           {
             title: "歌曲信息",
@@ -21951,7 +22310,7 @@ jsxRuntimeExports.jsx(
                           overflow: "hidden",
                           cursor: "pointer"
                         },
-                        onClick: (e) => e.stopPropagation(),
+                        onClick: (e2) => e2.stopPropagation(),
                         children: record.al?.picUrl ? jsxRuntimeExports.jsx(
                           Image,
                           {
@@ -22272,13 +22631,13 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
 {
             title: "操作",
             key: "action",
-            width: 200,
+            width: 300,
             align: "center",
             fixed: "right",
             render: (_, record) => {
               return jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
-                  Button,
+                  MyButton,
                   {
                     type: "link",
                     size: "small",
@@ -22288,13 +22647,23 @@ jsxRuntimeExports.jsx(
                   }
                 ),
 jsxRuntimeExports.jsx(
-                  Button,
+                  MyButton,
                   {
                     type: "link",
                     size: "small",
                     icon: jsxRuntimeExports.jsx(DownloadOutlined, {}),
                     onClick: () => handleDownload(record),
                     children: "下载"
+                  }
+                ),
+jsxRuntimeExports.jsx(
+                  MyButton,
+                  {
+                    type: "link",
+                    size: "small",
+                    icon: jsxRuntimeExports.jsx(CloudUploadOutlined, {}),
+                    onClick: () => handleSaveToCloud(e),
+                    children: "转存云盘"
                   }
                 )
               ] });
@@ -22325,10 +22694,39 @@ jsxRuntimeExports.jsx(
             console.error("下载歌单JSON失败:", error);
           }
         };
+        const handleSaveToCloudAll = async () => {
+          const uploadMessageKey = "song-to-cloud-all";
+          try {
+            await neteaseMusicToCloud(
+              filteredSongList.map((song) => song.id),
+              {
+                onChange: (progress) => {
+                  message.loading({
+                    content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                    key: uploadMessageKey,
+                    duration: 0
+                  });
+                },
+                onComplete: (result) => {
+                  message.destroy(uploadMessageKey);
+                  msgSuccess$1(
+                    `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                  );
+                }
+              }
+            );
+            msgSuccess$1(`歌曲转存云盘完成`);
+          } catch (error) {
+            console.error("转存云盘全部失败:", error);
+            msgError(`歌曲转存云盘失败: ${error.message}`);
+          } finally {
+            message.destroy(uploadMessageKey);
+          }
+        };
         const renderFooter = () => {
           return jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
-              Button,
+              MyButton,
               {
                 type: "primary",
                 icon: jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
@@ -22336,8 +22734,17 @@ jsxRuntimeExports.jsx(
                 children: "播放全部"
               }
             ),
+jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                type: "primary",
+                icon: jsxRuntimeExports.jsx(CloudUploadOutlined, {}),
+                onClick: handleSaveToCloudAll,
+                children: "转存云盘全部"
+              }
+            ),
 jsxRuntimeExports.jsxs(
-              Button,
+              MyButton,
               {
                 icon: jsxRuntimeExports.jsx(DownloadOutlined, {}),
                 loading: downloading,
@@ -22350,7 +22757,7 @@ jsxRuntimeExports.jsxs(
               }
             ),
 jsxRuntimeExports.jsxs(
-              Button,
+              MyButton,
               {
                 icon: jsxRuntimeExports.jsx(FileOutlined, {}),
                 loading: downloading,
@@ -22396,9 +22803,9 @@ jsxRuntimeExports.jsx(Form.Item, { label: "歌单ID", children: jsxRuntimeExport
                 {
                   className: styles$3["playlist-id-input"],
                   defaultValue: playlistId,
-                  onKeyDown: (e) => {
-                    if (e.key === "Enter") {
-                      setPlaylistId(e.target.value);
+                  onKeyDown: (e2) => {
+                    if (e2.key === "Enter") {
+                      setPlaylistId(e2.target.value);
                     }
                   }
                 }
@@ -22426,17 +22833,17 @@ jsxRuntimeExports.jsx(
         );
       }
       const SongList$1 = forwardRef(SongList);
-      const cover = "_cover_15nrq_8";
-      const info = "_info_15nrq_40";
-      const name = "_name_15nrq_47";
-      const creator = "_creator_15nrq_58";
+      const cover = "_cover_1w0du_8";
+      const info = "_info_1w0du_40";
+      const name = "_name_1w0du_47";
+      const creator = "_creator_1w0du_58";
       const styles$2 = {
-        "playlist-info": "_playlist-info_15nrq_1",
+        "playlist-info": "_playlist-info_1w0du_1",
         cover,
         info,
         name,
         creator,
-        "playlist-item": "_playlist-item_15nrq_69"
+        "playlist-item": "_playlist-item_1w0du_72"
       };
       function PlayList(props, ref) {
         const { visible, close } = useVisible(
@@ -22456,7 +22863,7 @@ jsxRuntimeExports.jsx(
         const getPlayListData = async () => {
           try {
             setLoading(true);
-            const res = await getPlaylistList$1();
+            const res = await getPlaylistList();
             if (res.code === 200) {
               setPlayList(res.playlist || []);
             }
@@ -22484,6 +22891,43 @@ jsxRuntimeExports.jsx(
             }
           }
         });
+        const handleSaveToCloud = async (e2, record) => {
+          e2.stopPropagation();
+          console.log("record", record);
+          console.log("歌单歌曲转云盘");
+          const uploadMessageKey = "playlist-to-cloud";
+          try {
+            const songs2 = await getPlaylistAllData(record.id);
+            const songIds = songs2.map((song) => song.id);
+            message.loading({
+              content: "开始上传歌单歌曲到云盘，请稍候...",
+              key: uploadMessageKey,
+              duration: 0
+            });
+            const res = await neteaseMusicToCloud(songIds, {
+              onChange: (progress) => {
+                message.loading({
+                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                  key: uploadMessageKey,
+                  duration: 0
+                });
+              },
+              onComplete: (result) => {
+                message.destroy(uploadMessageKey);
+                console.log("result", result);
+                msgSuccess$1(
+                  `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                );
+              }
+            });
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+            msgError(`歌单歌曲转云盘失败: ${error.message}`);
+          } finally {
+            message.destroy(uploadMessageKey);
+          }
+        };
         const columns = [
           {
             title: "歌单信息",
@@ -22496,13 +22940,16 @@ jsxRuntimeExports.jsx("div", { className: styles$2["cover"], children: jsxRuntim
                   src: record.coverImgUrl,
                   width: 60,
                   height: 60,
-                  onClick: (e) => e.stopPropagation(),
+                  onClick: (e2) => e2.stopPropagation(),
                   preview: false
                 }
               ) }),
 jsxRuntimeExports.jsxs("div", { className: styles$2["info"], children: [
 jsxRuntimeExports.jsx(Tooltip, { title: record.name, placement: "top", children: jsxRuntimeExports.jsx("div", { className: styles$2["name"], children: record.name }) }),
-jsxRuntimeExports.jsx(Tooltip, { title: record.creator.nickname, placement: "top", children: jsxRuntimeExports.jsx("div", { className: styles$2["creator"], children: record.creator.nickname }) })
+jsxRuntimeExports.jsx(Tooltip, { title: record.creator.nickname, placement: "top", children: jsxRuntimeExports.jsxs("div", { className: styles$2["creator"], children: [
+jsxRuntimeExports.jsx(Avatar, { src: record.creator.avatarUrl, size: 20 }),
+jsxRuntimeExports.jsx(Typography.Text, { children: record.creator.nickname })
+                ] }) })
               ] })
             ] })
           },
@@ -22539,6 +22986,22 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.creator.nickname, placement: "top
             key: "updateTime",
             width: 120,
             render: (time) => dayjs(time).format("YYYY-MM-DD")
+          },
+          {
+            title: "操作",
+            key: "action",
+            align: "center",
+            fixed: "right",
+            width: 100,
+            render: (_, record) => jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                type: "link",
+                onClick: (e2) => handleSaveToCloud(e2, record),
+                size: "small",
+                children: "转存云盘"
+              }
+            )
           }
         ];
         return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
@@ -22597,42 +23060,42 @@ jsxRuntimeExports.jsx(SongList$1, { ref: songListRef })
         ] });
       }
       const PlayList$1 = forwardRef(PlayList);
-      const select = "_select_1rogj_22";
-      const tag = "_tag_1rogj_46";
-      const divider = "_divider_1rogj_70";
-      const label = "_label_1rogj_87";
-      const value = "_value_1rogj_92";
-      const size = "_size_1rogj_67";
-      const percentage = "_percentage_1rogj_113";
-      const progressInfo = "_progressInfo_1rogj_157";
-      const statsContainer = "_statsContainer_1rogj_172";
-      const statsItem = "_statsItem_1rogj_180";
-      const songName = "_songName_1rogj_208";
-      const uploadModal = "_uploadModal_1rogj_218";
-      const progressSection = "_progressSection_1rogj_222";
-      const count = "_count_1rogj_241";
-      const statsTag = "_statsTag_1rogj_256";
-      const songList = "_songList_1rogj_261";
-      const songItem = "_songItem_1rogj_277";
-      const songInfo = "_songInfo_1rogj_292";
-      const artistName = "_artistName_1rogj_306";
+      const select = "_select_11inc_22";
+      const tag = "_tag_11inc_46";
+      const divider = "_divider_11inc_70";
+      const label = "_label_11inc_87";
+      const value = "_value_11inc_92";
+      const size = "_size_11inc_67";
+      const percentage = "_percentage_11inc_113";
+      const progressInfo = "_progressInfo_11inc_157";
+      const statsContainer = "_statsContainer_11inc_172";
+      const statsItem = "_statsItem_11inc_180";
+      const songName = "_songName_11inc_208";
+      const uploadModal = "_uploadModal_11inc_218";
+      const progressSection = "_progressSection_11inc_222";
+      const count = "_count_11inc_241";
+      const statsTag = "_statsTag_11inc_256";
+      const songList = "_songList_11inc_261";
+      const songItem = "_songItem_11inc_277";
+      const songInfo = "_songInfo_11inc_292";
+      const artistName = "_artistName_11inc_306";
       const styles$1 = {
-        "quick-upload-tabs": "_quick-upload-tabs_1rogj_22",
+        "quick-upload-tabs": "_quick-upload-tabs_11inc_22",
         select,
-        "singer-choose": "_singer-choose_1rogj_26",
-        "singer-choose-form": "_singer-choose-form_1rogj_26",
-        "btn-group": "_btn-group_1rogj_32",
-        "option-label": "_option-label_1rogj_36",
-        "singer-name": "_singer-name_1rogj_43",
-        "tag-group": "_tag-group_1rogj_46",
+        "singer-choose": "_singer-choose_11inc_26",
+        "singer-choose-form": "_singer-choose-form_11inc_26",
+        "btn-group": "_btn-group_11inc_31",
+        "option-label": "_option-label_11inc_36",
+        "singer-name": "_singer-name_11inc_43",
+        "tag-group": "_tag-group_11inc_46",
         tag,
-        "upload-list": "_upload-list_1rogj_50",
-        "upload-footer": "_upload-footer_1rogj_54",
-        "upload-stats": "_upload-stats_1rogj_62",
-        "size-text": "_size-text_1rogj_67",
+        "upload-list": "_upload-list_11inc_50",
+        "upload-footer": "_upload-footer_11inc_54",
+        "upload-stats": "_upload-stats_11inc_62",
+        "size-text": "_size-text_11inc_67",
         divider,
-        "upload-confirm": "_upload-confirm_1rogj_75",
-        "confirm-item": "_confirm-item_1rogj_79",
+        "upload-confirm": "_upload-confirm_11inc_75",
+        "confirm-item": "_confirm-item_11inc_79",
         label,
         value,
         size,
@@ -22650,7 +23113,8 @@ jsxRuntimeExports.jsx(SongList$1, { ref: songListRef })
         songInfo,
         artistName
       };
-      function SingerChoose({ singerList, onChoose, loading }) {
+      function SingerChoose({ defaultSingerList, onChoose }) {
+        const { singerList, loading } = useGetSingerList();
         const renderSingerList = useMemo(() => {
           return singerList.map((item) => {
             const { id, name: name2, count: count2, size: size2, sizeDesc } = item;
@@ -22675,12 +23139,14 @@ jsxRuntimeExports.jsx(Tag, { color: "green", className: styles$1["tag"], childre
           const { singer } = values;
           onChoose([...singer]);
         };
+        const [quickImportLoading, setQuickImportLoading] = useState$1(false);
         return jsxRuntimeExports.jsx("div", { className: styles$1["singer-choose"], children: loading ? jsxRuntimeExports.jsx(Spin, { tip: "正在加载中" }) : jsxRuntimeExports.jsxs(
           Form,
           {
             form: formRef,
             onFinish: handleChoose,
             className: styles$1["singer-choose-form"],
+            initialValues: { singer: defaultSingerList },
             children: [
 jsxRuntimeExports.jsx(Form.Item, { name: "singer", label: "歌手", children: jsxRuntimeExports.jsx(
                 Select,
@@ -22694,7 +23160,25 @@ jsxRuntimeExports.jsx(Form.Item, { name: "singer", label: "歌手", children: js
                   getPopupContainer: (trigger) => trigger.parentNode
                 }
               ) }),
-jsxRuntimeExports.jsx(Form.Item, { style: { marginBottom: 0 }, children: jsxRuntimeExports.jsx("div", { className: styles$1["btn-group"], children: jsxRuntimeExports.jsx(Button, { type: "primary", htmlType: "submit", children: "选择" }) }) })
+jsxRuntimeExports.jsx(Form.Item, { noStyle: true, shouldUpdate: true, children: ({ getFieldValue }) => {
+                const singer = getFieldValue("singer") || [];
+                return jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: styles$1["btn-group"],
+                    style: { marginTop: "auto" },
+                    children: jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        type: "primary",
+                        htmlType: "submit",
+                        disabled: !singer.length,
+                        children: "选择"
+                      }
+                    )
+                  }
+                );
+              } })
             ]
           }
         ) });
@@ -22838,64 +23322,67 @@ jsxRuntimeExports.jsx("span", { className: styles$1["size-text"], children: form
               return;
             }
             const proArr = ids.map(async (id) => {
-              const res = await getCDNConfig(id);
-              return res.data;
+              const res2 = await getCDNConfig(id);
+              return res2.data;
             });
             let allConfig = await Promise.all(proArr);
             allConfig = allConfig.flat();
             const allConfigMap = Object.fromEntries(
               allConfig.map((item) => [item.id, item])
             );
-            const allInfo = await getSongInfoList$1(allConfig.map((item) => item.id));
+            const privileges = [];
+            const songs2 = [];
+            const res = await getSongInfoList(allConfig.map((item) => item.id));
+            if (res.code === 200) {
+              privileges.push(...res.privileges);
+              songs2.push(...res.songs);
+            }
+            const songsMap = Object.fromEntries(songs2.map((s) => [s.id, s]));
             const songList22 = [];
-            allInfo.map(({ privileges, songs: songs2 }) => {
-              privileges.forEach((p) => {
-                const otherInfo = allConfigMap[p.id] || {};
-                const defaultItem = mergeObjects(
-                  { ...otherInfo, artists: void 0 },
-                  {
-                    id: p.id,
-                    name: "",
-                    album: "",
-                    albumid: 0,
-                    artists: "",
-                    bitrate: 9e4,
-                    tns: "",
+            privileges.forEach((p) => {
+              const otherInfo = allConfigMap[p.id] || {};
+              const defaultItem = mergeObjects(
+                { ...otherInfo, artists: void 0 },
+                {
+                  id: p.id,
+                  name: "",
+                  album: "",
+                  albumid: 0,
+                  artists: "",
+                  bitrate: 9e4,
+                  tns: "",
 dt: formatDuration$1(0),
-                    filename: "",
-                    picUrl: "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
-                    isNoCopyright: p.st < 0,
-                    isVIP: false,
-                    isPay: false,
-                    uploaded: p.cs,
-                    needMatch: otherInfo.name == void 0
-                  }
-                );
-                const songsMap = Object.fromEntries(songs2.map((s) => [s.id, s]));
-                const song = songsMap[p.id];
-                if (song) {
-                  const artists = getArtistTextInSongDetail(song);
-                  mergeObjects(defaultItem, song, {
-                    album: getAlbumTextInSongDetail(song),
-                    artists,
-                    dt: formatDuration$1(song.dt),
-                    filename: song.name ? `${song.name}` : void 0,
-                    picUrl: song.al?.picUrl || "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
-                    isVIP: song.fee === 1,
-                    isPay: song.fee === 4
-                  });
+                  filename: "",
+                  picUrl: "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
+                  isNoCopyright: p.st < 0,
+                  isVIP: false,
+                  isPay: false,
+                  uploaded: p.cs,
+                  needMatch: otherInfo.name == void 0
                 }
-                if (otherInfo.name) {
-                  defaultItem.name = otherInfo.name;
-                  defaultItem.album ||= otherInfo.al?.name || otherInfo.album || "";
-                  defaultItem.artists ||= otherInfo.ar || otherInfo.artists?.join?.();
-                  defaultItem.filename ||= `${defaultItem.name}.${otherInfo.ext}` || "未知.flac";
-                }
-                songList22.push(defaultItem);
-              });
+              );
+              const song = songsMap[p.id];
+              if (song) {
+                const artists = getArtistTextInSongDetail(song);
+                mergeObjects(defaultItem, song, {
+                  album: getAlbumTextInSongDetail(song),
+                  artists,
+                  dt: formatDuration$1(song.dt),
+                  filename: song.name ? `${song.name}` : void 0,
+                  picUrl: song.al?.picUrl || "http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg",
+                  isVIP: song.fee === 1,
+                  isPay: song.fee === 4
+                });
+              }
+              if (otherInfo.name) {
+                defaultItem.name = otherInfo.name;
+                defaultItem.album ||= otherInfo.al?.name || otherInfo.album || "";
+                defaultItem.artists ||= otherInfo.ar || otherInfo.artists?.join?.();
+                defaultItem.filename ||= `${defaultItem.name}.${otherInfo.ext}` || "未知.flac";
+              }
+              songList22.push(defaultItem);
             });
             setSongList(songList22);
-            setFilteredSongList(songList22);
           } catch (error) {
             console.log("error", error);
             message.error("获取歌曲信息失败", error.message);
@@ -22904,7 +23391,6 @@ dt: formatDuration$1(0),
           }
         };
         useEffect(() => {
-          console.log("singerList", singerList);
           getSongList(singerList);
         }, [singerList]);
         const filterConfig = {
@@ -23146,7 +23632,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
             setDownloading(true);
             const ids = filteredSongList.map((item) => item.id);
             console.log("ids", ids);
-            const res = await getSongUrl$1(ids);
+            const res = await getSongUrl(ids);
             console.log("res", res);
             if (res.code === 200) {
               const songs2 = res.data.map((item, index2) => ({
@@ -23265,7 +23751,7 @@ jsxRuntimeExports.jsx(
                     max: 6,
                     value: concurrency,
                     style: { width: 80 },
-                    onChange: (e) => setConcurrency(Number(e.target.value)),
+                    onChange: (e2) => setConcurrency(Number(e2.target.value)),
                     placeholder: "1-6"
                   }
                 )
@@ -23370,10 +23856,8 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
         const { visible, close } = useVisible(
           {
             onOpen() {
-              getSingerList();
             },
             onReset() {
-              setSingerList([]);
               setCurrentTab("1");
             }
           },
@@ -23385,25 +23869,6 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
             return msgError("请选择歌手");
           }
           setCurrentTab(key);
-        };
-        const [singerList, setSingerList] = useState$1([]);
-        const [loading, setLoading] = useState$1(false);
-        const getSingerList = async () => {
-          try {
-            setLoading(true);
-            const res = await getArtists();
-            const res2 = await getArtists2();
-            console.log("res2", res2);
-            const list = [
-              ...new Map([...res2, ...res].map((item) => [item.id, item])).values()
-            ];
-            console.log("list", list);
-            setSingerList(list);
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
         };
         const [chooseList, setChooseList] = useState$1([]);
         const handleChoose = (value2) => {
@@ -23419,6 +23884,7 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
             centered: true,
             open: visible,
             footer: null,
+            destroyOnHidden: true,
             onCancel: close,
             children: jsxRuntimeExports.jsxs(
               Tabs,
@@ -23431,12 +23897,11 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
 jsxRuntimeExports.jsx(TabPane, { tab: "歌曲选择", children: jsxRuntimeExports.jsx(
                     SingerChoose,
                     {
-                      singerList,
-                      loading,
+                      defaultSingerList: chooseList,
                       onChoose: handleChoose
                     }
                   ) }, "1"),
-jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExports.jsx(UploadList, { singerList: chooseList }, currentTab) }, "2")
+jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExports.jsx(UploadList, { singerList: chooseList }) }, "2")
                 ]
               }
             )
@@ -23444,16 +23909,6 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
         );
       }
       const QuickUpload$1 = forwardRef(QuickUpload);
-      const getAlbumSongList = (id) => weapiRequest(`/api/v1/album/${id}`, {
-        data: {}
-      });
-      const getAlbumDetail = async (id) => {
-        return weapiRequest(`/api/album/${id}`, {
-          data: {
-            id
-          }
-        });
-      };
       const AlbumTab = () => {
         const [albumId, setAlbumId] = useState$1("242274622");
         const handleGetAlbumSongList = async () => {
@@ -23461,6 +23916,9 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
           try {
             const res = await getAlbumSongList(albumId);
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取专辑歌曲列表成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
           }
@@ -23470,8 +23928,44 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
           try {
             const res = await getAlbumDetail(albumId);
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取专辑详情成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
+          }
+        };
+        const handleNeteaseMusicToCloud = async () => {
+          console.log("专辑歌曲转云盘");
+          const uploadMessageKey = "album-to-cloud";
+          try {
+            const res = await getAlbumSongList(albumId);
+            console.log("res", res);
+            if (res.code === 200) {
+              const songs2 = res.songs;
+              const songIds = songs2.map((song) => song.id);
+              await neteaseMusicToCloud(songIds, {
+                onChange: (progress) => {
+                  console.log("progress", progress);
+                  message.loading({
+                    content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                    key: uploadMessageKey,
+                    duration: 0
+                  });
+                },
+                onComplete: (result) => {
+                  console.log("result", result);
+                  message.destroy(uploadMessageKey);
+                  msgSuccess$1(
+                    `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                  );
+                }
+              });
+            }
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            message.destroy(uploadMessageKey);
           }
         };
         return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取专辑歌曲列表", children: jsxRuntimeExports.jsxs(Space, { children: [
@@ -23481,86 +23975,24 @@ jsxRuntimeExports.jsx(
               placeholder: "请输入专辑Id",
               addonBefore: "专辑Id",
               value: albumId,
-              onChange: (e) => setAlbumId(e.target.value)
+              onChange: (e2) => setAlbumId(e2.target.value)
             }
           ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumSongList, children: "获取专辑歌曲列表" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetAlbumDetail, children: "获取专辑详情" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetAlbumSongList, children: "获取专辑歌曲列表" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetAlbumDetail, children: "获取专辑详情" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicToCloud, children: "专辑歌曲转云盘" })
         ] }) }) });
-      };
-      const getArtistTopSongList = (id) => weapiRequest("/api/artist/top/song", {
-        data: {
-          id,
-          limit: 1e3,
-          offset: 0
-        }
-      });
-      const getArtistAllSongList = async (id) => {
-        try {
-          let more = true;
-          const songs2 = [];
-          let offset = 0;
-          while (more) {
-            const res = await weapiRequest("/api/v1/artist/songs", {
-              data: {
-                id,
-                limit: 200,
-                private_cloud: "true",
-                work_type: 1,
-                order: "hot",
-offset
-              }
-            });
-            if (res.code != 200) {
-              throw new Error(res.message || res.msg || "获取歌手全部歌曲失败");
-            }
-            songs2.push(...res.songs);
-            more = res.more;
-            offset += 200;
-          }
-          return {
-            code: 200,
-            msg: "获取歌手全部歌曲成功",
-            songs: songs2
-          };
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
-      };
-      const getArtistAlbumList = async (id) => {
-        let more = true;
-        let limit = 200;
-        let offset = 0;
-        const albumList = [];
-        while (more) {
-          const res = await weapiRequest(`/api/artist/albums/${id}`, {
-            data: {
-              id,
-              limit,
-              offset
-            }
-          });
-          if (res.code != 200) {
-            throw new Error(res.message || res.msg || "获取歌手专辑失败");
-          }
-          albumList.push(...res.hotAlbums);
-          more = res.more;
-          offset += limit;
-        }
-        return {
-          code: 200,
-          msg: "获取歌手专辑成功",
-          data: albumList
-        };
       };
       const ArtistTab = () => {
         const [artistId, setArtistId] = useState$1("3684");
         const handleGetArtistTopSongList = async () => {
-          console.log("获取歌手歌曲列表");
+          console.log("获取歌手热门歌曲列表");
           try {
             const res = await getArtistTopSongList(artistId);
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取歌手热门歌曲列表成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
           }
@@ -23570,6 +24002,9 @@ offset
           try {
             const res = await getArtistAlbumList(artistId);
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取歌手专辑成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
           }
@@ -23581,7 +24016,10 @@ offset
             console.log("res", res);
             if (res.code === 200) {
               const downloadTask = res.data.map(
-                (item) => () => downloadFile(item.picUrl?.split("?")[0] || item.cover?.split("?")[0], item.name + ".jpg")
+                (item) => () => downloadFile(
+                  item.picUrl?.split("?")[0] || item.cover?.split("?")[0],
+                  item.name + ".jpg"
+                )
               );
               await promiseLimit(downloadTask, 1);
             }
@@ -23594,8 +24032,49 @@ offset
           try {
             const res = await getArtistAllSongList(artistId);
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取歌手全部歌曲成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
+          }
+        };
+        const handleGetArtistAllSongListToCloud = async () => {
+          console.log("获取歌手全部歌曲并转云盘");
+          const uploadMessageKey = "artist-all-song-list-to-cloud";
+          try {
+            const songRes = await getArtistAllSongList(artistId);
+            if (songRes.code !== 200) {
+              throw new Error("获取歌手全部歌曲失败");
+            }
+            const songs2 = songRes.songs;
+            const songIds = songs2.map((song) => song.id);
+            message.loading({
+              content: "开始上传歌手全部歌曲到云盘，请稍候...",
+              key: uploadMessageKey,
+              duration: 0
+            });
+            const res = await neteaseMusicToCloud(songIds, {
+              onChange: (progress) => {
+                message.loading({
+                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                  key: uploadMessageKey,
+                  duration: 0
+                });
+              },
+              onComplete: (result) => {
+                message.destroy(uploadMessageKey);
+                msgSuccess$1(
+                  `歌手全部歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                );
+              }
+            });
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+            message.destroy(uploadMessageKey);
+          } finally {
+            message.destroy(uploadMessageKey);
           }
         };
         return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取歌手歌曲列表", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
@@ -23605,156 +24084,15 @@ jsxRuntimeExports.jsx(
               placeholder: "请输入歌手Id",
               addonBefore: "歌手Id",
               value: artistId,
-              onChange: (e) => setArtistId(e.target.value)
+              onChange: (e2) => setArtistId(e2.target.value)
             }
           ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistTopSongList, children: "获取歌手热门歌曲列表" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbum, children: "获取歌手专辑" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAlbumPic, children: "下载专辑封面" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAllSongList, children: "获取歌手全部歌曲" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistTopSongList, children: "获取歌手热门歌曲列表" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAlbum, children: "获取歌手专辑" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAlbumPic, children: "下载专辑封面" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAllSongList, children: "获取歌手全部歌曲" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAllSongListToCloud, children: "获取歌手全部歌曲并转云盘" })
         ] }) }) });
-      };
-      const getCloudData = (limit = 200, offset = 0) => weapiRequest("/api/v1/cloud/get", {
-        data: {
-          limit,
-          offset
-        }
-      });
-      const deleteCloudSong = (songIds) => weapiRequest("/api/cloud/del", {
-        data: {
-          songIds
-        }
-      });
-      const uploadLocalSong = async (file) => {
-        let defaultResult = {};
-        try {
-          const ext = file.name.split(".").pop() || "mp3";
-          const fileMd5 = await getFileMD5(file);
-          const bitrate = 999e3;
-          const filename = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
-          const checkRes = await weapiRequest("/api/cloud/upload/check", {
-            data: {
-              ext: "",
-              bitrate: String(bitrate),
-              md5: fileMd5,
-              length: file.size,
-              songId: "0",
-              version: 1
-            }
-          });
-          console.log("checkRes", checkRes);
-          if (checkRes.code != 200) {
-            msgError("文件检查失败：" + checkRes.message || checkRes.msg || "");
-            throw new Error(checkRes.message || checkRes.msg || "文件检查失败");
-          }
-          const { needUpload, songId } = checkRes;
-          if (needUpload) {
-            const bucket2 = "jd-musicrep-privatecloud-audio-public";
-            const tokenRes2 = await weapiRequest("/api/nos/token/alloc", {
-              data: {
-                bucket: bucket2,
-                ext,
-                filename,
-                local: false,
-                nos_product: 3,
-                type: "audio",
-                md5: fileMd5
-              }
-            });
-            const objectKey2 = tokenRes2.body.result.objectKey.replace("/", "%2F");
-            const lbs = await (await fetch(
-              `https://wanproxy.127.net/lbs?version=1.0&bucketname=${bucket2}`
-            )).json();
-            const formData = new FormData();
-            formData.append("songFile", file);
-            await fetch(
-              `${lbs.upload[0]}/${bucket2}/${objectKey2}?offset=0&complete=true&version=1.0`,
-              {
-                method: "post",
-                headers: {
-                  "x-nos-token": tokenRes2.body.result.token,
-                  "Content-MD5": fileMd5,
-                  "Content-Type": "audio/mpeg",
-                  "Content-Length": String(file.size)
-                },
-                data: formData,
-                maxContentLength: Infinity,
-                maxBodyLength: Infinity
-              }
-            );
-          }
-          const tokenRes = await weapiRequest("/api/nos/token/alloc", {
-            data: {
-              bucket: "",
-              ext,
-              filename,
-              local: false,
-              nos_product: 3,
-              type: "audio",
-              md5: fileMd5
-            }
-          });
-          console.log("tokenRes", tokenRes);
-          if (tokenRes.code != 200) {
-            msgError("获取上传token失败");
-            throw new Error(tokenRes.message || tokenRes.msg || "获取上传token失败");
-          }
-          const { bucket, docId, objectKey, outerUrl, resourceId, token } = tokenRes.result;
-          const { album: album2, artist: artist2, artists, title: title2 } = await getAudioMetadata(file);
-          defaultResult = {
-            ...defaultResult,
-            artist: artist2,
-            artists,
-            album: album2,
-            md5: fileMd5,
-            ext,
-            bitrate
-          };
-          const uploadInfoRes = await weapiRequest("/api/upload/cloud/info/v2", {
-            data: {
-              md5: fileMd5,
-              songid: songId,
-              filename,
-              song: title2 || filename,
-              album: album2 || "未知专辑",
-              artist: artist2 || artists.join(",") || "未知歌手",
-              bitrate: String(bitrate),
-              resourceId
-            }
-          });
-          console.log("uploadInfoRes", uploadInfoRes);
-          defaultResult = {
-            ...defaultResult,
-            id: uploadInfoRes.songId
-          };
-          if (uploadInfoRes.code != 200) {
-            msgError("获取上传信息失败");
-            throw new Error(
-              uploadInfoRes.message || uploadInfoRes.msg || "获取上传信息失败"
-            );
-          }
-          const pubRes = await weapiRequest("/api/cloud/pub/v2", {
-            data: {
-              songid: uploadInfoRes.songId
-            }
-          });
-          console.log("pubRes", pubRes);
-          if (![200, 201].includes(pubRes.code)) {
-            msgError(`歌曲： ${file.name} 发布失败`);
-            throw new Error(pubRes.message || pubRes.msg || "歌曲发布失败");
-          }
-          const { songName: songName2, bitrate: realBitrate, fileSize } = pubRes.privateCloud;
-          defaultResult = {
-            ...defaultResult,
-            name: songName2,
-            size: fileSize,
-            bitrate: realBitrate
-          };
-          return defaultResult;
-        } catch (error) {
-          console.log("error", error);
-          throw error;
-        }
       };
       const CloudTab = () => {
         const [pageData, setPageData] = useState$1({
@@ -23795,6 +24133,15 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetArtistAllSong
             console.log("error", error);
           }
         };
+        const [neteaseMusicSongId, setNeteaseMusicSongId] = useState$1("1846094285");
+        const handleNeteaseMusicToCloud = async () => {
+          try {
+            const res = await neteaseMusicToCloud(neteaseMusicSongId.split(","));
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
         return jsxRuntimeExports.jsxs(Form, { children: [
 jsxRuntimeExports.jsx(Form.Item, { label: "获取云盘数据", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
@@ -23803,7 +24150,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "limit",
                 style: { width: 100 },
                 value: pageData.limit,
-                onChange: (e) => setPageData({ ...pageData, limit: Number(e.target.value) })
+                onChange: (e2) => setPageData({ ...pageData, limit: Number(e2.target.value) })
               }
             ),
 jsxRuntimeExports.jsx(
@@ -23812,10 +24159,10 @@ jsxRuntimeExports.jsx(
                 placeholder: "offset",
                 style: { width: 100 },
                 value: pageData.offset,
-                onChange: (e) => setPageData({ ...pageData, offset: Number(e.target.value) })
+                onChange: (e2) => setPageData({ ...pageData, offset: Number(e2.target.value) })
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetCloudData, children: "获取云盘数据" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetCloudData, children: "获取云盘数据" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "删除云盘歌曲", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
@@ -23824,10 +24171,10 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入歌曲Id",
                 addonBefore: "歌曲Id",
                 value: songId,
-                onChange: (e) => setSongId(e.target.value)
+                onChange: (e2) => setSongId(e2.target.value)
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleDeleteCloudSong, children: "删除云盘歌曲" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleDeleteCloudSong, children: "删除云盘歌曲" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "上传本地歌曲到云盘", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
@@ -23845,7 +24192,19 @@ jsxRuntimeExports.jsx(
                 children: jsxRuntimeExports.jsx(Button, { icon: jsxRuntimeExports.jsx(UploadOutlined, {}), children: "Select File" })
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleUploadLocalSong, children: "上传本地歌曲到云盘" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleUploadLocalSong, children: "上传本地歌曲到云盘" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "测试网易云音乐转存云盘", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                addonBefore: "歌曲Id",
+                placeholder: "请输入网易云音乐歌曲Id",
+                value: neteaseMusicSongId,
+                onChange: (e2) => setNeteaseMusicSongId(e2.target.value)
+              }
+            ),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicToCloud, children: "测试网易云音乐转存云盘" })
           ] }) })
         ] });
       };
@@ -23854,30 +24213,89 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleUploadLocalSong,
         const [flacTagName, setFlacTagName] = useState$1("all");
         const [flacTagValue, setFlacTagValue] = useState$1("");
         const [flacPicture, setFlacPicture] = useState$1(null);
+        const [picturePreview, setPicturePreview] = useState$1(null);
+        const [flacTags, setFlacTags] = useState$1({});
+        const [flacFileList, setFlacFileList] = useState$1([]);
+        const [pictureFileList, setPictureFileList] = useState$1([]);
+        const loadFlacTags = async (file) => {
+          if (!file) return;
+          try {
+            if (flacTags.cover) {
+              URL.revokeObjectURL(flacTags.cover);
+            }
+            const tags = await readAllFlacTag(file);
+            const covers = await readFlacPictures(file) || [];
+            const cover2 = covers.at(-1) ? URL.createObjectURL(covers.at(-1)) : null;
+            setFlacTags({
+              ...tags,
+              cover: cover2
+            });
+            console.log("FLAC 标签:", tags);
+          } catch (error) {
+            console.error("读取 FLAC 标签失败:", error);
+            msgError("读取 FLAC 标签失败");
+          }
+        };
+        useEffect(() => {
+          if (flacFile) {
+            loadFlacTags(flacFile);
+          }
+        }, [flacFile]);
+        const handleFlacFileChange = ({ fileList }) => {
+          setFlacFileList(fileList);
+          if (fileList.length > 0 && fileList[0].originFileObj) {
+            const file = fileList[0].originFileObj;
+            setFlacFile(file);
+          } else {
+            setFlacFile(null);
+            setFlacTags({});
+          }
+        };
+        const handlePictureChange = ({ fileList }) => {
+          setPictureFileList(fileList);
+          if (fileList.length > 0 && fileList[0].originFileObj) {
+            const file = fileList[0].originFileObj;
+            setFlacPicture(file);
+            const reader = new FileReader();
+            reader.onload = (e2) => {
+              setPicturePreview(e2.target.result);
+            };
+            reader.readAsDataURL(file);
+          } else {
+            setFlacPicture(null);
+            setPicturePreview(null);
+          }
+        };
         const handleReadFlacTag = async () => {
           try {
-            console.log("flacFile", flacFile);
             if (!flacFile) return msgError("请选择文件");
             if (flacTagName === "all") {
               const res = await readAllFlacTag(flacFile);
+              setFlacTags(res);
+              msgSuccess$1("读取所有标签成功，请查看下方信息");
               console.log("res", res);
             } else {
               const res = await readFlacTag(flacFile, flacTagName);
+              msgSuccess$1(`读取标签 ${FLAC_TAGS[flacTagName]} 成功: ${res || "无值"}`);
               console.log("res", res);
             }
           } catch (error) {
             console.log("error", error);
+            msgError("读取标签失败");
           }
         };
         const handleWriteFlacTag = async () => {
           try {
             if (!flacFile) return msgError("请选择文件");
             if (flacTagName === "all") return msgError("请选择具体标签");
+            if (!flacTagValue.trim()) return msgError("请输入标签值");
             const res = await writeFlacTag(flacFile, flacTagName, flacTagValue);
             console.log("res", res);
             setFlacFile(res);
+            msgSuccess$1("写入标签成功");
           } catch (error) {
             console.log("error", error);
+            msgError("写入标签失败");
           }
         };
         const handleEmbedFlacPicture = async () => {
@@ -23887,88 +24305,108 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleUploadLocalSong,
             const res = await embedFlacPicture(flacFile, flacPicture);
             console.log("res", res);
             setFlacFile(res);
+            msgSuccess$1("嵌入图片成功");
           } catch (error) {
             console.log("error", error);
+            msgError("嵌入图片失败");
           }
         };
         const handleDownloadFlacFile = async () => {
           try {
             if (!flacFile) return msgError("请选择文件");
             downloadFileWithBlob(flacFile, "test.flac");
+            msgSuccess$1("文件下载成功");
           } catch (error) {
             console.log("error", error);
+            msgError("文件下载失败");
           }
         };
-        return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "测试flac标签", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
-jsxRuntimeExports.jsx(
-            "input",
+        return jsxRuntimeExports.jsxs(Form, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "FLAC 文件", children: jsxRuntimeExports.jsx(
+            Upload,
             {
-              type: "file",
+              fileList: flacFileList,
               accept: ".flac",
-              onChange: (e) => {
-                setFlacFile(e.target.files[0]);
+              maxCount: 1,
+              beforeUpload: () => false,
+              onChange: handleFlacFileChange,
+              children: jsxRuntimeExports.jsx(MyButton, { icon: jsxRuntimeExports.jsx(UploadOutlined, {}), children: "选择 FLAC 文件" })
+            }
+          ) }),
+          Object.keys(flacTags).length > 0 && jsxRuntimeExports.jsx(Form.Item, { label: "FLAC 标签信息", children: jsxRuntimeExports.jsx(Card, { size: "small", children: jsxRuntimeExports.jsx(Descriptions, { column: 2, size: "small", children: Object.entries(flacTags).map(([key, value2]) => jsxRuntimeExports.jsx(
+            Descriptions.Item,
+            {
+              label: FLAC_TAGS[key] || key.toUpperCase(),
+              children: key === "cover" && value2 ? jsxRuntimeExports.jsx(
+                Image,
+                {
+                  src: value2,
+                  alt: "封面",
+                  width: 100,
+                  height: 100,
+                  style: { objectFit: "cover", borderRadius: 4 },
+                  preview: true
+                }
+              ) : key === "cover" ? "无封面" : value2
+            },
+            key
+          )) }) }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "标签操作", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+              Select,
+              {
+                style: { width: 150 },
+                options: [
+                  { label: "全部", value: "all" },
+                  ...Object.entries(FLAC_TAGS).map(([key, value2]) => ({
+                    label: value2,
+                    value: key
+                  }))
+                ],
+                value: flacTagName,
+                onChange: (value2) => setFlacTagName(value2)
               }
-            }
-          ),
+            ),
 jsxRuntimeExports.jsx(
-            Select,
-            {
-              style: { width: 100 },
-              options: [
-                { label: "全部", value: "all" },
-                ...Object.entries(FLAC_TAGS).map(([key, value2]) => ({
-                  label: value2,
-                  value: key
-                }))
-              ],
-              value: flacTagName,
-              onChange: (value2) => setFlacTagName(value2)
-            }
-          ),
-jsxRuntimeExports.jsx(
-            Input,
-            {
-              placeholder: "请输入flac标签",
-              value: flacTagValue,
-              onChange: (e) => setFlacTagValue(e.target.value)
-            }
-          ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleReadFlacTag, children: "读取flac标签" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleWriteFlacTag, children: "写入flac标签" }),
-jsxRuntimeExports.jsx(
-            "input",
-            {
-              type: "file",
-              accept: ".jpg,.png,.jpeg",
-              onChange: (e) => {
-                setFlacPicture(e.target.files[0]);
+              Input,
+              {
+                placeholder: "请输入标签值",
+                value: flacTagValue,
+                onChange: (e2) => setFlacTagValue(e2.target.value),
+                style: { width: 200 }
               }
-            }
-          ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleEmbedFlacPicture, children: "嵌入flac图片" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" })
-        ] }) }) });
+            ),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleReadFlacTag, children: "读取标签" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleWriteFlacTag, children: "写入标签" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "封面图片", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+              Upload,
+              {
+                fileList: pictureFileList,
+                accept: ".jpg,.png,.jpeg",
+                maxCount: 1,
+                beforeUpload: () => false,
+                onChange: handlePictureChange,
+                children: jsxRuntimeExports.jsx(MyButton, { icon: jsxRuntimeExports.jsx(PictureOutlined, {}), children: "选择图片" })
+              }
+            ),
+            picturePreview && jsxRuntimeExports.jsx(
+              Image,
+              {
+                src: picturePreview,
+                alt: "封面预览",
+                width: 100,
+                height: 100,
+                style: { objectFit: "cover", borderRadius: 4 },
+                preview: true
+              }
+            ),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleEmbedFlacPicture, children: "嵌入图片" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "文件操作", children: jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" }) })
+        ] });
       };
-      const getQrKey = () => weapiRequest("/api/login/qrcode/unikey", {
-        data: {
-          noCheckToken: 1,
-          type: 1
-        }
-      });
-      const getQrCode = (key) => {
-        const loginUrl = `https://music.163.com/login?codekey=${key}`;
-        return generateQRCode(loginUrl);
-      };
-      const getQrStatus = (key) => weapiFetch("/api/login/qrcode/client/login", {
-        data: {
-          key,
-          type: 1
-        },
-        originResponse: true
-      });
-      const getUserAccount = () => weapiRequest("/api/nuser/account/get", {
-        data: {}
-      });
       const LoginTab = () => {
         const handleGetUserAccount = async () => {
           console.log("获取用户信息");
@@ -24029,86 +24467,6 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
         document.getElementById("qrcode-container").innerHTML = "";
         document.getElementById("qrcode-container").appendChild(qrImg);
       };
-      const getSongInfoList = async (songIds) => {
-        const chunkArr = chunkArray(songIds, 1e3);
-        const proArr = chunkArr.map(async (chunk) => {
-          return weapiRequest("/api/v3/song/detail", {
-            data: {
-              c: JSON.stringify(chunk.map((item) => ({ id: item })))
-            }
-          });
-        });
-        const allInfo = await Promise.all(proArr);
-        console.log("allInfo", allInfo);
-        return allInfo.flat();
-      };
-      const getSongUrl = (ids, options) => {
-        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = {};
-        return weapiRequest("/api/song/enhance/player/url/v1", {
-          data: { ids: JSON.stringify(ids), level, encodeType }
-        });
-      };
-      const getSongLyric = async (id) => {
-        return weapiRequest("/api/song/lyric", {
-          data: {
-            id,
-            tv: -1,
-            lv: -1,
-            rv: -1,
-            kv: -1,
-            _nmclfl: 1
-          }
-        });
-      };
-      const getSongDynamicCover = async (songId) => {
-        return weapiRequest("/api/songplay/dynamic-cover", {
-          data: {
-            songId
-          }
-        });
-      };
-      const getPlaylistList = (uid = getUser().userId, limit = 1001, offset = 0) => weapiRequest("/api/user/playlist", {
-        data: {
-          limit,
-          offset,
-          uid
-        }
-      });
-      const createPlaylist = (name2) => weapiRequest("/api/playlist/create", {
-        data: {
-          name: name2
-        }
-      });
-      const addSongToPlaylist = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
-        data: {
-          pid,
-trackIds,
-op: "add"
-}
-      });
-      const getPlaylistAllData = async (id) => {
-        try {
-          const detailRes = await weapiRequest("/api/v6/playlist/detail", {
-            data: {
-              id,
-              offset: 0,
-              total: true,
-              n: 1e5,
-              s: 8
-            }
-          });
-          console.log("detailRes", detailRes);
-          const trackIds = detailRes.playlist.trackIds.map((item) => item.id);
-          const res = await getSongInfoList(trackIds);
-          if (res[0]?.code != 200) {
-            msgError(res[0]?.msg || "获取歌单数据失败");
-            throw new Error(res[0]?.msg || "获取歌单数据失败");
-          }
-          return res[0].songs;
-        } catch (error) {
-          throw error;
-        }
-      };
       const PlaylistTab = () => {
         const [songListName, setSongListName] = useState$1("");
         const handleCreateSongList = async () => {
@@ -24146,10 +24504,48 @@ op: "add"
         const [playlistId, setPlaylistId] = useState$1("13508631377");
         const handleGetPlaylist = async () => {
           try {
-            const res = await getPlaylistAllData(playlistId);
+            const songs2 = await getPlaylistAllData(playlistId);
+            console.log("songs", songs2);
+            msgSuccess$1(
+              "获取歌单信息成功, 共" + songs2.length + "首歌曲, 请打开控制台查看。"
+            );
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const handlePlaylistToCloud = async () => {
+          console.log("歌单歌曲转云盘");
+          const uploadMessageKey = "playlist-to-cloud";
+          try {
+            const songs2 = await getPlaylistAllData(playlistId);
+            const songIds = songs2.map((song) => song.id);
+            message.loading({
+              content: "开始上传歌单歌曲到云盘，请稍候...",
+              key: uploadMessageKey,
+              duration: 0
+            });
+            const res = await neteaseMusicToCloud(songIds, {
+              onChange: (progress) => {
+                message.loading({
+                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                  key: uploadMessageKey,
+                  duration: 0
+                });
+              },
+              onComplete: (result) => {
+                message.destroy(uploadMessageKey);
+                console.log("result", result);
+                msgSuccess$1(
+                  `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                );
+              }
+            });
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
+            message.destroy(uploadMessageKey);
+          } finally {
+            message.destroy(uploadMessageKey);
           }
         };
         return jsxRuntimeExports.jsxs(Form, { children: [
@@ -24159,10 +24555,10 @@ jsxRuntimeExports.jsx(
               {
                 placeholder: "请输入歌单名称",
                 value: songListName,
-                onChange: (e) => setSongListName(e.target.value)
+                onChange: (e2) => setSongListName(e2.target.value)
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleCreateSongList, children: "新建歌单" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCreateSongList, children: "新建歌单" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "向歌单添加歌曲", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
@@ -24171,7 +24567,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入歌单Id",
                 addonBefore: "歌单id",
                 value: addInfo.playlistId,
-                onChange: (e) => setAddInfo({ ...addInfo, playlistId: e.target.value })
+                onChange: (e2) => setAddInfo({ ...addInfo, playlistId: e2.target.value })
               }
             ),
 jsxRuntimeExports.jsx(
@@ -24180,10 +24576,10 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入歌曲Id",
                 addonBefore: "歌曲id",
                 value: addInfo.songId,
-                onChange: (e) => setAddInfo({ ...addInfo, songId: e.target.value })
+                onChange: (e2) => setAddInfo({ ...addInfo, songId: e2.target.value })
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleAddSong, children: "添加歌曲" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleAddSong, children: "添加歌曲" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "获取用户歌单列表", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
@@ -24192,10 +24588,10 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入用户Id",
                 addonBefore: "用户id",
                 value: userId,
-                onChange: (e) => setUserId(e.target.value)
+                onChange: (e2) => setUserId(e2.target.value)
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylistList, children: "获取用户歌单列表" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetPlaylistList, children: "获取用户歌单列表" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "测试获取歌单详情", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
@@ -24204,10 +24600,11 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入歌单Id",
                 addonBefore: "歌单Id",
                 value: playlistId,
-                onChange: (e) => setPlaylistId(e.target.value)
+                onChange: (e2) => setPlaylistId(e2.target.value)
               }
             ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handlePlaylistToCloud, children: "歌单歌曲转云盘" })
           ] }) })
         ] });
       };
@@ -24239,7 +24636,7 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetPlaylist, chi
         const [searchValue, setSearchValue] = useState$1("");
         const handleSearchArtist = async () => {
           try {
-            const res = await searchArtist$1(searchValue);
+            const res = await searchArtist(searchValue);
             console.log("res", res);
             if (res.code === 200) {
               msgSuccess$1("搜索成功,请打开控制台查看！");
@@ -24275,7 +24672,7 @@ jsxRuntimeExports.jsx(
                 {
                   placeholder: "请输入搜索关键词",
                   value: searchKeyword,
-                  onChange: (e) => setSearchKeyword(e.target.value)
+                  onChange: (e2) => setSearchKeyword(e2.target.value)
                 }
               )
             ] }),
@@ -24289,7 +24686,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入歌手名称",
                 addonBefore: "歌手名称",
                 value: searchValue,
-                onChange: (e) => setSearchValue(e.target.value)
+                onChange: (e2) => setSearchValue(e2.target.value)
               }
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleSearchArtist, children: "搜索歌手信息" })
@@ -24353,11 +24750,11 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleLocalMatch, ch
         }
       ];
       const SongTab = () => {
-        const [songId, setSongId] = useState$1("2608471890");
+        const [songId, setSongId] = useState$1("2608471890,1846094285");
         const handleGetSongUrl = async () => {
           console.log("获取歌曲URL");
           try {
-            const res = await getSongUrl([songId]);
+            const res = await getSongUrl$1([songId]);
             console.log("res", res);
             if (res.code === 200) {
               const url = res.data[0].url;
@@ -24371,8 +24768,11 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleLocalMatch, ch
         const handleGetSongInfo = async () => {
           console.log("获取歌曲信息");
           try {
-            const res = await getSongInfoList([songId]);
+            const res = await getSongInfoList(songId.split(","));
             console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess$1("获取成功,请打开控制台查看！");
+            }
           } catch (error) {
             console.log("error", error);
           }
@@ -24401,14 +24801,48 @@ jsxRuntimeExports.jsx(
               placeholder: "请输入歌曲Id",
               addonBefore: "歌曲Id",
               value: songId,
-              onChange: (e) => setSongId(e.target.value)
+              onChange: (e2) => setSongId(e2.target.value)
             }
           ),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongInfo, children: "获取歌曲信息" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
-jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongInfo, children: "获取歌曲信息" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" })
         ] }) }) });
+      };
+      const { Item } = Descriptions;
+      const SettingTab = () => {
+        const githubInfoRef = useRef();
+        const handleCheckUpdate = () => {
+          console.log("检查更新");
+        };
+        const handleOpenGithubInfo = () => {
+          githubInfoRef.current?.open();
+        };
+        return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+jsxRuntimeExports.jsxs(Descriptions, { column: 1, size: "large", children: [
+jsxRuntimeExports.jsx(Item, { label: "GitHub", children: jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                icon: jsxRuntimeExports.jsx(GithubOutlined, {}),
+                type: "primary",
+                onClick: handleOpenGithubInfo,
+                children: "查看 GitHub 信息"
+              }
+            ) }),
+jsxRuntimeExports.jsx(Item, { label: "更新日志", children: jsxRuntimeExports.jsx(Input, {}) }),
+jsxRuntimeExports.jsx(Item, { label: "检查更新", children: jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                icon: jsxRuntimeExports.jsx(CheckOutlined, {}),
+                type: "primary",
+                onClick: handleCheckUpdate,
+                children: "检查更新"
+              }
+            ) })
+          ] }),
+jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
+        ] });
       };
       const TestModal = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
@@ -24452,6 +24886,11 @@ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleGetSongDynamicCo
             key: "flac",
             label: "FLAC",
             children: jsxRuntimeExports.jsx(FlacTab, {})
+          },
+          {
+            key: "setting",
+            label: "设置",
+            children: jsxRuntimeExports.jsx(SettingTab, {})
           }
         ];
         return jsxRuntimeExports.jsx(
@@ -24589,7 +25028,7 @@ jsxRuntimeExports.jsx(LocalUpload, { ref: localUploadRef }),
 jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef }),
 jsxRuntimeExports.jsx(TestModal, { ref: testModalRef }),
 jsxRuntimeExports.jsx(PlayList$1, { ref: playListRef }),
-jsxRuntimeExports.jsx(Search$1, { ref: searchRef }),
+jsxRuntimeExports.jsx(Search, { ref: searchRef }),
 jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef }),
 jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
         ] });
@@ -24597,7 +25036,7 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
       function App() {
         const getUserInfo = async () => {
           try {
-            const res = await getUserAccount$1();
+            const res = await getUserAccount();
             console.log("res", res);
             if (res.code === 200) {
               const globalThis2 = getGlobalThis();
@@ -24682,9 +25121,9 @@ components: {
         if (hasRequiredInteropRequireDefault) return interopRequireDefault.exports;
         hasRequiredInteropRequireDefault = 1;
         (function(module) {
-          function _interopRequireDefault(e) {
-            return e && e.__esModule ? e : {
-              "default": e
+          function _interopRequireDefault(e2) {
+            return e2 && e2.__esModule ? e2 : {
+              "default": e2
             };
           }
           module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -24749,9 +25188,9 @@ prev_page: "上一页",
           var _typeof2 = require_typeof()["default"];
           function toPrimitive2(t, r) {
             if ("object" != _typeof2(t) || !t) return t;
-            var e = t[Symbol.toPrimitive];
-            if (void 0 !== e) {
-              var i = e.call(t, r || "default");
+            var e2 = t[Symbol.toPrimitive];
+            if (void 0 !== e2) {
+              var i = e2.call(t, r || "default");
               if ("object" != _typeof2(i)) return i;
               throw new TypeError("@@toPrimitive must return a primitive value.");
             }
@@ -24782,13 +25221,13 @@ prev_page: "上一页",
         hasRequiredDefineProperty = 1;
         (function(module) {
           var toPropertyKey2 = requireToPropertyKey();
-          function _defineProperty(e, r, t) {
-            return (r = toPropertyKey2(r)) in e ? Object.defineProperty(e, r, {
+          function _defineProperty(e2, r, t) {
+            return (r = toPropertyKey2(r)) in e2 ? Object.defineProperty(e2, r, {
               value: t,
               enumerable: true,
               configurable: true,
               writable: true
-            }) : e[r] = t, e;
+            }) : e2[r] = t, e2;
           }
           module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
         })(defineProperty);
@@ -24800,26 +25239,26 @@ prev_page: "上一页",
         hasRequiredObjectSpread2 = 1;
         (function(module) {
           var defineProperty2 = requireDefineProperty();
-          function ownKeys(e, r) {
-            var t = Object.keys(e);
+          function ownKeys(e2, r) {
+            var t = Object.keys(e2);
             if (Object.getOwnPropertySymbols) {
-              var o = Object.getOwnPropertySymbols(e);
+              var o = Object.getOwnPropertySymbols(e2);
               r && (o = o.filter(function(r2) {
-                return Object.getOwnPropertyDescriptor(e, r2).enumerable;
+                return Object.getOwnPropertyDescriptor(e2, r2).enumerable;
               })), t.push.apply(t, o);
             }
             return t;
           }
-          function _objectSpread2(e) {
+          function _objectSpread2(e2) {
             for (var r = 1; r < arguments.length; r++) {
               var t = null != arguments[r] ? arguments[r] : {};
               r % 2 ? ownKeys(Object(t), true).forEach(function(r2) {
-                defineProperty2(e, r2, t[r2]);
-              }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r2) {
-                Object.defineProperty(e, r2, Object.getOwnPropertyDescriptor(t, r2));
+                defineProperty2(e2, r2, t[r2]);
+              }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r2) {
+                Object.defineProperty(e2, r2, Object.getOwnPropertyDescriptor(t, r2));
               });
             }
-            return e;
+            return e2;
           }
           module.exports = _objectSpread2, module.exports.__esModule = true, module.exports["default"] = module.exports;
         })(objectSpread2);
@@ -25125,7 +25564,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-B3Y2RgWi-DraWQVFj.js", ['./__monkey.entry-CmhYwoN8.js', './AbstractID3Parser-Cv4IWCpm-DT6CNRTU.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-B2XD1-t1-CBZsNVfD.js'], (function (exports, module) {
+System.register("./MpegParser-BJRcgYSu-Ct_XYpjN.js", ['./__monkey.entry-BY6xKHF9.js', './AbstractID3Parser-DnOYI78R-DwY9yFgm.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -25720,7 +26159,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-b0tTtyzp-BNXJA94u.js", ['./__monkey.entry-CmhYwoN8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-B7L65o0i-CIqIHX47.js", ['./__monkey.entry-BY6xKHF9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -26227,7 +26666,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-kiT7AtEN-BFHStqyl.js", ['./__monkey.entry-CmhYwoN8.js', './ID3v2Parser-B2XD1-t1-CBZsNVfD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-7nZ6Vsmf-C-nxl2g7.js", ['./__monkey.entry-BY6xKHF9.js', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -26401,7 +26840,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-Dx6r28SR-BmNA9QXh.js", ['./__monkey.entry-CmhYwoN8.js', './ID3v2Parser-B2XD1-t1-CBZsNVfD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-BiQKfjq_-BX8rRRrA.js", ['./__monkey.entry-BY6xKHF9.js', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -26572,7 +27011,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-Dudh5RtA-FLbZV3x5.js", ['./__monkey.entry-CmhYwoN8.js', './AbstractID3Parser-Cv4IWCpm-DT6CNRTU.js', './ID3v2Parser-B2XD1-t1-CBZsNVfD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-DiNxWLPC-D13a0X_L.js", ['./__monkey.entry-BY6xKHF9.js', './AbstractID3Parser-DnOYI78R-DwY9yFgm.js', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -26670,7 +27109,7 @@ System.register("./DsfParser-Dudh5RtA-FLbZV3x5.js", ['./__monkey.entry-CmhYwoN8.
   };
 }));
 
-System.register("./FlacParser-Cn9tcqcb-CtfcS4d_.js", ['./__monkey.entry-CmhYwoN8.js', './VorbisParser-kOc_6NQS-je40OY57.js', './AbstractID3Parser-Cv4IWCpm-DT6CNRTU.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-B2XD1-t1-CBZsNVfD.js'], (function (exports, module) {
+System.register("./FlacParser-BTb079Xp-9V4Zycek.js", ['./__monkey.entry-BY6xKHF9.js', './VorbisParser-C2AcM5jv-B8VOBFwf.js', './AbstractID3Parser-DnOYI78R-DwY9yFgm.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -26822,7 +27261,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-cZJDwoc3-DtvrAdCw.js", ['./__monkey.entry-CmhYwoN8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-DltAzkd7-CWRCugkp.js", ['./__monkey.entry-BY6xKHF9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -27429,7 +27868,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-CXGVGnek-B2622Q7B.js", ['./__monkey.entry-CmhYwoN8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-Cm1XzOIt-DzntF9Ho.js", ['./__monkey.entry-BY6xKHF9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -28260,7 +28699,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-Bh50AYrd-OKZof9S7.js", ['./__monkey.entry-CmhYwoN8.js', './AbstractID3Parser-Cv4IWCpm-DT6CNRTU.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-B2XD1-t1-CBZsNVfD.js'], (function (exports, module) {
+System.register("./MusepackParser-Ct7HQKlr-D-trXx-z.js", ['./__monkey.entry-BY6xKHF9.js', './AbstractID3Parser-DnOYI78R-DwY9yFgm.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -28537,7 +28976,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-Cv4IWCpm-DT6CNRTU.js", ['./__monkey.entry-CmhYwoN8.js', './ID3v2Parser-B2XD1-t1-CBZsNVfD.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-DnOYI78R-DwY9yFgm.js", ['./__monkey.entry-BY6xKHF9.js', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -28601,7 +29040,7 @@ System.register("./AbstractID3Parser-Cv4IWCpm-DT6CNRTU.js", ['./__monkey.entry-C
   };
 }));
 
-System.register("./OggParser-D7m1AO5L-DvnBThN2.js", ['./__monkey.entry-CmhYwoN8.js', './VorbisParser-kOc_6NQS-je40OY57.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-CCJzDdbp-Bpnql55v.js", ['./__monkey.entry-BY6xKHF9.js', './VorbisParser-C2AcM5jv-B8VOBFwf.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -28876,7 +29315,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-kOc_6NQS-je40OY57.js", ['./__monkey.entry-CmhYwoN8.js'], (function (exports, module) {
+System.register("./VorbisParser-C2AcM5jv-B8VOBFwf.js", ['./__monkey.entry-BY6xKHF9.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -29092,7 +29531,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-C10rFHOX-BSuk3WjC.js", ['./__monkey.entry-CmhYwoN8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-DvCGtJgl-BAuGgRN5.js", ['./__monkey.entry-BY6xKHF9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -29272,7 +29711,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-DoXsnta--CCvDKzF8.js", ['./__monkey.entry-CmhYwoN8.js', './ID3v2Parser-B2XD1-t1-CBZsNVfD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-BdfZyGag-2MYRWBDU.js", ['./__monkey.entry-BY6xKHF9.js', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -29545,7 +29984,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-B2XD1-t1-CBZsNVfD.js", ['./__monkey.entry-CmhYwoN8.js'], (function (exports, module) {
+System.register("./ID3v2Parser-CPl2DfgL-B-ZBKUDj.js", ['./__monkey.entry-BY6xKHF9.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {

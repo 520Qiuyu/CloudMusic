@@ -1,6 +1,9 @@
-import { Button, Empty, message, Table, Tag, Input } from 'antd';
-import React, { useEffect, useRef, useState } from 'react';
-import { getCDNConfig, getSongInfoList, getSongUrl, uploadSong } from '@/api';
+import { uploadSong } from '@/api';
+import { getCDNConfig } from '@/api/cdn';
+import { getSongInfoList } from '@/api/song';
+import SearchForm from '@/components/SearchForm';
+import useFilter from '@/hooks/useFilter';
+import { downloadFile } from '@/utils/download';
 import {
   formatDuration,
   formatFileSize,
@@ -8,15 +11,13 @@ import {
   getArtistTextInSongDetail,
   mergeObjects,
   promiseLimit,
-  sleep,
 } from '@/utils/index';
 import { confirm, msgError, msgSuccess } from '@/utils/modal';
+import { Button, Empty, Input, message, Table, Tag } from 'antd';
+import { useEffect, useRef, useState } from 'react';
 import styles from '../index.module.scss';
 import UploadProgress from './UploadProgress';
 import UploadStats from './UploadStats';
-import SearchForm from '@/components/SearchForm';
-import useFilter from '@/hooks/useFilter';
-import { downloadFile } from '@/utils/download';
 
 export default function UploadList({ singerList }) {
   // 所有歌曲列表
@@ -42,69 +43,73 @@ export default function UploadList({ singerList }) {
       const allConfigMap = Object.fromEntries(
         allConfig.map((item) => [item.id, item]),
       );
-      // console.log("allConfig", allConfig);
 
       // 获取歌曲信息
-      const allInfo = await getSongInfoList(allConfig.map((item) => item.id));
-      // console.log("allInfo", allInfo);
+      const privileges = [];
+      const songs = [];
+      const res = await getSongInfoList(allConfig.map((item) => item.id));
+      if (res.code === 200) {
+        privileges.push(...res.privileges);
+        songs.push(...res.songs);
+      }
+      const songsMap = Object.fromEntries(songs.map((s) => [s.id, s]));
 
       // 获取上传列表
       // 此处先遍历云盘中是否拥有
       const songList = [];
-      allInfo.map(({ privileges, songs }) => {
-        privileges.forEach((p) => {
-          const otherInfo = allConfigMap[p.id] || {};
-          const defaultItem = mergeObjects(
-            { ...otherInfo, artists: undefined },
-            {
-              id: p.id,
-              name: '',
-              album: '',
-              albumid: 0,
-              artists: '',
-              bitrate: 90000,
-              tns: '',
-              //翻译
-              dt: formatDuration(0),
-              filename: '',
-              picUrl:
-                'http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg',
-              isNoCopyright: p.st < 0,
-              isVIP: false,
-              isPay: false,
-              uploaded: p.cs,
-              needMatch: otherInfo.name == void 0,
-            },
-          );
-          const songsMap = Object.fromEntries(songs.map((s) => [s.id, s]));
-          const song = songsMap[p.id];
-          if (song) {
-            const artists = getArtistTextInSongDetail(song);
-            mergeObjects(defaultItem, song, {
-              album: getAlbumTextInSongDetail(song),
-              artists,
-              dt: formatDuration(song.dt),
-              filename: song.name ? `${song.name}` : undefined,
-              picUrl:
-                song.al?.picUrl ||
-                'http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg',
-              isVIP: song.fee === 1,
-              isPay: song.fee === 4,
-            });
-          }
-          if (otherInfo.name) {
-            defaultItem.name = otherInfo.name;
-            defaultItem.album ||= otherInfo.al?.name || otherInfo.album || '';
-            defaultItem.artists ||= otherInfo.ar || otherInfo.artists?.join?.();
-            defaultItem.filename ||=
-              `${defaultItem.name}.${otherInfo.ext}` || '未知.flac';
-          }
+      privileges.forEach((p) => {
+        // 获取云盘歌曲配置信息
+        const otherInfo = allConfigMap[p.id] || {};
+        const defaultItem = mergeObjects(
+          { ...otherInfo, artists: undefined },
+          {
+            id: p.id,
+            name: '',
+            album: '',
+            albumid: 0,
+            artists: '',
+            bitrate: 90000,
+            tns: '',
+            //翻译
+            dt: formatDuration(0),
+            filename: '',
+            picUrl:
+              'http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg',
+            isNoCopyright: p.st < 0,
+            isVIP: false,
+            isPay: false,
+            uploaded: p.cs,
+            needMatch: otherInfo.name == void 0,
+          },
+        );
 
-          songList.push(defaultItem);
-        });
+        const song = songsMap[p.id];
+        if (song) {
+          const artists = getArtistTextInSongDetail(song);
+          mergeObjects(defaultItem, song, {
+            album: getAlbumTextInSongDetail(song),
+            artists,
+            dt: formatDuration(song.dt),
+            filename: song.name ? `${song.name}` : undefined,
+            picUrl:
+              song.al?.picUrl ||
+              'http://p4.music.126.net/UeTuwE7pvjBpypWLudqukA==/3132508627578625.jpg',
+            isVIP: song.fee === 1,
+            isPay: song.fee === 4,
+          });
+        }
+        if (otherInfo.name) {
+          defaultItem.name = otherInfo.name;
+          defaultItem.album ||= otherInfo.al?.name || otherInfo.album || '';
+          defaultItem.artists ||= otherInfo.ar || otherInfo.artists?.join?.();
+          defaultItem.filename ||=
+            `${defaultItem.name}.${otherInfo.ext}` || '未知.flac';
+        }
+
+        songList.push(defaultItem);
       });
+
       setSongList(songList);
-      setFilteredSongList(songList);
     } catch (error) {
       console.log('error', error);
       message.error('获取歌曲信息失败', error.message);
@@ -113,7 +118,6 @@ export default function UploadList({ singerList }) {
     }
   };
   useEffect(() => {
-    console.log('singerList', singerList);
     getSongList(singerList);
   }, [singerList]);
 

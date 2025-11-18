@@ -9,6 +9,7 @@ import LoginTab from './components/LoginTab';
 import PlaylistTab from './components/PlaylistTab';
 import SearchTab from './components/SearchTab';
 import SongTab from './components/SongTab';
+import SettingTab from './components/SettingTab';
 
 const TestModal = forwardRef((props, ref) => {
   const { visible, open, close } = useVisible({}, ref);
@@ -53,6 +54,11 @@ const TestModal = forwardRef((props, ref) => {
       key: 'flac',
       label: 'FLAC',
       children: <FlacTab />,
+    },
+    {
+      key: 'setting',
+      label: '设置',
+      children: <SettingTab />,
     },
   ];
 

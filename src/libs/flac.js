@@ -8,7 +8,6 @@ import Metaflac from 'metaflac-browser-js';
 const parseTags = (tags) => {
   const result = {};
   tags.forEach((tag) => {
-    usr;
     const equalIndex = tag.indexOf('=');
     if (equalIndex === -1) return;
     const name = tag.substring(0, equalIndex).toLowerCase();
@@ -126,6 +125,31 @@ export const writeFlacTags = async (file, tags) => {
   }
 };
 
+/**
+ * 获取 FLAC 文件中的封面图片数据（如果有）。
+ * 返回值为图片的 Blob，如果没有嵌入图片则返回 null。
+ * @param {Blob} file - FLAC 文件 Blob 对象
+ * @returns {Promise<Blob[]|null>}
+ * @example
+ *   const coverBlob = await readFlacPicture(file);
+ *   if (coverBlob && coverBlob.length > 0) {
+ *      const url = URL.createObjectURL(coverBlob);
+ *        // 用于 <img src={url}/> 或图片预览等
+ *      }
+ *    }
+ * }
+ */
+export const readFlacPictures = async (file) => {
+  try {
+    const metaflac = await Metaflac.fromBlob(file);
+    // 获取全部图片，通常只有1张（index: 0），但规范上可能有多张
+    const pictures = metaflac.getPicturesSpecs?.() || [];
+    return pictures.map((_, index) => metaflac.exportPictureToBlob(index));
+  } catch (error) {
+    console.error('读取 FLAC 封面图片失败:', error);
+    return null;
+  }
+};
 
 /**
  * 给flac嵌入图片

@@ -91,11 +91,11 @@ export const getPlaylistAllData = async (id) => {
     console.log('detailRes', detailRes);
     const trackIds = detailRes.playlist.trackIds.map((item) => item.id);
     const res = await getSongInfoList(trackIds);
-    if (res[0]?.code != 200) {
-      msgError(res[0]?.msg || '获取歌单数据失败');
-      throw new Error(res[0]?.msg || '获取歌单数据失败');
+    if (res?.code != 200) {
+      msgError(res?.msg || '获取歌单数据失败');
+      throw new Error(res?.msg || '获取歌单数据失败');
     }
-    return res[0].songs;
+    return res.songs;
   } catch (error) {
     throw error;
   }
