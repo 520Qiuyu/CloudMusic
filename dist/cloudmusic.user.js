@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-BY6xKHF9.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-CV_Pz_WO.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,14 +44,14 @@ System.register("./__entry.js", ['./__monkey.entry-BY6xKHF9.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-BY6xKHF9.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-CV_Pz_WO.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useRef, useState$1, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Spin, Descriptions, Progress, ConfigProvider, Select, Tooltip, Empty, Card, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CloudUploadOutlined, CopyrightOutlined, FileOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
+  var forwardRef, useRef, useState, useMemo, useEffect, memo, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Typography, Space, Image, Tag, Avatar, Button, Table, Form, Input, Tabs, Pagination, Upload, Spin, Descriptions, Progress, ConfigProvider, Select, Tooltip, Empty, Card, Switch, TimePicker, DatePicker, Checkbox, Radio, require$$0$1, forge, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, CopyOutlined, PauseCircleFilled, PlayCircleFilled, CloudUploadOutlined, CopyrightOutlined, FileOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
       useRef = module.useRef;
-      useState$1 = module.useState;
+      useState = module.useState;
       useMemo = module.useMemo;
       useEffect = module.useEffect;
       memo = module.memo;
@@ -82,6 +82,11 @@ System.register("./__monkey.entry-BY6xKHF9.js", ['react', 'antd', 'react-dom', '
       Tooltip = module.Tooltip;
       Empty = module.Empty;
       Card = module.Card;
+      Switch = module.Switch;
+      TimePicker = module.TimePicker;
+      DatePicker = module.DatePicker;
+      Checkbox = module.Checkbox;
+      Radio = module.Radio;
     }, module => {
       require$$0$1 = module.default;
     }, module => {
@@ -6046,7 +6051,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-BJRcgYSu-Ct_XYpjN.js');
+            const { MpegParser } = await module.import('./MpegParser-BXKi48WU-GDytKtJA.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -6068,7 +6073,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-B7L65o0i-CIqIHX47.js');
+            const { AsfParser } = await module.import('./AsfParser-B3sPj4R5-IhjllBYo.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -6079,7 +6084,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-7nZ6Vsmf-C-nxl2g7.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-kZ20UU7w-Crqd__Kx.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -6090,7 +6095,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-BiQKfjq_-BX8rRRrA.js');
+            const { AIFFParser } = await module.import('./AiffParser-Ry4YsMGI-CF60000O.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -6101,7 +6106,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-DiNxWLPC-D13a0X_L.js');
+            const { DsfParser } = await module.import('./DsfParser-CerxPiYX-Buocr_KD.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -6112,7 +6117,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-BTb079Xp-9V4Zycek.js');
+            const { FlacParser } = await module.import('./FlacParser-DAIk3eDo-BPUtDpH4.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -6123,7 +6128,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-DltAzkd7-CWRCugkp.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-B3RjdKjJ-z630wS4o.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -6134,7 +6139,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-Cm1XzOIt-DzntF9Ho.js');
+            const { MP4Parser } = await module.import('./MP4Parser-DjWDmGDj-9hvoVfun.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -6145,7 +6150,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-Ct7HQKlr-D-trXx-z.js');
+            const { MusepackParser } = await module.import('./MusepackParser-BWNKwRGz-KkrxQN0E.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -6156,7 +6161,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-CCJzDdbp-Bpnql55v.js');
+            const { OggParser } = await module.import('./OggParser-7CGKMN14-BVyv7-QQ.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -6167,7 +6172,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-DvCGtJgl-BAuGgRN5.js');
+            const { WavPackParser } = await module.import('./WavPackParser-BUzhcI2T-bwORamqt.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -6178,7 +6183,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-BdfZyGag-2MYRWBDU.js');
+            const { WaveParser } = await module.import('./WaveParser-By4EfJAv-B9R1eO4h.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -6878,6 +6883,18 @@ track: UINT8.get(buf, off2 + 126),
         较高: "higher",
         标准: "standard"
       };
+      const QUALITY_WEIGHTS = {
+        jymaster: 9,
+        dolby: 8,
+        sky: 7,
+        jyeffect: 6,
+        hires: 5,
+        lossless: 4,
+        exhigh: 3,
+        higher: 2,
+        standard: 1,
+        none: 0
+      };
       const SEARCH_TYPES = {
         单曲: "1",
         专辑: "10",
@@ -7110,210 +7127,145 @@ track: UINT8.get(buf, off2 + 126),
           data: songs2
         });
       };
-      function useFilter(list, config) {
-        const [filteredList, setFilteredList] = useState$1(list);
-        useEffect(() => {
-          setFilteredList(list);
-        }, [list]);
-        const handleFilter = (values) => {
-          const filtered = list.filter((item) => {
-            return Object.entries(config.fields).every(([field, fieldConfig]) => {
-              const filterValue = values[field];
-              if (!filterValue?.length) return true;
-              const itemValue = fieldConfig.getValue(item);
-              if (!itemValue) return false;
-              return filterValue.some(
-                (keyword) => itemValue.toLowerCase().includes(keyword.toLowerCase())
-              );
-            });
-          });
-          setFilteredList(filtered);
+      var createUpdateEffect = function(hook) {
+        return function(effect, deps) {
+          var isMounted = useRef(false);
+          hook(function() {
+            return function() {
+              isMounted.current = false;
+            };
+          }, []);
+          hook(function() {
+            if (!isMounted.current) {
+              isMounted.current = true;
+            } else {
+              return effect();
+            }
+          }, deps);
         };
-        return { filteredList, setFilteredList, handleFilter };
-      }
-      const getAlbumSongList = (id) => weapiRequest(`/api/v1/album/${id}`, {
-        data: {}
-      });
-      const getAlbumDetail = async (id) => {
-        return weapiRequest(`/api/album/${id}`, {
-          data: {
-            id
-          }
-        });
       };
-      const getArtists = () => fetch(`${BASE_CDN_URL}artist.json`).then((res) => res.json());
-      const getArtistTopSongList = (id) => weapiRequest("/api/artist/top/song", {
-        data: {
-          id,
-          limit: 1e3,
-          offset: 0
-        }
-      });
-      const getArtistAllSongList = async (id) => {
+      function __read(o, n) {
+        var m = typeof Symbol === "function" && o[Symbol.iterator];
+        if (!m) return o;
+        var i = m.call(o), r, ar = [], e2;
         try {
-          let more = true;
-          const songs2 = [];
-          let offset = 0;
-          while (more) {
-            const res = await weapiRequest("/api/v1/artist/songs", {
-              data: {
-                id,
-                limit: 200,
-                private_cloud: "true",
-                work_type: 1,
-                order: "hot",
-offset
-              }
-            });
-            if (res.code != 200) {
-              throw new Error(res.message || res.msg || "获取歌手全部歌曲失败");
-            }
-            songs2.push(...res.songs);
-            more = res.more;
-            offset += 200;
-          }
-          return {
-            code: 200,
-            msg: "获取歌手全部歌曲成功",
-            songs: songs2
-          };
+          while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
         } catch (error) {
-          console.log("error", error);
-          throw error;
+          e2 = { error };
+        } finally {
+          try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+          } finally {
+            if (e2) throw e2.error;
+          }
         }
+        return ar;
+      }
+      typeof SuppressedError === "function" ? SuppressedError : function(error, suppressed, message2) {
+        var e2 = new Error(message2);
+        return e2.name = "SuppressedError", e2.error = error, e2.suppressed = suppressed, e2;
       };
-      const getArtistAlbumList = async (id) => {
-        let more = true;
-        let limit = 200;
-        let offset = 0;
-        const albumList = [];
-        while (more) {
-          const res = await weapiRequest(`/api/artist/albums/${id}`, {
-            data: {
-              id,
-              limit,
-              offset
+      var isFunction = function(value2) {
+        return typeof value2 === "function";
+      };
+      var isUndef = function(value2) {
+        return typeof value2 === "undefined";
+      };
+      var useMemoizedFn = function(fn) {
+        var fnRef = useRef(fn);
+        fnRef.current = useMemo(function() {
+          return fn;
+        }, [fn]);
+        var memoizedFn = useRef(void 0);
+        if (!memoizedFn.current) {
+          memoizedFn.current = function() {
+            var args = [];
+            for (var _i = 0; _i < arguments.length; _i++) {
+              args[_i] = arguments[_i];
+            }
+            return fnRef.current.apply(this, args);
+          };
+        }
+        return memoizedFn.current;
+      };
+      const useUpdateEffect = createUpdateEffect(useEffect);
+      function depsAreSame(oldDeps, deps) {
+        if (oldDeps === deps) {
+          return true;
+        }
+        for (var i = 0; i < oldDeps.length; i++) {
+          if (!Object.is(oldDeps[i], deps[i])) {
+            return false;
+          }
+        }
+        return true;
+      }
+      function useLatest(value2) {
+        var ref = useRef(value2);
+        ref.current = value2;
+        return ref;
+      }
+      var useUnmount = function(fn) {
+        var fnRef = useLatest(fn);
+        useEffect(function() {
+          return function() {
+            fnRef.current();
+          };
+        }, []);
+      };
+      var isBrowser$1 = !!(typeof window !== "undefined" && window.document && window.document.createElement);
+      function getTargetElement(target, defaultElement) {
+        if (!isBrowser$1) {
+          return void 0;
+        }
+        if (!target) {
+          return defaultElement;
+        }
+        var targetElement;
+        if (isFunction(target)) {
+          targetElement = target();
+        } else if ("current" in target) {
+          targetElement = target.current;
+        } else {
+          targetElement = target;
+        }
+        return targetElement;
+      }
+      var createEffectWithTarget = function(useEffectType) {
+        var useEffectWithTarget2 = function(effect, deps, target) {
+          var hasInitRef = useRef(false);
+          var lastElementRef = useRef([]);
+          var lastDepsRef = useRef([]);
+          var unLoadRef = useRef(void 0);
+          useEffectType(function() {
+            var _a2;
+            var targets = Array.isArray(target) ? target : [target];
+            var els = targets.map(function(item) {
+              return getTargetElement(item);
+            });
+            if (!hasInitRef.current) {
+              hasInitRef.current = true;
+              lastElementRef.current = els;
+              lastDepsRef.current = deps;
+              unLoadRef.current = effect();
+              return;
+            }
+            if (els.length !== lastElementRef.current.length || !depsAreSame(lastElementRef.current, els) || !depsAreSame(lastDepsRef.current, deps)) {
+              (_a2 = unLoadRef.current) === null || _a2 === void 0 ? void 0 : _a2.call(unLoadRef);
+              lastElementRef.current = els;
+              lastDepsRef.current = deps;
+              unLoadRef.current = effect();
             }
           });
-          if (res.code != 200) {
-            throw new Error(res.message || res.msg || "获取歌手专辑失败");
-          }
-          albumList.push(...res.hotAlbums);
-          more = res.more;
-          offset += limit;
-        }
-        return {
-          code: 200,
-          msg: "获取歌手专辑成功",
-          data: albumList
-        };
-      };
-      const getCDNConfig = (artistId) => fetch(`${BASE_CDN_URL}${artistId}.json`).then((res) => res.json());
-      const urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
-      let nanoid = (size2 = 21) => {
-        let id = "";
-        let bytes = crypto.getRandomValues(new Uint8Array(size2 |= 0));
-        while (size2--) {
-          id += urlAlphabet[bytes[size2] & 63];
-        }
-        return id;
-      };
-      message.config({
-        top: 100
-      });
-      const msgSuccess$1 = (content) => {
-        message.success(content);
-      };
-      const msgWarning = (content) => {
-        message.warning(content);
-      };
-      const msgError = (content) => {
-        message.error(content);
-      };
-      const msgLoading = (loadingContent, completeCallBack) => {
-        const key = nanoid();
-        message.loading({
-          key,
-          content: loadingContent
-        }).then(() => {
-        });
-        return () => message.destroy(key);
-      };
-      const confirm = (content, title2, otherOptions = {}) => {
-        return new Promise((resolve, reject) => {
-          Modal.confirm({
-            centered: true,
-            content,
-            icon: null,
-            closable: true,
-            title: title2 || "提示",
-            width: 398,
-            okButtonProps: {
-              shape: "round",
-              type: "primary"
-            },
-            cancelButtonProps: {
-              shape: "round",
-              type: "default"
-            },
-            okText: "确定",
-            cancelText: "取消",
-            onCancel: () => {
-              reject(false);
-            },
-            onOk: () => {
-              resolve(true);
-            },
-            ...otherOptions
+          useUnmount(function() {
+            var _a2;
+            (_a2 = unLoadRef.current) === null || _a2 === void 0 ? void 0 : _a2.call(unLoadRef);
+            hasInitRef.current = false;
           });
-        });
-      };
-      const getSongInfoList = async (songIds) => {
-        const chunkArr = chunkArray(songIds, 1e3);
-        const proArr = chunkArr.map(async (chunk) => {
-          const res = await weapiRequest("/api/v3/song/detail", {
-            data: {
-              c: JSON.stringify(chunk.map((item) => ({ id: item })))
-            }
-          });
-          console.log("res", res);
-          if (res.code === 200) {
-            return res;
-          }
-          throw new Error(res.message || res.msg || "获取歌曲信息失败");
-        });
-        const allInfo = await Promise.all(proArr);
-        return {
-          code: 200,
-          privileges: allInfo.map((item) => item.privileges).flat(),
-          songs: allInfo.map((item) => item.songs).flat()
         };
+        return useEffectWithTarget2;
       };
-      const getSongUrl$1 = (ids, options) => {
-        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = options || {};
-        return weapiRequest("/api/song/enhance/player/url/v1", {
-          data: { ids: JSON.stringify(ids), level, encodeType }
-        });
-      };
-      const getSongLyric = async (id) => {
-        return weapiRequest("/api/song/lyric", {
-          data: {
-            id,
-            tv: -1,
-            lv: -1,
-            rv: -1,
-            kv: -1,
-            _nmclfl: 1
-          }
-        });
-      };
-      const getSongDynamicCover = async (songId) => {
-        return weapiRequest("/api/songplay/dynamic-cover", {
-          data: {
-            songId
-          }
-        });
-      };
+      var useEffectWithTarget$1 = createEffectWithTarget(useEffect);
       var dayjs_min$1 = { exports: {} };
       var dayjs_min = dayjs_min$1.exports;
       var hasRequiredDayjs_min;
@@ -7599,6 +7551,919 @@ offset
       }
       var dayjs_minExports = requireDayjs_min();
       const dayjs = getDefaultExportFromCjs(dayjs_minExports);
+      function useEventListener(eventName, handler, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        var _a2 = options.enable, enable = _a2 === void 0 ? true : _a2;
+        var handlerRef = useLatest(handler);
+        useEffectWithTarget$1(function() {
+          if (!enable) {
+            return;
+          }
+          var targetElement = getTargetElement(options.target, window);
+          if (!(targetElement === null || targetElement === void 0 ? void 0 : targetElement.addEventListener)) {
+            return;
+          }
+          var eventListener = function(event) {
+            return handlerRef.current(event);
+          };
+          var eventNameArray = Array.isArray(eventName) ? eventName : [eventName];
+          eventNameArray.forEach(function(event) {
+            targetElement.addEventListener(event, eventListener, {
+              capture: options.capture,
+              once: options.once,
+              passive: options.passive
+            });
+          });
+          return function() {
+            eventNameArray.forEach(function(event) {
+              targetElement.removeEventListener(event, eventListener, {
+                capture: options.capture
+              });
+            });
+          };
+        }, [eventName, options.capture, options.once, options.passive, enable], options.target);
+      }
+      var SYNC_STORAGE_EVENT_NAME = "AHOOKS_SYNC_STORAGE_EVENT_NAME";
+      function createUseStorageState(getStorage) {
+        function useStorageState(key, options) {
+          if (options === void 0) {
+            options = {};
+          }
+          var storage;
+          var _a2 = options.listenStorageChange, listenStorageChange = _a2 === void 0 ? false : _a2, _b2 = options.onError, onError = _b2 === void 0 ? function(e2) {
+            console.error(e2);
+          } : _b2;
+          try {
+            storage = getStorage();
+          } catch (err2) {
+            onError(err2);
+          }
+          var serializer = function(value2) {
+            if (options.serializer) {
+              return options.serializer(value2);
+            }
+            return JSON.stringify(value2);
+          };
+          var deserializer = function(value2) {
+            if (options.deserializer) {
+              return options.deserializer(value2);
+            }
+            return JSON.parse(value2);
+          };
+          function getStoredValue() {
+            try {
+              var raw = storage === null || storage === void 0 ? void 0 : storage.getItem(key);
+              if (raw) {
+                return deserializer(raw);
+              }
+            } catch (e2) {
+              onError(e2);
+            }
+            if (isFunction(options.defaultValue)) {
+              return options.defaultValue();
+            }
+            return options.defaultValue;
+          }
+          var _c = __read(useState(getStoredValue), 2), state = _c[0], setState = _c[1];
+          useUpdateEffect(function() {
+            setState(getStoredValue());
+          }, [key]);
+          var updateState = function(value2) {
+            var currentState = isFunction(value2) ? value2(state) : value2;
+            if (!listenStorageChange) {
+              setState(currentState);
+            }
+            try {
+              var newValue = void 0;
+              var oldValue = storage === null || storage === void 0 ? void 0 : storage.getItem(key);
+              if (isUndef(currentState)) {
+                newValue = null;
+                storage === null || storage === void 0 ? void 0 : storage.removeItem(key);
+              } else {
+                newValue = serializer(currentState);
+                storage === null || storage === void 0 ? void 0 : storage.setItem(key, newValue);
+              }
+              dispatchEvent(
+
+
+new CustomEvent(SYNC_STORAGE_EVENT_NAME, {
+                  detail: {
+                    key,
+                    newValue,
+                    oldValue,
+                    storageArea: storage
+                  }
+                })
+              );
+            } catch (e2) {
+              onError(e2);
+            }
+          };
+          var syncState = function(event) {
+            if (event.key !== key || event.storageArea !== storage) {
+              return;
+            }
+            setState(getStoredValue());
+          };
+          var syncStateFromCustomEvent = function(event) {
+            syncState(event.detail);
+          };
+          useEventListener("storage", syncState, {
+            enable: listenStorageChange
+          });
+          useEventListener(SYNC_STORAGE_EVENT_NAME, syncStateFromCustomEvent, {
+            enable: listenStorageChange
+          });
+          return [state, useMemoizedFn(updateState)];
+        }
+        return useStorageState;
+      }
+      var useLocalStorageState = createUseStorageState(function() {
+        return isBrowser$1 ? localStorage : void 0;
+      });
+      function useRafState(initialState) {
+        var ref = useRef(0);
+        var _a2 = __read(useState(initialState), 2), state = _a2[0], setState = _a2[1];
+        var setRafState = useCallback(function(value2) {
+          cancelAnimationFrame(ref.current);
+          ref.current = requestAnimationFrame(function() {
+            setState(value2);
+          });
+        }, []);
+        useUnmount(function() {
+          cancelAnimationFrame(ref.current);
+        });
+        return [state, setRafState];
+      }
+      var MapShim = (function() {
+        if (typeof Map !== "undefined") {
+          return Map;
+        }
+        function getIndex(arr, key) {
+          var result = -1;
+          arr.some(function(entry, index2) {
+            if (entry[0] === key) {
+              result = index2;
+              return true;
+            }
+            return false;
+          });
+          return result;
+        }
+        return (
+(function() {
+            function class_1() {
+              this.__entries__ = [];
+            }
+            Object.defineProperty(class_1.prototype, "size", {
+get: function() {
+                return this.__entries__.length;
+              },
+              enumerable: true,
+              configurable: true
+            });
+            class_1.prototype.get = function(key) {
+              var index2 = getIndex(this.__entries__, key);
+              var entry = this.__entries__[index2];
+              return entry && entry[1];
+            };
+            class_1.prototype.set = function(key, value2) {
+              var index2 = getIndex(this.__entries__, key);
+              if (~index2) {
+                this.__entries__[index2][1] = value2;
+              } else {
+                this.__entries__.push([key, value2]);
+              }
+            };
+            class_1.prototype.delete = function(key) {
+              var entries = this.__entries__;
+              var index2 = getIndex(entries, key);
+              if (~index2) {
+                entries.splice(index2, 1);
+              }
+            };
+            class_1.prototype.has = function(key) {
+              return !!~getIndex(this.__entries__, key);
+            };
+            class_1.prototype.clear = function() {
+              this.__entries__.splice(0);
+            };
+            class_1.prototype.forEach = function(callback, ctx) {
+              if (ctx === void 0) {
+                ctx = null;
+              }
+              for (var _i = 0, _a2 = this.__entries__; _i < _a2.length; _i++) {
+                var entry = _a2[_i];
+                callback.call(ctx, entry[1], entry[0]);
+              }
+            };
+            return class_1;
+          })()
+        );
+      })();
+      var isBrowser = typeof window !== "undefined" && typeof document !== "undefined" && window.document === document;
+      var global$1 = (function() {
+        if (typeof global !== "undefined" && global.Math === Math) {
+          return global;
+        }
+        if (typeof self !== "undefined" && self.Math === Math) {
+          return self;
+        }
+        if (typeof window !== "undefined" && window.Math === Math) {
+          return window;
+        }
+        return Function("return this")();
+      })();
+      var requestAnimationFrame$1 = (function() {
+        if (typeof requestAnimationFrame === "function") {
+          return requestAnimationFrame.bind(global$1);
+        }
+        return function(callback) {
+          return setTimeout(function() {
+            return callback(Date.now());
+          }, 1e3 / 60);
+        };
+      })();
+      var trailingTimeout = 2;
+      function throttle(callback, delay) {
+        var leadingCall = false, trailingCall = false, lastCallTime = 0;
+        function resolvePending() {
+          if (leadingCall) {
+            leadingCall = false;
+            callback();
+          }
+          if (trailingCall) {
+            proxy();
+          }
+        }
+        function timeoutCallback() {
+          requestAnimationFrame$1(resolvePending);
+        }
+        function proxy() {
+          var timeStamp = Date.now();
+          if (leadingCall) {
+            if (timeStamp - lastCallTime < trailingTimeout) {
+              return;
+            }
+            trailingCall = true;
+          } else {
+            leadingCall = true;
+            trailingCall = false;
+            setTimeout(timeoutCallback, delay);
+          }
+          lastCallTime = timeStamp;
+        }
+        return proxy;
+      }
+      var REFRESH_DELAY = 20;
+      var transitionKeys = ["top", "right", "bottom", "left", "width", "height", "size", "weight"];
+      var mutationObserverSupported = typeof MutationObserver !== "undefined";
+      var ResizeObserverController = (
+(function() {
+          function ResizeObserverController2() {
+            this.connected_ = false;
+            this.mutationEventsAdded_ = false;
+            this.mutationsObserver_ = null;
+            this.observers_ = [];
+            this.onTransitionEnd_ = this.onTransitionEnd_.bind(this);
+            this.refresh = throttle(this.refresh.bind(this), REFRESH_DELAY);
+          }
+          ResizeObserverController2.prototype.addObserver = function(observer) {
+            if (!~this.observers_.indexOf(observer)) {
+              this.observers_.push(observer);
+            }
+            if (!this.connected_) {
+              this.connect_();
+            }
+          };
+          ResizeObserverController2.prototype.removeObserver = function(observer) {
+            var observers2 = this.observers_;
+            var index2 = observers2.indexOf(observer);
+            if (~index2) {
+              observers2.splice(index2, 1);
+            }
+            if (!observers2.length && this.connected_) {
+              this.disconnect_();
+            }
+          };
+          ResizeObserverController2.prototype.refresh = function() {
+            var changesDetected = this.updateObservers_();
+            if (changesDetected) {
+              this.refresh();
+            }
+          };
+          ResizeObserverController2.prototype.updateObservers_ = function() {
+            var activeObservers = this.observers_.filter(function(observer) {
+              return observer.gatherActive(), observer.hasActive();
+            });
+            activeObservers.forEach(function(observer) {
+              return observer.broadcastActive();
+            });
+            return activeObservers.length > 0;
+          };
+          ResizeObserverController2.prototype.connect_ = function() {
+            if (!isBrowser || this.connected_) {
+              return;
+            }
+            document.addEventListener("transitionend", this.onTransitionEnd_);
+            window.addEventListener("resize", this.refresh);
+            if (mutationObserverSupported) {
+              this.mutationsObserver_ = new MutationObserver(this.refresh);
+              this.mutationsObserver_.observe(document, {
+                attributes: true,
+                childList: true,
+                characterData: true,
+                subtree: true
+              });
+            } else {
+              document.addEventListener("DOMSubtreeModified", this.refresh);
+              this.mutationEventsAdded_ = true;
+            }
+            this.connected_ = true;
+          };
+          ResizeObserverController2.prototype.disconnect_ = function() {
+            if (!isBrowser || !this.connected_) {
+              return;
+            }
+            document.removeEventListener("transitionend", this.onTransitionEnd_);
+            window.removeEventListener("resize", this.refresh);
+            if (this.mutationsObserver_) {
+              this.mutationsObserver_.disconnect();
+            }
+            if (this.mutationEventsAdded_) {
+              document.removeEventListener("DOMSubtreeModified", this.refresh);
+            }
+            this.mutationsObserver_ = null;
+            this.mutationEventsAdded_ = false;
+            this.connected_ = false;
+          };
+          ResizeObserverController2.prototype.onTransitionEnd_ = function(_a2) {
+            var _b2 = _a2.propertyName, propertyName = _b2 === void 0 ? "" : _b2;
+            var isReflowProperty = transitionKeys.some(function(key) {
+              return !!~propertyName.indexOf(key);
+            });
+            if (isReflowProperty) {
+              this.refresh();
+            }
+          };
+          ResizeObserverController2.getInstance = function() {
+            if (!this.instance_) {
+              this.instance_ = new ResizeObserverController2();
+            }
+            return this.instance_;
+          };
+          ResizeObserverController2.instance_ = null;
+          return ResizeObserverController2;
+        })()
+      );
+      var defineConfigurable = (function(target, props) {
+        for (var _i = 0, _a2 = Object.keys(props); _i < _a2.length; _i++) {
+          var key = _a2[_i];
+          Object.defineProperty(target, key, {
+            value: props[key],
+            enumerable: false,
+            writable: false,
+            configurable: true
+          });
+        }
+        return target;
+      });
+      var getWindowOf = (function(target) {
+        var ownerGlobal = target && target.ownerDocument && target.ownerDocument.defaultView;
+        return ownerGlobal || global$1;
+      });
+      var emptyRect = createRectInit(0, 0, 0, 0);
+      function toFloat(value2) {
+        return parseFloat(value2) || 0;
+      }
+      function getBordersSize(styles2) {
+        var positions = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+          positions[_i - 1] = arguments[_i];
+        }
+        return positions.reduce(function(size2, position) {
+          var value2 = styles2["border-" + position + "-width"];
+          return size2 + toFloat(value2);
+        }, 0);
+      }
+      function getPaddings(styles2) {
+        var positions = ["top", "right", "bottom", "left"];
+        var paddings = {};
+        for (var _i = 0, positions_1 = positions; _i < positions_1.length; _i++) {
+          var position = positions_1[_i];
+          var value2 = styles2["padding-" + position];
+          paddings[position] = toFloat(value2);
+        }
+        return paddings;
+      }
+      function getSVGContentRect(target) {
+        var bbox = target.getBBox();
+        return createRectInit(0, 0, bbox.width, bbox.height);
+      }
+      function getHTMLElementContentRect(target) {
+        var clientWidth = target.clientWidth, clientHeight = target.clientHeight;
+        if (!clientWidth && !clientHeight) {
+          return emptyRect;
+        }
+        var styles2 = getWindowOf(target).getComputedStyle(target);
+        var paddings = getPaddings(styles2);
+        var horizPad = paddings.left + paddings.right;
+        var vertPad = paddings.top + paddings.bottom;
+        var width = toFloat(styles2.width), height = toFloat(styles2.height);
+        if (styles2.boxSizing === "border-box") {
+          if (Math.round(width + horizPad) !== clientWidth) {
+            width -= getBordersSize(styles2, "left", "right") + horizPad;
+          }
+          if (Math.round(height + vertPad) !== clientHeight) {
+            height -= getBordersSize(styles2, "top", "bottom") + vertPad;
+          }
+        }
+        if (!isDocumentElement(target)) {
+          var vertScrollbar = Math.round(width + horizPad) - clientWidth;
+          var horizScrollbar = Math.round(height + vertPad) - clientHeight;
+          if (Math.abs(vertScrollbar) !== 1) {
+            width -= vertScrollbar;
+          }
+          if (Math.abs(horizScrollbar) !== 1) {
+            height -= horizScrollbar;
+          }
+        }
+        return createRectInit(paddings.left, paddings.top, width, height);
+      }
+      var isSVGGraphicsElement = (function() {
+        if (typeof SVGGraphicsElement !== "undefined") {
+          return function(target) {
+            return target instanceof getWindowOf(target).SVGGraphicsElement;
+          };
+        }
+        return function(target) {
+          return target instanceof getWindowOf(target).SVGElement && typeof target.getBBox === "function";
+        };
+      })();
+      function isDocumentElement(target) {
+        return target === getWindowOf(target).document.documentElement;
+      }
+      function getContentRect(target) {
+        if (!isBrowser) {
+          return emptyRect;
+        }
+        if (isSVGGraphicsElement(target)) {
+          return getSVGContentRect(target);
+        }
+        return getHTMLElementContentRect(target);
+      }
+      function createReadOnlyRect(_a2) {
+        var x = _a2.x, y = _a2.y, width = _a2.width, height = _a2.height;
+        var Constr = typeof DOMRectReadOnly !== "undefined" ? DOMRectReadOnly : Object;
+        var rect = Object.create(Constr.prototype);
+        defineConfigurable(rect, {
+          x,
+          y,
+          width,
+          height,
+          top: y,
+          right: x + width,
+          bottom: height + y,
+          left: x
+        });
+        return rect;
+      }
+      function createRectInit(x, y, width, height) {
+        return { x, y, width, height };
+      }
+      var ResizeObservation = (
+(function() {
+          function ResizeObservation2(target) {
+            this.broadcastWidth = 0;
+            this.broadcastHeight = 0;
+            this.contentRect_ = createRectInit(0, 0, 0, 0);
+            this.target = target;
+          }
+          ResizeObservation2.prototype.isActive = function() {
+            var rect = getContentRect(this.target);
+            this.contentRect_ = rect;
+            return rect.width !== this.broadcastWidth || rect.height !== this.broadcastHeight;
+          };
+          ResizeObservation2.prototype.broadcastRect = function() {
+            var rect = this.contentRect_;
+            this.broadcastWidth = rect.width;
+            this.broadcastHeight = rect.height;
+            return rect;
+          };
+          return ResizeObservation2;
+        })()
+      );
+      var ResizeObserverEntry = (
+
+(function() {
+          function ResizeObserverEntry2(target, rectInit) {
+            var contentRect = createReadOnlyRect(rectInit);
+            defineConfigurable(this, { target, contentRect });
+          }
+          return ResizeObserverEntry2;
+        })()
+      );
+      var ResizeObserverSPI = (
+(function() {
+          function ResizeObserverSPI2(callback, controller, callbackCtx) {
+            this.activeObservations_ = [];
+            this.observations_ = new MapShim();
+            if (typeof callback !== "function") {
+              throw new TypeError("The callback provided as parameter 1 is not a function.");
+            }
+            this.callback_ = callback;
+            this.controller_ = controller;
+            this.callbackCtx_ = callbackCtx;
+          }
+          ResizeObserverSPI2.prototype.observe = function(target) {
+            if (!arguments.length) {
+              throw new TypeError("1 argument required, but only 0 present.");
+            }
+            if (typeof Element === "undefined" || !(Element instanceof Object)) {
+              return;
+            }
+            if (!(target instanceof getWindowOf(target).Element)) {
+              throw new TypeError('parameter 1 is not of type "Element".');
+            }
+            var observations = this.observations_;
+            if (observations.has(target)) {
+              return;
+            }
+            observations.set(target, new ResizeObservation(target));
+            this.controller_.addObserver(this);
+            this.controller_.refresh();
+          };
+          ResizeObserverSPI2.prototype.unobserve = function(target) {
+            if (!arguments.length) {
+              throw new TypeError("1 argument required, but only 0 present.");
+            }
+            if (typeof Element === "undefined" || !(Element instanceof Object)) {
+              return;
+            }
+            if (!(target instanceof getWindowOf(target).Element)) {
+              throw new TypeError('parameter 1 is not of type "Element".');
+            }
+            var observations = this.observations_;
+            if (!observations.has(target)) {
+              return;
+            }
+            observations.delete(target);
+            if (!observations.size) {
+              this.controller_.removeObserver(this);
+            }
+          };
+          ResizeObserverSPI2.prototype.disconnect = function() {
+            this.clearActive();
+            this.observations_.clear();
+            this.controller_.removeObserver(this);
+          };
+          ResizeObserverSPI2.prototype.gatherActive = function() {
+            var _this = this;
+            this.clearActive();
+            this.observations_.forEach(function(observation) {
+              if (observation.isActive()) {
+                _this.activeObservations_.push(observation);
+              }
+            });
+          };
+          ResizeObserverSPI2.prototype.broadcastActive = function() {
+            if (!this.hasActive()) {
+              return;
+            }
+            var ctx = this.callbackCtx_;
+            var entries = this.activeObservations_.map(function(observation) {
+              return new ResizeObserverEntry(observation.target, observation.broadcastRect());
+            });
+            this.callback_.call(ctx, entries, ctx);
+            this.clearActive();
+          };
+          ResizeObserverSPI2.prototype.clearActive = function() {
+            this.activeObservations_.splice(0);
+          };
+          ResizeObserverSPI2.prototype.hasActive = function() {
+            return this.activeObservations_.length > 0;
+          };
+          return ResizeObserverSPI2;
+        })()
+      );
+      var observers = typeof WeakMap !== "undefined" ? new WeakMap() : new MapShim();
+      var ResizeObserver = (
+
+(function() {
+          function ResizeObserver2(callback) {
+            if (!(this instanceof ResizeObserver2)) {
+              throw new TypeError("Cannot call a class as a function.");
+            }
+            if (!arguments.length) {
+              throw new TypeError("1 argument required, but only 0 present.");
+            }
+            var controller = ResizeObserverController.getInstance();
+            var observer = new ResizeObserverSPI(callback, controller, this);
+            observers.set(this, observer);
+          }
+          return ResizeObserver2;
+        })()
+      );
+      [
+        "observe",
+        "unobserve",
+        "disconnect"
+      ].forEach(function(method) {
+        ResizeObserver.prototype[method] = function() {
+          var _a2;
+          return (_a2 = observers.get(this))[method].apply(_a2, arguments);
+        };
+      });
+      var index = (function() {
+        if (typeof global$1.ResizeObserver !== "undefined") {
+          return global$1.ResizeObserver;
+        }
+        return ResizeObserver;
+      })();
+      var useEffectWithTarget = createEffectWithTarget(useLayoutEffect);
+      var useIsomorphicLayoutEffectWithTarget = isBrowser$1 ? useEffectWithTarget : useEffectWithTarget$1;
+      function useSize(target) {
+        var _a2 = __read(useRafState(function() {
+          var el = getTargetElement(target);
+          return el ? { width: el.clientWidth, height: el.clientHeight } : void 0;
+        }), 2), state = _a2[0], setState = _a2[1];
+        useIsomorphicLayoutEffectWithTarget(function() {
+          var el = getTargetElement(target);
+          if (!el) {
+            return;
+          }
+          var resizeObserver = new index(function(entries) {
+            entries.forEach(function(entry) {
+              var _a3 = entry.target, clientWidth = _a3.clientWidth, clientHeight = _a3.clientHeight;
+              setState({ width: clientWidth, height: clientHeight });
+            });
+          });
+          resizeObserver.observe(el);
+          return function() {
+            resizeObserver.disconnect();
+          };
+        }, [], target);
+        return state;
+      }
+      const isDev = false;
+      const defaultConfig = {
+download: {
+quality: QUALITY_LEVELS.无损,
+downloadLyric: false,
+embedLyricCover: true,
+embedSongInfo: true
+        },
+function: {
+enableQuickUpload: true,
+enableCloudMusicManager: true,
+enableLocalUpload: true,
+enablePlayList: true,
+enableSearch: true,
+enableCloudImport: true,
+enableGithubInfo: true,
+enableTestModal: isDev,
+enableFunctionSwitchTab: true,
+enableDownloadSetting: isDev
+        }
+      };
+      const useConfig = () => {
+        const [downloadConfig, setDownloadConfig] = useLocalStorageState(
+          "downloadConfig",
+          {
+            defaultValue: defaultConfig.download,
+            listenStorageChange: true
+          }
+        );
+        const [functionConfig, setFunctionConfig] = useLocalStorageState(
+          "functionConfig",
+          {
+            defaultValue: defaultConfig.function,
+            listenStorageChange: true
+          }
+        );
+        useEffect(() => {
+          setFunctionConfig({
+            ...defaultConfig.function,
+            ...functionConfig
+          });
+          setDownloadConfig({
+            ...defaultConfig.download,
+            ...downloadConfig
+          });
+        }, []);
+        return {
+          downloadConfig,
+          setDownloadConfig,
+          functionConfig,
+          setFunctionConfig
+        };
+      };
+      function useFilter(list, config) {
+        const [filteredList, setFilteredList] = useState(list);
+        useEffect(() => {
+          setFilteredList(list);
+        }, [list]);
+        const handleFilter = (values) => {
+          const filtered = list.filter((item) => {
+            return Object.entries(config.fields).every(([field, fieldConfig]) => {
+              const filterValue = values[field];
+              if (!filterValue?.length) return true;
+              const itemValue = fieldConfig.getValue(item);
+              if (!itemValue) return false;
+              return filterValue.some(
+                (keyword) => itemValue.toLowerCase().includes(keyword.toLowerCase())
+              );
+            });
+          });
+          setFilteredList(filtered);
+        };
+        return { filteredList, setFilteredList, handleFilter };
+      }
+      const getAlbumSongList = (id) => weapiRequest(`/api/v1/album/${id}`, {
+        data: {}
+      });
+      const getAlbumDetail = async (id) => {
+        return weapiRequest(`/api/album/${id}`, {
+          data: {
+            id
+          }
+        });
+      };
+      const getArtists = () => fetch(`${BASE_CDN_URL}artist.json`).then((res) => res.json());
+      const getArtistTopSongList = (id) => weapiRequest("/api/artist/top/song", {
+        data: {
+          id,
+          limit: 1e3,
+          offset: 0
+        }
+      });
+      const getArtistAllSongList = async (id) => {
+        try {
+          let more = true;
+          const songs2 = [];
+          let offset = 0;
+          while (more) {
+            const res = await weapiRequest("/api/v1/artist/songs", {
+              data: {
+                id,
+                limit: 200,
+                private_cloud: "true",
+                work_type: 1,
+                order: "hot",
+offset
+              }
+            });
+            if (res.code != 200) {
+              throw new Error(res.message || res.msg || "获取歌手全部歌曲失败");
+            }
+            songs2.push(...res.songs);
+            more = res.more;
+            offset += 200;
+          }
+          return {
+            code: 200,
+            msg: "获取歌手全部歌曲成功",
+            songs: songs2
+          };
+        } catch (error) {
+          console.log("error", error);
+          throw error;
+        }
+      };
+      const getArtistAlbumList = async (id) => {
+        let more = true;
+        let limit = 200;
+        let offset = 0;
+        const albumList = [];
+        while (more) {
+          const res = await weapiRequest(`/api/artist/albums/${id}`, {
+            data: {
+              id,
+              limit,
+              offset
+            }
+          });
+          if (res.code != 200) {
+            throw new Error(res.message || res.msg || "获取歌手专辑失败");
+          }
+          albumList.push(...res.hotAlbums);
+          more = res.more;
+          offset += limit;
+        }
+        return {
+          code: 200,
+          msg: "获取歌手专辑成功",
+          data: albumList
+        };
+      };
+      const getCDNConfig = (artistId) => fetch(`${BASE_CDN_URL}${artistId}.json`).then((res) => res.json());
+      const urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
+      let nanoid = (size2 = 21) => {
+        let id = "";
+        let bytes = crypto.getRandomValues(new Uint8Array(size2 |= 0));
+        while (size2--) {
+          id += urlAlphabet[bytes[size2] & 63];
+        }
+        return id;
+      };
+      message.config({
+        top: 100
+      });
+      const msgSuccess$1 = (content) => {
+        message.success(content);
+      };
+      const msgWarning = (content) => {
+        message.warning(content);
+      };
+      const msgError = (content) => {
+        message.error(content);
+      };
+      const msgLoading = (loadingContent, completeCallBack) => {
+        const key = nanoid();
+        message.loading({
+          key,
+          content: loadingContent
+        }).then(() => {
+        });
+        return () => message.destroy(key);
+      };
+      const confirm = (content, title2, otherOptions = {}) => {
+        return new Promise((resolve, reject) => {
+          Modal.confirm({
+            centered: true,
+            content,
+            icon: null,
+            closable: true,
+            title: title2 || "提示",
+            width: 398,
+            okButtonProps: {
+              shape: "round",
+              type: "primary"
+            },
+            cancelButtonProps: {
+              shape: "round",
+              type: "default"
+            },
+            okText: "确定",
+            cancelText: "取消",
+            onCancel: () => {
+              reject(false);
+            },
+            onOk: () => {
+              resolve(true);
+            },
+            ...otherOptions
+          });
+        });
+      };
+      const getSongInfoList = async (songIds) => {
+        const chunkArr = chunkArray(songIds, 1e3);
+        const proArr = chunkArr.map(async (chunk) => {
+          const res = await weapiRequest("/api/v3/song/detail", {
+            data: {
+              c: JSON.stringify(chunk.map((item) => ({ id: item })))
+            }
+          });
+          console.log("res", res);
+          if (res.code === 200) {
+            return res;
+          }
+          throw new Error(res.message || res.msg || "获取歌曲信息失败");
+        });
+        const allInfo = await Promise.all(proArr);
+        return {
+          code: 200,
+          privileges: allInfo.map((item) => item.privileges).flat(),
+          songs: allInfo.map((item) => item.songs).flat()
+        };
+      };
+      const getSongUrl$1 = (ids, options) => {
+        const { encodeType = "flac", level = QUALITY_LEVELS.无损 } = options || {};
+        return weapiRequest("/api/song/enhance/player/url/v1", {
+          data: { ids: JSON.stringify(ids), level, encodeType }
+        });
+      };
+      const getSongLyric = async (id) => {
+        return weapiRequest("/api/song/lyric", {
+          data: {
+            id,
+            tv: -1,
+            lv: -1,
+            rv: -1,
+            kv: -1,
+            _nmclfl: 1
+          }
+        });
+      };
+      const getSongDynamicCover = async (songId) => {
+        return weapiRequest("/api/songplay/dynamic-cover", {
+          data: {
+            songId
+          }
+        });
+      };
       const getQualityTags = (song) => {
         const tags = [];
         if (song.hr)
@@ -7612,6 +8477,11 @@ offset
         if (song.h)
           tags.push({ label: "HQ", color: "#2db7f5", value: QUALITY_LEVELS.较高 });
         return tags;
+      };
+      const getDownloadQuality = (song, level = QUALITY_LEVELS.无损) => {
+        const tags = getQualityTags(song);
+        const tag2 = tags.find((tag3) => tag3.value === level);
+        return tag2 ? tag2.value : tags[0]?.value;
       };
       const formatDuration = (ms2) => {
         const time = dayjs.duration(ms2);
@@ -10313,6 +11183,118 @@ op: "add"
           throw error;
         }
       };
+      const downloadJsonFile = (data, filename) => {
+        const blob = new Blob([JSON.stringify(data, null, 2)], {
+          type: "application/json"
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.click();
+        URL.revokeObjectURL(url);
+      };
+      const downloadFile = async (url, filename) => {
+        try {
+          if (!url || !filename) {
+            throw new Error("URL和文件名不能为空");
+          }
+          const link = document.createElement("a");
+          link.href = url.replace("http://", "https://");
+          link.download = filename;
+          link.style.display = "none";
+          link.style.position = "absolute";
+          link.style.left = "-9999px";
+          const handleClick = (e2) => {
+            e2.stopPropagation();
+          };
+          link.addEventListener("click", handleClick, true);
+          link.click();
+          setTimeout(() => {
+            link.removeEventListener("click", handleClick);
+          }, 100);
+        } catch (error) {
+          console.error("文件下载出错:", error);
+          throw error;
+        }
+      };
+      const getFileBlob = async (url) => {
+        const response = await fetch(url, {
+          redirect: "follow"
+        });
+        if (!response.ok) {
+          throw new Error(`获取文件失败: ${response.status} ${response.statusText}`);
+        }
+        const blob = await response.blob();
+        return { blob, response };
+      };
+      const downloadAsJson = (data, filename, options = {}) => {
+        try {
+          const { space = 2, timestamp = false } = options;
+          const jsonString = JSON.stringify(data, null, space);
+          const blob = new Blob([jsonString], { type: "application/json" });
+          const blobUrl = window.URL.createObjectURL(blob);
+          let finalFilename = filename;
+          if (timestamp) {
+            const date = new Date();
+            const timeString = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(
+        date.getDate()
+      ).padStart(2, "0")}_${String(date.getHours()).padStart(2, "0")}${String(
+        date.getMinutes()
+      ).padStart(2, "0")}${String(date.getSeconds()).padStart(2, "0")}`;
+            finalFilename = `${filename}_${timeString}`;
+          }
+          downloadFile(blobUrl, `${finalFilename}.json`);
+          window.URL.revokeObjectURL(blobUrl);
+          return true;
+        } catch (error) {
+          console.error("JSON数据下载失败:", error);
+          return false;
+        }
+      };
+      const downloadAsLRC = (lrcContent, filename, options = {}) => {
+        try {
+          const { timestamp = false } = options;
+          let finalFilename = filename;
+          if (timestamp) {
+            const now = new Date();
+            const ts = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(
+        now.getDate()
+      ).padStart(2, "0")}_${String(now.getHours()).padStart(2, "0")}${String(
+        now.getMinutes()
+      ).padStart(2, "0")}${String(now.getSeconds()).padStart(2, "0")}`;
+            finalFilename = `${filename}_${ts}`;
+          }
+          const blob = new Blob([lrcContent], { type: "text/plain" });
+          const blobUrl = window.URL.createObjectURL(blob);
+          downloadFile(blobUrl, `${finalFilename}.lrc`);
+          window.URL.revokeObjectURL(blobUrl);
+          return true;
+        } catch (error) {
+          console.error("LRC歌词下载失败:", error);
+          return false;
+        }
+      };
+      const downloadFileWithBlob = (file, name2) => {
+        const blobUrl = window.URL.createObjectURL(file);
+        const a = document.createElement("a");
+        a.href = blobUrl;
+        a.download = name2;
+        a.style.display = "none";
+        a.style.position = "absolute";
+        a.style.left = "-9999px";
+        const handleClick = (e2) => {
+          e2.stopPropagation();
+        };
+        a.addEventListener("click", handleClick, true);
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          a.removeEventListener("click", handleClick);
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(blobUrl);
+        }, 100);
+      };
       function stringToBytes(str, encoding = "utf8") {
         if (encoding === "utf8") {
           const utf8 = unescape(encodeURIComponent(str));
@@ -11127,128 +12109,21 @@ saveAsBuffer() {
           return file;
         }
       };
-      const downloadJsonFile = (data, filename) => {
-        const blob = new Blob([JSON.stringify(data, null, 2)], {
-          type: "application/json"
-        });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = filename;
-        link.click();
-        URL.revokeObjectURL(url);
-      };
-      const downloadFile = async (url, filename) => {
-        try {
-          if (!url || !filename) {
-            throw new Error("URL和文件名不能为空");
-          }
-          const link = document.createElement("a");
-          link.href = url.replace("http://", "https://");
-          link.download = filename;
-          link.style.display = "none";
-          link.style.position = "absolute";
-          link.style.left = "-9999px";
-          const handleClick = (e2) => {
-            e2.stopPropagation();
-          };
-          link.addEventListener("click", handleClick, true);
-          link.click();
-          setTimeout(() => {
-            link.removeEventListener("click", handleClick);
-          }, 100);
-        } catch (error) {
-          console.error("文件下载出错:", error);
-          throw error;
-        }
-      };
-      const getFileBlob = async (url) => {
-        const response = await fetch(url, {
-          redirect: "follow"
-        });
-        if (!response.ok) {
-          throw new Error(`获取文件失败: ${response.status} ${response.statusText}`);
-        }
-        const blob = await response.blob();
-        return { blob, response };
-      };
-      const downloadAsJson = (data, filename, options = {}) => {
-        try {
-          const { space = 2, timestamp = false } = options;
-          const jsonString = JSON.stringify(data, null, space);
-          const blob = new Blob([jsonString], { type: "application/json" });
-          const blobUrl = window.URL.createObjectURL(blob);
-          let finalFilename = filename;
-          if (timestamp) {
-            const date = new Date();
-            const timeString = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(
-        date.getDate()
-      ).padStart(2, "0")}_${String(date.getHours()).padStart(2, "0")}${String(
-        date.getMinutes()
-      ).padStart(2, "0")}${String(date.getSeconds()).padStart(2, "0")}`;
-            finalFilename = `${filename}_${timeString}`;
-          }
-          downloadFile(blobUrl, `${finalFilename}.json`);
-          window.URL.revokeObjectURL(blobUrl);
-          return true;
-        } catch (error) {
-          console.error("JSON数据下载失败:", error);
-          return false;
-        }
-      };
-      const downloadAsLRC = (lrcContent, filename, options = {}) => {
-        try {
-          const { timestamp = false } = options;
-          let finalFilename = filename;
-          if (timestamp) {
-            const now = new Date();
-            const ts = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(
-        now.getDate()
-      ).padStart(2, "0")}_${String(now.getHours()).padStart(2, "0")}${String(
-        now.getMinutes()
-      ).padStart(2, "0")}${String(now.getSeconds()).padStart(2, "0")}`;
-            finalFilename = `${filename}_${ts}`;
-          }
-          const blob = new Blob([lrcContent], { type: "text/plain" });
-          const blobUrl = window.URL.createObjectURL(blob);
-          downloadFile(blobUrl, `${finalFilename}.lrc`);
-          window.URL.revokeObjectURL(blobUrl);
-          return true;
-        } catch (error) {
-          console.error("LRC歌词下载失败:", error);
-          return false;
-        }
-      };
-      const downloadFileWithBlob = (file, name2) => {
-        const blobUrl = window.URL.createObjectURL(file);
-        const a = document.createElement("a");
-        a.href = blobUrl;
-        a.download = name2;
-        a.style.display = "none";
-        a.style.position = "absolute";
-        a.style.left = "-9999px";
-        const handleClick = (e2) => {
-          e2.stopPropagation();
-        };
-        a.addEventListener("click", handleClick, true);
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(() => {
-          a.removeEventListener("click", handleClick);
-          document.body.removeChild(a);
-          window.URL.revokeObjectURL(blobUrl);
-        }, 100);
-      };
       const audio = new Audio();
       const usePlayMusic = () => {
-        const [currentMid, setCurrentMid] = useState$1("");
-        const [isPlaying, setIsPlaying] = useState$1();
-        const [downloading, setDownloading] = useState$1(false);
-        const [currentTime, setCurrentTime] = useState$1(0);
-        const [duration2, setDuration] = useState$1(0);
+        const { downloadConfig } = useConfig();
+        const {
+          quality: DEFAULT_QUALITY,
+          downloadLyric,
+          embedLyricCover,
+          embedSongInfo
+        } = downloadConfig;
+        const [currentMid, setCurrentMid] = useState("");
+        const [isPlaying, setIsPlaying] = useState();
+        const [downloading, setDownloading] = useState(false);
         const urlMap = useRef({});
-        const [songInfoMap, setSongInfoMap] = useState$1({});
-        const getUrl = async (id, level = QUALITY_LEVELS.无损) => {
+        const [songInfoMap, setSongInfoMap] = useState({});
+        const getUrl = async (id, level = DEFAULT_QUALITY) => {
           const key = `${id}-${level}`;
           console.log("获取歌曲url的key", key);
           if (urlMap.current[key]) {
@@ -11263,6 +12138,20 @@ saveAsBuffer() {
           urlMap.current[key] = res.data[0].url;
           return res.data[0].url;
         };
+        const getUrls = async (ids, level = DEFAULT_QUALITY) => {
+          if (!Array.isArray(ids)) {
+            throw new Error("ids must be an array");
+          }
+          const noUrlIds = ids.filter((id) => !urlMap.current[id]);
+          const urls = await Promise.all(
+            noUrlIds.map(async (id) => {
+              const url = await getUrl(id, { level });
+              return url;
+            })
+          );
+          console.log("urls", urls);
+          return ids.map((id) => urlMap.current[`${id}-${level}`]);
+        };
         const getSongInfo = async (id) => {
           if (songInfoMap[id]) return songInfoMap[id];
           const res = await getSongInfoList([id]);
@@ -11273,7 +12162,20 @@ saveAsBuffer() {
           setSongInfoMap((prv) => ({ ...prv, [id]: res.songs?.[0] }));
           return res.songs?.[0];
         };
-        const play = async (id, level) => {
+        const getSongInfos = async (ids) => {
+          const noInfoIds = ids.filter((id) => !songInfoMap[id]);
+          const res = await getSongInfoList(noInfoIds);
+          if (res.code !== 200) {
+            msgError(res.message || res.msg || "获取歌曲信息失败");
+            throw new Error(res.message || res.msg || "获取歌曲信息失败");
+          }
+          setSongInfoMap((prv) => ({
+            ...prv,
+            ...Object.fromEntries(res.songs.map((info2) => [info2.id, info2]))
+          }));
+          return res.songs;
+        };
+        const play = async (id, level = DEFAULT_QUALITY) => {
           try {
             if (currentMid === id) {
               audio.play();
@@ -11294,7 +12196,7 @@ saveAsBuffer() {
             console.log("error", error);
           }
         };
-        const playPlayList = async (ids, level) => {
+        const playPlayList = async (ids, level = DEFAULT_QUALITY) => {
           for (const id of ids) {
             await play(id, level);
           }
@@ -11308,19 +12210,9 @@ saveAsBuffer() {
           console.log("歌词res", res.lrc?.lyric);
           return res.lrc?.lyric;
         };
-        const download = async (id, name2, level = QUALITY_LEVELS.无损) => {
+        const download = async (id, name2, level = DEFAULT_QUALITY) => {
           try {
             setDownloading(id);
-            const url = await getUrl(id, level);
-            console.log(`当前下载歌曲${name2},音质为${level},链接为${url}`);
-            const finalExt = url.split("?")[0].split(".").pop();
-            const { blob, response } = await getFileBlob(
-              url.replace("http://", "https://")
-            );
-            console.log("blob", blob);
-            const fileName = `${name2}.${finalExt}`;
-            let outputFile = blob;
-            const lyric = await getLyric(id);
             const songInfo2 = await getSongInfo(id);
             console.log("songInfo", songInfo2);
             const albumId = songInfo2?.al?.id;
@@ -11333,12 +12225,23 @@ saveAsBuffer() {
               { tag: "album", value: album2 }
             ];
             console.log("tags", tags);
+            const downloadLevel = getDownloadQuality(songInfo2, level);
+            const url = await getUrl(id, downloadLevel);
+            console.log(`当前下载歌曲${name2},音质为${level},链接为${url}`);
+            const finalExt = url.split("?")[0].split(".").pop();
+            const { blob } = await getFileBlob(url.replace("http://", "https://"));
+            const fileName = `${name2}.${finalExt}`;
+            let outputFile = blob;
+            const lyric = await getLyric(id);
+            if (downloadLyric) {
+              downloadAsLRC(lyric, name2);
+            }
             let coverBlob;
             if (albumId) {
               const albumRes = await getAlbumDetail(albumId);
               if (albumRes.code === 200) {
                 const albumCover = albumRes.album.blurPicUrl + "?param=600y600";
-                const { blob: blob2, response: response2 } = await getFileBlob(
+                const { blob: blob2 } = await getFileBlob(
                   albumCover.replace("http://", "https://")
                 );
                 coverBlob = blob2;
@@ -11346,19 +12249,22 @@ saveAsBuffer() {
             }
             switch (finalExt) {
               case "flac":
-                outputFile = await writeFlacTags(outputFile, tags);
-                outputFile = await writeFlacTagAndPicture(
-                  outputFile,
-                  "lyrics",
-                  lyric,
-                  coverBlob
-                );
+                if (embedSongInfo) {
+                  outputFile = await writeFlacTags(outputFile, tags);
+                }
+                if (embedLyricCover) {
+                  outputFile = await writeFlacTagAndPicture(
+                    outputFile,
+                    "lyrics",
+                    lyric,
+                    coverBlob
+                  );
+                }
                 break;
 default:
-                console.log("当前格式不支持");
+                console.log("当前格式不支持内嵌信息");
                 break;
             }
-            downloadAsLRC(lyric, name2);
             downloadFileWithBlob(outputFile, fileName);
           } catch (error) {
             console.log("error", error);
@@ -11373,21 +12279,22 @@ default:
         return {
           currentMid,
           isPlaying,
-          currentTime,
-          duration: duration2,
+          downloading,
           getUrl,
+          getUrls,
+          getSongInfo,
+          getSongInfos,
           getLyric,
           play,
           pause,
           playPlayList,
-          download,
-          downloading
+          download
         };
       };
       const useGetAlbumDetail = () => {
-        const [currentId, setCurrentId] = useState$1("");
-        const [albumInfo, setAlbumInfo] = useState$1(null);
-        const [isLoading, setIsLoading] = useState$1(false);
+        const [albumInfo, setAlbumInfo] = useState(null);
+        const [albumSongList, setAlbumSongList] = useState([]);
+        const [isLoading, setIsLoading] = useState(false);
         const albumInfoMap = useRef({});
         const { play, getUrl, download, getLyric } = usePlayMusic();
         const getAlbumDetailData = async (id) => {
@@ -11397,7 +12304,6 @@ default:
             if (albumInfoMap.current[idStr]) {
               const cached = albumInfoMap.current[idStr];
               setAlbumInfo(cached);
-              setCurrentId(idStr);
               return cached;
             }
             const res = await getAlbumDetail(id);
@@ -11405,7 +12311,6 @@ default:
             if (res.code === 200 && res.album) {
               albumInfoMap.current[idStr] = res.album;
               setAlbumInfo(res.album);
-              setCurrentId(idStr);
               return res.album;
             } else {
               throw new Error(res.message || res.msg || "获取专辑详情失败");
@@ -11423,6 +12328,7 @@ default:
             const res = await getAlbumSongList(id);
             console.log("专辑歌曲列表 res", res);
             if (res.code === 200 && res.songs) {
+              setAlbumSongList(res.songs);
               return res.songs;
             } else {
               throw new Error(res.message || res.msg || "获取专辑歌曲列表失败");
@@ -11434,16 +12340,6 @@ default:
             setIsLoading(false);
           }
         };
-        const getHighestQuality = (song) => {
-          const tags = getQualityTags(song);
-          if (tags.length === 0) {
-            return QUALITY_LEVELS.标准;
-          }
-          if (song.hr) return QUALITY_LEVELS["Hi-Res"];
-          if (song.sq) return QUALITY_LEVELS.无损;
-          if (song.h) return QUALITY_LEVELS.较高;
-          return tags[0].value;
-        };
         const getAlbumSongUrl = async (id) => {
           try {
             const songList2 = await getAlbumSongListData(id);
@@ -11451,7 +12347,7 @@ default:
               return [];
             }
             const ids = songList2.map((song) => {
-              const quality = getHighestQuality(song);
+              const quality = getDownloadQuality(song);
               return {
                 id: song.id,
                 name: song.name,
@@ -11533,7 +12429,7 @@ default:
               throw new Error("专辑中没有歌曲");
             }
             for (const song of songList2) {
-              const quality = getHighestQuality(song);
+              const quality = getDownloadQuality(song);
               console.log("当前正在播放", song.name);
               await play(song.id, quality);
             }
@@ -11560,8 +12456,8 @@ returnFunction,
 initialValue = {},
 callback
         } = options || {};
-        const [data, setData] = useState$1(initialValue);
-        const [loading, setLoading] = useState$1(false);
+        const [data, setData] = useState(initialValue);
+        const [loading, setLoading] = useState(false);
         const getData = async () => {
           try {
             setLoading(true);
@@ -11585,7 +12481,7 @@ loading,
 getData
         };
       };
-      function useGetSingerInfo(singerId) {
+      function useGetSingerInfo({ singerId }) {
         const [singerInfo, setSingerInfo] = useState({});
         const [albumList, setAlbumList] = useState([]);
         const [hotSongList, setHotSongList] = useState([]);
@@ -11597,8 +12493,8 @@ hotSongList
         };
       }
       const useGetSingerList = () => {
-        const [singerList, setSingerList] = useState$1([]);
-        const [loading, setLoading] = useState$1(false);
+        const [singerList, setSingerList] = useState([]);
+        const [loading, setLoading] = useState(false);
         const getSingerList = async () => {
           try {
             setLoading(true);
@@ -11629,8 +12525,8 @@ hotSongList
 singerIds
         } = options || {};
         useGetSingerList();
-        const [singerMap, setSingerMap] = useState$1({});
-        const [loading, setLoading] = useState$1(false);
+        const [singerMap, setSingerMap] = useState({});
+        const [loading, setLoading] = useState(false);
         const getSingerInfoById = async (singerId) => {
           try {
             if (singerMap[singerId]?.singerInfo)
@@ -17167,9 +18063,9 @@ isIndex(key, length)))) {
       }
       var lodashExports = requireLodash();
       const useGetSongListDetail = () => {
-        const [loading, setLoading] = useState$1(false);
-        const [songList2, setSongList] = useState$1([]);
-        const [downloading, setDownloading] = useState$1(false);
+        const [loading, setLoading] = useState(false);
+        const [songList2, setSongList] = useState([]);
+        const [downloading, setDownloading] = useState(false);
         const { download, getUrl, getLyric } = usePlayMusic();
         const getSongListData = async (playlistId) => {
           if (!playlistId) return;
@@ -17256,8 +18152,8 @@ isIndex(key, length)))) {
         const {
 keywords
         } = options || {};
-        const [singerList, setSingerList] = useState$1([]);
-        const [loading, setLoading] = useState$1(false);
+        const [singerList, setSingerList] = useState([]);
+        const [loading, setLoading] = useState(false);
         const searchSingerList = async (keywords2) => {
           try {
             setLoading(true);
@@ -17301,7 +18197,7 @@ keywords
           resetOnOpen = true,
           resetOnClose = false
         } = props;
-        const [visible, setVisible] = useState$1(false);
+        const [visible, setVisible] = useState(false);
         const resolve = useRef();
         const reject = useRef();
         const open = (value2) => {
@@ -17488,631 +18384,6 @@ var hasRequiredClassnames;
       }
       var classnamesExports = requireClassnames();
       const classNames = getDefaultExportFromCjs(classnamesExports);
-      function __read(o, n) {
-        var m = typeof Symbol === "function" && o[Symbol.iterator];
-        if (!m) return o;
-        var i = m.call(o), r, ar = [], e2;
-        try {
-          while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-        } catch (error) {
-          e2 = { error };
-        } finally {
-          try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-          } finally {
-            if (e2) throw e2.error;
-          }
-        }
-        return ar;
-      }
-      typeof SuppressedError === "function" ? SuppressedError : function(error, suppressed, message2) {
-        var e2 = new Error(message2);
-        return e2.name = "SuppressedError", e2.error = error, e2.suppressed = suppressed, e2;
-      };
-      var isFunction = function(value2) {
-        return typeof value2 === "function";
-      };
-      function depsAreSame(oldDeps, deps) {
-        if (oldDeps === deps) {
-          return true;
-        }
-        for (var i = 0; i < oldDeps.length; i++) {
-          if (!Object.is(oldDeps[i], deps[i])) {
-            return false;
-          }
-        }
-        return true;
-      }
-      function useLatest(value2) {
-        var ref = useRef(value2);
-        ref.current = value2;
-        return ref;
-      }
-      var useUnmount = function(fn) {
-        var fnRef = useLatest(fn);
-        useEffect(function() {
-          return function() {
-            fnRef.current();
-          };
-        }, []);
-      };
-      var isBrowser$1 = !!(typeof window !== "undefined" && window.document && window.document.createElement);
-      function getTargetElement(target, defaultElement) {
-        if (!isBrowser$1) {
-          return void 0;
-        }
-        if (!target) {
-          return defaultElement;
-        }
-        var targetElement;
-        if (isFunction(target)) {
-          targetElement = target();
-        } else if ("current" in target) {
-          targetElement = target.current;
-        } else {
-          targetElement = target;
-        }
-        return targetElement;
-      }
-      var createEffectWithTarget = function(useEffectType) {
-        var useEffectWithTarget2 = function(effect, deps, target) {
-          var hasInitRef = useRef(false);
-          var lastElementRef = useRef([]);
-          var lastDepsRef = useRef([]);
-          var unLoadRef = useRef(void 0);
-          useEffectType(function() {
-            var _a2;
-            var targets = Array.isArray(target) ? target : [target];
-            var els = targets.map(function(item) {
-              return getTargetElement(item);
-            });
-            if (!hasInitRef.current) {
-              hasInitRef.current = true;
-              lastElementRef.current = els;
-              lastDepsRef.current = deps;
-              unLoadRef.current = effect();
-              return;
-            }
-            if (els.length !== lastElementRef.current.length || !depsAreSame(lastElementRef.current, els) || !depsAreSame(lastDepsRef.current, deps)) {
-              (_a2 = unLoadRef.current) === null || _a2 === void 0 ? void 0 : _a2.call(unLoadRef);
-              lastElementRef.current = els;
-              lastDepsRef.current = deps;
-              unLoadRef.current = effect();
-            }
-          });
-          useUnmount(function() {
-            var _a2;
-            (_a2 = unLoadRef.current) === null || _a2 === void 0 ? void 0 : _a2.call(unLoadRef);
-            hasInitRef.current = false;
-          });
-        };
-        return useEffectWithTarget2;
-      };
-      var useEffectWithTarget$1 = createEffectWithTarget(useEffect);
-      function useRafState(initialState) {
-        var ref = useRef(0);
-        var _a2 = __read(useState$1(initialState), 2), state = _a2[0], setState = _a2[1];
-        var setRafState = useCallback(function(value2) {
-          cancelAnimationFrame(ref.current);
-          ref.current = requestAnimationFrame(function() {
-            setState(value2);
-          });
-        }, []);
-        useUnmount(function() {
-          cancelAnimationFrame(ref.current);
-        });
-        return [state, setRafState];
-      }
-      var MapShim = (function() {
-        if (typeof Map !== "undefined") {
-          return Map;
-        }
-        function getIndex(arr, key) {
-          var result = -1;
-          arr.some(function(entry, index2) {
-            if (entry[0] === key) {
-              result = index2;
-              return true;
-            }
-            return false;
-          });
-          return result;
-        }
-        return (
-(function() {
-            function class_1() {
-              this.__entries__ = [];
-            }
-            Object.defineProperty(class_1.prototype, "size", {
-get: function() {
-                return this.__entries__.length;
-              },
-              enumerable: true,
-              configurable: true
-            });
-            class_1.prototype.get = function(key) {
-              var index2 = getIndex(this.__entries__, key);
-              var entry = this.__entries__[index2];
-              return entry && entry[1];
-            };
-            class_1.prototype.set = function(key, value2) {
-              var index2 = getIndex(this.__entries__, key);
-              if (~index2) {
-                this.__entries__[index2][1] = value2;
-              } else {
-                this.__entries__.push([key, value2]);
-              }
-            };
-            class_1.prototype.delete = function(key) {
-              var entries = this.__entries__;
-              var index2 = getIndex(entries, key);
-              if (~index2) {
-                entries.splice(index2, 1);
-              }
-            };
-            class_1.prototype.has = function(key) {
-              return !!~getIndex(this.__entries__, key);
-            };
-            class_1.prototype.clear = function() {
-              this.__entries__.splice(0);
-            };
-            class_1.prototype.forEach = function(callback, ctx) {
-              if (ctx === void 0) {
-                ctx = null;
-              }
-              for (var _i = 0, _a2 = this.__entries__; _i < _a2.length; _i++) {
-                var entry = _a2[_i];
-                callback.call(ctx, entry[1], entry[0]);
-              }
-            };
-            return class_1;
-          })()
-        );
-      })();
-      var isBrowser = typeof window !== "undefined" && typeof document !== "undefined" && window.document === document;
-      var global$1 = (function() {
-        if (typeof global !== "undefined" && global.Math === Math) {
-          return global;
-        }
-        if (typeof self !== "undefined" && self.Math === Math) {
-          return self;
-        }
-        if (typeof window !== "undefined" && window.Math === Math) {
-          return window;
-        }
-        return Function("return this")();
-      })();
-      var requestAnimationFrame$1 = (function() {
-        if (typeof requestAnimationFrame === "function") {
-          return requestAnimationFrame.bind(global$1);
-        }
-        return function(callback) {
-          return setTimeout(function() {
-            return callback(Date.now());
-          }, 1e3 / 60);
-        };
-      })();
-      var trailingTimeout = 2;
-      function throttle(callback, delay) {
-        var leadingCall = false, trailingCall = false, lastCallTime = 0;
-        function resolvePending() {
-          if (leadingCall) {
-            leadingCall = false;
-            callback();
-          }
-          if (trailingCall) {
-            proxy();
-          }
-        }
-        function timeoutCallback() {
-          requestAnimationFrame$1(resolvePending);
-        }
-        function proxy() {
-          var timeStamp = Date.now();
-          if (leadingCall) {
-            if (timeStamp - lastCallTime < trailingTimeout) {
-              return;
-            }
-            trailingCall = true;
-          } else {
-            leadingCall = true;
-            trailingCall = false;
-            setTimeout(timeoutCallback, delay);
-          }
-          lastCallTime = timeStamp;
-        }
-        return proxy;
-      }
-      var REFRESH_DELAY = 20;
-      var transitionKeys = ["top", "right", "bottom", "left", "width", "height", "size", "weight"];
-      var mutationObserverSupported = typeof MutationObserver !== "undefined";
-      var ResizeObserverController = (
-(function() {
-          function ResizeObserverController2() {
-            this.connected_ = false;
-            this.mutationEventsAdded_ = false;
-            this.mutationsObserver_ = null;
-            this.observers_ = [];
-            this.onTransitionEnd_ = this.onTransitionEnd_.bind(this);
-            this.refresh = throttle(this.refresh.bind(this), REFRESH_DELAY);
-          }
-          ResizeObserverController2.prototype.addObserver = function(observer) {
-            if (!~this.observers_.indexOf(observer)) {
-              this.observers_.push(observer);
-            }
-            if (!this.connected_) {
-              this.connect_();
-            }
-          };
-          ResizeObserverController2.prototype.removeObserver = function(observer) {
-            var observers2 = this.observers_;
-            var index2 = observers2.indexOf(observer);
-            if (~index2) {
-              observers2.splice(index2, 1);
-            }
-            if (!observers2.length && this.connected_) {
-              this.disconnect_();
-            }
-          };
-          ResizeObserverController2.prototype.refresh = function() {
-            var changesDetected = this.updateObservers_();
-            if (changesDetected) {
-              this.refresh();
-            }
-          };
-          ResizeObserverController2.prototype.updateObservers_ = function() {
-            var activeObservers = this.observers_.filter(function(observer) {
-              return observer.gatherActive(), observer.hasActive();
-            });
-            activeObservers.forEach(function(observer) {
-              return observer.broadcastActive();
-            });
-            return activeObservers.length > 0;
-          };
-          ResizeObserverController2.prototype.connect_ = function() {
-            if (!isBrowser || this.connected_) {
-              return;
-            }
-            document.addEventListener("transitionend", this.onTransitionEnd_);
-            window.addEventListener("resize", this.refresh);
-            if (mutationObserverSupported) {
-              this.mutationsObserver_ = new MutationObserver(this.refresh);
-              this.mutationsObserver_.observe(document, {
-                attributes: true,
-                childList: true,
-                characterData: true,
-                subtree: true
-              });
-            } else {
-              document.addEventListener("DOMSubtreeModified", this.refresh);
-              this.mutationEventsAdded_ = true;
-            }
-            this.connected_ = true;
-          };
-          ResizeObserverController2.prototype.disconnect_ = function() {
-            if (!isBrowser || !this.connected_) {
-              return;
-            }
-            document.removeEventListener("transitionend", this.onTransitionEnd_);
-            window.removeEventListener("resize", this.refresh);
-            if (this.mutationsObserver_) {
-              this.mutationsObserver_.disconnect();
-            }
-            if (this.mutationEventsAdded_) {
-              document.removeEventListener("DOMSubtreeModified", this.refresh);
-            }
-            this.mutationsObserver_ = null;
-            this.mutationEventsAdded_ = false;
-            this.connected_ = false;
-          };
-          ResizeObserverController2.prototype.onTransitionEnd_ = function(_a2) {
-            var _b2 = _a2.propertyName, propertyName = _b2 === void 0 ? "" : _b2;
-            var isReflowProperty = transitionKeys.some(function(key) {
-              return !!~propertyName.indexOf(key);
-            });
-            if (isReflowProperty) {
-              this.refresh();
-            }
-          };
-          ResizeObserverController2.getInstance = function() {
-            if (!this.instance_) {
-              this.instance_ = new ResizeObserverController2();
-            }
-            return this.instance_;
-          };
-          ResizeObserverController2.instance_ = null;
-          return ResizeObserverController2;
-        })()
-      );
-      var defineConfigurable = (function(target, props) {
-        for (var _i = 0, _a2 = Object.keys(props); _i < _a2.length; _i++) {
-          var key = _a2[_i];
-          Object.defineProperty(target, key, {
-            value: props[key],
-            enumerable: false,
-            writable: false,
-            configurable: true
-          });
-        }
-        return target;
-      });
-      var getWindowOf = (function(target) {
-        var ownerGlobal = target && target.ownerDocument && target.ownerDocument.defaultView;
-        return ownerGlobal || global$1;
-      });
-      var emptyRect = createRectInit(0, 0, 0, 0);
-      function toFloat(value2) {
-        return parseFloat(value2) || 0;
-      }
-      function getBordersSize(styles2) {
-        var positions = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-          positions[_i - 1] = arguments[_i];
-        }
-        return positions.reduce(function(size2, position) {
-          var value2 = styles2["border-" + position + "-width"];
-          return size2 + toFloat(value2);
-        }, 0);
-      }
-      function getPaddings(styles2) {
-        var positions = ["top", "right", "bottom", "left"];
-        var paddings = {};
-        for (var _i = 0, positions_1 = positions; _i < positions_1.length; _i++) {
-          var position = positions_1[_i];
-          var value2 = styles2["padding-" + position];
-          paddings[position] = toFloat(value2);
-        }
-        return paddings;
-      }
-      function getSVGContentRect(target) {
-        var bbox = target.getBBox();
-        return createRectInit(0, 0, bbox.width, bbox.height);
-      }
-      function getHTMLElementContentRect(target) {
-        var clientWidth = target.clientWidth, clientHeight = target.clientHeight;
-        if (!clientWidth && !clientHeight) {
-          return emptyRect;
-        }
-        var styles2 = getWindowOf(target).getComputedStyle(target);
-        var paddings = getPaddings(styles2);
-        var horizPad = paddings.left + paddings.right;
-        var vertPad = paddings.top + paddings.bottom;
-        var width = toFloat(styles2.width), height = toFloat(styles2.height);
-        if (styles2.boxSizing === "border-box") {
-          if (Math.round(width + horizPad) !== clientWidth) {
-            width -= getBordersSize(styles2, "left", "right") + horizPad;
-          }
-          if (Math.round(height + vertPad) !== clientHeight) {
-            height -= getBordersSize(styles2, "top", "bottom") + vertPad;
-          }
-        }
-        if (!isDocumentElement(target)) {
-          var vertScrollbar = Math.round(width + horizPad) - clientWidth;
-          var horizScrollbar = Math.round(height + vertPad) - clientHeight;
-          if (Math.abs(vertScrollbar) !== 1) {
-            width -= vertScrollbar;
-          }
-          if (Math.abs(horizScrollbar) !== 1) {
-            height -= horizScrollbar;
-          }
-        }
-        return createRectInit(paddings.left, paddings.top, width, height);
-      }
-      var isSVGGraphicsElement = (function() {
-        if (typeof SVGGraphicsElement !== "undefined") {
-          return function(target) {
-            return target instanceof getWindowOf(target).SVGGraphicsElement;
-          };
-        }
-        return function(target) {
-          return target instanceof getWindowOf(target).SVGElement && typeof target.getBBox === "function";
-        };
-      })();
-      function isDocumentElement(target) {
-        return target === getWindowOf(target).document.documentElement;
-      }
-      function getContentRect(target) {
-        if (!isBrowser) {
-          return emptyRect;
-        }
-        if (isSVGGraphicsElement(target)) {
-          return getSVGContentRect(target);
-        }
-        return getHTMLElementContentRect(target);
-      }
-      function createReadOnlyRect(_a2) {
-        var x = _a2.x, y = _a2.y, width = _a2.width, height = _a2.height;
-        var Constr = typeof DOMRectReadOnly !== "undefined" ? DOMRectReadOnly : Object;
-        var rect = Object.create(Constr.prototype);
-        defineConfigurable(rect, {
-          x,
-          y,
-          width,
-          height,
-          top: y,
-          right: x + width,
-          bottom: height + y,
-          left: x
-        });
-        return rect;
-      }
-      function createRectInit(x, y, width, height) {
-        return { x, y, width, height };
-      }
-      var ResizeObservation = (
-(function() {
-          function ResizeObservation2(target) {
-            this.broadcastWidth = 0;
-            this.broadcastHeight = 0;
-            this.contentRect_ = createRectInit(0, 0, 0, 0);
-            this.target = target;
-          }
-          ResizeObservation2.prototype.isActive = function() {
-            var rect = getContentRect(this.target);
-            this.contentRect_ = rect;
-            return rect.width !== this.broadcastWidth || rect.height !== this.broadcastHeight;
-          };
-          ResizeObservation2.prototype.broadcastRect = function() {
-            var rect = this.contentRect_;
-            this.broadcastWidth = rect.width;
-            this.broadcastHeight = rect.height;
-            return rect;
-          };
-          return ResizeObservation2;
-        })()
-      );
-      var ResizeObserverEntry = (
-
-(function() {
-          function ResizeObserverEntry2(target, rectInit) {
-            var contentRect = createReadOnlyRect(rectInit);
-            defineConfigurable(this, { target, contentRect });
-          }
-          return ResizeObserverEntry2;
-        })()
-      );
-      var ResizeObserverSPI = (
-(function() {
-          function ResizeObserverSPI2(callback, controller, callbackCtx) {
-            this.activeObservations_ = [];
-            this.observations_ = new MapShim();
-            if (typeof callback !== "function") {
-              throw new TypeError("The callback provided as parameter 1 is not a function.");
-            }
-            this.callback_ = callback;
-            this.controller_ = controller;
-            this.callbackCtx_ = callbackCtx;
-          }
-          ResizeObserverSPI2.prototype.observe = function(target) {
-            if (!arguments.length) {
-              throw new TypeError("1 argument required, but only 0 present.");
-            }
-            if (typeof Element === "undefined" || !(Element instanceof Object)) {
-              return;
-            }
-            if (!(target instanceof getWindowOf(target).Element)) {
-              throw new TypeError('parameter 1 is not of type "Element".');
-            }
-            var observations = this.observations_;
-            if (observations.has(target)) {
-              return;
-            }
-            observations.set(target, new ResizeObservation(target));
-            this.controller_.addObserver(this);
-            this.controller_.refresh();
-          };
-          ResizeObserverSPI2.prototype.unobserve = function(target) {
-            if (!arguments.length) {
-              throw new TypeError("1 argument required, but only 0 present.");
-            }
-            if (typeof Element === "undefined" || !(Element instanceof Object)) {
-              return;
-            }
-            if (!(target instanceof getWindowOf(target).Element)) {
-              throw new TypeError('parameter 1 is not of type "Element".');
-            }
-            var observations = this.observations_;
-            if (!observations.has(target)) {
-              return;
-            }
-            observations.delete(target);
-            if (!observations.size) {
-              this.controller_.removeObserver(this);
-            }
-          };
-          ResizeObserverSPI2.prototype.disconnect = function() {
-            this.clearActive();
-            this.observations_.clear();
-            this.controller_.removeObserver(this);
-          };
-          ResizeObserverSPI2.prototype.gatherActive = function() {
-            var _this = this;
-            this.clearActive();
-            this.observations_.forEach(function(observation) {
-              if (observation.isActive()) {
-                _this.activeObservations_.push(observation);
-              }
-            });
-          };
-          ResizeObserverSPI2.prototype.broadcastActive = function() {
-            if (!this.hasActive()) {
-              return;
-            }
-            var ctx = this.callbackCtx_;
-            var entries = this.activeObservations_.map(function(observation) {
-              return new ResizeObserverEntry(observation.target, observation.broadcastRect());
-            });
-            this.callback_.call(ctx, entries, ctx);
-            this.clearActive();
-          };
-          ResizeObserverSPI2.prototype.clearActive = function() {
-            this.activeObservations_.splice(0);
-          };
-          ResizeObserverSPI2.prototype.hasActive = function() {
-            return this.activeObservations_.length > 0;
-          };
-          return ResizeObserverSPI2;
-        })()
-      );
-      var observers = typeof WeakMap !== "undefined" ? new WeakMap() : new MapShim();
-      var ResizeObserver = (
-
-(function() {
-          function ResizeObserver2(callback) {
-            if (!(this instanceof ResizeObserver2)) {
-              throw new TypeError("Cannot call a class as a function.");
-            }
-            if (!arguments.length) {
-              throw new TypeError("1 argument required, but only 0 present.");
-            }
-            var controller = ResizeObserverController.getInstance();
-            var observer = new ResizeObserverSPI(callback, controller, this);
-            observers.set(this, observer);
-          }
-          return ResizeObserver2;
-        })()
-      );
-      [
-        "observe",
-        "unobserve",
-        "disconnect"
-      ].forEach(function(method) {
-        ResizeObserver.prototype[method] = function() {
-          var _a2;
-          return (_a2 = observers.get(this))[method].apply(_a2, arguments);
-        };
-      });
-      var index = (function() {
-        if (typeof global$1.ResizeObserver !== "undefined") {
-          return global$1.ResizeObserver;
-        }
-        return ResizeObserver;
-      })();
-      var useEffectWithTarget = createEffectWithTarget(useLayoutEffect);
-      var useIsomorphicLayoutEffectWithTarget = isBrowser$1 ? useEffectWithTarget : useEffectWithTarget$1;
-      function useSize(target) {
-        var _a2 = __read(useRafState(function() {
-          var el = getTargetElement(target);
-          return el ? { width: el.clientWidth, height: el.clientHeight } : void 0;
-        }), 2), state = _a2[0], setState = _a2[1];
-        useIsomorphicLayoutEffectWithTarget(function() {
-          var el = getTargetElement(target);
-          if (!el) {
-            return;
-          }
-          var resizeObserver = new index(function(entries) {
-            entries.forEach(function(entry) {
-              var _a3 = entry.target, clientWidth = _a3.clientWidth, clientHeight = _a3.clientHeight;
-              setState({ width: clientWidth, height: clientHeight });
-            });
-          });
-          resizeObserver.observe(el);
-          return function() {
-            resizeObserver.disconnect();
-          };
-        }, [], target);
-        return state;
-      }
       const styles$8 = {
         "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
       };
@@ -18191,7 +18462,7 @@ jsxRuntimeExports.jsx(
       }
       function MyButton(props) {
         const { loading, onClick, ...rest } = props;
-        const [_loading, setLoading] = useState$1(loading);
+        const [_loading, setLoading] = useState(loading);
         const handleClick = async (...args) => {
           try {
             setLoading(true);
@@ -18222,7 +18493,7 @@ jsxRuntimeExports.jsx(
       };
       const SongTab$1 = ({ data, loading }) => {
         const { play, download, isPlaying, pause, downloading } = usePlayMusic();
-        const [songList2, setSongList] = useState$1(data);
+        const [songList2, setSongList] = useState(data);
         useEffect(() => {
           setSongList(data);
         }, [data]);
@@ -18704,12 +18975,8 @@ jsxRuntimeExports.jsx(
       const AlbumTab$1 = ({ data, loading }) => {
         const albumDetailRef = useRef();
         const { pause, isPlaying } = usePlayMusic();
-        const {
-          playAlbum,
-          downloadAlbumSong,
-          getDownLoadJson
-        } = useGetAlbumDetail();
-        const [playing, setPlaying] = useState$1(void 0);
+        const { playAlbum, downloadAlbumSong, getDownLoadJson } = useGetAlbumDetail();
+        const [playing, setPlaying] = useState(void 0);
         const handlePlay = async (record) => {
           try {
             setPlaying(record.id);
@@ -18723,7 +18990,7 @@ jsxRuntimeExports.jsx(
             setPlaying(void 0);
           }
         };
-        const [downloading, setDownloading] = useState$1(void 0);
+        const [downloading, setDownloading] = useState(void 0);
         const handleDownload = async (record) => {
           try {
             setDownloading(record.id);
@@ -18737,18 +19004,47 @@ jsxRuntimeExports.jsx(
             setDownloading(void 0);
           }
         };
-        const [downloadingJson, setDownloadingJson] = useState$1(void 0);
         const handleDownloadJson = async (record) => {
           try {
-            setDownloadingJson(record.id);
             const hide = msgLoading(`正在准备下载《${record.name}》...`);
             await getDownLoadJson(record.id);
             hide();
             msgSuccess$1(`《${record.name}》下载成功！`);
           } catch (error) {
             msgError("下载JSON失败: " + (error?.message || error));
+          }
+        };
+        const handleSaveToCloud = async (record) => {
+          console.log("record", record);
+          const uploadMessageKey = "album-to-cloud";
+          try {
+            const res = await getAlbumSongList(record.id);
+            console.log("res", res);
+            if (res.code === 200) {
+              const songs2 = res.songs;
+              const songIds = songs2.map((song) => song.id);
+              await neteaseMusicToCloud(songIds, {
+                onChange: (progress) => {
+                  console.log("progress", progress);
+                  message.loading({
+                    content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                    key: uploadMessageKey,
+                    duration: 0
+                  });
+                },
+                onComplete: (result) => {
+                  console.log("result", result);
+                  message.destroy(uploadMessageKey);
+                  msgSuccess$1(
+                    `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                  );
+                }
+              });
+            }
+          } catch (error) {
+            console.log("error", error);
           } finally {
-            setDownloadingJson(void 0);
+            message.destroy(uploadMessageKey);
           }
         };
         const columns = [
@@ -18864,7 +19160,6 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: j
                               },
                               children: [
                                 "ID:",
-                                " ",
 jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12px" }, children: record.id })
                               ]
                             }
@@ -18901,7 +19196,7 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
             align: "center",
             sorter: (a, b) => (a.size || 0) - (b.size || 0),
             sortDirections: ["ascend", "descend"],
-            render: (size2) => size2 || 0
+            render: (size2) => jsxRuntimeExports.jsx(Tag, { color: "#c20c0c", children: size2 || 0 })
           },
           {
             title: "发布时间",
@@ -18967,11 +19262,11 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
           {
             title: "操作",
             key: "action",
-            width: 250,
+            width: 300,
             align: "center",
             fixed: "right",
             render: (_, record) => {
-              return jsxRuntimeExports.jsxs(Space, { children: [
+              return jsxRuntimeExports.jsxs(Space, { size: "small", wrap: true, children: [
 jsxRuntimeExports.jsx(
                   Button,
                   {
@@ -18990,11 +19285,10 @@ jsxRuntimeExports.jsx(
                   }
                 ),
 jsxRuntimeExports.jsx(
-                  Button,
+                  MyButton,
                   {
                     type: "link",
                     size: "small",
-                    loading: downloadingJson === record.id,
                     icon: jsxRuntimeExports.jsx(SaveOutlined, {}),
                     onClick: () => handleDownloadJson(record),
                     children: "下载JSON"
@@ -19009,6 +19303,16 @@ jsxRuntimeExports.jsx(
                     icon: jsxRuntimeExports.jsx(DownloadOutlined, {}),
                     onClick: () => handleDownload(record),
                     children: "下载"
+                  }
+                ),
+jsxRuntimeExports.jsx(
+                  MyButton,
+                  {
+                    type: "link",
+                    size: "small",
+                    icon: jsxRuntimeExports.jsx(CloudUploadOutlined, {}),
+                    onClick: () => handleSaveToCloud(record),
+                    children: "转存到网盘"
                   }
                 )
               ] });
@@ -19025,7 +19329,8 @@ jsxRuntimeExports.jsx(
               loading,
               scroll: { y: 500, x: 1200 },
               className: styles$7["song-table"],
-              pagination: false
+              pagination: false,
+              size: "small"
             }
           ),
 jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
@@ -19076,7 +19381,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           ref
         );
         const albumDetailRef = useRef();
-        const [singerInfo, setSingerInfo] = useState$1({});
+        const [singerInfo, setSingerInfo] = useState({});
         const { data, loading } = useGetData(
           getArtistAlbumList,
           singerInfo.singerId,
@@ -19088,15 +19393,15 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         );
         const albumList = useMemo(() => data.data || [], [data]);
         console.log("albumList", albumList);
-        const [selectedRowKeys, setSelectedRowKeys] = useState$1([]);
-        const [selectedRows, setSelectedRows] = useState$1([]);
+        const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+        const [selectedRows, setSelectedRows] = useState([]);
         const { playAlbum, downloadAlbumSong, getAlbumDetail: getAlbumDetail2, getAlbumSongList: getAlbumSongList2 } = useGetAlbumDetail();
         const { pause, isPlaying } = usePlayMusic();
-        const [playingAlbumId, setPlayingAlbumId] = useState$1();
-        const [downloadingAlbumId, setDownloadingAlbumId] = useState$1();
-        const [downloadingJsonAlbumId, setDownloadingJsonAlbumId] = useState$1();
-        const [downloadingBatch, setDownloadingBatch] = useState$1(false);
-        const [downloadingBatchJson, setDownloadingBatchJson] = useState$1(false);
+        const [playingAlbumId, setPlayingAlbumId] = useState();
+        const [downloadingAlbumId, setDownloadingAlbumId] = useState();
+        const [downloadingJsonAlbumId, setDownloadingJsonAlbumId] = useState();
+        const [downloadingBatch, setDownloadingBatch] = useState(false);
+        const [downloadingBatchJson, setDownloadingBatchJson] = useState(false);
         const filterConfig = useMemo(
           () => ({
             fields: {
@@ -19584,8 +19889,10 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           },
           ref
         );
-        const [params, setParams] = useState$1();
-        useGetSingerInfo(params.singerId);
+        const [params, setParams] = useState({});
+        useGetSingerInfo({
+          singerId: params.singerId
+        });
         return jsxRuntimeExports.jsx(
           Modal,
           {
@@ -19755,7 +20062,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
       };
       const Search = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
-        const [searchParams, setSearchParams] = useState$1(defaultSearchParams);
+        const [searchParams, setSearchParams] = useState(defaultSearchParams);
         const handleSearch = (values) => {
           setSearchParams({ ...searchParams, keyword: values.keyword });
         };
@@ -19853,8 +20160,8 @@ jsxRuntimeExports.jsx(
           },
           ref
         );
-        const [selectedRows, setSelectedRows] = useState$1([]);
-        const [tableData, setTableData] = useState$1([]);
+        const [selectedRows, setSelectedRows] = useState([]);
+        const [tableData, setTableData] = useState([]);
         const filterConfig = {
           fields: {
             name: {
@@ -19890,8 +20197,8 @@ jsxRuntimeExports.jsx(
             render: (size2) => formatFileSize(size2)
           }
         ];
-        const [concurrent, setConcurrent] = useState$1(6);
-        const [loading, setLoading] = useState$1(false);
+        const [concurrent, setConcurrent] = useState(6);
+        const [loading, setLoading] = useState(false);
         const handleOk = async () => {
           try {
             setLoading(true);
@@ -20179,19 +20486,19 @@ CLOUD_MUSIC_MATCH_ALL: "cloud_music_match_all"
         "album-info": "_album-info_18snm_439"
       };
       const CustomMatch = ({ data, onUpdate }) => {
-        const [keywords, setKeywords] = useState$1(getArtistName(data));
-        const [currentSelectSinger, setCurrentSelectSinger] = useState$1();
-        const [currentSelectSong, setCurrentSelectSong] = useState$1();
-        const [songSearchValue, setSongSearchValue] = useState$1(data.name);
-        const [currentSelectSongId, setCurrentSelectSongId] = useState$1();
+        const [keywords, setKeywords] = useState(getArtistName(data));
+        const [currentSelectSinger, setCurrentSelectSinger] = useState();
+        const [currentSelectSong, setCurrentSelectSong] = useState();
+        const [songSearchValue, setSongSearchValue] = useState(data.name);
+        const [currentSelectSongId, setCurrentSelectSongId] = useState();
         const { loading: searchSingerLoading, singerList } = useSearchSinger({
           keywords
         });
         const { singerMap, loading: getSongLoading } = useGetSingerSongs({
           singerIds: currentSelectSinger
         });
-        const [updateLoading, setUpdateLoading] = useState$1(false);
-        const [autoMatchLoading, setAutoMatchLoading] = useState$1(false);
+        const [updateLoading, setUpdateLoading] = useState(false);
+        const [autoMatchLoading, setAutoMatchLoading] = useState(false);
         const songOptions = useMemo(() => {
           if (!singerMap[currentSelectSinger]?.songList) return [];
           const allOptions = singerMap[currentSelectSinger]?.songList?.map(
@@ -20405,9 +20712,9 @@ jsxRuntimeExports.jsx(
       const IdMatch = ({ data, onUpdate }) => {
         const { matchType, songId } = data;
         const isMatched = matchType === "matched";
-        const [value2, setValue] = useState$1(songId);
-        const [loading, setLoading] = useState$1(false);
-        const [autoMatchLoading, setAutoMatchLoading] = useState$1(false);
+        const [value2, setValue] = useState(songId);
+        const [loading, setLoading] = useState(false);
+        const [autoMatchLoading, setAutoMatchLoading] = useState(false);
         useEffect(() => {
           const handleMatchAll = async (eventData) => {
             console.log("IdMatch 收到全部匹配事件", eventData);
@@ -20508,8 +20815,8 @@ jsxRuntimeExports.jsx(
         }
       };
       const PlayList$2 = (props, ref) => {
-        const [visible, setVisible] = useState$1(false);
-        const [mode2, setMode] = useState$1("edit");
+        const [visible, setVisible] = useState(false);
+        const [mode2, setMode] = useState("edit");
         const isSelect = mode2 === "select";
         const open = (mode22) => {
           reset();
@@ -20542,8 +20849,8 @@ jsxRuntimeExports.jsx(
           close,
           submit
         }));
-        const [loading, setLoading] = useState$1(false);
-        const [playList, setPlayList] = useState$1([]);
+        const [loading, setLoading] = useState(false);
+        const [playList, setPlayList] = useState([]);
         const handleGetPlayList = async () => {
           setLoading(true);
           try {
@@ -20655,7 +20962,7 @@ jsxRuntimeExports.jsx(
             sortDirections: ["descend", "ascend"]
           }
         ];
-        const [selectedRows, setSelectedRows] = useState$1([]);
+        const [selectedRows, setSelectedRows] = useState([]);
         const rowSelection = {
           type: isSelect ? "radio" : "checkbox",
           selectedRowKeys: selectedRows.map((item) => item.id),
@@ -20677,8 +20984,8 @@ jsxRuntimeExports.jsx(
           res.current?.(selectedRows[0]);
           close();
         };
-        const [name2, setName] = useState$1("");
-        const [createModalVisible, setCreateModalVisible] = useState$1(false);
+        const [name2, setName] = useState("");
+        const [createModalVisible, setCreateModalVisible] = useState(false);
         const handleCreate = async () => {
           if (!name2.trim()) {
             msgWarning("请输入歌单名称");
@@ -20920,8 +21227,8 @@ jsxRuntimeExports.jsx("span", { className: styles$5.size, children: filteredSong
           },
           ref
         );
-        const [songList2, setSongList] = useState$1([]);
-        const [loading, setLoading] = useState$1(false);
+        const [songList2, setSongList] = useState([]);
+        const [loading, setLoading] = useState(false);
         const getCloudDataList = async () => {
           try {
             setLoading(true);
@@ -20944,7 +21251,7 @@ jsxRuntimeExports.jsx("span", { className: styles$5.size, children: filteredSong
             timestamp: Date.now()
           });
         };
-        const [cancelMatchLoading, setCancelMatchLoading] = useState$1(false);
+        const [cancelMatchLoading, setCancelMatchLoading] = useState(false);
         const handleCancelMatch = async () => {
           try {
             setCancelMatchLoading(true);
@@ -20973,7 +21280,7 @@ jsxRuntimeExports.jsx("span", { className: styles$5.size, children: filteredSong
             }
           }
         };
-        const [searchParams, setSearchParams] = useState$1({});
+        const [searchParams, setSearchParams] = useState({});
         const {
           filteredList: filteredSongList,
           setFilteredList: setFilteredSongList,
@@ -20982,7 +21289,7 @@ jsxRuntimeExports.jsx("span", { className: styles$5.size, children: filteredSong
         useEffect(() => {
           handleSearch(searchParams);
         }, [songList2]);
-        const [selectedRows, setSelectedRows] = useState$1([]);
+        const [selectedRows, setSelectedRows] = useState([]);
         const selectedRowKeys = useMemo(
           () => selectedRows.map((item) => item.songId),
           [selectedRows]
@@ -21008,8 +21315,8 @@ jsxRuntimeExports.jsx("span", { className: styles$5.size, children: filteredSong
           });
         };
         const AudioRef = useRef(new Audio());
-        const [playSong, setPlaySong] = useState$1(null);
-        const [playing, setPlaying] = useState$1(false);
+        const [playSong, setPlaySong] = useState(null);
+        const [playing, setPlaying] = useState(false);
         const handlePlaySong = (record) => {
           if (playSong?.id === record.id) {
             const audio2 = AudioRef.current;
@@ -21042,7 +21349,7 @@ jsxRuntimeExports.jsx("span", { className: styles$5.size, children: filteredSong
           if (!playSong) return;
           play();
         }, [playSong]);
-        const [pageParams, setPageParams] = useState$1({
+        const [pageParams, setPageParams] = useState({
           page: 1,
           pageSize: 20
         });
@@ -21211,7 +21518,7 @@ jsxRuntimeExports.jsx("div", { className: styles$5["album-info"], title: album2,
             render: (time) => dayjs(time).format("YYYY-MM-DD HH:mm:ss")
           }
         ];
-        const [range, setRange] = useState$1([]);
+        const [range, setRange] = useState([]);
         const handleRangeChoose = () => {
           console.log("range", range);
           if (!range[0] || !range[1]) return msgWarning("请输入区间");
@@ -21223,7 +21530,7 @@ jsxRuntimeExports.jsx("div", { className: styles$5["album-info"], title: album2,
           );
           setSelectedRows(filteredSongList.slice(range[0] - 1, range[1]));
         };
-        const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] = useState$1(false);
+        const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] = useState(false);
         const handleAddToPlaylistByAlbum = async () => {
           try {
             setAddToPlayListByAlbumLoading(true);
@@ -21622,8 +21929,9 @@ jsxRuntimeExports.jsx("span", { className: styles$5.icon, children: "!" }),
       };
       const GithubInfo = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
-        const [repoInfo, setRepoInfo] = useState$1(null);
-        const [loading, setLoading] = useState$1(false);
+        const [repoInfo, setRepoInfo] = useState(null);
+        const [loading, setLoading] = useState(false);
+        const { functionConfig, setFunctionConfig } = useConfig();
         const fetchRepoInfo = async () => {
           setLoading(true);
           try {
@@ -21666,6 +21974,13 @@ jsxRuntimeExports.jsx("span", { className: styles$5.icon, children: "!" }),
             month: "long",
             day: "numeric"
           });
+        };
+        const handleDoubleClickDefaultBranch = () => {
+          setFunctionConfig({
+            ...functionConfig,
+            enableTestModal: !functionConfig.enableTestModal
+          });
+          close();
         };
         return jsxRuntimeExports.jsx(
           Modal,
@@ -21749,7 +22064,15 @@ jsxRuntimeExports.jsx(Text, { type: "secondary", children: "Watchers" })
                     ] })
                   ] }) }),
 jsxRuntimeExports.jsx(Descriptions.Item, { label: "主要语言", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.language || "未知" }) }),
-jsxRuntimeExports.jsx(Descriptions.Item, { label: "默认分支", children: jsxRuntimeExports.jsx(Text, { code: true, children: repoInfo?.defaultBranch || "main" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "默认分支", children: jsxRuntimeExports.jsx(
+                    Text,
+                    {
+                      code: true,
+                      onDoubleClick: handleDoubleClickDefaultBranch,
+                      style: { cursor: "pointer", userSelect: "none" },
+                      children: repoInfo?.defaultBranch || "main"
+                    }
+                  ) }),
 jsxRuntimeExports.jsx(Descriptions.Item, { label: "许可证", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.license || "无" }) }),
 jsxRuntimeExports.jsx(Descriptions.Item, { label: "开放 Issues", children: jsxRuntimeExports.jsx(Text, { children: repoInfo?.openIssues || 0 }) }),
 jsxRuntimeExports.jsx(Descriptions.Item, { label: "创建时间", children: jsxRuntimeExports.jsx(Text, { children: formatDate(repoInfo?.createdAt) }) }),
@@ -21819,9 +22142,9 @@ jsxRuntimeExports.jsx(
           },
           ref
         );
-        const [fileList, setFileList] = useState$1([]);
-        const [loading, setLoading] = useState$1(false);
-        const [concurrency, setConcurrency] = useState$1(1);
+        const [fileList, setFileList] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const [concurrency, setConcurrency] = useState(1);
         const handleUpload = async () => {
           try {
             setLoading(true);
@@ -21862,7 +22185,7 @@ jsxRuntimeExports.jsx(
         const handleFilter = async () => {
           setFileList((prev) => prev.filter((file) => file.status === "error"));
         };
-        const [getJsonLoading, setGetJsonLoading] = useState$1(false);
+        const [getJsonLoading, setGetJsonLoading] = useState(false);
         const handleGetJson = async () => {
           try {
             setGetJsonLoading(true);
@@ -22200,8 +22523,8 @@ jsxRuntimeExports.jsx(
           downloading,
           downloadSongListAsJson
         } = useGetSongListDetail();
-        const [playlistId, setPlaylistId] = useState$1(null);
-        const [selectedRows, setSelectedRows] = useState$1([]);
+        const [playlistId, setPlaylistId] = useState(null);
+        const [selectedRows, setSelectedRows] = useState([]);
         useEffect(() => {
           if (playlistId && visible) {
             getSongListData(playlistId);
@@ -22857,8 +23180,8 @@ jsxRuntimeExports.jsx(
           },
           ref
         );
-        const [loading, setLoading] = useState$1(false);
-        const [playList, setPlayList] = useState$1([]);
+        const [loading, setLoading] = useState(false);
+        const [playList, setPlayList] = useState([]);
         const songListRef = useRef();
         const getPlayListData = async () => {
           try {
@@ -23139,7 +23462,7 @@ jsxRuntimeExports.jsx(Tag, { color: "green", className: styles$1["tag"], childre
           const { singer } = values;
           onChoose([...singer]);
         };
-        const [quickImportLoading, setQuickImportLoading] = useState$1(false);
+        const [quickImportLoading, setQuickImportLoading] = useState(false);
         return jsxRuntimeExports.jsx("div", { className: styles$1["singer-choose"], children: loading ? jsxRuntimeExports.jsx(Spin, { tip: "正在加载中" }) : jsxRuntimeExports.jsxs(
           Form,
           {
@@ -23185,7 +23508,7 @@ jsxRuntimeExports.jsx(Form.Item, { noStyle: true, shouldUpdate: true, children: 
       }
       const UploadProgress = forwardRef(
         ({ uploadedList, total, uploadFailedSongList, onClose }, ref) => {
-          const [visible, setVisible] = useState$1(false);
+          const [visible, setVisible] = useState(false);
           const open = () => setVisible(true);
           const close = () => {
             setVisible(false);
@@ -23312,8 +23635,8 @@ jsxRuntimeExports.jsx("span", { className: styles$1["size-text"], children: form
       });
       UploadStats.displayName = "UploadStats";
       function UploadList({ singerList }) {
-        const [songList2, setSongList] = useState$1([]);
-        const [loading, setLoading] = useState$1(false);
+        const [songList2, setSongList] = useState([]);
+        const [loading, setLoading] = useState(false);
         const getSongList = async (ids) => {
           try {
             setLoading(true);
@@ -23406,7 +23729,7 @@ dt: formatDuration$1(0),
             }
           }
         };
-        const [searchParams, setSearchParams] = useState$1({});
+        const [searchParams, setSearchParams] = useState({});
         const {
           filteredList: filteredSongList,
           setFilteredList: setFilteredSongList,
@@ -23415,7 +23738,7 @@ dt: formatDuration$1(0),
         useEffect(() => {
           handleSearch(searchParams);
         }, [songList2]);
-        const [selectedRows, setSelectedRows] = useState$1([]);
+        const [selectedRows, setSelectedRows] = useState([]);
         const rowSelection = {
           type: "checkbox",
           fixed: true,
@@ -23570,11 +23893,11 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
           });
         };
         const uploadProgressRef = useRef(null);
-        const [uploadedSongList, setUploadedSongList] = useState$1([]);
-        const [uploadFailedSongList, setUploadFailedSongList] = useState$1([]);
-        const [toUploadingSongList, setToUploadingSongList] = useState$1([]);
-        const [uploading, setUploading] = useState$1(false);
-        const [concurrency, setConcurrency] = useState$1(6);
+        const [uploadedSongList, setUploadedSongList] = useState([]);
+        const [uploadFailedSongList, setUploadFailedSongList] = useState([]);
+        const [toUploadingSongList, setToUploadingSongList] = useState([]);
+        const [uploading, setUploading] = useState(false);
+        const [concurrency, setConcurrency] = useState(6);
         const resetData = () => {
           setUploadedSongList([]);
           setToUploadingSongList([]);
@@ -23626,7 +23949,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
         const handleUploadSelected = async () => {
           handleBatchUpload(selectedRows);
         };
-        const [downloading, setDownloading] = useState$1(false);
+        const [downloading, setDownloading] = useState(false);
         const handleDownloadAll = async () => {
           try {
             setDownloading(true);
@@ -23863,14 +24186,14 @@ jsxRuntimeExports.jsxs("span", { className: styles$1.size, children: [
           },
           ref
         );
-        const [currentTab, setCurrentTab] = useState$1("1");
+        const [currentTab, setCurrentTab] = useState("1");
         const handleTabChange = (key) => {
           if (key !== "1" && !chooseList.length) {
             return msgError("请选择歌手");
           }
           setCurrentTab(key);
         };
-        const [chooseList, setChooseList] = useState$1([]);
+        const [chooseList, setChooseList] = useState([]);
         const handleChoose = (value2) => {
           console.log(value2);
           setChooseList(value2);
@@ -23910,7 +24233,7 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
       }
       const QuickUpload$1 = forwardRef(QuickUpload);
       const AlbumTab = () => {
-        const [albumId, setAlbumId] = useState$1("242274622");
+        const [albumId, setAlbumId] = useState("242274622");
         const handleGetAlbumSongList = async () => {
           console.log("获取专辑歌曲列表");
           try {
@@ -23984,7 +24307,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
         ] }) }) });
       };
       const ArtistTab = () => {
-        const [artistId, setArtistId] = useState$1("3684");
+        const [artistId, setArtistId] = useState("3684");
         const handleGetArtistTopSongList = async () => {
           console.log("获取歌手热门歌曲列表");
           try {
@@ -24095,7 +24418,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAllSo
         ] }) }) });
       };
       const CloudTab = () => {
-        const [pageData, setPageData] = useState$1({
+        const [pageData, setPageData] = useState({
           limit: 500,
           offset: 0
         });
@@ -24108,7 +24431,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAllSo
             console.log("error", error);
           }
         };
-        const [songId, setSongId] = useState$1("2608471890");
+        const [songId, setSongId] = useState("2608471890");
         const handleDeleteCloudSong = async () => {
           console.log("删除云盘歌曲");
           try {
@@ -24118,7 +24441,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAllSo
             console.log("error", error);
           }
         };
-        const [fileList, setFileList] = useState$1([]);
+        const [fileList, setFileList] = useState([]);
         const handleUploadLocalSong = async () => {
           try {
             console.log("fileList", fileList);
@@ -24133,7 +24456,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistAllSo
             console.log("error", error);
           }
         };
-        const [neteaseMusicSongId, setNeteaseMusicSongId] = useState$1("1846094285");
+        const [neteaseMusicSongId, setNeteaseMusicSongId] = useState("1846094285");
         const handleNeteaseMusicToCloud = async () => {
           try {
             const res = await neteaseMusicToCloud(neteaseMusicSongId.split(","));
@@ -24208,15 +24531,94 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
           ] }) })
         ] });
       };
+      function SettingItem(props) {
+        const { value: value2, onChange, type, ...otherProps } = props;
+        switch (type) {
+          case "input":
+            return jsxRuntimeExports.jsx(Input, { value: value2, onChange, ...otherProps });
+          case "select":
+            return jsxRuntimeExports.jsx(Select, { value: value2, onChange, ...otherProps });
+          case "radio":
+            return jsxRuntimeExports.jsx(Radio.Group, { value: value2, onChange, ...otherProps });
+          case "checkbox":
+            return jsxRuntimeExports.jsx(Checkbox.Group, { value: value2, onChange, ...otherProps });
+          case "date":
+            return jsxRuntimeExports.jsx(DatePicker, { value: value2, onChange, ...otherProps });
+          case "time":
+            return jsxRuntimeExports.jsx(TimePicker, { value: value2, onChange, ...otherProps });
+          case "switch":
+          default:
+            return jsxRuntimeExports.jsx(Switch, { checked: value2, onChange, ...otherProps });
+        }
+      }
+      const { Item: Item$2 } = Descriptions;
+      const getQualityOptions = () => {
+        return Object.keys(QUALITY_WEIGHTS).map((key) => ({
+          label: QUALITY_LEVELS[key],
+          value: key
+        }));
+      };
+      const DOWNLOAD_SETTING_STRATEGIES = [
+        {
+          label: "下载音质",
+          value: "quality",
+          type: "select",
+          options: getQualityOptions(),
+          style: { width: 200 }
+        },
+        {
+          label: "是否下载歌词",
+          value: "downloadLyric",
+          type: "switch"
+        },
+        {
+          label: "是否内嵌歌词封面",
+          value: "embedLyricCover",
+          type: "switch"
+        },
+        {
+          label: "是否内嵌歌曲信息",
+          value: "embedSongInfo",
+          type: "switch"
+        }
+      ];
+      const DownloadSettingTab = () => {
+        const { downloadConfig, setDownloadConfig } = useConfig();
+        const handleConfigChange = (key, value2) => {
+          setDownloadConfig({
+            ...downloadConfig,
+            [key]: value2
+          });
+        };
+        return jsxRuntimeExports.jsx(
+          Descriptions,
+          {
+            column: 3,
+            size: "large",
+            bordered: true,
+            style: {
+              minWidth: 800
+            },
+            children: DOWNLOAD_SETTING_STRATEGIES.map((strategy) => jsxRuntimeExports.jsx(Item$2, { label: strategy.label, children: jsxRuntimeExports.jsx(
+              SettingItem,
+              {
+                value: downloadConfig[strategy.value],
+                onChange: (value2) => handleConfigChange(strategy.value, value2),
+                ...strategy
+              }
+            ) }, strategy.value))
+          }
+        );
+      };
       const FlacTab = () => {
-        const [flacFile, setFlacFile] = useState$1(null);
-        const [flacTagName, setFlacTagName] = useState$1("all");
-        const [flacTagValue, setFlacTagValue] = useState$1("");
-        const [flacPicture, setFlacPicture] = useState$1(null);
-        const [picturePreview, setPicturePreview] = useState$1(null);
-        const [flacTags, setFlacTags] = useState$1({});
-        const [flacFileList, setFlacFileList] = useState$1([]);
-        const [pictureFileList, setPictureFileList] = useState$1([]);
+        const [flacFile, setFlacFile] = useState(null);
+        const [flacTagName, setFlacTagName] = useState("all");
+        const [flacTagValue, setFlacTagValue] = useState("");
+        const [flacPicture, setFlacPicture] = useState(null);
+        const [picturePreview, setPicturePreview] = useState(null);
+        const [flacTags, setFlacTags] = useState({});
+        const [flacFileList, setFlacFileList] = useState([]);
+        const [pictureFileList, setPictureFileList] = useState([]);
         const loadFlacTags = async (file) => {
           if (!file) return;
           try {
@@ -24407,6 +24809,73 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleEmbedFlacPictu
 jsxRuntimeExports.jsx(Form.Item, { label: "文件操作", children: jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" }) })
         ] });
       };
+      const { Item: Item$1 } = Descriptions;
+      const FUNCTION_SWITCH_STRATEGIES = [
+        {
+          label: "云盘快速上传",
+          value: "enableQuickUpload",
+          type: "switch"
+        },
+        {
+          label: "云盘歌曲管理",
+          value: "enableCloudMusicManager",
+          type: "switch"
+        },
+        {
+          label: "云盘本地上传",
+          value: "enableLocalUpload",
+          type: "switch"
+        },
+        {
+          label: "查看歌单",
+          value: "enablePlayList",
+          type: "switch"
+        },
+        {
+          label: "搜索",
+          value: "enableSearch",
+          type: "switch"
+        },
+        {
+          label: "云盘导入",
+          value: "enableCloudImport",
+          type: "switch"
+        },
+        {
+          label: "GitHub信息",
+          value: "enableGithubInfo",
+          type: "switch"
+        },
+        {
+          label: "调试Modal",
+          value: "enableTestModal",
+          type: "switch"
+        },
+        {
+          label: "功能开关TAB",
+          value: "enableFunctionSwitchTab",
+          type: "switch",
+          disabled: true
+        }
+      ];
+      const FunctionSwitchTab = () => {
+        const { functionConfig, setFunctionConfig } = useConfig();
+        const handleSwitchChange = (key, checked) => {
+          setFunctionConfig({
+            ...functionConfig,
+            [key]: checked
+          });
+        };
+        return jsxRuntimeExports.jsx(Descriptions, { column: 3, size: "large", bordered: true, children: FUNCTION_SWITCH_STRATEGIES.map((strategy) => jsxRuntimeExports.jsx(Item$1, { label: strategy.label, children: jsxRuntimeExports.jsx(
+          SettingItem,
+          {
+            value: functionConfig[strategy.value],
+            onChange: (value2) => handleSwitchChange(strategy.value, value2),
+            type: strategy.type,
+            disabled: strategy.disabled
+          }
+        ) }, strategy.value)) });
+      };
       const LoginTab = () => {
         const handleGetUserAccount = async () => {
           console.log("获取用户信息");
@@ -24468,7 +24937,7 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
         document.getElementById("qrcode-container").appendChild(qrImg);
       };
       const PlaylistTab = () => {
-        const [songListName, setSongListName] = useState$1("");
+        const [songListName, setSongListName] = useState("");
         const handleCreateSongList = async () => {
           console.log("新建歌单");
           try {
@@ -24478,7 +24947,7 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
             console.log("error", error);
           }
         };
-        const [addInfo, setAddInfo] = useState$1({
+        const [addInfo, setAddInfo] = useState({
           songId: "185620",
           playlistId: "12999288729"
         });
@@ -24491,7 +24960,7 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
             console.log("error", error);
           }
         };
-        const [userId, setUserId] = useState$1("12999288729");
+        const [userId, setUserId] = useState("12999288729");
         const handleGetPlaylistList = async () => {
           console.log("获取歌单列表");
           try {
@@ -24501,7 +24970,7 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
             console.log("error", error);
           }
         };
-        const [playlistId, setPlaylistId] = useState$1("13508631377");
+        const [playlistId, setPlaylistId] = useState("13508631377");
         const handleGetPlaylist = async () => {
           try {
             const songs2 = await getPlaylistAllData(playlistId);
@@ -24609,8 +25078,8 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handlePlaylistToClou
         ] });
       };
       const SearchTab = () => {
-        const [searchKeyword, setSearchKeyword] = useState$1("");
-        const [searchType, setSearchType] = useState$1("1");
+        const [searchKeyword, setSearchKeyword] = useState("");
+        const [searchType, setSearchType] = useState("1");
         const handleSearch = async () => {
           try {
             const res = await search(searchKeyword, { type: searchType });
@@ -24633,7 +25102,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handlePlaylistToClou
             console.log("error", error);
           }
         };
-        const [searchValue, setSearchValue] = useState$1("");
+        const [searchValue, setSearchValue] = useState("");
         const handleSearchArtist = async () => {
           try {
             const res = await searchArtist(searchValue);
@@ -24645,7 +25114,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handlePlaylistToClou
             console.log("error", error);
           }
         };
-        const [fileList, setFileList] = useState$1([]);
+        const [fileList, setFileList] = useState([]);
         const handleLocalMatch = async () => {
           try {
             if (!fileList.length) return msgError("请选择文件");
@@ -24749,8 +25218,42 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleLocalMatch, ch
           value: "1014"
         }
       ];
+      const { Item } = Descriptions;
+      const SettingTab = () => {
+        const githubInfoRef = useRef();
+        const handleCheckUpdate = () => {
+          console.log("检查更新");
+        };
+        const handleOpenGithubInfo = () => {
+          githubInfoRef.current?.open();
+        };
+        return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+jsxRuntimeExports.jsxs(Descriptions, { column: 1, size: "large", children: [
+jsxRuntimeExports.jsx(Item, { label: "GitHub", children: jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                icon: jsxRuntimeExports.jsx(GithubOutlined, {}),
+                type: "primary",
+                onClick: handleOpenGithubInfo,
+                children: "查看 GitHub 信息"
+              }
+            ) }),
+jsxRuntimeExports.jsx(Item, { label: "更新日志", children: jsxRuntimeExports.jsx(Input, {}) }),
+jsxRuntimeExports.jsx(Item, { label: "检查更新", children: jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                icon: jsxRuntimeExports.jsx(CheckOutlined, {}),
+                type: "primary",
+                onClick: handleCheckUpdate,
+                children: "检查更新"
+              }
+            ) })
+          ] }),
+jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
+        ] });
+      };
       const SongTab = () => {
-        const [songId, setSongId] = useState$1("2608471890,1846094285");
+        const [songId, setSongId] = useState("2608471890,1846094285");
         const handleGetSongUrl = async () => {
           console.log("获取歌曲URL");
           try {
@@ -24810,42 +25313,11 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongLyric, 
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" })
         ] }) }) });
       };
-      const { Item } = Descriptions;
-      const SettingTab = () => {
-        const githubInfoRef = useRef();
-        const handleCheckUpdate = () => {
-          console.log("检查更新");
-        };
-        const handleOpenGithubInfo = () => {
-          githubInfoRef.current?.open();
-        };
-        return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-jsxRuntimeExports.jsxs(Descriptions, { column: 1, size: "large", children: [
-jsxRuntimeExports.jsx(Item, { label: "GitHub", children: jsxRuntimeExports.jsx(
-              MyButton,
-              {
-                icon: jsxRuntimeExports.jsx(GithubOutlined, {}),
-                type: "primary",
-                onClick: handleOpenGithubInfo,
-                children: "查看 GitHub 信息"
-              }
-            ) }),
-jsxRuntimeExports.jsx(Item, { label: "更新日志", children: jsxRuntimeExports.jsx(Input, {}) }),
-jsxRuntimeExports.jsx(Item, { label: "检查更新", children: jsxRuntimeExports.jsx(
-              MyButton,
-              {
-                icon: jsxRuntimeExports.jsx(CheckOutlined, {}),
-                type: "primary",
-                onClick: handleCheckUpdate,
-                children: "检查更新"
-              }
-            ) })
-          ] }),
-jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
-        ] });
-      };
       const TestModal = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
+        const { functionConfig } = useConfig();
+        const { enableFunctionSwitchTab, enableDownloadSetting } = functionConfig;
+        console.log("functionConfig", functionConfig);
         const tabItems = [
           {
             key: "login",
@@ -24891,8 +25363,18 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             key: "setting",
             label: "设置",
             children: jsxRuntimeExports.jsx(SettingTab, {})
+          },
+          enableFunctionSwitchTab && {
+            key: "functionSwitchTab",
+            label: "功能开关",
+            children: jsxRuntimeExports.jsx(FunctionSwitchTab, {})
+          },
+          enableDownloadSetting && {
+            key: "downloadSetting",
+            label: "下载设置",
+            children: jsxRuntimeExports.jsx(DownloadSettingTab, {})
           }
-        ];
+        ].filter(Boolean);
         return jsxRuntimeExports.jsx(
           Modal,
           {
@@ -24916,7 +25398,17 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
         "button-group": "_button-group_dcsms_1"
       };
       const ButtonGroup = () => {
-        console.log("import.meta.env.MODE", "production");
+        const { functionConfig } = useConfig();
+        const {
+          enableQuickUpload,
+          enableCloudMusicManager,
+          enableLocalUpload,
+          enablePlayList,
+          enableSearch,
+          enableCloudImport,
+          enableGithubInfo,
+          enableTestModal
+        } = functionConfig;
         const quickUploadRef = useRef(null);
         const handleQuickUpload = () => {
           quickUploadRef.current.open();
@@ -24950,7 +25442,7 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
           githubInfoRef.current.open();
         };
         return jsxRuntimeExports.jsxs("div", { className: styles["button-group"], children: [
-jsxRuntimeExports.jsx(Tooltip, { title: "云盘快速上传", placement: "left", children: jsxRuntimeExports.jsx(
+          enableQuickUpload && jsxRuntimeExports.jsx(Tooltip, { title: "云盘快速上传", placement: "left", children: jsxRuntimeExports.jsx(
             Button,
             {
               type: "primary",
@@ -24959,7 +25451,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: "云盘快速上传", placement: "left",
               className: styles["button"]
             }
           ) }),
-jsxRuntimeExports.jsx(Tooltip, { title: "云盘歌曲管理", placement: "left", children: jsxRuntimeExports.jsx(
+          enableCloudMusicManager && jsxRuntimeExports.jsx(Tooltip, { title: "云盘歌曲管理", placement: "left", children: jsxRuntimeExports.jsx(
             Button,
             {
               type: "primary",
@@ -24968,7 +25460,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: "云盘歌曲管理", placement: "left",
               className: styles["button"]
             }
           ) }),
-jsxRuntimeExports.jsx(Tooltip, { title: "云盘本地上传", placement: "left", children: jsxRuntimeExports.jsx(
+          enableLocalUpload && jsxRuntimeExports.jsx(Tooltip, { title: "云盘本地上传", placement: "left", children: jsxRuntimeExports.jsx(
             Button,
             {
               type: "primary",
@@ -24977,7 +25469,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: "云盘本地上传", placement: "left",
               className: styles["button"]
             }
           ) }),
-jsxRuntimeExports.jsx(Tooltip, { title: "云盘JSON导入", placement: "left", children: jsxRuntimeExports.jsx(
+          enableCloudImport && jsxRuntimeExports.jsx(Tooltip, { title: "云盘JSON导入", placement: "left", children: jsxRuntimeExports.jsx(
             Button,
             {
               type: "primary",
@@ -24986,7 +25478,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: "云盘JSON导入", placement: "left", c
               className: styles["button"]
             }
           ) }),
-jsxRuntimeExports.jsx(Tooltip, { title: "查看歌单", placement: "left", children: jsxRuntimeExports.jsx(
+          enablePlayList && jsxRuntimeExports.jsx(Tooltip, { title: "查看歌单", placement: "left", children: jsxRuntimeExports.jsx(
             Button,
             {
               type: "primary",
@@ -24995,7 +25487,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: "查看歌单", placement: "left", child
               className: styles["button"]
             }
           ) }),
-jsxRuntimeExports.jsx(Tooltip, { title: "搜索", placement: "left", children: jsxRuntimeExports.jsx(
+          enableSearch && jsxRuntimeExports.jsx(Tooltip, { title: "搜索", placement: "left", children: jsxRuntimeExports.jsx(
             Button,
             {
               type: "primary",
@@ -25004,7 +25496,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: "搜索", placement: "left", children: j
               className: styles["button"]
             }
           ) }),
-jsxRuntimeExports.jsx(Tooltip, { title: "testModal", placement: "left", children: jsxRuntimeExports.jsx(
+          enableTestModal && jsxRuntimeExports.jsx(Tooltip, { title: "testModal", placement: "left", children: jsxRuntimeExports.jsx(
             Button,
             {
               type: "primary",
@@ -25013,7 +25505,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: "testModal", placement: "left", children
               className: styles["button"]
             }
           ) }),
-jsxRuntimeExports.jsx(Tooltip, { title: "GitHub信息", placement: "left", children: jsxRuntimeExports.jsx(
+          enableGithubInfo && jsxRuntimeExports.jsx(Tooltip, { title: "GitHub信息", placement: "left", children: jsxRuntimeExports.jsx(
             Button,
             {
               type: "primary",
@@ -25026,11 +25518,10 @@ jsxRuntimeExports.jsx(QuickUpload$1, { ref: quickUploadRef }),
 jsxRuntimeExports.jsx(CloudMusicManager, { ref: cloudMusicManagerRef }),
 jsxRuntimeExports.jsx(LocalUpload, { ref: localUploadRef }),
 jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef }),
-jsxRuntimeExports.jsx(TestModal, { ref: testModalRef }),
 jsxRuntimeExports.jsx(PlayList$1, { ref: playListRef }),
 jsxRuntimeExports.jsx(Search, { ref: searchRef }),
-jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef }),
-jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
+jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef }),
+jsxRuntimeExports.jsx(TestModal, { ref: testModalRef })
         ] });
       };
       function App() {
@@ -25564,7 +26055,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-BJRcgYSu-Ct_XYpjN.js", ['./__monkey.entry-BY6xKHF9.js', './AbstractID3Parser-DnOYI78R-DwY9yFgm.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js'], (function (exports, module) {
+System.register("./MpegParser-BXKi48WU-GDytKtJA.js", ['./__monkey.entry-CV_Pz_WO.js', './AbstractID3Parser-CS961tIe-DGeivqFC.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BWaf-nnh-BjGTsEWv.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -26159,7 +26650,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-B7L65o0i-CIqIHX47.js", ['./__monkey.entry-BY6xKHF9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-B3sPj4R5-IhjllBYo.js", ['./__monkey.entry-CV_Pz_WO.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -26666,7 +27157,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-7nZ6Vsmf-C-nxl2g7.js", ['./__monkey.entry-BY6xKHF9.js', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-kZ20UU7w-Crqd__Kx.js", ['./__monkey.entry-CV_Pz_WO.js', './ID3v2Parser-BWaf-nnh-BjGTsEWv.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -26840,7 +27331,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-BiQKfjq_-BX8rRRrA.js", ['./__monkey.entry-BY6xKHF9.js', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-Ry4YsMGI-CF60000O.js", ['./__monkey.entry-CV_Pz_WO.js', './ID3v2Parser-BWaf-nnh-BjGTsEWv.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -27011,7 +27502,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-DiNxWLPC-D13a0X_L.js", ['./__monkey.entry-BY6xKHF9.js', './AbstractID3Parser-DnOYI78R-DwY9yFgm.js', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-CerxPiYX-Buocr_KD.js", ['./__monkey.entry-CV_Pz_WO.js', './AbstractID3Parser-CS961tIe-DGeivqFC.js', './ID3v2Parser-BWaf-nnh-BjGTsEWv.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -27109,7 +27600,7 @@ System.register("./DsfParser-DiNxWLPC-D13a0X_L.js", ['./__monkey.entry-BY6xKHF9.
   };
 }));
 
-System.register("./FlacParser-BTb079Xp-9V4Zycek.js", ['./__monkey.entry-BY6xKHF9.js', './VorbisParser-C2AcM5jv-B8VOBFwf.js', './AbstractID3Parser-DnOYI78R-DwY9yFgm.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js'], (function (exports, module) {
+System.register("./FlacParser-DAIk3eDo-BPUtDpH4.js", ['./__monkey.entry-CV_Pz_WO.js', './VorbisParser-CM2a6EKR-B2Ze7iTr.js', './AbstractID3Parser-CS961tIe-DGeivqFC.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BWaf-nnh-BjGTsEWv.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -27261,7 +27752,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-DltAzkd7-CWRCugkp.js", ['./__monkey.entry-BY6xKHF9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-B3RjdKjJ-z630wS4o.js", ['./__monkey.entry-CV_Pz_WO.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -27868,7 +28359,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-Cm1XzOIt-DzntF9Ho.js", ['./__monkey.entry-BY6xKHF9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-DjWDmGDj-9hvoVfun.js", ['./__monkey.entry-CV_Pz_WO.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -28699,7 +29190,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-Ct7HQKlr-D-trXx-z.js", ['./__monkey.entry-BY6xKHF9.js', './AbstractID3Parser-DnOYI78R-DwY9yFgm.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js'], (function (exports, module) {
+System.register("./MusepackParser-BWNKwRGz-KkrxQN0E.js", ['./__monkey.entry-CV_Pz_WO.js', './AbstractID3Parser-CS961tIe-DGeivqFC.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BWaf-nnh-BjGTsEWv.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -28976,7 +29467,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-DnOYI78R-DwY9yFgm.js", ['./__monkey.entry-BY6xKHF9.js', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-CS961tIe-DGeivqFC.js", ['./__monkey.entry-CV_Pz_WO.js', './ID3v2Parser-BWaf-nnh-BjGTsEWv.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -29040,7 +29531,7 @@ System.register("./AbstractID3Parser-DnOYI78R-DwY9yFgm.js", ['./__monkey.entry-B
   };
 }));
 
-System.register("./OggParser-CCJzDdbp-Bpnql55v.js", ['./__monkey.entry-BY6xKHF9.js', './VorbisParser-C2AcM5jv-B8VOBFwf.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-7CGKMN14-BVyv7-QQ.js", ['./__monkey.entry-CV_Pz_WO.js', './VorbisParser-CM2a6EKR-B2Ze7iTr.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -29315,7 +29806,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-C2AcM5jv-B8VOBFwf.js", ['./__monkey.entry-BY6xKHF9.js'], (function (exports, module) {
+System.register("./VorbisParser-CM2a6EKR-B2Ze7iTr.js", ['./__monkey.entry-CV_Pz_WO.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -29531,7 +30022,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-DvCGtJgl-BAuGgRN5.js", ['./__monkey.entry-BY6xKHF9.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-BUzhcI2T-bwORamqt.js", ['./__monkey.entry-CV_Pz_WO.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -29711,7 +30202,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-BdfZyGag-2MYRWBDU.js", ['./__monkey.entry-BY6xKHF9.js', './ID3v2Parser-CPl2DfgL-B-ZBKUDj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-By4EfJAv-B9R1eO4h.js", ['./__monkey.entry-CV_Pz_WO.js', './ID3v2Parser-BWaf-nnh-BjGTsEWv.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -29984,7 +30475,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-CPl2DfgL-B-ZBKUDj.js", ['./__monkey.entry-BY6xKHF9.js'], (function (exports, module) {
+System.register("./ID3v2Parser-BWaf-nnh-BjGTsEWv.js", ['./__monkey.entry-CV_Pz_WO.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
