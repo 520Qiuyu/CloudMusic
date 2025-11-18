@@ -1,18 +1,18 @@
 import { getAlbumDetail, getAlbumSongList } from '@/api';
 import { QUALITY_LEVELS } from '@/constant';
 import { promiseLimit } from '@/utils';
-import { getQualityTags } from '@/utils/music';
+import { downloadAsJson } from '@/utils/download';
+import { getDownloadQuality } from '@/utils/music';
 import { useRef, useState } from 'react';
 import { usePlayMusic } from './usePlayMusic';
-import { downloadAsJson } from '@/utils/download';
 
 /**
  * 获取专辑详情的 Hook
  * @description 提供获取专辑详情、歌曲列表、播放、下载等功能
  */
 export const useGetAlbumDetail = () => {
-  const [currentId, setCurrentId] = useState('');
   const [albumInfo, setAlbumInfo] = useState(null);
+  const [albumSongList, setAlbumSongList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const albumInfoMap = useRef({});
 
@@ -32,7 +32,6 @@ export const useGetAlbumDetail = () => {
       if (albumInfoMap.current[idStr]) {
         const cached = albumInfoMap.current[idStr];
         setAlbumInfo(cached);
-        setCurrentId(idStr);
         return cached;
       }
 
@@ -42,7 +41,6 @@ export const useGetAlbumDetail = () => {
       if (res.code === 200 && res.album) {
         albumInfoMap.current[idStr] = res.album;
         setAlbumInfo(res.album);
-        setCurrentId(idStr);
         return res.album;
       } else {
         throw new Error(res.message || res.msg || '获取专辑详情失败');
@@ -67,6 +65,7 @@ export const useGetAlbumDetail = () => {
       console.log('专辑歌曲列表 res', res);
 
       if (res.code === 200 && res.songs) {
+        setAlbumSongList(res.songs);
         return res.songs;
       } else {
         throw new Error(res.message || res.msg || '获取专辑歌曲列表失败');
@@ -77,23 +76,6 @@ export const useGetAlbumDetail = () => {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  /**
-   * 获取最高音质
-   * @param {Object} song - 歌曲对象
-   * @returns {string} 音质等级
-   */
-  const getHighestQuality = (song) => {
-    const tags = getQualityTags(song);
-    if (tags.length === 0) {
-      return QUALITY_LEVELS.标准;
-    }
-    // 按优先级返回最高音质
-    if (song.hr) return QUALITY_LEVELS['Hi-Res'];
-    if (song.sq) return QUALITY_LEVELS.无损;
-    if (song.h) return QUALITY_LEVELS.较高;
-    return tags[0].value;
   };
 
   /**
@@ -109,7 +91,7 @@ export const useGetAlbumDetail = () => {
       }
 
       const ids = songList.map((song) => {
-        const quality = getHighestQuality(song);
+        const quality = getDownloadQuality(song);
         return {
           id: song.id,
           name: song.name,
@@ -223,7 +205,7 @@ export const useGetAlbumDetail = () => {
       }
 
       for (const song of songList) {
-        const quality = getHighestQuality(song);
+        const quality = getDownloadQuality(song);
         console.log('当前正在播放', song.name);
         await play(song.id, quality);
       }

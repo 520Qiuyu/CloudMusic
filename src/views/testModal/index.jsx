@@ -1,18 +1,24 @@
+import { useConfig } from '@/hooks/useConfig';
 import { useVisible } from '@/hooks/useVisible';
 import { Modal, Tabs } from 'antd';
 import { forwardRef } from 'react';
 import AlbumTab from './components/AlbumTab';
 import ArtistTab from './components/ArtistTab';
 import CloudTab from './components/CloudTab';
+import DownloadSettingTab from './components/DownloadSettingTab';
 import FlacTab from './components/FlacTab';
+import FunctionSwitchTab from './components/FunctionSwitchTab';
 import LoginTab from './components/LoginTab';
 import PlaylistTab from './components/PlaylistTab';
 import SearchTab from './components/SearchTab';
-import SongTab from './components/SongTab';
 import SettingTab from './components/SettingTab';
+import SongTab from './components/SongTab';
 
 const TestModal = forwardRef((props, ref) => {
   const { visible, open, close } = useVisible({}, ref);
+  const { functionConfig } = useConfig();
+  const { enableFunctionSwitchTab, enableDownloadSetting } = functionConfig;
+  console.log('functionConfig', functionConfig);
 
   const tabItems = [
     {
@@ -60,7 +66,17 @@ const TestModal = forwardRef((props, ref) => {
       label: '设置',
       children: <SettingTab />,
     },
-  ];
+    enableFunctionSwitchTab && {
+      key: 'functionSwitchTab',
+      label: '功能开关',
+      children: <FunctionSwitchTab />,
+    },
+    enableDownloadSetting && {
+      key: 'downloadSetting',
+      label: '下载设置',
+      children: <DownloadSettingTab />,
+    },
+  ].filter(Boolean);
 
   return (
     <Modal

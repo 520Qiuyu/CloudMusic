@@ -19,10 +19,20 @@ import PlayList from '../../views/playList';
 import QuickUpload from '../../views/quickUpload';
 import TestModal from '../../views/testModal';
 import styles from './index.module.scss';
+import { useConfig } from '@/hooks/useConfig';
 
 const ButtonGroup = () => {
-  console.log('import.meta.env.MODE', import.meta.env.MODE);
-  const isSell = import.meta.env.MODE === 'sell';
+  const { functionConfig } = useConfig();
+  const {
+    enableQuickUpload,
+    enableCloudMusicManager,
+    enableLocalUpload,
+    enablePlayList,
+    enableSearch,
+    enableCloudImport,
+    enableGithubInfo,
+    enableTestModal,
+  } = functionConfig;
 
   // 云盘快速上传
   const quickUploadRef = useRef(null);
@@ -75,27 +85,29 @@ const ButtonGroup = () => {
   return (
     <div className={styles['button-group']}>
       {/* 云盘快速上传 */}
-      <Tooltip title={'云盘快速上传'} placement='left'>
-        <Button
-          type='primary'
-          icon={<CloudUploadOutlined />}
-          onClick={handleQuickUpload}
-          className={styles['button']}
-        />
-      </Tooltip>
-
+      {enableQuickUpload && (
+        <Tooltip title={'云盘快速上传'} placement='left'>
+          <Button
+            type='primary'
+            icon={<CloudUploadOutlined />}
+            onClick={handleQuickUpload}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
       {/* 云盘歌曲管理 */}
-      <Tooltip title={'云盘歌曲管理'} placement='left'>
-        <Button
-          type='primary'
-          icon={<CustomerServiceOutlined />}
-          onClick={handleCloudMusicManager}
-          className={styles['button']}
-        />
-      </Tooltip>
-
+      {enableCloudMusicManager && (
+        <Tooltip title={'云盘歌曲管理'} placement='left'>
+          <Button
+            type='primary'
+            icon={<CustomerServiceOutlined />}
+            onClick={handleCloudMusicManager}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
       {/* 云盘本地上传 */}
-      {!isSell && (
+      {enableLocalUpload && (
         <Tooltip title={'云盘本地上传'} placement='left'>
           <Button
             type='primary'
@@ -105,19 +117,19 @@ const ButtonGroup = () => {
           />
         </Tooltip>
       )}
-
       {/* 云盘导入 */}
-      <Tooltip title={'云盘JSON导入'} placement='left'>
-        <Button
-          type='primary'
-          icon={<CodeOutlined />}
-          onClick={handleImport}
-          className={styles['button']}
-        />
-      </Tooltip>
-
+      {enableCloudImport && (
+        <Tooltip title={'云盘JSON导入'} placement='left'>
+          <Button
+            type='primary'
+            icon={<CodeOutlined />}
+            onClick={handleImport}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
       {/* 查看歌单 */}
-      {!isSell && (
+      {enablePlayList && (
         <Tooltip title={'查看歌单'} placement='left'>
           <Button
             type='primary'
@@ -127,9 +139,8 @@ const ButtonGroup = () => {
           />
         </Tooltip>
       )}
-
       {/* 搜索 */}
-      {!isSell && (
+      {enableSearch && (
         <Tooltip title={'搜索'} placement='left'>
           <Button
             type='primary'
@@ -139,9 +150,8 @@ const ButtonGroup = () => {
           />
         </Tooltip>
       )}
-
       {/* testModal */}
-      {!isSell && (
+      {enableTestModal && (
         <Tooltip title={'testModal'} placement='left'>
           <Button
             type='primary'
@@ -151,9 +161,8 @@ const ButtonGroup = () => {
           />
         </Tooltip>
       )}
-
       {/* GitHub信息 */}
-      {!isSell && (
+      {enableGithubInfo && (
         <Tooltip title={'GitHub信息'} placement='left'>
           <Button
             type='primary'
@@ -164,18 +173,22 @@ const ButtonGroup = () => {
         </Tooltip>
       )}
 
-      {/* 弹窗组件 */}
+      {/* 云盘快速上传 */}
       <QuickUpload ref={quickUploadRef} />
+      {/* 云盘歌曲管理 */}
       <CloudMusicManager ref={cloudMusicManagerRef} />
+      {/* 云盘本地上传 */}
       <LocalUpload ref={localUploadRef} />
+      {/* 云盘导入 */}
       <CloudImport ref={cloudImportRef} />
-      {/* testModal */}
-      <TestModal ref={testModalRef} />
       {/* 查看歌单 */}
       <PlayList ref={playListRef} />
+      {/* 搜索 */}
       <Search ref={searchRef} />
-      <CloudImport ref={cloudImportRef} />
+      {/* GitHub信息 */}
       <GithubInfo ref={githubInfoRef} />
+      {/* testModal */}
+      <TestModal ref={testModalRef} />
     </div>
   );
 };

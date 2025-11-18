@@ -1,14 +1,25 @@
+import { getAlbumSongList, neteaseMusicToCloud } from '@/api';
+import { MyButton } from '@/components';
 import { useGetAlbumDetail, usePlayMusic } from '@/hooks';
-import { downloadAsJson } from '@/utils/download';
 import { msgError, msgLoading, msgSuccess } from '@/utils/modal';
 import AlbumDetail from '@/views/albumDetail';
 import {
+  CloudUploadOutlined,
   DownloadOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
   SaveOutlined,
 } from '@ant-design/icons';
-import { Button, Image, Space, Table, Tag, Tooltip, Typography } from 'antd';
+import {
+  Button,
+  Image,
+  message,
+  Space,
+  Table,
+  Tag,
+  Tooltip,
+  Typography,
+} from 'antd';
 import dayjs from 'dayjs';
 import { useRef, useState } from 'react';
 import styles from '../index.module.scss';
@@ -17,15 +28,7 @@ const AlbumTab = ({ data, loading }) => {
   const albumDetailRef = useRef();
 
   const { play, pause, isPlaying, download } = usePlayMusic();
-  const {
-    albumInfo,
-    isLoading,
-    getAlbumDetail,
-    getAlbumSongList,
-    playAlbum,
-    downloadAlbumSong,
-    getDownLoadJson,
-  } = useGetAlbumDetail();
+  const { playAlbum, downloadAlbumSong, getDownLoadJson } = useGetAlbumDetail();
 
   /** 处理专辑播放 */
   const [playing, setPlaying] = useState(undefined);
@@ -62,18 +65,49 @@ const AlbumTab = ({ data, loading }) => {
     }
   };
 
-  const [downloadingJson, setDownloadingJson] = useState(undefined);
   const handleDownloadJson = async (record) => {
     try {
-      setDownloadingJson(record.id);
       const hide = msgLoading(`正在准备下载《${record.name}》...`);
       await getDownLoadJson(record.id);
       hide();
       msgSuccess(`《${record.name}》下载成功！`);
     } catch (error) {
       msgError('下载JSON失败: ' + (error?.message || error));
+    }
+  };
+
+  const handleSaveToCloud = async (record) => {
+    console.log('record', record);
+    const uploadMessageKey = 'album-to-cloud';
+    try {
+      // 获取专辑歌曲列表
+      const res = await getAlbumSongList(record.id);
+      console.log('res', res);
+      if (res.code === 200) {
+        const songs = res.songs;
+        const songIds = songs.map((song) => song.id);
+        await neteaseMusicToCloud(songIds, {
+          onChange: (progress) => {
+            console.log('progress', progress);
+            message.loading({
+              content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+              key: uploadMessageKey,
+              duration: 0,
+            });
+          },
+          onComplete: (result) => {
+            console.log('result', result);
+            message.destroy(uploadMessageKey);
+            msgSuccess(
+              `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
+            );
+          },
+        });
+      }
+    } catch (error) {
+      console.log('error', error);
     } finally {
-      setDownloadingJson(undefined);
+      message.destroy(uploadMessageKey);
     }
   };
 
@@ -181,7 +215,7 @@ const AlbumTab = ({ data, loading }) => {
                     textOverflow: 'ellipsis',
                     whiteSpace: 'nowrap',
                   }}>
-                  ID:{' '}
+                  ID:
                   <Typography.Text copyable style={{ fontSize: '12px' }}>
                     {record.id}
                   </Typography.Text>
@@ -219,7 +253,7 @@ const AlbumTab = ({ data, loading }) => {
       align: 'center',
       sorter: (a, b) => (a.size || 0) - (b.size || 0),
       sortDirections: ['ascend', 'descend'],
-      render: (size) => size || 0,
+      render: (size) => <Tag color='#c20c0c'>{size || 0}</Tag>,
     },
     {
       title: '发布时间',
@@ -297,12 +331,12 @@ const AlbumTab = ({ data, loading }) => {
     {
       title: '操作',
       key: 'action',
-      width: 250,
+      width: 300,
       align: 'center',
       fixed: 'right',
       render: (_, record) => {
         return (
-          <Space>
+          <Space size='small' wrap>
             <Button
               type='link'
               size='small'
@@ -323,14 +357,13 @@ const AlbumTab = ({ data, loading }) => {
               }}>
               播放
             </Button>
-            <Button
+            <MyButton
               type='link'
               size='small'
-              loading={downloadingJson === record.id}
               icon={<SaveOutlined />}
               onClick={() => handleDownloadJson(record)}>
               下载JSON
-            </Button>
+            </MyButton>
             <Button
               type='link'
               size='small'
@@ -339,6 +372,13 @@ const AlbumTab = ({ data, loading }) => {
               onClick={() => handleDownload(record)}>
               下载
             </Button>
+            <MyButton
+              type='link'
+              size='small'
+              icon={<CloudUploadOutlined />}
+              onClick={() => handleSaveToCloud(record)}>
+              转存到网盘
+            </MyButton>
           </Space>
         );
       },
@@ -355,6 +395,7 @@ const AlbumTab = ({ data, loading }) => {
         scroll={{ y: 500, x: 1200 }}
         className={styles['song-table']}
         pagination={false}
+        size='small'
       />
 
       {/* 专辑详情弹窗 */}

@@ -17,6 +17,13 @@ export const getQualityTags = (song) => {
   return tags;
 };
 
+// 获取下载音质
+export const getDownloadQuality = (song, level = QUALITY_LEVELS.无损) => {
+  const tags = getQualityTags(song);
+  const tag = tags.find((tag) => tag.value === level);
+  return tag ? tag.value : tags[0]?.value;
+};
+
 // 格式化时长
 export const formatDuration = (ms) => {
   const time = dayjs.duration(ms);

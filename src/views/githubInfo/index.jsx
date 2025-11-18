@@ -1,3 +1,4 @@
+import { useConfig } from '@/hooks/useConfig';
 import { useVisible } from '@/hooks/useVisible';
 import {
   EyeOutlined,
@@ -37,6 +38,7 @@ const GithubInfo = forwardRef((props, ref) => {
   const { visible, close } = useVisible({}, ref);
   const [repoInfo, setRepoInfo] = useState(null);
   const [loading, setLoading] = useState(false);
+  const { functionConfig, setFunctionConfig } = useConfig();
 
   // 获取 GitHub 仓库信息
   const fetchRepoInfo = async () => {
@@ -83,6 +85,14 @@ const GithubInfo = forwardRef((props, ref) => {
       month: 'long',
       day: 'numeric',
     });
+  };
+
+  const handleDoubleClickDefaultBranch = () => {
+    setFunctionConfig({
+      ...functionConfig,
+      enableTestModal: !functionConfig.enableTestModal,
+    });
+    close();
   };
 
   return (
@@ -169,7 +179,12 @@ const GithubInfo = forwardRef((props, ref) => {
           </Descriptions.Item>
 
           <Descriptions.Item label='默认分支'>
-            <Text code>{repoInfo?.defaultBranch || 'main'}</Text>
+            <Text
+              code
+              onDoubleClick={handleDoubleClickDefaultBranch}
+              style={{ cursor: 'pointer', userSelect: 'none' }}>
+              {repoInfo?.defaultBranch || 'main'}
+            </Text>
           </Descriptions.Item>
 
           <Descriptions.Item label='许可证'>

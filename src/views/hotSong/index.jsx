@@ -20,8 +20,10 @@ const HotSongModal = forwardRef((props, ref) => {
     ref,
   );
 
-  const [params, setParams] = useState();
-  const { singerInfo, singerAlbum, singerAllSong } = useGetSingerInfo(params.singerId);
+  const [params, setParams] = useState({});
+  const { singerInfo, singerAlbum, singerAllSong } = useGetSingerInfo({
+    singerId: params.singerId,
+  });
 
   return (
     <Modal

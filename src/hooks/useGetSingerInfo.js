@@ -1,4 +1,6 @@
-export function useGetSingerInfo(singerId) {
+import { useState } from 'react';
+
+export function useGetSingerInfo({ singerId }) {
   // 歌手信息
   const [singerInfo, setSingerInfo] = useState({});
   // 歌手专辑
