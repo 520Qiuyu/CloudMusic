@@ -1,4 +1,12 @@
+import { useConfig } from '@/hooks/useConfig';
+import CloudImport from '@/views/cloudImport';
+import CloudMusicManager from '@/views/cloudMusicManager';
+import GithubInfo from '@/views/githubInfo';
+import LocalUpload from '@/views/localUpload';
+import PlayList from '@/views/playList';
+import QuickUpload from '@/views/quickUpload';
 import Search from '@/views/search';
+import TestModal from '@/views/testModal';
 import {
   CloudUploadOutlined,
   CodeOutlined,
@@ -11,15 +19,7 @@ import {
 } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
 import { useRef } from 'react';
-import CloudImport from '../../views/cloudImport';
-import CloudMusicManager from '../../views/cloudMusicManager';
-import GithubInfo from '../../views/githubInfo';
-import LocalUpload from '../../views/localUpload';
-import PlayList from '../../views/playList';
-import QuickUpload from '../../views/quickUpload';
-import TestModal from '../../views/testModal';
 import styles from './index.module.scss';
-import { useConfig } from '@/hooks/useConfig';
 
 const ButtonGroup = () => {
   const { functionConfig } = useConfig();

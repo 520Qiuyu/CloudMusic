@@ -2,14 +2,17 @@ import { uploadSong } from '@/api';
 import SearchForm from '@/components/SearchForm';
 import useFilter from '@/hooks/useFilter';
 import { useVisible } from '@/hooks/useVisible';
+import { useConfig } from '@/hooks/useConfig';
 import { formatFileSize, promiseLimit } from '@/utils';
 import { msgSuccess } from '@/utils/modal';
 import { UploadOutlined } from '@ant-design/icons';
-import { Space } from 'antd';
-import { Button, Modal, Table, Upload, message } from 'antd';
+import { Button, Modal, Space, Table, Upload, message } from 'antd';
 import { forwardRef, useState } from 'react';
+import { Input } from 'antd';
 
 const CloudImport = forwardRef((props, ref) => {
+  const { functionConfig } = useConfig();
+  const { uploadConcurrency } = functionConfig;
   const { visible, close } = useVisible(
     {
       onOpen() {
@@ -66,25 +69,36 @@ const CloudImport = forwardRef((props, ref) => {
   ];
 
   // 并发量
-  const [concurrent, setConcurrent] = useState(6);
+  const [concurrent, setConcurrent] = useState(uploadConcurrency);
   const [loading, setLoading] = useState(false);
   const handleOk = async () => {
     try {
       setLoading(true);
-      const proArr = selectedRows.map(
-        (item) => () =>
-          uploadSong({
-            ...item,
-            filename: item.name || '未知',
-            artists: item.artists?.join?.(','),
-          }),
-      );
+      const importMessageKey = 'import-song';
+      message.loading({
+        content: `开始导入歌曲，请稍候...`,
+        duration: 0,
+        key: importMessageKey,
+      });
+      const proArr = selectedRows.map((item, index) => async () => {
+        await uploadSong({
+          ...item,
+          filename: item.name || '未知',
+          artists: item.artists?.join?.(','),
+        });
+        message.loading({
+          content: `第${index + 1}首歌曲导入完成: ${item.name}`,
+          key: importMessageKey,
+          duration: 0,
+        });
+      });
       const res = await promiseLimit(proArr, concurrent);
       console.log('res', res);
       msgSuccess('导入成功');
     } catch (error) {
       console.log('error', error);
     } finally {
+      message.destroy(importMessageKey);
       setLoading(false);
     }
   };
@@ -151,6 +165,14 @@ ${JSON.stringify(
   const renderFooter = () => {
     return (
       <Space>
+        {/* 并发量 */}
+        <Input
+          type='number'
+          size='middle'
+          min={1}
+          value={concurrent}
+          onChange={(e) => setConcurrent(Number(e.target.value))}
+        />
         {/* 全部选择 */}
         <Button onClick={() => setSelectedRows(filteredList)}>全部选择</Button>
         {/* 取消 */}
@@ -158,6 +180,7 @@ ${JSON.stringify(
         {/* 导入 */}
         <Button
           type='primary'
+          loading={loading}
           onClick={handleOk}
           disabled={!selectedRows.length}>
           导入 {selectedRows.length} 首
@@ -173,9 +196,6 @@ ${JSON.stringify(
       onCancel={close}
       centered
       width={1000}
-      onOk={handleOk}
-      onClose={close}
-      confirmLoading={loading}
       footer={renderFooter()}>
       <SearchForm
         data={tableData}
@@ -195,6 +215,7 @@ ${JSON.stringify(
         pagination={{
           showQuickJumper: true,
           showSizeChanger: true,
+          showTotal: (total) => `共 ${total} 首歌曲`,
         }}
         rowSelection={{
           type: 'checkbox',

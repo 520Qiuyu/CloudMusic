@@ -55,7 +55,6 @@ const CloudMusicManager = forwardRef((props, ref) => {
       if (res.code === 200) {
         console.log('songList', res.data);
         setSongList(res.data);
-        setFilteredSongList(res.data);
       }
     } catch (error) {
       console.log('error', error);
@@ -387,6 +386,18 @@ const CloudMusicManager = forwardRef((props, ref) => {
     );
     setSelectedRows(filteredSongList.slice(range[0] - 1, range[1]));
   };
+  const [truncate, setTruncate] = useState(false);
+  const handleRangeTruncate = () => {
+    if (truncate) {
+      getCloudDataList();
+    } else {
+      console.log('range', range);
+      if (!range[0] || !range[1]) return msgWarning('请输入区间');
+      if (range[0] > range[1]) return msgWarning('区间错误');
+      setSongList(filteredSongList.slice(range[0] - 1, range[1]));
+    }
+    setTruncate(!truncate);
+  };
 
   // 自动按专辑添加
   const [addToPlayListByAlbumLoading, setAddToPlayListByAlbumLoading] =
@@ -688,6 +699,9 @@ const CloudMusicManager = forwardRef((props, ref) => {
           />
           <Button onClick={handleRangeChoose} style={{ marginRight: 10 }}>
             区间选择
+          </Button>
+          <Button onClick={handleRangeTruncate} style={{ marginRight: 10 }}>
+            {truncate ? '恢复' : '区间截取'}
           </Button>
 
           {/* 全选 */}
