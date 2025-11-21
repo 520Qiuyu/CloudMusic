@@ -18,7 +18,6 @@ const TestModal = forwardRef((props, ref) => {
   const { visible, open, close } = useVisible({}, ref);
   const { functionConfig } = useConfig();
   const { enableFunctionSwitchTab, enableDownloadSetting } = functionConfig;
-  console.log('functionConfig', functionConfig);
 
   const tabItems = [
     {

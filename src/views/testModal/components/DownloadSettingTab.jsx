@@ -78,7 +78,7 @@ const DownloadSettingTab = () => {
           <SettingItem
             value={downloadConfig[strategy.value]}
             onChange={(value) => handleConfigChange(strategy.value, value)}
-            {...strategy}
+            type={strategy.type}
           />
         </Item>
       ))}
