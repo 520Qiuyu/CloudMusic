@@ -12,6 +12,7 @@ import { InboxOutlined } from '@ant-design/icons';
 import { Button, Input, Modal, Progress, Table, Upload } from 'antd';
 import { forwardRef, useState } from 'react';
 import styles from './index.module.scss';
+import { useConfig } from '@/hooks';
 
 const { Dragger } = Upload;
 
@@ -25,12 +26,14 @@ const LocalUpload = forwardRef((props, ref) => {
     },
     ref,
   );
+  const { functionConfig } = useConfig();
+  const { uploadConcurrency } = functionConfig;
 
   const [fileList, setFileList] = useState([]);
   // 上传状态
   const [loading, setLoading] = useState(false);
   // 并发量
-  const [concurrency, setConcurrency] = useState(1);
+  const [concurrency, setConcurrency] = useState(uploadConcurrency);
   const handleUpload = async () => {
     try {
       setLoading(true);
