@@ -41,7 +41,7 @@ export const defaultConfig = {
     /**
      * 是否开启云盘本地上传
      */
-    enableLocalUpload: true,
+    enableLocalUpload: !isSell,
     /**
      * 是否开启查看歌单
      */
@@ -57,7 +57,7 @@ export const defaultConfig = {
     /**
      * 是否开启GitHub信息
      */
-    enableGithubInfo: true,
+    enableGithubInfo: !isSell,
     /**
      * 是否开启调试Modal
      */
