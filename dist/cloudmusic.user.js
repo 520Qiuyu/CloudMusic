@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-UNVPT7p_.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-BNsIYBLo.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,7 +44,7 @@ System.register("./__entry.js", ['./__monkey.entry-UNVPT7p_.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-UNVPT7p_.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-BNsIYBLo.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Avatar, Form, Pagination, ConfigProvider, Select, Tooltip, Empty, Card, Switch, TimePicker, DatePicker, Checkbox, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, PauseCircleFilled, PlayCircleFilled, CopyOutlined, CopyrightOutlined, CloudUploadOutlined, FileOutlined, DeleteOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
   return {
@@ -7319,7 +7319,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-BaghehtQ-DP61AeC2.js');
+            const { MpegParser } = await module.import('./MpegParser-hKSoWUFr-D_hoaTju.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7341,7 +7341,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-Cse3LKhm-B-38QckB.js');
+            const { AsfParser } = await module.import('./AsfParser-DiRqzhBS-Cfz5EGnR.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7352,7 +7352,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-BQubWbDE-CLS4Ar6U.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-DzSgt3tk-CztTSViy.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7363,7 +7363,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-DTB4ZDHm-Bc8Dxn5A.js');
+            const { AIFFParser } = await module.import('./AiffParser-BmROzq8r-DJrtgr21.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7374,7 +7374,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-_hGyJ_Bc-Cty40IS2.js');
+            const { DsfParser } = await module.import('./DsfParser-qPdGAZmd-DtE5naoi.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7385,7 +7385,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-COPx0FkW-Br2g43zJ.js');
+            const { FlacParser } = await module.import('./FlacParser-Dt6fa4Vk-D6bF-3bG.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7396,7 +7396,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-DfukrW1E-BDcOK3uv.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-BM31X3vR-BtBV1IRu.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7407,7 +7407,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-BdSwQnBC-BGC78nq4.js');
+            const { MP4Parser } = await module.import('./MP4Parser-_C7Aal7U-reCwMnIq.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7418,7 +7418,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-DWIegohF-DBPyiPyx.js');
+            const { MusepackParser } = await module.import('./MusepackParser-mOnnR9Cf-DaKirFlg.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7429,7 +7429,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-CvTwwW0I-CRlli7_S.js');
+            const { OggParser } = await module.import('./OggParser-DCn22tsE-DQty-ZDa.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7440,7 +7440,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-CYfj9W2r-mnIYjLFS.js');
+            const { WavPackParser } = await module.import('./WavPackParser-Cf7RB5i8-BqHxV5hI.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7451,7 +7451,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-BIuNBwIf-z-g2vzDs.js');
+            const { WaveParser } = await module.import('./WaveParser-DmJtbLf7-Mak-ijFB.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -13579,422 +13579,6 @@ jsxRuntimeExports.jsx(
         "size-text": "_size-text_1latm_55",
         divider: divider$1
       };
-      const { Dragger } = Upload;
-      const LocalUpload = forwardRef((props, ref) => {
-        const { visible, close } = useVisible(
-          {
-            onReset() {
-              setLoading(false);
-              setFileList([]);
-            }
-          },
-          ref
-        );
-        const [fileList, setFileList] = useState([]);
-        const [loading, setLoading] = useState(false);
-        const [concurrency, setConcurrency] = useState(1);
-        const handleUpload = async () => {
-          try {
-            setLoading(true);
-            const uploadPromises = fileList.map((file) => async () => {
-              try {
-                if (file.status === "done") {
-                  return;
-                }
-                file.status = "uploading";
-                const res2 = await uploadLocalSong(file);
-                file.status = "done";
-                return res2;
-              } catch (e2) {
-                file.status = "error";
-                return null;
-              } finally {
-                setFileList((prev) => [...prev]);
-              }
-            });
-            const res = await promiseLimit(uploadPromises, concurrency);
-            console.log("res", res);
-            msgSuccess$1("上传成功");
-            const size2 = res.filter(Boolean).reduce((acc, file) => acc + file.size, 0);
-            const info2 = {
-              list: res.filter(Boolean),
-              count: res.filter(Boolean).length,
-              size: size2,
-              sizeDesc: formatFileSize(size2),
-              artist: res.filter(Boolean)?.[0].artist || ""
-            };
-            downloadJsonFile(info2, info2.artist + ".json");
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        const handleFilter = async () => {
-          setFileList((prev) => prev.filter((file) => file.status === "error"));
-        };
-        const [getJsonLoading, setGetJsonLoading] = useState(false);
-        const handleGetJson = async () => {
-          try {
-            setGetJsonLoading(true);
-            const proArr = fileList.map(async (file) => {
-              const ext = file.name.split(".").pop() || "mp3";
-              const bitrate = 999e3;
-              const name2 = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
-              const size2 = file.size;
-              const md52 = await getFileMD5(file);
-              const { album: album2, artist: artist2, artists, title: title2 } = await getAudioMetadata(file);
-              return {
-                size: size2,
-                md5: md52,
-                bitrate,
-                ext,
-                album: album2,
-                artist: artist2,
-                artists,
-                name: title2
-              };
-            });
-            const data = await Promise.all(proArr);
-            downloadJsonFile(data, data[0].artist + ".json");
-          } catch (e2) {
-            console.log("error", e2);
-          } finally {
-            setGetJsonLoading(false);
-          }
-        };
-        const columns = [
-          {
-            title: "文件名",
-            dataIndex: "name",
-            key: "name"
-          },
-          {
-            title: "大小",
-            dataIndex: "size",
-            key: "size",
-            render: (size2) => `${(size2 / 1024 / 1024).toFixed(2)} MB`
-          },
-          {
-            title: "状态",
-            dataIndex: "status",
-            key: "status",
-            render: (status, record) => {
-              if (status === "done") {
-                return jsxRuntimeExports.jsx(Progress, { percent: 100, size: "small", status: "success" });
-              }
-              if (status === "error") {
-                return jsxRuntimeExports.jsx(Progress, { percent: 100, size: "small", status: "exception" });
-              }
-              if (status === "uploading") {
-                return jsxRuntimeExports.jsx(
-                  Progress,
-                  {
-                    percent: record.progress || 0,
-                    size: "small",
-                    status: "active"
-                  }
-                );
-              }
-              return jsxRuntimeExports.jsx(Progress, { percent: 0, size: "small" });
-            }
-          }
-        ];
-        return jsxRuntimeExports.jsx(
-          Modal,
-          {
-            title: "云盘本地上传",
-            open: visible,
-            onCancel: close,
-            onOk: handleUpload,
-            confirmLoading: loading,
-            centered: true,
-            width: 1e3,
-            children: jsxRuntimeExports.jsxs("div", { className: styles$8["local-upload"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$8["upload-section"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$8["concurrency-control"], children: [
-jsxRuntimeExports.jsx("span", { children: "并发数量：" }),
-jsxRuntimeExports.jsx(
-                    Input,
-                    {
-                      type: "number",
-                      min: 1,
-                      max: 6,
-                      value: concurrency,
-                      onChange: (e2) => setConcurrency(parseInt(e2.target.value) || 1),
-                      style: { width: 80 }
-                    }
-                  )
-                ] }),
-jsxRuntimeExports.jsxs(
-                  Dragger,
-                  {
-                    className: styles$8.dragger,
-                    multiple: true,
-                    fileList,
-                    beforeUpload: (file) => {
-                      setFileList((prev) => [...prev, file]);
-                      return false;
-                    },
-                    showUploadList: false,
-                    accept: ".mp3,.flac,.wav,.m4a,.ogg",
-                    children: [
-jsxRuntimeExports.jsx("p", { className: styles$8["upload-icon"], children: jsxRuntimeExports.jsx(InboxOutlined, {}) }),
-jsxRuntimeExports.jsx("p", { className: styles$8["upload-text"], children: "点击或拖拽文件到此区域上传" }),
-jsxRuntimeExports.jsx("p", { className: styles$8["upload-hint"], children: "支持 mp3, flac, wav, m4a, ogg 格式的音频文件" })
-                    ]
-                  }
-                )
-              ] }),
-jsxRuntimeExports.jsxs("div", { className: styles$8["file-list"], children: [
-jsxRuntimeExports.jsx(
-                  Table,
-                  {
-                    columns,
-                    dataSource: fileList,
-                    rowKey: (file) => file.uid || file.name,
-                    scroll: { y: 300 }
-                  }
-                ),
-jsxRuntimeExports.jsxs("div", { className: styles$8["upload-stats"], children: [
-jsxRuntimeExports.jsxs("span", { children: [
-                    "共 ",
-                    fileList.length,
-                    " 个文件"
-                  ] }),
-jsxRuntimeExports.jsx("span", { className: styles$8.divider, children: "|" }),
-jsxRuntimeExports.jsxs("span", { className: styles$8["size-text"], children: [
-                    "总大小：",
-                    formatFileSize(
-                      fileList.reduce((acc, file) => acc + file.size, 0)
-                    )
-                  ] }),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      type: "primary",
-                      size: "small",
-                      onClick: () => setFileList([]),
-                      style: { marginLeft: "auto" },
-                      children: "清空列表"
-                    }
-                  ),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      type: "primary",
-                      size: "small",
-                      onClick: handleFilter,
-                      disabled: !fileList.some((file) => file.status !== "error"),
-                      children: "失败过滤"
-                    }
-                  ),
-jsxRuntimeExports.jsx(
-                    Button,
-                    {
-                      type: "primary",
-                      size: "small",
-                      onClick: handleGetJson,
-                      loading: getJsonLoading,
-                      children: "直接获取JSON"
-                    }
-                  )
-                ] })
-              ] })
-            ] })
-          }
-        );
-      });
-      const copy = async (text2, options = {}) => {
-        try {
-          if (navigator.clipboard && window.isSecureContext) {
-            if (options.html) {
-              const type = "text/html";
-              const blob = new Blob([text2], { type });
-              const data = [new ClipboardItem({ [type]: blob })];
-              await navigator.clipboard.write(data);
-            } else {
-              await navigator.clipboard.writeText(text2);
-            }
-          } else {
-            const textArea = document.createElement("textarea");
-            textArea.value = text2;
-            textArea.style.cssText = "position: fixed; top: -9999px; left: -9999px";
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            try {
-              document.execCommand("copy");
-            } catch (err2) {
-              throw new Error("复制失败，请检查浏览器权限设置");
-            } finally {
-              document.body.removeChild(textArea);
-            }
-          }
-        } catch (err2) {
-          throw new Error(
-            err2 instanceof Error ? err2.message : "复制失败，请重试"
-          );
-        }
-      };
-      const styles$7 = {
-        "copy-text": "_copy-text_1att4_1",
-        "copy-btn": "_copy-btn_1att4_12"
-      };
-      var classnames = { exports: {} };
-var hasRequiredClassnames;
-      function requireClassnames() {
-        if (hasRequiredClassnames) return classnames.exports;
-        hasRequiredClassnames = 1;
-        (function(module) {
-          (function() {
-            var hasOwn = {}.hasOwnProperty;
-            function classNames2() {
-              var classes = "";
-              for (var i = 0; i < arguments.length; i++) {
-                var arg = arguments[i];
-                if (arg) {
-                  classes = appendClass(classes, parseValue(arg));
-                }
-              }
-              return classes;
-            }
-            function parseValue(arg) {
-              if (typeof arg === "string" || typeof arg === "number") {
-                return arg;
-              }
-              if (typeof arg !== "object") {
-                return "";
-              }
-              if (Array.isArray(arg)) {
-                return classNames2.apply(null, arg);
-              }
-              if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) {
-                return arg.toString();
-              }
-              var classes = "";
-              for (var key in arg) {
-                if (hasOwn.call(arg, key) && arg[key]) {
-                  classes = appendClass(classes, key);
-                }
-              }
-              return classes;
-            }
-            function appendClass(value2, newClass) {
-              if (!newClass) {
-                return value2;
-              }
-              if (value2) {
-                return value2 + " " + newClass;
-              }
-              return value2 + newClass;
-            }
-            if (module.exports) {
-              classNames2.default = classNames2;
-              module.exports = classNames2;
-            } else {
-              window.classNames = classNames2;
-            }
-          })();
-        })(classnames);
-        return classnames.exports;
-      }
-      var classnamesExports = requireClassnames();
-      const classNames = getDefaultExportFromCjs(classnamesExports);
-      const styles$6 = {
-        "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
-      };
-      function TextOverflowShowTips({
-        text: text2,
-        tooltipProps,
-        className,
-        ...restProps
-      }) {
-        const containerRef = useRef(null);
-        const { width: containerWidth } = useSize(containerRef) || {};
-        const isTooLong = useMemo(() => {
-          if (containerWidth) {
-            const textWidth = getTextWidth(text2);
-            return containerWidth < textWidth;
-          }
-          return false;
-        }, [text2, containerWidth]);
-        const containerStyle = {
-          maxWidth: "100%",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          whiteSpace: "nowrap"
-        };
-        return isTooLong ? jsxRuntimeExports.jsx(Tooltip, { title: text2, ...tooltipProps, children: jsxRuntimeExports.jsx(
-          "div",
-          {
-            ...restProps,
-            className: classNames(styles$6["text-overflow-show-tips-container"], className),
-            children: jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text2 })
-          }
-        ) }) : jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text2 });
-      }
-      function getTextWidth(text2, font = "14px Arial") {
-        const span = document.createElement("span");
-        span.style.visibility = "hidden";
-        span.style.whiteSpace = "nowrap";
-        span.style.font = font;
-        span.style.position = "absolute";
-        span.style.top = "-9999px";
-        span.style.left = "-9999px";
-        span.innerText = text2;
-        document.body.appendChild(span);
-        const width = span.offsetWidth;
-        document.body.removeChild(span);
-        return width;
-      }
-      function CopyText(props) {
-        const { text: text2, className, ...rest } = props;
-        const handleCopy = () => {
-          copy(text2);
-          msgSuccess$1("复制成功");
-        };
-        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$7["copy-text"], className), ...rest, children: [
-jsxRuntimeExports.jsx(
-            TextOverflowShowTips,
-            {
-              text: text2 + "",
-              tooltipProps: {
-                getPopupContainer: (node) => {
-                  return document.body;
-                }
-              }
-            }
-          ),
-jsxRuntimeExports.jsx(
-            Button,
-            {
-              type: "link",
-              icon: jsxRuntimeExports.jsx(CopyOutlined, {}),
-              onClick: handleCopy,
-              className: styles$7["copy-btn"]
-            }
-          )
-        ] });
-      }
-      function MyButton(props) {
-        const { loading, onClick, ...rest } = props;
-        const [_loading, setLoading] = useState(loading);
-        const handleClick = async (...args) => {
-          try {
-            setLoading(true);
-            await onClick?.(...args);
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        useEffect(() => {
-          setLoading(loading);
-        }, [loading]);
-        return jsxRuntimeExports.jsx(Button, { ...rest, onClick: handleClick, loading: _loading });
-      }
       function stringToBytes(str, encoding = "utf8") {
         if (encoding === "utf8") {
           const utf8 = unescape(encodeURIComponent(str));
@@ -14991,6 +14575,207 @@ default:
           download
         };
       };
+      const useGetAlbumDetail = () => {
+        const [albumInfo, setAlbumInfo] = useState(null);
+        const [albumSongList, setAlbumSongList] = useState([]);
+        const [isLoading, setIsLoading] = useState(false);
+        const albumInfoMap = useRef({});
+        const { play, getUrl, download, getLyric } = usePlayMusic();
+        const getAlbumDetailData = async (id) => {
+          try {
+            setIsLoading(true);
+            const idStr = String(id);
+            if (albumInfoMap.current[idStr]) {
+              const cached = albumInfoMap.current[idStr];
+              setAlbumInfo(cached);
+              return cached;
+            }
+            const res = await getAlbumDetail(id);
+            console.log("专辑详情 res", res);
+            if (res.code === 200 && res.album) {
+              albumInfoMap.current[idStr] = res.album;
+              setAlbumInfo(res.album);
+              return res.album;
+            } else {
+              throw new Error(res.message || res.msg || "获取专辑详情失败");
+            }
+          } catch (error) {
+            console.error("获取专辑详情失败:", error);
+            throw error;
+          } finally {
+            setIsLoading(false);
+          }
+        };
+        const getAlbumSongListData = async (id) => {
+          try {
+            setIsLoading(true);
+            const res = await getAlbumSongList(id);
+            console.log("专辑歌曲列表 res", res);
+            if (res.code === 200 && res.songs) {
+              setAlbumSongList(res.songs);
+              return res.songs;
+            } else {
+              throw new Error(res.message || res.msg || "获取专辑歌曲列表失败");
+            }
+          } catch (error) {
+            console.error("获取专辑歌曲列表失败:", error);
+            throw error;
+          } finally {
+            setIsLoading(false);
+          }
+        };
+        const getAlbumSongUrl = async (id) => {
+          try {
+            const songList2 = await getAlbumSongListData(id);
+            if (!songList2 || songList2.length === 0) {
+              return [];
+            }
+            const ids = songList2.map((song) => {
+              const quality2 = getDownloadQuality(song);
+              return {
+                id: song.id,
+                name: song.name,
+                quality: quality2
+              };
+            });
+            const promiseArr = ids.map((item) => async () => {
+              const url = await getUrl(item.id, item.quality);
+              return {
+                ...item,
+                url
+              };
+            });
+            const urls = await promiseLimit(promiseArr, 6);
+            console.log("专辑歌曲URL列表", urls);
+            return urls;
+          } catch (error) {
+            console.error("获取专辑歌曲URL失败:", error);
+            throw error;
+          }
+        };
+        const downloadAlbumSong = async (id, options = { level: QUALITY_LEVELS.无损 }) => {
+          try {
+            const { level = QUALITY_LEVELS.无损 } = options;
+            const songList2 = await getAlbumSongListData(id);
+            if (!songList2 || songList2.length === 0) {
+              throw new Error("专辑中没有歌曲");
+            }
+            for (const song of songList2) {
+              console.log(`当前正在下载${song.name}...`);
+              await download(song.id, song.name, level, id);
+            }
+          } catch (error) {
+            console.error("下载专辑歌曲失败:", error);
+            throw error;
+          }
+        };
+        const getDownLoadJson = async (id, options = { level: QUALITY_LEVELS.无损 }) => {
+          try {
+            const { level = QUALITY_LEVELS.无损 } = options;
+            const albumDetail = await getAlbumDetailData(id);
+            const songList2 = await getAlbumSongListData(id);
+            if (!songList2 || songList2.length === 0) {
+              throw new Error("专辑中没有歌曲");
+            }
+            const promiseArr = songList2.map((song) => async () => {
+              const lrcContent = await getLyric(song.id);
+              const url = await getUrl(song.id, level);
+              return {
+                songName: song.name,
+                url,
+                lrcContent
+              };
+            });
+            const songListWithUrl = await promiseLimit(promiseArr, 6);
+            downloadAsJson(
+              {
+                albumName: albumDetail.name,
+                albumCover: albumDetail.picUrl || albumDetail.blurPicUrl,
+                list: songListWithUrl
+              },
+              `${albumDetail.name}-专辑`
+            );
+            return {
+              albumName: albumDetail.name,
+              albumCover: albumDetail.picUrl || albumDetail.blurPicUrl,
+              list: songListWithUrl
+            };
+          } catch (error) {
+            console.error("获取下载JSON失败:", error);
+            throw error;
+          }
+        };
+        const playAlbum = async (id) => {
+          try {
+            const songList2 = await getAlbumSongListData(id);
+            console.log("专辑歌曲列表", songList2);
+            if (!songList2 || songList2.length === 0) {
+              throw new Error("专辑中没有歌曲");
+            }
+            for (const song of songList2) {
+              const quality2 = getDownloadQuality(song);
+              console.log("当前正在播放", song.name);
+              await play(song.id, quality2);
+            }
+          } catch (error) {
+            console.error("播放专辑失败:", error);
+            throw error;
+          }
+        };
+        return {
+          albumInfo,
+          isLoading,
+          getAlbumDetail: getAlbumDetailData,
+          getAlbumSongList: getAlbumSongListData,
+          playAlbum,
+          getAlbumSongUrl,
+          downloadAlbumSong,
+          getDownLoadJson
+        };
+      };
+      const useGetData = (api, params, options) => {
+        const {
+monitors,
+returnFunction,
+initialValue = {},
+callback
+        } = options || {};
+        const [data, setData] = useState(initialValue);
+        const [loading, setLoading] = useState(false);
+        const getData = async () => {
+          try {
+            setLoading(true);
+            const res = await api(params);
+            setData(res || {});
+            callback && callback(res || {});
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        useEffect(() => {
+          if (returnFunction && returnFunction()) return;
+          getData();
+        }, monitors || []);
+        return {
+data,
+setData,
+loading,
+getData
+        };
+      };
+      function useGetSingerInfo({ singerId }) {
+        const [singerInfo, setSingerInfo] = useState({});
+        const [albumList, setAlbumList] = useState([]);
+        const [hotSongList, setHotSongList] = useState([]);
+        const [allSongList, setAllSongList] = useState([]);
+        return {
+singerInfo,
+albumList,
+hotSongList
+        };
+      }
       var lodash$1 = { exports: {} };
       /**
        * @license
@@ -20526,6 +20311,424 @@ isIndex(key, length)))) {
           downloadSongListAsJson
         };
       };
+      const { Dragger } = Upload;
+      const LocalUpload = forwardRef((props, ref) => {
+        const { visible, close } = useVisible(
+          {
+            onReset() {
+              setLoading(false);
+              setFileList([]);
+            }
+          },
+          ref
+        );
+        const { functionConfig } = useConfig();
+        const { uploadConcurrency: uploadConcurrency2 } = functionConfig;
+        const [fileList, setFileList] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const [concurrency, setConcurrency] = useState(uploadConcurrency2);
+        const handleUpload = async () => {
+          try {
+            setLoading(true);
+            const uploadPromises = fileList.map((file) => async () => {
+              try {
+                if (file.status === "done") {
+                  return;
+                }
+                file.status = "uploading";
+                const res2 = await uploadLocalSong(file);
+                file.status = "done";
+                return res2;
+              } catch (e2) {
+                file.status = "error";
+                return null;
+              } finally {
+                setFileList((prev) => [...prev]);
+              }
+            });
+            const res = await promiseLimit(uploadPromises, concurrency);
+            console.log("res", res);
+            msgSuccess$1("上传成功");
+            const size2 = res.filter(Boolean).reduce((acc, file) => acc + file.size, 0);
+            const info2 = {
+              list: res.filter(Boolean),
+              count: res.filter(Boolean).length,
+              size: size2,
+              sizeDesc: formatFileSize(size2),
+              artist: res.filter(Boolean)?.[0].artist || ""
+            };
+            downloadJsonFile(info2, info2.artist + ".json");
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const handleFilter = async () => {
+          setFileList((prev) => prev.filter((file) => file.status === "error"));
+        };
+        const [getJsonLoading, setGetJsonLoading] = useState(false);
+        const handleGetJson = async () => {
+          try {
+            setGetJsonLoading(true);
+            const proArr = fileList.map(async (file) => {
+              const ext = file.name.split(".").pop() || "mp3";
+              const bitrate = 999e3;
+              const name2 = file.name.replace("." + ext, "").replace(/\s/g, "").replace(/\./g, "_");
+              const size2 = file.size;
+              const md52 = await getFileMD5(file);
+              const { album: album2, artist: artist2, artists, title: title2 } = await getAudioMetadata(file);
+              return {
+                size: size2,
+                md5: md52,
+                bitrate,
+                ext,
+                album: album2,
+                artist: artist2,
+                artists,
+                name: title2
+              };
+            });
+            const data = await Promise.all(proArr);
+            downloadJsonFile(data, data[0].artist + ".json");
+          } catch (e2) {
+            console.log("error", e2);
+          } finally {
+            setGetJsonLoading(false);
+          }
+        };
+        const columns = [
+          {
+            title: "文件名",
+            dataIndex: "name",
+            key: "name"
+          },
+          {
+            title: "大小",
+            dataIndex: "size",
+            key: "size",
+            render: (size2) => `${(size2 / 1024 / 1024).toFixed(2)} MB`
+          },
+          {
+            title: "状态",
+            dataIndex: "status",
+            key: "status",
+            render: (status, record) => {
+              if (status === "done") {
+                return jsxRuntimeExports.jsx(Progress, { percent: 100, size: "small", status: "success" });
+              }
+              if (status === "error") {
+                return jsxRuntimeExports.jsx(Progress, { percent: 100, size: "small", status: "exception" });
+              }
+              if (status === "uploading") {
+                return jsxRuntimeExports.jsx(
+                  Progress,
+                  {
+                    percent: record.progress || 0,
+                    size: "small",
+                    status: "active"
+                  }
+                );
+              }
+              return jsxRuntimeExports.jsx(Progress, { percent: 0, size: "small" });
+            }
+          }
+        ];
+        return jsxRuntimeExports.jsx(
+          Modal,
+          {
+            title: "云盘本地上传",
+            open: visible,
+            onCancel: close,
+            onOk: handleUpload,
+            confirmLoading: loading,
+            centered: true,
+            width: 1e3,
+            children: jsxRuntimeExports.jsxs("div", { className: styles$8["local-upload"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$8["upload-section"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$8["concurrency-control"], children: [
+jsxRuntimeExports.jsx("span", { children: "并发数量：" }),
+jsxRuntimeExports.jsx(
+                    Input,
+                    {
+                      type: "number",
+                      min: 1,
+                      max: 6,
+                      value: concurrency,
+                      onChange: (e2) => setConcurrency(parseInt(e2.target.value) || 1),
+                      style: { width: 80 }
+                    }
+                  )
+                ] }),
+jsxRuntimeExports.jsxs(
+                  Dragger,
+                  {
+                    className: styles$8.dragger,
+                    multiple: true,
+                    fileList,
+                    beforeUpload: (file) => {
+                      setFileList((prev) => [...prev, file]);
+                      return false;
+                    },
+                    showUploadList: false,
+                    accept: ".mp3,.flac,.wav,.m4a,.ogg",
+                    children: [
+jsxRuntimeExports.jsx("p", { className: styles$8["upload-icon"], children: jsxRuntimeExports.jsx(InboxOutlined, {}) }),
+jsxRuntimeExports.jsx("p", { className: styles$8["upload-text"], children: "点击或拖拽文件到此区域上传" }),
+jsxRuntimeExports.jsx("p", { className: styles$8["upload-hint"], children: "支持 mp3, flac, wav, m4a, ogg 格式的音频文件" })
+                    ]
+                  }
+                )
+              ] }),
+jsxRuntimeExports.jsxs("div", { className: styles$8["file-list"], children: [
+jsxRuntimeExports.jsx(
+                  Table,
+                  {
+                    columns,
+                    dataSource: fileList,
+                    rowKey: (file) => file.uid || file.name,
+                    scroll: { y: 300 }
+                  }
+                ),
+jsxRuntimeExports.jsxs("div", { className: styles$8["upload-stats"], children: [
+jsxRuntimeExports.jsxs("span", { children: [
+                    "共 ",
+                    fileList.length,
+                    " 个文件"
+                  ] }),
+jsxRuntimeExports.jsx("span", { className: styles$8.divider, children: "|" }),
+jsxRuntimeExports.jsxs("span", { className: styles$8["size-text"], children: [
+                    "总大小：",
+                    formatFileSize(
+                      fileList.reduce((acc, file) => acc + file.size, 0)
+                    )
+                  ] }),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      type: "primary",
+                      size: "small",
+                      onClick: () => setFileList([]),
+                      style: { marginLeft: "auto" },
+                      children: "清空列表"
+                    }
+                  ),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      type: "primary",
+                      size: "small",
+                      onClick: handleFilter,
+                      disabled: !fileList.some((file) => file.status !== "error"),
+                      children: "失败过滤"
+                    }
+                  ),
+jsxRuntimeExports.jsx(
+                    Button,
+                    {
+                      type: "primary",
+                      size: "small",
+                      onClick: handleGetJson,
+                      loading: getJsonLoading,
+                      children: "直接获取JSON"
+                    }
+                  )
+                ] })
+              ] })
+            ] })
+          }
+        );
+      });
+      const copy = async (text2, options = {}) => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            if (options.html) {
+              const type = "text/html";
+              const blob = new Blob([text2], { type });
+              const data = [new ClipboardItem({ [type]: blob })];
+              await navigator.clipboard.write(data);
+            } else {
+              await navigator.clipboard.writeText(text2);
+            }
+          } else {
+            const textArea = document.createElement("textarea");
+            textArea.value = text2;
+            textArea.style.cssText = "position: fixed; top: -9999px; left: -9999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+              document.execCommand("copy");
+            } catch (err2) {
+              throw new Error("复制失败，请检查浏览器权限设置");
+            } finally {
+              document.body.removeChild(textArea);
+            }
+          }
+        } catch (err2) {
+          throw new Error(
+            err2 instanceof Error ? err2.message : "复制失败，请重试"
+          );
+        }
+      };
+      const styles$7 = {
+        "copy-text": "_copy-text_1att4_1",
+        "copy-btn": "_copy-btn_1att4_12"
+      };
+      var classnames = { exports: {} };
+var hasRequiredClassnames;
+      function requireClassnames() {
+        if (hasRequiredClassnames) return classnames.exports;
+        hasRequiredClassnames = 1;
+        (function(module) {
+          (function() {
+            var hasOwn = {}.hasOwnProperty;
+            function classNames2() {
+              var classes = "";
+              for (var i = 0; i < arguments.length; i++) {
+                var arg = arguments[i];
+                if (arg) {
+                  classes = appendClass(classes, parseValue(arg));
+                }
+              }
+              return classes;
+            }
+            function parseValue(arg) {
+              if (typeof arg === "string" || typeof arg === "number") {
+                return arg;
+              }
+              if (typeof arg !== "object") {
+                return "";
+              }
+              if (Array.isArray(arg)) {
+                return classNames2.apply(null, arg);
+              }
+              if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) {
+                return arg.toString();
+              }
+              var classes = "";
+              for (var key in arg) {
+                if (hasOwn.call(arg, key) && arg[key]) {
+                  classes = appendClass(classes, key);
+                }
+              }
+              return classes;
+            }
+            function appendClass(value2, newClass) {
+              if (!newClass) {
+                return value2;
+              }
+              if (value2) {
+                return value2 + " " + newClass;
+              }
+              return value2 + newClass;
+            }
+            if (module.exports) {
+              classNames2.default = classNames2;
+              module.exports = classNames2;
+            } else {
+              window.classNames = classNames2;
+            }
+          })();
+        })(classnames);
+        return classnames.exports;
+      }
+      var classnamesExports = requireClassnames();
+      const classNames = getDefaultExportFromCjs(classnamesExports);
+      const styles$6 = {
+        "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
+      };
+      function TextOverflowShowTips({
+        text: text2,
+        tooltipProps,
+        className,
+        ...restProps
+      }) {
+        const containerRef = useRef(null);
+        const { width: containerWidth } = useSize(containerRef) || {};
+        const isTooLong = useMemo(() => {
+          if (containerWidth) {
+            const textWidth = getTextWidth(text2);
+            return containerWidth < textWidth;
+          }
+          return false;
+        }, [text2, containerWidth]);
+        const containerStyle = {
+          maxWidth: "100%",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap"
+        };
+        return isTooLong ? jsxRuntimeExports.jsx(Tooltip, { title: text2, ...tooltipProps, children: jsxRuntimeExports.jsx(
+          "div",
+          {
+            ...restProps,
+            className: classNames(styles$6["text-overflow-show-tips-container"], className),
+            children: jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text2 })
+          }
+        ) }) : jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text2 });
+      }
+      function getTextWidth(text2, font = "14px Arial") {
+        const span = document.createElement("span");
+        span.style.visibility = "hidden";
+        span.style.whiteSpace = "nowrap";
+        span.style.font = font;
+        span.style.position = "absolute";
+        span.style.top = "-9999px";
+        span.style.left = "-9999px";
+        span.innerText = text2;
+        document.body.appendChild(span);
+        const width = span.offsetWidth;
+        document.body.removeChild(span);
+        return width;
+      }
+      function CopyText(props) {
+        const { text: text2, className, ...rest } = props;
+        const handleCopy = () => {
+          copy(text2);
+          msgSuccess$1("复制成功");
+        };
+        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$7["copy-text"], className), ...rest, children: [
+jsxRuntimeExports.jsx(
+            TextOverflowShowTips,
+            {
+              text: text2 + "",
+              tooltipProps: {
+                getPopupContainer: (node) => {
+                  return document.body;
+                }
+              }
+            }
+          ),
+jsxRuntimeExports.jsx(
+            Button,
+            {
+              type: "link",
+              icon: jsxRuntimeExports.jsx(CopyOutlined, {}),
+              onClick: handleCopy,
+              className: styles$7["copy-btn"]
+            }
+          )
+        ] });
+      }
+      function MyButton(props) {
+        const { loading, onClick, ...rest } = props;
+        const [_loading, setLoading] = useState(loading);
+        const handleClick = async (...args) => {
+          try {
+            setLoading(true);
+            await onClick?.(...args);
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        useEffect(() => {
+          setLoading(loading);
+        }, [loading]);
+        return jsxRuntimeExports.jsx(Button, { ...rest, onClick: handleClick, loading: _loading });
+      }
       var duration$2 = { exports: {} };
       var duration$1 = duration$2.exports;
       var hasRequiredDuration;
@@ -21588,207 +21791,6 @@ jsxRuntimeExports.jsx(SongList$1, { ref: songListRef })
         ] });
       }
       const PlayList$1 = forwardRef(PlayList);
-      const useGetAlbumDetail = () => {
-        const [albumInfo, setAlbumInfo] = useState(null);
-        const [albumSongList, setAlbumSongList] = useState([]);
-        const [isLoading, setIsLoading] = useState(false);
-        const albumInfoMap = useRef({});
-        const { play, getUrl, download, getLyric } = usePlayMusic();
-        const getAlbumDetailData = async (id) => {
-          try {
-            setIsLoading(true);
-            const idStr = String(id);
-            if (albumInfoMap.current[idStr]) {
-              const cached = albumInfoMap.current[idStr];
-              setAlbumInfo(cached);
-              return cached;
-            }
-            const res = await getAlbumDetail(id);
-            console.log("专辑详情 res", res);
-            if (res.code === 200 && res.album) {
-              albumInfoMap.current[idStr] = res.album;
-              setAlbumInfo(res.album);
-              return res.album;
-            } else {
-              throw new Error(res.message || res.msg || "获取专辑详情失败");
-            }
-          } catch (error) {
-            console.error("获取专辑详情失败:", error);
-            throw error;
-          } finally {
-            setIsLoading(false);
-          }
-        };
-        const getAlbumSongListData = async (id) => {
-          try {
-            setIsLoading(true);
-            const res = await getAlbumSongList(id);
-            console.log("专辑歌曲列表 res", res);
-            if (res.code === 200 && res.songs) {
-              setAlbumSongList(res.songs);
-              return res.songs;
-            } else {
-              throw new Error(res.message || res.msg || "获取专辑歌曲列表失败");
-            }
-          } catch (error) {
-            console.error("获取专辑歌曲列表失败:", error);
-            throw error;
-          } finally {
-            setIsLoading(false);
-          }
-        };
-        const getAlbumSongUrl = async (id) => {
-          try {
-            const songList2 = await getAlbumSongListData(id);
-            if (!songList2 || songList2.length === 0) {
-              return [];
-            }
-            const ids = songList2.map((song) => {
-              const quality2 = getDownloadQuality(song);
-              return {
-                id: song.id,
-                name: song.name,
-                quality: quality2
-              };
-            });
-            const promiseArr = ids.map((item) => async () => {
-              const url = await getUrl(item.id, item.quality);
-              return {
-                ...item,
-                url
-              };
-            });
-            const urls = await promiseLimit(promiseArr, 6);
-            console.log("专辑歌曲URL列表", urls);
-            return urls;
-          } catch (error) {
-            console.error("获取专辑歌曲URL失败:", error);
-            throw error;
-          }
-        };
-        const downloadAlbumSong = async (id, options = { level: QUALITY_LEVELS.无损 }) => {
-          try {
-            const { level = QUALITY_LEVELS.无损 } = options;
-            const songList2 = await getAlbumSongListData(id);
-            if (!songList2 || songList2.length === 0) {
-              throw new Error("专辑中没有歌曲");
-            }
-            for (const song of songList2) {
-              console.log(`当前正在下载${song.name}...`);
-              await download(song.id, song.name, level, id);
-            }
-          } catch (error) {
-            console.error("下载专辑歌曲失败:", error);
-            throw error;
-          }
-        };
-        const getDownLoadJson = async (id, options = { level: QUALITY_LEVELS.无损 }) => {
-          try {
-            const { level = QUALITY_LEVELS.无损 } = options;
-            const albumDetail = await getAlbumDetailData(id);
-            const songList2 = await getAlbumSongListData(id);
-            if (!songList2 || songList2.length === 0) {
-              throw new Error("专辑中没有歌曲");
-            }
-            const promiseArr = songList2.map((song) => async () => {
-              const lrcContent = await getLyric(song.id);
-              const url = await getUrl(song.id, level);
-              return {
-                songName: song.name,
-                url,
-                lrcContent
-              };
-            });
-            const songListWithUrl = await promiseLimit(promiseArr, 6);
-            downloadAsJson(
-              {
-                albumName: albumDetail.name,
-                albumCover: albumDetail.picUrl || albumDetail.blurPicUrl,
-                list: songListWithUrl
-              },
-              `${albumDetail.name}-专辑`
-            );
-            return {
-              albumName: albumDetail.name,
-              albumCover: albumDetail.picUrl || albumDetail.blurPicUrl,
-              list: songListWithUrl
-            };
-          } catch (error) {
-            console.error("获取下载JSON失败:", error);
-            throw error;
-          }
-        };
-        const playAlbum = async (id) => {
-          try {
-            const songList2 = await getAlbumSongListData(id);
-            console.log("专辑歌曲列表", songList2);
-            if (!songList2 || songList2.length === 0) {
-              throw new Error("专辑中没有歌曲");
-            }
-            for (const song of songList2) {
-              const quality2 = getDownloadQuality(song);
-              console.log("当前正在播放", song.name);
-              await play(song.id, quality2);
-            }
-          } catch (error) {
-            console.error("播放专辑失败:", error);
-            throw error;
-          }
-        };
-        return {
-          albumInfo,
-          isLoading,
-          getAlbumDetail: getAlbumDetailData,
-          getAlbumSongList: getAlbumSongListData,
-          playAlbum,
-          getAlbumSongUrl,
-          downloadAlbumSong,
-          getDownLoadJson
-        };
-      };
-      const useGetData = (api, params, options) => {
-        const {
-monitors,
-returnFunction,
-initialValue = {},
-callback
-        } = options || {};
-        const [data, setData] = useState(initialValue);
-        const [loading, setLoading] = useState(false);
-        const getData = async () => {
-          try {
-            setLoading(true);
-            const res = await api(params);
-            setData(res || {});
-            callback && callback(res || {});
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        useEffect(() => {
-          if (returnFunction && returnFunction()) return;
-          getData();
-        }, monitors || []);
-        return {
-data,
-setData,
-loading,
-getData
-        };
-      };
-      function useGetSingerInfo({ singerId }) {
-        const [singerInfo, setSingerInfo] = useState({});
-        const [albumList, setAlbumList] = useState([]);
-        const [hotSongList, setHotSongList] = useState([]);
-        const [allSongList, setAllSongList] = useState([]);
-        return {
-singerInfo,
-albumList,
-hotSongList
-        };
-      }
       const select = "_select_11inc_22";
       const tag = "_tag_11inc_46";
       const divider = "_divider_11inc_70";
@@ -26105,7 +26107,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-BaghehtQ-DP61AeC2.js", ['./__monkey.entry-UNVPT7p_.js', './AbstractID3Parser-PzhyFQP--COckX8nN.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Bog_do-K-DlB_WsAP.js'], (function (exports, module) {
+System.register("./MpegParser-hKSoWUFr-D_hoaTju.js", ['./__monkey.entry-BNsIYBLo.js', './AbstractID3Parser-DQYeuqJq-BlFrO5QU.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CkpuXbmt-RrkMoGju.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -26700,7 +26702,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-Cse3LKhm-B-38QckB.js", ['./__monkey.entry-UNVPT7p_.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-DiRqzhBS-Cfz5EGnR.js", ['./__monkey.entry-BNsIYBLo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -27207,7 +27209,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-BQubWbDE-CLS4Ar6U.js", ['./__monkey.entry-UNVPT7p_.js', './ID3v2Parser-Bog_do-K-DlB_WsAP.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-DzSgt3tk-CztTSViy.js", ['./__monkey.entry-BNsIYBLo.js', './ID3v2Parser-CkpuXbmt-RrkMoGju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -27381,7 +27383,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-DTB4ZDHm-Bc8Dxn5A.js", ['./__monkey.entry-UNVPT7p_.js', './ID3v2Parser-Bog_do-K-DlB_WsAP.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-BmROzq8r-DJrtgr21.js", ['./__monkey.entry-BNsIYBLo.js', './ID3v2Parser-CkpuXbmt-RrkMoGju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -27552,7 +27554,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-_hGyJ_Bc-Cty40IS2.js", ['./__monkey.entry-UNVPT7p_.js', './AbstractID3Parser-PzhyFQP--COckX8nN.js', './ID3v2Parser-Bog_do-K-DlB_WsAP.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-qPdGAZmd-DtE5naoi.js", ['./__monkey.entry-BNsIYBLo.js', './AbstractID3Parser-DQYeuqJq-BlFrO5QU.js', './ID3v2Parser-CkpuXbmt-RrkMoGju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -27650,7 +27652,7 @@ System.register("./DsfParser-_hGyJ_Bc-Cty40IS2.js", ['./__monkey.entry-UNVPT7p_.
   };
 }));
 
-System.register("./FlacParser-COPx0FkW-Br2g43zJ.js", ['./__monkey.entry-UNVPT7p_.js', './VorbisParser-D0H22jF5-CtsrGgfd.js', './AbstractID3Parser-PzhyFQP--COckX8nN.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Bog_do-K-DlB_WsAP.js'], (function (exports, module) {
+System.register("./FlacParser-Dt6fa4Vk-D6bF-3bG.js", ['./__monkey.entry-BNsIYBLo.js', './VorbisParser-BshA1uq3-BVweQ-E1.js', './AbstractID3Parser-DQYeuqJq-BlFrO5QU.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CkpuXbmt-RrkMoGju.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -27802,7 +27804,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-DfukrW1E-BDcOK3uv.js", ['./__monkey.entry-UNVPT7p_.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-BM31X3vR-BtBV1IRu.js", ['./__monkey.entry-BNsIYBLo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -28409,7 +28411,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-BdSwQnBC-BGC78nq4.js", ['./__monkey.entry-UNVPT7p_.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-_C7Aal7U-reCwMnIq.js", ['./__monkey.entry-BNsIYBLo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -29240,7 +29242,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-DWIegohF-DBPyiPyx.js", ['./__monkey.entry-UNVPT7p_.js', './AbstractID3Parser-PzhyFQP--COckX8nN.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-Bog_do-K-DlB_WsAP.js'], (function (exports, module) {
+System.register("./MusepackParser-mOnnR9Cf-DaKirFlg.js", ['./__monkey.entry-BNsIYBLo.js', './AbstractID3Parser-DQYeuqJq-BlFrO5QU.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CkpuXbmt-RrkMoGju.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -29517,7 +29519,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-PzhyFQP--COckX8nN.js", ['./__monkey.entry-UNVPT7p_.js', './ID3v2Parser-Bog_do-K-DlB_WsAP.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-DQYeuqJq-BlFrO5QU.js", ['./__monkey.entry-BNsIYBLo.js', './ID3v2Parser-CkpuXbmt-RrkMoGju.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -29581,7 +29583,7 @@ System.register("./AbstractID3Parser-PzhyFQP--COckX8nN.js", ['./__monkey.entry-U
   };
 }));
 
-System.register("./OggParser-CvTwwW0I-CRlli7_S.js", ['./__monkey.entry-UNVPT7p_.js', './VorbisParser-D0H22jF5-CtsrGgfd.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-DCn22tsE-DQty-ZDa.js", ['./__monkey.entry-BNsIYBLo.js', './VorbisParser-BshA1uq3-BVweQ-E1.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -29856,7 +29858,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-D0H22jF5-CtsrGgfd.js", ['./__monkey.entry-UNVPT7p_.js'], (function (exports, module) {
+System.register("./VorbisParser-BshA1uq3-BVweQ-E1.js", ['./__monkey.entry-BNsIYBLo.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -30072,7 +30074,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-CYfj9W2r-mnIYjLFS.js", ['./__monkey.entry-UNVPT7p_.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-Cf7RB5i8-BqHxV5hI.js", ['./__monkey.entry-BNsIYBLo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -30252,7 +30254,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-BIuNBwIf-z-g2vzDs.js", ['./__monkey.entry-UNVPT7p_.js', './ID3v2Parser-Bog_do-K-DlB_WsAP.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-DmJtbLf7-Mak-ijFB.js", ['./__monkey.entry-BNsIYBLo.js', './ID3v2Parser-CkpuXbmt-RrkMoGju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -30525,7 +30527,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-Bog_do-K-DlB_WsAP.js", ['./__monkey.entry-UNVPT7p_.js'], (function (exports, module) {
+System.register("./ID3v2Parser-CkpuXbmt-RrkMoGju.js", ['./__monkey.entry-BNsIYBLo.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
