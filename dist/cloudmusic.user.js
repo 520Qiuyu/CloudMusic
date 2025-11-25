@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-BNsIYBLo.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-B8a59Eyg.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,9 +44,9 @@ System.register("./__entry.js", ['./__monkey.entry-BNsIYBLo.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-BNsIYBLo.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-B8a59Eyg.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Avatar, Form, Pagination, ConfigProvider, Select, Tooltip, Empty, Card, Switch, TimePicker, DatePicker, Checkbox, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, PauseCircleFilled, PlayCircleFilled, CopyOutlined, CopyrightOutlined, CloudUploadOutlined, FileOutlined, DeleteOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
+  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Avatar, Form, Pagination, ConfigProvider, Select, Tooltip, Empty, Card, Switch, TimePicker, DatePicker, Checkbox, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, PauseCircleFilled, PlayCircleFilled, CopyOutlined, CopyrightOutlined, CloudUploadOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
@@ -110,6 +110,7 @@ System.register("./__monkey.entry-BNsIYBLo.js", ['react', 'antd', 'react-dom', '
       CopyrightOutlined = module.CopyrightOutlined;
       CloudUploadOutlined = module.CloudUploadOutlined;
       FileOutlined = module.FileOutlined;
+      SortAscendingOutlined = module.SortAscendingOutlined;
       DeleteOutlined = module.DeleteOutlined;
       PictureOutlined = module.PictureOutlined;
       CheckOutlined = module.CheckOutlined;
@@ -1332,6 +1333,38 @@ get: function() {
         lyrics: "歌词"
       };
       const BASE_CDN_URL = "https://fastly.jsdelivr.net/gh/520Qiuyu/cdn@latest/artist/";
+      const SONG_SORT_RULES = [
+        {
+          name: "按照专辑名称排序，演唱会靠后",
+          value: "1",
+          rule: (songA, songB) => {
+            if (songA.al?.name === songB.al?.name) {
+              return songA.id - songB.id;
+            }
+            if (songA.al?.id && songB.al?.id) {
+              return songA.al?.id - songB.al?.id;
+            }
+            return songA.al?.name.localeCompare(songB.al?.name);
+          }
+        },
+        {
+          name: "按照歌手名称排序",
+          value: "2",
+          rule: (songA, songB) => {
+            if (songA.ar?.name === songB.ar?.name) {
+              return songA.id - songB.id;
+            }
+            return songA.ar?.name.localeCompare(songB.ar?.name);
+          }
+        },
+        {
+          name: "按照歌曲名称排序",
+          value: "3",
+          rule: (songA, songB) => {
+            return songA.name.localeCompare(songB.name);
+          }
+        }
+      ];
       const isDev = false;
       const defaultConfig = {
 download: {
@@ -1351,7 +1384,9 @@ enableGithubInfo: true,
 enableTestModal: isDev,
 enableFunctionSwitchTab: true,
 enableDownloadSetting: isDev,
-uploadConcurrency: 6
+uploadConcurrency: 6,
+defaultSongSortRuleValue: SONG_SORT_RULES[0].value,
+liveKeywords: ["演唱会", "Live", "live"]
         }
       };
       const useConfig = () => {
@@ -1369,6 +1404,12 @@ uploadConcurrency: 6
             listenStorageChange: true
           }
         );
+        const defaultSongSortRule = useMemo(
+          () => SONG_SORT_RULES.find(
+            (rule) => rule.value === functionConfig.defaultSongSortRuleValue
+          ),
+          [functionConfig.defaultSongSortRuleValue]
+        );
         useEffect(() => {
           setFunctionConfig({
             ...defaultConfig.function,
@@ -1383,7 +1424,8 @@ uploadConcurrency: 6
           downloadConfig,
           setDownloadConfig,
           functionConfig,
-          setFunctionConfig
+          setFunctionConfig,
+          defaultSongSortRule
         };
       };
       var _GM_xmlhttpRequest = (() => typeof GM_xmlhttpRequest != "undefined" ? GM_xmlhttpRequest : void 0)();
@@ -7319,7 +7361,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-hKSoWUFr-D_hoaTju.js');
+            const { MpegParser } = await module.import('./MpegParser-CkswYEfr-BEt_fqrX.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7341,7 +7383,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-DiRqzhBS-Cfz5EGnR.js');
+            const { AsfParser } = await module.import('./AsfParser-C8KbxPJj-DjtGWODb.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7352,7 +7394,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-DzSgt3tk-CztTSViy.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-Dhzxgq3U-C0b3fHeJ.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7363,7 +7405,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-BmROzq8r-DJrtgr21.js');
+            const { AIFFParser } = await module.import('./AiffParser-8xHFmvkU-D91KT8iW.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7374,7 +7416,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-qPdGAZmd-DtE5naoi.js');
+            const { DsfParser } = await module.import('./DsfParser-CUBYrJAv-e-9UKGYV.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7385,7 +7427,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-Dt6fa4Vk-D6bF-3bG.js');
+            const { FlacParser } = await module.import('./FlacParser-NclGJcoj-mbs9M9mx.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7396,7 +7438,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-BM31X3vR-BtBV1IRu.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-Cfh4ImiJ-eKpumAVL.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7407,7 +7449,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-_C7Aal7U-reCwMnIq.js');
+            const { MP4Parser } = await module.import('./MP4Parser-CBR97f4R-Roj-B379.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7418,7 +7460,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-mOnnR9Cf-DaKirFlg.js');
+            const { MusepackParser } = await module.import('./MusepackParser-w3e8I8PG-CPa0avz5.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7429,7 +7471,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-DCn22tsE-DQty-ZDa.js');
+            const { OggParser } = await module.import('./OggParser-BVL3EDHZ-wh5Tph62.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7440,7 +7482,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-Cf7RB5i8-BqHxV5hI.js');
+            const { WavPackParser } = await module.import('./WavPackParser-Cmb9XAqP-CdwFAPXw.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7451,7 +7493,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-DmJtbLf7-Mak-ijFB.js');
+            const { WaveParser } = await module.import('./WaveParser-BfmvrnK_-4ln4NHty.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -8305,7 +8347,7 @@ track: UINT8.get(buf, off2 + 126),
       message.config({
         top: 100
       });
-      const msgSuccess$1 = (content) => {
+      const msgSuccess = (content) => {
         message.success(content);
       };
       const msgWarning = (content) => {
@@ -11119,6 +11161,13 @@ op: "add"
           throw error;
         }
       };
+      const updateSongOrder = (pid, trackIds) => weapiRequest("/api/playlist/manipulate/tracks", {
+        data: {
+          pid,
+trackIds,
+op: "update"
+}
+      });
       const search = (keyword, options) => {
         const { type = 1, limit = 30, offset = 0 } = options || {};
         return weapiRequest("/api/search/get", {
@@ -11363,7 +11412,7 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
             });
             const res = await promiseLimit(proArr, concurrent);
             console.log("res", res);
-            msgSuccess$1("导入成功");
+            msgSuccess("导入成功");
           } catch (error) {
             console.log("error", error);
           } finally {
@@ -11984,7 +12033,7 @@ singerIds
             );
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("更新成功");
+              msgSuccess("更新成功");
             }
           } catch (error) {
             console.log("error", error);
@@ -12185,7 +12234,7 @@ jsxRuntimeExports.jsx(
             const res = await matchCloudSong(songId, value2);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("更新成功");
+              msgSuccess("更新成功");
               onUpdate?.();
             }
           } catch (error) {
@@ -12430,7 +12479,7 @@ jsxRuntimeExports.jsx(
           try {
             const res2 = await createPlaylist(name2.trim());
             if (res2.code === 200) {
-              msgSuccess$1("新建成功");
+              msgSuccess("新建成功");
               handleGetPlayList();
               setName("");
               setCreateModalVisible(false);
@@ -12451,7 +12500,7 @@ jsxRuntimeExports.jsx(
             const playlistName = strategy.getPlaylistName();
             const res2 = await createPlaylist(playlistName);
             if (res2.code === 200) {
-              msgSuccess$1(`成功创建"${playlistName}"`);
+              msgSuccess(`成功创建"${playlistName}"`);
               handleGetPlayList();
               setCreateModalVisible(false);
             } else {
@@ -12475,7 +12524,7 @@ jsxRuntimeExports.jsx(DeleteConfirmContent, { playlists: selectedRows }),
             const proArr = selectedRows.map((item) => deletePlaylist(item.id));
             const res2 = await Promise.all(proArr);
             console.log("res", res2);
-            msgSuccess$1("删除成功");
+            msgSuccess("删除成功");
             handleGetPlayList();
             setSelectedRows([]);
           } catch (error) {
@@ -13034,7 +13083,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
               }
             }
             setSelectedRows([]);
-            msgSuccess$1("添加成功");
+            msgSuccess("添加成功");
           } catch (error) {
             console.log("error", error);
           } finally {
@@ -13082,7 +13131,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
             console.log("res", res);
             if (res.code === 200) {
               setSelectedRows([]);
-              msgSuccess$1("添加成功");
+              msgSuccess("添加成功");
             }
           } catch (error) {
             console.log("error", error);
@@ -13105,7 +13154,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
             const res = await deleteCloudSong(songIds);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("删除成功");
+              msgSuccess("删除成功");
               reset();
               getCloudDataList();
             }
@@ -14494,7 +14543,7 @@ saveAsBuffer() {
           console.log("歌词res", res.lrc?.lyric);
           return res.lrc?.lyric;
         };
-        const download = async (id, name2, level = DEFAULT_QUALITY) => {
+        const download = async (id, level = DEFAULT_QUALITY) => {
           try {
             setDownloading(id);
             const songInfo2 = await getSongInfo(id);
@@ -14511,14 +14560,14 @@ saveAsBuffer() {
             console.log("tags", tags);
             const downloadLevel = getDownloadQuality(songInfo2, level);
             const url = await getUrl(id, downloadLevel);
-            console.log(`当前下载歌曲${name2},音质为${level},链接为${url}`);
+            console.log(`当前下载歌曲${songName2},音质为${level},链接为${url}`);
             const finalExt = url.split("?")[0].split(".").pop();
             const { blob } = await getFileBlob(url.replace("http://", "https://"));
-            const fileName = `${name2}.${finalExt}`;
+            const fileName = `${songName2}.${finalExt}`;
             let outputFile = blob;
             const lyric = await getLyric(id);
             if (downloadLyric) {
-              downloadAsLRC(lyric, name2);
+              downloadAsLRC(lyric, songName2);
             }
             let coverBlob;
             if (albumId) {
@@ -14653,16 +14702,15 @@ default:
             throw error;
           }
         };
-        const downloadAlbumSong = async (id, options = { level: QUALITY_LEVELS.无损 }) => {
+        const downloadAlbumSong = async (id) => {
           try {
-            const { level = QUALITY_LEVELS.无损 } = options;
             const songList2 = await getAlbumSongListData(id);
             if (!songList2 || songList2.length === 0) {
               throw new Error("专辑中没有歌曲");
             }
             for (const song of songList2) {
               console.log(`当前正在下载${song.name}...`);
-              await download(song.id, song.name, level, id);
+              await download(song.id);
             }
           } catch (error) {
             console.error("下载专辑歌曲失败:", error);
@@ -20231,6 +20279,8 @@ isIndex(key, length)))) {
         const [songList2, setSongList] = useState([]);
         const [downloading, setDownloading] = useState(false);
         const { download, getUrl, getLyric } = usePlayMusic();
+        const { defaultSongSortRule, functionConfig } = useConfig();
+        const { liveKeywords } = functionConfig;
         const getSongListData = async (playlistId) => {
           if (!playlistId) return;
           try {
@@ -20238,6 +20288,7 @@ isIndex(key, length)))) {
             const res = await getPlaylistAllData(playlistId);
             console.log("res", res);
             setSongList(res);
+            return res;
           } catch (error) {
             console.log("error", error);
           } finally {
@@ -20253,7 +20304,7 @@ isIndex(key, length)))) {
             if (!list?.length) return;
             const PromiseList = list.map((item) => async () => {
               const level = item.level || item.hr ? QUALITY_LEVELS["Hi-Res"] : getQualityTags(item)[0]?.value;
-              return download(item.id, item.name, level, item.al?.id);
+              return download(item.id, level);
             });
             const res = await promiseLimit(PromiseList, concurrency);
             console.log("res", res);
@@ -20293,12 +20344,73 @@ isIndex(key, length)))) {
               ])
             );
             console.log("albums", albums);
-            await downloadAsJson(albums, "歌单.json");
+            downloadAsJson(albums, "歌单.json");
             msgSuccess("下载成功");
           } catch (error) {
             console.log("error", error);
           } finally {
             setDownloading(false);
+          }
+        };
+        const sortSongListByListId = async (playlistId) => {
+          if (!playlistId) return;
+          try {
+            const songs2 = await getPlaylistAllData(playlistId);
+            const liveSongs = songs2.filter(
+              (song) => liveKeywords.some((keyword) => song.al?.name.includes(keyword))
+            );
+            const otherSongs = songs2.filter((song) => !liveSongs.includes(song));
+            const sortedSongs = [
+              ...otherSongs.sort(defaultSongSortRule.rule),
+              ...liveSongs.sort(defaultSongSortRule.rule)
+            ];
+            const res = await updateSongOrder(
+              playlistId,
+              sortedSongs.map((song) => song.id)
+            );
+            if (res.code === 200) {
+              msgSuccess("歌单列表排序成功");
+            } else {
+              msgError(res.message || "歌单列表排序失败");
+            }
+          } catch (error) {
+            console.log("error", error);
+            msgError("歌单列表排序失败");
+          }
+        };
+        const playlistToCloud = async (playlistId) => {
+          if (!playlistId) return;
+          const uploadMessageKey2 = "playlist-to-cloud";
+          try {
+            const songs2 = await getPlaylistAllData(playlistId);
+            const songIds = songs2.map((song) => song.id);
+            message.loading({
+              content: "开始上传歌单歌曲到云盘，请稍候...",
+              key: uploadMessageKey2,
+              duration: 0
+            });
+            const res = await neteaseMusicToCloud(songIds, {
+              onChange: (progress) => {
+                message.loading({
+                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+                  key: uploadMessageKey2,
+                  duration: 0
+                });
+              },
+              onComplete: (result) => {
+                message.destroy(uploadMessageKey2);
+                console.log("result", result);
+                msgSuccess(
+                  `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
+                );
+              }
+            });
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+            msgError("歌曲转存云盘失败");
+          } finally {
+            message.destroy(uploadMessageKey2);
           }
         };
         return {
@@ -20308,7 +20420,9 @@ isIndex(key, length)))) {
           resetSongList,
           downloadSongList,
           downloading,
-          downloadSongListAsJson
+          downloadSongListAsJson,
+          sortSongListByListId,
+          playlistToCloud
         };
       };
       const { Dragger } = Upload;
@@ -20348,7 +20462,7 @@ isIndex(key, length)))) {
             });
             const res = await promiseLimit(uploadPromises, concurrency);
             console.log("res", res);
-            msgSuccess$1("上传成功");
+            msgSuccess("上传成功");
             const size2 = res.filter(Boolean).reduce((acc, file) => acc + file.size, 0);
             const info2 = {
               list: res.filter(Boolean),
@@ -20686,7 +20800,7 @@ var hasRequiredClassnames;
         const { text: text2, className, ...rest } = props;
         const handleCopy = () => {
           copy(text2);
-          msgSuccess$1("复制成功");
+          msgSuccess("复制成功");
         };
         return jsxRuntimeExports.jsxs("div", { className: classNames(styles$7["copy-text"], className), ...rest, children: [
 jsxRuntimeExports.jsx(
@@ -20942,12 +21056,7 @@ jsxRuntimeExports.jsx(
         };
         const handleDownload = (record) => {
           console.log("record", record);
-          download(
-            record.id,
-            record.name,
-            record.level || QUALITY_LEVELS.无损,
-            record.al?.id
-          );
+          download(record.id, record.level || QUALITY_LEVELS.无损);
         };
         const handleSaveToCloud = async (record) => {
           const uploadMessageKey2 = "song-to-cloud";
@@ -20962,7 +21071,7 @@ jsxRuntimeExports.jsx(
               },
               onComplete: (result) => {
                 message.destroy(uploadMessageKey2);
-                msgSuccess$1(
+                msgSuccess(
                   `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
@@ -21404,13 +21513,13 @@ jsxRuntimeExports.jsx(
                 },
                 onComplete: (result) => {
                   message.destroy(uploadMessageKey2);
-                  msgSuccess$1(
+                  msgSuccess(
                     `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                   );
                 }
               }
             );
-            msgSuccess$1(`歌曲转存云盘完成`);
+            msgSuccess(`歌曲转存云盘完成`);
           } catch (error) {
             console.error("转存云盘全部失败:", error);
             msgError(`歌曲转存云盘失败: ${error.message}`);
@@ -21557,6 +21666,7 @@ jsxRuntimeExports.jsx(
           },
           ref
         );
+        const { sortSongListByListId, playlistToCloud } = useGetSongListDetail();
         const [loading, setLoading] = useState(false);
         const [playList, setPlayList] = useState([]);
         const songListRef = useRef();
@@ -21593,37 +21703,14 @@ jsxRuntimeExports.jsx(
         });
         const handleSaveToCloud = async (e2, record) => {
           e2.stopPropagation();
-          const uploadMessageKey2 = "playlist-to-cloud";
+          return playlistToCloud(record.id);
+        };
+        const handleSort = async (e2, record) => {
+          e2.stopPropagation();
           try {
-            const songs2 = await getPlaylistAllData(record.id);
-            const songIds = songs2.map((song) => song.id);
-            message.loading({
-              content: "开始上传歌单歌曲到云盘，请稍候...",
-              key: uploadMessageKey2,
-              duration: 0
-            });
-            const res = await neteaseMusicToCloud(songIds, {
-              onChange: (progress) => {
-                message.loading({
-                  content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
-                  key: uploadMessageKey2,
-                  duration: 0
-                });
-              },
-              onComplete: (result) => {
-                message.destroy(uploadMessageKey2);
-                console.log("result", result);
-                msgSuccess$1(
-                  `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
-                );
-              }
-            });
-            console.log("res", res);
+            await sortSongListByListId(record.id);
           } catch (error) {
             console.log("error", error);
-            msgError(`歌单歌曲转云盘失败: ${error.message}`);
-          } finally {
-            message.destroy(uploadMessageKey2);
           }
         };
         const handleDelete = async (e2, record) => {
@@ -21633,7 +21720,7 @@ jsxRuntimeExports.jsx(
             const res = await deletePlaylist(record.id);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("删除歌单成功");
+              msgSuccess("删除歌单成功");
               getPlayListData();
             } else {
               msgError(`删除歌单失败: ${res.message}`);
@@ -21708,7 +21795,7 @@ jsxRuntimeExports.jsx(Typography.Text, { children: record.creator.nickname })
             title: "操作",
             key: "action",
             align: "center",
-            fixed: "right",
+            fixed: isMobile() ? void 0 : "right",
             width: 200,
             render: (_, record) => jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
 jsxRuntimeExports.jsx(
@@ -21719,6 +21806,16 @@ jsxRuntimeExports.jsx(
                   onClick: (e2) => handleSaveToCloud(e2, record),
                   size: "small",
                   children: "转存云盘"
+                }
+              ),
+jsxRuntimeExports.jsx(
+                MyButton,
+                {
+                  type: "link",
+                  icon: jsxRuntimeExports.jsx(SortAscendingOutlined, {}),
+                  onClick: (e2) => handleSort(e2, record),
+                  size: "small",
+                  children: "排序"
                 }
               ),
 jsxRuntimeExports.jsx(
@@ -22167,7 +22264,7 @@ dt: formatDuration$1(0),
               });
             });
             const res = await uploadSong(record);
-            msgSuccess$1("上传成功");
+            msgSuccess("上传成功");
             getSongList(singerList);
           } catch (error) {
             console.log("error", error);
@@ -22359,7 +22456,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
             });
             await promiseLimit(tasks, concurrency || 6);
             getSongList(singerList);
-            msgSuccess$1(`上传完成: 成功${successCount}首，失败${failedCount}首`);
+            msgSuccess(`上传完成: 成功${successCount}首，失败${failedCount}首`);
           } catch (error) {
             console.log("error", error);
             msgError(`上传失败: ${error.message}`);
@@ -22397,7 +22494,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
             });
             let index2 = 1;
             for (const album2 of albumList) {
-              msgSuccess$1(
+              msgSuccess(
                 `当前正在上传第${index2}/${albumList.length}专辑，开始上传专辑: ${album2[0].album}`
               );
               console.log(
@@ -22657,12 +22754,7 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
         };
         const handleDownload = (record) => {
           console.log("record", record);
-          download(
-            record.id,
-            record.name,
-            record.level || QUALITY_LEVELS.无损,
-            record.al?.id
-          );
+          download(record.id, record.level || QUALITY_LEVELS.无损);
         };
         const handleSaveToCloud = async (record) => {
           console.log("record", record);
@@ -22678,7 +22770,7 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
               },
               onComplete: (result) => {
                 message.destroy(uploadMessageKey2);
-                msgSuccess$1(
+                msgSuccess(
                   `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
@@ -23121,7 +23213,7 @@ jsxRuntimeExports.jsx(
             const hide = msgLoading(`正在加载《${record.name}》...`);
             await playAlbum(record.id);
             hide();
-            msgSuccess$1(`《${record.name}》开始播放`);
+            msgSuccess(`《${record.name}》开始播放`);
           } catch (error) {
             console.error("播放失败:", error);
           } finally {
@@ -23135,7 +23227,7 @@ jsxRuntimeExports.jsx(
             const hide = msgLoading(`正在准备下载《${record.name}》...`);
             await downloadAlbumSong(record.id);
             hide();
-            msgSuccess$1(`《${record.name}》下载成功！`);
+            msgSuccess(`《${record.name}》下载成功！`);
           } catch (error) {
             console.error("下载失败:", error);
           } finally {
@@ -23147,7 +23239,7 @@ jsxRuntimeExports.jsx(
             const hide = msgLoading(`正在准备下载《${record.name}》...`);
             await getDownLoadJson(record.id);
             hide();
-            msgSuccess$1(`《${record.name}》下载成功！`);
+            msgSuccess(`《${record.name}》下载成功！`);
           } catch (error) {
             msgError("下载JSON失败: " + (error?.message || error));
           }
@@ -23173,7 +23265,7 @@ jsxRuntimeExports.jsx(
                 onComplete: (result) => {
                   console.log("result", result);
                   message.destroy(uploadMessageKey2);
-                  msgSuccess$1(
+                  msgSuccess(
                     `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                   );
                 }
@@ -23584,7 +23676,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             setPlayingAlbumId(record.id);
             hide = msgLoading(`正在加载《${record.name}》...`);
             await playAlbum(record.id);
-            msgSuccess$1(`《${record.name}》开始播放`);
+            msgSuccess(`《${record.name}》开始播放`);
           } catch (error) {
             console.error("播放失败:", error);
             msgError(`播放失败: ${error?.message || error}`);
@@ -23599,7 +23691,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             setDownloadingAlbumId(record.id);
             hide = msgLoading(`正在准备下载《${record.name}》...`);
             await downloadAlbumSong(record.id);
-            msgSuccess$1(`《${record.name}》下载成功`);
+            msgSuccess(`《${record.name}》下载成功`);
           } catch (error) {
             console.error("下载失败:", error);
             msgError(`下载失败: ${error?.message || error}`);
@@ -23628,7 +23720,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
               },
               `${record.name}-专辑`
             );
-            msgSuccess$1(`《${record.name}》JSON下载完成`);
+            msgSuccess(`《${record.name}》JSON下载完成`);
           } catch (error) {
             console.error("下载JSON失败:", error);
             msgError(`下载JSON失败: ${error?.message || error}`);
@@ -23651,7 +23743,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             for (const album2 of selectedRows) {
               await downloadAlbumSong(album2.id);
             }
-            msgSuccess$1(`成功下载 ${selectedRows.length} 张专辑`);
+            msgSuccess(`成功下载 ${selectedRows.length} 张专辑`);
           } catch (error) {
             console.error("批量下载专辑失败:", error);
             msgError(`批量下载失败: ${error?.message || error}`);
@@ -24216,7 +24308,6 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
             monitors: [searchParams]
           }
         );
-        console.log("data", data);
         const renderTitle = () => {
           return jsxRuntimeExports.jsx("div", { className: styles$2["modal-title"], children: jsxRuntimeExports.jsx("div", { className: styles$2["title-content"], children: jsxRuntimeExports.jsx("span", { className: styles$2["title-text"], children: "歌曲查询" }) }) });
         };
@@ -24293,7 +24384,7 @@ jsxRuntimeExports.jsx(
             const res = await getAlbumSongList(albumId);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("获取专辑歌曲列表成功,请打开控制台查看！");
+              msgSuccess("获取专辑歌曲列表成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -24305,7 +24396,7 @@ jsxRuntimeExports.jsx(
             const res = await getAlbumDetail(albumId);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("获取专辑详情成功,请打开控制台查看！");
+              msgSuccess("获取专辑详情成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -24332,7 +24423,7 @@ jsxRuntimeExports.jsx(
                 onComplete: (result) => {
                   console.log("result", result);
                   message.destroy(uploadMessageKey2);
-                  msgSuccess$1(
+                  msgSuccess(
                     `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                   );
                 }
@@ -24367,7 +24458,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const res = await getArtistTopSongList(artistId);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("获取歌手热门歌曲列表成功,请打开控制台查看！");
+              msgSuccess("获取歌手热门歌曲列表成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -24379,7 +24470,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const res = await getArtistAlbumList(artistId);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("获取歌手专辑成功,请打开控制台查看！");
+              msgSuccess("获取歌手专辑成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -24409,7 +24500,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const res = await getArtistAllSongList(artistId);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("获取歌手全部歌曲成功,请打开控制台查看！");
+              msgSuccess("获取歌手全部歌曲成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -24440,7 +24531,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
               },
               onComplete: (result) => {
                 message.destroy(uploadMessageKey2);
-                msgSuccess$1(
+                msgSuccess(
                   `歌手全部歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
@@ -24614,24 +24705,24 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
       const DOWNLOAD_SETTING_STRATEGIES = [
         {
           label: "下载音质",
-          value: "quality",
+          key: "quality",
           type: "select",
           options: getQualityOptions(),
-          style: { width: 200 }
+          style: { width: "100%" }
         },
         {
           label: "是否下载歌词",
-          value: "downloadLyric",
+          key: "downloadLyric",
           type: "switch"
         },
         {
           label: "是否内嵌歌词封面",
-          value: "embedLyricCover",
+          key: "embedLyricCover",
           type: "switch"
         },
         {
           label: "是否内嵌歌曲信息",
-          value: "embedSongInfo",
+          key: "embedSongInfo",
           type: "switch"
         }
       ];
@@ -24652,14 +24743,18 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             style: {
               minWidth: 800
             },
-            children: DOWNLOAD_SETTING_STRATEGIES.map((strategy) => jsxRuntimeExports.jsx(Item$2, { label: strategy.label, children: jsxRuntimeExports.jsx(
-              SettingItem,
-              {
-                value: downloadConfig[strategy.value],
-                onChange: (value2) => handleConfigChange(strategy.value, value2),
-                type: strategy.type
-              }
-            ) }, strategy.value))
+            children: DOWNLOAD_SETTING_STRATEGIES.map((strategy) => {
+              const { type, key, label: label2, ...rest } = strategy;
+              return jsxRuntimeExports.jsx(Item$2, { label: label2, children: jsxRuntimeExports.jsx(
+                SettingItem,
+                {
+                  value: downloadConfig[key],
+                  onChange: (value2) => handleConfigChange(key, value2),
+                  type,
+                  ...rest
+                }
+              ) }, key);
+            })
           }
         );
       };
@@ -24727,11 +24822,11 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             if (flacTagName === "all") {
               const res = await readAllFlacTag(flacFile);
               setFlacTags(res);
-              msgSuccess$1("读取所有标签成功，请查看下方信息");
+              msgSuccess("读取所有标签成功，请查看下方信息");
               console.log("res", res);
             } else {
               const res = await readFlacTag(flacFile, flacTagName);
-              msgSuccess$1(`读取标签 ${FLAC_TAGS[flacTagName]} 成功: ${res || "无值"}`);
+              msgSuccess(`读取标签 ${FLAC_TAGS[flacTagName]} 成功: ${res || "无值"}`);
               console.log("res", res);
             }
           } catch (error) {
@@ -24747,7 +24842,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const res = await writeFlacTag(flacFile, flacTagName, flacTagValue);
             console.log("res", res);
             setFlacFile(res);
-            msgSuccess$1("写入标签成功");
+            msgSuccess("写入标签成功");
           } catch (error) {
             console.log("error", error);
             msgError("写入标签失败");
@@ -24760,7 +24855,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const res = await embedFlacPicture(flacFile, flacPicture);
             console.log("res", res);
             setFlacFile(res);
-            msgSuccess$1("嵌入图片成功");
+            msgSuccess("嵌入图片成功");
           } catch (error) {
             console.log("error", error);
             msgError("嵌入图片失败");
@@ -24770,7 +24865,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
           try {
             if (!flacFile) return msgError("请选择文件");
             downloadFileWithBlob(flacFile, "test.flac");
-            msgSuccess$1("文件下载成功");
+            msgSuccess("文件下载成功");
           } catch (error) {
             console.log("error", error);
             msgError("文件下载失败");
@@ -24866,47 +24961,65 @@ jsxRuntimeExports.jsx(Form.Item, { label: "文件操作", children: jsxRuntimeEx
       const FUNCTION_SWITCH_STRATEGIES = [
         {
           label: "云盘快速上传",
-          value: "enableQuickUpload",
+          key: "enableQuickUpload",
           type: "switch"
         },
         {
           label: "云盘歌曲管理",
-          value: "enableCloudMusicManager",
+          key: "enableCloudMusicManager",
           type: "switch"
         },
         {
           label: "云盘本地上传",
-          value: "enableLocalUpload",
+          key: "enableLocalUpload",
           type: "switch"
         },
         {
           label: "查看歌单",
-          value: "enablePlayList",
+          key: "enablePlayList",
           type: "switch"
         },
         {
           label: "搜索",
-          value: "enableSearch",
+          key: "enableSearch",
           type: "switch"
         },
         {
           label: "云盘导入",
-          value: "enableCloudImport",
+          key: "enableCloudImport",
           type: "switch"
         },
         {
           label: "GitHub信息",
-          value: "enableGithubInfo",
+          key: "enableGithubInfo",
           type: "switch"
         },
         {
           label: "调试Modal",
-          value: "enableTestModal",
+          key: "enableTestModal",
           type: "switch"
         },
         {
+          label: "默认排序规则",
+          key: "defaultSongSortRuleValue",
+          type: "select",
+          options: SONG_SORT_RULES.map((rule) => ({
+            label: rule.name,
+            value: rule.value
+          })),
+          style: { width: "100%" }
+        },
+        {
+          label: "演唱会关键词",
+          key: "liveKeywords",
+          type: "select",
+          mode: "tags",
+          tokenSeparators: [",", "，", " "],
+          style: { width: "100%" }
+        },
+        {
           label: "功能开关TAB",
-          value: "enableFunctionSwitchTab",
+          key: "enableFunctionSwitchTab",
           type: "switch",
           disabled: true
         }
@@ -24919,15 +25032,19 @@ jsxRuntimeExports.jsx(Form.Item, { label: "文件操作", children: jsxRuntimeEx
             [key]: checked
           });
         };
-        return jsxRuntimeExports.jsx(Descriptions, { column: 3, size: "large", bordered: true, children: FUNCTION_SWITCH_STRATEGIES.map((strategy) => jsxRuntimeExports.jsx(Item$1, { label: strategy.label, children: jsxRuntimeExports.jsx(
-          SettingItem,
-          {
-            value: functionConfig[strategy.value],
-            onChange: (value2) => handleSwitchChange(strategy.value, value2),
-            type: strategy.type,
-            disabled: strategy.disabled
-          }
-        ) }, strategy.value)) });
+        return jsxRuntimeExports.jsx(Descriptions, { column: 3, size: "large", bordered: true, children: FUNCTION_SWITCH_STRATEGIES.map((strategy) => {
+          const { type, key, label: label2, disabled, ...rest } = strategy;
+          return jsxRuntimeExports.jsx(Item$1, { label: label2, children: jsxRuntimeExports.jsx(
+            SettingItem,
+            {
+              value: functionConfig[key],
+              onChange: (value2) => handleSwitchChange(key, value2),
+              type,
+              disabled,
+              ...rest
+            }
+          ) }, key);
+        }) });
       };
       const LoginTab = () => {
         const handleGetUserAccount = async () => {
@@ -24936,7 +25053,7 @@ jsxRuntimeExports.jsx(Form.Item, { label: "文件操作", children: jsxRuntimeEx
             const res = await getUserAccount();
             console.log("res", res);
             if (res.code !== 200) return msgError("获取用户信息失败");
-            msgSuccess$1("获取用户信息成功,请打开控制台查看！");
+            msgSuccess("获取用户信息成功,请打开控制台查看！");
           } catch (error) {
             console.log("error", error);
           }
@@ -24990,6 +25107,8 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
         document.getElementById("qrcode-container").appendChild(qrImg);
       };
       const PlaylistTab = () => {
+        const { defaultSongSortRule, functionConfig } = useConfig();
+        const { liveKeywords } = functionConfig;
         const [songListName, setSongListName] = useState("");
         const handleCreateSongList = async () => {
           console.log("新建歌单");
@@ -25028,7 +25147,7 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
           try {
             const songs2 = await getPlaylistAllData(playlistId);
             console.log("songs", songs2);
-            msgSuccess$1(
+            msgSuccess(
               "获取歌单信息成功, 共" + songs2.length + "首歌曲, 请打开控制台查看。"
             );
           } catch (error) {
@@ -25057,7 +25176,7 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
               onComplete: (result) => {
                 message.destroy(uploadMessageKey2);
                 console.log("result", result);
-                msgSuccess$1(
+                msgSuccess(
                   `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
@@ -25068,6 +25187,45 @@ jsxRuntimeExports.jsx("div", { id: "qrcode-container" })
             message.destroy(uploadMessageKey2);
           } finally {
             message.destroy(uploadMessageKey2);
+          }
+        };
+        const [sorterRuleValue, setSorterRuleValue] = useState(
+          defaultSongSortRule.value
+        );
+        const sortRule = useMemo(
+          () => SONG_SORT_RULES.find((rule) => rule.value === sorterRuleValue).rule,
+          [sorterRuleValue]
+        );
+        const handleUpdateSongOrder = async () => {
+          console.log("按专辑排序、演唱会靠后");
+          try {
+            const songs2 = await getPlaylistAllData(playlistId);
+            console.log("songs", songs2);
+            const keywords = liveKeywords;
+            const liveSongs = songs2.filter(
+              (song) => keywords.some((keyword) => song.al?.name.includes(keyword))
+            );
+            const otherSongs = songs2.filter((song) => !liveSongs.includes(song));
+            console.log("演唱会歌曲", liveSongs);
+            console.log("其他歌曲", otherSongs);
+            const sortedSongs = [
+              ...otherSongs.sort(sortRule),
+              ...liveSongs.sort(sortRule)
+            ];
+            console.log("sortedSongs", sortedSongs);
+            const res = await updateSongOrder(
+              playlistId,
+              sortedSongs.map((song) => song.id)
+            );
+            console.log("res", res);
+            if (res.code === 200) {
+              msgSuccess("按专辑排序、演唱会靠后成功");
+            } else {
+              msgError(res.message || "按专辑排序、演唱会靠后失败");
+            }
+          } catch (error) {
+            console.log("error", error);
+            msgError("按专辑排序、演唱会靠后失败");
           }
         };
         return jsxRuntimeExports.jsxs(Form, { children: [
@@ -25082,7 +25240,7 @@ jsxRuntimeExports.jsx(
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCreateSongList, children: "新建歌单" })
           ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "向歌单添加歌曲", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "向歌单添加歌曲", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
               Input,
               {
@@ -25115,7 +25273,7 @@ jsxRuntimeExports.jsx(
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetPlaylistList, children: "获取用户歌单列表" })
           ] }) }),
-jsxRuntimeExports.jsx(Form.Item, { label: "测试获取歌单详情", children: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "测试获取歌单详情", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
               Input,
               {
@@ -25126,7 +25284,21 @@ jsxRuntimeExports.jsx(
               }
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" }),
-jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handlePlaylistToCloud, children: "歌单歌曲转云盘" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handlePlaylistToCloud, children: "歌单歌曲转云盘" }),
+jsxRuntimeExports.jsx(
+              Select,
+              {
+                options: SONG_SORT_RULES.map((rule) => ({
+                  label: rule.name,
+                  value: rule.value
+                })),
+                value: sorterRuleValue,
+                onChange: (value2) => setSorterRuleValue,
+                style: { width: 250 },
+                placeholder: "请选择排序规则"
+              }
+            ),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleUpdateSongOrder, children: "排序" })
           ] }) })
         ] });
       };
@@ -25138,7 +25310,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handlePlaylistToClou
             const res = await search(searchKeyword, { type: searchType });
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("搜索成功,请打开控制台查看！");
+              msgSuccess("搜索成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -25149,7 +25321,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handlePlaylistToClou
             const res = await cloudSearch(searchKeyword, { type: searchType });
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("搜索成功,请打开控制台查看！");
+              msgSuccess("搜索成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -25161,7 +25333,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handlePlaylistToClou
             const res = await searchArtist(searchValue);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("搜索成功,请打开控制台查看！");
+              msgSuccess("搜索成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -25315,7 +25487,7 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             if (res.code === 200) {
               const url = res.data[0].url;
               await navigator.clipboard.writeText(url);
-              msgSuccess$1("获取成功,已复制到剪切板");
+              msgSuccess("获取成功,已复制到剪切板");
             }
           } catch (error) {
             console.log("error", error);
@@ -25327,7 +25499,7 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             const res = await getSongInfoList(songId.split(","));
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess$1("获取成功,请打开控制台查看！");
+              msgSuccess("获取成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -26107,7 +26279,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-hKSoWUFr-D_hoaTju.js", ['./__monkey.entry-BNsIYBLo.js', './AbstractID3Parser-DQYeuqJq-BlFrO5QU.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CkpuXbmt-RrkMoGju.js'], (function (exports, module) {
+System.register("./MpegParser-CkswYEfr-BEt_fqrX.js", ['./__monkey.entry-B8a59Eyg.js', './AbstractID3Parser-BOF0LBS1-B3cVD5Hl.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CK_t8kUM-BDVb9PNi.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -26702,7 +26874,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-DiRqzhBS-Cfz5EGnR.js", ['./__monkey.entry-BNsIYBLo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-C8KbxPJj-DjtGWODb.js", ['./__monkey.entry-B8a59Eyg.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -27209,7 +27381,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-DzSgt3tk-CztTSViy.js", ['./__monkey.entry-BNsIYBLo.js', './ID3v2Parser-CkpuXbmt-RrkMoGju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-Dhzxgq3U-C0b3fHeJ.js", ['./__monkey.entry-B8a59Eyg.js', './ID3v2Parser-CK_t8kUM-BDVb9PNi.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -27383,7 +27555,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-BmROzq8r-DJrtgr21.js", ['./__monkey.entry-BNsIYBLo.js', './ID3v2Parser-CkpuXbmt-RrkMoGju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-8xHFmvkU-D91KT8iW.js", ['./__monkey.entry-B8a59Eyg.js', './ID3v2Parser-CK_t8kUM-BDVb9PNi.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -27554,7 +27726,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-qPdGAZmd-DtE5naoi.js", ['./__monkey.entry-BNsIYBLo.js', './AbstractID3Parser-DQYeuqJq-BlFrO5QU.js', './ID3v2Parser-CkpuXbmt-RrkMoGju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-CUBYrJAv-e-9UKGYV.js", ['./__monkey.entry-B8a59Eyg.js', './AbstractID3Parser-BOF0LBS1-B3cVD5Hl.js', './ID3v2Parser-CK_t8kUM-BDVb9PNi.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -27652,7 +27824,7 @@ System.register("./DsfParser-qPdGAZmd-DtE5naoi.js", ['./__monkey.entry-BNsIYBLo.
   };
 }));
 
-System.register("./FlacParser-Dt6fa4Vk-D6bF-3bG.js", ['./__monkey.entry-BNsIYBLo.js', './VorbisParser-BshA1uq3-BVweQ-E1.js', './AbstractID3Parser-DQYeuqJq-BlFrO5QU.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CkpuXbmt-RrkMoGju.js'], (function (exports, module) {
+System.register("./FlacParser-NclGJcoj-mbs9M9mx.js", ['./__monkey.entry-B8a59Eyg.js', './VorbisParser-CELoFVne-94bInSSF.js', './AbstractID3Parser-BOF0LBS1-B3cVD5Hl.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CK_t8kUM-BDVb9PNi.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -27804,7 +27976,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-BM31X3vR-BtBV1IRu.js", ['./__monkey.entry-BNsIYBLo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-Cfh4ImiJ-eKpumAVL.js", ['./__monkey.entry-B8a59Eyg.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -28411,7 +28583,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-_C7Aal7U-reCwMnIq.js", ['./__monkey.entry-BNsIYBLo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-CBR97f4R-Roj-B379.js", ['./__monkey.entry-B8a59Eyg.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -29242,7 +29414,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-mOnnR9Cf-DaKirFlg.js", ['./__monkey.entry-BNsIYBLo.js', './AbstractID3Parser-DQYeuqJq-BlFrO5QU.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CkpuXbmt-RrkMoGju.js'], (function (exports, module) {
+System.register("./MusepackParser-w3e8I8PG-CPa0avz5.js", ['./__monkey.entry-B8a59Eyg.js', './AbstractID3Parser-BOF0LBS1-B3cVD5Hl.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CK_t8kUM-BDVb9PNi.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -29519,7 +29691,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-DQYeuqJq-BlFrO5QU.js", ['./__monkey.entry-BNsIYBLo.js', './ID3v2Parser-CkpuXbmt-RrkMoGju.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-BOF0LBS1-B3cVD5Hl.js", ['./__monkey.entry-B8a59Eyg.js', './ID3v2Parser-CK_t8kUM-BDVb9PNi.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -29583,7 +29755,7 @@ System.register("./AbstractID3Parser-DQYeuqJq-BlFrO5QU.js", ['./__monkey.entry-B
   };
 }));
 
-System.register("./OggParser-DCn22tsE-DQty-ZDa.js", ['./__monkey.entry-BNsIYBLo.js', './VorbisParser-BshA1uq3-BVweQ-E1.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-BVL3EDHZ-wh5Tph62.js", ['./__monkey.entry-B8a59Eyg.js', './VorbisParser-CELoFVne-94bInSSF.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -29858,7 +30030,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-BshA1uq3-BVweQ-E1.js", ['./__monkey.entry-BNsIYBLo.js'], (function (exports, module) {
+System.register("./VorbisParser-CELoFVne-94bInSSF.js", ['./__monkey.entry-B8a59Eyg.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -30074,7 +30246,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-Cf7RB5i8-BqHxV5hI.js", ['./__monkey.entry-BNsIYBLo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-Cmb9XAqP-CdwFAPXw.js", ['./__monkey.entry-B8a59Eyg.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -30254,7 +30426,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-DmJtbLf7-Mak-ijFB.js", ['./__monkey.entry-BNsIYBLo.js', './ID3v2Parser-CkpuXbmt-RrkMoGju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-BfmvrnK_-4ln4NHty.js", ['./__monkey.entry-B8a59Eyg.js', './ID3v2Parser-CK_t8kUM-BDVb9PNi.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -30527,7 +30699,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-CkpuXbmt-RrkMoGju.js", ['./__monkey.entry-BNsIYBLo.js'], (function (exports, module) {
+System.register("./ID3v2Parser-CK_t8kUM-BDVb9PNi.js", ['./__monkey.entry-B8a59Eyg.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
