@@ -87,13 +87,21 @@ export const SONG_SORT_RULES = [
     name: '按照专辑名称排序，演唱会靠后',
     value: '1',
     rule: (songA, songB) => {
-      if (songA.al?.name === songB.al?.name) {
+      if (
+        songA.al?.name &&
+        songB.al?.name &&
+        songA.al?.name !== songB.al?.name
+      ) {
+        return songA.al?.name?.localeCompare(songB.al?.name);
+      }
+      // 如果有专辑id且不相同，按照专辑id排序
+      else if (songA.al?.id && songB.al?.id && songA.al?.id !== songB.al?.id) {
+        return songA.al?.id - songB.al?.id;
+      } else if (songA.name && songB.name && songA.name !== songB.name) {
+        return songA.name?.localeCompare(songB?.name);
+      } else if (songA.id && songB.id && songA.id !== songB.id) {
         return songA.id - songB.id;
       }
-      if (songA.al?.id && songB.al?.id) {
-        return songA.al?.id - songB.al?.id;
-      }
-      return songA.al?.name.localeCompare(songB.al?.name);
     },
   },
   {
@@ -110,7 +118,7 @@ export const SONG_SORT_RULES = [
     name: '按照歌曲名称排序',
     value: '3',
     rule: (songA, songB) => {
-      return songA.name.localeCompare(songB.name);
+      return songA.name?.localeCompare(songB?.name);
     },
   },
 ];
