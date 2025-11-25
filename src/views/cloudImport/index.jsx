@@ -72,9 +72,9 @@ const CloudImport = forwardRef((props, ref) => {
   const [concurrent, setConcurrent] = useState(uploadConcurrency);
   const [loading, setLoading] = useState(false);
   const handleOk = async () => {
+    const importMessageKey = 'import-song';
     try {
       setLoading(true);
-      const importMessageKey = 'import-song';
       message.loading({
         content: `开始导入歌曲，请稍候...`,
         duration: 0,

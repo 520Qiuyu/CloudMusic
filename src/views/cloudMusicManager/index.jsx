@@ -55,6 +55,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
       if (res.code === 200) {
         console.log('songList', res.data);
         setSongList(res.data);
+        setTruncate(false);
       }
     } catch (error) {
       console.log('error', error);
@@ -700,7 +701,10 @@ const CloudMusicManager = forwardRef((props, ref) => {
           <Button onClick={handleRangeChoose} style={{ marginRight: 10 }}>
             区间选择
           </Button>
-          <Button onClick={handleRangeTruncate} style={{ marginRight: 10 }}>
+          <Button
+            onClick={handleRangeTruncate}
+            disabled={loading}
+            style={{ marginRight: 10 }}>
             {truncate ? '恢复' : '区间截取'}
           </Button>
 
