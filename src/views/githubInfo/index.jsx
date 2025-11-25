@@ -39,6 +39,7 @@ const GithubInfo = forwardRef((props, ref) => {
   const [repoInfo, setRepoInfo] = useState(null);
   const [loading, setLoading] = useState(false);
   const { functionConfig, setFunctionConfig } = useConfig();
+  const { enableScriptUpdate } = functionConfig;
 
   // 获取 GitHub 仓库信息
   const fetchRepoInfo = async () => {
@@ -220,14 +221,16 @@ const GithubInfo = forwardRef((props, ref) => {
                 rel='noopener noreferrer'>
                 查看 Stars
               </Button>
-              <Button
-                type='primary'
-                icon={<UploadOutlined />}
-                href={GITHUB_CONFIG.scriptUrl}
-                target='_blank'
-                rel='noopener noreferrer'>
-                更新脚本
-              </Button>
+              {enableScriptUpdate && (
+                <Button
+                  type='primary'
+                  icon={<UploadOutlined />}
+                  href={GITHUB_CONFIG.scriptUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'>
+                  更新脚本
+                </Button>
+              )}
             </Space>
           </Descriptions.Item>
         </Descriptions>

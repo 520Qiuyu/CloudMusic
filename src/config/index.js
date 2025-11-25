@@ -59,6 +59,10 @@ export const defaultConfig = {
      */
     enableGithubInfo: !isSell,
     /**
+     * 是否开启脚本更新
+     */
+    enableScriptUpdate: false,
+    /**
      * 是否开启调试Modal
      */
     enableTestModal: isDev,

@@ -46,6 +46,11 @@ const FUNCTION_SWITCH_STRATEGIES = [
     type: 'switch',
   },
   {
+    label: '脚本更新',
+    key: 'enableScriptUpdate',
+    type: 'switch',
+  },
+  {
     label: '调试Modal',
     key: 'enableTestModal',
     type: 'switch',
