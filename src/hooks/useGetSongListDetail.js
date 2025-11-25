@@ -123,7 +123,7 @@ export const useGetSongListDetail = () => {
     try {
       const songs = await getPlaylistAllData(playlistId);
       const liveSongs = songs.filter((song) =>
-        liveKeywords.some((keyword) => song.al?.name.includes(keyword)),
+        liveKeywords.some((keyword) => song.al?.name?.includes(keyword)),
       );
       const otherSongs = songs.filter((song) => !liveSongs.includes(song));
       const sortedSongs = [

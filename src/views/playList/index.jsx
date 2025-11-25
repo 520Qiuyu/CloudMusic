@@ -4,7 +4,7 @@ import SearchForm from '@/components/SearchForm';
 import { useGetSongListDetail } from '@/hooks';
 import useFilter from '@/hooks/useFilter';
 import { useVisible } from '@/hooks/useVisible';
-import { isMobile } from '@/utils';
+import { getUser, isMobile } from '@/utils';
 import { confirm, msgError, msgSuccess } from '@/utils/modal';
 import {
   CloudUploadOutlined,
@@ -190,13 +190,16 @@ function PlayList(props, ref) {
             size='small'>
             转存云盘
           </MyButton>
-          <MyButton
-            type='link'
-            icon={<SortAscendingOutlined />}
-            onClick={(e) => handleSort(e, record)}
-            size='small'>
-            排序
-          </MyButton>
+          {/* 自己创建的才可以排序 */}
+          {record.creator.userId === getUser().id && (
+            <MyButton
+              type='link'
+              icon={<SortAscendingOutlined />}
+              onClick={(e) => handleSort(e, record)}
+              size='small'>
+              排序
+            </MyButton>
+          )}
           <MyButton
             type='link'
             icon={<DeleteOutlined />}

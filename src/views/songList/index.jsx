@@ -173,10 +173,8 @@ function SongList(props, ref) {
             }}>
             <div
               style={{
-                width: '60px',
-                height: '60px',
+                flex: '0 0 60px',
                 borderRadius: '6px',
-                flexShrink: 0,
                 overflow: 'hidden',
                 cursor: 'pointer',
               }}
