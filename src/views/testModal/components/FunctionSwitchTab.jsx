@@ -1,6 +1,7 @@
 import { useConfig } from '@/hooks/useConfig';
 import { Descriptions } from 'antd';
 import SettingItem from './SettingItem';
+import { SONG_SORT_RULES } from '@/constant';
 
 const { Item } = Descriptions;
 
@@ -11,47 +12,65 @@ const { Item } = Descriptions;
 const FUNCTION_SWITCH_STRATEGIES = [
   {
     label: '云盘快速上传',
-    value: 'enableQuickUpload',
+    key: 'enableQuickUpload',
     type: 'switch',
   },
   {
     label: '云盘歌曲管理',
-    value: 'enableCloudMusicManager',
+    key: 'enableCloudMusicManager',
     type: 'switch',
   },
   {
     label: '云盘本地上传',
-    value: 'enableLocalUpload',
+    key: 'enableLocalUpload',
     type: 'switch',
   },
   {
     label: '查看歌单',
-    value: 'enablePlayList',
+    key: 'enablePlayList',
     type: 'switch',
   },
   {
     label: '搜索',
-    value: 'enableSearch',
+    key: 'enableSearch',
     type: 'switch',
   },
   {
     label: '云盘导入',
-    value: 'enableCloudImport',
+    key: 'enableCloudImport',
     type: 'switch',
   },
   {
     label: 'GitHub信息',
-    value: 'enableGithubInfo',
+    key: 'enableGithubInfo',
     type: 'switch',
   },
   {
     label: '调试Modal',
-    value: 'enableTestModal',
+    key: 'enableTestModal',
     type: 'switch',
   },
   {
+    label: '默认排序规则',
+    key: 'defaultSongSortRuleValue',
+    type: 'select',
+    options: SONG_SORT_RULES.map((rule) => ({
+      label: rule.name,
+      value: rule.value,
+    })),
+    style: { width: '100%' },
+  },
+  {
+    label: '演唱会关键词',
+    key: 'liveKeywords',
+    type: 'select',
+    mode: 'tags',
+    tokenSeparators: [',', '，', ' '],
+    style: { width: '100%' },
+  },
+  {
     label: '功能开关TAB',
-    value: 'enableFunctionSwitchTab',
+    key: 'enableFunctionSwitchTab',
     type: 'switch',
     disabled: true,
   },
@@ -79,16 +98,20 @@ const FunctionSwitchTab = () => {
 
   return (
     <Descriptions column={3} size='large' bordered>
-      {FUNCTION_SWITCH_STRATEGIES.map((strategy) => (
-        <Item key={strategy.value} label={strategy.label}>
-          <SettingItem
-            value={functionConfig[strategy.value]}
-            onChange={(value) => handleSwitchChange(strategy.value, value)}
-            type={strategy.type}
-            disabled={strategy.disabled}
-          />
-        </Item>
-      ))}
+      {FUNCTION_SWITCH_STRATEGIES.map((strategy) => {
+        const { type, key, label, disabled, ...rest } = strategy;
+        return (
+          <Item key={key} label={label}>
+            <SettingItem
+              value={functionConfig[key]}
+              onChange={(value) => handleSwitchChange(key, value)}
+              type={type}
+              disabled={disabled}
+              {...rest}
+            />
+          </Item>
+        );
+      })}
     </Descriptions>
   );
 };

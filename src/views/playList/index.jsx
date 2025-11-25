@@ -1,29 +1,21 @@
-import {
-  deletePlaylist,
-  getPlaylistAllData,
-  getPlaylistList,
-  neteaseMusicToCloud,
-} from '@/api';
+import { deletePlaylist, getPlaylistList } from '@/api';
 import { MyButton } from '@/components';
 import SearchForm from '@/components/SearchForm';
+import { useGetSongListDetail } from '@/hooks';
 import useFilter from '@/hooks/useFilter';
 import { useVisible } from '@/hooks/useVisible';
+import { isMobile } from '@/utils';
 import { confirm, msgError, msgSuccess } from '@/utils/modal';
 import {
-  Avatar,
-  Image,
-  message,
-  Modal,
-  Table,
-  Tooltip,
-  Typography,
-} from 'antd';
+  CloudUploadOutlined,
+  DeleteOutlined,
+  SortAscendingOutlined,
+} from '@ant-design/icons';
+import { Avatar, Image, Modal, Table, Tag, Tooltip, Typography } from 'antd';
 import dayjs from 'dayjs';
 import { forwardRef, useRef, useState } from 'react';
 import SongList from '../songList';
 import styles from './index.module.scss';
-import { Tag } from 'antd';
-import { CloudUploadOutlined, DeleteOutlined } from '@ant-design/icons';
 
 function PlayList(props, ref) {
   const { visible, close } = useVisible(
@@ -37,6 +29,7 @@ function PlayList(props, ref) {
     },
     ref,
   );
+  const { sortSongListByListId, playlistToCloud } = useGetSongListDetail();
   const [loading, setLoading] = useState(false);
   const [playList, setPlayList] = useState([]);
   const songListRef = useRef();
@@ -82,37 +75,16 @@ function PlayList(props, ref) {
   // 转存云盘
   const handleSaveToCloud = async (e, record) => {
     e.stopPropagation();
-    const uploadMessageKey = 'playlist-to-cloud';
+    return playlistToCloud(record.id);
+  };
+
+  // 排序歌单
+  const handleSort = async (e, record) => {
+    e.stopPropagation();
     try {
-      const songs = await getPlaylistAllData(record.id);
-      const songIds = songs.map((song) => song.id);
-      message.loading({
-        content: '开始上传歌单歌曲到云盘，请稍候...',
-        key: uploadMessageKey,
-        duration: 0,
-      });
-      const res = await neteaseMusicToCloud(songIds, {
-        onChange: (progress) => {
-          message.loading({
-            content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
-            key: uploadMessageKey,
-            duration: 0,
-          });
-        },
-        onComplete: (result) => {
-          message.destroy(uploadMessageKey);
-          console.log('result', result);
-          msgSuccess(
-            `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
-          );
-        },
-      });
-      console.log('res', res);
+      await sortSongListByListId(record.id);
     } catch (error) {
       console.log('error', error);
-      msgError(`歌单歌曲转云盘失败: ${error.message}`);
-    } finally {
-      message.destroy(uploadMessageKey);
     }
   };
 
@@ -207,7 +179,7 @@ function PlayList(props, ref) {
       title: '操作',
       key: 'action',
       align: 'center',
-      fixed: 'right',
+      fixed: isMobile() ? undefined : 'right',
       width: 200,
       render: (_, record) => (
         <>
@@ -217,6 +189,13 @@ function PlayList(props, ref) {
             onClick={(e) => handleSaveToCloud(e, record)}
             size='small'>
             转存云盘
+          </MyButton>
+          <MyButton
+            type='link'
+            icon={<SortAscendingOutlined />}
+            onClick={(e) => handleSort(e, record)}
+            size='small'>
+            排序
           </MyButton>
           <MyButton
             type='link'

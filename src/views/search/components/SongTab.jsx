@@ -66,12 +66,7 @@ const SongTab = ({ data, loading }) => {
   /** 下载歌曲 */
   const handleDownload = (record) => {
     console.log('record', record);
-    download(
-      record.id,
-      record.name,
-      record.level || QUALITY_LEVELS.无损,
-      record.al?.id,
-    );
+    download(record.id, record.level || QUALITY_LEVELS.无损);
   };
   /** 转存云盘 */
   const handleSaveToCloud = async (record) => {

@@ -101,3 +101,16 @@ export const getPlaylistAllData = async (id) => {
   }
 };
 
+/**
+ * 调整歌单歌曲顺序
+ * @param {number} pid 歌单id
+ * @param {number[]} trackIds 歌曲ID数组
+ */
+export const updateSongOrder = (pid, trackIds) =>
+  weapiRequest('/api/playlist/manipulate/tracks', {
+    data: {
+      pid, // 歌单id
+      trackIds, // 歌曲 id 数组
+      op: 'update', // 操作类型
+    },
+  });

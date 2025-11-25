@@ -120,12 +120,8 @@ export const useGetAlbumDetail = () => {
    * 下载专辑所有歌曲
    * @param {string|number} id - 专辑ID
    */
-  const downloadAlbumSong = async (
-    id,
-    options = { level: QUALITY_LEVELS.无损 },
-  ) => {
+  const downloadAlbumSong = async (id) => {
     try {
-      const { level = QUALITY_LEVELS.无损 } = options;
       const songList = await getAlbumSongListData(id);
       if (!songList || songList.length === 0) {
         throw new Error('专辑中没有歌曲');
@@ -133,7 +129,7 @@ export const useGetAlbumDetail = () => {
 
       for (const song of songList) {
         console.log(`当前正在下载${song.name}...`);
-        await download(song.id, song.name, level, id);
+        await download(song.id);
       }
     } catch (error) {
       console.error('下载专辑歌曲失败:', error);

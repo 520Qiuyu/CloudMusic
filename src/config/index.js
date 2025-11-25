@@ -1,4 +1,4 @@
-import { QUALITY_LEVELS } from '@/constant';
+import { QUALITY_LEVELS, SONG_SORT_RULES } from '@/constant';
 
 const isDev = import.meta.env.DEV;
 const isSell = import.meta.env.MODE === 'sell';
@@ -74,5 +74,13 @@ export const defaultConfig = {
      * 并发上传歌曲数量
      */
     uploadConcurrency: 6,
+    /**
+     * 默认排序规则值
+     */
+    defaultSongSortRuleValue: SONG_SORT_RULES[0].value,
+    /**
+     * 演唱会关键词
+     */
+    liveKeywords: ['演唱会', 'Live', 'live'],
   },
 };

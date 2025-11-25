@@ -1,6 +1,8 @@
 import { useLocalStorageState } from 'ahooks';
 import { defaultConfig } from '@/config';
 import { useEffect } from 'react';
+import { useMemo } from 'react';
+import { SONG_SORT_RULES } from '@/constant';
 
 export const useConfig = () => {
   // 下载配置
@@ -21,6 +23,14 @@ export const useConfig = () => {
     },
   );
 
+  const defaultSongSortRule = useMemo(
+    () =>
+      SONG_SORT_RULES.find(
+        (rule) => rule.value === functionConfig.defaultSongSortRuleValue,
+      ),
+    [functionConfig.defaultSongSortRuleValue],
+  );
+
   useEffect(() => {
     setFunctionConfig({
       ...defaultConfig.function,
@@ -37,5 +47,6 @@ export const useConfig = () => {
     setDownloadConfig,
     functionConfig,
     setFunctionConfig,
+    defaultSongSortRule,
   };
 };

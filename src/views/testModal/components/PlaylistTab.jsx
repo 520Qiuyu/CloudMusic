@@ -4,16 +4,22 @@ import {
   createPlaylist,
   getPlaylistAllData,
   getPlaylistList,
+  updateSongOrder,
 } from '@/api/playlist';
 import { MyButton } from '@/components';
-import { msgSuccess } from '@/utils/modal';
-import { Form, Input, Space, message } from 'antd';
-import { useState } from 'react';
+import { SONG_SORT_RULES } from '@/constant';
+import { useConfig } from '@/hooks';
+import { msgError, msgSuccess } from '@/utils/modal';
+import { Form, Input, Select, Space, message } from 'antd';
+import { useMemo, useState } from 'react';
 
 /**
  * 歌单相关测试组件
  */
 const PlaylistTab = () => {
+  const { defaultSongSortRule, functionConfig } = useConfig();
+  const { liveKeywords } = functionConfig;
+
   // 歌单名称
   const [songListName, setSongListName] = useState('');
   // 新建歌单
@@ -58,6 +64,7 @@ const PlaylistTab = () => {
 
   // 测试获取歌单信息
   const [playlistId, setPlaylistId] = useState('13508631377');
+  // 获取歌单详情
   const handleGetPlaylist = async () => {
     try {
       const songs = await getPlaylistAllData(playlistId);
@@ -69,7 +76,6 @@ const PlaylistTab = () => {
       console.log('error', error);
     }
   };
-
   // 歌单歌曲转云盘
   const handlePlaylistToCloud = async () => {
     console.log('歌单歌曲转云盘');
@@ -106,6 +112,46 @@ const PlaylistTab = () => {
       message.destroy(uploadMessageKey);
     }
   };
+  const [sorterRuleValue, setSorterRuleValue] = useState(
+    defaultSongSortRule.value,
+  );
+  const sortRule = useMemo(
+    () => SONG_SORT_RULES.find((rule) => rule.value === sorterRuleValue).rule,
+    [sorterRuleValue],
+  );
+  // 按专辑排序、演唱会靠后
+  const handleUpdateSongOrder = async () => {
+    console.log('按专辑排序、演唱会靠后');
+    try {
+      const songs = await getPlaylistAllData(playlistId);
+      console.log('songs', songs);
+      const keywords = liveKeywords;
+      const liveSongs = songs.filter((song) =>
+        keywords.some((keyword) => song.al?.name.includes(keyword)),
+      );
+      const otherSongs = songs.filter((song) => !liveSongs.includes(song));
+      console.log('演唱会歌曲', liveSongs);
+      console.log('其他歌曲', otherSongs);
+      const sortedSongs = [
+        ...otherSongs.sort(sortRule),
+        ...liveSongs.sort(sortRule),
+      ];
+      console.log('sortedSongs', sortedSongs);
+      const res = await updateSongOrder(
+        playlistId,
+        sortedSongs.map((song) => song.id),
+      );
+      console.log('res', res);
+      if (res.code === 200) {
+        msgSuccess('按专辑排序、演唱会靠后成功');
+      } else {
+        msgError(res.message || '按专辑排序、演唱会靠后失败');
+      }
+    } catch (error) {
+      console.log('error', error);
+      msgError('按专辑排序、演唱会靠后失败');
+    }
+  };
 
   return (
     <Form>
@@ -125,7 +171,7 @@ const PlaylistTab = () => {
 
       {/* 测试向歌单添加歌曲 */}
       <Form.Item label='向歌单添加歌曲'>
-        <Space>
+        <Space wrap>
           <Input
             placeholder='请输入歌单Id'
             addonBefore='歌单id'
@@ -163,7 +209,7 @@ const PlaylistTab = () => {
 
       {/* 测试获取歌单详情 */}
       <Form.Item label='测试获取歌单详情'>
-        <Space>
+        <Space wrap>
           <Input
             placeholder='请输入歌单Id'
             addonBefore='歌单Id'
@@ -175,6 +221,20 @@ const PlaylistTab = () => {
           </MyButton>
           <MyButton type='primary' onClick={handlePlaylistToCloud}>
             歌单歌曲转云盘
+          </MyButton>
+          <Select
+            options={SONG_SORT_RULES.map((rule) => ({
+              label: rule.name,
+              value: rule.value,
+            }))}
+            value={sorterRuleValue}
+            onChange={(value) => setSorterRuleValue}
+            style={{ width: 250 }}
+            placeholder='请选择排序规则'
+          />
+          {/* 按专辑排序、演唱会靠后 */}
+          <MyButton type='primary' onClick={handleUpdateSongOrder}>
+            排序
           </MyButton>
         </Space>
       </Form.Item>

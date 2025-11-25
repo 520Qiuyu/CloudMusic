@@ -137,7 +137,7 @@ export const usePlayMusic = () => {
     return res.lrc?.lyric;
   };
 
-  const download = async (id, name, level = DEFAULT_QUALITY) => {
+  const download = async (id, level = DEFAULT_QUALITY) => {
     try {
       setDownloading(id);
       /** 获取歌曲信息 */
@@ -162,19 +162,19 @@ export const usePlayMusic = () => {
       // 获取下载音质
       const downloadLevel = getDownloadQuality(songInfo, level);
       const url = await getUrl(id, downloadLevel);
-      console.log(`当前下载歌曲${name},音质为${level},链接为${url}`);
+      console.log(`当前下载歌曲${songName},音质为${level},链接为${url}`);
 
       /** 获取文件后缀 */
       const finalExt = url.split('?')[0].split('.').pop();
       const { blob } = await getFileBlob(url.replace('http://', 'https://'));
-      const fileName = `${name}.${finalExt}`;
+      const fileName = `${songName}.${finalExt}`;
       /** 输出文件 */
       let outputFile = blob;
 
       /** 获取歌词 */
       const lyric = await getLyric(id);
       if (downloadLyric) {
-        downloadAsLRC(lyric, name);
+        downloadAsLRC(lyric, songName);
       }
 
       /** 获取封面 */

@@ -40,7 +40,7 @@ export const SEARCH_TYPES = {
   专辑: '10',
   歌手: '100',
   歌单: '1000',
-  用户: '1002'  ,
+  用户: '1002',
   MV: '1004',
   歌词: '1006',
   电台: '1009',
@@ -80,3 +80,37 @@ export const IMPORT_API_LIMIT = 10;
 // 其他常量
 export const BASE_CDN_URL =
   'https://fastly.jsdelivr.net/gh/520Qiuyu/cdn@latest/artist/';
+
+/** 歌曲排序规则 升序 */
+export const SONG_SORT_RULES = [
+  {
+    name: '按照专辑名称排序，演唱会靠后',
+    value: '1',
+    rule: (songA, songB) => {
+      if (songA.al?.name === songB.al?.name) {
+        return songA.id - songB.id;
+      }
+      if (songA.al?.id && songB.al?.id) {
+        return songA.al?.id - songB.al?.id;
+      }
+      return songA.al?.name.localeCompare(songB.al?.name);
+    },
+  },
+  {
+    name: '按照歌手名称排序',
+    value: '2',
+    rule: (songA, songB) => {
+      if (songA.ar?.name === songB.ar?.name) {
+        return songA.id - songB.id;
+      }
+      return songA.ar?.name.localeCompare(songB.ar?.name);
+    },
+  },
+  {
+    name: '按照歌曲名称排序',
+    value: '3',
+    rule: (songA, songB) => {
+      return songA.name.localeCompare(songB.name);
+    },
+  },
+];

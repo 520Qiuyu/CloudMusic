@@ -33,7 +33,6 @@ const Search = forwardRef((props, ref) => {
       monitors: [searchParams],
     },
   );
-  console.log('data', data);
 
   const renderTitle = () => {
     return (

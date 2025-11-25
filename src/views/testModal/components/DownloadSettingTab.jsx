@@ -23,24 +23,24 @@ const getQualityOptions = () => {
 const DOWNLOAD_SETTING_STRATEGIES = [
   {
     label: '下载音质',
-    value: 'quality',
+    key: 'quality',
     type: 'select',
     options: getQualityOptions(),
-    style: { width: 200 },
+    style: { width: '100%' },
   },
   {
     label: '是否下载歌词',
-    value: 'downloadLyric',
+    key: 'downloadLyric',
     type: 'switch',
   },
   {
     label: '是否内嵌歌词封面',
-    value: 'embedLyricCover',
+    key: 'embedLyricCover',
     type: 'switch',
   },
   {
     label: '是否内嵌歌曲信息',
-    value: 'embedSongInfo',
+    key: 'embedSongInfo',
     type: 'switch',
   },
 ];
@@ -73,15 +73,19 @@ const DownloadSettingTab = () => {
       style={{
         minWidth: 800,
       }}>
-      {DOWNLOAD_SETTING_STRATEGIES.map((strategy) => (
-        <Item key={strategy.value} label={strategy.label}>
-          <SettingItem
-            value={downloadConfig[strategy.value]}
-            onChange={(value) => handleConfigChange(strategy.value, value)}
-            type={strategy.type}
-          />
-        </Item>
-      ))}
+      {DOWNLOAD_SETTING_STRATEGIES.map((strategy) => {
+        const { type, key, label, ...rest } = strategy;
+        return (
+          <Item key={key} label={label}>
+            <SettingItem
+              value={downloadConfig[key]}
+              onChange={(value) => handleConfigChange(key, value)}
+              type={type}
+              {...rest}
+            />
+          </Item>
+        );
+      })}
     </Descriptions>
   );
 };
