@@ -1,59 +1,45 @@
+import { createPlaylist, deletePlaylist, getPlaylistList } from '@/api';
+import { MyButton } from '@/components';
+import SearchForm from '@/components/SearchForm';
+import { useConfig } from '@/hooks';
+import useFilter from '@/hooks/useFilter';
+import { getUser } from '@/utils';
+import { confirm, msgError, msgSuccess, msgWarning } from '@/utils/modal';
 import {
-  Button,
+  Checkbox,
   Image,
+  Input,
   message,
   Modal,
-  Popconfirm,
   Space,
   Table,
-  Input,
   Tag,
 } from 'antd';
-import React, { forwardRef, useImperativeHandle, useState } from 'react';
-import { createPlaylist, deletePlaylist, getPlaylistList } from '../../../api';
-import {
-  confirm,
-  msgWarning,
-  msgSuccess,
-  msgError,
-} from '../../../utils/modal';
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import styles from '../index.module.scss';
-import { useRef } from 'react';
-import { getUser } from '../../../utils';
-import SearchForm from '@/components/SearchForm';
-import useFilter from '@/hooks/useFilter';
 
-// 策略模式：不同歌手的歌单创建策略
-const playlistCreationStrategies = {
-  周杰伦: {
-    name: '周杰伦的歌单',
-    color: 'blue',
-    description: '创建周杰伦专属歌单',
-    getPlaylistName: () => '周杰伦',
-  },
-  林俊杰: {
-    name: '林俊杰的歌单',
-    color: 'green',
-    description: '创建林俊杰专属歌单',
-    getPlaylistName: () => '林俊杰',
-  },
-  陈奕迅: {
-    name: '陈奕迅的歌单',
-    color: 'purple',
-    description: '创建陈奕迅专属歌单',
-    getPlaylistName: () => '陈奕迅',
-  },
-  张学友: {
-    name: '张学友的歌单',
-    color: 'orange',
-    description: '创建张学友专属歌单',
-    getPlaylistName: () => '张学友',
-  },
-};
+const COLORS = [
+  'blue',
+  'green',
+  'purple',
+  'orange',
+  'red',
+  'yellow',
+  'cyan',
+  'magenta',
+  'geekblue',
+  'lime',
+  'volcano',
+  'gold',
+  'geekblue',
+  'purple',
+];
 
 const PlayList = (props, ref) => {
   const [visible, setVisible] = useState(false);
   const [mode, setMode] = useState('edit');
+  const { functionConfig } = useConfig();
+  const { createPlaylistShortcut } = functionConfig;
 
   // 编辑模式
   const isEdit = mode === 'edit';
@@ -221,6 +207,8 @@ const PlayList = (props, ref) => {
     },
   };
 
+  // 添加后是否自动排序
+  const [autoSort, setAutoSort] = useState(true);
   // 确认选择
   const handleConfirm = () => {
     if (!selectedRows.length) {
@@ -228,7 +216,10 @@ const PlayList = (props, ref) => {
       return;
     }
     if (selectedRows.length !== 1) return msgWarning('只能选择一个歌单');
-    res.current?.(selectedRows[0]);
+    res.current?.({
+      playlist: selectedRows[0],
+      autoSort,
+    });
     close();
   };
 
@@ -257,17 +248,10 @@ const PlayList = (props, ref) => {
 
   // 策略模式：创建常用歌单
   const handleCreateCommonPlaylist = async (artistName) => {
-    const strategy = playlistCreationStrategies[artistName];
-    if (!strategy) {
-      msgError('不支持的歌手类型');
-      return;
-    }
-
     try {
-      const playlistName = strategy.getPlaylistName();
-      const res = await createPlaylist(playlistName);
+      const res = await createPlaylist(artistName);
       if (res.code === 200) {
-        msgSuccess(`成功创建"${playlistName}"`);
+        msgSuccess(`成功创建歌单"${artistName}"`);
         handleGetPlayList(); // 重新获取列表
         setCreateModalVisible(false);
       } else {
@@ -340,23 +324,33 @@ const PlayList = (props, ref) => {
         {/* 操作 */}
         <div className={styles.footer}>
           <div>已选择 {selectedRows.length} 个歌单</div>
-          <Space>
-            <Button onClick={() => setCreateModalVisible(true)}>
+          <Checkbox
+            checked={autoSort}
+            onChange={(e) => setAutoSort(e.target.checked)}>
+            添加后自动排序
+          </Checkbox>
+          <Space
+            style={{
+              marginLeft: 'auto',
+            }}>
+            <MyButton onClick={() => setCreateModalVisible(true)}>
               新建歌单
-            </Button>
-            <Button
+            </MyButton>
+            <MyButton
               danger
               disabled={!selectedRows.length}
               onClick={handleDelete}>
               删除歌单
-            </Button>
+            </MyButton>
             {isSelect && (
-              <Button
-                type='primary'
-                onClick={handleConfirm}
-                disabled={selectedRows.length !== 1}>
-                选择({selectedRows.length})
-              </Button>
+              <>
+                <MyButton
+                  type='primary'
+                  onClick={handleConfirm}
+                  disabled={selectedRows.length !== 1}>
+                  选择({selectedRows.length})
+                </MyButton>
+              </>
             )}
           </Space>
         </div>
@@ -380,28 +374,26 @@ const PlayList = (props, ref) => {
           onChange={(e) => setName(e.target.value)}
           onPressEnter={handleCreate}
           autoFocus
-          style={{ marginBottom: 16 ,padding: '4px 8px'}}
+          style={{ marginBottom: 16, padding: '4px 8px' }}
         />
 
         <Space wrap>
-          {Object.entries(playlistCreationStrategies).map(
-            ([artistName, strategy]) => (
-              <Tag
-                key={artistName}
-                color={strategy.color}
-                style={{
-                  cursor: 'pointer',
-                  marginBottom: 8,
-                  borderRadius: '4px',
-                  border: '1px solid #d9d9d9',
-                  transition: 'all 0.3s',
-                }}
-                onClick={() => handleCreateCommonPlaylist(artistName)}
-                title={strategy.description}>
-                {artistName}
-              </Tag>
-            ),
-          )}
+          {createPlaylistShortcut.map((artistName, index) => (
+            <Tag
+              key={artistName}
+              color={COLORS[index % COLORS.length]}
+              style={{
+                cursor: 'pointer',
+                marginBottom: 8,
+                borderRadius: '4px',
+                border: '1px solid #d9d9d9',
+                transition: 'all 0.3s',
+              }}
+              onClick={() => handleCreateCommonPlaylist(artistName)}
+              title={artistName}>
+              {artistName}
+            </Tag>
+          ))}
         </Space>
       </Modal>
     </>

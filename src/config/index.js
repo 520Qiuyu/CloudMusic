@@ -86,5 +86,16 @@ export const defaultConfig = {
      * 演唱会关键词
      */
     liveKeywords: ['演唱会', 'Live', 'live'],
+    /**
+     * 创建歌单快捷方式
+     */
+    createPlaylistShortcut: [
+      '周杰伦',
+      '林宥嘉',
+      '林俊杰',
+      '陈奕迅',
+      '邓紫棋',
+      '理智',
+    ],
   },
 };

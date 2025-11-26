@@ -39,7 +39,7 @@ function QuickUpload(props, ref) {
   return (
     <Modal
       title='云盘快速上传'
-      width={900}
+      width={1000}
       centered
       open={visible}
       footer={null}

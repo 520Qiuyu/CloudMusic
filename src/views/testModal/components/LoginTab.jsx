@@ -1,7 +1,9 @@
 import { getQrCode, getQrKey, getQrStatus, getUserAccount } from '@/api/login';
 import { MyButton } from '@/components';
 import { sleep } from '@/utils';
+import copy from '@/utils/copy';
 import { msgError, msgSuccess } from '@/utils/modal';
+import { Input } from 'antd';
 import { Space } from 'antd';
 import { Form } from 'antd';
 
@@ -61,6 +63,15 @@ const LoginTab = () => {
     }
   };
 
+  const handleCopyUserCookie = async () => {
+    try {
+      await copy(document.cookie);
+      msgSuccess('复制成功');
+    } catch (error) {
+      console.log('error', error);
+      msgError('复制失败');
+    }
+  };
   return (
     <Form>
       {/* 测试获取用户信息 */}
@@ -78,6 +89,20 @@ const LoginTab = () => {
           </MyButton>
           <div id='qrcode-container'></div>
         </Space>
+      </Form.Item>
+
+      {/* 测试用户cookie */}
+      <Form.Item label='测试用户cookie'>
+        <Space.Compact style={{ width: '100%' }}>
+          <Input.TextArea
+            autoSize={{ minRows: 10, maxRows: 20 }}
+            readOnly
+            value={document.cookie}
+          />
+          <MyButton type='primary' onClick={handleCopyUserCookie}>
+            复制
+          </MyButton>
+        </Space.Compact>
       </Form.Item>
     </Form>
   );

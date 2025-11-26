@@ -81,9 +81,13 @@
 }
 
 .upload-stats {
+  flex: 1 0 450px;
+  display: flex;
+  align-items: center;
   color: #666;
   font-size: 13px;
   margin-right: auto;
+  gap: 3px;
 
   .size-text {
     color: #999;

@@ -33,6 +33,7 @@ import PlayList from './components/PlayList';
 import Stats from './components/Stats';
 import styles from './index.module.scss';
 import dayjs from 'dayjs';
+import { useGetSongListDetail } from '@/hooks';
 
 const CloudMusicManager = forwardRef((props, ref) => {
   const { visible, open, close, reset } = useVisible(
@@ -43,6 +44,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
     },
     ref,
   );
+  const { sortSongListByListId } = useGetSongListDetail();
 
   const [songList, setSongList] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -549,7 +551,7 @@ const CloudMusicManager = forwardRef((props, ref) => {
     try {
       console.log('添加到歌单');
       playListRef.current.open('select');
-      const playlist = await playListRef.current.submit();
+      const { playlist, autoSort } = await playListRef.current.submit();
       if (!playlist) return;
       const songIds = selectedRows.map((item) => item.songId);
       const res = await addSongToPlaylist(playlist.id, songIds);
@@ -557,6 +559,9 @@ const CloudMusicManager = forwardRef((props, ref) => {
       if (res.code === 200) {
         setSelectedRows([]);
         msgSuccess('添加成功');
+      }
+      if (autoSort) {
+        await sortSongListByListId(playlist.id);
       }
     } catch (error) {
       console.log('error', error);

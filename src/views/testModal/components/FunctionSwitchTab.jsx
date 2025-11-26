@@ -74,6 +74,14 @@ const FUNCTION_SWITCH_STRATEGIES = [
     style: { width: '100%' },
   },
   {
+    label: '创建歌单快捷方式',
+    key: 'createPlaylistShortcut',
+    type: 'select',
+    mode: 'tags',
+    tokenSeparators: [',', '，', ' '],
+    style: { width: '100%' },
+  },
+  {
     label: '功能开关TAB',
     key: 'enableFunctionSwitchTab',
     type: 'switch',

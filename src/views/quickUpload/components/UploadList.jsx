@@ -13,7 +13,7 @@ import {
 } from '@/utils/index';
 import { confirm, msgError, msgSuccess } from '@/utils/modal';
 import { Button, Empty, Input, message, Table, Tag } from 'antd';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from '../index.module.scss';
 import UploadProgress from './UploadProgress';
 import UploadStats from './UploadStats';
@@ -145,6 +145,11 @@ export default function UploadList({ singerList }) {
   useEffect(() => {
     handleSearch(searchParams);
   }, [songList]);
+
+  /** 待上传歌曲 */
+  const toUploadSongList = useMemo(() => {
+    return filteredSongList.filter((song) => !song.uploaded);
+  }, [filteredSongList]);
 
   /** 选择 */
   const [selectedRows, setSelectedRows] = useState([]);
@@ -478,6 +483,7 @@ export default function UploadList({ singerList }) {
             <UploadStats
               selectedRows={selectedRows}
               filteredSongList={filteredSongList}
+              toUploadSongList={toUploadSongList}
             />
             {/* 并发量控制 */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
