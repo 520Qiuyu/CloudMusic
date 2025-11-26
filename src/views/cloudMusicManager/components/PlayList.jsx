@@ -329,10 +329,7 @@ const PlayList = (props, ref) => {
             onChange={(e) => setAutoSort(e.target.checked)}>
             添加后自动排序
           </Checkbox>
-          <Space
-            style={{
-              marginLeft: 'auto',
-            }}>
+          <Space className={styles.actions}>
             <MyButton onClick={() => setCreateModalVisible(true)}>
               新建歌单
             </MyButton>
