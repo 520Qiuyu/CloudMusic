@@ -23,6 +23,7 @@ import {
 import dayjs from 'dayjs';
 import { useRef, useState } from 'react';
 import styles from '../index.module.scss';
+import { isMobile } from '@/utils';
 
 const AlbumTab = ({ data, loading }) => {
   const albumDetailRef = useRef();
@@ -333,7 +334,7 @@ const AlbumTab = ({ data, loading }) => {
       key: 'action',
       width: 300,
       align: 'center',
-      fixed: 'right',
+      fixed:isMobile() ? undefined : 'right',
       render: (_, record) => {
         return (
           <Space size='small' wrap>

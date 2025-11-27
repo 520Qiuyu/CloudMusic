@@ -37,6 +37,7 @@ import {
   useState
 } from 'react';
 import styles from './index.module.scss';
+import { isMobile } from '@/utils';
 
 const { Text, Title } = Typography;
 
@@ -384,7 +385,7 @@ const AlbumListModal = forwardRef((props, ref) => {
         key: 'action',
         width: 340,
         align: 'center',
-        fixed: 'right',
+        fixed:isMobile() ? undefined : 'right',
         render: (_, record) => (
           <Space size='middle'>
             <Button

@@ -2,6 +2,7 @@ import { neteaseMusicToCloud } from '@/api';
 import { CopyText, MyButton } from '@/components';
 import { QUALITY_LEVELS } from '@/constant';
 import { usePlayMusic } from '@/hooks';
+import { isMobile } from '@/utils';
 import { msgError, msgSuccess } from '@/utils/modal';
 import {
   formatDuration,
@@ -460,7 +461,7 @@ const SongTab = ({ data, loading }) => {
       key: 'action',
       width: 300,
       align: 'center',
-      fixed: 'right',
+      fixed: isMobile() ? undefined : 'right',
       render: (_, record) => {
         return (
           <Space>

@@ -6,6 +6,7 @@ import useFilter from '@/hooks/useFilter';
 import { useGetSongListDetail } from '@/hooks/useGetSongListDetail';
 import { usePlayMusic } from '@/hooks/usePlayMusic';
 import { useVisible } from '@/hooks/useVisible';
+import { isMobile } from '@/utils';
 import { msgError, msgSuccess, msgWarning } from '@/utils/modal';
 import {
   formatDuration,
@@ -512,7 +513,7 @@ function SongList(props, ref) {
       key: 'action',
       width: 300,
       align: 'center',
-      fixed: 'right',
+      fixed: isMobile() ? undefined : 'right',
       render: (_, record) => {
         return (
           <Space>
