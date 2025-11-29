@@ -9,6 +9,7 @@ import { confirm, msgError, msgSuccess } from '@/utils/modal';
 import {
   CloudUploadOutlined,
   DeleteOutlined,
+  DownloadOutlined,
   SortAscendingOutlined,
 } from '@ant-design/icons';
 import { Avatar, Image, Modal, Table, Tag, Tooltip, Typography } from 'antd';
@@ -29,7 +30,8 @@ function PlayList(props, ref) {
     },
     ref,
   );
-  const { sortSongListByListId, playlistToCloud } = useGetSongListDetail();
+  const { sortSongListByListId, playlistToCloud, downloadSongList } =
+    useGetSongListDetail();
   const [loading, setLoading] = useState(false);
   const [playList, setPlayList] = useState([]);
   const songListRef = useRef();
@@ -107,6 +109,17 @@ function PlayList(props, ref) {
     }
   };
 
+  // 下载歌单
+  const handleDownload = async (e, record) => {
+    e.stopPropagation();
+    try {
+      await downloadSongList(record.id);
+      msgSuccess('下载歌单成功');
+    } catch (error) {
+      console.log('error', error);
+      msgError(`下载歌单失败: ${error.message}`);
+    }
+  };
   // 表格列配置
   const columns = [
     {
@@ -206,6 +219,13 @@ function PlayList(props, ref) {
             onClick={(e) => handleDelete(e, record)}
             size='small'>
             删除
+          </MyButton>
+          <MyButton
+            type='link'
+            icon={<DownloadOutlined />}
+            onClick={(e) => handleDownload(e, record)}
+            size='small'>
+            下载
           </MyButton>
         </>
       ),

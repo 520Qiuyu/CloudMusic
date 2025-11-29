@@ -5,6 +5,7 @@ import { weapiRequest } from '@/utils/request';
 import { getSongInfoList, getSongUrl } from './song';
 import { getQualityTags } from '@/utils/music';
 import { defaultConfig } from '@/config';
+import { writeFlacTags } from '@/libs/flac';
 
 const { uploadConcurrency } = defaultConfig.function;
 const { quality } = defaultConfig.download;
@@ -319,7 +320,7 @@ export const uploadLocalSong = async (file, options = {}) => {
     // 1、首选检查文件
     const checkRes = await weapiRequest('/api/cloud/upload/check', {
       data: {
-        ext: '',
+        ext,
         bitrate: String(bitrate),
         md5: fileMd5,
         length: file.size,
@@ -551,17 +552,33 @@ export const neteaseMusicToCloud = async (songIds, options = {}) => {
       try {
         // 3.1 检查歌曲链接
         if (!song.url) throw new Error(`歌曲链接不存在: ${song.name}`);
+        /** 获取文件后缀 */
+        const finalExt = song.url.split('?')[0].split('.').pop();
 
         // 3.2 获取文件对象
         const file = await fetch(song.url.replace('http://', 'https://'));
         const blob = await file.blob();
-        const fileObj = new File([blob], song.name, { type: song.type });
+        let fileObj = new File([blob], song.name, { type: song.type });
         const songInfo = {
           album: song.al?.name,
           artist: song.ar?.map((ar) => ar.name).join(','),
           title: song.name,
           artists: song.ar?.map((ar) => ar.name),
         };
+        // 内嵌歌曲信息
+        switch (finalExt) {
+          case 'flac':
+            const fileBlob = await writeFlacTags(fileObj, [
+              { tag: 'title', value: songInfo.title },
+              { tag: 'artist', value: songInfo.artist },
+              { tag: 'album', value: songInfo.album },
+            ]);
+            fileObj = new File([fileBlob], `${songInfo.title}.flac`, { type: 'audio/flac' });
+            break;
+          default:
+            console.log('当前格式不支持内嵌信息');
+            break;
+        }
 
         // 3.3 上传歌曲
         const res = await uploadLocalSong(fileObj, {

@@ -42,6 +42,11 @@ export const useConfig = () => {
     });
   }, []);
 
+  useEffect(()=>{
+    window.functionConfig = functionConfig;
+    window.downloadConfig = downloadConfig;
+  },[functionConfig,downloadConfig])
+
   return {
     downloadConfig,
     setDownloadConfig,

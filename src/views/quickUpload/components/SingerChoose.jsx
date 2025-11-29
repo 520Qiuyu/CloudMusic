@@ -68,6 +68,7 @@ export default function SingerChoose({ defaultSingerList, onChoose }) {
               placeholder='请选择歌手'
               allowClear
               className={styles['select']}
+              autoClearSearchValue={false}
               filterOption={(input, option) =>
                 option.name?.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
