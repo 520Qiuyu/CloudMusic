@@ -308,7 +308,7 @@ export const uploadLocalSong = async (file, options = {}) => {
   } = options || {};
   let defaultResult = {};
   try {
-    const ext = file.name.split('.').pop() || 'mp3';
+    const ext = file.name?.split('.').pop() || 'mp3';
     const fileMd5 = await getFileMD5(file);
     const bitrate = defaultBitrate;
     const filename = file.name
@@ -316,6 +316,7 @@ export const uploadLocalSong = async (file, options = {}) => {
       .replace(/\s/g, '')
       .replace(/\./g, '_');
     const contentType = file.type || 'audio/mpeg';
+    debugger;
 
     // 1、首选检查文件
     const checkRes = await weapiRequest('/api/cloud/upload/check', {
@@ -403,7 +404,7 @@ export const uploadLocalSong = async (file, options = {}) => {
       data: {
         md5: fileMd5,
         songid: songId,
-        filename,
+        filename: file.name,
         song: title || filename,
         album: album || '未知专辑',
         artist: artist || artists.join(',') || '未知歌手',
@@ -573,7 +574,9 @@ export const neteaseMusicToCloud = async (songIds, options = {}) => {
               { tag: 'artist', value: songInfo.artist },
               { tag: 'album', value: songInfo.album },
             ]);
-            fileObj = new File([fileBlob], `${songInfo.title}.flac`, { type: 'audio/flac' });
+            fileObj = new File([fileBlob], `${songInfo.title}.flac`, {
+              type: 'audio/flac',
+            });
             break;
           default:
             console.log('当前格式不支持内嵌信息');
