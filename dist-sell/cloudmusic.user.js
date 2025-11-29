@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-DzoLifxo.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-BZw7_m0t.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,7 +44,7 @@ System.register("./__entry.js", ['./__monkey.entry-DzoLifxo.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-DzoLifxo.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-BZw7_m0t.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Avatar, Form, Pagination, ConfigProvider, Select, Checkbox, Tooltip, Empty, Card, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, PauseCircleFilled, PlayCircleFilled, CopyOutlined, CopyrightOutlined, CloudUploadOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
   return {
@@ -1431,6 +1431,10 @@ createPlaylistShortcut: [
             ...downloadConfig
           });
         }, []);
+        useEffect(() => {
+          window.functionConfig = functionConfig;
+          window.downloadConfig = downloadConfig;
+        }, [functionConfig, downloadConfig]);
         return {
           downloadConfig,
           setDownloadConfig,
@@ -7372,7 +7376,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-DJi_q-Ik-B_LDlRcs.js');
+            const { MpegParser } = await module.import('./MpegParser-Dq9NxKdB-BCBzdX96.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7394,7 +7398,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-DzkqLRqo-DzZKPrF0.js');
+            const { AsfParser } = await module.import('./AsfParser-BMrI3Lwu-BYY9xj33.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7405,7 +7409,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-CgJ2akKw-E2wBGlBa.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-UCe8Qloc-Fmjichuw.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7416,7 +7420,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-CjCvh-tZ-CwhLZwTt.js');
+            const { AIFFParser } = await module.import('./AiffParser-DmE9n09L-CxAUsWgS.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7427,7 +7431,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-DMbygS7l-CflpETJB.js');
+            const { DsfParser } = await module.import('./DsfParser-QTUI1hPv-Bp2E7LZs.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7438,7 +7442,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-CklDQBDb-ImVKH-px.js');
+            const { FlacParser } = await module.import('./FlacParser-CxBuMPPU-CaRJZksQ.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7449,7 +7453,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-CxWb5iFy-BNXg69jM.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-BKX4BR86-_BlTfx0e.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7460,7 +7464,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-CSpaIycC-BfC4NVDd.js');
+            const { MP4Parser } = await module.import('./MP4Parser-CJgUye4k-e_bq-FOM.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7471,7 +7475,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-uoDr9Wlf-CW8_dUKe.js');
+            const { MusepackParser } = await module.import('./MusepackParser-CwMttd4m-BZHi7lPv.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7482,7 +7486,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-DSDjy9lJ-CgHFLqF3.js');
+            const { OggParser } = await module.import('./OggParser-CNwaUc1R-DzosL7u4.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7493,7 +7497,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-BNNxo2Nx-CxWl3Rds.js');
+            const { WavPackParser } = await module.import('./WavPackParser-CLTiGqjv-BbJrkT6x.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7504,7 +7508,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-CozJIOYz-HZowyFrl.js');
+            const { WaveParser } = await module.import('./WaveParser-Cnhgkrr7-C154DsTS.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -8513,6 +8517,820 @@ track: UINT8.get(buf, off2 + 126),
         };
         return fees[fee] || fees[0];
       };
+      function stringToBytes(str, encoding = "utf8") {
+        if (encoding === "utf8") {
+          const utf8 = unescape(encodeURIComponent(str));
+          const bytes = new Uint8Array(utf8.length);
+          for (let i = 0; i < utf8.length; i++) {
+            bytes[i] = utf8.charCodeAt(i);
+          }
+          return bytes;
+        } else if (encoding === "ascii") {
+          const bytes = new Uint8Array(str.length);
+          for (let i = 0; i < str.length; i++) {
+            bytes[i] = str.charCodeAt(i) & 255;
+          }
+          return bytes;
+        } else if (encoding === "hex") {
+          const bytes = new Uint8Array(str.length / 2);
+          for (let i = 0; i < str.length; i += 2) {
+            bytes[i / 2] = parseInt(str.substr(i, 2), 16);
+          }
+          return bytes;
+        }
+        throw new Error(`Unsupported encoding: ${encoding}`);
+      }
+      function bytesToString(bytes, encoding = "utf8") {
+        if (encoding === "utf8") {
+          let str = "";
+          for (let i = 0; i < bytes.length; i++) {
+            str += String.fromCharCode(bytes[i]);
+          }
+          try {
+            return decodeURIComponent(escape(str));
+          } catch (e2) {
+            return str;
+          }
+        } else if (encoding === "ascii") {
+          let str = "";
+          for (let i = 0; i < bytes.length; i++) {
+            str += String.fromCharCode(bytes[i] & 255);
+          }
+          return str;
+        } else if (encoding === "hex") {
+          let hex = "";
+          for (let i = 0; i < bytes.length; i++) {
+            const h = bytes[i].toString(16);
+            hex += h.length === 1 ? "0" + h : h;
+          }
+          return hex;
+        }
+        throw new Error(`Unsupported encoding: ${encoding}`);
+      }
+      class BrowserBuffer {
+        constructor(data, byteOffset, length) {
+          if (typeof data === "number") {
+            this._data = new Uint8Array(data);
+            this._view = new DataView(this._data.buffer);
+          } else if (data instanceof Uint8Array) {
+            this._data = data;
+            this._view = new DataView(this._data.buffer, data.byteOffset, data.byteLength);
+          } else if (typeof data === "string") {
+            const encoding = byteOffset || "utf8";
+            this._data = stringToBytes(data, encoding);
+            this._view = new DataView(this._data.buffer);
+          } else if (data instanceof ArrayBuffer) {
+            const offset = byteOffset || 0;
+            const len = length !== void 0 ? length : data.byteLength - offset;
+            this._data = new Uint8Array(data, offset, len);
+            this._view = new DataView(data, offset, len);
+          } else if (data instanceof BrowserBuffer) {
+            this._data = data._data;
+            this._view = data._view;
+          } else if (Array.isArray(data)) {
+            this._data = new Uint8Array(data);
+            this._view = new DataView(this._data.buffer);
+          } else if (data === void 0) {
+            this._data = new Uint8Array(0);
+            this._view = new DataView(this._data.buffer);
+          } else {
+            this._data = new Uint8Array(data);
+            this._view = new DataView(this._data.buffer);
+          }
+        }
+readUInt8(offset) {
+          return this._view.getUint8(offset);
+        }
+readUInt16BE(offset) {
+          return this._view.getUint16(offset, false);
+        }
+readUInt16LE(offset) {
+          return this._view.getUint16(offset, true);
+        }
+readUInt32BE(offset) {
+          return this._view.getUint32(offset, false);
+        }
+readUInt32LE(offset) {
+          return this._view.getUint32(offset, true);
+        }
+readUIntBE(offset, byteLength) {
+          let value2 = 0;
+          for (let i = 0; i < byteLength; i++) {
+            value2 = (value2 << 8) + this._view.getUint8(offset + i);
+          }
+          return value2;
+        }
+writeUInt8(value2, offset) {
+          this._view.setUint8(offset, value2);
+        }
+writeUInt16BE(value2, offset) {
+          this._view.setUint16(offset, value2, false);
+        }
+writeUInt32BE(value2, offset) {
+          this._view.setUint32(offset, value2, false);
+        }
+writeUInt32LE(value2, offset) {
+          this._view.setUint32(offset, value2, true);
+        }
+writeUIntBE(value2, offset, byteLength) {
+          for (let i = byteLength - 1; i >= 0; i--) {
+            this._view.setUint8(offset + i, value2 & 255);
+            value2 = value2 >> 8;
+          }
+        }
+toString(encoding = "utf8") {
+          return bytesToString(this._data, encoding);
+        }
+slice(start, end) {
+          const sliced = this._data.slice(start, end);
+          return new BrowserBuffer(sliced);
+        }
+get length() {
+          return this._data.length;
+        }
+get buffer() {
+          return this._data.buffer;
+        }
+toUint8Array() {
+          return new Uint8Array(this._data);
+        }
+toArrayBuffer() {
+          const buf = this.buffer;
+          if (typeof SharedArrayBuffer !== "undefined" && buf instanceof SharedArrayBuffer) {
+            throw new Error("Cannot convert SharedArrayBuffer to ArrayBuffer");
+          }
+          return buf.slice(
+            this._data.byteOffset,
+            this._data.byteOffset + this._data.byteLength
+          );
+        }
+static alloc(size2) {
+          return new BrowserBuffer(size2);
+        }
+static from(data, encoding) {
+          if (data instanceof BrowserBuffer) {
+            return data;
+          }
+          if (data instanceof Uint8Array) {
+            return new BrowserBuffer(data);
+          }
+          if (data instanceof ArrayBuffer) {
+            return new BrowserBuffer(data);
+          }
+          if (typeof data === "string") {
+            return new BrowserBuffer(data, encoding);
+          }
+          if (Array.isArray(data)) {
+            return new BrowserBuffer(new Uint8Array(data));
+          }
+          throw new Error("Unsupported data type");
+        }
+static concat(buffers) {
+          let totalLength = 0;
+          for (let i = 0; i < buffers.length; i++) {
+            totalLength += buffers[i].length;
+          }
+          const result = new Uint8Array(totalLength);
+          let offset = 0;
+          for (let i = 0; i < buffers.length; i++) {
+            const buf = buffers[i];
+            if (buf instanceof BrowserBuffer) {
+              result.set(buf._data, offset);
+              offset += buf.length;
+            } else if (buf instanceof Uint8Array) {
+              result.set(buf, offset);
+              offset += buf.length;
+            }
+          }
+          return new BrowserBuffer(result);
+        }
+      }
+      function detectImageType(data) {
+        let bytes;
+        if (data instanceof Uint8Array) {
+          bytes = data;
+        } else if (data instanceof ArrayBuffer) {
+          bytes = new Uint8Array(data);
+        } else if (data instanceof BrowserBuffer) {
+          bytes = data.toUint8Array();
+        } else {
+          bytes = new Uint8Array(data);
+        }
+        if (bytes.length >= 3 && bytes[0] === 255 && bytes[1] === 216 && bytes[2] === 255) {
+          return { mime: "image/jpeg" };
+        }
+        if (bytes.length >= 8 && bytes[0] === 137 && bytes[1] === 80 && bytes[2] === 78 && bytes[3] === 71 && bytes[4] === 13 && bytes[5] === 10 && bytes[6] === 26 && bytes[7] === 10) {
+          return { mime: "image/png" };
+        }
+        if (bytes.length >= 4 && bytes[0] === 71 && bytes[1] === 73 && bytes[2] === 70 && bytes[3] === 56) {
+          return { mime: "image/gif" };
+        }
+        if (bytes.length >= 12 && bytes[0] === 82 && bytes[1] === 73 && bytes[2] === 70 && bytes[3] === 70 && bytes[8] === 87 && bytes[9] === 69 && bytes[10] === 66 && bytes[11] === 80) {
+          return { mime: "image/webp" };
+        }
+        throw new Error("Unsupported image type");
+      }
+      function parseJpegSize(bytes) {
+        let offset = 2;
+        while (offset < bytes.length) {
+          if (bytes[offset] !== 255) {
+            offset++;
+            continue;
+          }
+          const marker = bytes[offset + 1];
+          if (marker >= 192 && marker <= 195) {
+            const height = bytes[offset + 5] << 8 | bytes[offset + 6];
+            const width = bytes[offset + 7] << 8 | bytes[offset + 8];
+            return { width, height };
+          }
+          if (marker === 216 || marker === 217) {
+            offset += 2;
+          } else if (marker >= 208 && marker <= 215) {
+            offset += 2;
+          } else {
+            const length = bytes[offset + 2] << 8 | bytes[offset + 3];
+            offset += 2 + length;
+          }
+        }
+        throw new Error("Could not determine JPEG dimensions");
+      }
+      function parsePngSize(bytes) {
+        if (bytes.length < 24) {
+          throw new Error("Invalid PNG file");
+        }
+        const width = bytes[16] << 24 | bytes[17] << 16 | bytes[18] << 8 | bytes[19];
+        const height = bytes[20] << 24 | bytes[21] << 16 | bytes[22] << 8 | bytes[23];
+        return { width, height };
+      }
+      function getImageSize(data) {
+        let bytes;
+        if (data instanceof Uint8Array) {
+          bytes = data;
+        } else if (data instanceof ArrayBuffer) {
+          bytes = new Uint8Array(data);
+        } else if (data instanceof BrowserBuffer) {
+          bytes = data.toUint8Array();
+        } else {
+          bytes = new Uint8Array(data);
+        }
+        const type = detectImageType(bytes);
+        if (type.mime === "image/jpeg") {
+          return parseJpegSize(bytes);
+        } else if (type.mime === "image/png") {
+          return parsePngSize(bytes);
+        } else {
+          throw new Error(`Unsupported image type: ${type.mime}`);
+        }
+      }
+      function formatVorbisComment(vendorString, commentList) {
+        const bufferArray = [];
+        const vendorStringBuffer = BrowserBuffer.from(vendorString, "utf8");
+        const vendorLengthBuffer = BrowserBuffer.alloc(4);
+        vendorLengthBuffer.writeUInt32LE(vendorStringBuffer.length, 0);
+        const userCommentListLengthBuffer = BrowserBuffer.alloc(4);
+        userCommentListLengthBuffer.writeUInt32LE(commentList.length, 0);
+        bufferArray.push(vendorLengthBuffer, vendorStringBuffer, userCommentListLengthBuffer);
+        for (let i = 0; i < commentList.length; i++) {
+          const comment = commentList[i];
+          const commentBuffer = BrowserBuffer.from(comment, "utf8");
+          const lengthBuffer = BrowserBuffer.alloc(4);
+          lengthBuffer.writeUInt32LE(commentBuffer.length, 0);
+          bufferArray.push(lengthBuffer, commentBuffer);
+        }
+        return BrowserBuffer.concat(bufferArray);
+      }
+      const STREAMINFO = 0;
+      const PADDING = 1;
+      const APPLICATION = 2;
+      const SEEKTABLE = 3;
+      const VORBIS_COMMENT = 4;
+      const CUESHEET = 5;
+      const PICTURE = 6;
+      async function toBrowserBuffer(data) {
+        if (data instanceof BrowserBuffer) {
+          return data;
+        }
+        if (data instanceof Uint8Array) {
+          return new BrowserBuffer(data);
+        }
+        if (data instanceof ArrayBuffer) {
+          return new BrowserBuffer(data);
+        }
+        if (data instanceof File || data instanceof Blob) {
+          const arrayBuffer = await data.arrayBuffer();
+          return new BrowserBuffer(arrayBuffer);
+        }
+        throw new Error(
+          "Unsupported data type. Expected ArrayBuffer, Uint8Array, File, Blob, or BrowserBuffer."
+        );
+      }
+      class Metaflac {
+constructor(flac) {
+          this.buffer = null;
+          this.streamInfo = null;
+          this.blocks = [];
+          this.padding = null;
+          this.vorbisComment = null;
+          this.vendorString = "";
+          this.tags = [];
+          this.pictures = [];
+          this.picturesSpecs = [];
+          this.picturesDatas = [];
+          this.framesOffset = 0;
+          if (flac instanceof File || flac instanceof Blob) {
+            throw new Error(
+              "File and Blob objects must be loaded asynchronously. Use Metaflac.fromFile() or Metaflac.fromBlob() instead."
+            );
+          }
+          this.flac = flac;
+          this.init();
+        }
+static async fromFile(file) {
+          const buffer = await toBrowserBuffer(file);
+          return new Metaflac(buffer);
+        }
+static async fromBlob(blob) {
+          const buffer = await toBrowserBuffer(blob);
+          return new Metaflac(buffer);
+        }
+static fromArrayBuffer(arrayBuffer) {
+          return new Metaflac(arrayBuffer);
+        }
+static fromUint8Array(uint8Array) {
+          return new Metaflac(uint8Array);
+        }
+        init() {
+          if (this.flac instanceof BrowserBuffer) {
+            this.buffer = this.flac;
+          } else if (this.flac instanceof Uint8Array) {
+            this.buffer = new BrowserBuffer(this.flac);
+          } else if (this.flac instanceof ArrayBuffer) {
+            this.buffer = new BrowserBuffer(this.flac);
+          } else {
+            throw new Error("Metaflac(flac) flac must be ArrayBuffer, Uint8Array, or BrowserBuffer.");
+          }
+          let offset = 0;
+          const marker = this.buffer.slice(0, offset += 4).toString("ascii");
+          if (marker !== "fLaC") {
+            throw new Error("The file does not appear to be a FLAC file.");
+          }
+          let blockType = 0;
+          let isLastBlock = false;
+          while (!isLastBlock) {
+            blockType = this.buffer.readUInt8(offset++);
+            isLastBlock = blockType > 128;
+            blockType = blockType % 128;
+            const blockLength = this.buffer.readUIntBE(offset, 3);
+            offset += 3;
+            if (blockType === STREAMINFO) {
+              this.streamInfo = this.buffer.slice(offset, offset + blockLength);
+            }
+            if (blockType === PADDING) {
+              this.padding = this.buffer.slice(offset, offset + blockLength);
+            }
+            if (blockType === VORBIS_COMMENT) {
+              this.vorbisComment = this.buffer.slice(offset, offset + blockLength);
+              this.parseVorbisComment();
+            }
+            if (blockType === PICTURE) {
+              this.pictures.push(this.buffer.slice(offset, offset + blockLength));
+              this.parsePictureBlock();
+            }
+            if ([APPLICATION, SEEKTABLE, CUESHEET].includes(blockType)) {
+              this.blocks.push([blockType, this.buffer.slice(offset, offset + blockLength)]);
+            }
+            offset += blockLength;
+          }
+          this.framesOffset = offset;
+        }
+        parseVorbisComment() {
+          if (!this.vorbisComment) {
+            return;
+          }
+          const vendorLength = this.vorbisComment.readUInt32LE(0);
+          this.vendorString = this.vorbisComment.slice(4, vendorLength + 4).toString("utf8");
+          this.vorbisComment.readUInt32LE(4 + vendorLength);
+          const userCommentListBuffer = this.vorbisComment.slice(4 + vendorLength + 4);
+          for (let offset = 0; offset < userCommentListBuffer.length; ) {
+            const length = userCommentListBuffer.readUInt32LE(offset);
+            offset += 4;
+            const comment = userCommentListBuffer.slice(offset, offset + length).toString("utf8");
+            offset += length;
+            this.tags.push(comment);
+          }
+        }
+        parsePictureBlock() {
+          this.pictures.forEach((picture) => {
+            let offset = 0;
+            const type = picture.readUInt32BE(offset);
+            offset += 4;
+            const mimeTypeLength = picture.readUInt32BE(offset);
+            offset += 4;
+            const mime = picture.slice(offset, offset + mimeTypeLength).toString("ascii");
+            offset += mimeTypeLength;
+            const descriptionLength = picture.readUInt32BE(offset);
+            offset += 4;
+            const description = picture.slice(offset, offset + descriptionLength).toString("utf8");
+            offset += descriptionLength;
+            const width = picture.readUInt32BE(offset);
+            offset += 4;
+            const height = picture.readUInt32BE(offset);
+            offset += 4;
+            const depth = picture.readUInt32BE(offset);
+            offset += 4;
+            const colors = picture.readUInt32BE(offset);
+            offset += 4;
+            const pictureDataLength = picture.readUInt32BE(offset);
+            offset += 4;
+            this.picturesDatas.push(picture.slice(offset, offset + pictureDataLength));
+            this.picturesSpecs.push(
+              this.buildSpecification({
+                type,
+                mime,
+                description,
+                width,
+                height,
+                depth,
+                colors
+              })
+            );
+          });
+        }
+getPicturesSpecs() {
+          return this.picturesSpecs;
+        }
+getMd5sum() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          return this.streamInfo.slice(18, 34).toString("hex");
+        }
+getMinBlocksize() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          return this.streamInfo.readUInt16BE(0);
+        }
+getMaxBlocksize() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          return this.streamInfo.readUInt16BE(2);
+        }
+getMinFramesize() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          return this.streamInfo.readUIntBE(4, 3);
+        }
+getMaxFramesize() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          return this.streamInfo.readUIntBE(7, 3);
+        }
+getSampleRate() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          return this.streamInfo.readUIntBE(10, 3) >> 4;
+        }
+getChannels() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          return (this.streamInfo.readUIntBE(10, 3) & 15) >> 1;
+        }
+getBps() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          return (this.streamInfo.readUIntBE(12, 2) & 496) >> 4;
+        }
+getTotalSamples() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          return this.streamInfo.readUIntBE(13, 5) & 68719476735;
+        }
+getVendorTag() {
+          return this.vendorString;
+        }
+getTag(name2) {
+          return this.tags.filter((item) => {
+            const itemName2 = item.split("=")[0];
+            return itemName2 === name2;
+          }).join("\n");
+        }
+removeTag(name2) {
+          this.tags = this.tags.filter((item) => {
+            const itemName2 = item.split("=")[0];
+            return itemName2 !== name2;
+          });
+        }
+removeFirstTag(name2) {
+          const found = this.tags.findIndex((item) => {
+            return item.split("=")[0] === name2;
+          });
+          if (found !== -1) {
+            this.tags.splice(found, 1);
+          }
+        }
+removeAllTags() {
+          this.tags = [];
+        }
+setTag(field) {
+          if (field.indexOf("=") === -1) {
+            throw new Error(`malformed vorbis comment field "${field}", field contains no '=' character`);
+          }
+          this.tags.push(field);
+        }
+importTagsFromString(tagsString) {
+          const tags = tagsString.split("\n").filter((line) => line.trim());
+          tags.forEach((line) => {
+            if (line.indexOf("=") === -1) {
+              throw new Error(`malformed vorbis comment "${line}", contains no '=' character`);
+            }
+          });
+          this.tags = this.tags.concat(tags);
+        }
+exportTagsToString() {
+          return this.tags.join("\n");
+        }
+importPictureFromBuffer(picture) {
+          let pictureBuffer;
+          if (picture instanceof BrowserBuffer) {
+            pictureBuffer = picture;
+          } else if (picture instanceof Uint8Array) {
+            pictureBuffer = new BrowserBuffer(picture);
+          } else if (picture instanceof ArrayBuffer) {
+            pictureBuffer = new BrowserBuffer(picture);
+          } else {
+            throw new Error("Picture must be Uint8Array, ArrayBuffer, or BrowserBuffer");
+          }
+          const pictureArray = pictureBuffer.toUint8Array();
+          const { mime } = detectImageType(pictureArray);
+          if (mime !== "image/jpeg" && mime !== "image/png") {
+            throw new Error(
+              `only support image/jpeg and image/png picture temporarily, current import ${mime}`
+            );
+          }
+          const dimensions = getImageSize(pictureArray);
+          const spec = this.buildSpecification({
+            mime,
+            width: dimensions.width,
+            height: dimensions.height
+          });
+          this.pictures.push(this.buildPictureBlock(pictureBuffer, spec));
+          this.picturesSpecs.push(spec);
+          this.picturesDatas.push(pictureBuffer);
+        }
+async importPictureFromFile(file) {
+          const arrayBuffer = await file.arrayBuffer();
+          this.importPictureFromBuffer(arrayBuffer);
+        }
+exportPictureToBlob(index2 = 0) {
+          if (this.picturesDatas.length > index2) {
+            const pictureData = this.picturesDatas[index2];
+            const spec = this.picturesSpecs[index2];
+            return new Blob([pictureData.toArrayBuffer()], { type: spec.mime });
+          }
+          throw new Error(`Picture index ${index2} does not exist`);
+        }
+exportPictureToArrayBuffer(index2 = 0) {
+          if (this.picturesDatas.length > index2) {
+            return this.picturesDatas[index2].toArrayBuffer();
+          }
+          throw new Error(`Picture index ${index2} does not exist`);
+        }
+removePicture(index2 = 0) {
+          if (this.pictures.length > index2) {
+            this.pictures.splice(index2, 1);
+            this.picturesSpecs.splice(index2, 1);
+            this.picturesDatas.splice(index2, 1);
+          } else {
+            throw new Error(`Picture index ${index2} does not exist`);
+          }
+        }
+removeAllPictures() {
+          this.pictures = [];
+          this.picturesSpecs = [];
+          this.picturesDatas = [];
+        }
+getAllTags() {
+          return this.tags;
+        }
+        buildSpecification(spec = {}) {
+          const defaults = {
+            type: 3,
+            mime: "image/jpeg",
+            description: "",
+            width: 0,
+            height: 0,
+            depth: 24,
+            colors: 0
+          };
+          return Object.assign(defaults, spec);
+        }
+buildPictureBlock(picture, specification) {
+          const pictureType = BrowserBuffer.alloc(4);
+          const mimeLength = BrowserBuffer.alloc(4);
+          const mime = BrowserBuffer.from(specification.mime, "ascii");
+          const descriptionLength = BrowserBuffer.alloc(4);
+          const description = BrowserBuffer.from(specification.description, "utf8");
+          const width = BrowserBuffer.alloc(4);
+          const height = BrowserBuffer.alloc(4);
+          const depth = BrowserBuffer.alloc(4);
+          const colors = BrowserBuffer.alloc(4);
+          const pictureLength = BrowserBuffer.alloc(4);
+          pictureType.writeUInt32BE(specification.type, 0);
+          mimeLength.writeUInt32BE(specification.mime.length, 0);
+          descriptionLength.writeUInt32BE(specification.description.length, 0);
+          width.writeUInt32BE(specification.width, 0);
+          height.writeUInt32BE(specification.height, 0);
+          depth.writeUInt32BE(specification.depth, 0);
+          colors.writeUInt32BE(specification.colors, 0);
+          pictureLength.writeUInt32BE(picture.length, 0);
+          return BrowserBuffer.concat([
+            pictureType,
+            mimeLength,
+            mime,
+            descriptionLength,
+            description,
+            width,
+            height,
+            depth,
+            colors,
+            pictureLength,
+            picture
+          ]);
+        }
+        buildMetadataBlock(type, block, isLast = false) {
+          const header = BrowserBuffer.alloc(4);
+          if (isLast) {
+            type += 128;
+          }
+          header.writeUIntBE(type, 0, 1);
+          header.writeUIntBE(block.length, 1, 3);
+          return BrowserBuffer.concat([header, block]);
+        }
+        buildMetadata() {
+          if (!this.streamInfo) {
+            throw new Error("StreamInfo is not available");
+          }
+          const bufferArray = [];
+          bufferArray.push(this.buildMetadataBlock(STREAMINFO, this.streamInfo));
+          this.blocks.forEach((block) => {
+            bufferArray.push(this.buildMetadataBlock(...block));
+          });
+          bufferArray.push(
+            this.buildMetadataBlock(VORBIS_COMMENT, formatVorbisComment(this.vendorString, this.tags))
+          );
+          this.pictures.forEach((block) => {
+            bufferArray.push(this.buildMetadataBlock(PICTURE, block));
+          });
+          const padding = this.padding || BrowserBuffer.alloc(4);
+          bufferArray.push(this.buildMetadataBlock(PADDING, padding, true));
+          return bufferArray;
+        }
+        buildStream() {
+          if (!this.buffer) {
+            throw new Error("Buffer is not available");
+          }
+          const metadata = this.buildMetadata();
+          return [this.buffer.slice(0, 4), ...metadata, this.buffer.slice(this.framesOffset)];
+        }
+save() {
+          const stream = this.buildStream();
+          const result = BrowserBuffer.concat(stream);
+          return result.toArrayBuffer();
+        }
+saveAsBlob() {
+          const arrayBuffer = this.save();
+          return new Blob([arrayBuffer], { type: "audio/flac" });
+        }
+saveAsBuffer() {
+          const stream = this.buildStream();
+          return BrowserBuffer.concat(stream);
+        }
+      }
+      const parseTags = (tags) => {
+        const result = {};
+        tags.forEach((tag2) => {
+          const equalIndex = tag2.indexOf("=");
+          if (equalIndex === -1) return;
+          const name2 = tag2.substring(0, equalIndex).toLowerCase();
+          const value2 = tag2.substring(equalIndex + 1);
+          if (result[name2]) {
+            result[name2] += "\n" + value2;
+          } else {
+            result[name2] = value2;
+          }
+        });
+        return result;
+      };
+      const readAllFlacTag = async (file) => {
+        try {
+          const metaflac = await Metaflac.fromBlob(file);
+          const tags = metaflac.getAllTags();
+          const parsedTags = parseTags(tags);
+          console.log("解析后的标签:", parsedTags);
+          return parsedTags;
+        } catch (error) {
+          console.error("读取 FLAC 标签失败:", error);
+          return {};
+        }
+      };
+      const readFlacTag = async (file, tagName) => {
+        try {
+          const metaflac = await Metaflac.fromBlob(file);
+          const tagString = metaflac.getTag(tagName.toUpperCase());
+          if (!tagString) {
+            return void 0;
+          }
+          const lines = tagString.split("\n");
+          if (lines.length > 0) {
+            const equalIndex = lines[0].indexOf("=");
+            if (equalIndex !== -1) {
+              return lines[0].substring(equalIndex + 1);
+            }
+          }
+          return void 0;
+        } catch (error) {
+          console.error(`读取 FLAC 标签 ${tagName} 失败:`, error);
+          return void 0;
+        }
+      };
+      const writeFlacTag = async (file, tagName, tagValue) => {
+        try {
+          const metaflac = await Metaflac.fromBlob(file);
+          metaflac.removeTag(tagName.toUpperCase());
+          metaflac.setTag(`${tagName.toUpperCase()}=${tagValue}`);
+          const newBlob = metaflac.saveAsBlob();
+          console.log("给 FLAC 写标签成功");
+          return newBlob;
+        } catch (error) {
+          console.error("给 FLAC 写标签失败:", error);
+          throw new Error("给 FLAC 写标签失败");
+        }
+      };
+      const writeFlacTags = async (file, tags) => {
+        try {
+          const metaflac = await Metaflac.fromBlob(file);
+          tags.forEach(({ tag: tag2, value: value2 }) => {
+            metaflac.removeTag(tag2.toUpperCase());
+            metaflac.setTag(`${tag2.toUpperCase()}=${value2}`);
+          });
+          const newBlob = metaflac.saveAsBlob();
+          console.log("批量写入 FLAC 标签成功");
+          return newBlob;
+        } catch (error) {
+          console.error("批量写入 FLAC 标签失败:", error);
+          throw new Error("批量写入 FLAC 标签失败");
+        }
+      };
+      const readFlacPictures = async (file) => {
+        try {
+          const metaflac = await Metaflac.fromBlob(file);
+          const pictures = metaflac.getPicturesSpecs?.() || [];
+          return pictures.map((_, index2) => metaflac.exportPictureToBlob(index2));
+        } catch (error) {
+          console.error("读取 FLAC 封面图片失败:", error);
+          return null;
+        }
+      };
+      const embedFlacPicture = async (file, picture) => {
+        try {
+          const metaflac = await Metaflac.fromBlob(file);
+          await metaflac.importPictureFromFile(picture);
+          const newBlob = metaflac.saveAsBlob();
+          console.log("给 FLAC 嵌入图片成功");
+          return newBlob;
+        } catch (error) {
+          console.error("给 FLAC 嵌入图片失败:", error);
+          return file;
+        }
+      };
+      const writeFlacTagAndPicture = async (file, tagName, tagValue, picture) => {
+        try {
+          let outputFile = file;
+          const metaflac = await Metaflac.fromBlob(file);
+          console.log("metaflac", metaflac, metaflac.getAllTags());
+          if (tagName && tagValue) {
+            metaflac.removeTag(tagName.toUpperCase());
+            metaflac.setTag(`${tagName.toUpperCase()}=${tagValue}`);
+          }
+          if (picture) {
+            await metaflac.importPictureFromFile(picture);
+            console.log("嵌入图片成功");
+          }
+          outputFile = metaflac.saveAsBlob();
+          return outputFile || file;
+        } catch (error) {
+          console.error("同时写入歌词和封面失败:", error);
+          return file;
+        }
+      };
       const { uploadConcurrency } = defaultConfig.function;
       const { quality } = defaultConfig.download;
       const BUCKET = "jd-musicrep-privatecloud-audio-public";
@@ -8716,7 +9534,7 @@ expireTime: Date.now() + 6e4,
           const contentType2 = file.type || "audio/mpeg";
           const checkRes = await weapiRequest("/api/cloud/upload/check", {
             data: {
-              ext: "",
+              ext,
               bitrate: String(bitrate),
               md5: fileMd5,
               length: file.size,
@@ -8913,15 +9731,29 @@ expireTime: Date.now() + 6e4,
           const tasks = songs2.map((song, index2) => async () => {
             try {
               if (!song.url) throw new Error(`歌曲链接不存在: ${song.name}`);
+              const finalExt = song.url.split("?")[0].split(".").pop();
               const file = await fetch(song.url.replace("http://", "https://"));
               const blob = await file.blob();
-              const fileObj = new File([blob], song.name, { type: song.type });
+              let fileObj = new File([blob], song.name, { type: song.type });
               const songInfo2 = {
                 album: song.al?.name,
                 artist: song.ar?.map((ar) => ar.name).join(","),
                 title: song.name,
                 artists: song.ar?.map((ar) => ar.name)
               };
+              switch (finalExt) {
+                case "flac":
+                  const fileBlob = await writeFlacTags(fileObj, [
+                    { tag: "title", value: songInfo2.title },
+                    { tag: "artist", value: songInfo2.artist },
+                    { tag: "album", value: songInfo2.album }
+                  ]);
+                  fileObj = new File([fileBlob], `${songInfo2.title}.flac`, { type: "audio/flac" });
+                  break;
+                default:
+                  console.log("当前格式不支持内嵌信息");
+                  break;
+              }
               const res = await uploadLocalSong(fileObj, {
                 defaultAlbum: songInfo2.album,
                 defaultArtist: songInfo2.artist,
@@ -12474,820 +13306,6 @@ jsxRuntimeExports.jsx(
         }, [loading]);
         return jsxRuntimeExports.jsx(Button, { ...rest, onClick: handleClick, loading: _loading });
       }
-      function stringToBytes(str, encoding = "utf8") {
-        if (encoding === "utf8") {
-          const utf8 = unescape(encodeURIComponent(str));
-          const bytes = new Uint8Array(utf8.length);
-          for (let i = 0; i < utf8.length; i++) {
-            bytes[i] = utf8.charCodeAt(i);
-          }
-          return bytes;
-        } else if (encoding === "ascii") {
-          const bytes = new Uint8Array(str.length);
-          for (let i = 0; i < str.length; i++) {
-            bytes[i] = str.charCodeAt(i) & 255;
-          }
-          return bytes;
-        } else if (encoding === "hex") {
-          const bytes = new Uint8Array(str.length / 2);
-          for (let i = 0; i < str.length; i += 2) {
-            bytes[i / 2] = parseInt(str.substr(i, 2), 16);
-          }
-          return bytes;
-        }
-        throw new Error(`Unsupported encoding: ${encoding}`);
-      }
-      function bytesToString(bytes, encoding = "utf8") {
-        if (encoding === "utf8") {
-          let str = "";
-          for (let i = 0; i < bytes.length; i++) {
-            str += String.fromCharCode(bytes[i]);
-          }
-          try {
-            return decodeURIComponent(escape(str));
-          } catch (e2) {
-            return str;
-          }
-        } else if (encoding === "ascii") {
-          let str = "";
-          for (let i = 0; i < bytes.length; i++) {
-            str += String.fromCharCode(bytes[i] & 255);
-          }
-          return str;
-        } else if (encoding === "hex") {
-          let hex = "";
-          for (let i = 0; i < bytes.length; i++) {
-            const h = bytes[i].toString(16);
-            hex += h.length === 1 ? "0" + h : h;
-          }
-          return hex;
-        }
-        throw new Error(`Unsupported encoding: ${encoding}`);
-      }
-      class BrowserBuffer {
-        constructor(data, byteOffset, length) {
-          if (typeof data === "number") {
-            this._data = new Uint8Array(data);
-            this._view = new DataView(this._data.buffer);
-          } else if (data instanceof Uint8Array) {
-            this._data = data;
-            this._view = new DataView(this._data.buffer, data.byteOffset, data.byteLength);
-          } else if (typeof data === "string") {
-            const encoding = byteOffset || "utf8";
-            this._data = stringToBytes(data, encoding);
-            this._view = new DataView(this._data.buffer);
-          } else if (data instanceof ArrayBuffer) {
-            const offset = byteOffset || 0;
-            const len = length !== void 0 ? length : data.byteLength - offset;
-            this._data = new Uint8Array(data, offset, len);
-            this._view = new DataView(data, offset, len);
-          } else if (data instanceof BrowserBuffer) {
-            this._data = data._data;
-            this._view = data._view;
-          } else if (Array.isArray(data)) {
-            this._data = new Uint8Array(data);
-            this._view = new DataView(this._data.buffer);
-          } else if (data === void 0) {
-            this._data = new Uint8Array(0);
-            this._view = new DataView(this._data.buffer);
-          } else {
-            this._data = new Uint8Array(data);
-            this._view = new DataView(this._data.buffer);
-          }
-        }
-readUInt8(offset) {
-          return this._view.getUint8(offset);
-        }
-readUInt16BE(offset) {
-          return this._view.getUint16(offset, false);
-        }
-readUInt16LE(offset) {
-          return this._view.getUint16(offset, true);
-        }
-readUInt32BE(offset) {
-          return this._view.getUint32(offset, false);
-        }
-readUInt32LE(offset) {
-          return this._view.getUint32(offset, true);
-        }
-readUIntBE(offset, byteLength) {
-          let value2 = 0;
-          for (let i = 0; i < byteLength; i++) {
-            value2 = (value2 << 8) + this._view.getUint8(offset + i);
-          }
-          return value2;
-        }
-writeUInt8(value2, offset) {
-          this._view.setUint8(offset, value2);
-        }
-writeUInt16BE(value2, offset) {
-          this._view.setUint16(offset, value2, false);
-        }
-writeUInt32BE(value2, offset) {
-          this._view.setUint32(offset, value2, false);
-        }
-writeUInt32LE(value2, offset) {
-          this._view.setUint32(offset, value2, true);
-        }
-writeUIntBE(value2, offset, byteLength) {
-          for (let i = byteLength - 1; i >= 0; i--) {
-            this._view.setUint8(offset + i, value2 & 255);
-            value2 = value2 >> 8;
-          }
-        }
-toString(encoding = "utf8") {
-          return bytesToString(this._data, encoding);
-        }
-slice(start, end) {
-          const sliced = this._data.slice(start, end);
-          return new BrowserBuffer(sliced);
-        }
-get length() {
-          return this._data.length;
-        }
-get buffer() {
-          return this._data.buffer;
-        }
-toUint8Array() {
-          return new Uint8Array(this._data);
-        }
-toArrayBuffer() {
-          const buf = this.buffer;
-          if (typeof SharedArrayBuffer !== "undefined" && buf instanceof SharedArrayBuffer) {
-            throw new Error("Cannot convert SharedArrayBuffer to ArrayBuffer");
-          }
-          return buf.slice(
-            this._data.byteOffset,
-            this._data.byteOffset + this._data.byteLength
-          );
-        }
-static alloc(size2) {
-          return new BrowserBuffer(size2);
-        }
-static from(data, encoding) {
-          if (data instanceof BrowserBuffer) {
-            return data;
-          }
-          if (data instanceof Uint8Array) {
-            return new BrowserBuffer(data);
-          }
-          if (data instanceof ArrayBuffer) {
-            return new BrowserBuffer(data);
-          }
-          if (typeof data === "string") {
-            return new BrowserBuffer(data, encoding);
-          }
-          if (Array.isArray(data)) {
-            return new BrowserBuffer(new Uint8Array(data));
-          }
-          throw new Error("Unsupported data type");
-        }
-static concat(buffers) {
-          let totalLength = 0;
-          for (let i = 0; i < buffers.length; i++) {
-            totalLength += buffers[i].length;
-          }
-          const result = new Uint8Array(totalLength);
-          let offset = 0;
-          for (let i = 0; i < buffers.length; i++) {
-            const buf = buffers[i];
-            if (buf instanceof BrowserBuffer) {
-              result.set(buf._data, offset);
-              offset += buf.length;
-            } else if (buf instanceof Uint8Array) {
-              result.set(buf, offset);
-              offset += buf.length;
-            }
-          }
-          return new BrowserBuffer(result);
-        }
-      }
-      function detectImageType(data) {
-        let bytes;
-        if (data instanceof Uint8Array) {
-          bytes = data;
-        } else if (data instanceof ArrayBuffer) {
-          bytes = new Uint8Array(data);
-        } else if (data instanceof BrowserBuffer) {
-          bytes = data.toUint8Array();
-        } else {
-          bytes = new Uint8Array(data);
-        }
-        if (bytes.length >= 3 && bytes[0] === 255 && bytes[1] === 216 && bytes[2] === 255) {
-          return { mime: "image/jpeg" };
-        }
-        if (bytes.length >= 8 && bytes[0] === 137 && bytes[1] === 80 && bytes[2] === 78 && bytes[3] === 71 && bytes[4] === 13 && bytes[5] === 10 && bytes[6] === 26 && bytes[7] === 10) {
-          return { mime: "image/png" };
-        }
-        if (bytes.length >= 4 && bytes[0] === 71 && bytes[1] === 73 && bytes[2] === 70 && bytes[3] === 56) {
-          return { mime: "image/gif" };
-        }
-        if (bytes.length >= 12 && bytes[0] === 82 && bytes[1] === 73 && bytes[2] === 70 && bytes[3] === 70 && bytes[8] === 87 && bytes[9] === 69 && bytes[10] === 66 && bytes[11] === 80) {
-          return { mime: "image/webp" };
-        }
-        throw new Error("Unsupported image type");
-      }
-      function parseJpegSize(bytes) {
-        let offset = 2;
-        while (offset < bytes.length) {
-          if (bytes[offset] !== 255) {
-            offset++;
-            continue;
-          }
-          const marker = bytes[offset + 1];
-          if (marker >= 192 && marker <= 195) {
-            const height = bytes[offset + 5] << 8 | bytes[offset + 6];
-            const width = bytes[offset + 7] << 8 | bytes[offset + 8];
-            return { width, height };
-          }
-          if (marker === 216 || marker === 217) {
-            offset += 2;
-          } else if (marker >= 208 && marker <= 215) {
-            offset += 2;
-          } else {
-            const length = bytes[offset + 2] << 8 | bytes[offset + 3];
-            offset += 2 + length;
-          }
-        }
-        throw new Error("Could not determine JPEG dimensions");
-      }
-      function parsePngSize(bytes) {
-        if (bytes.length < 24) {
-          throw new Error("Invalid PNG file");
-        }
-        const width = bytes[16] << 24 | bytes[17] << 16 | bytes[18] << 8 | bytes[19];
-        const height = bytes[20] << 24 | bytes[21] << 16 | bytes[22] << 8 | bytes[23];
-        return { width, height };
-      }
-      function getImageSize(data) {
-        let bytes;
-        if (data instanceof Uint8Array) {
-          bytes = data;
-        } else if (data instanceof ArrayBuffer) {
-          bytes = new Uint8Array(data);
-        } else if (data instanceof BrowserBuffer) {
-          bytes = data.toUint8Array();
-        } else {
-          bytes = new Uint8Array(data);
-        }
-        const type = detectImageType(bytes);
-        if (type.mime === "image/jpeg") {
-          return parseJpegSize(bytes);
-        } else if (type.mime === "image/png") {
-          return parsePngSize(bytes);
-        } else {
-          throw new Error(`Unsupported image type: ${type.mime}`);
-        }
-      }
-      function formatVorbisComment(vendorString, commentList) {
-        const bufferArray = [];
-        const vendorStringBuffer = BrowserBuffer.from(vendorString, "utf8");
-        const vendorLengthBuffer = BrowserBuffer.alloc(4);
-        vendorLengthBuffer.writeUInt32LE(vendorStringBuffer.length, 0);
-        const userCommentListLengthBuffer = BrowserBuffer.alloc(4);
-        userCommentListLengthBuffer.writeUInt32LE(commentList.length, 0);
-        bufferArray.push(vendorLengthBuffer, vendorStringBuffer, userCommentListLengthBuffer);
-        for (let i = 0; i < commentList.length; i++) {
-          const comment = commentList[i];
-          const commentBuffer = BrowserBuffer.from(comment, "utf8");
-          const lengthBuffer = BrowserBuffer.alloc(4);
-          lengthBuffer.writeUInt32LE(commentBuffer.length, 0);
-          bufferArray.push(lengthBuffer, commentBuffer);
-        }
-        return BrowserBuffer.concat(bufferArray);
-      }
-      const STREAMINFO = 0;
-      const PADDING = 1;
-      const APPLICATION = 2;
-      const SEEKTABLE = 3;
-      const VORBIS_COMMENT = 4;
-      const CUESHEET = 5;
-      const PICTURE = 6;
-      async function toBrowserBuffer(data) {
-        if (data instanceof BrowserBuffer) {
-          return data;
-        }
-        if (data instanceof Uint8Array) {
-          return new BrowserBuffer(data);
-        }
-        if (data instanceof ArrayBuffer) {
-          return new BrowserBuffer(data);
-        }
-        if (data instanceof File || data instanceof Blob) {
-          const arrayBuffer = await data.arrayBuffer();
-          return new BrowserBuffer(arrayBuffer);
-        }
-        throw new Error(
-          "Unsupported data type. Expected ArrayBuffer, Uint8Array, File, Blob, or BrowserBuffer."
-        );
-      }
-      class Metaflac {
-constructor(flac) {
-          this.buffer = null;
-          this.streamInfo = null;
-          this.blocks = [];
-          this.padding = null;
-          this.vorbisComment = null;
-          this.vendorString = "";
-          this.tags = [];
-          this.pictures = [];
-          this.picturesSpecs = [];
-          this.picturesDatas = [];
-          this.framesOffset = 0;
-          if (flac instanceof File || flac instanceof Blob) {
-            throw new Error(
-              "File and Blob objects must be loaded asynchronously. Use Metaflac.fromFile() or Metaflac.fromBlob() instead."
-            );
-          }
-          this.flac = flac;
-          this.init();
-        }
-static async fromFile(file) {
-          const buffer = await toBrowserBuffer(file);
-          return new Metaflac(buffer);
-        }
-static async fromBlob(blob) {
-          const buffer = await toBrowserBuffer(blob);
-          return new Metaflac(buffer);
-        }
-static fromArrayBuffer(arrayBuffer) {
-          return new Metaflac(arrayBuffer);
-        }
-static fromUint8Array(uint8Array) {
-          return new Metaflac(uint8Array);
-        }
-        init() {
-          if (this.flac instanceof BrowserBuffer) {
-            this.buffer = this.flac;
-          } else if (this.flac instanceof Uint8Array) {
-            this.buffer = new BrowserBuffer(this.flac);
-          } else if (this.flac instanceof ArrayBuffer) {
-            this.buffer = new BrowserBuffer(this.flac);
-          } else {
-            throw new Error("Metaflac(flac) flac must be ArrayBuffer, Uint8Array, or BrowserBuffer.");
-          }
-          let offset = 0;
-          const marker = this.buffer.slice(0, offset += 4).toString("ascii");
-          if (marker !== "fLaC") {
-            throw new Error("The file does not appear to be a FLAC file.");
-          }
-          let blockType = 0;
-          let isLastBlock = false;
-          while (!isLastBlock) {
-            blockType = this.buffer.readUInt8(offset++);
-            isLastBlock = blockType > 128;
-            blockType = blockType % 128;
-            const blockLength = this.buffer.readUIntBE(offset, 3);
-            offset += 3;
-            if (blockType === STREAMINFO) {
-              this.streamInfo = this.buffer.slice(offset, offset + blockLength);
-            }
-            if (blockType === PADDING) {
-              this.padding = this.buffer.slice(offset, offset + blockLength);
-            }
-            if (blockType === VORBIS_COMMENT) {
-              this.vorbisComment = this.buffer.slice(offset, offset + blockLength);
-              this.parseVorbisComment();
-            }
-            if (blockType === PICTURE) {
-              this.pictures.push(this.buffer.slice(offset, offset + blockLength));
-              this.parsePictureBlock();
-            }
-            if ([APPLICATION, SEEKTABLE, CUESHEET].includes(blockType)) {
-              this.blocks.push([blockType, this.buffer.slice(offset, offset + blockLength)]);
-            }
-            offset += blockLength;
-          }
-          this.framesOffset = offset;
-        }
-        parseVorbisComment() {
-          if (!this.vorbisComment) {
-            return;
-          }
-          const vendorLength = this.vorbisComment.readUInt32LE(0);
-          this.vendorString = this.vorbisComment.slice(4, vendorLength + 4).toString("utf8");
-          this.vorbisComment.readUInt32LE(4 + vendorLength);
-          const userCommentListBuffer = this.vorbisComment.slice(4 + vendorLength + 4);
-          for (let offset = 0; offset < userCommentListBuffer.length; ) {
-            const length = userCommentListBuffer.readUInt32LE(offset);
-            offset += 4;
-            const comment = userCommentListBuffer.slice(offset, offset + length).toString("utf8");
-            offset += length;
-            this.tags.push(comment);
-          }
-        }
-        parsePictureBlock() {
-          this.pictures.forEach((picture) => {
-            let offset = 0;
-            const type = picture.readUInt32BE(offset);
-            offset += 4;
-            const mimeTypeLength = picture.readUInt32BE(offset);
-            offset += 4;
-            const mime = picture.slice(offset, offset + mimeTypeLength).toString("ascii");
-            offset += mimeTypeLength;
-            const descriptionLength = picture.readUInt32BE(offset);
-            offset += 4;
-            const description = picture.slice(offset, offset + descriptionLength).toString("utf8");
-            offset += descriptionLength;
-            const width = picture.readUInt32BE(offset);
-            offset += 4;
-            const height = picture.readUInt32BE(offset);
-            offset += 4;
-            const depth = picture.readUInt32BE(offset);
-            offset += 4;
-            const colors = picture.readUInt32BE(offset);
-            offset += 4;
-            const pictureDataLength = picture.readUInt32BE(offset);
-            offset += 4;
-            this.picturesDatas.push(picture.slice(offset, offset + pictureDataLength));
-            this.picturesSpecs.push(
-              this.buildSpecification({
-                type,
-                mime,
-                description,
-                width,
-                height,
-                depth,
-                colors
-              })
-            );
-          });
-        }
-getPicturesSpecs() {
-          return this.picturesSpecs;
-        }
-getMd5sum() {
-          if (!this.streamInfo) {
-            throw new Error("StreamInfo is not available");
-          }
-          return this.streamInfo.slice(18, 34).toString("hex");
-        }
-getMinBlocksize() {
-          if (!this.streamInfo) {
-            throw new Error("StreamInfo is not available");
-          }
-          return this.streamInfo.readUInt16BE(0);
-        }
-getMaxBlocksize() {
-          if (!this.streamInfo) {
-            throw new Error("StreamInfo is not available");
-          }
-          return this.streamInfo.readUInt16BE(2);
-        }
-getMinFramesize() {
-          if (!this.streamInfo) {
-            throw new Error("StreamInfo is not available");
-          }
-          return this.streamInfo.readUIntBE(4, 3);
-        }
-getMaxFramesize() {
-          if (!this.streamInfo) {
-            throw new Error("StreamInfo is not available");
-          }
-          return this.streamInfo.readUIntBE(7, 3);
-        }
-getSampleRate() {
-          if (!this.streamInfo) {
-            throw new Error("StreamInfo is not available");
-          }
-          return this.streamInfo.readUIntBE(10, 3) >> 4;
-        }
-getChannels() {
-          if (!this.streamInfo) {
-            throw new Error("StreamInfo is not available");
-          }
-          return (this.streamInfo.readUIntBE(10, 3) & 15) >> 1;
-        }
-getBps() {
-          if (!this.streamInfo) {
-            throw new Error("StreamInfo is not available");
-          }
-          return (this.streamInfo.readUIntBE(12, 2) & 496) >> 4;
-        }
-getTotalSamples() {
-          if (!this.streamInfo) {
-            throw new Error("StreamInfo is not available");
-          }
-          return this.streamInfo.readUIntBE(13, 5) & 68719476735;
-        }
-getVendorTag() {
-          return this.vendorString;
-        }
-getTag(name2) {
-          return this.tags.filter((item) => {
-            const itemName2 = item.split("=")[0];
-            return itemName2 === name2;
-          }).join("\n");
-        }
-removeTag(name2) {
-          this.tags = this.tags.filter((item) => {
-            const itemName2 = item.split("=")[0];
-            return itemName2 !== name2;
-          });
-        }
-removeFirstTag(name2) {
-          const found = this.tags.findIndex((item) => {
-            return item.split("=")[0] === name2;
-          });
-          if (found !== -1) {
-            this.tags.splice(found, 1);
-          }
-        }
-removeAllTags() {
-          this.tags = [];
-        }
-setTag(field) {
-          if (field.indexOf("=") === -1) {
-            throw new Error(`malformed vorbis comment field "${field}", field contains no '=' character`);
-          }
-          this.tags.push(field);
-        }
-importTagsFromString(tagsString) {
-          const tags = tagsString.split("\n").filter((line) => line.trim());
-          tags.forEach((line) => {
-            if (line.indexOf("=") === -1) {
-              throw new Error(`malformed vorbis comment "${line}", contains no '=' character`);
-            }
-          });
-          this.tags = this.tags.concat(tags);
-        }
-exportTagsToString() {
-          return this.tags.join("\n");
-        }
-importPictureFromBuffer(picture) {
-          let pictureBuffer;
-          if (picture instanceof BrowserBuffer) {
-            pictureBuffer = picture;
-          } else if (picture instanceof Uint8Array) {
-            pictureBuffer = new BrowserBuffer(picture);
-          } else if (picture instanceof ArrayBuffer) {
-            pictureBuffer = new BrowserBuffer(picture);
-          } else {
-            throw new Error("Picture must be Uint8Array, ArrayBuffer, or BrowserBuffer");
-          }
-          const pictureArray = pictureBuffer.toUint8Array();
-          const { mime } = detectImageType(pictureArray);
-          if (mime !== "image/jpeg" && mime !== "image/png") {
-            throw new Error(
-              `only support image/jpeg and image/png picture temporarily, current import ${mime}`
-            );
-          }
-          const dimensions = getImageSize(pictureArray);
-          const spec = this.buildSpecification({
-            mime,
-            width: dimensions.width,
-            height: dimensions.height
-          });
-          this.pictures.push(this.buildPictureBlock(pictureBuffer, spec));
-          this.picturesSpecs.push(spec);
-          this.picturesDatas.push(pictureBuffer);
-        }
-async importPictureFromFile(file) {
-          const arrayBuffer = await file.arrayBuffer();
-          this.importPictureFromBuffer(arrayBuffer);
-        }
-exportPictureToBlob(index2 = 0) {
-          if (this.picturesDatas.length > index2) {
-            const pictureData = this.picturesDatas[index2];
-            const spec = this.picturesSpecs[index2];
-            return new Blob([pictureData.toArrayBuffer()], { type: spec.mime });
-          }
-          throw new Error(`Picture index ${index2} does not exist`);
-        }
-exportPictureToArrayBuffer(index2 = 0) {
-          if (this.picturesDatas.length > index2) {
-            return this.picturesDatas[index2].toArrayBuffer();
-          }
-          throw new Error(`Picture index ${index2} does not exist`);
-        }
-removePicture(index2 = 0) {
-          if (this.pictures.length > index2) {
-            this.pictures.splice(index2, 1);
-            this.picturesSpecs.splice(index2, 1);
-            this.picturesDatas.splice(index2, 1);
-          } else {
-            throw new Error(`Picture index ${index2} does not exist`);
-          }
-        }
-removeAllPictures() {
-          this.pictures = [];
-          this.picturesSpecs = [];
-          this.picturesDatas = [];
-        }
-getAllTags() {
-          return this.tags;
-        }
-        buildSpecification(spec = {}) {
-          const defaults = {
-            type: 3,
-            mime: "image/jpeg",
-            description: "",
-            width: 0,
-            height: 0,
-            depth: 24,
-            colors: 0
-          };
-          return Object.assign(defaults, spec);
-        }
-buildPictureBlock(picture, specification) {
-          const pictureType = BrowserBuffer.alloc(4);
-          const mimeLength = BrowserBuffer.alloc(4);
-          const mime = BrowserBuffer.from(specification.mime, "ascii");
-          const descriptionLength = BrowserBuffer.alloc(4);
-          const description = BrowserBuffer.from(specification.description, "utf8");
-          const width = BrowserBuffer.alloc(4);
-          const height = BrowserBuffer.alloc(4);
-          const depth = BrowserBuffer.alloc(4);
-          const colors = BrowserBuffer.alloc(4);
-          const pictureLength = BrowserBuffer.alloc(4);
-          pictureType.writeUInt32BE(specification.type, 0);
-          mimeLength.writeUInt32BE(specification.mime.length, 0);
-          descriptionLength.writeUInt32BE(specification.description.length, 0);
-          width.writeUInt32BE(specification.width, 0);
-          height.writeUInt32BE(specification.height, 0);
-          depth.writeUInt32BE(specification.depth, 0);
-          colors.writeUInt32BE(specification.colors, 0);
-          pictureLength.writeUInt32BE(picture.length, 0);
-          return BrowserBuffer.concat([
-            pictureType,
-            mimeLength,
-            mime,
-            descriptionLength,
-            description,
-            width,
-            height,
-            depth,
-            colors,
-            pictureLength,
-            picture
-          ]);
-        }
-        buildMetadataBlock(type, block, isLast = false) {
-          const header = BrowserBuffer.alloc(4);
-          if (isLast) {
-            type += 128;
-          }
-          header.writeUIntBE(type, 0, 1);
-          header.writeUIntBE(block.length, 1, 3);
-          return BrowserBuffer.concat([header, block]);
-        }
-        buildMetadata() {
-          if (!this.streamInfo) {
-            throw new Error("StreamInfo is not available");
-          }
-          const bufferArray = [];
-          bufferArray.push(this.buildMetadataBlock(STREAMINFO, this.streamInfo));
-          this.blocks.forEach((block) => {
-            bufferArray.push(this.buildMetadataBlock(...block));
-          });
-          bufferArray.push(
-            this.buildMetadataBlock(VORBIS_COMMENT, formatVorbisComment(this.vendorString, this.tags))
-          );
-          this.pictures.forEach((block) => {
-            bufferArray.push(this.buildMetadataBlock(PICTURE, block));
-          });
-          const padding = this.padding || BrowserBuffer.alloc(4);
-          bufferArray.push(this.buildMetadataBlock(PADDING, padding, true));
-          return bufferArray;
-        }
-        buildStream() {
-          if (!this.buffer) {
-            throw new Error("Buffer is not available");
-          }
-          const metadata = this.buildMetadata();
-          return [this.buffer.slice(0, 4), ...metadata, this.buffer.slice(this.framesOffset)];
-        }
-save() {
-          const stream = this.buildStream();
-          const result = BrowserBuffer.concat(stream);
-          return result.toArrayBuffer();
-        }
-saveAsBlob() {
-          const arrayBuffer = this.save();
-          return new Blob([arrayBuffer], { type: "audio/flac" });
-        }
-saveAsBuffer() {
-          const stream = this.buildStream();
-          return BrowserBuffer.concat(stream);
-        }
-      }
-      const parseTags = (tags) => {
-        const result = {};
-        tags.forEach((tag2) => {
-          const equalIndex = tag2.indexOf("=");
-          if (equalIndex === -1) return;
-          const name2 = tag2.substring(0, equalIndex).toLowerCase();
-          const value2 = tag2.substring(equalIndex + 1);
-          if (result[name2]) {
-            result[name2] += "\n" + value2;
-          } else {
-            result[name2] = value2;
-          }
-        });
-        return result;
-      };
-      const readAllFlacTag = async (file) => {
-        try {
-          const metaflac = await Metaflac.fromBlob(file);
-          const tags = metaflac.getAllTags();
-          const parsedTags = parseTags(tags);
-          console.log("解析后的标签:", parsedTags);
-          return parsedTags;
-        } catch (error) {
-          console.error("读取 FLAC 标签失败:", error);
-          return {};
-        }
-      };
-      const readFlacTag = async (file, tagName) => {
-        try {
-          const metaflac = await Metaflac.fromBlob(file);
-          const tagString = metaflac.getTag(tagName.toUpperCase());
-          if (!tagString) {
-            return void 0;
-          }
-          const lines = tagString.split("\n");
-          if (lines.length > 0) {
-            const equalIndex = lines[0].indexOf("=");
-            if (equalIndex !== -1) {
-              return lines[0].substring(equalIndex + 1);
-            }
-          }
-          return void 0;
-        } catch (error) {
-          console.error(`读取 FLAC 标签 ${tagName} 失败:`, error);
-          return void 0;
-        }
-      };
-      const writeFlacTag = async (file, tagName, tagValue) => {
-        try {
-          const metaflac = await Metaflac.fromBlob(file);
-          metaflac.removeTag(tagName.toUpperCase());
-          metaflac.setTag(`${tagName.toUpperCase()}=${tagValue}`);
-          const newBlob = metaflac.saveAsBlob();
-          console.log("给 FLAC 写标签成功");
-          return newBlob;
-        } catch (error) {
-          console.error("给 FLAC 写标签失败:", error);
-          throw new Error("给 FLAC 写标签失败");
-        }
-      };
-      const writeFlacTags = async (file, tags) => {
-        try {
-          const metaflac = await Metaflac.fromBlob(file);
-          tags.forEach(({ tag: tag2, value: value2 }) => {
-            metaflac.removeTag(tag2.toUpperCase());
-            metaflac.setTag(`${tag2.toUpperCase()}=${value2}`);
-          });
-          const newBlob = metaflac.saveAsBlob();
-          console.log("批量写入 FLAC 标签成功");
-          return newBlob;
-        } catch (error) {
-          console.error("批量写入 FLAC 标签失败:", error);
-          throw new Error("批量写入 FLAC 标签失败");
-        }
-      };
-      const readFlacPictures = async (file) => {
-        try {
-          const metaflac = await Metaflac.fromBlob(file);
-          const pictures = metaflac.getPicturesSpecs?.() || [];
-          return pictures.map((_, index2) => metaflac.exportPictureToBlob(index2));
-        } catch (error) {
-          console.error("读取 FLAC 封面图片失败:", error);
-          return null;
-        }
-      };
-      const embedFlacPicture = async (file, picture) => {
-        try {
-          const metaflac = await Metaflac.fromBlob(file);
-          await metaflac.importPictureFromFile(picture);
-          const newBlob = metaflac.saveAsBlob();
-          console.log("给 FLAC 嵌入图片成功");
-          return newBlob;
-        } catch (error) {
-          console.error("给 FLAC 嵌入图片失败:", error);
-          return file;
-        }
-      };
-      const writeFlacTagAndPicture = async (file, tagName, tagValue, picture) => {
-        try {
-          let outputFile = file;
-          const metaflac = await Metaflac.fromBlob(file);
-          console.log("metaflac", metaflac, metaflac.getAllTags());
-          if (tagName && tagValue) {
-            metaflac.removeTag(tagName.toUpperCase());
-            metaflac.setTag(`${tagName.toUpperCase()}=${tagValue}`);
-          }
-          if (picture) {
-            await metaflac.importPictureFromFile(picture);
-            console.log("嵌入图片成功");
-          }
-          outputFile = metaflac.saveAsBlob();
-          return outputFile || file;
-        } catch (error) {
-          console.error("同时写入歌词和封面失败:", error);
-          return file;
-        }
-      };
       const audio = new Audio();
       const usePlayMusic = () => {
         const { downloadConfig } = useConfig();
@@ -21685,7 +21703,7 @@ jsxRuntimeExports.jsx(
           },
           ref
         );
-        const { sortSongListByListId, playlistToCloud } = useGetSongListDetail();
+        const { sortSongListByListId, playlistToCloud, downloadSongList } = useGetSongListDetail();
         const [loading, setLoading] = useState(false);
         const [playList, setPlayList] = useState([]);
         const songListRef = useRef();
@@ -21747,6 +21765,16 @@ jsxRuntimeExports.jsx(
           } catch (error) {
             console.log("error", error);
             msgError(`删除歌单失败: ${error.message}`);
+          }
+        };
+        const handleDownload = async (e2, record) => {
+          e2.stopPropagation();
+          try {
+            await downloadSongList(record.id);
+            msgSuccess("下载歌单成功");
+          } catch (error) {
+            console.log("error", error);
+            msgError(`下载歌单失败: ${error.message}`);
           }
         };
         const columns = [
@@ -21845,6 +21873,16 @@ jsxRuntimeExports.jsx(
                   onClick: (e2) => handleDelete(e2, record),
                   size: "small",
                   children: "删除"
+                }
+              ),
+jsxRuntimeExports.jsx(
+                MyButton,
+                {
+                  type: "link",
+                  icon: jsxRuntimeExports.jsx(DownloadOutlined, {}),
+                  onClick: (e2) => handleDownload(e2, record),
+                  size: "small",
+                  children: "下载"
                 }
               )
             ] })
@@ -22002,6 +22040,7 @@ jsxRuntimeExports.jsx(Form.Item, { name: "singer", label: "歌手", children: js
                   placeholder: "请选择歌手",
                   allowClear: true,
                   className: styles$3["select"],
+                  autoClearSearchValue: false,
                   filterOption: (input, option) => option.name?.toLowerCase().indexOf(input.toLowerCase()) >= 0,
                   options: renderSingerList,
                   getPopupContainer: (trigger) => trigger.parentNode
@@ -26338,7 +26377,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-DJi_q-Ik-B_LDlRcs.js", ['./__monkey.entry-DzoLifxo.js', './AbstractID3Parser-tNHbomVq-Hu6xSuGF.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-D66xU2zi-CC-tdYnb.js'], (function (exports, module) {
+System.register("./MpegParser-Dq9NxKdB-BCBzdX96.js", ['./__monkey.entry-BZw7_m0t.js', './AbstractID3Parser-CDNp4cAr-BgdThA4N.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-yUUMcCHv-DRQQ6-LQ.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -26933,7 +26972,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-DzkqLRqo-DzZKPrF0.js", ['./__monkey.entry-DzoLifxo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-BMrI3Lwu-BYY9xj33.js", ['./__monkey.entry-BZw7_m0t.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -27440,7 +27479,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-CgJ2akKw-E2wBGlBa.js", ['./__monkey.entry-DzoLifxo.js', './ID3v2Parser-D66xU2zi-CC-tdYnb.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-UCe8Qloc-Fmjichuw.js", ['./__monkey.entry-BZw7_m0t.js', './ID3v2Parser-yUUMcCHv-DRQQ6-LQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -27614,7 +27653,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-CjCvh-tZ-CwhLZwTt.js", ['./__monkey.entry-DzoLifxo.js', './ID3v2Parser-D66xU2zi-CC-tdYnb.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-DmE9n09L-CxAUsWgS.js", ['./__monkey.entry-BZw7_m0t.js', './ID3v2Parser-yUUMcCHv-DRQQ6-LQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -27785,7 +27824,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-DMbygS7l-CflpETJB.js", ['./__monkey.entry-DzoLifxo.js', './AbstractID3Parser-tNHbomVq-Hu6xSuGF.js', './ID3v2Parser-D66xU2zi-CC-tdYnb.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-QTUI1hPv-Bp2E7LZs.js", ['./__monkey.entry-BZw7_m0t.js', './AbstractID3Parser-CDNp4cAr-BgdThA4N.js', './ID3v2Parser-yUUMcCHv-DRQQ6-LQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -27883,7 +27922,7 @@ System.register("./DsfParser-DMbygS7l-CflpETJB.js", ['./__monkey.entry-DzoLifxo.
   };
 }));
 
-System.register("./FlacParser-CklDQBDb-ImVKH-px.js", ['./__monkey.entry-DzoLifxo.js', './VorbisParser-BG076e13-D7QKIEO4.js', './AbstractID3Parser-tNHbomVq-Hu6xSuGF.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-D66xU2zi-CC-tdYnb.js'], (function (exports, module) {
+System.register("./FlacParser-CxBuMPPU-CaRJZksQ.js", ['./__monkey.entry-BZw7_m0t.js', './VorbisParser-CMEd5bdq-CLBYsMBy.js', './AbstractID3Parser-CDNp4cAr-BgdThA4N.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-yUUMcCHv-DRQQ6-LQ.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -28035,7 +28074,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-CxWb5iFy-BNXg69jM.js", ['./__monkey.entry-DzoLifxo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-BKX4BR86-_BlTfx0e.js", ['./__monkey.entry-BZw7_m0t.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -28642,7 +28681,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-CSpaIycC-BfC4NVDd.js", ['./__monkey.entry-DzoLifxo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-CJgUye4k-e_bq-FOM.js", ['./__monkey.entry-BZw7_m0t.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -29473,7 +29512,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-uoDr9Wlf-CW8_dUKe.js", ['./__monkey.entry-DzoLifxo.js', './AbstractID3Parser-tNHbomVq-Hu6xSuGF.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-D66xU2zi-CC-tdYnb.js'], (function (exports, module) {
+System.register("./MusepackParser-CwMttd4m-BZHi7lPv.js", ['./__monkey.entry-BZw7_m0t.js', './AbstractID3Parser-CDNp4cAr-BgdThA4N.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-yUUMcCHv-DRQQ6-LQ.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -29750,7 +29789,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-tNHbomVq-Hu6xSuGF.js", ['./__monkey.entry-DzoLifxo.js', './ID3v2Parser-D66xU2zi-CC-tdYnb.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-CDNp4cAr-BgdThA4N.js", ['./__monkey.entry-BZw7_m0t.js', './ID3v2Parser-yUUMcCHv-DRQQ6-LQ.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -29814,7 +29853,7 @@ System.register("./AbstractID3Parser-tNHbomVq-Hu6xSuGF.js", ['./__monkey.entry-D
   };
 }));
 
-System.register("./OggParser-DSDjy9lJ-CgHFLqF3.js", ['./__monkey.entry-DzoLifxo.js', './VorbisParser-BG076e13-D7QKIEO4.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-CNwaUc1R-DzosL7u4.js", ['./__monkey.entry-BZw7_m0t.js', './VorbisParser-CMEd5bdq-CLBYsMBy.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -30089,7 +30128,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-BG076e13-D7QKIEO4.js", ['./__monkey.entry-DzoLifxo.js'], (function (exports, module) {
+System.register("./VorbisParser-CMEd5bdq-CLBYsMBy.js", ['./__monkey.entry-BZw7_m0t.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -30305,7 +30344,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-BNNxo2Nx-CxWl3Rds.js", ['./__monkey.entry-DzoLifxo.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-CLTiGqjv-BbJrkT6x.js", ['./__monkey.entry-BZw7_m0t.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -30485,7 +30524,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-CozJIOYz-HZowyFrl.js", ['./__monkey.entry-DzoLifxo.js', './ID3v2Parser-D66xU2zi-CC-tdYnb.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-Cnhgkrr7-C154DsTS.js", ['./__monkey.entry-BZw7_m0t.js', './ID3v2Parser-yUUMcCHv-DRQQ6-LQ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -30758,7 +30797,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-D66xU2zi-CC-tdYnb.js", ['./__monkey.entry-DzoLifxo.js'], (function (exports, module) {
+System.register("./ID3v2Parser-yUUMcCHv-DRQQ6-LQ.js", ['./__monkey.entry-BZw7_m0t.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
