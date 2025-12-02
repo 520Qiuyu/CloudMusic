@@ -1,7 +1,53 @@
-const Metaflac = require("metaflac-js");
-const fs = require("fs");
-const { readFileContent } = require("./file");
-const iconv = require("iconv-lite");
+const Metaflac = require('metaflac-js');
+const fs = require('fs');
+const { readFileContent } = require('./file');
+
+/** 获取flac文件的Tag */
+function getFlacTags(filePath) {
+  try {
+    const metaflac = new Metaflac(filePath);
+    const allTags = metaflac.getAllTags();
+    const tags = allTags.reduce((acc, tag) => {
+      const [key, value] = tag.split('=');
+      acc[key.toLowerCase()] = value;
+      return acc;
+    }, {});
+    console.log('tags', tags);
+    return tags;
+  } catch (e) {
+    console.error('获取Tag失败:', e);
+    return [];
+  }
+}
+
+/** 删除flac文件的Tag */
+function deleteFlacTag(filePath, tag) {
+  try {
+    const metaflac = new Metaflac(filePath);
+    metaflac.removeTag(tag.toUpperCase());
+    metaflac.save();
+    return true;
+  } catch (e) {
+    console.error('删除Tag失败:', e);
+    return false;
+  }
+}
+
+/** 给flac写入Tag */
+function writeFlacTag(filePath, tag, value) {
+  try {
+    const metaflac = new Metaflac(filePath);
+    if (metaflac.getTag(tag.toUpperCase())) {
+      metaflac.removeTag(tag.toUpperCase());
+    }
+    metaflac.setTag(tag.toUpperCase() + '=' + value);
+    metaflac.save();
+    return true;
+  } catch (e) {
+    console.error('写入Tag失败:', e);
+    return false;
+  }
+}
 
 /** 给flac文件嵌入封面 */
 function embedFlacCover(filePath, coverPath) {
@@ -17,22 +63,21 @@ function embedFlacLyric(filePath, lyricPath, options = {}) {
     /** 优先使用原有歌词 */
     priorityLyric = true,
     /** encode */
-    encode = 'gbk'
+    encode = 'gbk',
   } = options;
 
   const metaflac = new Metaflac(filePath);
   const allTags = metaflac.getAllTags();
-  console.log('allTags', allTags)
-  if (priorityLyric && allTags.some((tag) => tag?.includes("LYRICS"))) {
+  console.log('allTags', allTags);
+  if (priorityLyric && allTags.some((tag) => tag?.includes('LYRICS'))) {
     return true;
   }
-  if (!priorityLyric && allTags.some((tag) => tag?.includes("LYRICS"))) {
-    metaflac.removeTag("LYRICS");
+  if (!priorityLyric && allTags.some((tag) => tag?.includes('LYRICS'))) {
+    metaflac.removeTag('LYRICS');
   }
 
-
   const lyricContent = readFileContent(lyricPath, encode);
-  metaflac.setTag("LYRICS=" + lyricContent);
+  metaflac.setTag('LYRICS=' + lyricContent);
   metaflac.save();
   return true;
 }
@@ -70,4 +115,7 @@ module.exports = {
   embedFlacCover,
   embedFlacLyric,
   embedFlacLyricAndCover,
+  writeFlacTag,
+  getFlacTags,
+  deleteFlacTag,
 };
