@@ -1,5 +1,5 @@
-import { getArtistAlbumList } from '@/api';
-import { CopyText, SearchForm } from '@/components';
+import { getArtistAlbumList, neteaseMusicToCloud } from '@/api';
+import { CopyText, MyButton, SearchForm } from '@/components';
 import {
   useFilter,
   useGetAlbumDetail,
@@ -11,6 +11,7 @@ import { downloadAsJson } from '@/utils/download';
 import { msgError, msgLoading, msgSuccess, msgWarning } from '@/utils/modal';
 import AlbumDetail from '@/views/albumDetail';
 import {
+  CloudUploadOutlined,
   DownloadOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
@@ -29,13 +30,7 @@ import {
   message,
 } from 'antd';
 import dayjs from 'dayjs';
-import {
-  forwardRef,
-  useEffect,
-  useMemo,
-  useRef,
-  useState
-} from 'react';
+import { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import styles from './index.module.scss';
 import { isMobile } from '@/utils';
 
@@ -48,7 +43,8 @@ const AlbumListModal = forwardRef((props, ref) => {
   const { visible, close } = useVisible(
     {
       onOpen: (params) => {
-        params && setSingerInfo(params);tes
+        params && setSingerInfo(params);
+        tes;
       },
       onReset: () => {
         setSingerInfo({});
@@ -163,6 +159,37 @@ const AlbumListModal = forwardRef((props, ref) => {
     }
   };
 
+  const handleSaveToCloud = async (record) => {
+    console.log(`当前转存专辑《${record.name}》到云盘`);
+    const uploadMessageKey = 'album-to-cloud';
+    try {
+      // 获取专辑歌曲列表
+      const songs = await getAlbumSongList(record.id);
+      const songIds = songs.map((song) => song.id);
+      await neteaseMusicToCloud(songIds, {
+        onChange: (progress) => {
+          console.log('progress', progress);
+          message.loading({
+            content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+            key: uploadMessageKey,
+            duration: 0,
+          });
+        },
+        onComplete: (result) => {
+          console.log('result', result);
+          message.destroy(uploadMessageKey);
+          msgSuccess(
+            `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
+          );
+        },
+      });
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      message.destroy(uploadMessageKey);
+    }
+  };
+
   const handleDownloadJson = async (record) => {
     let hide;
     try {
@@ -258,6 +285,46 @@ const AlbumListModal = forwardRef((props, ref) => {
       });
     } finally {
       setDownloadingBatchJson(false);
+    }
+  };
+
+  const handleBatchSaveToCloud = async () => {
+    if (selectedRows.length === 0) {
+      msgWarning('请先选择要转存的专辑');
+      return;
+    }
+    const uploadMessageKey = 'album-to-cloud-batch';
+    message.loading({
+      content: `正在准备转存 ${selectedRows.length} 张专辑到云盘，请稍候...`,
+      key: uploadMessageKey,
+      duration: 0,
+    });
+    try {
+      let index = 1;
+      for (const album of selectedRows) {
+        message.loading({
+          content: `正在转存第${index}/${selectedRows.length}张专辑《${album.name}》到云盘，请稍候...`,
+          key: uploadMessageKey,
+          duration: 0,
+        });
+        await handleSaveToCloud(album);
+        index++;
+      }
+      message.success({
+        content: `成功转存 ${selectedRows.length} 张专辑`,
+        key: uploadMessageKey,
+        duration: 3000,
+      });
+    } catch (error) {
+      console.error('批量转存失败:', error);
+      message.error({
+        content: `批量转存失败: ${error?.message || error}`,
+        key: uploadMessageKey,
+        duration: 3000,
+      });
+      msgError(`批量转存失败: ${error?.message || error}`);
+    } finally {
+      message.destroy(uploadMessageKey);
     }
   };
 
@@ -385,7 +452,7 @@ const AlbumListModal = forwardRef((props, ref) => {
         key: 'action',
         width: 340,
         align: 'center',
-        fixed:isMobile() ? undefined : 'right',
+        fixed: isMobile() ? undefined : 'right',
         render: (_, record) => (
           <Space size='middle'>
             <Button
@@ -427,6 +494,15 @@ const AlbumListModal = forwardRef((props, ref) => {
               aria-label={`下载《${record.name}》`}>
               下载
             </Button>
+            {/* 转存到云盘 */}
+            <MyButton
+              type='link'
+              size='small'
+              icon={<CloudUploadOutlined />}
+              onClick={() => handleSaveToCloud(record)}
+              aria-label={`转存《${record.name}》到云盘`}>
+              转存云盘
+            </MyButton>
           </Space>
         ),
       },
@@ -523,6 +599,13 @@ const AlbumListModal = forwardRef((props, ref) => {
           loading={downloadingBatch}
           disabled={selectedRows.length === 0}>
           下载专辑{selectedRows.length ? `(${selectedRows.length})` : ''}
+        </Button>
+        <Button
+          type='primary'
+          onClick={handleBatchSaveToCloud}
+          loading={downloadingBatch}
+          disabled={selectedRows.length === 0}>
+          转存云盘{selectedRows.length ? `(${selectedRows.length})` : ''}
         </Button>
       </Space>
     </div>

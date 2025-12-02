@@ -83,7 +83,11 @@ const AlbumTab = ({ data, loading }) => {
     try {
       // 获取专辑歌曲列表
       const res = await getAlbumSongList(record.id);
-      console.log('res', res);
+      msgLoading({
+        content: `正在准备转存专辑《${record.name}》到云盘...`,
+        key: uploadMessageKey,
+        duration: 0,
+      });
       if (res.code === 200) {
         const songs = res.songs;
         const songIds = songs.map((song) => song.id);
