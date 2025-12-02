@@ -73,8 +73,13 @@ const AlbumListModal = forwardRef((props, ref) => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [selectedRows, setSelectedRows] = useState([]);
 
-  const { playAlbum, downloadAlbumSong, getAlbumDetail, getAlbumSongList } =
-    useGetAlbumDetail();
+  const {
+    playAlbum,
+    downloadAlbumSong,
+    getAlbumDetail,
+    getAlbumSongList,
+    albumToCloud,
+  } = useGetAlbumDetail();
   const { pause, isPlaying } = usePlayMusic();
 
   const [playingAlbumId, setPlayingAlbumId] = useState();
@@ -160,33 +165,13 @@ const AlbumListModal = forwardRef((props, ref) => {
   };
 
   const handleSaveToCloud = async (record) => {
-    console.log(`当前转存专辑《${record.name}》到云盘`);
-    const uploadMessageKey = 'album-to-cloud';
     try {
-      // 获取专辑歌曲列表
-      const songs = await getAlbumSongList(record.id);
-      const songIds = songs.map((song) => song.id);
-      await neteaseMusicToCloud(songIds, {
-        onChange: (progress) => {
-          console.log('progress', progress);
-          message.loading({
-            content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
-            key: uploadMessageKey,
-            duration: 0,
-          });
-        },
-        onComplete: (result) => {
-          console.log('result', result);
-          message.destroy(uploadMessageKey);
-          msgSuccess(
-            `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
-          );
-        },
-      });
+      console.log(`当前转存专辑《${record.name}》到云盘`);
+      await albumToCloud(record.id);
+      msgSuccess(`《${record.name}》转存云盘成功`);
     } catch (error) {
       console.log('error', error);
-    } finally {
-      message.destroy(uploadMessageKey);
+      msgError(`转存云盘失败: ${error?.message || error}`);
     }
   };
 
@@ -307,7 +292,7 @@ const AlbumListModal = forwardRef((props, ref) => {
           key: uploadMessageKey,
           duration: 0,
         });
-        await handleSaveToCloud(album);
+        await albumToCloud(album.id);
         index++;
       }
       message.success({

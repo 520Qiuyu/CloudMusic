@@ -1,10 +1,12 @@
-import { getAlbumDetail, getAlbumSongList } from '@/api';
+import { getAlbumDetail, getAlbumSongList, neteaseMusicToCloud } from '@/api';
 import { QUALITY_LEVELS } from '@/constant';
 import { promiseLimit } from '@/utils';
 import { downloadAsJson } from '@/utils/download';
 import { getDownloadQuality } from '@/utils/music';
 import { useRef, useState } from 'react';
 import { usePlayMusic } from './usePlayMusic';
+import { message } from 'antd';
+import { msgSuccess } from '@/utils/modal';
 
 /**
  * 获取专辑详情的 Hook
@@ -211,6 +213,45 @@ export const useGetAlbumDetail = () => {
     }
   };
 
+  /**
+   * 专辑转存云盘
+   */
+  const albumToCloud = async (id) => {
+    if (!id) return;
+    const uploadMessageKey = 'album-to-cloud';
+    try {
+      const songs = await getAlbumSongListData(id);
+      const songIds = songs.map((song) => song.id);
+      message.loading({
+        content: '开始上传专辑歌曲到云盘，请稍候...',
+        key: uploadMessageKey,
+        duration: 0,
+      });
+      await neteaseMusicToCloud(songIds, {
+        onChange: (progress) => {
+          message.loading({
+            content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
+            key: uploadMessageKey,
+            duration: 0,
+          });
+        },
+        onComplete: (result) => {
+          message.destroy(uploadMessageKey);
+          msgSuccess(
+            `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`,
+          );
+        },
+      });
+    } catch (error) {
+      console.error('专辑转存云盘失败:', error);
+      throw error;
+    } finally {
+      setTimeout(() => {
+        message.destroy(uploadMessageKey);
+      }, 3000);
+    }
+  };
+
   return {
     albumInfo,
     isLoading,
@@ -220,5 +261,6 @@ export const useGetAlbumDetail = () => {
     getAlbumSongUrl,
     downloadAlbumSong,
     getDownLoadJson,
+    albumToCloud,
   };
 };
