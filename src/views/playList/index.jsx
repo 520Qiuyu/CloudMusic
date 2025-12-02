@@ -30,7 +30,7 @@ function PlayList(props, ref) {
     },
     ref,
   );
-  const { sortSongListByListId, playlistToCloud, downloadSongList } =
+  const { sortSongListByListId, playlistToCloud, downloadSongList, getSongListData } =
     useGetSongListDetail();
   const [loading, setLoading] = useState(false);
   const [playList, setPlayList] = useState([]);
@@ -113,7 +113,9 @@ function PlayList(props, ref) {
   const handleDownload = async (e, record) => {
     e.stopPropagation();
     try {
-      await downloadSongList(record.id);
+      // TODO 后去统一到hooks
+      const songs = await getSongListData(record.id);
+      await downloadSongList(songs);
       msgSuccess('下载歌单成功');
     } catch (error) {
       console.log('error', error);
