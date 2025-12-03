@@ -24,17 +24,17 @@ traverseDir(musicPath, (filePath, dirPath) => {
           writeFlacTag(
             filePath,
             'ALBUM',
-            tags.album.replace(/\u200b/g, '') + '\u200b',
+            tags.album.replace(/\u200b/g, '').replace(/(.)(?=$)/, '$1\u200b'),
           );
         }
         if (tags.artist) {
           writeFlacTag(
             filePath,
             'ARTIST',
-            tags.artist.replace(/\u200b/g, '') + '\u200b',
+            tags.artist.replace(/\u200b/g, '').replace(/(.)(?=$)/, '$1\u200b'),
           );
         }
-        // 嵌入歌词
+        /* // 嵌入歌词
         embedFlacLyric(filePath, filePath.replace('.flac', '.lrc'), {
           priorityLyric: false,
           // encode: 'utf-8',
@@ -53,7 +53,7 @@ traverseDir(musicPath, (filePath, dirPath) => {
           if (coverPath) {
             embedFlacCover(filePath, coverPath);
           }
-        }
+        } */
         break;
       case '.png':
       case '.jpeg':
