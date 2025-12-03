@@ -5,6 +5,7 @@ import App from './App';
 import './assets/styles/index.css';
 import theme from './assets/styles/theme';
 import zhCN from 'antd/locale/zh_CN';
+import './utils/string';
 
 ReactDOM.createRoot(
   (() => {

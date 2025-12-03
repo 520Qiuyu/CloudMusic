@@ -24,14 +24,14 @@ traverseDir(musicPath, (filePath, dirPath) => {
           writeFlacTag(
             filePath,
             'ALBUM',
-            tags.album.replace(/\u200b/g, '').replace(/(.)(?=$)/, '$1\u200b'),
+            tags.album.replace(/\u200b/g, '').replace(/(.)(?=$)/, '\u200b$1'),
           );
         }
         if (tags.artist) {
           writeFlacTag(
             filePath,
             'ARTIST',
-            tags.artist.replace(/\u200b/g, '').replace(/(.)(?=$)/, '$1\u200b'),
+            tags.artist.replace(/\u200b/g, '').replace(/(.)(?=$)/, '\u200b$1'),
           );
         }
         /* // 嵌入歌词
