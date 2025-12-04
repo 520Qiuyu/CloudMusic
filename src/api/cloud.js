@@ -216,7 +216,7 @@ export const uploadSong = async (song) => {
           fileSize: song.size,
           md5: song.md5,
           songid: cloudId,
-          filename: song.filename,
+          filename: `${song.filename}${song.ext ? '.' + song.ext : ''}`,
           song: song.name,
           album: song.album,
           artist: song.artists,
