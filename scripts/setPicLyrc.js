@@ -10,7 +10,7 @@ const {
 // 音乐文件夹路径
 const musicPath = path.resolve(__dirname, 'D:/Music/周杰伦');
 // 是否阻止上传网易云之后匹配
-const PREVENT_MATCH = false;
+const PREVENT_MATCH = true;
 
 // 封面类型
 const coverTypes = ['.png', '.jpeg', '.jpg'];
@@ -26,17 +26,31 @@ traverseDir(musicPath, (filePath, dirPath) => {
     switch (fileType) {
       case '.flac':
         if (PREVENT_MATCH) {
-          // 更新专辑信息使其不匹配
+          // 更新歌手信息使其不匹配
           const tags = getFlacTags(filePath);
           if (tags.artist) {
             writeFlacTag(
               filePath,
               'ARTIST',
-              tags.artist.replace(/\u200b/g, '').replace(/(.)(?=$)/, '​​$1'),
+              tags.artist.replace(/\u200b/g, '')
+            );
+          }
+          if (tags.album) {
+            writeFlacTag(
+              filePath,
+              'ALBUM',
+              tags.album.replace(/\u200b/g, '')
+            );
+          }
+          if (tags.title) {
+            writeFlacTag(
+              filePath,
+              'TITLE',
+              tags.title.replace(/\u200b/g, '').replace(/(.)(?=$)/, '$1​'),
             );
           }
         }
-        // 嵌入歌词
+       /*  // 嵌入歌词
         embedFlacLyric(filePath, filePath.replace('.flac', '.lrc'), {
           priorityLyric: false,
           encode: 'utf-8',
@@ -55,7 +69,7 @@ traverseDir(musicPath, (filePath, dirPath) => {
           if (coverPath) {
             embedFlacCover(filePath, coverPath);
           }
-        }
+        } */
         break;
       case '.png':
       case '.jpeg':

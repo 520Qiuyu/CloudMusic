@@ -95,6 +95,14 @@ npm run build
 | :-------------------------------------------------: | :-----------------------------------------------------: |
 |                    **微信支付**                     |                     **支付宝支付**                      |
 
+## ⭐ 星标历史
+
+感谢所有给项目点 Star 的朋友！你们的支持是我持续更新的动力。
+
+[![Star History Chart](https://api.star-history.com/svg?repos=520Qiuyu/CloudMusic&type=Date)](https://star-history.com/#520Qiuyu/CloudMusic&Date)
+
+> 📊 [查看详细星标历史](https://star-history.com/#520Qiuyu/CloudMusic&Date) | [查看所有 Star 用户](https://github.com/520Qiuyu/CloudMusic/stargazers)
+
 ## 📋 TODO
 
 ### 功能增强
