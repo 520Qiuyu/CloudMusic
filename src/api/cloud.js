@@ -162,7 +162,7 @@ export const uploadSong = async (song) => {
               song: song.filename,
               artist: song.artists,
               album: song.album,
-              fileName: song.filename,
+              fileName: `${song.filename}${song.ext ? '.' + song.ext : ''}`,
             },
           ]),
         },
