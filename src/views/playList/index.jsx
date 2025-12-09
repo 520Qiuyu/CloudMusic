@@ -30,8 +30,12 @@ function PlayList(props, ref) {
     },
     ref,
   );
-  const { sortSongListByListId, playlistToCloud, downloadSongList, getSongListData } =
-    useGetSongListDetail();
+  const {
+    sortSongListByListId,
+    playlistToCloud,
+    downloadSongList,
+    getSongListData,
+  } = useGetSongListDetail();
   const [loading, setLoading] = useState(false);
   const [playList, setPlayList] = useState([]);
   const songListRef = useRef();

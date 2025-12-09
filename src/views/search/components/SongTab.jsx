@@ -1,5 +1,6 @@
 import { neteaseMusicToCloud } from '@/api';
 import { CopyText, MyButton } from '@/components';
+import SongInfoRender from '@/components/SongInfoRender';
 import { QUALITY_LEVELS } from '@/constant';
 import { usePlayMusic } from '@/hooks';
 import { isMobile } from '@/utils';
@@ -19,17 +20,7 @@ import {
   PauseCircleOutlined,
   PlayCircleOutlined,
 } from '@ant-design/icons';
-import {
-  Button,
-  Image,
-  message,
-  Select,
-  Space,
-  Table,
-  Tag,
-  Tooltip,
-  Typography,
-} from 'antd';
+import { Button, message, Select, Space, Table, Tag, Typography } from 'antd';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import styles from '../index.module.scss';
@@ -107,105 +98,7 @@ const SongTab = ({ data, loading }) => {
       sorter: (a, b) => a.name?.localeCompare(b.name),
       sortDirections: ['ascend', 'descend'],
       render: (_, record) => {
-        const alias = record.alia?.[0] || '';
-
-        return (
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              minWidth: 0,
-            }}>
-            <div
-              style={{
-                width: '60px',
-                height: '60px',
-                borderRadius: '6px',
-                flexShrink: 0,
-                overflow: 'hidden',
-                cursor: 'pointer',
-              }}
-              onClick={(e) => e.stopPropagation()}>
-              {record.al?.picUrl ? (
-                <Image
-                  src={record.al.picUrl}
-                  width={60}
-                  height={60}
-                  preview={true}
-                  placeholder
-                />
-              ) : (
-                <div
-                  style={{
-                    width: '60px',
-                    height: '60px',
-                    backgroundColor: '#f0f0f0',
-                    borderRadius: '6px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#999',
-                    fontSize: '12px',
-                  }}>
-                  无封面
-                </div>
-              )}
-            </div>
-            <div
-              style={{
-                flex: 1,
-                minWidth: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '4px',
-              }}>
-              <Tooltip title={record.name} placement='top'>
-                <div
-                  style={{
-                    fontWeight: 500,
-                    fontSize: '14px',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    color: '#262626',
-                  }}>
-                  {record.name}
-                </div>
-              </Tooltip>
-              {alias && (
-                <Tooltip title={alias} placement='top'>
-                  <div
-                    style={{
-                      fontSize: '12px',
-                      color: '#8c8c8c',
-                      fontStyle: 'italic',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                    }}>
-                    {alias}
-                  </div>
-                </Tooltip>
-              )}
-              <Tooltip title={record.id} placement='top'>
-                <div
-                  style={{
-                    fontSize: '12px',
-                    color: '#8c8c8c',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                  }}>
-                  ID:{' '}
-                  <Typography.Text copyable style={{ fontSize: '12px' }}>
-                    {record.id}
-                  </Typography.Text>
-                </div>
-              </Tooltip>
-            </div>
-          </div>
-        );
+        return <SongInfoRender record={record} />;
       },
     },
     {

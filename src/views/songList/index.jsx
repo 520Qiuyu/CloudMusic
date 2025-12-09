@@ -1,6 +1,7 @@
 import { neteaseMusicToCloud } from '@/api';
 import { CopyText, MyButton } from '@/components';
 import SearchForm from '@/components/SearchForm';
+import SongInfoRender from '@/components/SongInfoRender';
 import { QUALITY_LEVELS } from '@/constant';
 import useFilter from '@/hooks/useFilter';
 import { useGetSongListDetail } from '@/hooks/useGetSongListDetail';
@@ -26,7 +27,6 @@ import {
 } from '@ant-design/icons';
 import {
   Form,
-  Image,
   Input,
   message,
   Modal,
@@ -34,7 +34,6 @@ import {
   Space,
   Table,
   Tag,
-  Tooltip,
   Typography,
 } from 'antd';
 import dayjs from 'dayjs';
@@ -129,6 +128,10 @@ function SongList(props, ref) {
   const handleSaveToCloud = async (record) => {
     const uploadMessageKey = 'song-to-cloud';
     try {
+      if (record.pc) {
+        msgWarning(`《${record.name}》为云盘已存在歌曲，无法转存云盘!`);
+        return;
+      }
       const res = await neteaseMusicToCloud([record.id], {
         onChange: (progress) => {
           message.loading({
@@ -162,103 +165,7 @@ function SongList(props, ref) {
       sorter: (a, b) => a.name?.localeCompare(b.name),
       sortDirections: ['ascend', 'descend'],
       render: (_, record) => {
-        const alias = record.alia?.[0] || '';
-
-        return (
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              minWidth: 0,
-            }}>
-            <div
-              style={{
-                flex: '0 0 60px',
-                borderRadius: '6px',
-                overflow: 'hidden',
-                cursor: 'pointer',
-              }}
-              onClick={(e) => e.stopPropagation()}>
-              {record.al?.picUrl ? (
-                <Image
-                  src={record.al.picUrl}
-                  width={60}
-                  height={60}
-                  preview={false}
-                  placeholder
-                />
-              ) : (
-                <div
-                  style={{
-                    width: '60px',
-                    height: '60px',
-                    backgroundColor: '#f0f0f0',
-                    borderRadius: '6px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#999',
-                    fontSize: '12px',
-                  }}>
-                  无封面
-                </div>
-              )}
-            </div>
-            <div
-              style={{
-                flex: 1,
-                minWidth: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '4px',
-              }}>
-              <Tooltip title={record.name} placement='top'>
-                <div
-                  style={{
-                    fontWeight: 500,
-                    fontSize: '14px',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    color: '#262626',
-                  }}>
-                  {record.name}
-                </div>
-              </Tooltip>
-              {alias && (
-                <Tooltip title={alias} placement='top'>
-                  <div
-                    style={{
-                      fontSize: '12px',
-                      color: '#8c8c8c',
-                      fontStyle: 'italic',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                    }}>
-                    {alias}
-                  </div>
-                </Tooltip>
-              )}
-              <Tooltip title={record.id} placement='top'>
-                <div
-                  style={{
-                    fontSize: '12px',
-                    color: '#8c8c8c',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                  }}>
-                  ID:{' '}
-                  <Typography.Text copyable style={{ fontSize: '12px' }}>
-                    {record.id}
-                  </Typography.Text>
-                </div>
-              </Tooltip>
-            </div>
-          </div>
-        );
+        return <SongInfoRender record={record} />;
       },
     },
     {
@@ -515,11 +422,14 @@ function SongList(props, ref) {
       align: 'center',
       fixed: isMobile() ? undefined : 'right',
       render: (_, record) => {
+        const noSource = record.noCopyrightRcmd;
+        const isCloud = record.pc;
         return (
           <Space>
             <MyButton
               type='link'
               size='small'
+              disabled={noSource}
               icon={
                 isPlaying === record.id ? (
                   <PauseCircleOutlined />
@@ -533,6 +443,7 @@ function SongList(props, ref) {
             <MyButton
               type='link'
               size='small'
+              disabled={noSource}
               icon={<DownloadOutlined />}
               onClick={() => handleDownload(record)}>
               下载
@@ -540,8 +451,9 @@ function SongList(props, ref) {
             <MyButton
               type='link'
               size='small'
+              disabled={isCloud || noSource}
               icon={<CloudUploadOutlined />}
-              onClick={() => handleSaveToCloud(e, record)}>
+              onClick={() => handleSaveToCloud(record)}>
               转存云盘
             </MyButton>
           </Space>
@@ -689,6 +601,9 @@ function SongList(props, ref) {
           type: 'checkbox',
           fixed: true,
           preserveSelectedRowKeys: true,
+          getCheckboxProps: (record) => ({
+            disabled: record.noCopyrightRcmd,
+          }),
           onChange: (selectedRowKeys, selectedRows) => {
             setSelectedRows(selectedRows);
           },

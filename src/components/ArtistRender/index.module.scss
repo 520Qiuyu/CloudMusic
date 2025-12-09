@@ -1,0 +1,17 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.id {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+

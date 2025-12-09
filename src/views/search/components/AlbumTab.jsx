@@ -24,6 +24,7 @@ import dayjs from 'dayjs';
 import { useRef, useState } from 'react';
 import styles from '../index.module.scss';
 import { isMobile } from '@/utils';
+import ArtistRender from '@/components/ArtistRender';
 
 const AlbumTab = ({ data, loading }) => {
   const albumDetailRef = useRef();
@@ -244,10 +245,8 @@ const AlbumTab = ({ data, loading }) => {
         return aName.localeCompare(bName);
       },
       sortDirections: ['ascend', 'descend'],
-      render: (artists, record) => {
-        const singerName =
-          artists?.map((a) => a.name).join(', ') || record.artist?.name || '-';
-        return singerName;
+      render: (_, record) => {
+        return <ArtistRender record={record} />;
       },
     },
     {
@@ -338,7 +337,7 @@ const AlbumTab = ({ data, loading }) => {
       key: 'action',
       width: 300,
       align: 'center',
-      fixed:isMobile() ? undefined : 'right',
+      fixed: isMobile() ? undefined : 'right',
       render: (_, record) => {
         return (
           <Space size='small' wrap>

@@ -1,5 +1,6 @@
-import { getArtistAlbumList, neteaseMusicToCloud } from '@/api';
+import { getArtistAlbumList } from '@/api';
 import { CopyText, MyButton, SearchForm } from '@/components';
+import ArtistRender from '@/components/ArtistRender';
 import {
   useFilter,
   useGetAlbumDetail,
@@ -7,6 +8,7 @@ import {
   usePlayMusic,
   useVisible,
 } from '@/hooks';
+import { isMobile } from '@/utils';
 import { downloadAsJson } from '@/utils/download';
 import { msgError, msgLoading, msgSuccess, msgWarning } from '@/utils/modal';
 import AlbumDetail from '@/views/albumDetail';
@@ -16,10 +18,8 @@ import {
   PauseCircleOutlined,
   PlayCircleOutlined,
   SaveOutlined,
-  UserOutlined,
 } from '@ant-design/icons';
 import {
-  Avatar,
   Button,
   Image,
   Modal,
@@ -32,7 +32,6 @@ import {
 import dayjs from 'dayjs';
 import { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import styles from './index.module.scss';
-import { isMobile } from '@/utils';
 
 const { Text, Title } = Typography;
 
@@ -380,28 +379,7 @@ const AlbumListModal = forwardRef((props, ref) => {
         dataIndex: 'artist',
         key: 'artist',
         width: 220,
-        render: (_, record) => (
-          <Space size='small'>
-            <Avatar
-              src={singerInfo?.singerPic}
-              icon={<UserOutlined />}
-              size={40}
-              alt={singerInfo?.singerName || '歌手头像'}
-            />
-            <div className={styles['singer-details']}>
-              <div
-                className={styles['singer-name']}
-                title={singerInfo?.singerName}>
-                {singerInfo?.singerName || '未知歌手'}
-              </div>
-              <div
-                className={styles['singer-id']}
-                title={String(singerInfo?.singerId || '')}>
-                {singerInfo?.singerId || '-'}
-              </div>
-            </div>
-          </Space>
-        ),
+        render: (_, record) => <ArtistRender record={record} />,
       },
       {
         title: '发行时间',

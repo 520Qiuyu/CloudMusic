@@ -1,0 +1,64 @@
+.song-info-render {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+
+  .cover-wrapper {
+    flex: 0 0 60px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+
+    .cover-placeholder {
+      width: 60px;
+      height: 60px;
+      background-color: #f0f0f0;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 12px;
+    }
+  }
+
+  .info-wrapper {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .name {
+      font-weight: 500;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #262626;
+
+      &.no-source {
+        color: #bfbfbf;
+      }
+    }
+
+    .alias {
+      font-size: 12px;
+      color: #8c8c8c;
+      font-style: italic;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .id {
+      font-size: 12px;
+      color: #8c8c8c;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
