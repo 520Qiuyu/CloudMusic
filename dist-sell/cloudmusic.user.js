@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-CepBC9P1.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-D9bb3Zzj.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,9 +44,9 @@ System.register("./__entry.js", ['./__monkey.entry-CepBC9P1.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-CepBC9P1.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-D9bb3Zzj.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Form, Pagination, ConfigProvider, Select, Checkbox, Avatar, Tooltip, Empty, List, Card, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, UserOutlined, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, CommentOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined, CloudOutlined;
+  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message$1, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Form, Pagination, ConfigProvider, Select, Checkbox, Avatar, Tooltip, Empty, List, Card, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, UserOutlined, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, CommentOutlined, DatabaseOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, HeartOutlined, InfoCircleOutlined, CloudOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
@@ -60,7 +60,7 @@ System.register("./__monkey.entry-CepBC9P1.js", ['react', 'antd', 'react-dom', '
       useCallback = module.useCallback;
       useLayoutEffect = module.useLayoutEffect;
     }, module => {
-      message = module.message;
+      message$1 = module.message;
       Modal = module.Modal;
       Table = module.Table;
       Upload = module.Upload;
@@ -114,12 +114,14 @@ System.register("./__monkey.entry-CepBC9P1.js", ['react', 'antd', 'react-dom', '
       SortAscendingOutlined = module.SortAscendingOutlined;
       DeleteOutlined = module.DeleteOutlined;
       CommentOutlined = module.CommentOutlined;
+      DatabaseOutlined = module.DatabaseOutlined;
       PictureOutlined = module.PictureOutlined;
       CheckOutlined = module.CheckOutlined;
       CustomerServiceOutlined = module.CustomerServiceOutlined;
       CodeOutlined = module.CodeOutlined;
       OrderedListOutlined = module.OrderedListOutlined;
       SearchOutlined = module.SearchOutlined;
+      HeartOutlined = module.HeartOutlined;
       InfoCircleOutlined = module.InfoCircleOutlined;
       CloudOutlined = module.CloudOutlined;
     }],
@@ -1388,6 +1390,7 @@ enableCloudImport: true,
 enableGithubInfo: false,
 enableScriptUpdate: false,
 enableTestModal: isDev,
+enableEmotionDecode: isDev,
 enableFunctionSwitchTab: false,
 enableDownloadSetting: isDev,
 uploadConcurrency: 6,
@@ -7379,7 +7382,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-Ceorqgt8-7JW4YLzM.js');
+            const { MpegParser } = await module.import('./MpegParser-CXKdzgAo-wa8iYcN6.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7401,7 +7404,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-DtEP4Ogj-Cd-hHGZD.js');
+            const { AsfParser } = await module.import('./AsfParser-BZAWSLuP-Dh2eSqfI.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7412,7 +7415,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-BmEdN8PI-B4O_wTjp.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-q9eB0eM--CYLsSRx_.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7423,7 +7426,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-ChYK9u8C-BQ7r8YWY.js');
+            const { AIFFParser } = await module.import('./AiffParser-fkTjw8_S-MptB7JzP.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7434,7 +7437,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-C6r1wPR3-CSFkOCNU.js');
+            const { DsfParser } = await module.import('./DsfParser-D4GXItUW-DCZ-OAor.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7445,7 +7448,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-BT-8sTbX-D9zhFB-7.js');
+            const { FlacParser } = await module.import('./FlacParser-BMrisM8_-B2YIInKL.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7456,7 +7459,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-DN3BbbAH-BrckLSU7.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-Bd-_pLzx-kJcibCN_.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7467,7 +7470,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-D1otc9iq-BoK7s2DE.js');
+            const { MP4Parser } = await module.import('./MP4Parser-fpGeHQmL-uEX_-Wmz.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7478,7 +7481,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-DIgbZPny-BWqDQY30.js');
+            const { MusepackParser } = await module.import('./MusepackParser-DQ3rvKtw-BnSirBPK.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7489,7 +7492,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-MF31Tp0z-CXVF1lnd.js');
+            const { OggParser } = await module.import('./OggParser-CLbKVIG5-wKtAO6H0.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7500,7 +7503,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-B8Pist6I-DiopNX5C.js');
+            const { WavPackParser } = await module.import('./WavPackParser-Bq4HkjWa-CM3TQWuC.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7511,7 +7514,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-DA1ktbjC-D6xHXrkr.js');
+            const { WaveParser } = await module.import('./WaveParser-BNrEn-4O-DvZdi2Lu.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -8362,26 +8365,26 @@ track: UINT8.get(buf, off2 + 126),
         }
         return id2;
       };
-      message.config({
+      message$1.config({
         top: 100
       });
-      const msgSuccess = (content) => {
-        message.success(content);
+      const msgSuccess$1 = (content) => {
+        message$1.success(content);
       };
       const msgWarning = (content) => {
-        message.warning(content);
+        message$1.warning(content);
       };
       const msgError = (content) => {
-        message.error(content);
+        message$1.error(content);
       };
       const msgLoading = (loadingContent, completeCallBack) => {
         const key = nanoid();
-        message.loading({
+        message$1.loading({
           key,
           content: loadingContent
         }).then(() => {
         });
-        return () => message.destroy(key);
+        return () => message$1.destroy(key);
       };
       const confirm = (content, title2, otherOptions = {}) => {
         return new Promise((resolve, reject) => {
@@ -8571,7 +8574,7 @@ track: UINT8.get(buf, off2 + 126),
         });
       };
       const getSongComment = (id2, options = {}) => {
-        const { limit = 100, offset = 0, before } = options;
+        const { limit = 100, offset = 200, before = 1747050175371 } = options;
         const data = {
           rid: id2,
           limit,
@@ -8582,52 +8585,91 @@ track: UINT8.get(buf, off2 + 126),
           data
         });
       };
+      const getSongComment1 = (id2, options = {}) => {
+        const { pageSize = 1e3, before, orderType = 3 } = options;
+        const rid = `R_SO_4_${id2}`;
+        const data = {
+          rid,
+          threadId: rid,
+          pageSize,
+cursor: before,
+          orderType
+        };
+        return weapiRequest(`/api/comment/resource/comments/get`, {
+          data
+        });
+      };
       const getSongAllComments = async (id2, options = {}) => {
         const { onChange } = options;
         const allComments = [];
-        let offset = 0;
-        const limit = 100;
+        const limit = 1e3;
         let hasMore = true;
         let before;
         let allTotal = 0;
         while (hasMore) {
-          const res = await getSongComment(id2, { limit, offset, before });
-          console.log("res", res);
+          const res = await getSongComment1(id2, { before });
           if (!res || res.code !== 200) {
-            throw new Error(res && (res.msg || res.message) || "获取歌曲评论失败");
+            throw new Error(res.message || res.msg || "获取歌曲评论失败");
           }
-          const {
-            cnum,
-            code,
-            commentBanner,
-            comments,
-            hotComments,
-            isMusician,
-            more,
-            moreHot,
-            topComments,
-            total,
-            userId
-          } = res;
-          allTotal ||= total;
+          console.log("res", res);
+          const { comments, totalCount, cursor } = res.data;
+          allTotal ||= totalCount;
+          hasMore = comments.length > 0;
           allComments.push(...comments);
-          hasMore = more;
           onChange?.({
             limit,
-            offset,
-            page: Math.ceil(offset / limit) + 1,
+            page: Math.ceil(allComments.length / limit) + 1,
             total: allTotal,
             totalPage: Math.ceil(allTotal / limit),
             comments,
             allComments
           });
           if (hasMore) {
-            before = comments[comments.length - 1].time;
-            offset += comments.length;
+            before = cursor;
           }
         }
-        downloadAsJson(allComments, `${id2}-评论.json`);
         return allComments;
+      };
+      const listenSongCheckIn$1 = async (params) => {
+        const { id: id2, sourceId = getUser().userId + "", time } = params;
+        const startplayLog = {
+          action: "startplay",
+          json: {
+            content: "id=" + id2,
+            id: id2,
+            mainsite: "1",
+            mainsiteWeb: "1",
+            type: "song"
+          }
+        };
+        const startRes = await weapiRequest(`/api/feedback/weblog`, {
+          data: {
+            logs: JSON.stringify([startplayLog])
+          }
+        });
+        console.log("startRes", startRes, startplayLog);
+        await new Promise((resolve) => setTimeout(resolve, 3e4));
+        const endplayLog = {
+          action: "play",
+          json: {
+            content: "id=" + id2,
+            download: 0,
+            end: "ui",
+            id: id2,
+            mainsite: "1",
+            mainsiteWeb: "1",
+            source: "user",
+            sourceId,
+            sourcetype: "user",
+            time,
+            type: "song",
+            wifi: 0
+          }
+        };
+        console.log("endplayLog", endplayLog);
+        return weapiRequest(`/api/feedback/weblog`, {
+          data: { logs: JSON.stringify([endplayLog]) }
+        });
       };
       const getQualityTags = (song) => {
         const tags = [];
@@ -12235,6 +12277,17 @@ op: "update"
           data: songs2
         });
       };
+      const getUserDetail = async (uid) => {
+        const res = await weapiRequest(`/api/v1/user/detail/${uid}`, {});
+        const result = JSON.stringify(res).replace(
+          /avatarImgId_str/g,
+          "avatarImgIdStr"
+        );
+        return JSON.parse(result);
+      };
+      const getUserSubCount = async (query = {}) => {
+        return weapiRequest("/api/subcount", query);
+      };
       const getUserHistoryComment = (uid, limit = 10, time) => {
         const data = {
           compose_reminder: "true",
@@ -12442,7 +12495,7 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
           const importMessageKey = "import-song";
           try {
             setLoading(true);
-            message.loading({
+            message$1.loading({
               content: `开始导入歌曲，请稍候...`,
               duration: 0,
               key: importMessageKey
@@ -12453,7 +12506,7 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
                 filename: item.name || "未知",
                 artists: item.artists?.join?.(",")
               });
-              message.loading({
+              message$1.loading({
                 content: `第${index2 + 1}首歌曲导入完成: ${item.name}`,
                 key: importMessageKey,
                 duration: 0
@@ -12461,11 +12514,11 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
             });
             const res = await promiseLimit(proArr, concurrent);
             console.log("res", res);
-            msgSuccess("导入成功");
+            msgSuccess$1("导入成功");
           } catch (error) {
             console.log("error", error);
           } finally {
-            message.destroy(importMessageKey);
+            message$1.destroy(importMessageKey);
             setLoading(false);
           }
         };
@@ -12608,9 +12661,9 @@ jsxRuntimeExports.jsx(
                         try {
                           const jsonData = JSON.parse(e.target.result);
                           setTableData(jsonData?.data || jsonData || []);
-                          message.success("JSON文件解析成功");
+                          message$1.success("JSON文件解析成功");
                         } catch (error) {
-                          message.error("JSON文件解析失败");
+                          message$1.error("JSON文件解析失败");
                         }
                       };
                       reader.readAsText(file);
@@ -12969,7 +13022,7 @@ singerIds
             );
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("更新成功");
+              msgSuccess$1("更新成功");
             }
           } catch (error) {
             console.log("error", error);
@@ -13170,7 +13223,7 @@ jsxRuntimeExports.jsx(
             const res = await matchCloudSong(songId, value2);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("更新成功");
+              msgSuccess$1("更新成功");
               onUpdate?.();
             }
           } catch (error) {
@@ -13356,7 +13409,7 @@ var hasRequiredClassnames;
         const { text: text2, className, ...rest } = props;
         const handleCopy = () => {
           copy(text2);
-          msgSuccess("复制成功");
+          msgSuccess$1("复制成功");
         };
         return jsxRuntimeExports.jsxs("div", { className: classNames(styles$a["copy-text"], className), ...rest, children: [
 jsxRuntimeExports.jsx(
@@ -13566,6 +13619,48 @@ default:
           audio.pause();
           setIsPlaying(false);
         };
+        const getSongAllComments$1 = async (id2) => {
+          const loadingMessageKey = "get-song-all-comments";
+          message.loading({
+            content: "开始获取歌曲所有评论，请稍候...",
+            key: loadingMessageKey,
+            duration: 0
+          });
+          try {
+            const allComments = await getSongAllComments(id2, {
+              onChange: (progress) => {
+                const { page, totalPage, total, allComments: allComments2 } = progress;
+                message.loading({
+                  content: `当前正在获取第${page}/${totalPage}页评论，已获取${allComments2.length}条评论，共${total}条评论`,
+                  key: loadingMessageKey,
+                  duration: 0
+                });
+              }
+            });
+            message.success({
+              content: "获取歌曲评论完成。",
+              duration: 3e3
+            });
+            return allComments;
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            message.destroy(loadingMessageKey);
+          }
+        };
+        const checkIn = async (id2) => {
+          const songInfo2 = await getSongInfo(id2);
+          const { al, dt } = songInfo2;
+          const res = await listenSongCheckIn({
+            id: id2,
+            time: dt
+          });
+          if (res.code !== 200) {
+            msgError(res.message || res.msg || "听歌打卡失败");
+            throw new Error(res.message || res.msg || "听歌打卡失败");
+          }
+          msgSuccess("听歌打卡成功");
+        };
         return {
           currentMid,
           isPlaying,
@@ -13578,7 +13673,9 @@ default:
           play,
           pause,
           playPlayList,
-          download
+          download,
+          getSongAllComments: getSongAllComments$1,
+          checkIn
         };
       };
       const useGetAlbumDetail = () => {
@@ -13733,22 +13830,22 @@ default:
           try {
             const songs2 = await getAlbumSongListData(id2);
             const songIds = songs2.map((song) => song.id);
-            message.loading({
+            message$1.loading({
               content: "开始上传专辑歌曲到云盘，请稍候...",
               key: uploadMessageKey2,
               duration: 0
             });
             await neteaseMusicToCloud(songIds, {
               onChange: (progress) => {
-                message.loading({
+                message$1.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message.destroy(uploadMessageKey2);
-                msgSuccess(
+                message$1.destroy(uploadMessageKey2);
+                msgSuccess$1(
                   `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
@@ -13758,7 +13855,7 @@ default:
             throw error;
           } finally {
             setTimeout(() => {
-              message.destroy(uploadMessageKey2);
+              message$1.destroy(uploadMessageKey2);
             }, 3e3);
           }
         };
@@ -19338,7 +19435,7 @@ isIndex(key, length)))) {
             );
             console.log("albums", albums);
             downloadAsJson(albums, "歌单.json");
-            msgSuccess("下载成功");
+            msgSuccess$1("下载成功");
           } catch (error) {
             console.log("error", error);
           } finally {
@@ -19362,7 +19459,7 @@ isIndex(key, length)))) {
               sortedSongs.map((song) => song.id)
             );
             if (res.code === 200) {
-              msgSuccess("歌单列表排序成功");
+              msgSuccess$1("歌单列表排序成功");
             } else {
               msgError(res.message || "歌单列表排序失败");
             }
@@ -19377,23 +19474,23 @@ isIndex(key, length)))) {
           try {
             const songs2 = await getPlaylistAllData(playlistId);
             const songIds = songs2.map((song) => song.id);
-            message.loading({
+            message$1.loading({
               content: "开始上传歌单歌曲到云盘，请稍候...",
               key: uploadMessageKey2,
               duration: 0
             });
             const res = await neteaseMusicToCloud(songIds, {
               onChange: (progress) => {
-                message.loading({
+                message$1.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message.destroy(uploadMessageKey2);
+                message$1.destroy(uploadMessageKey2);
                 console.log("result", result);
-                msgSuccess(
+                msgSuccess$1(
                   `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
@@ -19403,7 +19500,7 @@ isIndex(key, length)))) {
             console.log("error", error);
             msgError("歌曲转存云盘失败");
           } finally {
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           }
         };
         return {
@@ -19477,7 +19574,7 @@ isIndex(key, length)))) {
           setLoading(true);
           try {
             const user = getUser();
-            if (!user) return message.error("请先登录");
+            if (!user) return message$1.error("请先登录");
             const res2 = await getPlaylistList();
             console.log("res", res2);
             if (res2.code === 200) {
@@ -19620,7 +19717,7 @@ jsxRuntimeExports.jsx(
           try {
             const res2 = await createPlaylist(name2.trim());
             if (res2.code === 200) {
-              msgSuccess("新建成功");
+              msgSuccess$1("新建成功");
               handleGetPlayList();
               setName("");
               setCreateModalVisible(false);
@@ -19635,7 +19732,7 @@ jsxRuntimeExports.jsx(
           try {
             const res2 = await createPlaylist(artistName2);
             if (res2.code === 200) {
-              msgSuccess(`成功创建歌单"${artistName2}"`);
+              msgSuccess$1(`成功创建歌单"${artistName2}"`);
               handleGetPlayList();
               setCreateModalVisible(false);
             } else {
@@ -19659,7 +19756,7 @@ jsxRuntimeExports.jsx(DeleteConfirmContent, { playlists: selectedRows }),
             const proArr = selectedRows.map((item) => deletePlaylist(item.id));
             const res2 = await Promise.all(proArr);
             console.log("res", res2);
-            msgSuccess("删除成功");
+            msgSuccess$1("删除成功");
             handleGetPlayList();
             setSelectedRows([]);
           } catch (error) {
@@ -20226,7 +20323,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
               }
             }
             setSelectedRows([]);
-            msgSuccess("添加成功");
+            msgSuccess$1("添加成功");
           } catch (error) {
             console.log("error", error);
           } finally {
@@ -20274,7 +20371,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
             console.log("res", res);
             if (res.code === 200) {
               setSelectedRows([]);
-              msgSuccess("添加成功");
+              msgSuccess$1("添加成功");
             }
             if (autoSort) {
               await sortSongListByListId(playlist.id);
@@ -20300,7 +20397,7 @@ jsxRuntimeExports.jsx(AutoAddContent, { totalSongs, albums }),
             const res = await deleteCloudSong(songIds);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("删除成功");
+              msgSuccess$1("删除成功");
               reset();
               getCloudDataList();
             }
@@ -20501,7 +20598,7 @@ jsxRuntimeExports.jsx(PlayList$3, { ref: playListRef })
         const handleCopy = () => {
           const text2 = albums.map(([name2, songs2]) => `${name2}（${songs2.length}首）`).join("\n");
           navigator.clipboard.writeText(text2).then(() => {
-            message.success("复制成功");
+            message$1.success("复制成功");
           });
         };
         return jsxRuntimeExports.jsxs("div", { className: styles$b.autoAddContent, children: [
@@ -20570,6 +20667,20 @@ jsxRuntimeExports.jsx("span", { className: styles$b.icon, children: "!" }),
         const { song, album: album2, artist: artist2 } = simpleSong.privilege?.pc || {};
         return { song, album: album2, artist: artist2 };
       };
+      const EmotionDecode = forwardRef((props, ref) => {
+        const { visible, close } = useVisible({}, ref);
+        return jsxRuntimeExports.jsx(
+          Modal,
+          {
+            title: "情感解码",
+            open: visible,
+            onCancel: close,
+            width: 800,
+            footer: null,
+            centered: true
+          }
+        );
+      });
       const { Link, Text: Text$2 } = Typography;
       const GITHUB_CONFIG = {
         owner: "520Qiuyu",
@@ -20820,7 +20931,7 @@ jsxRuntimeExports.jsx(
             });
             const res = await promiseLimit(uploadPromises, concurrency);
             console.log("res", res);
-            msgSuccess("上传成功");
+            msgSuccess$1("上传成功");
             const size2 = res.filter(Boolean).reduce((acc, file) => acc + file.size, 0);
             const info2 = {
               list: res.filter(Boolean),
@@ -21299,15 +21410,15 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
             }
             const res = await neteaseMusicToCloud([record.id], {
               onChange: (progress) => {
-                message.loading({
+                message$1.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message.destroy(uploadMessageKey2);
-                msgSuccess(
+                message$1.destroy(uploadMessageKey2);
+                msgSuccess$1(
                   `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
@@ -21316,7 +21427,7 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
             console.log("error", error);
             msgError(`歌曲转存云盘失败: ${error.message}`);
           } finally {
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           }
         };
         const columns = [
@@ -21634,26 +21745,26 @@ jsxRuntimeExports.jsx(
               filteredSongList.map((song) => song.id),
               {
                 onChange: (progress) => {
-                  message.loading({
+                  message$1.loading({
                     content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                     key: uploadMessageKey2,
                     duration: 0
                   });
                 },
                 onComplete: (result) => {
-                  message.destroy(uploadMessageKey2);
-                  msgSuccess(
+                  message$1.destroy(uploadMessageKey2);
+                  msgSuccess$1(
                     `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                   );
                 }
               }
             );
-            msgSuccess(`歌曲转存云盘完成`);
+            msgSuccess$1(`歌曲转存云盘完成`);
           } catch (error) {
             console.error("转存云盘全部失败:", error);
             msgError(`歌曲转存云盘失败: ${error.message}`);
           } finally {
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           }
         };
         const renderFooter = () => {
@@ -21857,7 +21968,7 @@ jsxRuntimeExports.jsx(
             const res = await deletePlaylist(record.id);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("删除歌单成功");
+              msgSuccess$1("删除歌单成功");
               getPlayListData();
             } else {
               msgError(`删除歌单失败: ${res.message}`);
@@ -21872,7 +21983,7 @@ jsxRuntimeExports.jsx(
           try {
             const songs2 = await getSongListData(record.id);
             await downloadSongList(songs2);
-            msgSuccess("下载歌单成功");
+            msgSuccess$1("下载歌单成功");
           } catch (error) {
             console.log("error", error);
             msgError(`下载歌单失败: ${error.message}`);
@@ -22376,7 +22487,7 @@ dt: formatDuration$1(0),
             setSongList(songList22);
           } catch (error) {
             console.log("error", error);
-            message.error("获取歌曲信息失败", error.message);
+            message$1.error("获取歌曲信息失败", error.message);
           } finally {
             setLoading(false);
           }
@@ -22429,7 +22540,7 @@ dt: formatDuration$1(0),
               });
             });
             const res = await uploadSong(record);
-            msgSuccess("上传成功");
+            msgSuccess$1("上传成功");
             getSongList(singerList);
           } catch (error) {
             console.log("error", error);
@@ -22599,7 +22710,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
                 successCount++;
                 song.uploaded = true;
                 setUploadedSongList((list) => [...list, song]);
-                message.loading({
+                message$1.loading({
                   content: `第${successCount}首歌曲上传完成: ${song.name}。共${songs2.length}首, 已上传${successCount}首, 上传失败${failedCount}首`,
                   key: uploadMessageKey,
                   color: "green",
@@ -22610,7 +22721,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
                 song.uploaded = true;
                 setUploadFailedSongList((list) => [...list, song]);
                 failedCount++;
-                message.loading({
+                message$1.loading({
                   content: `第${failedCount}首歌曲上传失败: ${song.name}。共${songs2.length}首, 已上传${successCount}首, 上传失败${failedCount}首`,
                   color: "red",
                   key: uploadMessageKey,
@@ -22621,13 +22732,13 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
             });
             await promiseLimit(tasks, concurrency || 6);
             getSongList(singerList);
-            msgSuccess(`上传完成: 成功${successCount}首，失败${failedCount}首`);
+            msgSuccess$1(`上传完成: 成功${successCount}首，失败${failedCount}首`);
           } catch (error) {
             console.log("error", error);
             msgError(`上传失败: ${error.message}`);
           } finally {
             setUploading(false);
-            message.destroy(uploadMessageKey);
+            message$1.destroy(uploadMessageKey);
           }
         };
         const handleUploadAll = async () => {
@@ -22659,7 +22770,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
             });
             let index2 = 1;
             for (const album2 of albumList) {
-              msgSuccess(
+              msgSuccess$1(
                 `当前正在上传第${index2}/${albumList.length}专辑，开始上传专辑: ${album2[0].album}`
               );
               console.log(
@@ -22928,15 +23039,15 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
           try {
             const res = await neteaseMusicToCloud([record.id], {
               onChange: (progress) => {
-                message.loading({
+                message$1.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message.destroy(uploadMessageKey2);
-                msgSuccess(
+                message$1.destroy(uploadMessageKey2);
+                msgSuccess$1(
                   `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
@@ -22945,7 +23056,7 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             console.log("error", error);
             msgError(`歌曲转存云盘失败: ${error.message}`);
           } finally {
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           }
         };
         const columns = [
@@ -23294,7 +23405,7 @@ jsxRuntimeExports.jsx("div", { className: styles$2["id"], title: String(id2 || "
             const hide = msgLoading(`正在加载《${record.name}》...`);
             await playAlbum(record.id);
             hide();
-            msgSuccess(`《${record.name}》开始播放`);
+            msgSuccess$1(`《${record.name}》开始播放`);
           } catch (error) {
             console.error("播放失败:", error);
           } finally {
@@ -23308,7 +23419,7 @@ jsxRuntimeExports.jsx("div", { className: styles$2["id"], title: String(id2 || "
             const hide = msgLoading(`正在准备下载《${record.name}》...`);
             await downloadAlbumSong(record.id);
             hide();
-            msgSuccess(`《${record.name}》下载成功！`);
+            msgSuccess$1(`《${record.name}》下载成功！`);
           } catch (error) {
             console.error("下载失败:", error);
           } finally {
@@ -23320,7 +23431,7 @@ jsxRuntimeExports.jsx("div", { className: styles$2["id"], title: String(id2 || "
             const hide = msgLoading(`正在准备下载《${record.name}》...`);
             await getDownLoadJson(record.id);
             hide();
-            msgSuccess(`《${record.name}》下载成功！`);
+            msgSuccess$1(`《${record.name}》下载成功！`);
           } catch (error) {
             msgError("下载JSON失败: " + (error?.message || error));
           }
@@ -23341,7 +23452,7 @@ jsxRuntimeExports.jsx("div", { className: styles$2["id"], title: String(id2 || "
               await neteaseMusicToCloud(songIds, {
                 onChange: (progress) => {
                   console.log("progress", progress);
-                  message.loading({
+                  message$1.loading({
                     content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                     key: uploadMessageKey2,
                     duration: 0
@@ -23349,8 +23460,8 @@ jsxRuntimeExports.jsx("div", { className: styles$2["id"], title: String(id2 || "
                 },
                 onComplete: (result) => {
                   console.log("result", result);
-                  message.destroy(uploadMessageKey2);
-                  msgSuccess(
+                  message$1.destroy(uploadMessageKey2);
+                  msgSuccess$1(
                     `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                   );
                 }
@@ -23359,7 +23470,7 @@ jsxRuntimeExports.jsx("div", { className: styles$2["id"], title: String(id2 || "
           } catch (error) {
             console.log("error", error);
           } finally {
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           }
         };
         const columns = [
@@ -23763,7 +23874,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             setPlayingAlbumId(record.id);
             hide = msgLoading(`正在加载《${record.name}》...`);
             await playAlbum(record.id);
-            msgSuccess(`《${record.name}》开始播放`);
+            msgSuccess$1(`《${record.name}》开始播放`);
           } catch (error) {
             console.error("播放失败:", error);
             msgError(`播放失败: ${error?.message || error}`);
@@ -23778,7 +23889,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             setDownloadingAlbumId(record.id);
             hide = msgLoading(`正在准备下载《${record.name}》...`);
             await downloadAlbumSong(record.id);
-            msgSuccess(`《${record.name}》下载成功`);
+            msgSuccess$1(`《${record.name}》下载成功`);
           } catch (error) {
             console.error("下载失败:", error);
             msgError(`下载失败: ${error?.message || error}`);
@@ -23791,7 +23902,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           try {
             console.log(`当前转存专辑《${record.name}》到云盘`);
             await albumToCloud(record.id);
-            msgSuccess(`《${record.name}》转存云盘成功`);
+            msgSuccess$1(`《${record.name}》转存云盘成功`);
           } catch (error) {
             console.log("error", error);
             msgError(`转存云盘失败: ${error?.message || error}`);
@@ -23817,7 +23928,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
               },
               `${record.name}-专辑`
             );
-            msgSuccess(`《${record.name}》JSON下载完成`);
+            msgSuccess$1(`《${record.name}》JSON下载完成`);
           } catch (error) {
             console.error("下载JSON失败:", error);
             msgError(`下载JSON失败: ${error?.message || error}`);
@@ -23840,7 +23951,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             for (const album2 of selectedRows) {
               await downloadAlbumSong(album2.id);
             }
-            msgSuccess(`成功下载 ${selectedRows.length} 张专辑`);
+            msgSuccess$1(`成功下载 ${selectedRows.length} 张专辑`);
           } catch (error) {
             console.error("批量下载专辑失败:", error);
             msgError(`批量下载失败: ${error?.message || error}`);
@@ -23857,7 +23968,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           const key = `album-json-${Date.now()}`;
           try {
             setDownloadingBatchJson(true);
-            message.loading({
+            message$1.loading({
               content: `正在导出 ${selectedRows.length} 张专辑的JSON，请稍候...`,
               key,
               duration: 0
@@ -23878,13 +23989,13 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
               });
             }
             downloadAsJson(result, `${singerInfo?.singerName || "歌手"}-专辑合集`);
-            message.success({
+            message$1.success({
               content: `成功导出 ${selectedRows.length} 张专辑`,
               key
             });
           } catch (error) {
             console.error("批量导出JSON失败:", error);
-            message.error({
+            message$1.error({
               content: `批量导出失败: ${error?.message || error}`,
               key
             });
@@ -23898,7 +24009,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             return;
           }
           const uploadMessageKey2 = "album-to-cloud-batch";
-          message.loading({
+          message$1.loading({
             content: `正在准备转存 ${selectedRows.length} 张专辑到云盘，请稍候...`,
             key: uploadMessageKey2,
             duration: 0
@@ -23906,7 +24017,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           try {
             let index2 = 1;
             for (const album2 of selectedRows) {
-              message.loading({
+              message$1.loading({
                 content: `正在转存第${index2}/${selectedRows.length}张专辑《${album2.name}》到云盘，请稍候...`,
                 key: uploadMessageKey2,
                 duration: 0
@@ -23914,21 +24025,21 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
               await albumToCloud(album2.id);
               index2++;
             }
-            message.success({
+            message$1.success({
               content: `成功转存 ${selectedRows.length} 张专辑`,
               key: uploadMessageKey2,
               duration: 3e3
             });
           } catch (error) {
             console.error("批量转存失败:", error);
-            message.error({
+            message$1.error({
               content: `批量转存失败: ${error?.message || error}`,
               key: uploadMessageKey2,
               duration: 3e3
             });
             msgError(`批量转存失败: ${error?.message || error}`);
           } finally {
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           }
         };
         const handleSelectAll = () => {
@@ -24516,7 +24627,7 @@ jsxRuntimeExports.jsx(
             const res = await getAlbumSongList(albumId);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("获取专辑歌曲列表成功,请打开控制台查看！");
+              msgSuccess$1("获取专辑歌曲列表成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -24528,7 +24639,7 @@ jsxRuntimeExports.jsx(
             const res = await getAlbumDetail(albumId);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("获取专辑详情成功,请打开控制台查看！");
+              msgSuccess$1("获取专辑详情成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -24546,7 +24657,7 @@ jsxRuntimeExports.jsx(
               await neteaseMusicToCloud(songIds, {
                 onChange: (progress) => {
                   console.log("progress", progress);
-                  message.loading({
+                  message$1.loading({
                     content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                     key: uploadMessageKey2,
                     duration: 0
@@ -24554,8 +24665,8 @@ jsxRuntimeExports.jsx(
                 },
                 onComplete: (result) => {
                   console.log("result", result);
-                  message.destroy(uploadMessageKey2);
-                  msgSuccess(
+                  message$1.destroy(uploadMessageKey2);
+                  msgSuccess$1(
                     `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                   );
                 }
@@ -24564,7 +24675,7 @@ jsxRuntimeExports.jsx(
           } catch (error) {
             console.log("error", error);
           } finally {
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           }
         };
         return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取专辑歌曲列表", children: jsxRuntimeExports.jsxs(Space, { children: [
@@ -24590,7 +24701,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const res = await getArtistTopSongList(artistId);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("获取歌手热门歌曲列表成功,请打开控制台查看！");
+              msgSuccess$1("获取歌手热门歌曲列表成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -24602,7 +24713,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const res = await getArtistAlbumList(artistId);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("获取歌手专辑成功,请打开控制台查看！");
+              msgSuccess$1("获取歌手专辑成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -24632,7 +24743,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const res = await getArtistAllSongList(artistId);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("获取歌手全部歌曲成功,请打开控制台查看！");
+              msgSuccess$1("获取歌手全部歌曲成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -24648,22 +24759,22 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             }
             const songs2 = songRes.songs;
             const songIds = songs2.map((song) => song.id);
-            message.loading({
+            message$1.loading({
               content: "开始上传歌手全部歌曲到云盘，请稍候...",
               key: uploadMessageKey2,
               duration: 0
             });
             const res = await neteaseMusicToCloud(songIds, {
               onChange: (progress) => {
-                message.loading({
+                message$1.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message.destroy(uploadMessageKey2);
-                msgSuccess(
+                message$1.destroy(uploadMessageKey2);
+                msgSuccess$1(
                   `歌手全部歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
@@ -24671,9 +24782,9 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           } finally {
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           }
         };
         return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取歌手歌曲列表", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
@@ -24954,11 +25065,11 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             if (flacTagName === "all") {
               const res = await readAllFlacTag(flacFile);
               setFlacTags(res);
-              msgSuccess("读取所有标签成功，请查看下方信息");
+              msgSuccess$1("读取所有标签成功，请查看下方信息");
               console.log("res", res);
             } else {
               const res = await readFlacTag(flacFile, flacTagName);
-              msgSuccess(`读取标签 ${FLAC_TAGS[flacTagName]} 成功: ${res || "无值"}`);
+              msgSuccess$1(`读取标签 ${FLAC_TAGS[flacTagName]} 成功: ${res || "无值"}`);
               console.log("res", res);
             }
           } catch (error) {
@@ -24974,7 +25085,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const res = await writeFlacTag(flacFile, flacTagName, flacTagValue);
             console.log("res", res);
             setFlacFile(res);
-            msgSuccess("写入标签成功");
+            msgSuccess$1("写入标签成功");
           } catch (error) {
             console.log("error", error);
             msgError("写入标签失败");
@@ -24987,7 +25098,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const res = await embedFlacPicture(flacFile, flacPicture);
             console.log("res", res);
             setFlacFile(res);
-            msgSuccess("嵌入图片成功");
+            msgSuccess$1("嵌入图片成功");
           } catch (error) {
             console.log("error", error);
             msgError("嵌入图片失败");
@@ -24997,7 +25108,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
           try {
             if (!flacFile) return msgError("请选择文件");
             downloadFileWithBlob(flacFile, "test.flac");
-            msgSuccess("文件下载成功");
+            msgSuccess$1("文件下载成功");
           } catch (error) {
             console.log("error", error);
             msgError("文件下载失败");
@@ -25198,7 +25309,7 @@ jsxRuntimeExports.jsx(Form.Item, { label: "文件操作", children: jsxRuntimeEx
             const res = await getUserAccount();
             console.log("res", res);
             if (res.code !== 200) return msgError("获取用户信息失败");
-            msgSuccess("获取用户信息成功,请打开控制台查看！");
+            msgSuccess$1("获取用户信息成功,请打开控制台查看！");
           } catch (error) {
             console.log("error", error);
           }
@@ -25238,7 +25349,7 @@ jsxRuntimeExports.jsx(Form.Item, { label: "文件操作", children: jsxRuntimeEx
         const handleCopyUserCookie = async () => {
           try {
             await copy(document.cookie);
-            msgSuccess("复制成功");
+            msgSuccess$1("复制成功");
           } catch (error) {
             console.log("error", error);
             msgError("复制失败");
@@ -25312,7 +25423,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCopyUserCookie
           try {
             const songs2 = await getPlaylistAllData(playlistId);
             console.log("songs", songs2);
-            msgSuccess(
+            msgSuccess$1(
               "获取歌单信息成功, 共" + songs2.length + "首歌曲, 请打开控制台查看。"
             );
           } catch (error) {
@@ -25325,23 +25436,23 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCopyUserCookie
           try {
             const songs2 = await getPlaylistAllData(playlistId);
             const songIds = songs2.map((song) => song.id);
-            message.loading({
+            message$1.loading({
               content: "开始上传歌单歌曲到云盘，请稍候...",
               key: uploadMessageKey2,
               duration: 0
             });
             const res = await neteaseMusicToCloud(songIds, {
               onChange: (progress) => {
-                message.loading({
+                message$1.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message.destroy(uploadMessageKey2);
+                message$1.destroy(uploadMessageKey2);
                 console.log("result", result);
-                msgSuccess(
+                msgSuccess$1(
                   `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
               }
@@ -25349,9 +25460,9 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCopyUserCookie
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           } finally {
-            message.destroy(uploadMessageKey2);
+            message$1.destroy(uploadMessageKey2);
           }
         };
         const [sorterRuleValue, setSorterRuleValue] = useState(
@@ -25384,7 +25495,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCopyUserCookie
             );
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("按专辑排序、演唱会靠后成功");
+              msgSuccess$1("按专辑排序、演唱会靠后成功");
             } else {
               msgError(res.message || "按专辑排序、演唱会靠后失败");
             }
@@ -25475,7 +25586,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleUpdateSongOrde
             const res = await search(searchKeyword, { type: searchType });
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("搜索成功,请打开控制台查看！");
+              msgSuccess$1("搜索成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -25486,7 +25597,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleUpdateSongOrde
             const res = await cloudSearch(searchKeyword, { type: searchType });
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("搜索成功,请打开控制台查看！");
+              msgSuccess$1("搜索成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -25498,7 +25609,7 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleUpdateSongOrde
             const res = await searchArtist(searchValue);
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("搜索成功,请打开控制台查看！");
+              msgSuccess$1("搜索成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -25652,7 +25763,7 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             if (res.code === 200) {
               const url = res.data[0].url;
               await navigator.clipboard.writeText(url);
-              msgSuccess("获取成功,已复制到剪切板");
+              msgSuccess$1("获取成功,已复制到剪切板");
             }
           } catch (error) {
             console.log("error", error);
@@ -25664,7 +25775,7 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             const res = await getSongInfoList(songId.split(","));
             console.log("res", res);
             if (res.code === 200) {
-              msgSuccess("获取成功,请打开控制台查看！");
+              msgSuccess$1("获取成功,请打开控制台查看！");
             }
           } catch (error) {
             console.log("error", error);
@@ -25695,9 +25806,17 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             console.log("error", error);
           }
         };
+        const handleGetSongComment1 = async () => {
+          try {
+            const res = await getSongComment1(songId.split(",")[0]);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
         const handleGetSongAllComments = async () => {
           const loadingMessageKey = "get-song-all-comments";
-          message.loading({
+          message$1.loading({
             content: "开始获取歌曲所有评论，请稍候...",
             key: loadingMessageKey,
             duration: 0
@@ -25705,9 +25824,9 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
           try {
             const res = await getSongAllComments(songId.split(",")[0], {
               onChange: (progress) => {
-                const { page, totalPage, comments, allComments } = progress;
-                message.loading({
-                  content: `当前正在获取第${page}/${totalPage}页评论，已获取${comments.length}条评论，共${allComments.length}条评论`,
+                const { page, totalPage, total, allComments } = progress;
+                message$1.loading({
+                  content: `当前正在获取第${page}/${totalPage}页评论，已获取${allComments.length}条评论，共${total}条评论`,
                   key: loadingMessageKey,
                   duration: 0
                 });
@@ -25717,11 +25836,29 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
           } catch (error) {
             console.log("error", error);
           } finally {
-            message.loading({
-              content: "获取歌曲所有评论完成，请稍候...",
-              key: loadingMessageKey,
-              duration: 4e3
+            message$1.destroy(loadingMessageKey);
+            message$1.success({
+              content: "获取歌曲所有评论完成。",
+              duration: 3e3
             });
+          }
+        };
+        const handleListenSongCheckIn = async () => {
+          try {
+            const songRes = await getSongInfoList(songId.split(","));
+            if (songRes.code !== 200) {
+              return msgError("获取歌曲信息失败");
+            }
+            const songInfo2 = songRes.songs[0];
+            const { id: id2, al, dt } = songInfo2;
+            const res = await listenSongCheckIn$1({
+              id: id2,
+              time: Math.floor(dt / 1e3)
+            });
+            console.log("res", res);
+          } catch (error) {
+            console.error("听歌打卡失败:", error);
+            msgError(error.message || "听歌打卡失败");
           }
         };
         return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取歌曲信息", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
@@ -25739,7 +25876,9 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongInfo, c
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongComment, children: "获取歌曲评论" }),
-jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongAllComments, children: "获取歌曲所有评论" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongComment1, children: "获取歌曲评论1" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongAllComments, children: "获取歌曲所有评论" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleListenSongCheckIn, children: "听歌打卡" })
         ] }) }) });
       };
       const { Text } = Typography;
@@ -25775,13 +25914,42 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongAllComm
               ...pagination,
               total: commentList.length
             });
-            msgSuccess(`获取成功，共 ${commentList.length} 条评论`);
+            msgSuccess$1(`获取成功，共 ${commentList.length} 条评论`);
             console.log("用户历史评论:", commentList);
           } catch (error) {
             console.error("获取用户历史评论失败:", error);
             msgError(error.message || "获取用户历史评论失败");
           } finally {
             setLoading(false);
+          }
+        };
+        const handleGetUserDetail = async () => {
+          try {
+            const values = await form.validateFields();
+            const { uid } = values;
+            if (!uid) {
+              return msgError("请输入用户ID");
+            }
+            const userDetail = await getUserDetail(uid);
+            console.log("userDetail", userDetail);
+          } catch (error) {
+            console.error("获取用户详情失败:", error);
+            msgError(error.message || "获取用户详情失败");
+          }
+        };
+        const handleGetUserSubCount = async () => {
+          try {
+            const values = await form.validateFields();
+            const { uid } = values;
+            if (!uid) {
+              return msgError("请输入用户ID");
+            }
+            const userSubCount = await getUserSubCount(uid);
+            console.log("userSubCount", userSubCount);
+            msgSuccess$1("获取用户云盘数据成功");
+          } catch (error) {
+            console.error("获取用户云盘数据失败:", error);
+            msgError(error.message || "获取用户云盘数据失败");
           }
         };
         const formatTime = (time) => {
@@ -25844,6 +26012,26 @@ jsxRuntimeExports.jsx(Form.Item, { children: jsxRuntimeExports.jsx(
                 onClick: handleGetUserHistoryComment,
                 loading,
                 children: "获取历史评论"
+              }
+            ) }),
+jsxRuntimeExports.jsx(Form.Item, { children: jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                type: "primary",
+                icon: jsxRuntimeExports.jsx(UserOutlined, {}),
+                onClick: handleGetUserDetail,
+                loading,
+                children: "获取用户详情"
+              }
+            ) }),
+jsxRuntimeExports.jsx(Form.Item, { children: jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                type: "primary",
+                icon: jsxRuntimeExports.jsx(DatabaseOutlined, {}),
+                onClick: handleGetUserSubCount,
+                loading,
+                children: "获取用户云盘数据"
               }
             ) })
           ] }),
@@ -26073,7 +26261,8 @@ jsxRuntimeExports.jsx(
           enableSearch,
           enableCloudImport,
           enableGithubInfo,
-          enableTestModal
+          enableTestModal,
+          enableEmotionDecode
         } = functionConfig;
         const quickUploadRef = useRef(null);
         const handleQuickUpload = () => {
@@ -26098,6 +26287,10 @@ jsxRuntimeExports.jsx(
         const cloudImportRef = useRef(null);
         const handleImport = () => {
           cloudImportRef.current.open();
+        };
+        const emotionDecodeRef = useRef(null);
+        const handleEmotionDecode = () => {
+          emotionDecodeRef.current.open();
         };
         const testModalRef = useRef(null);
         const handleTestModal = () => {
@@ -26162,6 +26355,15 @@ jsxRuntimeExports.jsx(
               className: styles["button"]
             }
           ) }),
+          enableEmotionDecode && jsxRuntimeExports.jsx(Tooltip, { title: "情感解码", placement: "left", children: jsxRuntimeExports.jsx(
+            Button,
+            {
+              type: "primary",
+              icon: jsxRuntimeExports.jsx(HeartOutlined, {}),
+              onClick: handleEmotionDecode,
+              className: styles["button"]
+            }
+          ) }),
           enableTestModal && jsxRuntimeExports.jsx(Tooltip, { title: "testModal", placement: "left", children: jsxRuntimeExports.jsx(
             Button,
             {
@@ -26187,7 +26389,8 @@ jsxRuntimeExports.jsx(CloudImport, { ref: cloudImportRef }),
 jsxRuntimeExports.jsx(PlayList$1, { ref: playListRef }),
 jsxRuntimeExports.jsx(Search, { ref: searchRef }),
 jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef }),
-jsxRuntimeExports.jsx(TestModal, { ref: testModalRef })
+jsxRuntimeExports.jsx(TestModal, { ref: testModalRef }),
+jsxRuntimeExports.jsx(EmotionDecode, { ref: emotionDecodeRef })
         ] });
       };
       function App() {
@@ -26739,7 +26942,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-Ceorqgt8-7JW4YLzM.js", ['./__monkey.entry-CepBC9P1.js', './AbstractID3Parser-Diz05izq-Df5nq59-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js'], (function (exports, module) {
+System.register("./MpegParser-CXKdzgAo-wa8iYcN6.js", ['./__monkey.entry-D9bb3Zzj.js', './AbstractID3Parser-BZ7BZt8n-CJkCoq_z.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BtcCfW8F-Cps1iZ_H.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -27334,7 +27537,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-DtEP4Ogj-Cd-hHGZD.js", ['./__monkey.entry-CepBC9P1.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-BZAWSLuP-Dh2eSqfI.js", ['./__monkey.entry-D9bb3Zzj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -27841,7 +28044,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-BmEdN8PI-B4O_wTjp.js", ['./__monkey.entry-CepBC9P1.js', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-q9eB0eM--CYLsSRx_.js", ['./__monkey.entry-D9bb3Zzj.js', './ID3v2Parser-BtcCfW8F-Cps1iZ_H.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -28015,7 +28218,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-ChYK9u8C-BQ7r8YWY.js", ['./__monkey.entry-CepBC9P1.js', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-fkTjw8_S-MptB7JzP.js", ['./__monkey.entry-D9bb3Zzj.js', './ID3v2Parser-BtcCfW8F-Cps1iZ_H.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -28186,7 +28389,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-C6r1wPR3-CSFkOCNU.js", ['./__monkey.entry-CepBC9P1.js', './AbstractID3Parser-Diz05izq-Df5nq59-.js', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-D4GXItUW-DCZ-OAor.js", ['./__monkey.entry-D9bb3Zzj.js', './AbstractID3Parser-BZ7BZt8n-CJkCoq_z.js', './ID3v2Parser-BtcCfW8F-Cps1iZ_H.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -28284,7 +28487,7 @@ System.register("./DsfParser-C6r1wPR3-CSFkOCNU.js", ['./__monkey.entry-CepBC9P1.
   };
 }));
 
-System.register("./FlacParser-BT-8sTbX-D9zhFB-7.js", ['./__monkey.entry-CepBC9P1.js', './VorbisParser-D2PJQAg3-CluZQHD3.js', './AbstractID3Parser-Diz05izq-Df5nq59-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js'], (function (exports, module) {
+System.register("./FlacParser-BMrisM8_-B2YIInKL.js", ['./__monkey.entry-D9bb3Zzj.js', './VorbisParser-CGNNfYKV-C2ThgHfZ.js', './AbstractID3Parser-BZ7BZt8n-CJkCoq_z.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BtcCfW8F-Cps1iZ_H.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -28436,7 +28639,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-DN3BbbAH-BrckLSU7.js", ['./__monkey.entry-CepBC9P1.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-Bd-_pLzx-kJcibCN_.js", ['./__monkey.entry-D9bb3Zzj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -29043,7 +29246,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-D1otc9iq-BoK7s2DE.js", ['./__monkey.entry-CepBC9P1.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-fpGeHQmL-uEX_-Wmz.js", ['./__monkey.entry-D9bb3Zzj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -29874,7 +30077,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-DIgbZPny-BWqDQY30.js", ['./__monkey.entry-CepBC9P1.js', './AbstractID3Parser-Diz05izq-Df5nq59-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js'], (function (exports, module) {
+System.register("./MusepackParser-DQ3rvKtw-BnSirBPK.js", ['./__monkey.entry-D9bb3Zzj.js', './AbstractID3Parser-BZ7BZt8n-CJkCoq_z.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BtcCfW8F-Cps1iZ_H.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -30151,7 +30354,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-Diz05izq-Df5nq59-.js", ['./__monkey.entry-CepBC9P1.js', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-BZ7BZt8n-CJkCoq_z.js", ['./__monkey.entry-D9bb3Zzj.js', './ID3v2Parser-BtcCfW8F-Cps1iZ_H.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -30215,7 +30418,7 @@ System.register("./AbstractID3Parser-Diz05izq-Df5nq59-.js", ['./__monkey.entry-C
   };
 }));
 
-System.register("./OggParser-MF31Tp0z-CXVF1lnd.js", ['./__monkey.entry-CepBC9P1.js', './VorbisParser-D2PJQAg3-CluZQHD3.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-CLbKVIG5-wKtAO6H0.js", ['./__monkey.entry-D9bb3Zzj.js', './VorbisParser-CGNNfYKV-C2ThgHfZ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -30490,7 +30693,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-D2PJQAg3-CluZQHD3.js", ['./__monkey.entry-CepBC9P1.js'], (function (exports, module) {
+System.register("./VorbisParser-CGNNfYKV-C2ThgHfZ.js", ['./__monkey.entry-D9bb3Zzj.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -30706,7 +30909,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-B8Pist6I-DiopNX5C.js", ['./__monkey.entry-CepBC9P1.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-Bq4HkjWa-CM3TQWuC.js", ['./__monkey.entry-D9bb3Zzj.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -30886,7 +31089,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-DA1ktbjC-D6xHXrkr.js", ['./__monkey.entry-CepBC9P1.js', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-BNrEn-4O-DvZdi2Lu.js", ['./__monkey.entry-D9bb3Zzj.js', './ID3v2Parser-BtcCfW8F-Cps1iZ_H.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -31159,7 +31362,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-wLqSC0lb-SlHEsEaG.js", ['./__monkey.entry-CepBC9P1.js'], (function (exports, module) {
+System.register("./ID3v2Parser-BtcCfW8F-Cps1iZ_H.js", ['./__monkey.entry-D9bb3Zzj.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
