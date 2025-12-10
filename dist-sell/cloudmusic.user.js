@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-CifuCCzm.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-CepBC9P1.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,9 +44,9 @@ System.register("./__entry.js", ['./__monkey.entry-CifuCCzm.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-CifuCCzm.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-CepBC9P1.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Form, Pagination, ConfigProvider, Select, Checkbox, Avatar, Tooltip, Empty, Card, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, UserOutlined, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined, CloudOutlined;
+  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Form, Pagination, ConfigProvider, Select, Checkbox, Avatar, Tooltip, Empty, List, Card, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, UserOutlined, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, CommentOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined, CloudOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
@@ -82,6 +82,7 @@ System.register("./__monkey.entry-CifuCCzm.js", ['react', 'antd', 'react-dom', '
       Avatar = module.Avatar;
       Tooltip = module.Tooltip;
       Empty = module.Empty;
+      List = module.List;
       Card = module.Card;
       Switch = module.Switch;
       TimePicker = module.TimePicker;
@@ -112,6 +113,7 @@ System.register("./__monkey.entry-CifuCCzm.js", ['react', 'antd', 'react-dom', '
       FileOutlined = module.FileOutlined;
       SortAscendingOutlined = module.SortAscendingOutlined;
       DeleteOutlined = module.DeleteOutlined;
+      CommentOutlined = module.CommentOutlined;
       PictureOutlined = module.PictureOutlined;
       CheckOutlined = module.CheckOutlined;
       CustomerServiceOutlined = module.CustomerServiceOutlined;
@@ -7377,7 +7379,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-BvrvvOB9-1PkI99K9.js');
+            const { MpegParser } = await module.import('./MpegParser-Ceorqgt8-7JW4YLzM.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7399,7 +7401,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-DoepyWuY-PZ1xOxKu.js');
+            const { AsfParser } = await module.import('./AsfParser-DtEP4Ogj-Cd-hHGZD.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7410,7 +7412,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-BbjmZajX-Dk-fRbcV.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-BmEdN8PI-B4O_wTjp.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7421,7 +7423,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-D-GCYzzC-D30L3upQ.js');
+            const { AIFFParser } = await module.import('./AiffParser-ChYK9u8C-BQ7r8YWY.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7432,7 +7434,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-BduQKFgt-aEM9vF1M.js');
+            const { DsfParser } = await module.import('./DsfParser-C6r1wPR3-CSFkOCNU.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7443,7 +7445,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-CxI_S9Gb-DATWDdBo.js');
+            const { FlacParser } = await module.import('./FlacParser-BT-8sTbX-D9zhFB-7.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7454,7 +7456,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-Chcrrfj7-D1S7YyGd.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-DN3BbbAH-BrckLSU7.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7465,7 +7467,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-BMrBUFrt-MeebsdEH.js');
+            const { MP4Parser } = await module.import('./MP4Parser-D1otc9iq-BoK7s2DE.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7476,7 +7478,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-DCcRatrU-B0kepElR.js');
+            const { MusepackParser } = await module.import('./MusepackParser-DIgbZPny-BWqDQY30.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7487,7 +7489,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-CtVpQlc5-zEr_DlV-.js');
+            const { OggParser } = await module.import('./OggParser-MF31Tp0z-CXVF1lnd.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7498,7 +7500,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-XXXQd4vA-CFLQ5PpK.js');
+            const { WavPackParser } = await module.import('./WavPackParser-B8Pist6I-DiopNX5C.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7509,7 +7511,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-Cmj-bViL-DUkVevpV.js');
+            const { WaveParser } = await module.import('./WaveParser-DA1ktbjC-D6xHXrkr.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -8410,6 +8412,118 @@ track: UINT8.get(buf, off2 + 126),
           });
         });
       };
+      const downloadJsonFile = (data, filename) => {
+        const blob = new Blob([JSON.stringify(data, null, 2)], {
+          type: "application/json"
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        link.click();
+        URL.revokeObjectURL(url);
+      };
+      const downloadFile = async (url, filename) => {
+        try {
+          if (!url || !filename) {
+            throw new Error("URL和文件名不能为空");
+          }
+          const link = document.createElement("a");
+          link.href = url.replace("http://", "https://");
+          link.download = filename;
+          link.style.display = "none";
+          link.style.position = "absolute";
+          link.style.left = "-9999px";
+          const handleClick = (e) => {
+            e.stopPropagation();
+          };
+          link.addEventListener("click", handleClick, true);
+          link.click();
+          setTimeout(() => {
+            link.removeEventListener("click", handleClick);
+          }, 100);
+        } catch (error) {
+          console.error("文件下载出错:", error);
+          throw error;
+        }
+      };
+      const getFileBlob = async (url) => {
+        const response = await fetch(url, {
+          redirect: "follow"
+        });
+        if (!response.ok) {
+          throw new Error(`获取文件失败: ${response.status} ${response.statusText}`);
+        }
+        const blob = await response.blob();
+        return { blob, response };
+      };
+      const downloadAsJson = (data, filename, options = {}) => {
+        try {
+          const { space = 2, timestamp = false } = options;
+          const jsonString = JSON.stringify(data, null, space);
+          const blob = new Blob([jsonString], { type: "application/json" });
+          const blobUrl = window.URL.createObjectURL(blob);
+          let finalFilename = filename;
+          if (timestamp) {
+            const date = new Date();
+            const timeString = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(
+        date.getDate()
+      ).padStart(2, "0")}_${String(date.getHours()).padStart(2, "0")}${String(
+        date.getMinutes()
+      ).padStart(2, "0")}${String(date.getSeconds()).padStart(2, "0")}`;
+            finalFilename = `${filename}_${timeString}`;
+          }
+          downloadFile(blobUrl, `${finalFilename}.json`);
+          window.URL.revokeObjectURL(blobUrl);
+          return true;
+        } catch (error) {
+          console.error("JSON数据下载失败:", error);
+          return false;
+        }
+      };
+      const downloadAsLRC = (lrcContent, filename, options = {}) => {
+        try {
+          const { timestamp = false } = options;
+          let finalFilename = filename;
+          if (timestamp) {
+            const now = new Date();
+            const ts = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(
+        now.getDate()
+      ).padStart(2, "0")}_${String(now.getHours()).padStart(2, "0")}${String(
+        now.getMinutes()
+      ).padStart(2, "0")}${String(now.getSeconds()).padStart(2, "0")}`;
+            finalFilename = `${filename}_${ts}`;
+          }
+          const blob = new Blob([lrcContent], { type: "text/plain" });
+          const blobUrl = window.URL.createObjectURL(blob);
+          downloadFile(blobUrl, `${finalFilename}.lrc`);
+          window.URL.revokeObjectURL(blobUrl);
+          return true;
+        } catch (error) {
+          console.error("LRC歌词下载失败:", error);
+          return false;
+        }
+      };
+      const downloadFileWithBlob = (file, name2) => {
+        const blobUrl = window.URL.createObjectURL(file);
+        const a = document.createElement("a");
+        a.href = blobUrl;
+        a.download = name2;
+        a.style.display = "none";
+        a.style.position = "absolute";
+        a.style.left = "-9999px";
+        const handleClick = (e) => {
+          e.stopPropagation();
+        };
+        a.addEventListener("click", handleClick, true);
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          a.removeEventListener("click", handleClick);
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(blobUrl);
+        }, 100);
+      };
       const getSongInfoList = async (songIds) => {
         const chunkArr = chunkArray(songIds, 1e3);
         const proArr = chunkArr.map(async (chunk) => {
@@ -8455,6 +8569,65 @@ track: UINT8.get(buf, off2 + 126),
             songId
           }
         });
+      };
+      const getSongComment = (id2, options = {}) => {
+        const { limit = 100, offset = 0, before } = options;
+        const data = {
+          rid: id2,
+          limit,
+          offset,
+          beforeTime: before
+        };
+        return weapiRequest(`/api/v1/resource/comments/R_SO_4_${id2}`, {
+          data
+        });
+      };
+      const getSongAllComments = async (id2, options = {}) => {
+        const { onChange } = options;
+        const allComments = [];
+        let offset = 0;
+        const limit = 100;
+        let hasMore = true;
+        let before;
+        let allTotal = 0;
+        while (hasMore) {
+          const res = await getSongComment(id2, { limit, offset, before });
+          console.log("res", res);
+          if (!res || res.code !== 200) {
+            throw new Error(res && (res.msg || res.message) || "获取歌曲评论失败");
+          }
+          const {
+            cnum,
+            code,
+            commentBanner,
+            comments,
+            hotComments,
+            isMusician,
+            more,
+            moreHot,
+            topComments,
+            total,
+            userId
+          } = res;
+          allTotal ||= total;
+          allComments.push(...comments);
+          hasMore = more;
+          onChange?.({
+            limit,
+            offset,
+            page: Math.ceil(offset / limit) + 1,
+            total: allTotal,
+            totalPage: Math.ceil(allTotal / limit),
+            comments,
+            allComments
+          });
+          if (hasMore) {
+            before = comments[comments.length - 1].time;
+            offset += comments.length;
+          }
+        }
+        downloadAsJson(allComments, `${id2}-评论.json`);
+        return allComments;
       };
       const getQualityTags = (song) => {
         const tags = [];
@@ -12062,6 +12235,35 @@ op: "update"
           data: songs2
         });
       };
+      const getUserHistoryComment = (uid, limit = 10, time) => {
+        const data = {
+          compose_reminder: "true",
+          compose_hot_comment: "true",
+          limit,
+          user_id: uid,
+          time
+        };
+        return weapiRequest("/api/comment/user/comment/history", {
+          data
+        });
+      };
+      const getUserAllHistoryComment = async (uid) => {
+        const result = [];
+        let time;
+        let hasMore = true;
+        while (hasMore) {
+          const res = await getUserHistoryComment(uid, 20, time);
+          console.log("res", res);
+          if (res.code !== 200) {
+            throw new Error(res.message || res.msg || "获取用户所有历史评论失败");
+          }
+          const { commentCount, comments = [], hotComments, reminder } = res.data;
+          result.push(...comments);
+          time = comments[comments.length - 1].time;
+          hasMore = res.hasMore;
+        }
+        return result;
+      };
       const styles$c = {
         "search-form": "_search-form_1aabt_1"
       };
@@ -12431,118 +12633,6 @@ jsxRuntimeExports.jsx(
           }
         );
       });
-      const downloadJsonFile = (data, filename) => {
-        const blob = new Blob([JSON.stringify(data, null, 2)], {
-          type: "application/json"
-        });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = filename;
-        link.click();
-        URL.revokeObjectURL(url);
-      };
-      const downloadFile = async (url, filename) => {
-        try {
-          if (!url || !filename) {
-            throw new Error("URL和文件名不能为空");
-          }
-          const link = document.createElement("a");
-          link.href = url.replace("http://", "https://");
-          link.download = filename;
-          link.style.display = "none";
-          link.style.position = "absolute";
-          link.style.left = "-9999px";
-          const handleClick = (e) => {
-            e.stopPropagation();
-          };
-          link.addEventListener("click", handleClick, true);
-          link.click();
-          setTimeout(() => {
-            link.removeEventListener("click", handleClick);
-          }, 100);
-        } catch (error) {
-          console.error("文件下载出错:", error);
-          throw error;
-        }
-      };
-      const getFileBlob = async (url) => {
-        const response = await fetch(url, {
-          redirect: "follow"
-        });
-        if (!response.ok) {
-          throw new Error(`获取文件失败: ${response.status} ${response.statusText}`);
-        }
-        const blob = await response.blob();
-        return { blob, response };
-      };
-      const downloadAsJson = (data, filename, options = {}) => {
-        try {
-          const { space = 2, timestamp = false } = options;
-          const jsonString = JSON.stringify(data, null, space);
-          const blob = new Blob([jsonString], { type: "application/json" });
-          const blobUrl = window.URL.createObjectURL(blob);
-          let finalFilename = filename;
-          if (timestamp) {
-            const date = new Date();
-            const timeString = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, "0")}${String(
-        date.getDate()
-      ).padStart(2, "0")}_${String(date.getHours()).padStart(2, "0")}${String(
-        date.getMinutes()
-      ).padStart(2, "0")}${String(date.getSeconds()).padStart(2, "0")}`;
-            finalFilename = `${filename}_${timeString}`;
-          }
-          downloadFile(blobUrl, `${finalFilename}.json`);
-          window.URL.revokeObjectURL(blobUrl);
-          return true;
-        } catch (error) {
-          console.error("JSON数据下载失败:", error);
-          return false;
-        }
-      };
-      const downloadAsLRC = (lrcContent, filename, options = {}) => {
-        try {
-          const { timestamp = false } = options;
-          let finalFilename = filename;
-          if (timestamp) {
-            const now = new Date();
-            const ts = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(
-        now.getDate()
-      ).padStart(2, "0")}_${String(now.getHours()).padStart(2, "0")}${String(
-        now.getMinutes()
-      ).padStart(2, "0")}${String(now.getSeconds()).padStart(2, "0")}`;
-            finalFilename = `${filename}_${ts}`;
-          }
-          const blob = new Blob([lrcContent], { type: "text/plain" });
-          const blobUrl = window.URL.createObjectURL(blob);
-          downloadFile(blobUrl, `${finalFilename}.lrc`);
-          window.URL.revokeObjectURL(blobUrl);
-          return true;
-        } catch (error) {
-          console.error("LRC歌词下载失败:", error);
-          return false;
-        }
-      };
-      const downloadFileWithBlob = (file, name2) => {
-        const blobUrl = window.URL.createObjectURL(file);
-        const a = document.createElement("a");
-        a.href = blobUrl;
-        a.download = name2;
-        a.style.display = "none";
-        a.style.position = "absolute";
-        a.style.left = "-9999px";
-        const handleClick = (e) => {
-          e.stopPropagation();
-        };
-        a.addEventListener("click", handleClick, true);
-        document.body.appendChild(a);
-        a.click();
-        setTimeout(() => {
-          a.removeEventListener("click", handleClick);
-          document.body.removeChild(a);
-          window.URL.revokeObjectURL(blobUrl);
-        }, 100);
-      };
       function mitt(n) {
         return { all: n = n || new Map(), on: function(t, e) {
           var i = n.get(t);
@@ -20480,7 +20570,7 @@ jsxRuntimeExports.jsx("span", { className: styles$b.icon, children: "!" }),
         const { song, album: album2, artist: artist2 } = simpleSong.privilege?.pc || {};
         return { song, album: album2, artist: artist2 };
       };
-      const { Link, Text: Text$1 } = Typography;
+      const { Link, Text: Text$2 } = Typography;
       const GITHUB_CONFIG = {
         owner: "520Qiuyu",
         repo: "CloudMusic",
@@ -20607,27 +20697,27 @@ jsxRuntimeExports.jsx(GithubOutlined, {}),
                       }
                     )
                   ] }) }),
-jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目描述", children: jsxRuntimeExports.jsx(Text$1, { children: repoInfo?.description || "暂无描述" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目描述", children: jsxRuntimeExports.jsx(Text$2, { children: repoInfo?.description || "暂无描述" }) }),
 jsxRuntimeExports.jsx(Descriptions.Item, { label: "统计信息", children: jsxRuntimeExports.jsxs(Space, { size: "large", children: [
 jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(StarOutlined, { style: { color: "#faad14" } }),
-jsxRuntimeExports.jsx(Text$1, { strong: true, children: repoInfo?.stars || 0 }),
-jsxRuntimeExports.jsx(Text$1, { type: "secondary", children: "Stars" })
+jsxRuntimeExports.jsx(Text$2, { strong: true, children: repoInfo?.stars || 0 }),
+jsxRuntimeExports.jsx(Text$2, { type: "secondary", children: "Stars" })
                     ] }),
 jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(ForkOutlined, { style: { color: "#1890ff" } }),
-jsxRuntimeExports.jsx(Text$1, { strong: true, children: repoInfo?.forks || 0 }),
-jsxRuntimeExports.jsx(Text$1, { type: "secondary", children: "Forks" })
+jsxRuntimeExports.jsx(Text$2, { strong: true, children: repoInfo?.forks || 0 }),
+jsxRuntimeExports.jsx(Text$2, { type: "secondary", children: "Forks" })
                     ] }),
 jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(EyeOutlined, { style: { color: "#52c41a" } }),
-jsxRuntimeExports.jsx(Text$1, { strong: true, children: repoInfo?.watchers || 0 }),
-jsxRuntimeExports.jsx(Text$1, { type: "secondary", children: "Watchers" })
+jsxRuntimeExports.jsx(Text$2, { strong: true, children: repoInfo?.watchers || 0 }),
+jsxRuntimeExports.jsx(Text$2, { type: "secondary", children: "Watchers" })
                     ] })
                   ] }) }),
-jsxRuntimeExports.jsx(Descriptions.Item, { label: "主要语言", children: jsxRuntimeExports.jsx(Text$1, { children: repoInfo?.language || "未知" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "主要语言", children: jsxRuntimeExports.jsx(Text$2, { children: repoInfo?.language || "未知" }) }),
 jsxRuntimeExports.jsx(Descriptions.Item, { label: "默认分支", children: jsxRuntimeExports.jsx(
-                    Text$1,
+                    Text$2,
                     {
                       code: true,
                       onDoubleClick: handleDoubleClickDefaultBranch,
@@ -20635,10 +20725,10 @@ jsxRuntimeExports.jsx(Descriptions.Item, { label: "默认分支", children: jsxR
                       children: repoInfo?.defaultBranch || "main"
                     }
                   ) }),
-jsxRuntimeExports.jsx(Descriptions.Item, { label: "许可证", children: jsxRuntimeExports.jsx(Text$1, { children: repoInfo?.license || "无" }) }),
-jsxRuntimeExports.jsx(Descriptions.Item, { label: "开放 Issues", children: jsxRuntimeExports.jsx(Text$1, { children: repoInfo?.openIssues || 0 }) }),
-jsxRuntimeExports.jsx(Descriptions.Item, { label: "创建时间", children: jsxRuntimeExports.jsx(Text$1, { children: formatDate(repoInfo?.createdAt) }) }),
-jsxRuntimeExports.jsx(Descriptions.Item, { label: "更新时间", children: jsxRuntimeExports.jsx(Text$1, { children: formatDate(repoInfo?.updatedAt) }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "许可证", children: jsxRuntimeExports.jsx(Text$2, { children: repoInfo?.license || "无" }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "开放 Issues", children: jsxRuntimeExports.jsx(Text$2, { children: repoInfo?.openIssues || 0 }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "创建时间", children: jsxRuntimeExports.jsx(Text$2, { children: formatDate(repoInfo?.createdAt) }) }),
+jsxRuntimeExports.jsx(Descriptions.Item, { label: "更新时间", children: jsxRuntimeExports.jsx(Text$2, { children: formatDate(repoInfo?.updatedAt) }) }),
 jsxRuntimeExports.jsx(Descriptions.Item, { label: "操作", children: jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
                       Button,
@@ -23584,7 +23674,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         "selected-info": "_selected-info_oa7mi_128",
         "selected-extra": "_selected-extra_oa7mi_133"
       };
-      const { Text, Title } = Typography;
+      const { Text: Text$1, Title } = Typography;
       const getAlbumKey = (album2) => String(album2?.id ?? album2?.albumId ?? album2?.albumMid ?? album2?.picId ?? "");
       const AlbumListModal = forwardRef((props, ref) => {
         const { visible, close } = useVisible(
@@ -23887,7 +23977,7 @@ jsxRuntimeExports.jsx(
 jsxRuntimeExports.jsxs("div", { className: styles$1["album-meta"], children: [
 jsxRuntimeExports.jsx(Tag, { color: "blue", className: styles$1["album-tag"], children: record.type || "专辑" }),
 jsxRuntimeExports.jsx(
-                      Text,
+                      Text$1,
                       {
                         className: styles$1["album-company"],
                         title: record.company,
@@ -25597,6 +25687,43 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             console.log("error", error);
           }
         };
+        const handleGetSongComment = async () => {
+          try {
+            const res = await getSongComment(songId.split(",")[0]);
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const handleGetSongAllComments = async () => {
+          const loadingMessageKey = "get-song-all-comments";
+          message.loading({
+            content: "开始获取歌曲所有评论，请稍候...",
+            key: loadingMessageKey,
+            duration: 0
+          });
+          try {
+            const res = await getSongAllComments(songId.split(",")[0], {
+              onChange: (progress) => {
+                const { page, totalPage, comments, allComments } = progress;
+                message.loading({
+                  content: `当前正在获取第${page}/${totalPage}页评论，已获取${comments.length}条评论，共${allComments.length}条评论`,
+                  key: loadingMessageKey,
+                  duration: 0
+                });
+              }
+            });
+            console.log("res", res);
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            message.loading({
+              content: "获取歌曲所有评论完成，请稍候...",
+              key: loadingMessageKey,
+              duration: 4e3
+            });
+          }
+        };
         return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取歌曲信息", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
             Input,
@@ -25610,8 +25737,243 @@ jsxRuntimeExports.jsx(
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongInfo, children: "获取歌曲信息" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
-jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongComment, children: "获取歌曲评论" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongAllComments, children: "获取歌曲所有评论" })
         ] }) }) });
+      };
+      const { Text } = Typography;
+      const RESOURCE_TYPE_MAP = {
+        0: "歌曲",
+        1: "MV",
+        2: "歌单",
+        3: "专辑",
+        4: "电台",
+        5: "视频",
+        6: "动态"
+      };
+      const UserTab = () => {
+        const [form] = Form.useForm();
+        const [comments, setComments] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const [pagination, setPagination] = useState({
+          current: 1,
+          pageSize: 20,
+          total: 0
+        });
+        const handleGetUserHistoryComment = async () => {
+          try {
+            const values = await form.validateFields();
+            const { uid } = values;
+            if (!uid) {
+              return msgError("请输入用户ID");
+            }
+            setLoading(true);
+            const commentList = await getUserAllHistoryComment(uid);
+            setComments(commentList);
+            setPagination({
+              ...pagination,
+              total: commentList.length
+            });
+            msgSuccess(`获取成功，共 ${commentList.length} 条评论`);
+            console.log("用户历史评论:", commentList);
+          } catch (error) {
+            console.error("获取用户历史评论失败:", error);
+            msgError(error.message || "获取用户历史评论失败");
+          } finally {
+            setLoading(false);
+          }
+        };
+        const formatTime = (time) => {
+          if (!time) return "-";
+          return dayjs(time).format("YYYY-MM-DD HH:mm:ss");
+        };
+        const parseResourceInfo = (resourceInfo, threadId) => {
+          if (resourceInfo && resourceInfo !== "null" && typeof resourceInfo === "string") {
+            try {
+              const parsed = JSON.parse(resourceInfo);
+              return parsed;
+            } catch {
+              return null;
+            }
+          }
+          if (threadId) {
+            const match = threadId.match(/R_(\w+)_(\d+)_(\d+)/);
+            if (match) {
+              return {
+                type: match[1],
+                typeId: match[2],
+                id: match[3]
+              };
+            }
+          }
+          return null;
+        };
+        const getResourceTypeName = (resourceType) => {
+          return RESOURCE_TYPE_MAP[resourceType] || `类型${resourceType}`;
+        };
+        const handlePageChange = (page, pageSize) => {
+          setPagination({
+            ...pagination,
+            current: page,
+            pageSize
+          });
+        };
+        const getCurrentPageData = () => {
+          const { current, pageSize } = pagination;
+          const start = (current - 1) * pageSize;
+          const end = start + pageSize;
+          return comments.slice(start, end);
+        };
+        return jsxRuntimeExports.jsxs(Space, { direction: "vertical", style: { width: "100%" }, size: "large", children: [
+jsxRuntimeExports.jsxs(Form, { form, layout: "inline", initialValues: { uid: void 0 }, children: [
+jsxRuntimeExports.jsx(
+              Form.Item,
+              {
+                label: "用户ID",
+                name: "uid",
+                rules: [{ required: true, message: "请输入用户ID" }],
+                children: jsxRuntimeExports.jsx(Input, { placeholder: "请输入用户ID", style: { width: 200 } })
+              }
+            ),
+jsxRuntimeExports.jsx(Form.Item, { children: jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                type: "primary",
+                icon: jsxRuntimeExports.jsx(CommentOutlined, {}),
+                onClick: handleGetUserHistoryComment,
+                loading,
+                children: "获取历史评论"
+              }
+            ) })
+          ] }),
+          comments.length > 0 && jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+jsxRuntimeExports.jsx(
+              List,
+              {
+                loading,
+                dataSource: getCurrentPageData(),
+                renderItem: (item) => {
+                  const resourceInfo = parseResourceInfo(
+                    item.resourceInfo,
+                    item.threadId
+                  );
+                  const hasReply = item.beRepliedContent && item.beRepliedUser;
+                  return jsxRuntimeExports.jsx(List.Item, { children: jsxRuntimeExports.jsx(
+                    List.Item.Meta,
+                    {
+                      avatar: jsxRuntimeExports.jsx(
+                        Avatar,
+                        {
+                          src: item.user?.avatarUrl,
+                          icon: jsxRuntimeExports.jsx(UserOutlined, {}),
+                          size: 40
+                        }
+                      ),
+                      title: jsxRuntimeExports.jsxs(Space, { children: [
+jsxRuntimeExports.jsx(Text, { strong: true, children: item.user?.nickname || "未知用户" }),
+                        item.user?.vipType > 0 && jsxRuntimeExports.jsxs(Tag, { color: "gold", children: [
+                          "VIP",
+                          item.user.vipType
+                        ] }),
+                        item.likedCount > 0 && jsxRuntimeExports.jsxs(Tag, { color: "red", children: [
+                          "👍 ",
+                          item.likedCount
+                        ] }),
+                        item.liked && jsxRuntimeExports.jsx(Tag, { color: "blue", children: "已点赞" }),
+                        hasReply && jsxRuntimeExports.jsx(Tag, { color: "green", children: "回复" })
+                      ] }),
+                      description: jsxRuntimeExports.jsxs(
+                        Space,
+                        {
+                          direction: "vertical",
+                          size: "small",
+                          style: { width: "100%" },
+                          children: [
+jsxRuntimeExports.jsx(Text, { style: { whiteSpace: "pre-wrap" }, children: item.content || "-" }),
+jsxRuntimeExports.jsxs(Space, { size: "small", wrap: true, children: [
+jsxRuntimeExports.jsxs(Text, { type: "secondary", style: { fontSize: "12px" }, children: [
+                                "时间: ",
+                                formatTime(item.time)
+                              ] }),
+                              item.resourceType !== void 0 && jsxRuntimeExports.jsx(Tag, { size: "small", children: getResourceTypeName(item.resourceType) }),
+                              resourceInfo && jsxRuntimeExports.jsxs(Text, { type: "secondary", style: { fontSize: "12px" }, children: [
+                                "资源ID: ",
+                                resourceInfo.id || "-"
+                              ] }),
+                              item.commentId && jsxRuntimeExports.jsxs(
+                                Text,
+                                {
+                                  copyable: true,
+                                  style: { fontSize: "12px" },
+                                  type: "secondary",
+                                  children: [
+                                    "评论ID: ",
+                                    item.commentId
+                                  ]
+                                }
+                              ),
+                              item.threadId && jsxRuntimeExports.jsxs(
+                                Text,
+                                {
+                                  copyable: true,
+                                  style: { fontSize: "12px" },
+                                  type: "secondary",
+                                  children: [
+                                    "线程ID: ",
+                                    item.threadId
+                                  ]
+                                }
+                              )
+                            ] }),
+                            hasReply && jsxRuntimeExports.jsx(
+                              "div",
+                              {
+                                style: {
+                                  padding: "8px",
+                                  background: "#f5f5f5",
+                                  borderRadius: "4px",
+                                  marginTop: "8px"
+                                },
+                                children: jsxRuntimeExports.jsxs(Space, { direction: "vertical", size: "small", children: [
+jsxRuntimeExports.jsxs(Text, { strong: true, style: { fontSize: "12px" }, children: [
+                                    "@",
+                                    item.beRepliedUser?.nickname || "未知用户",
+                                    ":"
+                                  ] }),
+jsxRuntimeExports.jsx(Text, { style: { fontSize: "12px" }, children: item.beRepliedContent })
+                                ] })
+                              }
+                            )
+                          ]
+                        }
+                      )
+                    }
+                  ) });
+                }
+              }
+            ),
+jsxRuntimeExports.jsx(
+              Pagination,
+              {
+                current: pagination.current,
+                pageSize: pagination.pageSize,
+                total: pagination.total,
+                showSizeChanger: true,
+                showQuickJumper: true,
+                showTotal: (total) => `共 ${total} 条评论`,
+                onChange: handlePageChange,
+                onShowSizeChange: (page, pageSize) => {
+                  setPagination({
+                    ...pagination,
+                    current: 1,
+                    pageSize
+                  });
+                }
+              }
+            )
+          ] })
+        ] });
       };
       const TestModal = forwardRef((props, ref) => {
         const { visible, close } = useVisible({}, ref);
@@ -25652,6 +26014,11 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamic
             key: "album",
             label: "专辑",
             children: jsxRuntimeExports.jsx(AlbumTab, {})
+          },
+          {
+            key: "user",
+            label: "用户",
+            children: jsxRuntimeExports.jsx(UserTab, {})
           },
           {
             key: "flac",
@@ -26372,7 +26739,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-BvrvvOB9-1PkI99K9.js", ['./__monkey.entry-CifuCCzm.js', './AbstractID3Parser-CC-TW0TD-K10Jepfx.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CNWSO-iE-iC9wnbFJ.js'], (function (exports, module) {
+System.register("./MpegParser-Ceorqgt8-7JW4YLzM.js", ['./__monkey.entry-CepBC9P1.js', './AbstractID3Parser-Diz05izq-Df5nq59-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -26967,7 +27334,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-DoepyWuY-PZ1xOxKu.js", ['./__monkey.entry-CifuCCzm.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-DtEP4Ogj-Cd-hHGZD.js", ['./__monkey.entry-CepBC9P1.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -27474,7 +27841,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-BbjmZajX-Dk-fRbcV.js", ['./__monkey.entry-CifuCCzm.js', './ID3v2Parser-CNWSO-iE-iC9wnbFJ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-BmEdN8PI-B4O_wTjp.js", ['./__monkey.entry-CepBC9P1.js', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -27648,7 +28015,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-D-GCYzzC-D30L3upQ.js", ['./__monkey.entry-CifuCCzm.js', './ID3v2Parser-CNWSO-iE-iC9wnbFJ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-ChYK9u8C-BQ7r8YWY.js", ['./__monkey.entry-CepBC9P1.js', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -27819,7 +28186,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-BduQKFgt-aEM9vF1M.js", ['./__monkey.entry-CifuCCzm.js', './AbstractID3Parser-CC-TW0TD-K10Jepfx.js', './ID3v2Parser-CNWSO-iE-iC9wnbFJ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-C6r1wPR3-CSFkOCNU.js", ['./__monkey.entry-CepBC9P1.js', './AbstractID3Parser-Diz05izq-Df5nq59-.js', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -27917,7 +28284,7 @@ System.register("./DsfParser-BduQKFgt-aEM9vF1M.js", ['./__monkey.entry-CifuCCzm.
   };
 }));
 
-System.register("./FlacParser-CxI_S9Gb-DATWDdBo.js", ['./__monkey.entry-CifuCCzm.js', './VorbisParser-CgNHRS3i-CVBHTd4t.js', './AbstractID3Parser-CC-TW0TD-K10Jepfx.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CNWSO-iE-iC9wnbFJ.js'], (function (exports, module) {
+System.register("./FlacParser-BT-8sTbX-D9zhFB-7.js", ['./__monkey.entry-CepBC9P1.js', './VorbisParser-D2PJQAg3-CluZQHD3.js', './AbstractID3Parser-Diz05izq-Df5nq59-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -28069,7 +28436,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-Chcrrfj7-D1S7YyGd.js", ['./__monkey.entry-CifuCCzm.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-DN3BbbAH-BrckLSU7.js", ['./__monkey.entry-CepBC9P1.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -28676,7 +29043,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-BMrBUFrt-MeebsdEH.js", ['./__monkey.entry-CifuCCzm.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-D1otc9iq-BoK7s2DE.js", ['./__monkey.entry-CepBC9P1.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -29507,7 +29874,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-DCcRatrU-B0kepElR.js", ['./__monkey.entry-CifuCCzm.js', './AbstractID3Parser-CC-TW0TD-K10Jepfx.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-CNWSO-iE-iC9wnbFJ.js'], (function (exports, module) {
+System.register("./MusepackParser-DIgbZPny-BWqDQY30.js", ['./__monkey.entry-CepBC9P1.js', './AbstractID3Parser-Diz05izq-Df5nq59-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -29784,7 +30151,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-CC-TW0TD-K10Jepfx.js", ['./__monkey.entry-CifuCCzm.js', './ID3v2Parser-CNWSO-iE-iC9wnbFJ.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-Diz05izq-Df5nq59-.js", ['./__monkey.entry-CepBC9P1.js', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -29848,7 +30215,7 @@ System.register("./AbstractID3Parser-CC-TW0TD-K10Jepfx.js", ['./__monkey.entry-C
   };
 }));
 
-System.register("./OggParser-CtVpQlc5-zEr_DlV-.js", ['./__monkey.entry-CifuCCzm.js', './VorbisParser-CgNHRS3i-CVBHTd4t.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-MF31Tp0z-CXVF1lnd.js", ['./__monkey.entry-CepBC9P1.js', './VorbisParser-D2PJQAg3-CluZQHD3.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -30123,7 +30490,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-CgNHRS3i-CVBHTd4t.js", ['./__monkey.entry-CifuCCzm.js'], (function (exports, module) {
+System.register("./VorbisParser-D2PJQAg3-CluZQHD3.js", ['./__monkey.entry-CepBC9P1.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -30339,7 +30706,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-XXXQd4vA-CFLQ5PpK.js", ['./__monkey.entry-CifuCCzm.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-B8Pist6I-DiopNX5C.js", ['./__monkey.entry-CepBC9P1.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -30519,7 +30886,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-Cmj-bViL-DUkVevpV.js", ['./__monkey.entry-CifuCCzm.js', './ID3v2Parser-CNWSO-iE-iC9wnbFJ.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-DA1ktbjC-D6xHXrkr.js", ['./__monkey.entry-CepBC9P1.js', './ID3v2Parser-wLqSC0lb-SlHEsEaG.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -30792,7 +31159,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-CNWSO-iE-iC9wnbFJ.js", ['./__monkey.entry-CifuCCzm.js'], (function (exports, module) {
+System.register("./ID3v2Parser-wLqSC0lb-SlHEsEaG.js", ['./__monkey.entry-CepBC9P1.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
