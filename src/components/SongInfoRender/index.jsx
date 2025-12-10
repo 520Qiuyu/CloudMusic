@@ -51,7 +51,7 @@ export default function SongInfoRender({ record }) {
         </Tooltip>
         {noSource && (
           <Tooltip title='无音源' placement='top'>
-            <Tag color='purple' style={{ width: 'fit-content' }}>
+            <Tag color='geekblue' style={{ width: 'fit-content' }} bordered={false}>
               无音源
             </Tag>
           </Tooltip>

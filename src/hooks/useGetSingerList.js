@@ -11,7 +11,6 @@ export const useGetSingerList = () => {
     try {
       setLoading(true);
       const list = await getArtists();
-      console.log(`歌手列表(${list.length})`, list);
       setSingerList(list);
     } catch (error) {
       console.log('error', error);
