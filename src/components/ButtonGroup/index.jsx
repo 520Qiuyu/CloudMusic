@@ -1,6 +1,7 @@
 import { useConfig } from '@/hooks/useConfig';
 import CloudImport from '@/views/cloudImport';
 import CloudMusicManager from '@/views/cloudMusicManager';
+import EmotionDecode from '@/views/emotionDecode';
 import GithubInfo from '@/views/githubInfo';
 import LocalUpload from '@/views/localUpload';
 import PlayList from '@/views/playList';
@@ -12,6 +13,7 @@ import {
   CodeOutlined,
   CustomerServiceOutlined,
   GithubOutlined,
+  HeartOutlined,
   InfoCircleOutlined,
   OrderedListOutlined,
   SearchOutlined,
@@ -32,6 +34,7 @@ const ButtonGroup = () => {
     enableCloudImport,
     enableGithubInfo,
     enableTestModal,
+    enableEmotionDecode,
   } = functionConfig;
 
   // 云盘快速上传
@@ -68,6 +71,12 @@ const ButtonGroup = () => {
   const cloudImportRef = useRef(null);
   const handleImport = () => {
     cloudImportRef.current.open();
+  };
+
+  // 情感解码
+  const emotionDecodeRef = useRef(null);
+  const handleEmotionDecode = () => {
+    emotionDecodeRef.current.open();
   };
 
   // testModal
@@ -150,6 +159,17 @@ const ButtonGroup = () => {
           />
         </Tooltip>
       )}
+      {/* 情感解码 */}
+      {enableEmotionDecode && (
+        <Tooltip title={'情感解码'} placement='left'>
+          <Button
+            type='primary'
+            icon={<HeartOutlined />}
+            onClick={handleEmotionDecode}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
       {/* testModal */}
       {enableTestModal && (
         <Tooltip title={'testModal'} placement='left'>
@@ -189,6 +209,8 @@ const ButtonGroup = () => {
       <GithubInfo ref={githubInfoRef} />
       {/* testModal */}
       <TestModal ref={testModalRef} />
+      {/* 情感解码 */}
+      <EmotionDecode ref={emotionDecodeRef} />
     </div>
   );
 };

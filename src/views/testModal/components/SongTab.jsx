@@ -1,13 +1,15 @@
 import {
   getSongAllComments,
   getSongComment,
+  getSongComment1,
   getSongDynamicCover,
   getSongInfoList,
   getSongLyric,
   getSongUrl,
+  listenSongCheckIn,
 } from '@/api/song';
 import { MyButton } from '@/components';
-import { msgSuccess } from '@/utils/modal';
+import { msgError, msgSuccess } from '@/utils/modal';
 import { message } from 'antd';
 import { Form, Input, Space } from 'antd';
 import { useState } from 'react';
@@ -80,6 +82,16 @@ const SongTab = () => {
     }
   };
 
+  // 获取歌曲评论1
+  const handleGetSongComment1 = async () => {
+    try {
+      const res = await getSongComment1(songId.split(',')[0]);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
   // 获取歌曲所有评论
   const handleGetSongAllComments = async () => {
     const loadingMessageKey = 'get-song-all-comments';
@@ -91,9 +103,9 @@ const SongTab = () => {
     try {
       const res = await getSongAllComments(songId.split(',')[0], {
         onChange: (progress) => {
-          const { page, totalPage, comments, allComments } = progress;
+          const { page, totalPage, total, allComments } = progress;
           message.loading({
-            content: `当前正在获取第${page}/${totalPage}页评论，已获取${comments.length}条评论，共${allComments.length}条评论`,
+            content: `当前正在获取第${page}/${totalPage}页评论，已获取${allComments.length}条评论，共${total}条评论`,
             key: loadingMessageKey,
             duration: 0,
           });
@@ -103,14 +115,33 @@ const SongTab = () => {
     } catch (error) {
       console.log('error', error);
     } finally {
-      message.loading({
-        content: '获取歌曲所有评论完成，请稍候...',
-        key: loadingMessageKey,
-        duration: 4000,
+      message.destroy(loadingMessageKey);
+      message.success({
+        content: '获取歌曲所有评论完成。',
+        duration: 3000,
       });
     }
   };
 
+  // 听歌打卡
+  const handleListenSongCheckIn = async () => {
+    try {
+      const songRes = await getSongInfoList(songId.split(','));
+      if (songRes.code !== 200) {
+        return msgError('获取歌曲信息失败');
+      }
+      const songInfo = songRes.songs[0];
+      const { id, al, dt } = songInfo;
+      const res = await listenSongCheckIn({
+        id,
+        time: Math.floor(dt / 1000),
+      });
+      console.log('res', res);
+    } catch (error) {
+      console.error('听歌打卡失败:', error);
+      msgError(error.message || '听歌打卡失败');
+    }
+  };
   return (
     <Form>
       {/* 测试获取歌曲信息 */}
@@ -141,9 +172,17 @@ const SongTab = () => {
           <MyButton type='primary' onClick={handleGetSongComment}>
             获取歌曲评论
           </MyButton>
+          {/* 获取歌曲评论1 */}
+          <MyButton type='primary' onClick={handleGetSongComment1}>
+            获取歌曲评论1
+          </MyButton>
           {/* 获取歌曲所有评论 */}
           <MyButton type='primary' onClick={handleGetSongAllComments}>
             获取歌曲所有评论
+          </MyButton>
+          {/* 听歌打卡 */}
+          <MyButton type='primary' onClick={handleListenSongCheckIn}>
+            听歌打卡
           </MyButton>
         </Space>
       </Form.Item>

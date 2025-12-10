@@ -1,6 +1,6 @@
 import { downloadAsJson } from '@/utils/download';
 import { QUALITY_LEVELS } from '../constant';
-import { chunkArray, promiseLimit } from '../utils';
+import { chunkArray, getUser, promiseLimit } from '../utils';
 import { weapiRequest } from '../utils/request';
 
 /**
@@ -113,7 +113,7 @@ export const getSongDynamicCover = async (songId) => {
  * const res = await getSongComment(123456, { limit: 20, offset: 0 });
  */
 export const getSongComment = (id, options = {}) => {
-  const { limit = 100, offset = 0, before } = options;
+  const { limit = 100, offset = 200, before = 1747050175371 } = options;
   const data = {
     rid: id,
     limit,
@@ -121,6 +121,38 @@ export const getSongComment = (id, options = {}) => {
     beforeTime: before,
   };
   return weapiRequest(`/api/v1/resource/comments/R_SO_4_${id}`, {
+    data,
+  });
+};
+
+/**
+ * 获取歌曲评论
+ * @param {number} id 歌曲ID
+ * @param {object} options 选项
+ * @param {number} options.pageSize 每页评论数，默认20
+ * @param {number} options.pageNo 页码，默认1
+ * @param {number} options.before 上一分页最后一项的time，用于分页
+ * @returns {Promise} 返回评论数据
+ * @example
+ * const res = await getSongComment(123456, { limit: 20, offset: 0 });
+ */
+export const getSongComment1 = (id, options = {}) => {
+  // 0: {sortType: 1, sortTypeName: '按推荐排序', target: 'order_by_alg'}
+  // 1: {sortType: 2, sortTypeName: '按热度排序', target: 'order_by_hot'}
+  // 2: {sortType: 3, sortTypeName: '按时间排序', target: 'order_by_time'}
+  const { pageSize = 1000, before, orderType = 3 } = options;
+  const rid = `R_SO_4_${id}`;
+  // "rid=R_SO_4_2603084732&threadId=R_SO_4_2603084732&pageNo=7&pageSize=20&cursor=1762213429602&offset=0&orderType=0"
+  const data = {
+    rid,
+    threadId: rid,
+    pageSize,
+    // offset: 200,
+    cursor: before,
+    orderType,
+  };
+
+  return weapiRequest(`/api/comment/resource/comments/get`, {
     data,
   });
 };
@@ -135,70 +167,24 @@ export const getSongComment = (id, options = {}) => {
 export const getSongAllComments = async (id, options = {}) => {
   const { onChange } = options;
   const allComments = [];
-  let offset = 0;
-  const limit = 100; // 最大单次请求官方支持100，若不支持可改为更小值
+  const limit = 1000; // 最大单次请求官方支持100，若不支持可改为更小值
   let hasMore = true;
   let before;
   let allTotal = 0;
 
-  /*   // 第一次获取评论总数
-  const res = await getSongComment(id, { limit, offset, before });
-  if (!res || res.code !== 200) {
-    throw new Error((res && (res.msg || res.message)) || '获取歌曲评论失败');
-  }
-  const { total } = res;
-  allTotal = total;
-
-  const pageCount = Math.ceil(allTotal / limit);
-  const taskList = Array.from({ length: pageCount }, (_, index) => {
-    return async () => {
-      const res = await getSongComment(id, {
-        limit,
-        offset: index * limit,
-        before,
-      });
-      if (!res || res.code !== 200) {
-        throw new Error(
-          (res && (res.msg || res.message)) || '获取歌曲评论失败',
-        );
-      }
-      const { comments } = res;
-      before = comments[comments.length - 1].time;
-      console.log(`第${index + 1}页评论，偏移量${index * limit}`, res);
-      return comments;
-    };
-  });
-
-  const comments = await promiseLimit(taskList, 3);
-  console.log('comments', comments);
-  allComments.push(...comments.flat()); */
-
   while (hasMore) {
-    const res = await getSongComment(id, { limit, offset, before });
-    console.log('res', res);
+    const res = await getSongComment1(id, { before });
     if (!res || res.code !== 200) {
-      throw new Error((res && (res.msg || res.message)) || '获取歌曲评论失败');
+      throw new Error(res.message || res.msg || '获取歌曲评论失败');
     }
-    const {
-      cnum,
-      code,
-      commentBanner,
-      comments,
-      hotComments,
-      isMusician,
-      more,
-      moreHot,
-      topComments,
-      total,
-      userId,
-    } = res;
-    allTotal ||= total;
+    console.log('res', res);
+    const { comments, totalCount, cursor } = res.data;
+    allTotal ||= totalCount;
+    hasMore = comments.length > 0;
     allComments.push(...comments);
-    hasMore = more;
     onChange?.({
       limit,
-      offset,
-      page: Math.ceil(offset / limit) + 1,
+      page: Math.ceil(allComments.length / limit) + 1,
       total: allTotal,
       totalPage: Math.ceil(allTotal / limit),
       comments,
@@ -206,10 +192,62 @@ export const getSongAllComments = async (id, options = {}) => {
     });
     if (hasMore) {
       // 网易云分页有2种模式，这里采用before方式以最大化获取全部评论
-      before = comments[comments.length - 1].time;
-      offset += comments.length;
+      before = cursor;
     }
   }
-  downloadAsJson(allComments, `${id}-评论.json`);
+  // downloadAsJson(allComments, `${id}-评论.json`);
   return allComments;
+};
+
+/**
+ * 听歌打卡 (网易云)
+ * @param {Object} query 需要传递的参数，比如：{ id, sourceid, time }
+ * @param {Function} request 发起请求的方法
+ * @returns {Promise}
+ * @example
+ * await listenSongCheckIn({id: 123, sourceid: 456, time: 234}, request)
+ */
+export const listenSongCheckIn = async (params) => {
+  const { id, sourceId = getUser().userId + '', time } = params;
+  // const startplay Log
+  const startplayLog = {
+    action: 'startplay',
+    json: {
+      content: 'id=' + id,
+      id,
+      mainsite: '1',
+      mainsiteWeb: '1',
+      type: 'song',
+    },
+  };
+  const startRes = await weapiRequest(`/api/feedback/weblog`, {
+    data: {
+      logs: JSON.stringify([startplayLog]),
+    },
+  });
+  console.log('startRes', startRes, startplayLog);
+
+  await new Promise((resolve) => setTimeout(resolve, 30000));
+
+  const endplayLog = {
+    action: 'play',
+    json: {
+      content: 'id=' + id,
+      download: 0,
+      end: 'ui',
+      id,
+      mainsite: '1',
+      mainsiteWeb: '1',
+      source: 'user',
+      sourceId,
+      sourcetype: 'user',
+      time,
+      type: 'song',
+      wifi: 0,
+    },
+  };
+  console.log('endplayLog', endplayLog);
+  return weapiRequest(`/api/feedback/weblog`, {
+    data: { logs: JSON.stringify([endplayLog]) },
+  });
 };

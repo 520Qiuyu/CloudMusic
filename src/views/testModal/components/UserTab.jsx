@@ -1,7 +1,11 @@
-import { getUserAllHistoryComment } from '@/api';
+import {
+  getUserAllHistoryComment,
+  getUserDetail,
+  getUserSubCount,
+} from '@/api';
 import { MyButton } from '@/components';
 import { msgError, msgSuccess } from '@/utils/modal';
-import { CommentOutlined, UserOutlined } from '@ant-design/icons';
+import { CommentOutlined, DatabaseOutlined, UserOutlined } from '@ant-design/icons';
 import {
   Avatar,
   Form,
@@ -73,6 +77,43 @@ const UserTab = () => {
   };
 
   /**
+   * 获取用户详情
+   */
+  const handleGetUserDetail = async () => {
+    try {
+      const values = await form.validateFields();
+      const { uid } = values;
+      if (!uid) {
+        return msgError('请输入用户ID');
+      }
+      const userDetail = await getUserDetail(uid);
+      console.log('userDetail', userDetail);
+    } catch (error) {
+      console.error('获取用户详情失败:', error);
+      msgError(error.message || '获取用户详情失败');
+    }
+  };
+
+  /**
+   * 获取用户云盘数据
+   */
+  const handleGetUserSubCount = async () => {
+    try {
+      const values = await form.validateFields();
+      const { uid } = values;
+      if (!uid) {
+        return msgError('请输入用户ID');
+      }
+      const userSubCount = await getUserSubCount(uid);
+      console.log('userSubCount', userSubCount);
+      msgSuccess('获取用户云盘数据成功');
+    } catch (error) {
+      console.error('获取用户云盘数据失败:', error);
+      msgError(error.message || '获取用户云盘数据失败');
+    }
+  };
+
+  /**
    * 格式化时间
    */
   const formatTime = (time) => {
@@ -84,7 +125,11 @@ const UserTab = () => {
    * 解析资源信息
    */
   const parseResourceInfo = (resourceInfo, threadId) => {
-    if (resourceInfo && resourceInfo !== 'null' && typeof resourceInfo === 'string') {
+    if (
+      resourceInfo &&
+      resourceInfo !== 'null' &&
+      typeof resourceInfo === 'string'
+    ) {
       try {
         const parsed = JSON.parse(resourceInfo);
         return parsed;
@@ -151,6 +196,26 @@ const UserTab = () => {
             onClick={handleGetUserHistoryComment}
             loading={loading}>
             获取历史评论
+          </MyButton>
+        </Form.Item>
+
+        <Form.Item>
+          <MyButton
+            type='primary'
+            icon={<UserOutlined />}
+            onClick={handleGetUserDetail}
+            loading={loading}>
+            获取用户详情
+          </MyButton>
+        </Form.Item>
+
+        <Form.Item>
+          <MyButton
+            type='primary'
+            icon={<DatabaseOutlined />}
+            onClick={handleGetUserSubCount}
+            loading={loading}>
+            获取用户云盘数据
           </MyButton>
         </Form.Item>
       </Form>

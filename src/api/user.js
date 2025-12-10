@@ -1,6 +1,35 @@
 import { weapiRequest } from '@/utils/request';
 
 /**
+ * 获取用户详情
+ * @param {number} uid 用户ID
+ * @returns {Promise} 返回用户详情
+ * @example
+ * const user = await getUserDetail(123456);
+ */
+export const getUserDetail = async (uid) => {
+  const res = await weapiRequest(`/api/v1/user/detail/${uid}`, {});
+  const result = JSON.stringify(res).replace(
+    /avatarImgId_str/g,
+    'avatarImgIdStr',
+  );
+  return JSON.parse(result);
+};
+
+/**
+ * 获取用户信息，包括歌单、收藏、MV、DJ等数量统计
+ * @param {object} query 查询参数对象（可选）
+ * @returns {Promise<Object>} 返回包含各种数量统计的用户信息对象
+ * @example
+ * const info = await getUserSubCount();
+ */
+export const getUserSubCount = async (query = {}) => {
+  return weapiRequest('/api/subcount', query);
+};
+
+
+
+/**
  * 获取用户历史评论
  * @param {number} uid 用户ID
  * @param {number} limit 每页数量，默认10

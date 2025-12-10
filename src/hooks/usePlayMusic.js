@@ -1,5 +1,6 @@
 import {
   getAlbumDetail,
+  getSongAllComments as getSongAllCommentsApi,
   getSongInfoList,
   getSongLyric,
   getSongUrl,
@@ -226,6 +227,52 @@ export const usePlayMusic = () => {
     setIsPlaying(false);
   };
 
+  /** 获取歌曲评论 */
+  const getSongAllComments = async (id) => {
+    const loadingMessageKey = 'get-song-all-comments';
+    message.loading({
+      content: '开始获取歌曲所有评论，请稍候...',
+      key: loadingMessageKey,
+      duration: 0,
+    });
+    try {
+      const allComments = await getSongAllCommentsApi(id, {
+        onChange: (progress) => {
+          const { page, totalPage, total, allComments } = progress;
+          message.loading({
+            content: `当前正在获取第${page}/${totalPage}页评论，已获取${allComments.length}条评论，共${total}条评论`,
+            key: loadingMessageKey,
+            duration: 0,
+          });
+        },
+      });
+      message.success({
+        content: '获取歌曲评论完成。',
+        duration: 3000,
+      });
+      return allComments;
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      message.destroy(loadingMessageKey);
+    }
+  };
+
+  /** 听歌打卡 */
+  const checkIn = async (id) => {
+    const songInfo = await getSongInfo(id);
+    const { al, dt } = songInfo;
+    const res = await listenSongCheckIn({
+      id,
+      time: dt,
+    });
+    if (res.code !== 200) {
+      msgError(res.message || res.msg || '听歌打卡失败');
+      throw new Error(res.message || res.msg || '听歌打卡失败');
+    }
+    msgSuccess('听歌打卡成功');
+  };
+
   return {
     currentMid,
     isPlaying,
@@ -239,5 +286,7 @@ export const usePlayMusic = () => {
     pause,
     playPlayList,
     download,
+    getSongAllComments,
+    checkIn,
   };
 };

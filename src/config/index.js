@@ -67,6 +67,10 @@ export const defaultConfig = {
      */
     enableTestModal: isDev,
     /**
+     * 是否开启情感解码
+     */
+    enableEmotionDecode: isDev,
+    /**
      * 是否开启功能开关TAB
      */
     enableFunctionSwitchTab: !isSell,
