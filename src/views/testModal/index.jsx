@@ -13,6 +13,7 @@ import PlaylistTab from './components/PlaylistTab';
 import SearchTab from './components/SearchTab';
 import SettingTab from './components/SettingTab';
 import SongTab from './components/SongTab';
+import UserTab from './components/UserTab';
 
 const TestModal = forwardRef((props, ref) => {
   const { visible, open, close } = useVisible({}, ref);
@@ -54,6 +55,11 @@ const TestModal = forwardRef((props, ref) => {
       key: 'album',
       label: '专辑',
       children: <AlbumTab />,
+    },
+    {
+      key: 'user',
+      label: '用户',
+      children: <UserTab />,
     },
     {
       key: 'flac',

@@ -7,3 +7,4 @@ export { getQrKey, getQrCode, getQrStatus, getUserAccount} from './login.js';
 export { getPlaylistList, createPlaylist, deletePlaylist, addSongToPlaylist, getPlaylistAllData, updateSongOrder} from './playlist.js';
 export { search, cloudSearch, searchArtist, matchLocalSong} from './search.js';
 export { getSongInfoList, getSongUrl, getSongUrlOld, getSongLyric, getSongDynamicCover} from './song.js';
+export { getUserHistoryComment, getUserAllHistoryComment} from './user.js';

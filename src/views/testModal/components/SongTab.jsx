@@ -1,4 +1,6 @@
 import {
+  getSongAllComments,
+  getSongComment,
   getSongDynamicCover,
   getSongInfoList,
   getSongLyric,
@@ -6,6 +8,7 @@ import {
 } from '@/api/song';
 import { MyButton } from '@/components';
 import { msgSuccess } from '@/utils/modal';
+import { message } from 'antd';
 import { Form, Input, Space } from 'antd';
 import { useState } from 'react';
 
@@ -67,6 +70,47 @@ const SongTab = () => {
     }
   };
 
+  // 获取歌曲评论
+  const handleGetSongComment = async () => {
+    try {
+      const res = await getSongComment(songId.split(',')[0]);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  // 获取歌曲所有评论
+  const handleGetSongAllComments = async () => {
+    const loadingMessageKey = 'get-song-all-comments';
+    message.loading({
+      content: '开始获取歌曲所有评论，请稍候...',
+      key: loadingMessageKey,
+      duration: 0,
+    });
+    try {
+      const res = await getSongAllComments(songId.split(',')[0], {
+        onChange: (progress) => {
+          const { page, totalPage, comments, allComments } = progress;
+          message.loading({
+            content: `当前正在获取第${page}/${totalPage}页评论，已获取${comments.length}条评论，共${allComments.length}条评论`,
+            key: loadingMessageKey,
+            duration: 0,
+          });
+        },
+      });
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      message.loading({
+        content: '获取歌曲所有评论完成，请稍候...',
+        key: loadingMessageKey,
+        duration: 4000,
+      });
+    }
+  };
+
   return (
     <Form>
       {/* 测试获取歌曲信息 */}
@@ -92,6 +136,14 @@ const SongTab = () => {
           {/* 获取歌曲动态封面 */}
           <MyButton type='primary' onClick={handleGetSongDynamicCover}>
             获取歌曲动态封面
+          </MyButton>
+          {/* 获取歌曲评论 */}
+          <MyButton type='primary' onClick={handleGetSongComment}>
+            获取歌曲评论
+          </MyButton>
+          {/* 获取歌曲所有评论 */}
+          <MyButton type='primary' onClick={handleGetSongAllComments}>
+            获取歌曲所有评论
           </MyButton>
         </Space>
       </Form.Item>

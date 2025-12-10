@@ -1,5 +1,6 @@
+import { downloadAsJson } from '@/utils/download';
 import { QUALITY_LEVELS } from '../constant';
-import { chunkArray } from '../utils';
+import { chunkArray, promiseLimit } from '../utils';
 import { weapiRequest } from '../utils/request';
 
 /**
@@ -98,4 +99,117 @@ export const getSongDynamicCover = async (songId) => {
       songId,
     },
   });
+};
+
+/**
+ * 获取歌曲评论
+ * @param {number} id 歌曲ID
+ * @param {object} options 选项
+ * @param {number} options.limit 每页评论数，默认20
+ * @param {number} options.offset 偏移量，默认0
+ * @param {number} options.before 上一分页最后一项的time，用于分页
+ * @returns {Promise} 返回评论数据
+ * @example
+ * const res = await getSongComment(123456, { limit: 20, offset: 0 });
+ */
+export const getSongComment = (id, options = {}) => {
+  const { limit = 100, offset = 0, before } = options;
+  const data = {
+    rid: id,
+    limit,
+    offset,
+    beforeTime: before,
+  };
+  return weapiRequest(`/api/v1/resource/comments/R_SO_4_${id}`, {
+    data,
+  });
+};
+
+/**
+ * 获取歌曲所有评论
+ * @param {number} id 歌曲ID
+ * @returns {Promise<Array>} 返回所有评论数组
+ * @example
+ * const allComments = await getSongAllComments(123456);
+ */
+export const getSongAllComments = async (id, options = {}) => {
+  const { onChange } = options;
+  const allComments = [];
+  let offset = 0;
+  const limit = 100; // 最大单次请求官方支持100，若不支持可改为更小值
+  let hasMore = true;
+  let before;
+  let allTotal = 0;
+
+  /*   // 第一次获取评论总数
+  const res = await getSongComment(id, { limit, offset, before });
+  if (!res || res.code !== 200) {
+    throw new Error((res && (res.msg || res.message)) || '获取歌曲评论失败');
+  }
+  const { total } = res;
+  allTotal = total;
+
+  const pageCount = Math.ceil(allTotal / limit);
+  const taskList = Array.from({ length: pageCount }, (_, index) => {
+    return async () => {
+      const res = await getSongComment(id, {
+        limit,
+        offset: index * limit,
+        before,
+      });
+      if (!res || res.code !== 200) {
+        throw new Error(
+          (res && (res.msg || res.message)) || '获取歌曲评论失败',
+        );
+      }
+      const { comments } = res;
+      before = comments[comments.length - 1].time;
+      console.log(`第${index + 1}页评论，偏移量${index * limit}`, res);
+      return comments;
+    };
+  });
+
+  const comments = await promiseLimit(taskList, 3);
+  console.log('comments', comments);
+  allComments.push(...comments.flat()); */
+
+  while (hasMore) {
+    const res = await getSongComment(id, { limit, offset, before });
+    console.log('res', res);
+    if (!res || res.code !== 200) {
+      throw new Error((res && (res.msg || res.message)) || '获取歌曲评论失败');
+    }
+    const {
+      cnum,
+      code,
+      commentBanner,
+      comments,
+      hotComments,
+      isMusician,
+      more,
+      moreHot,
+      topComments,
+      total,
+      userId,
+    } = res;
+    allTotal ||= total;
+    allComments.push(...comments);
+    hasMore = more;
+    onChange?.({
+      limit,
+      offset,
+      page: Math.ceil(offset / limit) + 1,
+      total: allTotal,
+      totalPage: Math.ceil(allTotal / limit),
+      comments,
+      allComments,
+    });
+    if (hasMore) {
+      // 网易云分页有2种模式，这里采用before方式以最大化获取全部评论
+      before = comments[comments.length - 1].time;
+      offset += comments.length;
+    }
+  }
+  downloadAsJson(allComments, `${id}-评论.json`);
+  return allComments;
 };
