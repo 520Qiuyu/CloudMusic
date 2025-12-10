@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-BreCcuvW.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-B0LN2jOi.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,9 +44,9 @@ System.register("./__entry.js", ['./__monkey.entry-BreCcuvW.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-B0LN2jOi.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Avatar, Form, Pagination, ConfigProvider, Select, Checkbox, Tooltip, Empty, Card, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, UserOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined;
+  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Form, Pagination, ConfigProvider, Select, Checkbox, Avatar, Tooltip, Empty, Card, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, UserOutlined, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, InfoCircleOutlined, CloudOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
@@ -74,12 +74,12 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
       Image = module.Image;
       Progress = module.Progress;
       Tabs = module.Tabs;
-      Avatar = module.Avatar;
       Form = module.Form;
       Pagination = module.Pagination;
       ConfigProvider = module.ConfigProvider;
       Select = module.Select;
       Checkbox = module.Checkbox;
+      Avatar = module.Avatar;
       Tooltip = module.Tooltip;
       Empty = module.Empty;
       Card = module.Card;
@@ -99,7 +99,6 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
       ForkOutlined = module.ForkOutlined;
       EyeOutlined = module.EyeOutlined;
       InboxOutlined = module.InboxOutlined;
-      UserOutlined = module.UserOutlined;
       PauseCircleOutlined = module.PauseCircleOutlined;
       PlayCircleOutlined = module.PlayCircleOutlined;
       SaveOutlined = module.SaveOutlined;
@@ -107,6 +106,7 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
       CloudUploadOutlined = module.CloudUploadOutlined;
       PauseCircleFilled = module.PauseCircleFilled;
       PlayCircleFilled = module.PlayCircleFilled;
+      UserOutlined = module.UserOutlined;
       CopyOutlined = module.CopyOutlined;
       CopyrightOutlined = module.CopyrightOutlined;
       FileOutlined = module.FileOutlined;
@@ -119,6 +119,7 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
       OrderedListOutlined = module.OrderedListOutlined;
       SearchOutlined = module.SearchOutlined;
       InfoCircleOutlined = module.InfoCircleOutlined;
+      CloudOutlined = module.CloudOutlined;
     }],
     execute: (function () {
 
@@ -138,7 +139,7 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
 
       const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
-      importCSS(' ._search-form_1aabt_1{padding:16px 0}._songInfoColumn_19zpd_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_19zpd_1 ._songIndex_19zpd_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_19zpd_1 ._songCover_19zpd_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover{transform:scale(1.05)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._btnWrapper_19zpd_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._songCoverImg_19zpd_33{filter:brightness(.85)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._songCoverImg_19zpd_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._songName_19zpd_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84,._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84{max-width:160px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_19zpd_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_19zpd_1 10s linear infinite}._currentSong_19zpd_102 td{background:var(--background)!important;animation:_rotate_19zpd_1 10s linear infinite}@keyframes _rotate_19zpd_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_19zpd_121{background-color:#f06161}._matchError_19zpd_121 td{background-color:#f06161!important}._footer_19zpd_128{margin-top:16px;display:flex;align-items:center;gap:16px;border-top:1px solid #f0f0f0;padding:16px 0}._footer_19zpd_128 ._actions_19zpd_136{margin-left:auto;display:flex;gap:8px}._stats_19zpd_142{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_19zpd_142 ._size_19zpd_150{color:#666}._stats_19zpd_142 ._divider_19zpd_153{color:#999;margin:0 4px}._stats_19zpd_142 .ant-tag{margin:0}._playlist_19zpd_161 .ant-modal-body{padding-bottom:0}._autoAddContent_19zpd_165 ._title_19zpd_165{font-size:16px;margin-bottom:8px}._autoAddContent_19zpd_165 ._statsWrapper_19zpd_169{margin-bottom:16px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._label_19zpd_179{color:#666}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._value_19zpd_182{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_19zpd_165 ._listHeader_19zpd_187{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_19zpd_165 ._listItem_19zpd_214{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_19zpd_165 ._listItem_19zpd_214:hover{background:#f5f5f5}._autoAddContent_19zpd_165 ._listItem_19zpd_214:last-child{margin-bottom:0}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemName_19zpd_230{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemCount_19zpd_236{color:#1890ff;margin-left:8px}._deleteConfirmation_19zpd_241{font-size:14px}._deleteConfirmation_19zpd_241 ._title_19zpd_165{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_19zpd_241 ._title_19zpd_165 ._count_19zpd_249{color:#1890ff}._deleteConfirmation_19zpd_241 ._songs_19zpd_252{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:hover{background:#f0f0f0}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:not(:last-child){margin-bottom:4px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._text_19zpd_281{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._icon_19zpd_288{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_19zpd_302{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_19zpd_302 ._singer-option-content_19zpd_315{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-name_19zpd_330{font-size:14px}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-id_19zpd_333{font-size:13px}._singer-option_19zpd_302:hover ._singer-option-content_19zpd_315{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_19zpd_341{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_19zpd_341 ._song-name_19zpd_347{font-size:14px;color:#333;font-weight:500}._song-label_19zpd_341 ._tag-group_19zpd_352{display:flex;gap:8px;flex-wrap:wrap}._song-option_19zpd_358{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_19zpd_358:hover{background-color:#f5f5f5}._song-option_19zpd_358 ._song-info_19zpd_371{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_19zpd_358 ._song-name_19zpd_347{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_19zpd_358 ._tag-group_19zpd_352{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_19zpd_358 ._tag-group_19zpd_352 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_19zpd_358 ._album-cover_19zpd_400{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_19zpd_358 ._album-cover_19zpd_400:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_19zpd_416{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_19zpd_416 ._song-info_19zpd_371{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._artist-info_19zpd_432{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._album-info_19zpd_440{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_1tg5n_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_1tg5n_1 ._cover_1tg5n_8{flex:0 0 fit-content;border-radius:6px;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_1tg5n_1 ._cover_1tg5n_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover:before{opacity:1}._playlist-info_1tg5n_1 ._cover_1tg5n_8:active{transform:scale(1.02)}._playlist-info_1tg5n_1 ._info_1tg5n_38{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._name_1tg5n_45{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56{display:flex;align-items:center;gap:4px;font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56 .ant-avatar{flex:0 0 20px}._playlist-item_1tg5n_73{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_1tg5n_73:hover{background-color:#fafafa!important}._playlist-item_1tg5n_73:active,._playlist-item_1tg5n_73:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_17qrr_22 ._select_17qrr_22{width:100%}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26{display:flex;flex-direction:column;height:400px}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26 ._btn-group_17qrr_31{display:flex;justify-content:flex-end;gap:16px}._singer-choose_17qrr_26 ._option-label_17qrr_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._singer-name_17qrr_43{font-weight:500}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._tag-group_17qrr_46 ._tag_17qrr_46:not(:last-child){margin-right:8px}._upload-list_17qrr_50 .ant-table{margin:16px 0}._upload-footer_17qrr_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_17qrr_62{flex:1 0 450px;display:flex;align-items:center;color:#666;font-size:13px;margin-right:auto;gap:3px}._upload-stats_17qrr_62 ._size-text_17qrr_71{color:#999}._upload-stats_17qrr_62 ._divider_17qrr_74{margin:0 8px;color:#d9d9d9}._upload-confirm_17qrr_79{padding:16px 0;font-size:14px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83:last-child{margin-bottom:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._label_17qrr_91{color:#666;width:80px;flex-shrink:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96{color:#333;font-weight:500}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96 ._size_17qrr_71{margin-left:4px;color:#999;font-weight:400}._upload-progress_17qrr_106 ._progress-header_17qrr_106{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._progress-info_17qrr_113{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._percentage_17qrr_117{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_17qrr_106 ._progress-list_17qrr_122{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127:last-child{border-bottom:none}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137{flex:1;min-width:0;padding-right:16px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._name_17qrr_142{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._artist_17qrr_146{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_17qrr_152 .ant-modal-body{padding:24px}._uploadProgressModal_17qrr_152 ._progressContent_17qrr_155{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._detail_17qrr_171{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._label_17qrr_91{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._value_17qrr_96 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197{width:100%}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedTitle_17qrr_200{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._songName_17qrr_212{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._errorMsg_17qrr_217{font-size:12px;color:#ff4d4f}._uploadModal_17qrr_222 .ant-modal-body{padding:24px}._progressSection_17qrr_226{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._progressInfo_17qrr_161 ._count_17qrr_245{font-size:14px;color:#666;margin-top:4px}._statsContainer_17qrr_176{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._statsContainer_17qrr_176 ._statsTag_17qrr_260{padding:4px 12px;font-size:14px}._songList_17qrr_265{max-height:300px;overflow-y:auto;padding-right:4px}._songList_17qrr_265::-webkit-scrollbar{width:6px}._songList_17qrr_265::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_17qrr_265::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_17qrr_281{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_17qrr_281:not(:last-child){margin-bottom:8px}._songItem_17qrr_281:hover{background:#f5f5f5}._songInfo_17qrr_296{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_17qrr_296 ._songName_17qrr_212{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_17qrr_296 ._artistName_17qrr_310{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._album-list-modal_tzijq_1 .ant-modal-body{padding:16px 0 0}._modal-title_tzijq_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_tzijq_12{display:flex;align-items:center;gap:16px}._title-text_tzijq_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_tzijq_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_tzijq_32{display:flex;align-items:center;gap:4px}._stat-label_tzijq_38{color:#8c8c8c}._stat-value_tzijq_42{font-weight:600;color:#262626}._album-info_tzijq_47{display:flex;align-items:center;gap:12px}._album-cover_tzijq_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_tzijq_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_tzijq_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_tzijq_68:hover{color:#1890ff}._album-alias_tzijq_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_tzijq_89{display:flex;align-items:center;gap:8px}._album-tag_tzijq_95{margin:0}._album-company_tzijq_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._singer-details_tzijq_109{display:flex;flex-direction:column;gap:2px}._singer-name_tzijq_115{font-size:13px;font-weight:500;color:#262626}._singer-id_tzijq_121{font-size:12px;color:#8c8c8c}._album-id_tzijq_126{font-size:12px}._album-table_tzijq_130 .ant-table-body{scrollbar-width:thin}._search-area_tzijq_134{padding:0 24px 16px}._modal-footer_tzijq_138{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_tzijq_145{font-size:13px;color:#595959}._selected-extra_tzijq_150{margin-left:4px;color:#8c8c8c}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
+      importCSS(' ._search-form_1aabt_1{padding:16px 0}._songInfoColumn_19zpd_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_19zpd_1 ._songIndex_19zpd_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_19zpd_1 ._songCover_19zpd_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover{transform:scale(1.05)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._btnWrapper_19zpd_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._songCoverImg_19zpd_33{filter:brightness(.85)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._songCoverImg_19zpd_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._songName_19zpd_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84,._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84{max-width:160px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_19zpd_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_19zpd_1 10s linear infinite}._currentSong_19zpd_102 td{background:var(--background)!important;animation:_rotate_19zpd_1 10s linear infinite}@keyframes _rotate_19zpd_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_19zpd_121{background-color:#f06161}._matchError_19zpd_121 td{background-color:#f06161!important}._footer_19zpd_128{margin-top:16px;display:flex;align-items:center;gap:16px;border-top:1px solid #f0f0f0;padding:16px 0}._footer_19zpd_128 ._actions_19zpd_136{margin-left:auto;display:flex;gap:8px}._stats_19zpd_142{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_19zpd_142 ._size_19zpd_150{color:#666}._stats_19zpd_142 ._divider_19zpd_153{color:#999;margin:0 4px}._stats_19zpd_142 .ant-tag{margin:0}._playlist_19zpd_161 .ant-modal-body{padding-bottom:0}._autoAddContent_19zpd_165 ._title_19zpd_165{font-size:16px;margin-bottom:8px}._autoAddContent_19zpd_165 ._statsWrapper_19zpd_169{margin-bottom:16px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._label_19zpd_179{color:#666}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._value_19zpd_182{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_19zpd_165 ._listHeader_19zpd_187{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_19zpd_165 ._listItem_19zpd_214{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_19zpd_165 ._listItem_19zpd_214:hover{background:#f5f5f5}._autoAddContent_19zpd_165 ._listItem_19zpd_214:last-child{margin-bottom:0}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemName_19zpd_230{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemCount_19zpd_236{color:#1890ff;margin-left:8px}._deleteConfirmation_19zpd_241{font-size:14px}._deleteConfirmation_19zpd_241 ._title_19zpd_165{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_19zpd_241 ._title_19zpd_165 ._count_19zpd_249{color:#1890ff}._deleteConfirmation_19zpd_241 ._songs_19zpd_252{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:hover{background:#f0f0f0}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:not(:last-child){margin-bottom:4px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._text_19zpd_281{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._icon_19zpd_288{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_19zpd_302{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_19zpd_302 ._singer-option-content_19zpd_315{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-name_19zpd_330{font-size:14px}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-id_19zpd_333{font-size:13px}._singer-option_19zpd_302:hover ._singer-option-content_19zpd_315{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_19zpd_341{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_19zpd_341 ._song-name_19zpd_347{font-size:14px;color:#333;font-weight:500}._song-label_19zpd_341 ._tag-group_19zpd_352{display:flex;gap:8px;flex-wrap:wrap}._song-option_19zpd_358{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_19zpd_358:hover{background-color:#f5f5f5}._song-option_19zpd_358 ._song-info_19zpd_371{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_19zpd_358 ._song-name_19zpd_347{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_19zpd_358 ._tag-group_19zpd_352{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_19zpd_358 ._tag-group_19zpd_352 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_19zpd_358 ._album-cover_19zpd_400{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_19zpd_358 ._album-cover_19zpd_400:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_19zpd_416{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_19zpd_416 ._song-info_19zpd_371{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._artist-info_19zpd_432{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._album-info_19zpd_440{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._copy-text_yqw94_1{display:flex;align-items:center;width:100%}._copy-text_yqw94_1 ._text_yqw94_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_yqw94_1 ._copy-btn_yqw94_12{flex-shrink:0;padding:0;height:fit-content}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._song-info-render_1piqa_1{display:flex;align-items:center;gap:12px;min-width:0}._song-info-render_1piqa_1 ._cover-wrapper_1piqa_7{flex:0 0 60px;border-radius:6px;overflow:hidden;cursor:pointer}._song-info-render_1piqa_1 ._cover-wrapper_1piqa_7 ._cover-placeholder_1piqa_13{width:60px;height:60px;background-color:#f0f0f0;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._name_1piqa_31{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._name_1piqa_31._no-source_1piqa_39{color:#bfbfbf}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._alias_1piqa_42{font-size:12px;color:#8c8c8c;font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._id_1piqa_50{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_1tg5n_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_1tg5n_1 ._cover_1tg5n_8{flex:0 0 fit-content;border-radius:6px;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_1tg5n_1 ._cover_1tg5n_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover:before{opacity:1}._playlist-info_1tg5n_1 ._cover_1tg5n_8:active{transform:scale(1.02)}._playlist-info_1tg5n_1 ._info_1tg5n_38{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._name_1tg5n_45{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56{display:flex;align-items:center;gap:4px;font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56 .ant-avatar{flex:0 0 20px}._playlist-item_1tg5n_73{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_1tg5n_73:hover{background-color:#fafafa!important}._playlist-item_1tg5n_73:active,._playlist-item_1tg5n_73:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_17qrr_22 ._select_17qrr_22{width:100%}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26{display:flex;flex-direction:column;height:400px}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26 ._btn-group_17qrr_31{display:flex;justify-content:flex-end;gap:16px}._singer-choose_17qrr_26 ._option-label_17qrr_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._singer-name_17qrr_43{font-weight:500}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._tag-group_17qrr_46 ._tag_17qrr_46:not(:last-child){margin-right:8px}._upload-list_17qrr_50 .ant-table{margin:16px 0}._upload-footer_17qrr_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_17qrr_62{flex:1 0 450px;display:flex;align-items:center;color:#666;font-size:13px;margin-right:auto;gap:3px}._upload-stats_17qrr_62 ._size-text_17qrr_71{color:#999}._upload-stats_17qrr_62 ._divider_17qrr_74{margin:0 8px;color:#d9d9d9}._upload-confirm_17qrr_79{padding:16px 0;font-size:14px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83:last-child{margin-bottom:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._label_17qrr_91{color:#666;width:80px;flex-shrink:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96{color:#333;font-weight:500}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96 ._size_17qrr_71{margin-left:4px;color:#999;font-weight:400}._upload-progress_17qrr_106 ._progress-header_17qrr_106{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._progress-info_17qrr_113{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._percentage_17qrr_117{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_17qrr_106 ._progress-list_17qrr_122{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127:last-child{border-bottom:none}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137{flex:1;min-width:0;padding-right:16px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._name_17qrr_142{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._artist_17qrr_146{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_17qrr_152 .ant-modal-body{padding:24px}._uploadProgressModal_17qrr_152 ._progressContent_17qrr_155{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._detail_17qrr_171{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._label_17qrr_91{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._value_17qrr_96 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197{width:100%}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedTitle_17qrr_200{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._songName_17qrr_212{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._errorMsg_17qrr_217{font-size:12px;color:#ff4d4f}._uploadModal_17qrr_222 .ant-modal-body{padding:24px}._progressSection_17qrr_226{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._progressInfo_17qrr_161 ._count_17qrr_245{font-size:14px;color:#666;margin-top:4px}._statsContainer_17qrr_176{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._statsContainer_17qrr_176 ._statsTag_17qrr_260{padding:4px 12px;font-size:14px}._songList_17qrr_265{max-height:300px;overflow-y:auto;padding-right:4px}._songList_17qrr_265::-webkit-scrollbar{width:6px}._songList_17qrr_265::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_17qrr_265::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_17qrr_281{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_17qrr_281:not(:last-child){margin-bottom:8px}._songItem_17qrr_281:hover{background:#f5f5f5}._songInfo_17qrr_296{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_17qrr_296 ._songName_17qrr_212{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_17qrr_296 ._artistName_17qrr_310{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._details_1f8uq_1{display:flex;flex-direction:column;gap:2px}._name_1f8uq_7{font-size:13px;font-weight:500;color:#262626}._id_1f8uq_13{font-size:12px;color:#8c8c8c}._album-list-modal_oa7mi_1 .ant-modal-body{padding:16px 0 0}._modal-title_oa7mi_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_oa7mi_12{display:flex;align-items:center;gap:16px}._title-text_oa7mi_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_oa7mi_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_oa7mi_32{display:flex;align-items:center;gap:4px}._stat-label_oa7mi_38{color:#8c8c8c}._stat-value_oa7mi_42{font-weight:600;color:#262626}._album-info_oa7mi_47{display:flex;align-items:center;gap:12px}._album-cover_oa7mi_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_oa7mi_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_oa7mi_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_oa7mi_68:hover{color:#1890ff}._album-alias_oa7mi_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_oa7mi_89{display:flex;align-items:center;gap:8px}._album-tag_oa7mi_95{margin:0}._album-company_oa7mi_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-id_oa7mi_109{font-size:12px}._album-table_oa7mi_113 .ant-table-body{scrollbar-width:thin}._search-area_oa7mi_117{padding:0 24px 16px}._modal-footer_oa7mi_121{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_oa7mi_128{font-size:13px;color:#595959}._selected-extra_oa7mi_133{margin-left:4px;color:#8c8c8c}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
 
       var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
       function getDefaultExportFromCjs(x) {
@@ -161,13 +162,13 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
         hasRequiredReactJsxRuntime_production_min = 1;
         var f = require$$0, k = Symbol.for("react.element"), l = Symbol.for("react.fragment"), m = Object.prototype.hasOwnProperty, n = f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p = { key: true, ref: true, __self: true, __source: true };
         function q(c, a, g) {
-          var b, d = {}, e2 = null, h = null;
-          void 0 !== g && (e2 = "" + g);
-          void 0 !== a.key && (e2 = "" + a.key);
+          var b, d = {}, e = null, h = null;
+          void 0 !== g && (e = "" + g);
+          void 0 !== a.key && (e = "" + a.key);
           void 0 !== a.ref && (h = a.ref);
           for (b in a) m.call(a, b) && !p.hasOwnProperty(b) && (d[b] = a[b]);
           if (c && c.defaultProps) for (b in a = c.defaultProps, a) void 0 === d[b] && (d[b] = a[b]);
-          return { $$typeof: k, type: c, key: e2, ref: h, props: d, _owner: n.current };
+          return { $$typeof: k, type: c, key: e, ref: h, props: d, _owner: n.current };
         }
         reactJsxRuntime_production_min.Fragment = l;
         reactJsxRuntime_production_min.jsx = q;
@@ -218,23 +219,23 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
       function __read(o, n) {
         var m = typeof Symbol === "function" && o[Symbol.iterator];
         if (!m) return o;
-        var i = m.call(o), r, ar = [], e2;
+        var i = m.call(o), r, ar = [], e;
         try {
           while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
         } catch (error) {
-          e2 = { error };
+          e = { error };
         } finally {
           try {
             if (r && !r.done && (m = i["return"])) m.call(i);
           } finally {
-            if (e2) throw e2.error;
+            if (e) throw e.error;
           }
         }
         return ar;
       }
       typeof SuppressedError === "function" ? SuppressedError : function(error, suppressed, message2) {
-        var e2 = new Error(message2);
-        return e2.name = "SuppressedError", e2.error = error, e2.suppressed = suppressed, e2;
+        var e = new Error(message2);
+        return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
       };
       var isFunction = function(value2) {
         return typeof value2 === "function";
@@ -344,21 +345,21 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
         if (hasRequiredDayjs_min) return dayjs_min$1.exports;
         hasRequiredDayjs_min = 1;
         (function(module, exports) {
-          !(function(t, e2) {
-            module.exports = e2();
+          !(function(t, e) {
+            module.exports = e();
           })(dayjs_min, (function() {
-            var t = 1e3, e2 = 6e4, n = 36e5, r = "millisecond", i = "second", s = "minute", u = "hour", a = "day", o = "week", c = "month", f = "quarter", h = "year", d = "date", l = "Invalid Date", $ = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, y = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, M = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(t2) {
-              var e3 = ["th", "st", "nd", "rd"], n2 = t2 % 100;
-              return "[" + t2 + (e3[(n2 - 20) % 10] || e3[n2] || e3[0]) + "]";
-            } }, m = function(t2, e3, n2) {
+            var t = 1e3, e = 6e4, n = 36e5, r = "millisecond", i = "second", s = "minute", u = "hour", a = "day", o = "week", c = "month", f = "quarter", h = "year", d = "date", l = "Invalid Date", $ = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, y = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, M = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(t2) {
+              var e2 = ["th", "st", "nd", "rd"], n2 = t2 % 100;
+              return "[" + t2 + (e2[(n2 - 20) % 10] || e2[n2] || e2[0]) + "]";
+            } }, m = function(t2, e2, n2) {
               var r2 = String(t2);
-              return !r2 || r2.length >= e3 ? t2 : "" + Array(e3 + 1 - r2.length).join(n2) + t2;
+              return !r2 || r2.length >= e2 ? t2 : "" + Array(e2 + 1 - r2.length).join(n2) + t2;
             }, v = { s: m, z: function(t2) {
-              var e3 = -t2.utcOffset(), n2 = Math.abs(e3), r2 = Math.floor(n2 / 60), i2 = n2 % 60;
-              return (e3 <= 0 ? "+" : "-") + m(r2, 2, "0") + ":" + m(i2, 2, "0");
-            }, m: function t2(e3, n2) {
-              if (e3.date() < n2.date()) return -t2(n2, e3);
-              var r2 = 12 * (n2.year() - e3.year()) + (n2.month() - e3.month()), i2 = e3.clone().add(r2, c), s2 = n2 - i2 < 0, u2 = e3.clone().add(r2 + (s2 ? -1 : 1), c);
+              var e2 = -t2.utcOffset(), n2 = Math.abs(e2), r2 = Math.floor(n2 / 60), i2 = n2 % 60;
+              return (e2 <= 0 ? "+" : "-") + m(r2, 2, "0") + ":" + m(i2, 2, "0");
+            }, m: function t2(e2, n2) {
+              if (e2.date() < n2.date()) return -t2(n2, e2);
+              var r2 = 12 * (n2.year() - e2.year()) + (n2.month() - e2.month()), i2 = e2.clone().add(r2, c), s2 = n2 - i2 < 0, u2 = e2.clone().add(r2 + (s2 ? -1 : 1), c);
               return +(-(r2 + (n2 - i2) / (s2 ? i2 - u2 : u2 - i2)) || 0);
             }, a: function(t2) {
               return t2 < 0 ? Math.ceil(t2) || 0 : Math.floor(t2);
@@ -370,26 +371,26 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
             D[g] = M;
             var p = "$isDayjsObject", S = function(t2) {
               return t2 instanceof _ || !(!t2 || !t2[p]);
-            }, w = function t2(e3, n2, r2) {
+            }, w = function t2(e2, n2, r2) {
               var i2;
-              if (!e3) return g;
-              if ("string" == typeof e3) {
-                var s2 = e3.toLowerCase();
+              if (!e2) return g;
+              if ("string" == typeof e2) {
+                var s2 = e2.toLowerCase();
                 D[s2] && (i2 = s2), n2 && (D[s2] = n2, i2 = s2);
-                var u2 = e3.split("-");
+                var u2 = e2.split("-");
                 if (!i2 && u2.length > 1) return t2(u2[0]);
               } else {
-                var a2 = e3.name;
-                D[a2] = e3, i2 = a2;
+                var a2 = e2.name;
+                D[a2] = e2, i2 = a2;
               }
               return !r2 && i2 && (g = i2), i2 || !r2 && g;
-            }, O = function(t2, e3) {
+            }, O = function(t2, e2) {
               if (S(t2)) return t2.clone();
-              var n2 = "object" == typeof e3 ? e3 : {};
+              var n2 = "object" == typeof e2 ? e2 : {};
               return n2.date = t2, n2.args = arguments, new _(n2);
             }, b = v;
-            b.l = w, b.i = S, b.w = function(t2, e3) {
-              return O(t2, { locale: e3.$L, utc: e3.$u, x: e3.$x, $offset: e3.$offset });
+            b.l = w, b.i = S, b.w = function(t2, e2) {
+              return O(t2, { locale: e2.$L, utc: e2.$u, x: e2.$x, $offset: e2.$offset });
             };
             var _ = (function() {
               function M2(t2) {
@@ -398,18 +399,18 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
               var m2 = M2.prototype;
               return m2.parse = function(t2) {
                 this.$d = (function(t3) {
-                  var e3 = t3.date, n2 = t3.utc;
-                  if (null === e3) return new Date(NaN);
-                  if (b.u(e3)) return new Date();
-                  if (e3 instanceof Date) return new Date(e3);
-                  if ("string" == typeof e3 && !/Z$/i.test(e3)) {
-                    var r2 = e3.match($);
+                  var e2 = t3.date, n2 = t3.utc;
+                  if (null === e2) return new Date(NaN);
+                  if (b.u(e2)) return new Date();
+                  if (e2 instanceof Date) return new Date(e2);
+                  if ("string" == typeof e2 && !/Z$/i.test(e2)) {
+                    var r2 = e2.match($);
                     if (r2) {
                       var i2 = r2[2] - 1 || 0, s2 = (r2[7] || "0").substring(0, 3);
                       return n2 ? new Date(Date.UTC(r2[1], i2, r2[3] || 1, r2[4] || 0, r2[5] || 0, r2[6] || 0, s2)) : new Date(r2[1], i2, r2[3] || 1, r2[4] || 0, r2[5] || 0, r2[6] || 0, s2);
                     }
                   }
-                  return new Date(e3);
+                  return new Date(e2);
                 })(t2), this.init();
               }, m2.init = function() {
                 var t2 = this.$d;
@@ -418,25 +419,25 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
                 return b;
               }, m2.isValid = function() {
                 return !(this.$d.toString() === l);
-              }, m2.isSame = function(t2, e3) {
+              }, m2.isSame = function(t2, e2) {
                 var n2 = O(t2);
-                return this.startOf(e3) <= n2 && n2 <= this.endOf(e3);
-              }, m2.isAfter = function(t2, e3) {
-                return O(t2) < this.startOf(e3);
-              }, m2.isBefore = function(t2, e3) {
-                return this.endOf(e3) < O(t2);
-              }, m2.$g = function(t2, e3, n2) {
-                return b.u(t2) ? this[e3] : this.set(n2, t2);
+                return this.startOf(e2) <= n2 && n2 <= this.endOf(e2);
+              }, m2.isAfter = function(t2, e2) {
+                return O(t2) < this.startOf(e2);
+              }, m2.isBefore = function(t2, e2) {
+                return this.endOf(e2) < O(t2);
+              }, m2.$g = function(t2, e2, n2) {
+                return b.u(t2) ? this[e2] : this.set(n2, t2);
               }, m2.unix = function() {
                 return Math.floor(this.valueOf() / 1e3);
               }, m2.valueOf = function() {
                 return this.$d.getTime();
-              }, m2.startOf = function(t2, e3) {
-                var n2 = this, r2 = !!b.u(e3) || e3, f2 = b.p(t2), l2 = function(t3, e4) {
-                  var i2 = b.w(n2.$u ? Date.UTC(n2.$y, e4, t3) : new Date(n2.$y, e4, t3), n2);
+              }, m2.startOf = function(t2, e2) {
+                var n2 = this, r2 = !!b.u(e2) || e2, f2 = b.p(t2), l2 = function(t3, e3) {
+                  var i2 = b.w(n2.$u ? Date.UTC(n2.$y, e3, t3) : new Date(n2.$y, e3, t3), n2);
                   return r2 ? i2 : i2.endOf(a);
-                }, $2 = function(t3, e4) {
-                  return b.w(n2.toDate()[t3].apply(n2.toDate("s"), (r2 ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e4)), n2);
+                }, $2 = function(t3, e3) {
+                  return b.w(n2.toDate()[t3].apply(n2.toDate("s"), (r2 ? [0, 0, 0, 0] : [23, 59, 59, 999]).slice(e3)), n2);
                 }, y2 = this.$W, M3 = this.$M, m3 = this.$D, v2 = "set" + (this.$u ? "UTC" : "");
                 switch (f2) {
                   case h:
@@ -460,40 +461,40 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
                 }
               }, m2.endOf = function(t2) {
                 return this.startOf(t2, false);
-              }, m2.$set = function(t2, e3) {
-                var n2, o2 = b.p(t2), f2 = "set" + (this.$u ? "UTC" : ""), l2 = (n2 = {}, n2[a] = f2 + "Date", n2[d] = f2 + "Date", n2[c] = f2 + "Month", n2[h] = f2 + "FullYear", n2[u] = f2 + "Hours", n2[s] = f2 + "Minutes", n2[i] = f2 + "Seconds", n2[r] = f2 + "Milliseconds", n2)[o2], $2 = o2 === a ? this.$D + (e3 - this.$W) : e3;
+              }, m2.$set = function(t2, e2) {
+                var n2, o2 = b.p(t2), f2 = "set" + (this.$u ? "UTC" : ""), l2 = (n2 = {}, n2[a] = f2 + "Date", n2[d] = f2 + "Date", n2[c] = f2 + "Month", n2[h] = f2 + "FullYear", n2[u] = f2 + "Hours", n2[s] = f2 + "Minutes", n2[i] = f2 + "Seconds", n2[r] = f2 + "Milliseconds", n2)[o2], $2 = o2 === a ? this.$D + (e2 - this.$W) : e2;
                 if (o2 === c || o2 === h) {
                   var y2 = this.clone().set(d, 1);
                   y2.$d[l2]($2), y2.init(), this.$d = y2.set(d, Math.min(this.$D, y2.daysInMonth())).$d;
                 } else l2 && this.$d[l2]($2);
                 return this.init(), this;
-              }, m2.set = function(t2, e3) {
-                return this.clone().$set(t2, e3);
+              }, m2.set = function(t2, e2) {
+                return this.clone().$set(t2, e2);
               }, m2.get = function(t2) {
                 return this[b.p(t2)]();
               }, m2.add = function(r2, f2) {
                 var d2, l2 = this;
                 r2 = Number(r2);
                 var $2 = b.p(f2), y2 = function(t2) {
-                  var e3 = O(l2);
-                  return b.w(e3.date(e3.date() + Math.round(t2 * r2)), l2);
+                  var e2 = O(l2);
+                  return b.w(e2.date(e2.date() + Math.round(t2 * r2)), l2);
                 };
                 if ($2 === c) return this.set(c, this.$M + r2);
                 if ($2 === h) return this.set(h, this.$y + r2);
                 if ($2 === a) return y2(1);
                 if ($2 === o) return y2(7);
-                var M3 = (d2 = {}, d2[s] = e2, d2[u] = n, d2[i] = t, d2)[$2] || 1, m3 = this.$d.getTime() + r2 * M3;
+                var M3 = (d2 = {}, d2[s] = e, d2[u] = n, d2[i] = t, d2)[$2] || 1, m3 = this.$d.getTime() + r2 * M3;
                 return b.w(m3, this);
-              }, m2.subtract = function(t2, e3) {
-                return this.add(-1 * t2, e3);
+              }, m2.subtract = function(t2, e2) {
+                return this.add(-1 * t2, e2);
               }, m2.format = function(t2) {
-                var e3 = this, n2 = this.$locale();
+                var e2 = this, n2 = this.$locale();
                 if (!this.isValid()) return n2.invalidDate || l;
                 var r2 = t2 || "YYYY-MM-DDTHH:mm:ssZ", i2 = b.z(this), s2 = this.$H, u2 = this.$m, a2 = this.$M, o2 = n2.weekdays, c2 = n2.months, f2 = n2.meridiem, h2 = function(t3, n3, i3, s3) {
-                  return t3 && (t3[n3] || t3(e3, r2)) || i3[n3].slice(0, s3);
+                  return t3 && (t3[n3] || t3(e2, r2)) || i3[n3].slice(0, s3);
                 }, d2 = function(t3) {
                   return b.s(s2 % 12 || 12, t3, "0");
-                }, $2 = f2 || function(t3, e4, n3) {
+                }, $2 = f2 || function(t3, e3, n3) {
                   var r3 = t3 < 12 ? "AM" : "PM";
                   return n3 ? r3.toLowerCase() : r3;
                 };
@@ -501,9 +502,9 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
                   return r3 || (function(t4) {
                     switch (t4) {
                       case "YY":
-                        return String(e3.$y).slice(-2);
+                        return String(e2.$y).slice(-2);
                       case "YYYY":
-                        return b.s(e3.$y, 4, "0");
+                        return b.s(e2.$y, 4, "0");
                       case "M":
                         return a2 + 1;
                       case "MM":
@@ -513,17 +514,17 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
                       case "MMMM":
                         return h2(c2, a2);
                       case "D":
-                        return e3.$D;
+                        return e2.$D;
                       case "DD":
-                        return b.s(e3.$D, 2, "0");
+                        return b.s(e2.$D, 2, "0");
                       case "d":
-                        return String(e3.$W);
+                        return String(e2.$W);
                       case "dd":
-                        return h2(n2.weekdaysMin, e3.$W, o2, 2);
+                        return h2(n2.weekdaysMin, e2.$W, o2, 2);
                       case "ddd":
-                        return h2(n2.weekdaysShort, e3.$W, o2, 3);
+                        return h2(n2.weekdaysShort, e2.$W, o2, 3);
                       case "dddd":
-                        return o2[e3.$W];
+                        return o2[e2.$W];
                       case "H":
                         return String(s2);
                       case "HH":
@@ -541,11 +542,11 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
                       case "mm":
                         return b.s(u2, 2, "0");
                       case "s":
-                        return String(e3.$s);
+                        return String(e2.$s);
                       case "ss":
-                        return b.s(e3.$s, 2, "0");
+                        return b.s(e2.$s, 2, "0");
                       case "SSS":
-                        return b.s(e3.$ms, 3, "0");
+                        return b.s(e2.$ms, 3, "0");
                       case "Z":
                         return i2;
                     }
@@ -555,7 +556,7 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
               }, m2.utcOffset = function() {
                 return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
               }, m2.diff = function(r2, d2, l2) {
-                var $2, y2 = this, M3 = b.p(d2), m3 = O(r2), v2 = (m3.utcOffset() - this.utcOffset()) * e2, g2 = this - m3, D2 = function() {
+                var $2, y2 = this, M3 = b.p(d2), m3 = O(r2), v2 = (m3.utcOffset() - this.utcOffset()) * e, g2 = this - m3, D2 = function() {
                   return b.m(y2, m3);
                 };
                 switch (M3) {
@@ -578,7 +579,7 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
                     $2 = g2 / n;
                     break;
                   case s:
-                    $2 = g2 / e2;
+                    $2 = g2 / e;
                     break;
                   case i:
                     $2 = g2 / t;
@@ -591,9 +592,9 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
                 return this.endOf(c).$D;
               }, m2.$locale = function() {
                 return D[this.$L];
-              }, m2.locale = function(t2, e3) {
+              }, m2.locale = function(t2, e2) {
                 if (!t2) return this.$L;
-                var n2 = this.clone(), r2 = w(t2, e3, true);
+                var n2 = this.clone(), r2 = w(t2, e2, true);
                 return r2 && (n2.$L = r2), n2;
               }, m2.clone = function() {
                 return b.w(this.$d, this);
@@ -608,11 +609,11 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
               }, M2;
             })(), k = _.prototype;
             return O.prototype = k, [["$ms", r], ["$s", i], ["$m", s], ["$H", u], ["$W", a], ["$M", c], ["$y", h], ["$D", d]].forEach((function(t2) {
-              k[t2[1]] = function(e3) {
-                return this.$g(e3, t2[0], t2[1]);
+              k[t2[1]] = function(e2) {
+                return this.$g(e2, t2[0], t2[1]);
               };
-            })), O.extend = function(t2, e3) {
-              return t2.$i || (t2(e3, _, O), t2.$i = true), O;
+            })), O.extend = function(t2, e2) {
+              return t2.$i || (t2(e2, _, O), t2.$i = true), O;
             }, O.locale = w, O.isDayjs = S, O.unix = function(t2) {
               return O(1e3 * t2);
             }, O.en = D[g], O.Ls = D, O.p = {}, O;
@@ -663,8 +664,8 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
             options = {};
           }
           var storage;
-          var _a2 = options.listenStorageChange, listenStorageChange = _a2 === void 0 ? false : _a2, _b2 = options.onError, onError = _b2 === void 0 ? function(e2) {
-            console.error(e2);
+          var _a2 = options.listenStorageChange, listenStorageChange = _a2 === void 0 ? false : _a2, _b2 = options.onError, onError = _b2 === void 0 ? function(e) {
+            console.error(e);
           } : _b2;
           try {
             storage = getStorage();
@@ -689,8 +690,8 @@ System.register("./__monkey.entry-BreCcuvW.js", ['react', 'antd', 'react-dom', '
               if (raw) {
                 return deserializer(raw);
               }
-            } catch (e2) {
-              onError(e2);
+            } catch (e) {
+              onError(e);
             }
             if (isFunction(options.defaultValue)) {
               return options.defaultValue();
@@ -728,8 +729,8 @@ new CustomEvent(SYNC_STORAGE_EVENT_NAME, {
                   }
                 })
               );
-            } catch (e2) {
-              onError(e2);
+            } catch (e) {
+              onError(e);
             }
           };
           var syncState = function(event) {
@@ -1593,25 +1594,25 @@ redirect: "follow"
           throw new Error(`请求失败: ${error.message || "未知错误"}`);
         }
       };
-      const getAlbumSongList = (id) => weapiRequest(`/api/v1/album/${id}`, {
+      const getAlbumSongList = (id2) => weapiRequest(`/api/v1/album/${id2}`, {
         data: {}
       });
-      const getAlbumDetail = async (id) => {
-        return weapiRequest(`/api/album/${id}`, {
+      const getAlbumDetail = async (id2) => {
+        return weapiRequest(`/api/album/${id2}`, {
           data: {
-            id
+            id: id2
           }
         });
       };
       const getArtists = () => fetch(`${BASE_CDN_URL}artist.json`).then((res) => res.json());
-      const getArtistTopSongList = (id) => weapiRequest("/api/artist/top/song", {
+      const getArtistTopSongList = (id2) => weapiRequest("/api/artist/top/song", {
         data: {
-          id,
+          id: id2,
           limit: 1e3,
           offset: 0
         }
       });
-      const getArtistAllSongList = async (id) => {
+      const getArtistAllSongList = async (id2) => {
         try {
           let more = true;
           const songs2 = [];
@@ -1619,7 +1620,7 @@ redirect: "follow"
           while (more) {
             const res = await weapiRequest("/api/v1/artist/songs", {
               data: {
-                id,
+                id: id2,
                 limit: 200,
                 private_cloud: "true",
                 work_type: 1,
@@ -1644,15 +1645,15 @@ offset
           throw error;
         }
       };
-      const getArtistAlbumList = async (id) => {
+      const getArtistAlbumList = async (id2) => {
         let more = true;
         let limit = 200;
         let offset = 0;
         const albumList = [];
         while (more) {
-          const res = await weapiRequest(`/api/artist/albums/${id}`, {
+          const res = await weapiRequest(`/api/artist/albums/${id2}`, {
             data: {
-              id,
+              id: id2,
               limit,
               offset
             }
@@ -2284,7 +2285,7 @@ var hasRequiredIeee754;
         if (hasRequiredIeee754) return ieee754;
         hasRequiredIeee754 = 1;
         ieee754.read = function(buffer, offset, isLE, mLen, nBytes) {
-          var e2, m;
+          var e, m;
           var eLen = nBytes * 8 - mLen - 1;
           var eMax = (1 << eLen) - 1;
           var eBias = eMax >> 1;
@@ -2293,28 +2294,28 @@ var hasRequiredIeee754;
           var d = isLE ? -1 : 1;
           var s = buffer[offset + i];
           i += d;
-          e2 = s & (1 << -nBits) - 1;
+          e = s & (1 << -nBits) - 1;
           s >>= -nBits;
           nBits += eLen;
-          for (; nBits > 0; e2 = e2 * 256 + buffer[offset + i], i += d, nBits -= 8) {
+          for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {
           }
-          m = e2 & (1 << -nBits) - 1;
-          e2 >>= -nBits;
+          m = e & (1 << -nBits) - 1;
+          e >>= -nBits;
           nBits += mLen;
           for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {
           }
-          if (e2 === 0) {
-            e2 = 1 - eBias;
-          } else if (e2 === eMax) {
+          if (e === 0) {
+            e = 1 - eBias;
+          } else if (e === eMax) {
             return m ? NaN : (s ? -1 : 1) * Infinity;
           } else {
             m = m + Math.pow(2, mLen);
-            e2 = e2 - eBias;
+            e = e - eBias;
           }
-          return (s ? -1 : 1) * m * Math.pow(2, e2 - mLen);
+          return (s ? -1 : 1) * m * Math.pow(2, e - mLen);
         };
         ieee754.write = function(buffer, value2, offset, isLE, mLen, nBytes) {
-          var e2, m, c;
+          var e, m, c;
           var eLen = nBytes * 8 - mLen - 1;
           var eMax = (1 << eLen) - 1;
           var eBias = eMax >> 1;
@@ -2325,38 +2326,38 @@ var hasRequiredIeee754;
           value2 = Math.abs(value2);
           if (isNaN(value2) || value2 === Infinity) {
             m = isNaN(value2) ? 1 : 0;
-            e2 = eMax;
+            e = eMax;
           } else {
-            e2 = Math.floor(Math.log(value2) / Math.LN2);
-            if (value2 * (c = Math.pow(2, -e2)) < 1) {
-              e2--;
+            e = Math.floor(Math.log(value2) / Math.LN2);
+            if (value2 * (c = Math.pow(2, -e)) < 1) {
+              e--;
               c *= 2;
             }
-            if (e2 + eBias >= 1) {
+            if (e + eBias >= 1) {
               value2 += rt / c;
             } else {
               value2 += rt * Math.pow(2, 1 - eBias);
             }
             if (value2 * c >= 2) {
-              e2++;
+              e++;
               c /= 2;
             }
-            if (e2 + eBias >= eMax) {
+            if (e + eBias >= eMax) {
               m = 0;
-              e2 = eMax;
-            } else if (e2 + eBias >= 1) {
+              e = eMax;
+            } else if (e + eBias >= 1) {
               m = (value2 * c - 1) * Math.pow(2, mLen);
-              e2 = e2 + eBias;
+              e = e + eBias;
             } else {
               m = value2 * Math.pow(2, eBias - 1) * Math.pow(2, mLen);
-              e2 = 0;
+              e = 0;
             }
           }
           for (; mLen >= 8; buffer[offset + i] = m & 255, i += d, m /= 256, mLen -= 8) {
           }
-          e2 = e2 << mLen | m;
+          e = e << mLen | m;
           eLen += mLen;
-          for (; eLen > 0; buffer[offset + i] = e2 & 255, i += d, e2 /= 256, eLen -= 8) {
+          for (; eLen > 0; buffer[offset + i] = e & 255, i += d, e /= 256, eLen -= 8) {
           }
           buffer[offset + i - d] |= s * 128;
         };
@@ -2861,10 +2862,10 @@ get(array, off2) {
       var shft = function(p) {
         return (p + 7) / 8 | 0;
       };
-      var slc = function(v, s, e2) {
-        if (e2 == null || e2 > v.length)
-          e2 = v.length;
-        return new u8(v.subarray(s, e2));
+      var slc = function(v, s, e) {
+        if (e == null || e > v.length)
+          e = v.length;
+        return new u8(v.subarray(s, e));
       };
       var ec = [
         "unexpected EOF",
@@ -2883,13 +2884,13 @@ get(array, off2) {
         "invalid zip data"
 ];
       var err = function(ind, msg, nt) {
-        var e2 = new Error(msg || ec[ind]);
-        e2.code = ind;
+        var e = new Error(msg || ec[ind]);
+        e.code = ind;
         if (Error.captureStackTrace)
-          Error.captureStackTrace(e2, err);
+          Error.captureStackTrace(e, err);
         if (!nt)
-          throw e2;
-        return e2;
+          throw e;
+        return e;
       };
       var inflt = function(dat, st, buf, dict) {
         var sl = dat.length, dl = 0;
@@ -3075,7 +3076,7 @@ get(array, off2) {
       try {
         td.decode(et, { stream: true });
         tds = 1;
-      } catch (e2) {
+      } catch (e) {
       }
       var browser$1 = { exports: {} };
       var ms;
@@ -4941,9 +4942,9 @@ detectConfident = async (tokenizer) => {
                 ++ic;
                 mask >>= 1;
               }
-              const id = new Uint8Array(ic + 1);
-              await tokenizer.readBuffer(id);
-              return id;
+              const id2 = new Uint8Array(ic + 1);
+              await tokenizer.readBuffer(id2);
+              return id2;
             }
             async function readElement() {
               const idField = await readField();
@@ -6293,11 +6294,11 @@ case 1:
         showMovement: defaultTagInfo,
         stik: defaultTagInfo
       };
-      function isSingleton(alias) {
-        return commonTags[alias] && !commonTags[alias].multiple;
+      function isSingleton(alias2) {
+        return commonTags[alias2] && !commonTags[alias2].multiple;
       }
-      function isUnique(alias) {
-        return !commonTags[alias].multiple || commonTags[alias].unique || false;
+      function isUnique(alias2) {
+        return !commonTags[alias2].multiple || commonTags[alias2].unique || false;
       }
       class CommonTagMapper {
         static toIntOrNull(str) {
@@ -6320,8 +6321,8 @@ static normalizeTrack(origVal) {
 mapGenericTag(tag2, warnings) {
           tag2 = { id: tag2.id, value: tag2.value };
           this.postMap(tag2, warnings);
-          const id = this.getCommonName(tag2.id);
-          return id ? { id, value: tag2.value } : null;
+          const id2 = this.getCommonName(tag2.id);
+          return id2 ? { id: id2, value: tag2.value } : null;
         }
 getCommonName(tag2) {
           return this.tagMap[tag2];
@@ -7376,7 +7377,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-Bkc8MgIN-CYVUjRZZ.js');
+            const { MpegParser } = await module.import('./MpegParser-DI__5INW-DuD2oKQ6.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7398,7 +7399,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-BOMDwnnN-pPts1nEn.js');
+            const { AsfParser } = await module.import('./AsfParser-BezwhG4R-B6K4R9d6.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7409,7 +7410,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-6b82Vd_p-B-drtoJv.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-D1KlY8Z2-Ch5NxzD1.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7420,7 +7421,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-DvFOObLX-BbMlitYz.js');
+            const { AIFFParser } = await module.import('./AiffParser-CRhapUuu-OEvrQWh5.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7431,7 +7432,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CCaALBG7-Rb6io3V4.js');
+            const { DsfParser } = await module.import('./DsfParser-CIEcoTsR-SgAFyjYd.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7442,7 +7443,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-DwEQEjmU-BPonpAuL.js');
+            const { FlacParser } = await module.import('./FlacParser-CMyuL4OL-D5SEH8cV.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7453,7 +7454,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-kTbGFghN-DIor0DEZ.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-HOz9Dxyk-B7S2kuDd.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7464,7 +7465,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-DR4z301x-DQJ-04qA.js');
+            const { MP4Parser } = await module.import('./MP4Parser-Bb6fmt3y-BHqwtQNJ.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7475,7 +7476,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-BNHMyUXa-B2YIezVR.js');
+            const { MusepackParser } = await module.import('./MusepackParser-6VmnV76w-DLbXwvD9.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7486,7 +7487,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-B2Ce9QMG-B5jkgstl.js');
+            const { OggParser } = await module.import('./OggParser-BeuYCvb0-CUzi15UJ.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7497,7 +7498,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-Cb6eb5qz-Cjh566F-.js');
+            const { WavPackParser } = await module.import('./WavPackParser-Bp3Q7_wc-PREcrCKj.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7508,7 +7509,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-Ca4EkVLH-DauBh_l5.js');
+            const { WaveParser } = await module.import('./WaveParser-B3dQ9UI8-A3Fuk-gM.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -7628,14 +7629,14 @@ constructor(metadata, tokenizer, options) {
       const FourCcToken = exports("F", {
         len: 4,
         get: (buf, off2) => {
-          const id = uint8ArrayToString(buf.slice(off2, off2 + FourCcToken.len), "latin1");
-          if (!id.match(validFourCC)) {
-            throw new FieldDecodingError(`FourCC contains invalid characters: ${a2hex(id)} "${id}"`);
+          const id2 = uint8ArrayToString(buf.slice(off2, off2 + FourCcToken.len), "latin1");
+          if (!id2.match(validFourCC)) {
+            throw new FieldDecodingError(`FourCC contains invalid characters: ${a2hex(id2)} "${id2}"`);
           }
-          return id;
+          return id2;
         },
-        put: (buffer, offset, id) => {
-          const str = stringToUint8Array(id);
+        put: (buffer, offset, id2) => {
+          const str = stringToUint8Array(id2);
           if (str.length !== 4)
             throw new InternalParserError("Invalid length");
           buffer.set(str, offset);
@@ -8119,9 +8120,9 @@ track: UINT8.get(buf, off2 + 126),
           if (header) {
             debug("ID3v1 header found at: pos=%s", this.tokenizer.fileInfo.size - Iid3v1Token.len);
             const props = ["title", "artist", "album", "comment", "track", "year"];
-            for (const id of props) {
-              if (header[id] && header[id] !== "")
-                await this.addTag(id, header[id]);
+            for (const id2 of props) {
+              if (header[id2] && header[id2] !== "")
+                await this.addTag(id2, header[id2]);
             }
             const genre = ID3v1Parser.getGenre(header.genre);
             if (genre)
@@ -8130,8 +8131,8 @@ track: UINT8.get(buf, off2 + 126),
             debug("ID3v1 header not found at: pos=%s", this.tokenizer.fileInfo.size - Iid3v1Token.len);
           }
         }
-        async addTag(id, value2) {
-          await this.metadata.addTag("ID3v1", id, value2);
+        async addTag(id2, value2) {
+          await this.metadata.addTag("ID3v1", id2, value2);
         }
       } exports("L", ID3v1Parser);
       async function hasID3v1Header(tokenizer) {
@@ -8352,12 +8353,12 @@ track: UINT8.get(buf, off2 + 126),
       };
       const urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
       let nanoid = (size2 = 21) => {
-        let id = "";
+        let id2 = "";
         let bytes = crypto.getRandomValues(new Uint8Array(size2 |= 0));
         while (size2--) {
-          id += urlAlphabet[bytes[size2] & 63];
+          id2 += urlAlphabet[bytes[size2] & 63];
         }
-        return id;
+        return id2;
       };
       message.config({
         top: 100
@@ -8436,10 +8437,10 @@ track: UINT8.get(buf, off2 + 126),
           data: { ids: JSON.stringify(ids), level, encodeType }
         });
       };
-      const getSongLyric = async (id) => {
+      const getSongLyric = async (id2) => {
         return weapiRequest("/api/song/lyric", {
           data: {
-            id,
+            id: id2,
             tv: -1,
             lv: -1,
             rv: -1,
@@ -8548,7 +8549,7 @@ track: UINT8.get(buf, off2 + 126),
           }
           try {
             return decodeURIComponent(escape(str));
-          } catch (e2) {
+          } catch (e) {
             return str;
           }
         } else if (encoding === "ascii") {
@@ -9370,12 +9371,12 @@ saveAsBuffer() {
         }
         return result;
       };
-      const matchCloudSong = async (cloudSongId, id, song) => {
-        if (cloudSongId != id) {
+      const matchCloudSong = async (cloudSongId, id2, song) => {
+        if (cloudSongId != id2) {
           const res = await weapiRequest("/api/cloud/user/song/match", {
             data: {
               songId: cloudSongId,
-              adjustSongId: id
+              adjustSongId: id2
             }
           });
           console.log("res", res);
@@ -9945,7 +9946,7 @@ expireTime: Date.now() + 6e4,
             }
             try {
               return fromString(value2);
-            } catch (e2) {
+            } catch (e) {
               return defaultValue;
             }
           };
@@ -10801,7 +10802,7 @@ i === posLength - 1 && j === 0) {
             }
             try {
               return fromString(value2);
-            } catch (e2) {
+            } catch (e) {
               return defaultValue;
             }
           };
@@ -11754,7 +11755,7 @@ pop: function() {
           function getCanvasElement() {
             try {
               return document.createElement("canvas");
-            } catch (e2) {
+            } catch (e) {
               throw new Error("You need to specify a canvas element");
             }
           }
@@ -11901,16 +11902,16 @@ pop: function() {
               try {
                 const data = QRCode2.create(text2, opts);
                 resolve(renderFunc(data, canvas2, opts));
-              } catch (e2) {
-                reject(e2);
+              } catch (e) {
+                reject(e);
               }
             });
           }
           try {
             const data = QRCode2.create(text2, opts);
             cb(null, renderFunc(data, canvas2, opts));
-          } catch (e2) {
-            cb(e2);
+          } catch (e) {
+            cb(e);
           }
         }
         browser.create = QRCode2.create;
@@ -11984,11 +11985,11 @@ trackIds,
 op: "add"
 }
       });
-      const getPlaylistAllData = async (id) => {
+      const getPlaylistAllData = async (id2) => {
         try {
           const detailRes = await weapiRequest("/api/v6/playlist/detail", {
             data: {
-              id,
+              id: id2,
               offset: 0,
               total: true,
               n: 1e5,
@@ -12061,7 +12062,7 @@ op: "update"
           data: songs2
         });
       };
-      const styles$a = {
+      const styles$c = {
         "search-form": "_search-form_1aabt_1"
       };
       const SearchForm = ({ onSearch, data = [], options = [] }) => {
@@ -12082,7 +12083,7 @@ op: "update"
           form.resetFields();
           onSearch({});
         };
-        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$a["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$c["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
           options.map((item) => {
             return jsxRuntimeExports.jsx(
               Form.Item,
@@ -12328,7 +12329,7 @@ jsxRuntimeExports.jsx(
                 size: "middle",
                 min: 1,
                 value: concurrent,
-                onChange: (e2) => setConcurrent(Number(e2.target.value))
+                onChange: (e) => setConcurrent(Number(e.target.value))
               }
             ),
 jsxRuntimeExports.jsx(Button, { onClick: () => setSelectedRows(filteredList), children: "全部选择" }),
@@ -12401,9 +12402,9 @@ jsxRuntimeExports.jsx(
                     showUploadList: false,
                     beforeUpload: (file) => {
                       const reader = new FileReader();
-                      reader.onload = (e2) => {
+                      reader.onload = (e) => {
                         try {
-                          const jsonData = JSON.parse(e2.target.result);
+                          const jsonData = JSON.parse(e.target.result);
                           setTableData(jsonData?.data || jsonData || []);
                           message.success("JSON文件解析成功");
                         } catch (error) {
@@ -12452,8 +12453,8 @@ jsxRuntimeExports.jsx(
           link.style.display = "none";
           link.style.position = "absolute";
           link.style.left = "-9999px";
-          const handleClick = (e2) => {
-            e2.stopPropagation();
+          const handleClick = (e) => {
+            e.stopPropagation();
           };
           link.addEventListener("click", handleClick, true);
           link.click();
@@ -12530,8 +12531,8 @@ jsxRuntimeExports.jsx(
         a.style.display = "none";
         a.style.position = "absolute";
         a.style.left = "-9999px";
-        const handleClick = (e2) => {
-          e2.stopPropagation();
+        const handleClick = (e) => {
+          e.stopPropagation();
         };
         a.addEventListener("click", handleClick, true);
         document.body.appendChild(a);
@@ -12543,18 +12544,18 @@ jsxRuntimeExports.jsx(
         }, 100);
       };
       function mitt(n) {
-        return { all: n = n || new Map(), on: function(t, e2) {
+        return { all: n = n || new Map(), on: function(t, e) {
           var i = n.get(t);
-          i ? i.push(e2) : n.set(t, [e2]);
-        }, off: function(t, e2) {
+          i ? i.push(e) : n.set(t, [e]);
+        }, off: function(t, e) {
           var i = n.get(t);
-          i && (e2 ? i.splice(i.indexOf(e2) >>> 0, 1) : n.set(t, []));
-        }, emit: function(t, e2) {
+          i && (e ? i.splice(i.indexOf(e) >>> 0, 1) : n.set(t, []));
+        }, emit: function(t, e) {
           var i = n.get(t);
           i && i.slice().map(function(n2) {
-            n2(e2);
+            n2(e);
           }), (i = n.get("*")) && i.slice().map(function(n2) {
-            n2(t, e2);
+            n2(t, e);
           });
         } };
       }
@@ -12768,7 +12769,7 @@ singerIds
       const warning = "_warning_19zpd_274";
       const text = "_text_19zpd_281";
       const icon = "_icon_19zpd_288";
-      const styles$9 = {
+      const styles$b = {
         songInfoColumn,
         songIndex,
         songCover,
@@ -12901,9 +12902,9 @@ jsxRuntimeExports.jsx(
                   },
                   defaultValue: keywords,
                   placeholder: "请输入歌手名",
-                  onPressEnter: (e2) => {
-                    console.log("e", e2);
-                    setKeywords(e2.target.value);
+                  onPressEnter: (e) => {
+                    console.log("e", e);
+                    setKeywords(e.target.value);
                   }
                 }
               ),
@@ -12933,13 +12934,13 @@ jsxRuntimeExports.jsx(
                     return jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: styles$9["singer-option"],
+                        className: styles$b["singer-option"],
                         style: {
                           "--avatar-url": `url(${artistAvatarPicUrl})`
                         },
-                        children: jsxRuntimeExports.jsxs("div", { className: styles$9["singer-option-content"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$9["singer-option-name"], children: artistName2 }),
-jsxRuntimeExports.jsx("div", { className: styles$9["singer-option-id"], children: artistId })
+                        children: jsxRuntimeExports.jsxs("div", { className: styles$b["singer-option-content"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$b["singer-option-name"], children: artistName2 }),
+jsxRuntimeExports.jsx("div", { className: styles$b["singer-option-id"], children: artistId })
                         ] })
                       }
                     );
@@ -12988,12 +12989,12 @@ jsxRuntimeExports.jsx(
                     return jsxRuntimeExports.jsxs(
                       "div",
                       {
-                        className: styles$9["song-option"],
+                        className: styles$b["song-option"],
                         onClick: () => console.log("option", data2, option, singerMap),
                         children: [
-jsxRuntimeExports.jsxs("div", { className: styles$9["song-info"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$9["song-name"], children: option.label }),
-jsxRuntimeExports.jsxs("div", { className: styles$9["tag-group"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b["song-info"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$b["song-name"], children: option.label }),
+jsxRuntimeExports.jsxs("div", { className: styles$b["tag-group"], children: [
                               data2.al?.name && jsxRuntimeExports.jsx(Tag, { color: "blue", children: data2.al?.name }),
                               data2.ar?.length && data2.ar?.map((artist2, index2) => jsxRuntimeExports.jsx(Tag, { color: "green", children: artist2.name }, index2))
                             ] })
@@ -13001,7 +13002,7 @@ jsxRuntimeExports.jsxs("div", { className: styles$9["tag-group"], children: [
                           singerMap[currentSelectSinger]?.albumMap?.[data2.al?.id]?.picUrl && jsxRuntimeExports.jsx(
                             "img",
                             {
-                              className: styles$9["album-cover"],
+                              className: styles$b["album-cover"],
                               src: singerMap[currentSelectSinger]?.albumMap[data2.al?.id]?.picUrl,
                               alt: data2.al?.name
                             }
@@ -13095,12 +13096,12 @@ jsxRuntimeExports.jsx(
             Input,
             {
               value: value2,
-              onChange: (e2) => {
-                setValue(e2.target.value);
+              onChange: (e) => {
+                setValue(e.target.value);
               },
               size: "small",
-              onKeyDown: (e2) => {
-                if (e2.key === "Enter") {
+              onKeyDown: (e) => {
+                if (e.key === "Enter") {
                   handleUpdate();
                 }
               },
@@ -13151,9 +13152,9 @@ jsxRuntimeExports.jsx(
           );
         }
       };
-      const styles$8 = {
-        "copy-text": "_copy-text_1att4_1",
-        "copy-btn": "_copy-btn_1att4_12"
+      const styles$a = {
+        "copy-text": "_copy-text_yqw94_1",
+        "copy-btn": "_copy-btn_yqw94_12"
       };
       var classnames = { exports: {} };
 var hasRequiredClassnames;
@@ -13215,7 +13216,7 @@ var hasRequiredClassnames;
       }
       var classnamesExports = requireClassnames();
       const classNames = getDefaultExportFromCjs(classnamesExports);
-      const styles$7 = {
+      const styles$9 = {
         "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
       };
       function TextOverflowShowTips({
@@ -13243,7 +13244,7 @@ var hasRequiredClassnames;
           "div",
           {
             ...restProps,
-            className: classNames(styles$7["text-overflow-show-tips-container"], className),
+            className: classNames(styles$9["text-overflow-show-tips-container"], className),
             children: jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text2 })
           }
         ) }) : jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text2 });
@@ -13268,7 +13269,7 @@ var hasRequiredClassnames;
           copy(text2);
           msgSuccess("复制成功");
         };
-        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$8["copy-text"], className), ...rest, children: [
+        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$a["copy-text"], className), ...rest, children: [
 jsxRuntimeExports.jsx(
             TextOverflowShowTips,
             {
@@ -13286,7 +13287,7 @@ jsxRuntimeExports.jsx(
               type: "link",
               icon: jsxRuntimeExports.jsx(CopyOutlined, {}),
               onClick: handleCopy,
-              className: styles$8["copy-btn"]
+              className: styles$a["copy-btn"]
             }
           )
         ] });
@@ -13323,13 +13324,13 @@ jsxRuntimeExports.jsx(
         const [downloading, setDownloading] = useState(false);
         const urlMap = useRef({});
         const [songInfoMap, setSongInfoMap] = useState({});
-        const getUrl = async (id, level = DEFAULT_QUALITY) => {
-          const key = `${id}-${level}`;
+        const getUrl = async (id2, level = DEFAULT_QUALITY) => {
+          const key = `${id2}-${level}`;
           console.log("获取歌曲url的key", key);
           if (urlMap.current[key]) {
             return urlMap.current[key];
           }
-          const res = await getSongUrl([id], { level });
+          const res = await getSongUrl([id2], { level });
           if (res.code !== 200 || !res.data[0]?.url) {
             msgError(res.message || res.msg || "获取歌曲链接失败");
             throw new Error(res.message || res.msg || "获取歌曲链接失败");
@@ -13342,28 +13343,28 @@ jsxRuntimeExports.jsx(
           if (!Array.isArray(ids)) {
             throw new Error("ids must be an array");
           }
-          const noUrlIds = ids.filter((id) => !urlMap.current[id]);
+          const noUrlIds = ids.filter((id2) => !urlMap.current[id2]);
           const urls = await Promise.all(
-            noUrlIds.map(async (id) => {
-              const url = await getUrl(id, { level });
+            noUrlIds.map(async (id2) => {
+              const url = await getUrl(id2, { level });
               return url;
             })
           );
           console.log("urls", urls);
-          return ids.map((id) => urlMap.current[`${id}-${level}`]);
+          return ids.map((id2) => urlMap.current[`${id2}-${level}`]);
         };
-        const getSongInfo = async (id) => {
-          if (songInfoMap[id]) return songInfoMap[id];
-          const res = await getSongInfoList([id]);
+        const getSongInfo = async (id2) => {
+          if (songInfoMap[id2]) return songInfoMap[id2];
+          const res = await getSongInfoList([id2]);
           if (res.code !== 200) {
             msgError(res.message || res.msg || "获取歌曲信息失败");
             throw new Error(res.message || res.msg || "获取歌曲信息失败");
           }
-          setSongInfoMap((prv) => ({ ...prv, [id]: res.songs?.[0] }));
+          setSongInfoMap((prv) => ({ ...prv, [id2]: res.songs?.[0] }));
           return res.songs?.[0];
         };
         const getSongInfos = async (ids) => {
-          const noInfoIds = ids.filter((id) => !songInfoMap[id]);
+          const noInfoIds = ids.filter((id2) => !songInfoMap[id2]);
           const res = await getSongInfoList(noInfoIds);
           if (res.code !== 200) {
             msgError(res.message || res.msg || "获取歌曲信息失败");
@@ -13375,17 +13376,17 @@ jsxRuntimeExports.jsx(
           }));
           return res.songs;
         };
-        const play = async (id, level = DEFAULT_QUALITY) => {
+        const play = async (id2, level = DEFAULT_QUALITY) => {
           try {
-            if (currentMid === id) {
+            if (currentMid === id2) {
               audio.play();
               return;
             }
-            const url = await getUrl(id, level);
-            setIsPlaying(id);
+            const url = await getUrl(id2, level);
+            setIsPlaying(id2);
             audio.src = url;
             audio.play();
-            setCurrentMid(id);
+            setCurrentMid(id2);
             return new Promise((resolve) => {
               audio.onended = () => {
                 resolve(true);
@@ -13397,12 +13398,12 @@ jsxRuntimeExports.jsx(
           }
         };
         const playPlayList = async (ids, level = DEFAULT_QUALITY) => {
-          for (const id of ids) {
-            await play(id, level);
+          for (const id2 of ids) {
+            await play(id2, level);
           }
         };
-        const getLyric = async (id) => {
-          const res = await getSongLyric(id);
+        const getLyric = async (id2) => {
+          const res = await getSongLyric(id2);
           if (res.code !== 200) {
             msgError(res.message || res.msg || "获取歌曲歌词失败");
             throw new Error(res.message || res.msg || "获取歌曲歌词失败");
@@ -13410,10 +13411,10 @@ jsxRuntimeExports.jsx(
           console.log("歌词res", res.lrc?.lyric);
           return res.lrc?.lyric;
         };
-        const download = async (id, level = DEFAULT_QUALITY) => {
+        const download = async (id2, level = DEFAULT_QUALITY) => {
           try {
-            setDownloading(id);
-            const songInfo2 = await getSongInfo(id);
+            setDownloading(id2);
+            const songInfo2 = await getSongInfo(id2);
             console.log("songInfo", songInfo2);
             const albumId = songInfo2?.al?.id;
             const singer = songInfo2?.ar?.[0]?.name;
@@ -13426,13 +13427,13 @@ jsxRuntimeExports.jsx(
             ];
             console.log("tags", tags);
             const downloadLevel = getDownloadQuality(songInfo2, level);
-            const url = await getUrl(id, downloadLevel);
+            const url = await getUrl(id2, downloadLevel);
             console.log(`当前下载歌曲${songName2},音质为${level},链接为${url}`);
             const finalExt = url.split("?")[0].split(".").pop();
             const { blob } = await getFileBlob(url.replace("http://", "https://"));
             const fileName = `${songName2}.${finalExt}`;
             let outputFile = blob;
-            const lyric = await getLyric(id);
+            const lyric = await getLyric(id2);
             if (downloadLyric) {
               downloadAsLRC(lyric, songName2);
             }
@@ -13497,16 +13498,16 @@ default:
         const [isLoading, setIsLoading] = useState(false);
         const albumInfoMap = useRef({});
         const { play, getUrl, download, getLyric } = usePlayMusic();
-        const getAlbumDetailData = async (id) => {
+        const getAlbumDetailData = async (id2) => {
           try {
             setIsLoading(true);
-            const idStr = String(id);
+            const idStr = String(id2);
             if (albumInfoMap.current[idStr]) {
               const cached = albumInfoMap.current[idStr];
               setAlbumInfo(cached);
               return cached;
             }
-            const res = await getAlbumDetail(id);
+            const res = await getAlbumDetail(id2);
             console.log("专辑详情 res", res);
             if (res.code === 200 && res.album) {
               albumInfoMap.current[idStr] = res.album;
@@ -13522,10 +13523,10 @@ default:
             setIsLoading(false);
           }
         };
-        const getAlbumSongListData = async (id) => {
+        const getAlbumSongListData = async (id2) => {
           try {
             setIsLoading(true);
-            const res = await getAlbumSongList(id);
+            const res = await getAlbumSongList(id2);
             console.log("专辑歌曲列表 res", res);
             if (res.code === 200 && res.songs) {
               setAlbumSongList(res.songs);
@@ -13540,9 +13541,9 @@ default:
             setIsLoading(false);
           }
         };
-        const getAlbumSongUrl = async (id) => {
+        const getAlbumSongUrl = async (id2) => {
           try {
-            const songList2 = await getAlbumSongListData(id);
+            const songList2 = await getAlbumSongListData(id2);
             if (!songList2 || songList2.length === 0) {
               return [];
             }
@@ -13569,9 +13570,9 @@ default:
             throw error;
           }
         };
-        const downloadAlbumSong = async (id) => {
+        const downloadAlbumSong = async (id2) => {
           try {
-            const songList2 = await getAlbumSongListData(id);
+            const songList2 = await getAlbumSongListData(id2);
             if (!songList2 || songList2.length === 0) {
               throw new Error("专辑中没有歌曲");
             }
@@ -13584,11 +13585,11 @@ default:
             throw error;
           }
         };
-        const getDownLoadJson = async (id, options = { level: QUALITY_LEVELS.无损 }) => {
+        const getDownLoadJson = async (id2, options = { level: QUALITY_LEVELS.无损 }) => {
           try {
             const { level = QUALITY_LEVELS.无损 } = options;
-            const albumDetail = await getAlbumDetailData(id);
-            const songList2 = await getAlbumSongListData(id);
+            const albumDetail = await getAlbumDetailData(id2);
+            const songList2 = await getAlbumSongListData(id2);
             if (!songList2 || songList2.length === 0) {
               throw new Error("专辑中没有歌曲");
             }
@@ -13620,9 +13621,9 @@ default:
             throw error;
           }
         };
-        const playAlbum = async (id) => {
+        const playAlbum = async (id2) => {
           try {
-            const songList2 = await getAlbumSongListData(id);
+            const songList2 = await getAlbumSongListData(id2);
             console.log("专辑歌曲列表", songList2);
             if (!songList2 || songList2.length === 0) {
               throw new Error("专辑中没有歌曲");
@@ -13637,11 +13638,11 @@ default:
             throw error;
           }
         };
-        const albumToCloud = async (id) => {
-          if (!id) return;
+        const albumToCloud = async (id2) => {
+          if (!id2) return;
           const uploadMessageKey2 = "album-to-cloud";
           try {
-            const songs2 = await getAlbumSongListData(id);
+            const songs2 = await getAlbumSongListData(id2);
             const songIds = songs2.map((song) => song.id);
             message.loading({
               content: "开始上传专辑歌曲到云盘，请稍候...",
@@ -14078,7 +14079,7 @@ hotSongList
                   return types;
                 }
                 return freeProcess && freeProcess.binding && freeProcess.binding("util");
-              } catch (e2) {
+              } catch (e) {
               }
             })();
             var nodeIsArrayBuffer = nodeUtil && nodeUtil.isArrayBuffer, nodeIsDate = nodeUtil && nodeUtil.isDate, nodeIsMap = nodeUtil && nodeUtil.isMap, nodeIsRegExp = nodeUtil && nodeUtil.isRegExp, nodeIsSet = nodeUtil && nodeUtil.isSet, nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -14450,7 +14451,7 @@ hotSongList
                   var func = getNative(Object2, "defineProperty");
                   func({}, "", {});
                   return func;
-                } catch (e2) {
+                } catch (e) {
                 }
               })();
               var ctxClearTimeout = context.clearTimeout !== root.clearTimeout && context.clearTimeout, ctxNow = Date2 && Date2.now !== root.Date.now && Date2.now, ctxSetTimeout = context.setTimeout !== root.setTimeout && context.setTimeout;
@@ -15697,8 +15698,8 @@ isIndex(key, length)))) {
                 end = end === undefined$1 ? length : end;
                 return !start && end >= length ? array : baseSlice(array, start, end);
               }
-              var clearTimeout = ctxClearTimeout || function(id) {
-                return root.clearTimeout(id);
+              var clearTimeout = ctxClearTimeout || function(id2) {
+                return root.clearTimeout(id2);
               };
               function cloneBuffer(buffer, isDeep) {
                 if (isDeep) {
@@ -16446,7 +16447,7 @@ isIndex(key, length)))) {
                 try {
                   value2[symToStringTag] = undefined$1;
                   var unmasked = true;
-                } catch (e2) {
+                } catch (e) {
                 }
                 var result2 = nativeObjectToString.call(value2);
                 if (unmasked) {
@@ -16581,15 +16582,15 @@ isIndex(key, length)))) {
                     return cloneSymbol(object);
                 }
               }
-              function insertWrapDetails(source, details) {
-                var length = details.length;
+              function insertWrapDetails(source, details2) {
+                var length = details2.length;
                 if (!length) {
                   return source;
                 }
                 var lastIndex = length - 1;
-                details[lastIndex] = (length > 1 ? "& " : "") + details[lastIndex];
-                details = details.join(length > 2 ? ", " : " ");
-                return source.replace(reWrapComment, "{\n/* [wrapped with " + details + "] */\n");
+                details2[lastIndex] = (length > 1 ? "& " : "") + details2[lastIndex];
+                details2 = details2.join(length > 2 ? ", " : " ");
+                return source.replace(reWrapComment, "{\n/* [wrapped with " + details2 + "] */\n");
               }
               function isFlattenable(value2) {
                 return isArray(value2) || isArguments(value2) || !!(spreadableSymbol && value2 && value2[spreadableSymbol]);
@@ -16803,23 +16804,23 @@ isIndex(key, length)))) {
                 if (func != null) {
                   try {
                     return funcToString.call(func);
-                  } catch (e2) {
+                  } catch (e) {
                   }
                   try {
                     return func + "";
-                  } catch (e2) {
+                  } catch (e) {
                   }
                 }
                 return "";
               }
-              function updateWrapDetails(details, bitmask) {
+              function updateWrapDetails(details2, bitmask) {
                 arrayEach(wrapFlags, function(pair) {
                   var value2 = "_." + pair[0];
-                  if (bitmask & pair[1] && !arrayIncludes(details, value2)) {
-                    details.push(value2);
+                  if (bitmask & pair[1] && !arrayIncludes(details2, value2)) {
+                    details2.push(value2);
                   }
                 });
-                return details.sort();
+                return details2.sort();
               }
               function wrapperClone(wrapper) {
                 if (wrapper instanceof LazyWrapper) {
@@ -18494,8 +18495,8 @@ isIndex(key, length)))) {
               var attempt = baseRest(function(func, args) {
                 try {
                   return apply(func, undefined$1, args);
-                } catch (e2) {
-                  return isError(e2) ? e2 : new Error2(e2);
+                } catch (e) {
+                  return isError(e) ? e : new Error2(e);
                 }
               });
               var bindAll = flatRest(function(object, methodNames) {
@@ -18648,8 +18649,8 @@ isIndex(key, length)))) {
                 return isSymbol(value2) ? [value2] : copyArray(stringToPath(toString(value2)));
               }
               function uniqueId(prefix) {
-                var id = ++idCounter;
-                return toString(prefix) + id;
+                var id2 = ++idCounter;
+                return toString(prefix) + id2;
               }
               var add = createMathOperation(function(augend, addend) {
                 return augend + addend;
@@ -19620,7 +19621,7 @@ jsxRuntimeExports.jsx(
                     rowSelection
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$9.footer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b.footer, children: [
 jsxRuntimeExports.jsxs("div", { children: [
                     "已选择 ",
                     selectedRows.length,
@@ -19630,11 +19631,11 @@ jsxRuntimeExports.jsx(
                     Checkbox,
                     {
                       checked: autoSort,
-                      onChange: (e2) => setAutoSort(e2.target.checked),
+                      onChange: (e) => setAutoSort(e.target.checked),
                       children: "添加后自动排序"
                     }
                   ),
-jsxRuntimeExports.jsxs(Space, { className: styles$9.actions, children: [
+jsxRuntimeExports.jsxs(Space, { className: styles$b.actions, children: [
 jsxRuntimeExports.jsx(MyButton, { onClick: () => setCreateModalVisible(true), children: "新建歌单" }),
 jsxRuntimeExports.jsx(
                       MyButton,
@@ -19682,7 +19683,7 @@ jsxRuntimeExports.jsx(
                   {
                     placeholder: "请输入歌单名称",
                     value: name2,
-                    onChange: (e2) => setName(e2.target.value),
+                    onChange: (e) => setName(e.target.value),
                     onPressEnter: handleCreate,
                     autoFocus: true,
                     style: { marginBottom: 16, padding: "4px 8px" }
@@ -19711,20 +19712,20 @@ jsxRuntimeExports.jsx(Space, { wrap: true, children: createPlaylistShortcut.map(
         ] });
       };
       const DeleteConfirmContent = ({ playlists }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$9.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$9.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$9.title, children: "总计：" }),
-jsxRuntimeExports.jsx("div", { className: styles$9.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$9.label, children: "删除数量：" }),
-jsxRuntimeExports.jsx("span", { className: styles$9.value, children: playlists.length }),
-jsxRuntimeExports.jsx("span", { className: styles$9.label, children: " 个歌单" })
+        return jsxRuntimeExports.jsxs("div", { className: styles$b.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$b.title, children: "总计：" }),
+jsxRuntimeExports.jsx("div", { className: styles$b.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsx("span", { className: styles$b.label, children: "删除数量：" }),
+jsxRuntimeExports.jsx("span", { className: styles$b.value, children: playlists.length }),
+jsxRuntimeExports.jsx("span", { className: styles$b.label, children: " 个歌单" })
             ] }) })
           ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("div", { className: styles$9.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$9.title, children: "即将删除的歌单：" }) }),
-jsxRuntimeExports.jsx("ul", { className: styles$9.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$9.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$9.itemName, children: item.name }),
-              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$9.itemCount, children: [
+jsxRuntimeExports.jsx("div", { className: styles$b.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$b.title, children: "即将删除的歌单：" }) }),
+jsxRuntimeExports.jsx("ul", { className: styles$b.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$b.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$b.itemName, children: item.name }),
+              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$b.itemCount, children: [
                 item.trackCount,
                 "首"
               ] })
@@ -19734,15 +19735,15 @@ jsxRuntimeExports.jsx("span", { className: styles$9.itemName, children: item.nam
       };
       const PlayList$3 = forwardRef(PlayList$2);
       const Stats = memo(({ selectedRows = [], filteredSongList = [] }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$9.stats, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$b.stats, children: [
           "已选择 ",
 jsxRuntimeExports.jsxs(Tag, { color: "blue", children: [
             selectedRows.length,
             " 首"
           ] }),
           " ",
-jsxRuntimeExports.jsx("span", { className: styles$9.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
-jsxRuntimeExports.jsx("span", { className: styles$9.divider, children: "/" }),
+jsxRuntimeExports.jsx("span", { className: styles$b.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
+jsxRuntimeExports.jsx("span", { className: styles$b.divider, children: "/" }),
           "共",
           " ",
 jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
@@ -19750,7 +19751,7 @@ jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
             " 首"
           ] }),
           " ",
-jsxRuntimeExports.jsx("span", { className: styles$9.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
+jsxRuntimeExports.jsx("span", { className: styles$b.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
         ] });
       });
       Stats.displayName = "Stats";
@@ -19896,24 +19897,24 @@ jsxRuntimeExports.jsx("span", { className: styles$9.size, children: filteredSong
           const albumName = getAlbumName(record);
           const songName2 = record.simpleSong?.name;
           const albumPic = record.simpleSong?.al?.picUrl;
-          return jsxRuntimeExports.jsxs("div", { className: styles$9.songInfoColumn, children: [
-jsxRuntimeExports.jsx("div", { className: styles$9.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
+          return jsxRuntimeExports.jsxs("div", { className: styles$b.songInfoColumn, children: [
+jsxRuntimeExports.jsx("div", { className: styles$b.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
 jsxRuntimeExports.jsxs(
               "div",
               {
-                className: `${styles$9.songCover} ${isCurrentSong ? styles$9.playing : ""}`,
+                className: `${styles$b.songCover} ${isCurrentSong ? styles$b.playing : ""}`,
                 onClick: () => handlePlaySong(record.simpleSong),
                 children: [
-jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$9.songCoverImg }),
-jsxRuntimeExports.jsx("div", { className: styles$9.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
+jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$b.songCoverImg }),
+jsxRuntimeExports.jsx("div", { className: styles$b.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
                 ]
               }
             ),
-jsxRuntimeExports.jsxs("div", { className: styles$9.songInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$9.songName, children: songName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$9.subInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$9.artist, children: artistName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$9.album, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b.songInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$b.songName, children: songName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$b.subInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$b.artist, children: artistName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$b.album, children: [
                   albumName && " - ",
                   albumName
                 ] })
@@ -19973,13 +19974,13 @@ jsxRuntimeExports.jsxs("div", { className: styles$9.album, children: [
             sortDirections: ["ascend", "descend"],
             render: (_, record) => {
               const { song, album: album2, artist: artist2 } = getOriginalInfo(record);
-              return jsxRuntimeExports.jsxs("div", { className: styles$9["original-album"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$9["song-info"], title: song, children: [
+              return jsxRuntimeExports.jsxs("div", { className: styles$b["original-album"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b["song-info"], title: song, children: [
                   song,
                   " ",
                   artist2 && `· ${artist2}`
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$9["album-info"], title: album2, children: album2 })
+jsxRuntimeExports.jsx("div", { className: styles$b["album-info"], title: album2, children: album2 })
               ] });
             }
           },
@@ -20290,13 +20291,13 @@ jsxRuntimeExports.jsx(
                     const { songId } = record;
                     const classNames2 = [];
                     if (songId === playSong?.id) {
-                      classNames2.push(styles$9.currentSong);
+                      classNames2.push(styles$b.currentSong);
                     }
                     const isMatch = record.matchType === "matched";
                     const album2 = normalizeString(getAlbumName(record));
                     const originalAlbum = normalizeString(getOriginalInfo(record)?.album);
                     if (isMatch && !album2.includes(originalAlbum.slice(0, 3))) {
-                      classNames2.push(styles$9.matchError);
+                      classNames2.push(styles$b.matchError);
                     }
                     return classNames2.join(" ");
                   },
@@ -20309,7 +20310,7 @@ jsxRuntimeExports.jsx(
                   }
                 }
               ),
-jsxRuntimeExports.jsxs("div", { className: styles$9.footer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b.footer, children: [
 jsxRuntimeExports.jsx(
                   Stats,
                   {
@@ -20317,7 +20318,7 @@ jsxRuntimeExports.jsx(
                     filteredSongList
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$9.actions, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b.actions, children: [
 jsxRuntimeExports.jsx(
                     Input,
                     {
@@ -20325,8 +20326,8 @@ jsxRuntimeExports.jsx(
                         width: 100
                       },
                       value: range[0],
-                      onChange: (e2) => {
-                        setRange([+e2.target.value || void 0, range[1]]);
+                      onChange: (e) => {
+                        setRange([+e.target.value || void 0, range[1]]);
                       },
                       placeholder: "起始位置"
                     }
@@ -20338,7 +20339,7 @@ jsxRuntimeExports.jsx(
                         width: 100
                       },
                       value: range[1],
-                      onChange: (e2) => setRange([range[0], +e2.target.value || void 0]),
+                      onChange: (e) => setRange([range[0], +e.target.value || void 0]),
                       placeholder: "结束位置"
                     }
                   ),
@@ -20414,25 +20415,25 @@ jsxRuntimeExports.jsx(PlayList$3, { ref: playListRef })
             message.success("复制成功");
           });
         };
-        return jsxRuntimeExports.jsxs("div", { className: styles$9.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$9.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$9.title, children: "总计：" }),
-jsxRuntimeExports.jsxs("div", { className: styles$9.statsContent, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$b.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$b.title, children: "总计：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$b.statsContent, children: [
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$9.label, children: "歌曲数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$9.value, children: totalSongs }),
-jsxRuntimeExports.jsx("span", { className: styles$9.label, children: " 首" })
+jsxRuntimeExports.jsx("span", { className: styles$b.label, children: "歌曲数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$b.value, children: totalSongs }),
+jsxRuntimeExports.jsx("span", { className: styles$b.label, children: " 首" })
               ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$9.label, children: "歌单数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$9.value, children: albums.length }),
-jsxRuntimeExports.jsx("span", { className: styles$9.label, children: " 个" })
+jsxRuntimeExports.jsx("span", { className: styles$b.label, children: "歌单数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$b.value, children: albums.length }),
+jsxRuntimeExports.jsx("span", { className: styles$b.label, children: " 个" })
               ] })
             ] })
           ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsxs("div", { className: styles$9.listHeader, children: [
-jsxRuntimeExports.jsx("div", { className: styles$9.title, children: "即将创建的歌单：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$b.listHeader, children: [
+jsxRuntimeExports.jsx("div", { className: styles$b.title, children: "即将创建的歌单：" }),
 jsxRuntimeExports.jsx(
                 Button,
                 {
@@ -20444,9 +20445,9 @@ jsxRuntimeExports.jsx(
                 }
               )
             ] }),
-jsxRuntimeExports.jsx("ul", { className: styles$9.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$9.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$9.itemName, children: name2 }),
-jsxRuntimeExports.jsxs("span", { className: styles$9.itemCount, children: [
+jsxRuntimeExports.jsx("ul", { className: styles$b.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$b.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$b.itemName, children: name2 }),
+jsxRuntimeExports.jsxs("span", { className: styles$b.itemCount, children: [
                 songs2.length,
                 "首"
               ] })
@@ -20455,16 +20456,16 @@ jsxRuntimeExports.jsxs("span", { className: styles$9.itemCount, children: [
         ] });
       };
       const DeleteConfirmation = ({ selectedCount, songNames }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$9.deleteConfirmation, children: [
-jsxRuntimeExports.jsxs("p", { className: styles$9.title, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$b.deleteConfirmation, children: [
+jsxRuntimeExports.jsxs("p", { className: styles$b.title, children: [
             "您确定要删除以下 ",
-jsxRuntimeExports.jsx("span", { className: styles$9.count, children: selectedCount }),
+jsxRuntimeExports.jsx("span", { className: styles$b.count, children: selectedCount }),
             " ",
             "首歌曲吗？"
           ] }),
-jsxRuntimeExports.jsx("div", { className: styles$9.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$9.songItem, children: name2 }, index2)) }),
-jsxRuntimeExports.jsx("div", { className: styles$9.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$9.text, children: [
-jsxRuntimeExports.jsx("span", { className: styles$9.icon, children: "!" }),
+jsxRuntimeExports.jsx("div", { className: styles$b.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$b.songItem, children: name2 }, index2)) }),
+jsxRuntimeExports.jsx("div", { className: styles$b.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$b.text, children: [
+jsxRuntimeExports.jsx("span", { className: styles$b.icon, children: "!" }),
             "注意：此操作不可恢复，删除后歌曲将从您的网易云音乐云盘中永久移除。"
           ] }) })
         ] });
@@ -20681,7 +20682,7 @@ jsxRuntimeExports.jsx(
       });
       const dragger = "_dragger_1latm_12";
       const divider$1 = "_divider_1latm_58";
-      const styles$6 = {
+      const styles$8 = {
         "local-upload": "_local-upload_1latm_1",
         "upload-section": "_upload-section_1latm_6",
         dragger,
@@ -20721,7 +20722,7 @@ jsxRuntimeExports.jsx(
                 const res2 = await uploadLocalSong(file);
                 file.status = "done";
                 return res2;
-              } catch (e2) {
+              } catch (e) {
                 file.status = "error";
                 return null;
               } finally {
@@ -20773,8 +20774,8 @@ jsxRuntimeExports.jsx(
             });
             const data = await Promise.all(proArr);
             downloadJsonFile(data, data[0].artist + ".json");
-          } catch (e2) {
-            console.log("error", e2);
+          } catch (e) {
+            console.log("error", e);
           } finally {
             setGetJsonLoading(false);
           }
@@ -20826,9 +20827,9 @@ jsxRuntimeExports.jsx(
             confirmLoading: loading,
             centered: true,
             width: 1e3,
-            children: jsxRuntimeExports.jsxs("div", { className: styles$6["local-upload"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6["upload-section"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$6["concurrency-control"], children: [
+            children: jsxRuntimeExports.jsxs("div", { className: styles$8["local-upload"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$8["upload-section"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$8["concurrency-control"], children: [
 jsxRuntimeExports.jsx("span", { children: "并发数量：" }),
 jsxRuntimeExports.jsx(
                     Input,
@@ -20837,7 +20838,7 @@ jsxRuntimeExports.jsx(
                       min: 1,
                       max: 6,
                       value: concurrency,
-                      onChange: (e2) => setConcurrency(parseInt(e2.target.value) || 1),
+                      onChange: (e) => setConcurrency(parseInt(e.target.value) || 1),
                       style: { width: 80 }
                     }
                   )
@@ -20845,7 +20846,7 @@ jsxRuntimeExports.jsx(
 jsxRuntimeExports.jsxs(
                   Dragger,
                   {
-                    className: styles$6.dragger,
+                    className: styles$8.dragger,
                     multiple: true,
                     fileList,
                     beforeUpload: (file) => {
@@ -20855,14 +20856,14 @@ jsxRuntimeExports.jsxs(
                     showUploadList: false,
                     accept: ".mp3,.flac,.wav,.m4a,.ogg",
                     children: [
-jsxRuntimeExports.jsx("p", { className: styles$6["upload-icon"], children: jsxRuntimeExports.jsx(InboxOutlined, {}) }),
-jsxRuntimeExports.jsx("p", { className: styles$6["upload-text"], children: "点击或拖拽文件到此区域上传" }),
-jsxRuntimeExports.jsx("p", { className: styles$6["upload-hint"], children: "支持 mp3, flac, wav, m4a, ogg 格式的音频文件" })
+jsxRuntimeExports.jsx("p", { className: styles$8["upload-icon"], children: jsxRuntimeExports.jsx(InboxOutlined, {}) }),
+jsxRuntimeExports.jsx("p", { className: styles$8["upload-text"], children: "点击或拖拽文件到此区域上传" }),
+jsxRuntimeExports.jsx("p", { className: styles$8["upload-hint"], children: "支持 mp3, flac, wav, m4a, ogg 格式的音频文件" })
                     ]
                   }
                 )
               ] }),
-jsxRuntimeExports.jsxs("div", { className: styles$6["file-list"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$8["file-list"], children: [
 jsxRuntimeExports.jsx(
                   Table,
                   {
@@ -20872,14 +20873,14 @@ jsxRuntimeExports.jsx(
                     scroll: { y: 300 }
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$6["upload-stats"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$8["upload-stats"], children: [
 jsxRuntimeExports.jsxs("span", { children: [
                     "共 ",
                     fileList.length,
                     " 个文件"
                   ] }),
-jsxRuntimeExports.jsx("span", { className: styles$6.divider, children: "|" }),
-jsxRuntimeExports.jsxs("span", { className: styles$6["size-text"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$8.divider, children: "|" }),
+jsxRuntimeExports.jsxs("span", { className: styles$8["size-text"], children: [
                     "总大小：",
                     formatFileSize(
                       fileList.reduce((acc, file) => acc + file.size, 0)
@@ -20921,6 +20922,70 @@ jsxRuntimeExports.jsx(
           }
         );
       });
+      const name$2 = "_name_1piqa_31";
+      const alias = "_alias_1piqa_42";
+      const id$1 = "_id_1piqa_50";
+      const styles$7 = {
+        "song-info-render": "_song-info-render_1piqa_1",
+        "cover-wrapper": "_cover-wrapper_1piqa_7",
+        "cover-placeholder": "_cover-placeholder_1piqa_13",
+        "info-wrapper": "_info-wrapper_1piqa_24",
+        name: name$2,
+        "no-source": "_no-source_1piqa_39",
+        alias,
+        id: id$1
+      };
+      function SongInfoRender({ record }) {
+        const { name: name2, alia, id: id2, al, noCopyrightRcmd, pc } = record;
+        const alias2 = alia?.[0] || "";
+        const isCloud = pc;
+        const noSource = noCopyrightRcmd;
+        return jsxRuntimeExports.jsxs("div", { className: styles$7["song-info-render"], children: [
+jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: styles$7["cover-wrapper"],
+              onClick: (e) => e.stopPropagation(),
+              children: al?.picUrl ? jsxRuntimeExports.jsx(
+                Image,
+                {
+                  src: al.picUrl,
+                  width: 60,
+                  height: 60,
+                  preview: true,
+                  placeholder: true
+                }
+              ) : jsxRuntimeExports.jsx("div", { className: styles$7["cover-placeholder"], children: "无封面" })
+            }
+          ),
+jsxRuntimeExports.jsxs("div", { className: styles$7["info-wrapper"], children: [
+jsxRuntimeExports.jsx(Tooltip, { title: name2, placement: "top", children: jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: classNames(styles$7["name"], {
+                  [styles$7["no-source"]]: noSource
+                }),
+                children: [
+                  isCloud && jsxRuntimeExports.jsx(
+                    CloudOutlined,
+                    {
+                      style: { color: "#C20C0C", marginRight: 5, fontSize: 18 }
+                    }
+                  ),
+                  name2
+                ]
+              }
+            ) }),
+            noSource && jsxRuntimeExports.jsx(Tooltip, { title: "无音源", placement: "top", children: jsxRuntimeExports.jsx(Tag, { color: "purple", style: { width: "fit-content" }, children: "无音源" }) }),
+            alias2 && jsxRuntimeExports.jsx(Tooltip, { title: alias2, placement: "top", children: jsxRuntimeExports.jsx("div", { className: styles$7["alias"], children: alias2 }) }),
+jsxRuntimeExports.jsx(Tooltip, { title: id2, placement: "top", children: jsxRuntimeExports.jsxs("div", { className: styles$7["id"], children: [
+              "ID:",
+              " ",
+jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12px" }, children: id2 })
+            ] }) })
+          ] })
+        ] });
+      }
       var duration$2 = { exports: {} };
       var duration$1 = duration$2.exports;
       var hasRequiredDuration;
@@ -20931,7 +20996,7 @@ jsxRuntimeExports.jsx(
           !(function(t, s) {
             module.exports = s();
           })(duration$1, (function() {
-            var t, s, n = 1e3, i = 6e4, e2 = 36e5, r = 864e5, o = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, u = 31536e6, d = 2628e6, a = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/, h = { years: u, months: d, days: r, hours: e2, minutes: i, seconds: n, milliseconds: 1, weeks: 6048e5 }, c = function(t2) {
+            var t, s, n = 1e3, i = 6e4, e = 36e5, r = 864e5, o = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, u = 31536e6, d = 2628e6, a = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/, h = { years: u, months: d, days: r, hours: e, minutes: i, seconds: n, milliseconds: 1, weeks: 6048e5 }, c = function(t2) {
               return t2 instanceof g;
             }, f = function(t2, s2, n2) {
               return new g(t2, n2, s2.$l);
@@ -20954,9 +21019,9 @@ jsxRuntimeExports.jsx(
                   i2.$d[m(s3)] = t2[s3];
                 })), this.calMilliseconds(), this;
                 if ("string" == typeof t2) {
-                  var e3 = t2.match(a);
-                  if (e3) {
-                    var r2 = e3.slice(2).map((function(t3) {
+                  var e2 = t2.match(a);
+                  if (e2) {
+                    var r2 = e2.slice(2).map((function(t3) {
                       return null != t3 ? Number(t3) : 0;
                     }));
                     return this.$d.years = r2[0], this.$d.months = r2[1], this.$d.weeks = r2[2], this.$d.days = r2[3], this.$d.hours = r2[4], this.$d.minutes = r2[5], this.$d.seconds = r2[6], this.calMilliseconds(), this;
@@ -20972,13 +21037,13 @@ jsxRuntimeExports.jsx(
                 }), 0);
               }, y2.parseFromMilliseconds = function() {
                 var t2 = this.$ms;
-                this.$d.years = $(t2 / u), t2 %= u, this.$d.months = $(t2 / d), t2 %= d, this.$d.days = $(t2 / r), t2 %= r, this.$d.hours = $(t2 / e2), t2 %= e2, this.$d.minutes = $(t2 / i), t2 %= i, this.$d.seconds = $(t2 / n), t2 %= n, this.$d.milliseconds = t2;
+                this.$d.years = $(t2 / u), t2 %= u, this.$d.months = $(t2 / d), t2 %= d, this.$d.days = $(t2 / r), t2 %= r, this.$d.hours = $(t2 / e), t2 %= e, this.$d.minutes = $(t2 / i), t2 %= i, this.$d.seconds = $(t2 / n), t2 %= n, this.$d.milliseconds = t2;
               }, y2.toISOString = function() {
                 var t2 = v(this.$d.years, "Y"), s2 = v(this.$d.months, "M"), n2 = +this.$d.days || 0;
                 this.$d.weeks && (n2 += 7 * this.$d.weeks);
-                var i2 = v(n2, "D"), e3 = v(this.$d.hours, "H"), r2 = v(this.$d.minutes, "M"), o2 = this.$d.seconds || 0;
+                var i2 = v(n2, "D"), e2 = v(this.$d.hours, "H"), r2 = v(this.$d.minutes, "M"), o2 = this.$d.seconds || 0;
                 this.$d.milliseconds && (o2 += this.$d.milliseconds / 1e3, o2 = Math.round(1e3 * o2) / 1e3);
-                var u2 = v(o2, "S"), d2 = t2.negative || s2.negative || i2.negative || e3.negative || r2.negative || u2.negative, a2 = e3.format || r2.format || u2.format ? "T" : "", h2 = (d2 ? "-" : "") + "P" + t2.format + s2.format + i2.format + a2 + e3.format + r2.format + u2.format;
+                var u2 = v(o2, "S"), d2 = t2.negative || s2.negative || i2.negative || e2.negative || r2.negative || u2.negative, a2 = e2.format || r2.format || u2.format ? "T" : "", h2 = (d2 ? "-" : "") + "P" + t2.format + s2.format + i2.format + a2 + e2.format + r2.format + u2.format;
                 return "P" === h2 || "-P" === h2 ? "P0D" : h2;
               }, y2.toJSON = function() {
                 return this.toISOString();
@@ -21042,11 +21107,11 @@ jsxRuntimeExports.jsx(
             })(), p = function(t2, s2, n2) {
               return t2.add(s2.years() * n2, "y").add(s2.months() * n2, "M").add(s2.days() * n2, "d").add(s2.hours() * n2, "h").add(s2.minutes() * n2, "m").add(s2.seconds() * n2, "s").add(s2.milliseconds() * n2, "ms");
             };
-            return function(n2, i2, e3) {
-              t = e3, s = e3().$utils(), e3.duration = function(t2, s2) {
-                var n3 = e3.locale();
+            return function(n2, i2, e2) {
+              t = e2, s = e2().$utils(), e2.duration = function(t2, s2) {
+                var n3 = e2.locale();
                 return f(t2, { $l: n3 }, s2);
-              }, e3.isDuration = c;
+              }, e2.isDuration = c;
               var r2 = i2.prototype.add, o2 = i2.prototype.subtract;
               i2.prototype.add = function(t2, s2) {
                 return c(t2) ? p(this, t2, 1) : r2.bind(this)(t2, s2);
@@ -21060,15 +21125,15 @@ jsxRuntimeExports.jsx(
       }
       var durationExports = requireDuration();
       const duration = getDefaultExportFromCjs(durationExports);
-      const styles$5 = {
+      const styles$6 = {
         "playlist-id-input": "_playlist-id-input_1r0t2_5"
       };
       dayjs.extend(duration);
       function SongList(props, ref) {
         const { visible, close } = useVisible(
           {
-            onOpen(id) {
-              setPlaylistId(id);
+            onOpen(id2) {
+              setPlaylistId(id2);
             },
             onReset() {
               resetSongList();
@@ -21139,6 +21204,10 @@ jsxRuntimeExports.jsx(
         const handleSaveToCloud = async (record) => {
           const uploadMessageKey2 = "song-to-cloud";
           try {
+            if (record.pc) {
+              msgWarning(`《${record.name}》为云盘已存在歌曲，无法转存云盘!`);
+              return;
+            }
             const res = await neteaseMusicToCloud([record.id], {
               onChange: (progress) => {
                 message.loading({
@@ -21170,117 +21239,7 @@ jsxRuntimeExports.jsx(
             sorter: (a, b) => a.name?.localeCompare(b.name),
             sortDirections: ["ascend", "descend"],
             render: (_, record) => {
-              const alias = record.alia?.[0] || "";
-              return jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  style: {
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "12px",
-                    minWidth: 0
-                  },
-                  children: [
-jsxRuntimeExports.jsx(
-                      "div",
-                      {
-                        style: {
-                          flex: "0 0 60px",
-                          borderRadius: "6px",
-                          overflow: "hidden",
-                          cursor: "pointer"
-                        },
-                        onClick: (e2) => e2.stopPropagation(),
-                        children: record.al?.picUrl ? jsxRuntimeExports.jsx(
-                          Image,
-                          {
-                            src: record.al.picUrl,
-                            width: 60,
-                            height: 60,
-                            preview: false,
-                            placeholder: true
-                          }
-                        ) : jsxRuntimeExports.jsx(
-                          "div",
-                          {
-                            style: {
-                              width: "60px",
-                              height: "60px",
-                              backgroundColor: "#f0f0f0",
-                              borderRadius: "6px",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              color: "#999",
-                              fontSize: "12px"
-                            },
-                            children: "无封面"
-                          }
-                        )
-                      }
-                    ),
-jsxRuntimeExports.jsxs(
-                      "div",
-                      {
-                        style: {
-                          flex: 1,
-                          minWidth: 0,
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: "4px"
-                        },
-                        children: [
-jsxRuntimeExports.jsx(Tooltip, { title: record.name, placement: "top", children: jsxRuntimeExports.jsx(
-                            "div",
-                            {
-                              style: {
-                                fontWeight: 500,
-                                fontSize: "14px",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                whiteSpace: "nowrap",
-                                color: "#262626"
-                              },
-                              children: record.name
-                            }
-                          ) }),
-                          alias && jsxRuntimeExports.jsx(Tooltip, { title: alias, placement: "top", children: jsxRuntimeExports.jsx(
-                            "div",
-                            {
-                              style: {
-                                fontSize: "12px",
-                                color: "#8c8c8c",
-                                fontStyle: "italic",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                whiteSpace: "nowrap"
-                              },
-                              children: alias
-                            }
-                          ) }),
-jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: jsxRuntimeExports.jsxs(
-                            "div",
-                            {
-                              style: {
-                                fontSize: "12px",
-                                color: "#8c8c8c",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                whiteSpace: "nowrap"
-                              },
-                              children: [
-                                "ID:",
-                                " ",
-jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12px" }, children: record.id })
-                              ]
-                            }
-                          ) })
-                        ]
-                      }
-                    )
-                  ]
-                }
-              );
+              return jsxRuntimeExports.jsx(SongInfoRender, { record });
             }
           },
           {
@@ -21310,7 +21269,7 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
             dataIndex: ["al", "id"],
             key: "albumId",
             width: 140,
-            render: (id) => jsxRuntimeExports.jsx(CopyText, { text: id }) || "-"
+            render: (id2) => jsxRuntimeExports.jsx(CopyText, { text: id2 }) || "-"
           },
           {
             title: "时长",
@@ -21515,12 +21474,15 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
             align: "center",
             fixed: isMobile() ? void 0 : "right",
             render: (_, record) => {
+              const noSource = record.noCopyrightRcmd;
+              const isCloud = record.pc;
               return jsxRuntimeExports.jsxs(Space, { children: [
 jsxRuntimeExports.jsx(
                   MyButton,
                   {
                     type: "link",
                     size: "small",
+                    disabled: noSource,
                     icon: isPlaying === record.id ? jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
                     onClick: () => handlePlay(record),
                     children: "播放"
@@ -21531,6 +21493,7 @@ jsxRuntimeExports.jsx(
                   {
                     type: "link",
                     size: "small",
+                    disabled: noSource,
                     icon: jsxRuntimeExports.jsx(DownloadOutlined, {}),
                     onClick: () => handleDownload(record),
                     children: "下载"
@@ -21541,8 +21504,9 @@ jsxRuntimeExports.jsx(
                   {
                     type: "link",
                     size: "small",
+                    disabled: isCloud || noSource,
                     icon: jsxRuntimeExports.jsx(CloudUploadOutlined, {}),
-                    onClick: () => handleSaveToCloud(e),
+                    onClick: () => handleSaveToCloud(record),
                     children: "转存云盘"
                   }
                 )
@@ -21681,11 +21645,11 @@ jsxRuntimeExports.jsx(
 jsxRuntimeExports.jsx(Form.Item, { label: "歌单ID", children: jsxRuntimeExports.jsx(
                 Input,
                 {
-                  className: styles$5["playlist-id-input"],
+                  className: styles$6["playlist-id-input"],
                   defaultValue: playlistId,
-                  onKeyDown: (e2) => {
-                    if (e2.key === "Enter") {
-                      setPlaylistId(e2.target.value);
+                  onKeyDown: (e) => {
+                    if (e.key === "Enter") {
+                      setPlaylistId(e.target.value);
                     }
                   }
                 }
@@ -21707,6 +21671,9 @@ jsxRuntimeExports.jsx(
                     type: "checkbox",
                     fixed: true,
                     preserveSelectedRowKeys: true,
+                    getCheckboxProps: (record) => ({
+                      disabled: record.noCopyrightRcmd
+                    }),
                     onChange: (selectedRowKeys, selectedRows2) => {
                       setSelectedRows(selectedRows2);
                     }
@@ -21720,13 +21687,13 @@ jsxRuntimeExports.jsx(
       const SongList$1 = forwardRef(SongList);
       const cover = "_cover_1tg5n_8";
       const info = "_info_1tg5n_38";
-      const name = "_name_1tg5n_45";
+      const name$1 = "_name_1tg5n_45";
       const creator = "_creator_1tg5n_56";
-      const styles$4 = {
+      const styles$5 = {
         "playlist-info": "_playlist-info_1tg5n_1",
         cover,
         info,
-        name,
+        name: name$1,
         creator,
         "playlist-item": "_playlist-item_1tg5n_73"
       };
@@ -21742,7 +21709,12 @@ jsxRuntimeExports.jsx(
           },
           ref
         );
-        const { sortSongListByListId, playlistToCloud, downloadSongList, getSongListData } = useGetSongListDetail();
+        const {
+          sortSongListByListId,
+          playlistToCloud,
+          downloadSongList,
+          getSongListData
+        } = useGetSongListDetail();
         const [loading, setLoading] = useState(false);
         const [playList, setPlayList] = useState([]);
         const songListRef = useRef();
@@ -21777,20 +21749,20 @@ jsxRuntimeExports.jsx(
             }
           }
         });
-        const handleSaveToCloud = async (e2, record) => {
-          e2.stopPropagation();
+        const handleSaveToCloud = async (e, record) => {
+          e.stopPropagation();
           return playlistToCloud(record.id);
         };
-        const handleSort = async (e2, record) => {
-          e2.stopPropagation();
+        const handleSort = async (e, record) => {
+          e.stopPropagation();
           try {
             await sortSongListByListId(record.id);
           } catch (error) {
             console.log("error", error);
           }
         };
-        const handleDelete = async (e2, record) => {
-          e2.stopPropagation();
+        const handleDelete = async (e, record) => {
+          e.stopPropagation();
           try {
             await confirm(`确定删除《${record.name}》歌单吗？`, "删除歌单");
             const res = await deletePlaylist(record.id);
@@ -21806,8 +21778,8 @@ jsxRuntimeExports.jsx(
             msgError(`删除歌单失败: ${error.message}`);
           }
         };
-        const handleDownload = async (e2, record) => {
-          e2.stopPropagation();
+        const handleDownload = async (e, record) => {
+          e.stopPropagation();
           try {
             const songs2 = await getSongListData(record.id);
             await downloadSongList(songs2);
@@ -21822,20 +21794,20 @@ jsxRuntimeExports.jsx(
             title: "歌单信息",
             key: "playlistInfo",
             width: 250,
-            render: (_, record) => jsxRuntimeExports.jsxs("div", { className: styles$4["playlist-info"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$4["cover"], children: jsxRuntimeExports.jsx(
+            render: (_, record) => jsxRuntimeExports.jsxs("div", { className: styles$5["playlist-info"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$5["cover"], children: jsxRuntimeExports.jsx(
                 Image,
                 {
                   src: record.coverImgUrl,
                   width: 60,
                   height: 60,
-                  onClick: (e2) => e2.stopPropagation(),
+                  onClick: (e) => e.stopPropagation(),
                   preview: false
                 }
               ) }),
-jsxRuntimeExports.jsxs("div", { className: styles$4["info"], children: [
-jsxRuntimeExports.jsx(Tooltip, { title: record.name, placement: "top", children: jsxRuntimeExports.jsx("div", { className: styles$4["name"], children: record.name }) }),
-jsxRuntimeExports.jsx(Tooltip, { title: record.creator.nickname, placement: "top", children: jsxRuntimeExports.jsxs("div", { className: styles$4["creator"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$5["info"], children: [
+jsxRuntimeExports.jsx(Tooltip, { title: record.name, placement: "top", children: jsxRuntimeExports.jsx("div", { className: styles$5["name"], children: record.name }) }),
+jsxRuntimeExports.jsx(Tooltip, { title: record.creator.nickname, placement: "top", children: jsxRuntimeExports.jsxs("div", { className: styles$5["creator"], children: [
 jsxRuntimeExports.jsx(Avatar, { src: record.creator.avatarUrl, size: 20 }),
 jsxRuntimeExports.jsx(Typography.Text, { children: record.creator.nickname })
                 ] }) })
@@ -21855,7 +21827,7 @@ jsxRuntimeExports.jsx(Typography.Text, { children: record.creator.nickname })
             dataIndex: "id",
             key: "id",
             width: 100,
-            render: (id) => jsxRuntimeExports.jsx(Typography.Text, { copyable: true, children: id })
+            render: (id2) => jsxRuntimeExports.jsx(Typography.Text, { copyable: true, children: id2 })
           },
           {
             title: "播放次数",
@@ -21890,7 +21862,7 @@ jsxRuntimeExports.jsx(
                 {
                   type: "link",
                   icon: jsxRuntimeExports.jsx(CloudUploadOutlined, {}),
-                  onClick: (e2) => handleSaveToCloud(e2, record),
+                  onClick: (e) => handleSaveToCloud(e, record),
                   size: "small",
                   children: "转存云盘"
                 }
@@ -21900,7 +21872,7 @@ jsxRuntimeExports.jsx(
                 {
                   type: "link",
                   icon: jsxRuntimeExports.jsx(SortAscendingOutlined, {}),
-                  onClick: (e2) => handleSort(e2, record),
+                  onClick: (e) => handleSort(e, record),
                   size: "small",
                   children: "排序"
                 }
@@ -21910,7 +21882,7 @@ jsxRuntimeExports.jsx(
                 {
                   type: "link",
                   icon: jsxRuntimeExports.jsx(DeleteOutlined, {}),
-                  onClick: (e2) => handleDelete(e2, record),
+                  onClick: (e) => handleDelete(e, record),
                   size: "small",
                   children: "删除"
                 }
@@ -21920,7 +21892,7 @@ jsxRuntimeExports.jsx(
                 {
                   type: "link",
                   icon: jsxRuntimeExports.jsx(DownloadOutlined, {}),
-                  onClick: (e2) => handleDownload(e2, record),
+                  onClick: (e) => handleDownload(e, record),
                   size: "small",
                   children: "下载"
                 }
@@ -21969,7 +21941,7 @@ jsxRuntimeExports.jsx(
                     scroll: { x: 1e3, y: 400 },
                     onRow: (record) => ({
                       onClick: () => handleRowClick(record),
-                      className: styles$4["playlist-item"]
+                      className: styles$5["playlist-item"]
                     }),
                     pagination: {
                       showQuickJumper: true,
@@ -22004,7 +21976,7 @@ jsxRuntimeExports.jsx(SongList$1, { ref: songListRef })
       const songItem = "_songItem_17qrr_281";
       const songInfo = "_songInfo_17qrr_296";
       const artistName = "_artistName_17qrr_310";
-      const styles$3 = {
+      const styles$4 = {
         "quick-upload-tabs": "_quick-upload-tabs_17qrr_22",
         select,
         "singer-choose": "_singer-choose_17qrr_26",
@@ -22042,20 +22014,20 @@ jsxRuntimeExports.jsx(SongList$1, { ref: songListRef })
         const { singerList, loading } = useGetSingerList();
         const renderSingerList = useMemo(() => {
           return singerList.map((item) => {
-            const { id, name: name2, count: count2, size: size2, sizeDesc } = item;
+            const { id: id2, name: name2, count: count2, size: size2, sizeDesc } = item;
             return {
               ...item,
-              label: jsxRuntimeExports.jsxs("div", { className: styles$3["option-label"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$3["singer-name"], children: name2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$3["tag-group"], children: [
-jsxRuntimeExports.jsxs(Tag, { color: "blue", className: styles$3["tag"], children: [
+              label: jsxRuntimeExports.jsxs("div", { className: styles$4["option-label"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$4["singer-name"], children: name2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$4["tag-group"], children: [
+jsxRuntimeExports.jsxs(Tag, { color: "blue", className: styles$4["tag"], children: [
                     count2,
                     "首"
                   ] }),
-jsxRuntimeExports.jsx(Tag, { color: "green", className: styles$3["tag"], children: sizeDesc })
+jsxRuntimeExports.jsx(Tag, { color: "green", className: styles$4["tag"], children: sizeDesc })
                 ] })
               ] }),
-              value: id
+              value: id2
             };
           });
         }, [singerList]);
@@ -22065,12 +22037,12 @@ jsxRuntimeExports.jsx(Tag, { color: "green", className: styles$3["tag"], childre
           onChoose([...singer]);
         };
         const [quickImportLoading, setQuickImportLoading] = useState(false);
-        return jsxRuntimeExports.jsx("div", { className: styles$3["singer-choose"], children: loading ? jsxRuntimeExports.jsx(Spin, { tip: "正在加载中" }) : jsxRuntimeExports.jsxs(
+        return jsxRuntimeExports.jsx("div", { className: styles$4["singer-choose"], children: loading ? jsxRuntimeExports.jsx(Spin, { tip: "正在加载中" }) : jsxRuntimeExports.jsxs(
           Form,
           {
             form: formRef,
             onFinish: handleChoose,
-            className: styles$3["singer-choose-form"],
+            className: styles$4["singer-choose-form"],
             initialValues: { singer: defaultSingerList },
             children: [
 jsxRuntimeExports.jsx(Form.Item, { name: "singer", label: "歌手", children: jsxRuntimeExports.jsx(
@@ -22079,7 +22051,7 @@ jsxRuntimeExports.jsx(Form.Item, { name: "singer", label: "歌手", children: js
                   mode: "multiple",
                   placeholder: "请选择歌手",
                   allowClear: true,
-                  className: styles$3["select"],
+                  className: styles$4["select"],
                   autoClearSearchValue: false,
                   filterOption: (input, option) => option.name?.toLowerCase().indexOf(input.toLowerCase()) >= 0,
                   options: renderSingerList,
@@ -22091,7 +22063,7 @@ jsxRuntimeExports.jsx(Form.Item, { noStyle: true, shouldUpdate: true, children: 
                 return jsxRuntimeExports.jsx(
                   "div",
                   {
-                    className: styles$3["btn-group"],
+                    className: styles$4["btn-group"],
                     style: { marginTop: "auto" },
                     children: jsxRuntimeExports.jsx(
                       Button,
@@ -22153,21 +22125,21 @@ jsxRuntimeExports.jsx(Form.Item, { noStyle: true, shouldUpdate: true, children: 
               maskClosable: false,
               footer: null,
               centered: true,
-              className: styles$3.uploadModal,
+              className: styles$4.uploadModal,
               children: [
-jsxRuntimeExports.jsxs("div", { className: styles$3.progressSection, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4.progressSection, children: [
 jsxRuntimeExports.jsx(
                     Progress,
                     {
                       type: "circle",
                       percent,
                       status: isCompleted ? failedCount > 0 ? "exception" : "success" : "active",
-                      format: () => jsxRuntimeExports.jsxs("div", { className: styles$3.progressInfo, children: [
-jsxRuntimeExports.jsxs("span", { className: styles$3.percentage, children: [
+                      format: () => jsxRuntimeExports.jsxs("div", { className: styles$4.progressInfo, children: [
+jsxRuntimeExports.jsxs("span", { className: styles$4.percentage, children: [
                           percent,
                           "%"
                         ] }),
-jsxRuntimeExports.jsxs("span", { className: styles$3.count, children: [
+jsxRuntimeExports.jsxs("span", { className: styles$4.count, children: [
                           uploadedCount + failedCount,
                           "/",
                           total
@@ -22175,32 +22147,32 @@ jsxRuntimeExports.jsxs("span", { className: styles$3.count, children: [
                       ] })
                     }
                   ),
-jsxRuntimeExports.jsxs("div", { className: styles$3.statsContainer, children: [
-jsxRuntimeExports.jsx("div", { className: styles$3.statsItem, children: jsxRuntimeExports.jsxs(Tag, { color: "success", className: styles$3.statsTag, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4.statsContainer, children: [
+jsxRuntimeExports.jsx("div", { className: styles$4.statsItem, children: jsxRuntimeExports.jsxs(Tag, { color: "success", className: styles$4.statsTag, children: [
                       "成功：",
                       uploadedCount
                     ] }) }),
-                    failedCount > 0 && jsxRuntimeExports.jsx("div", { className: styles$3.statsItem, children: jsxRuntimeExports.jsxs(Tag, { color: "error", className: styles$3.statsTag, children: [
+                    failedCount > 0 && jsxRuntimeExports.jsx("div", { className: styles$4.statsItem, children: jsxRuntimeExports.jsxs(Tag, { color: "error", className: styles$4.statsTag, children: [
                       "失败：",
                       failedCount
                     ] }) })
                   ] })
                 ] }),
-                (uploadedList.length > 0 || uploadFailedSongList.length > 0) && jsxRuntimeExports.jsxs("div", { className: styles$3.songList, ref: songListRef, children: [
-                  uploadFailedSongList.map((song) => jsxRuntimeExports.jsxs("div", { className: styles$3.songItem, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$3.songInfo, children: [
-jsxRuntimeExports.jsx("span", { className: styles$3.songName, children: song.name }),
-jsxRuntimeExports.jsxs("span", { className: styles$3.artistName, children: [
+                (uploadedList.length > 0 || uploadFailedSongList.length > 0) && jsxRuntimeExports.jsxs("div", { className: styles$4.songList, ref: songListRef, children: [
+                  uploadFailedSongList.map((song) => jsxRuntimeExports.jsxs("div", { className: styles$4.songItem, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4.songInfo, children: [
+jsxRuntimeExports.jsx("span", { className: styles$4.songName, children: song.name }),
+jsxRuntimeExports.jsxs("span", { className: styles$4.artistName, children: [
                         "- ",
                         song.artists
                       ] })
                     ] }),
 jsxRuntimeExports.jsx(Tag, { color: "error", children: "上传失败" })
                   ] }, song.id)),
-                  uploadedList.map((song) => jsxRuntimeExports.jsxs("div", { className: styles$3.songItem, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$3.songInfo, children: [
-jsxRuntimeExports.jsx("span", { className: styles$3.songName, children: song.name }),
-jsxRuntimeExports.jsxs("span", { className: styles$3.artistName, children: [
+                  uploadedList.map((song) => jsxRuntimeExports.jsxs("div", { className: styles$4.songItem, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4.songInfo, children: [
+jsxRuntimeExports.jsx("span", { className: styles$4.songName, children: song.name }),
+jsxRuntimeExports.jsxs("span", { className: styles$4.artistName, children: [
                         "- ",
                         song.artists
                       ] })
@@ -22217,21 +22189,21 @@ jsxRuntimeExports.jsx(Tag, { color: "success", children: "已上传" })
         ({ selectedRows, filteredSongList, toUploadSongList }) => {
           const selectedSize = selectedRows.reduce((acc, cur) => acc + cur.size, 0);
           const totalSize = filteredSongList.reduce((acc, cur) => acc + cur.size, 0);
-          return jsxRuntimeExports.jsxs("div", { className: styles$3["upload-stats"], children: [
+          return jsxRuntimeExports.jsxs("div", { className: styles$4["upload-stats"], children: [
             "已选择",
 jsxRuntimeExports.jsxs(Tag, { color: "blue", style: { margin: 0 }, children: [
               selectedRows.length,
               " 首"
             ] }),
-jsxRuntimeExports.jsx("span", { className: styles$3["size-text"], children: +selectedSize && formatFileSize(selectedSize) }),
-jsxRuntimeExports.jsx("span", { className: styles$3.divider, children: "/" }),
+jsxRuntimeExports.jsx("span", { className: styles$4["size-text"], children: +selectedSize && formatFileSize(selectedSize) }),
+jsxRuntimeExports.jsx("span", { className: styles$4.divider, children: "/" }),
             "共",
 jsxRuntimeExports.jsxs(Tag, { color: "green", style: { margin: 0 }, children: [
               filteredSongList.length,
               " 首"
             ] }),
-jsxRuntimeExports.jsx("span", { className: styles$3["size-text"], children: formatFileSize(totalSize) }),
-jsxRuntimeExports.jsx("span", { className: styles$3.divider, children: "/" }),
+jsxRuntimeExports.jsx("span", { className: styles$4["size-text"], children: formatFileSize(totalSize) }),
+jsxRuntimeExports.jsx("span", { className: styles$4.divider, children: "/" }),
             "待上传",
 jsxRuntimeExports.jsxs(Tag, { color: "orange", style: { margin: 0 }, children: [
               toUploadSongList.length,
@@ -22251,8 +22223,8 @@ jsxRuntimeExports.jsxs(Tag, { color: "orange", style: { margin: 0 }, children: [
               msgError("请先选择歌手");
               return;
             }
-            const proArr = ids.map(async (id) => {
-              const res2 = await getCDNConfig(id);
+            const proArr = ids.map(async (id2) => {
+              const res2 = await getCDNConfig(id2);
               return res2.data;
             });
             let allConfig = await Promise.all(proArr);
@@ -22616,7 +22588,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
           }
         };
         return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-          singerList?.length ? jsxRuntimeExports.jsxs("div", { className: styles$3["upload-list"], children: [
+          singerList?.length ? jsxRuntimeExports.jsxs("div", { className: styles$4["upload-list"], children: [
 jsxRuntimeExports.jsx(
               SearchForm,
               {
@@ -22642,7 +22614,7 @@ jsxRuntimeExports.jsx(
                 scroll: { y: 400, x: 1e3 },
                 size: "small",
                 loading,
-                rowKey: ({ artists, id, name: name2 }) => name2 + artists + id,
+                rowKey: ({ artists, id: id2, name: name2 }) => name2 + artists + id2,
                 onChange: handleTableChange,
                 pagination: {
                   showQuickJumper: true,
@@ -22650,7 +22622,7 @@ jsxRuntimeExports.jsx(
                 }
               }
             ),
-jsxRuntimeExports.jsxs("div", { className: styles$3["upload-footer"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4["upload-footer"], children: [
 jsxRuntimeExports.jsx(
                 UploadStats,
                 {
@@ -22669,7 +22641,7 @@ jsxRuntimeExports.jsx(
                     max: 6,
                     value: concurrency,
                     style: { width: 80 },
-                    onChange: (e2) => setConcurrency(Number(e2.target.value)),
+                    onChange: (e) => setConcurrency(Number(e.target.value)),
                     placeholder: "1-6"
                   }
                 )
@@ -22729,27 +22701,27 @@ jsxRuntimeExports.jsx(
       }
       const UploadConfirm = ({ total, uploaded, toUpload }) => {
         return confirm(
-jsxRuntimeExports.jsxs("div", { className: styles$3["upload-confirm"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$3["confirm-item"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$3.label, children: "总计歌曲：" }),
-jsxRuntimeExports.jsxs("span", { className: styles$3.value, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4["upload-confirm"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4["confirm-item"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$4.label, children: "总计歌曲：" }),
+jsxRuntimeExports.jsxs("span", { className: styles$4.value, children: [
                 total,
                 " 首"
               ] })
             ] }),
-jsxRuntimeExports.jsxs("div", { className: styles$3["confirm-item"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$3.label, children: "已上传：" }),
-jsxRuntimeExports.jsxs("span", { className: styles$3.value, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4["confirm-item"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$4.label, children: "已上传：" }),
+jsxRuntimeExports.jsxs("span", { className: styles$4.value, children: [
                 uploaded,
                 " 首"
               ] })
             ] }),
-jsxRuntimeExports.jsxs("div", { className: styles$3["confirm-item"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$3.label, children: "待上传：" }),
-jsxRuntimeExports.jsxs("span", { className: styles$3.value, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$4["confirm-item"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$4.label, children: "待上传：" }),
+jsxRuntimeExports.jsxs("span", { className: styles$4.value, children: [
                 toUpload.length,
                 " 首",
-jsxRuntimeExports.jsxs("span", { className: styles$3.size, children: [
+jsxRuntimeExports.jsxs("span", { className: styles$4.size, children: [
                   "（",
                   formatFileSize(toUpload.reduce((acc, cur) => acc + cur.size, 0)),
                   "）"
@@ -22800,7 +22772,7 @@ jsxRuntimeExports.jsxs("span", { className: styles$3.size, children: [
               {
                 defaultActiveKey: "1",
                 activeKey: currentTab,
-                className: styles$3["quick-upload-tabs"],
+                className: styles$4["quick-upload-tabs"],
                 onChange: handleTabChange,
                 children: [
 jsxRuntimeExports.jsx(TabPane, { tab: "歌曲选择", children: jsxRuntimeExports.jsx(
@@ -22818,7 +22790,7 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
         );
       }
       const QuickUpload$1 = forwardRef(QuickUpload);
-      const styles$2 = {
+      const styles$3 = {
         "song-search-modal": "_song-search-modal_15iqn_1",
         "modal-title": "_modal-title_15iqn_1",
         "title-content": "_title-content_15iqn_6",
@@ -22896,119 +22868,7 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             sorter: (a, b) => a.name?.localeCompare(b.name),
             sortDirections: ["ascend", "descend"],
             render: (_, record) => {
-              const alias = record.alia?.[0] || "";
-              return jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  style: {
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "12px",
-                    minWidth: 0
-                  },
-                  children: [
-jsxRuntimeExports.jsx(
-                      "div",
-                      {
-                        style: {
-                          width: "60px",
-                          height: "60px",
-                          borderRadius: "6px",
-                          flexShrink: 0,
-                          overflow: "hidden",
-                          cursor: "pointer"
-                        },
-                        onClick: (e2) => e2.stopPropagation(),
-                        children: record.al?.picUrl ? jsxRuntimeExports.jsx(
-                          Image,
-                          {
-                            src: record.al.picUrl,
-                            width: 60,
-                            height: 60,
-                            preview: true,
-                            placeholder: true
-                          }
-                        ) : jsxRuntimeExports.jsx(
-                          "div",
-                          {
-                            style: {
-                              width: "60px",
-                              height: "60px",
-                              backgroundColor: "#f0f0f0",
-                              borderRadius: "6px",
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              color: "#999",
-                              fontSize: "12px"
-                            },
-                            children: "无封面"
-                          }
-                        )
-                      }
-                    ),
-jsxRuntimeExports.jsxs(
-                      "div",
-                      {
-                        style: {
-                          flex: 1,
-                          minWidth: 0,
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: "4px"
-                        },
-                        children: [
-jsxRuntimeExports.jsx(Tooltip, { title: record.name, placement: "top", children: jsxRuntimeExports.jsx(
-                            "div",
-                            {
-                              style: {
-                                fontWeight: 500,
-                                fontSize: "14px",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                whiteSpace: "nowrap",
-                                color: "#262626"
-                              },
-                              children: record.name
-                            }
-                          ) }),
-                          alias && jsxRuntimeExports.jsx(Tooltip, { title: alias, placement: "top", children: jsxRuntimeExports.jsx(
-                            "div",
-                            {
-                              style: {
-                                fontSize: "12px",
-                                color: "#8c8c8c",
-                                fontStyle: "italic",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                whiteSpace: "nowrap"
-                              },
-                              children: alias
-                            }
-                          ) }),
-jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: jsxRuntimeExports.jsxs(
-                            "div",
-                            {
-                              style: {
-                                fontSize: "12px",
-                                color: "#8c8c8c",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                whiteSpace: "nowrap"
-                              },
-                              children: [
-                                "ID:",
-                                " ",
-jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12px" }, children: record.id })
-                              ]
-                            }
-                          ) })
-                        ]
-                      }
-                    )
-                  ]
-                }
-              );
+              return jsxRuntimeExports.jsx(SongInfoRender, { record });
             }
           },
           {
@@ -23038,7 +22898,7 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
             dataIndex: ["al", "id"],
             key: "albumId",
             width: 120,
-            render: (id) => jsxRuntimeExports.jsx(CopyText, { text: id }) || "-"
+            render: (id2) => jsxRuntimeExports.jsx(CopyText, { text: id2 }) || "-"
           },
           {
             title: "音质",
@@ -23287,7 +23147,7 @@ jsxRuntimeExports.jsx(
             rowKey: "id",
             loading,
             scroll: { y: 500, x: 1e3 },
-            className: styles$2["song-table"],
+            className: styles$3["song-table"],
             pagination: false
           }
         );
@@ -23307,6 +23167,33 @@ jsxRuntimeExports.jsx(
           }
         );
       });
+      const details = "_details_1f8uq_1";
+      const name = "_name_1f8uq_7";
+      const id = "_id_1f8uq_13";
+      const styles$2 = {
+        details,
+        name,
+        id
+      };
+      function ArtistRender({ record }) {
+        const { artist: artist2 } = record || {};
+        const { id: id2, name: name2, picUrl } = artist2 || {};
+        return jsxRuntimeExports.jsxs(Space, { size: "small", children: [
+          picUrl && jsxRuntimeExports.jsx(
+            Avatar,
+            {
+              src: picUrl,
+              icon: jsxRuntimeExports.jsx(UserOutlined, {}),
+              size: 40,
+              alt: name2 || "歌手头像"
+            }
+          ),
+jsxRuntimeExports.jsxs("div", { className: styles$2["details"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$2["name"], title: name2, children: name2 || "未知歌手" }),
+jsxRuntimeExports.jsx("div", { className: styles$2["id"], title: String(id2 || ""), children: jsxRuntimeExports.jsx(CopyText, { text: id2 || "-" }) })
+          ] })
+        ] });
+      }
       const AlbumTab$1 = ({ data, loading }) => {
         const albumDetailRef = useRef();
         const { pause, isPlaying } = usePlayMusic();
@@ -23395,7 +23282,7 @@ jsxRuntimeExports.jsx(
             sorter: (a, b) => (a.name || "").localeCompare(b.name || ""),
             sortDirections: ["ascend", "descend"],
             render: (_, record) => {
-              const alias = record.alias?.[0] || "";
+              const alias2 = record.alias?.[0] || "";
               return jsxRuntimeExports.jsxs(
                 "div",
                 {
@@ -23417,7 +23304,7 @@ jsxRuntimeExports.jsx(
                           overflow: "hidden",
                           cursor: "pointer"
                         },
-                        onClick: (e2) => e2.stopPropagation(),
+                        onClick: (e) => e.stopPropagation(),
                         children: record.picUrl ? jsxRuntimeExports.jsx(
                           Image,
                           {
@@ -23473,7 +23360,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.name, placement: "top", children:
                               children: record.name
                             }
                           ) }),
-                          alias && jsxRuntimeExports.jsx(Tooltip, { title: alias, placement: "top", children: jsxRuntimeExports.jsx(
+                          alias2 && jsxRuntimeExports.jsx(Tooltip, { title: alias2, placement: "top", children: jsxRuntimeExports.jsx(
                             "div",
                             {
                               style: {
@@ -23484,7 +23371,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.name, placement: "top", children:
                                 textOverflow: "ellipsis",
                                 whiteSpace: "nowrap"
                               },
-                              children: alias
+                              children: alias2
                             }
                           ) }),
 jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: jsxRuntimeExports.jsxs(
@@ -23522,9 +23409,8 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
               return aName.localeCompare(bName);
             },
             sortDirections: ["ascend", "descend"],
-            render: (artists, record) => {
-              const singerName = artists?.map((a) => a.name).join(", ") || record.artist?.name || "-";
-              return singerName;
+            render: (_, record) => {
+              return jsxRuntimeExports.jsx(ArtistRender, { record });
             }
           },
           {
@@ -23667,7 +23553,7 @@ jsxRuntimeExports.jsx(
               rowKey: "id",
               loading,
               scroll: { y: 500, x: 1200 },
-              className: styles$2["song-table"],
+              className: styles$3["song-table"],
               pagination: false,
               size: "small"
             }
@@ -23676,31 +23562,28 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
         ] });
       };
       const styles$1 = {
-        "album-list-modal": "_album-list-modal_tzijq_1",
-        "modal-title": "_modal-title_tzijq_5",
-        "title-content": "_title-content_tzijq_12",
-        "title-text": "_title-text_tzijq_18",
-        "title-stats": "_title-stats_tzijq_24",
-        "stat-item": "_stat-item_tzijq_32",
-        "stat-label": "_stat-label_tzijq_38",
-        "stat-value": "_stat-value_tzijq_42",
-        "album-info": "_album-info_tzijq_47",
-        "album-cover": "_album-cover_tzijq_53",
-        "album-details": "_album-details_tzijq_61",
-        "album-name": "_album-name_tzijq_68",
-        "album-alias": "_album-alias_tzijq_81",
-        "album-meta": "_album-meta_tzijq_89",
-        "album-tag": "_album-tag_tzijq_95",
-        "album-company": "_album-company_tzijq_99",
-        "singer-details": "_singer-details_tzijq_109",
-        "singer-name": "_singer-name_tzijq_115",
-        "singer-id": "_singer-id_tzijq_121",
-        "album-id": "_album-id_tzijq_126",
-        "album-table": "_album-table_tzijq_130",
-        "search-area": "_search-area_tzijq_134",
-        "modal-footer": "_modal-footer_tzijq_138",
-        "selected-info": "_selected-info_tzijq_145",
-        "selected-extra": "_selected-extra_tzijq_150"
+        "album-list-modal": "_album-list-modal_oa7mi_1",
+        "modal-title": "_modal-title_oa7mi_5",
+        "title-content": "_title-content_oa7mi_12",
+        "title-text": "_title-text_oa7mi_18",
+        "title-stats": "_title-stats_oa7mi_24",
+        "stat-item": "_stat-item_oa7mi_32",
+        "stat-label": "_stat-label_oa7mi_38",
+        "stat-value": "_stat-value_oa7mi_42",
+        "album-info": "_album-info_oa7mi_47",
+        "album-cover": "_album-cover_oa7mi_53",
+        "album-details": "_album-details_oa7mi_61",
+        "album-name": "_album-name_oa7mi_68",
+        "album-alias": "_album-alias_oa7mi_81",
+        "album-meta": "_album-meta_oa7mi_89",
+        "album-tag": "_album-tag_oa7mi_95",
+        "album-company": "_album-company_oa7mi_99",
+        "album-id": "_album-id_oa7mi_109",
+        "album-table": "_album-table_oa7mi_113",
+        "search-area": "_search-area_oa7mi_117",
+        "modal-footer": "_modal-footer_oa7mi_121",
+        "selected-info": "_selected-info_oa7mi_128",
+        "selected-extra": "_selected-extra_oa7mi_133"
       };
       const { Text, Title } = Typography;
       const getAlbumKey = (album2) => String(album2?.id ?? album2?.albumId ?? album2?.albumMid ?? album2?.picId ?? "");
@@ -24021,35 +23904,7 @@ jsxRuntimeExports.jsx(
               dataIndex: "artist",
               key: "artist",
               width: 220,
-              render: (_, record) => jsxRuntimeExports.jsxs(Space, { size: "small", children: [
-jsxRuntimeExports.jsx(
-                  Avatar,
-                  {
-                    src: singerInfo?.singerPic,
-                    icon: jsxRuntimeExports.jsx(UserOutlined, {}),
-                    size: 40,
-                    alt: singerInfo?.singerName || "歌手头像"
-                  }
-                ),
-jsxRuntimeExports.jsxs("div", { className: styles$1["singer-details"], children: [
-jsxRuntimeExports.jsx(
-                    "div",
-                    {
-                      className: styles$1["singer-name"],
-                      title: singerInfo?.singerName,
-                      children: singerInfo?.singerName || "未知歌手"
-                    }
-                  ),
-jsxRuntimeExports.jsx(
-                    "div",
-                    {
-                      className: styles$1["singer-id"],
-                      title: String(singerInfo?.singerId || ""),
-                      children: singerInfo?.singerId || "-"
-                    }
-                  )
-                ] })
-              ] })
+              render: (_, record) => jsxRuntimeExports.jsx(ArtistRender, { record })
             },
             {
               title: "发行时间",
@@ -24076,7 +23931,7 @@ jsxRuntimeExports.jsx(
               key: "id",
               width: 160,
               align: "center",
-              render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$1["album-id"], text: String(id) })
+              render: (id2) => jsxRuntimeExports.jsx(CopyText, { className: styles$1["album-id"], text: String(id2) })
             },
             {
               title: "操作",
@@ -24346,8 +24201,8 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             title: "歌手信息",
             dataIndex: "name",
             width: 300,
-            render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$2["song-info"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$2["song-cover"], children: jsxRuntimeExports.jsx(
+            render: (text2, record) => jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$3["song-info"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$3["song-cover"], children: jsxRuntimeExports.jsx(
                 Image,
                 {
                   src: record.picUrl || record.img1v1Url,
@@ -24356,11 +24211,11 @@ jsxRuntimeExports.jsx("div", { className: styles$2["song-cover"], children: jsxR
                   style: { objectFit: "cover" }
                 }
               ) }),
-jsxRuntimeExports.jsxs("div", { className: styles$2["song-details"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$3["song-details"], children: [
 jsxRuntimeExports.jsx(Tooltip, { title: text2, placement: "top", children: jsxRuntimeExports.jsx(
                   "div",
                   {
-                    className: styles$2["song-name"],
+                    className: styles$3["song-name"],
                     tabIndex: 0,
                     role: "text",
                     "aria-label": `歌手名称 ${text2}`,
@@ -24370,7 +24225,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: text2, placement: "top", children: jsxRu
 jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: jsxRuntimeExports.jsx(
                   Typography.Text,
                   {
-                    className: styles$2["song-mid-text"],
+                    className: styles$3["song-mid-text"],
                     copyable: true,
                     "aria-label": `复制歌手ID ${record.id}`,
                     children: record.id
@@ -24384,7 +24239,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: j
                     children: jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: styles$2["song-album"],
+                        className: styles$3["song-album"],
                         tabIndex: 0,
                         role: "text",
                         "aria-label": `别名 ${record.alias?.[0] || record.alia?.[0]}`,
@@ -24422,7 +24277,7 @@ jsxRuntimeExports.jsx(Tooltip, { title: record.id, placement: "top", children: j
             dataIndex: "id",
             width: 200,
             align: "center",
-            render: (id) => jsxRuntimeExports.jsx(CopyText, { className: styles$2["song-mid-text"], text: String(id) })
+            render: (id2) => jsxRuntimeExports.jsx(CopyText, { className: styles$3["song-mid-text"], text: String(id2) })
           },
           {
             title: "操作",
@@ -24465,7 +24320,7 @@ jsxRuntimeExports.jsx(
               rowKey: "id",
               loading,
               scroll: { y: 500, x: 1100 },
-              className: styles$2["song-table"],
+              className: styles$3["song-table"],
               pagination: false
             }
           ),
@@ -24497,7 +24352,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
           }
         );
         const renderTitle = () => {
-          return jsxRuntimeExports.jsx("div", { className: styles$2["modal-title"], children: jsxRuntimeExports.jsx("div", { className: styles$2["title-content"], children: jsxRuntimeExports.jsx("span", { className: styles$2["title-text"], children: "歌曲查询" }) }) });
+          return jsxRuntimeExports.jsx("div", { className: styles$3["modal-title"], children: jsxRuntimeExports.jsx("div", { className: styles$3["title-content"], children: jsxRuntimeExports.jsx("span", { className: styles$3["title-text"], children: "歌曲查询" }) }) });
         };
         return jsxRuntimeExports.jsxs(
           Modal,
@@ -24507,7 +24362,7 @@ jsxRuntimeExports.jsx(AlbumListModal, { ref: albumModalRef })
             onCancel: close,
             width: 1500,
             centered: true,
-            className: styles$2["song-search-modal"],
+            className: styles$3["song-search-modal"],
             children: [
 jsxRuntimeExports.jsxs(Form, { onFinish: handleSearch, layout: "inline", children: [
 jsxRuntimeExports.jsx(Form.Item, { label: "关键词", name: "keyword", children: jsxRuntimeExports.jsx(Input, { placeholder: "请输入关键词" }) }),
@@ -24630,7 +24485,7 @@ jsxRuntimeExports.jsx(
               placeholder: "请输入专辑Id",
               addonBefore: "专辑Id",
               value: albumId,
-              onChange: (e2) => setAlbumId(e2.target.value)
+              onChange: (e) => setAlbumId(e.target.value)
             }
           ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetAlbumSongList, children: "获取专辑歌曲列表" }),
@@ -24739,7 +24594,7 @@ jsxRuntimeExports.jsx(
               placeholder: "请输入歌手Id",
               addonBefore: "歌手Id",
               value: artistId,
-              onChange: (e2) => setArtistId(e2.target.value)
+              onChange: (e) => setArtistId(e.target.value)
             }
           ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetArtistTopSongList, children: "获取歌手热门歌曲列表" }),
@@ -24805,7 +24660,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "limit",
                 style: { width: 100 },
                 value: pageData.limit,
-                onChange: (e2) => setPageData({ ...pageData, limit: Number(e2.target.value) })
+                onChange: (e) => setPageData({ ...pageData, limit: Number(e.target.value) })
               }
             ),
 jsxRuntimeExports.jsx(
@@ -24814,7 +24669,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "offset",
                 style: { width: 100 },
                 value: pageData.offset,
-                onChange: (e2) => setPageData({ ...pageData, offset: Number(e2.target.value) })
+                onChange: (e) => setPageData({ ...pageData, offset: Number(e.target.value) })
               }
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetCloudData, children: "获取云盘数据" })
@@ -24826,7 +24681,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入歌曲Id",
                 addonBefore: "歌曲Id",
                 value: songId,
-                onChange: (e2) => setSongId(e2.target.value)
+                onChange: (e) => setSongId(e.target.value)
               }
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleDeleteCloudSong, children: "删除云盘歌曲" })
@@ -24856,7 +24711,7 @@ jsxRuntimeExports.jsx(
                 addonBefore: "歌曲Id",
                 placeholder: "请输入网易云音乐歌曲Id",
                 value: neteaseMusicSongId,
-                onChange: (e2) => setNeteaseMusicSongId(e2.target.value)
+                onChange: (e) => setNeteaseMusicSongId(e.target.value)
               }
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicToCloud, children: "测试网易云音乐转存云盘" })
@@ -24995,8 +24850,8 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             const file = fileList[0].originFileObj;
             setFlacPicture(file);
             const reader = new FileReader();
-            reader.onload = (e2) => {
-              setPicturePreview(e2.target.result);
+            reader.onload = (e) => {
+              setPicturePreview(e.target.result);
             };
             reader.readAsDataURL(file);
           } else {
@@ -25110,7 +24965,7 @@ jsxRuntimeExports.jsx(
               {
                 placeholder: "请输入标签值",
                 value: flacTagValue,
-                onChange: (e2) => setFlacTagValue(e2.target.value),
+                onChange: (e) => setFlacTagValue(e.target.value),
                 style: { width: 200 }
               }
             ),
@@ -25456,7 +25311,7 @@ jsxRuntimeExports.jsx(
               {
                 placeholder: "请输入歌单名称",
                 value: songListName,
-                onChange: (e2) => setSongListName(e2.target.value)
+                onChange: (e) => setSongListName(e.target.value)
               }
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCreateSongList, children: "新建歌单" })
@@ -25468,7 +25323,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入歌单Id",
                 addonBefore: "歌单id",
                 value: addInfo.playlistId,
-                onChange: (e2) => setAddInfo({ ...addInfo, playlistId: e2.target.value })
+                onChange: (e) => setAddInfo({ ...addInfo, playlistId: e.target.value })
               }
             ),
 jsxRuntimeExports.jsx(
@@ -25477,7 +25332,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入歌曲Id",
                 addonBefore: "歌曲id",
                 value: addInfo.songId,
-                onChange: (e2) => setAddInfo({ ...addInfo, songId: e2.target.value })
+                onChange: (e) => setAddInfo({ ...addInfo, songId: e.target.value })
               }
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleAddSong, children: "添加歌曲" })
@@ -25489,7 +25344,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入用户Id",
                 addonBefore: "用户id",
                 value: userId,
-                onChange: (e2) => setUserId(e2.target.value)
+                onChange: (e) => setUserId(e.target.value)
               }
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetPlaylistList, children: "获取用户歌单列表" })
@@ -25501,7 +25356,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入歌单Id",
                 addonBefore: "歌单Id",
                 value: playlistId,
-                onChange: (e2) => setPlaylistId(e2.target.value)
+                onChange: (e) => setPlaylistId(e.target.value)
               }
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetPlaylist, children: "获取歌单详情" }),
@@ -25587,7 +25442,7 @@ jsxRuntimeExports.jsx(
                 {
                   placeholder: "请输入搜索关键词",
                   value: searchKeyword,
-                  onChange: (e2) => setSearchKeyword(e2.target.value)
+                  onChange: (e) => setSearchKeyword(e.target.value)
                 }
               )
             ] }),
@@ -25601,7 +25456,7 @@ jsxRuntimeExports.jsx(
                 placeholder: "请输入歌手名称",
                 addonBefore: "歌手名称",
                 value: searchValue,
-                onChange: (e2) => setSearchValue(e2.target.value)
+                onChange: (e) => setSearchValue(e.target.value)
               }
             ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleSearchArtist, children: "搜索歌手信息" })
@@ -25750,7 +25605,7 @@ jsxRuntimeExports.jsx(
               placeholder: "请输入歌曲Id",
               addonBefore: "歌曲Id",
               value: songId,
-              onChange: (e2) => setSongId(e2.target.value)
+              onChange: (e) => setSongId(e.target.value)
             }
           ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
@@ -26057,9 +25912,9 @@ components: {
         if (hasRequiredInteropRequireDefault) return interopRequireDefault.exports;
         hasRequiredInteropRequireDefault = 1;
         (function(module) {
-          function _interopRequireDefault(e2) {
-            return e2 && e2.__esModule ? e2 : {
-              "default": e2
+          function _interopRequireDefault(e) {
+            return e && e.__esModule ? e : {
+              "default": e
             };
           }
           module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
@@ -26124,9 +25979,9 @@ prev_page: "上一页",
           var _typeof2 = require_typeof()["default"];
           function toPrimitive2(t, r) {
             if ("object" != _typeof2(t) || !t) return t;
-            var e2 = t[Symbol.toPrimitive];
-            if (void 0 !== e2) {
-              var i = e2.call(t, r || "default");
+            var e = t[Symbol.toPrimitive];
+            if (void 0 !== e) {
+              var i = e.call(t, r || "default");
               if ("object" != _typeof2(i)) return i;
               throw new TypeError("@@toPrimitive must return a primitive value.");
             }
@@ -26157,13 +26012,13 @@ prev_page: "上一页",
         hasRequiredDefineProperty = 1;
         (function(module) {
           var toPropertyKey2 = requireToPropertyKey();
-          function _defineProperty(e2, r, t) {
-            return (r = toPropertyKey2(r)) in e2 ? Object.defineProperty(e2, r, {
+          function _defineProperty(e, r, t) {
+            return (r = toPropertyKey2(r)) in e ? Object.defineProperty(e, r, {
               value: t,
               enumerable: true,
               configurable: true,
               writable: true
-            }) : e2[r] = t, e2;
+            }) : e[r] = t, e;
           }
           module.exports = _defineProperty, module.exports.__esModule = true, module.exports["default"] = module.exports;
         })(defineProperty);
@@ -26175,26 +26030,26 @@ prev_page: "上一页",
         hasRequiredObjectSpread2 = 1;
         (function(module) {
           var defineProperty2 = requireDefineProperty();
-          function ownKeys(e2, r) {
-            var t = Object.keys(e2);
+          function ownKeys(e, r) {
+            var t = Object.keys(e);
             if (Object.getOwnPropertySymbols) {
-              var o = Object.getOwnPropertySymbols(e2);
+              var o = Object.getOwnPropertySymbols(e);
               r && (o = o.filter(function(r2) {
-                return Object.getOwnPropertyDescriptor(e2, r2).enumerable;
+                return Object.getOwnPropertyDescriptor(e, r2).enumerable;
               })), t.push.apply(t, o);
             }
             return t;
           }
-          function _objectSpread2(e2) {
+          function _objectSpread2(e) {
             for (var r = 1; r < arguments.length; r++) {
               var t = null != arguments[r] ? arguments[r] : {};
               r % 2 ? ownKeys(Object(t), true).forEach(function(r2) {
-                defineProperty2(e2, r2, t[r2]);
-              }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r2) {
-                Object.defineProperty(e2, r2, Object.getOwnPropertyDescriptor(t, r2));
+                defineProperty2(e, r2, t[r2]);
+              }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r2) {
+                Object.defineProperty(e, r2, Object.getOwnPropertyDescriptor(t, r2));
               });
             }
-            return e2;
+            return e;
           }
           module.exports = _objectSpread2, module.exports.__esModule = true, module.exports["default"] = module.exports;
         })(objectSpread2);
@@ -26518,7 +26373,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-Bkc8MgIN-CYVUjRZZ.js", ['./__monkey.entry-BreCcuvW.js', './AbstractID3Parser-rjzUW4_H-DZaWTZob.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BF-4BnMY-CxuJfsoe.js'], (function (exports, module) {
+System.register("./MpegParser-DI__5INW-DuD2oKQ6.js", ['./__monkey.entry-B0LN2jOi.js', './AbstractID3Parser-DIK5qrrc-DeOvqvrI.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DNhx7WY4-BpY88fnD.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -27113,7 +26968,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-BOMDwnnN-pPts1nEn.js", ['./__monkey.entry-BreCcuvW.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-BezwhG4R-B6K4R9d6.js", ['./__monkey.entry-B0LN2jOi.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -27620,7 +27475,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-6b82Vd_p-B-drtoJv.js", ['./__monkey.entry-BreCcuvW.js', './ID3v2Parser-BF-4BnMY-CxuJfsoe.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-D1KlY8Z2-Ch5NxzD1.js", ['./__monkey.entry-B0LN2jOi.js', './ID3v2Parser-DNhx7WY4-BpY88fnD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -27794,7 +27649,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-DvFOObLX-BbMlitYz.js", ['./__monkey.entry-BreCcuvW.js', './ID3v2Parser-BF-4BnMY-CxuJfsoe.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-CRhapUuu-OEvrQWh5.js", ['./__monkey.entry-B0LN2jOi.js', './ID3v2Parser-DNhx7WY4-BpY88fnD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -27965,7 +27820,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-CCaALBG7-Rb6io3V4.js", ['./__monkey.entry-BreCcuvW.js', './AbstractID3Parser-rjzUW4_H-DZaWTZob.js', './ID3v2Parser-BF-4BnMY-CxuJfsoe.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-CIEcoTsR-SgAFyjYd.js", ['./__monkey.entry-B0LN2jOi.js', './AbstractID3Parser-DIK5qrrc-DeOvqvrI.js', './ID3v2Parser-DNhx7WY4-BpY88fnD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -28063,7 +27918,7 @@ System.register("./DsfParser-CCaALBG7-Rb6io3V4.js", ['./__monkey.entry-BreCcuvW.
   };
 }));
 
-System.register("./FlacParser-DwEQEjmU-BPonpAuL.js", ['./__monkey.entry-BreCcuvW.js', './VorbisParser-BtCv8bxX-Cu8VuzOY.js', './AbstractID3Parser-rjzUW4_H-DZaWTZob.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BF-4BnMY-CxuJfsoe.js'], (function (exports, module) {
+System.register("./FlacParser-CMyuL4OL-D5SEH8cV.js", ['./__monkey.entry-B0LN2jOi.js', './VorbisParser-C2irFUXc-fWcBgBor.js', './AbstractID3Parser-DIK5qrrc-DeOvqvrI.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DNhx7WY4-BpY88fnD.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -28215,7 +28070,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-kTbGFghN-DIor0DEZ.js", ['./__monkey.entry-BreCcuvW.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-HOz9Dxyk-B7S2kuDd.js", ['./__monkey.entry-B0LN2jOi.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -28822,7 +28677,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-DR4z301x-DQJ-04qA.js", ['./__monkey.entry-BreCcuvW.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-Bb6fmt3y-BHqwtQNJ.js", ['./__monkey.entry-B0LN2jOi.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -29653,7 +29508,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-BNHMyUXa-B2YIezVR.js", ['./__monkey.entry-BreCcuvW.js', './AbstractID3Parser-rjzUW4_H-DZaWTZob.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-BF-4BnMY-CxuJfsoe.js'], (function (exports, module) {
+System.register("./MusepackParser-6VmnV76w-DLbXwvD9.js", ['./__monkey.entry-B0LN2jOi.js', './AbstractID3Parser-DIK5qrrc-DeOvqvrI.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DNhx7WY4-BpY88fnD.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -29930,7 +29785,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-rjzUW4_H-DZaWTZob.js", ['./__monkey.entry-BreCcuvW.js', './ID3v2Parser-BF-4BnMY-CxuJfsoe.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-DIK5qrrc-DeOvqvrI.js", ['./__monkey.entry-B0LN2jOi.js', './ID3v2Parser-DNhx7WY4-BpY88fnD.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -29994,7 +29849,7 @@ System.register("./AbstractID3Parser-rjzUW4_H-DZaWTZob.js", ['./__monkey.entry-B
   };
 }));
 
-System.register("./OggParser-B2Ce9QMG-B5jkgstl.js", ['./__monkey.entry-BreCcuvW.js', './VorbisParser-BtCv8bxX-Cu8VuzOY.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-BeuYCvb0-CUzi15UJ.js", ['./__monkey.entry-B0LN2jOi.js', './VorbisParser-C2irFUXc-fWcBgBor.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -30269,7 +30124,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-BtCv8bxX-Cu8VuzOY.js", ['./__monkey.entry-BreCcuvW.js'], (function (exports, module) {
+System.register("./VorbisParser-C2irFUXc-fWcBgBor.js", ['./__monkey.entry-B0LN2jOi.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -30485,7 +30340,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-Cb6eb5qz-Cjh566F-.js", ['./__monkey.entry-BreCcuvW.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-Bp3Q7_wc-PREcrCKj.js", ['./__monkey.entry-B0LN2jOi.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -30665,7 +30520,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-Ca4EkVLH-DauBh_l5.js", ['./__monkey.entry-BreCcuvW.js', './ID3v2Parser-BF-4BnMY-CxuJfsoe.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-B3dQ9UI8-A3Fuk-gM.js", ['./__monkey.entry-B0LN2jOi.js', './ID3v2Parser-DNhx7WY4-BpY88fnD.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -30938,7 +30793,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-BF-4BnMY-CxuJfsoe.js", ['./__monkey.entry-BreCcuvW.js'], (function (exports, module) {
+System.register("./ID3v2Parser-DNhx7WY4-BpY88fnD.js", ['./__monkey.entry-B0LN2jOi.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
