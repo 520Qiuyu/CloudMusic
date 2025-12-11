@@ -15,6 +15,7 @@ import { msgError } from '@/utils/modal';
 import { getDownloadQuality } from '@/utils/music';
 import { useRef, useState } from 'react';
 import { useConfig } from './useConfig';
+import { message } from 'antd';
 
 /** 全局音频对象 */
 const audio = new Audio();

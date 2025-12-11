@@ -76,3 +76,22 @@ export const getUserAllHistoryComment = async (uid) => {
   }
   return result;
 };
+
+
+/**
+ * 获取用户播放记录
+ * @param {number} uid 用户ID
+ * @param {number} [type=0] 播放记录类型，1为最近一周，0为所有时间
+ * @returns {Promise<Object>} 用户播放记录数据
+ * @example
+ * const record = await getUserPlayRecord(123456, 0);
+ */
+export const getUserPlayRecord = (uid, type = 0) => {
+  const data = {
+    uid,
+    type,
+  };
+  return weapiRequest('/api/v1/play/record', {
+    data,
+  });
+};

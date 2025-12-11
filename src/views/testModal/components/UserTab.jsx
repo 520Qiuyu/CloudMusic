@@ -1,11 +1,17 @@
 import {
   getUserAllHistoryComment,
   getUserDetail,
+  getUserPlayRecord,
   getUserSubCount,
 } from '@/api';
 import { MyButton } from '@/components';
 import { msgError, msgSuccess } from '@/utils/modal';
-import { CommentOutlined, DatabaseOutlined, UserOutlined } from '@ant-design/icons';
+import {
+  CommentOutlined,
+  DatabaseOutlined,
+  PlayCircleOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 import {
   Avatar,
   Form,
@@ -122,6 +128,25 @@ const UserTab = () => {
   };
 
   /**
+   * 获取用户播放记录
+   */
+  const handleGetUserPlayRecord = async () => {
+    try {
+      const values = await form.validateFields();
+      const { uid } = values;
+      if (!uid) {
+        return msgError('请输入用户ID');
+      }
+      const userPlayRecord = await getUserPlayRecord(uid,1);
+      console.log('userPlayRecord', userPlayRecord);
+      msgSuccess('获取用户播放记录成功');
+    } catch (error) {
+      console.error('获取用户播放记录失败:', error);
+      msgError(error.message || '获取用户播放记录失败');
+    }
+  };
+
+  /**
    * 解析资源信息
    */
   const parseResourceInfo = (resourceInfo, threadId) => {
@@ -216,6 +241,16 @@ const UserTab = () => {
             onClick={handleGetUserSubCount}
             loading={loading}>
             获取用户云盘数据
+          </MyButton>
+        </Form.Item>
+
+        <Form.Item>
+          <MyButton
+            type='primary'
+            icon={<PlayCircleOutlined />}
+            onClick={handleGetUserPlayRecord}
+            loading={loading}>
+            获取用户播放记录
           </MyButton>
         </Form.Item>
       </Form>

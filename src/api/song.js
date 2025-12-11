@@ -258,6 +258,6 @@ export const listenSongCheckIn = async (params) => {
       });
     },
   );
-  const res = await promiseLimit(taskList, 1);
+  const res = await promiseLimit(taskList, 1, { wait: 1000 });
   return res;
 };

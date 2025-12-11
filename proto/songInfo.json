@@ -1,0 +1,157 @@
+{
+    "name": "塞尔维亚",
+    "id": 1333006961,
+    "pst": 0,
+    "t": 0,
+    "ar": [
+        {
+            "id": 13795001,
+            "name": "MonKey（侯吉民)",
+            "tns": [],
+            "alias": []
+        }
+    ],
+    "alia": [],
+    "pop": 70,
+    "st": 0,
+    "rt": null,
+    "fee": 0,
+    "v": 45,
+    "crbt": null,
+    "cf": "",
+    "al": {
+        "id": 74829148,
+        "name": "塞尔维亚",
+        "picUrl": "http://p3.music.126.net/8ZGkmts4ZgC3Ogrq7Y14Cw==/109951163722337910.jpg",
+        "tns": [],
+        "pic_str": "109951163722337910",
+        "pic": 109951163722337900
+    },
+    "dt": 136866,
+    "h": {
+        "br": 320000,
+        "fid": 0,
+        "size": 5477399,
+        "vd": -52278,
+        "sr": 44100
+    },
+    "m": {
+        "br": 192000,
+        "fid": 0,
+        "size": 3286457,
+        "vd": -49655,
+        "sr": 44100
+    },
+    "l": {
+        "br": 128000,
+        "fid": 0,
+        "size": 2190986,
+        "vd": -47952,
+        "sr": 44100
+    },
+    "sq": {
+        "br": 827559,
+        "fid": 0,
+        "size": 14158128,
+        "vd": -52277,
+        "sr": 44100
+    },
+    "hr": null,
+    "a": null,
+    "cd": "01",
+    "no": 1,
+    "rtUrl": null,
+    "ftype": 0,
+    "rtUrls": [],
+    "djId": 0,
+    "copyright": 0,
+    "s_id": 0,
+    "mark": 0,
+    "originCoverType": 1,
+    "originSongSimpleData": null,
+    "tagPicList": null,
+    "resourceState": true,
+    "version": 11,
+    "songJumpInfo": null,
+    "entertainmentTags": null,
+    "single": 0,
+    "noCopyrightRcmd": null,
+    "rtype": 0,
+    "rurl": null,
+    "mst": 9,
+    "cp": 0,
+    "mv": 0,
+    "publishTime": 1544620444538,
+    "privilege": {
+        "id": 1333006961,
+        "fee": 0,
+        "payed": 0,
+        "st": 0,
+        "pl": 999000,
+        "dl": 999000,
+        "sp": 7,
+        "cp": 1,
+        "subp": 1,
+        "cs": false,
+        "maxbr": 999000,
+        "fl": 320000,
+        "toast": false,
+        "flag": 1540352,
+        "preSell": false,
+        "playMaxbr": 999000,
+        "downloadMaxbr": 999000,
+        "maxBrLevel": "jymaster",
+        "playMaxBrLevel": "jymaster",
+        "downloadMaxBrLevel": "jymaster",
+        "plLevel": "jymaster",
+        "dlLevel": "jymaster",
+        "flLevel": "exhigh",
+        "rscl": null,
+        "freeTrialPrivilege": {
+            "resConsumable": false,
+            "userConsumable": false,
+            "listenType": null,
+            "cannotListenReason": null,
+            "playReason": null,
+            "freeLimitTagType": null
+        },
+        "rightSource": 0,
+        "chargeInfoList": [
+            {
+                "rate": 128000,
+                "chargeUrl": null,
+                "chargeMessage": null,
+                "chargeType": 0
+            },
+            {
+                "rate": 192000,
+                "chargeUrl": null,
+                "chargeMessage": null,
+                "chargeType": 0
+            },
+            {
+                "rate": 320000,
+                "chargeUrl": null,
+                "chargeMessage": null,
+                "chargeType": 0
+            },
+            {
+                "rate": 999000,
+                "chargeUrl": null,
+                "chargeMessage": null,
+                "chargeType": 1
+            }
+        ],
+        "code": 0,
+        "message": null,
+        "plLevels": null,
+        "dlLevels": null,
+        "ignoreCache": null,
+        "bd": null
+    },
+    "lyrics": [
+        "<b>落樱</b>山下",
+        "找<b>寻</b>不到的谜",
+        "吞下毒药的命"
+    ]
+}
