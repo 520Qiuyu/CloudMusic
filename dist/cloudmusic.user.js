@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-Bw9dqNOP.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-LiuITKDA.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,7 +44,7 @@ System.register("./__entry.js", ['./__monkey.entry-Bw9dqNOP.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-Bw9dqNOP.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-LiuITKDA.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message$1, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Form, Pagination, ConfigProvider, Select, Checkbox, Avatar, Tooltip, Empty, List, Card, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, UserOutlined, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, CommentOutlined, DatabaseOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, HeartOutlined, InfoCircleOutlined, CloudOutlined;
   return {
@@ -7382,7 +7382,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-CWoVvhvL-Cpt1t71-.js');
+            const { MpegParser } = await module.import('./MpegParser-oj9gysou-BNY31bg-.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7404,7 +7404,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-B1RahgzM-e3BPdpYm.js');
+            const { AsfParser } = await module.import('./AsfParser-CWKgCpZr-iV6Q5CmK.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7415,7 +7415,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-CiYXzHqx-C8Tjvuhv.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-BFf3FZQQ-h3-3rbmM.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7426,7 +7426,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-2eHEc2mp-BgVHK-Ta.js');
+            const { AIFFParser } = await module.import('./AiffParser-C_-E7cM8-CcueezMD.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7437,7 +7437,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CiITojvi-B3rxKgOb.js');
+            const { DsfParser } = await module.import('./DsfParser-5UbxTSnN-DEJx-At8.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7448,7 +7448,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-D3TD_QrO-TpGvhpiB.js');
+            const { FlacParser } = await module.import('./FlacParser-C1SFY3s5-KSwpMiVz.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7459,7 +7459,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-CLU3ZWqO-DTak4zo7.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-CY6jv7qK-CEToA4rH.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7470,7 +7470,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-BnrSQN2c-jajhE4Tb.js');
+            const { MP4Parser } = await module.import('./MP4Parser-CLh8j7P3-Sr5HJLq5.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7481,7 +7481,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-CDloy1kO-C6e-OM45.js');
+            const { MusepackParser } = await module.import('./MusepackParser-DOjVKSSY-Bx6nbEu9.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7492,7 +7492,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-Bgo-5Wpk-BTvYTESo.js');
+            const { OggParser } = await module.import('./OggParser-CqhwrvwW-Bggxz-Q6.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7503,7 +7503,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-BleimRa0-CB99SIi6.js');
+            const { WavPackParser } = await module.import('./WavPackParser-CmHWhL6w-BCaWiRrd.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7514,7 +7514,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-68Hifw_9-BWqp4Re2.js');
+            const { WaveParser } = await module.import('./WaveParser-BPqe88dP-Dt02INHx.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -8240,7 +8240,8 @@ track: UINT8.get(buf, off2 + 126),
           return true;
         });
       };
-      const promiseLimit = (promiseArray, limit = 6) => {
+      const promiseLimit = (promiseArray, limit = 6, options) => {
+        const { wait = 0 } = {};
         if (!Array.isArray(promiseArray)) {
           throw new Error("第一个参数必须是数组");
         }
@@ -8270,6 +8271,9 @@ track: UINT8.get(buf, off2 + 126),
             }
             completed++;
             if (currentIndex < promiseArray.length) {
+              if (wait) {
+                await sleep(wait);
+              }
               runTask();
             } else if (completed === promiseArray.length) {
               resolve(results);
@@ -8631,45 +8635,52 @@ cursor: before,
         return allComments;
       };
       const listenSongCheckIn$1 = async (params) => {
-        const { id: id2, sourceId = getUser().userId + "", time } = params;
-        const startplayLog = {
-          action: "startplay",
-          json: {
-            content: "id=" + id2,
-            id: id2,
-            mainsite: "1",
-            mainsiteWeb: "1",
-            type: "song"
+        const {
+          id: id2,
+          sourceId = getUser().userId + "",
+          time,
+          checkInCount = 1
+        } = params;
+        const taskList = Array.from(
+          { length: checkInCount },
+          (_, index2) => async () => {
+            const startLog = {
+              action: "startplay",
+              json: {
+                content: "id=" + id2,
+                id: id2,
+                mainsite: "1",
+                mainsiteWeb: "1",
+                type: "song"
+              }
+            };
+            await weapiFetch(`/api/feedback/weblog`, {
+              data: { logs: JSON.stringify([startLog]) }
+            });
+            const log = {
+              action: "play",
+              json: {
+                content: "id=" + id2,
+                download: 0,
+                end: "ui",
+                id: id2,
+                mainsite: "1",
+                mainsiteWeb: "1",
+                source: "user",
+                sourceId,
+                sourcetype: "user",
+                time,
+                type: "song",
+                wifi: 0
+              }
+            };
+            return weapiFetch(`/api/feedback/weblog`, {
+              data: { logs: JSON.stringify([log]) }
+            });
           }
-        };
-        const startRes = await weapiRequest(`/api/feedback/weblog`, {
-          data: {
-            logs: JSON.stringify([startplayLog])
-          }
-        });
-        console.log("startRes", startRes, startplayLog);
-        await new Promise((resolve) => setTimeout(resolve, 3e4));
-        const endplayLog = {
-          action: "play",
-          json: {
-            content: "id=" + id2,
-            download: 0,
-            end: "ui",
-            id: id2,
-            mainsite: "1",
-            mainsiteWeb: "1",
-            source: "user",
-            sourceId,
-            sourcetype: "user",
-            time,
-            type: "song",
-            wifi: 0
-          }
-        };
-        console.log("endplayLog", endplayLog);
-        return weapiRequest(`/api/feedback/weblog`, {
-          data: { logs: JSON.stringify([endplayLog]) }
-        });
+        );
+        const res = await promiseLimit(taskList, 1);
+        return res;
       };
       const getQualityTags = (song) => {
         const tags = [];
@@ -25843,9 +25854,14 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             });
           }
         };
+        const [checkInData, setCheckInData] = useState({
+          songId: "386005",
+          checkInCount: 100
+        });
         const handleListenSongCheckIn = async () => {
           try {
-            const songRes = await getSongInfoList(songId.split(","));
+            const { songId: songId2, checkInCount } = checkInData;
+            const songRes = await getSongInfoList(songId2.split(","));
             if (songRes.code !== 200) {
               return msgError("获取歌曲信息失败");
             }
@@ -25853,7 +25869,8 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             const { id: id2, al, dt } = songInfo2;
             const res = await listenSongCheckIn$1({
               id: id2,
-              time: Math.floor(dt / 1e3)
+              time: Math.floor(dt / 1e3),
+              checkInCount: +checkInCount
             });
             console.log("res", res);
           } catch (error) {
@@ -25861,25 +25878,49 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             msgError(error.message || "听歌打卡失败");
           }
         };
-        return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取歌曲信息", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+        console.log("checkInData.checkInCount", checkInData.checkInCount);
+        return jsxRuntimeExports.jsxs(Form, { children: [
+jsxRuntimeExports.jsx(Form.Item, { label: "获取歌曲信息", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
-            Input,
-            {
-              placeholder: "请输入歌曲Id",
-              addonBefore: "歌曲Id",
-              value: songId,
-              onChange: (e) => setSongId(e.target.value)
-            }
-          ),
+              Input,
+              {
+                placeholder: "请输入歌曲Id",
+                addonBefore: "歌曲Id",
+                value: songId,
+                onChange: (e) => setSongId(e.target.value)
+              }
+            ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongInfo, children: "获取歌曲信息" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongComment, children: "获取歌曲评论" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongComment1, children: "获取歌曲评论1" }),
-jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongAllComments, children: "获取歌曲所有评论" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongAllComments, children: "获取歌曲所有评论" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "听歌打卡", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "请输入歌曲Id",
+                addonBefore: "歌曲Id",
+                value: checkInData.songId,
+                onChange: (e) => setCheckInData({ ...checkInData, songId: e.target.value })
+              }
+            ),
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                type: "number",
+                placeholder: "请输入打卡次数",
+                addonBefore: "打卡次数",
+                value: checkInData.checkInCount,
+                onChange: (e) => setCheckInData({ ...checkInData, checkInCount: e.target.value })
+              }
+            ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleListenSongCheckIn, children: "听歌打卡" })
-        ] }) }) });
+          ] }) })
+        ] });
       };
       const { Text } = Typography;
       const RESOURCE_TYPE_MAP = {
@@ -26942,7 +26983,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-CWoVvhvL-Cpt1t71-.js", ['./__monkey.entry-Bw9dqNOP.js', './AbstractID3Parser-CcGl8Kb4-D6L4oJK-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-v2yjmGGF-DfJZ4Irb.js'], (function (exports, module) {
+System.register("./MpegParser-oj9gysou-BNY31bg-.js", ['./__monkey.entry-LiuITKDA.js', './AbstractID3Parser-DakJv4Kz-Cr50zTEv.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DwsgExwK-RHqibL1Z.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -27537,7 +27578,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-B1RahgzM-e3BPdpYm.js", ['./__monkey.entry-Bw9dqNOP.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-CWKgCpZr-iV6Q5CmK.js", ['./__monkey.entry-LiuITKDA.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -28044,7 +28085,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-CiYXzHqx-C8Tjvuhv.js", ['./__monkey.entry-Bw9dqNOP.js', './ID3v2Parser-v2yjmGGF-DfJZ4Irb.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-BFf3FZQQ-h3-3rbmM.js", ['./__monkey.entry-LiuITKDA.js', './ID3v2Parser-DwsgExwK-RHqibL1Z.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -28218,7 +28259,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-2eHEc2mp-BgVHK-Ta.js", ['./__monkey.entry-Bw9dqNOP.js', './ID3v2Parser-v2yjmGGF-DfJZ4Irb.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-C_-E7cM8-CcueezMD.js", ['./__monkey.entry-LiuITKDA.js', './ID3v2Parser-DwsgExwK-RHqibL1Z.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -28389,7 +28430,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-CiITojvi-B3rxKgOb.js", ['./__monkey.entry-Bw9dqNOP.js', './AbstractID3Parser-CcGl8Kb4-D6L4oJK-.js', './ID3v2Parser-v2yjmGGF-DfJZ4Irb.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-5UbxTSnN-DEJx-At8.js", ['./__monkey.entry-LiuITKDA.js', './AbstractID3Parser-DakJv4Kz-Cr50zTEv.js', './ID3v2Parser-DwsgExwK-RHqibL1Z.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -28487,7 +28528,7 @@ System.register("./DsfParser-CiITojvi-B3rxKgOb.js", ['./__monkey.entry-Bw9dqNOP.
   };
 }));
 
-System.register("./FlacParser-D3TD_QrO-TpGvhpiB.js", ['./__monkey.entry-Bw9dqNOP.js', './VorbisParser-DLYlGojZ-HMqqxDhO.js', './AbstractID3Parser-CcGl8Kb4-D6L4oJK-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-v2yjmGGF-DfJZ4Irb.js'], (function (exports, module) {
+System.register("./FlacParser-C1SFY3s5-KSwpMiVz.js", ['./__monkey.entry-LiuITKDA.js', './VorbisParser-D-x_u41G-Cm5gv1HK.js', './AbstractID3Parser-DakJv4Kz-Cr50zTEv.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DwsgExwK-RHqibL1Z.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -28639,7 +28680,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-CLU3ZWqO-DTak4zo7.js", ['./__monkey.entry-Bw9dqNOP.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-CY6jv7qK-CEToA4rH.js", ['./__monkey.entry-LiuITKDA.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -29246,7 +29287,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-BnrSQN2c-jajhE4Tb.js", ['./__monkey.entry-Bw9dqNOP.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-CLh8j7P3-Sr5HJLq5.js", ['./__monkey.entry-LiuITKDA.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -30077,7 +30118,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-CDloy1kO-C6e-OM45.js", ['./__monkey.entry-Bw9dqNOP.js', './AbstractID3Parser-CcGl8Kb4-D6L4oJK-.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-v2yjmGGF-DfJZ4Irb.js'], (function (exports, module) {
+System.register("./MusepackParser-DOjVKSSY-Bx6nbEu9.js", ['./__monkey.entry-LiuITKDA.js', './AbstractID3Parser-DakJv4Kz-Cr50zTEv.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DwsgExwK-RHqibL1Z.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -30354,7 +30395,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-CcGl8Kb4-D6L4oJK-.js", ['./__monkey.entry-Bw9dqNOP.js', './ID3v2Parser-v2yjmGGF-DfJZ4Irb.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-DakJv4Kz-Cr50zTEv.js", ['./__monkey.entry-LiuITKDA.js', './ID3v2Parser-DwsgExwK-RHqibL1Z.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -30418,7 +30459,7 @@ System.register("./AbstractID3Parser-CcGl8Kb4-D6L4oJK-.js", ['./__monkey.entry-B
   };
 }));
 
-System.register("./OggParser-Bgo-5Wpk-BTvYTESo.js", ['./__monkey.entry-Bw9dqNOP.js', './VorbisParser-DLYlGojZ-HMqqxDhO.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-CqhwrvwW-Bggxz-Q6.js", ['./__monkey.entry-LiuITKDA.js', './VorbisParser-D-x_u41G-Cm5gv1HK.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -30693,7 +30734,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-DLYlGojZ-HMqqxDhO.js", ['./__monkey.entry-Bw9dqNOP.js'], (function (exports, module) {
+System.register("./VorbisParser-D-x_u41G-Cm5gv1HK.js", ['./__monkey.entry-LiuITKDA.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -30909,7 +30950,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-BleimRa0-CB99SIi6.js", ['./__monkey.entry-Bw9dqNOP.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-CmHWhL6w-BCaWiRrd.js", ['./__monkey.entry-LiuITKDA.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -31089,7 +31130,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-68Hifw_9-BWqp4Re2.js", ['./__monkey.entry-Bw9dqNOP.js', './ID3v2Parser-v2yjmGGF-DfJZ4Irb.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-BPqe88dP-Dt02INHx.js", ['./__monkey.entry-LiuITKDA.js', './ID3v2Parser-DwsgExwK-RHqibL1Z.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -31362,7 +31403,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-v2yjmGGF-DfJZ4Irb.js", ['./__monkey.entry-Bw9dqNOP.js'], (function (exports, module) {
+System.register("./ID3v2Parser-DwsgExwK-RHqibL1Z.js", ['./__monkey.entry-LiuITKDA.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
