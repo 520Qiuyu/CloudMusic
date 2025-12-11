@@ -127,6 +127,8 @@ export const uniqueArrayByKey = (arr, key) => {
  * 并发执行Promise数组,可限制同时执行的最大数量
  * @param {Array<() => Promise<any>>} promiseArray - Promise函数数组,每个元素都应该是返回Promise的函数
  * @param {number} [limit=6] - 最大并发数,默认为6
+ * @param {Object} [options] - 选项
+ * @param {number} [options.wait=0] - 等待时间(毫秒)，每次执行任务后等待一段时间
  * @returns {Promise<Array<any>>} 返回与输入数组顺序相同的结果数组
  * @throws {Error} 当输入参数不合法时抛出错误
  * @example
@@ -137,7 +139,8 @@ export const uniqueArrayByKey = (arr, key) => {
  * ];
  * const results = await promiseLimit(tasks, 2);
  */
-export const promiseLimit = (promiseArray, limit = 6) => {
+export const promiseLimit = (promiseArray, limit = 6, options) => {
+  const { wait = 0 } = options || {};
   if (!Array.isArray(promiseArray)) {
     throw new Error('第一个参数必须是数组');
   }
@@ -175,6 +178,9 @@ export const promiseLimit = (promiseArray, limit = 6) => {
       completed++;
       // 如果还有未分配的任务，继续执行
       if (currentIndex < promiseArray.length) {
+        if (wait) {
+          await sleep(wait);
+        }
         runTask();
       }
       // 所有任务都完成时，返回结果

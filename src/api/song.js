@@ -1,7 +1,7 @@
 import { downloadAsJson } from '@/utils/download';
 import { QUALITY_LEVELS } from '../constant';
 import { chunkArray, getUser, promiseLimit } from '../utils';
-import { weapiRequest } from '../utils/request';
+import { weapiFetch, weapiRequest } from '../utils/request';
 
 /**
  * 获取歌曲信息
@@ -200,54 +200,64 @@ export const getSongAllComments = async (id, options = {}) => {
 };
 
 /**
- * 听歌打卡 (网易云)
- * @param {Object} query 需要传递的参数，比如：{ id, sourceid, time }
- * @param {Function} request 发起请求的方法
- * @returns {Promise}
+ * 听歌打卡（网易云）
+ * @param {Object} params 配置参数
+ * @param {number} params.id 歌曲ID
+ * @param {string} [params.sourceId] 源ID，默认当前用户ID
+ * @param {number} params.time 听歌时长（单位：秒）
+ * @param {number} [params.checkInCount=1] 打卡次数，默认1
+ * @returns {Promise<Array>} 打卡任务执行结果数组
  * @example
- * await listenSongCheckIn({id: 123, sourceid: 456, time: 234}, request)
+ * await listenSongCheckIn({ id: 123, time: 240 });
  */
 export const listenSongCheckIn = async (params) => {
-  const { id, sourceId = getUser().userId + '', time } = params;
-  // const startplay Log
-  const startplayLog = {
-    action: 'startplay',
-    json: {
-      content: 'id=' + id,
-      id,
-      mainsite: '1',
-      mainsiteWeb: '1',
-      type: 'song',
-    },
-  };
-  const startRes = await weapiRequest(`/api/feedback/weblog`, {
-    data: {
-      logs: JSON.stringify([startplayLog]),
-    },
-  });
-  console.log('startRes', startRes, startplayLog);
+  const {
+    id,
+    sourceId = getUser().userId + '',
+    time,
+    checkInCount = 1,
+  } = params;
 
-  await new Promise((resolve) => setTimeout(resolve, 30000));
-
-  const endplayLog = {
-    action: 'play',
-    json: {
-      content: 'id=' + id,
-      download: 0,
-      end: 'ui',
-      id,
-      mainsite: '1',
-      mainsiteWeb: '1',
-      source: 'user',
-      sourceId,
-      sourcetype: 'user',
-      time,
-      type: 'song',
-      wifi: 0,
+  const taskList = Array.from(
+    { length: checkInCount },
+    (_, index) => async () => {
+      // startlog
+      const startLog = {
+        action: 'startplay',
+        json: {
+          content: 'id=' + id,
+          id,
+          mainsite: '1',
+          mainsiteWeb: '1',
+          type: 'song',
+        },
+      };
+      await weapiFetch(`/api/feedback/weblog`, {
+        data: { logs: JSON.stringify([startLog]) },
+      });
+      // endLog
+      const log = {
+        action: 'play',
+        json: {
+          content: 'id=' + id,
+          download: 0,
+          end: 'ui',
+          id,
+          mainsite: '1',
+          mainsiteWeb: '1',
+          source: 'user',
+          sourceId,
+          sourcetype: 'user',
+          time,
+          type: 'song',
+          wifi: 0,
+        },
+      };
+      return weapiFetch(`/api/feedback/weblog`, {
+        data: { logs: JSON.stringify([log]) },
+      });
     },
-  };
-  console.log('endplayLog', endplayLog);
-  return weapiRequest(`/api/feedback/weblog`, {
-    data: { logs: JSON.stringify([endplayLog]) },
-  });
+  );
+  const res = await promiseLimit(taskList, 1);
+  return res;
 };

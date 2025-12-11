@@ -10,8 +10,7 @@ import {
 } from '@/api/song';
 import { MyButton } from '@/components';
 import { msgError, msgSuccess } from '@/utils/modal';
-import { message } from 'antd';
-import { Form, Input, Space } from 'antd';
+import { Form, Input, InputNumber, message, Space } from 'antd';
 import { useState } from 'react';
 
 /**
@@ -124,8 +123,13 @@ const SongTab = () => {
   };
 
   // 听歌打卡
+  const [checkInData, setCheckInData] = useState({
+    songId: '386005',
+    checkInCount: 100,
+  });
   const handleListenSongCheckIn = async () => {
     try {
+      const { songId, checkInCount } = checkInData;
       const songRes = await getSongInfoList(songId.split(','));
       if (songRes.code !== 200) {
         return msgError('获取歌曲信息失败');
@@ -135,6 +139,7 @@ const SongTab = () => {
       const res = await listenSongCheckIn({
         id,
         time: Math.floor(dt / 1000),
+        checkInCount: +checkInCount,
       });
       console.log('res', res);
     } catch (error) {
@@ -142,6 +147,8 @@ const SongTab = () => {
       msgError(error.message || '听歌打卡失败');
     }
   };
+
+  console.log('checkInData.checkInCount', checkInData.checkInCount);
   return (
     <Form>
       {/* 测试获取歌曲信息 */}
@@ -180,7 +187,27 @@ const SongTab = () => {
           <MyButton type='primary' onClick={handleGetSongAllComments}>
             获取歌曲所有评论
           </MyButton>
-          {/* 听歌打卡 */}
+        </Space>
+      </Form.Item>
+      <Form.Item label='听歌打卡'>
+        <Space wrap>
+          <Input
+            placeholder='请输入歌曲Id'
+            addonBefore='歌曲Id'
+            value={checkInData.songId}
+            onChange={(e) =>
+              setCheckInData({ ...checkInData, songId: e.target.value })
+            }
+          />
+          <Input
+            type='number'
+            placeholder='请输入打卡次数'
+            addonBefore='打卡次数'
+            value={checkInData.checkInCount}
+            onChange={(e) =>
+              setCheckInData({ ...checkInData, checkInCount: e.target.value })
+            }
+          />
           <MyButton type='primary' onClick={handleListenSongCheckIn}>
             听歌打卡
           </MyButton>
