@@ -1,11 +1,15 @@
 import { MyButton } from '@/components';
 import SongSelect from '@/components/SongSelect';
 import UserSelect from '@/components/UserSelect';
-import { useVisible } from '@/hooks/useVisible';
-import { Col, Form, Input, Modal, Row } from 'antd';
-import { forwardRef } from 'react';
-import styles from './index.module.scss';
 import { usePlayMusic } from '@/hooks';
+import { useVisible } from '@/hooks/useVisible';
+import { downloadAsHTML } from '@/utils/download';
+import { Col, Form, Modal, Row } from 'antd';
+import { forwardRef } from 'react';
+import SongCard from './components/SongCard';
+import UserCard from './components/UserCard';
+import styles from './index.module.scss';
+import template from './template/index.html?raw';
 
 /**
  * 情感解码组件
@@ -24,12 +28,13 @@ const EmotionDecode = forwardRef((props, ref) => {
   const { getSongAllComments } = usePlayMusic();
 
   const [formRef] = Form.useForm();
+  const songInfo = Form.useWatch('song', formRef);
   const handleEmotionDecode = async () => {
     try {
       await formRef.validateFields();
       const values = await formRef.getFieldsValue();
       console.log('values', values);
-      const { userId, songId } = values;
+      const { userId, songId, user, song } = values;
       // 获取所有评论
       const comments = await getSongAllComments(songId);
       console.log('comments', comments);
@@ -39,6 +44,19 @@ const EmotionDecode = forwardRef((props, ref) => {
         (comment) => comment.user.userId === userId,
       );
       console.log('userComments', userComments);
+
+      // 注入内容
+      const content = template.replace(
+        '// ## 注入内容',
+        `
+        window.mockUserData = ${JSON.stringify(user)};
+        window.mockSongData = ${JSON.stringify(song)};
+        window.mockCommentsData = ${JSON.stringify(comments)};
+      `,
+      );
+
+      // 下载模板
+      downloadAsHTML(content, `${user.nickname}-${song.name}`);
     } catch (error) {
       console.log('error', error);
     }
@@ -49,7 +67,7 @@ const EmotionDecode = forwardRef((props, ref) => {
       title='情感解码'
       open={visible}
       onCancel={close}
-      width={800}
+      width={1000}
       footer={null}
       centered>
       {/* TODO: 实现情感解码功能 */}
@@ -78,15 +96,25 @@ const EmotionDecode = forwardRef((props, ref) => {
             </Form.Item>
           </Col>
         </Row>
-        <Form.Item
-          label='用户ID'
-          name='userId'
-          rules={[{ required: true, message: '请选择用户' }]}>
-          <Input placeholder='请输入用户ID' />
-        </Form.Item>
-        <Form.Item label='歌曲ID' name='songId'>
-          <Input placeholder='请输入歌曲ID' />
-        </Form.Item>
+
+        <Row gutter={16}>
+          <Col span={12}>
+            <Form.Item
+              noStyle
+              name='userId'
+              rules={[{ required: true, message: '请选择用户' }]}>
+              <UserCard />
+            </Form.Item>
+          </Col>
+          <Col span={12}>
+            <Form.Item
+              noStyle
+              name='songId'
+              rules={[{ required: true, message: '请选择歌曲' }]}>
+              <SongCard />
+            </Form.Item>
+          </Col>
+        </Row>
 
         <div className={styles['button-group']}>
           <MyButton type='primary' onClick={handleEmotionDecode} size='large'>

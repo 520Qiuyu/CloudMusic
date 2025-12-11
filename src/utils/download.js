@@ -147,9 +147,9 @@ export const downloadAsLRC = (lrcContent, filename, options = {}) => {
     if (timestamp) {
       const now = new Date();
       const ts = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(
-        now.getDate()
+        now.getDate(),
       ).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(
-        now.getMinutes()
+        now.getMinutes(),
       ).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
       finalFilename = `${filename}_${ts}`;
     }
@@ -163,7 +163,6 @@ export const downloadAsLRC = (lrcContent, filename, options = {}) => {
     return false;
   }
 };
-
 
 /**
  * 直接下载文件
@@ -198,4 +197,19 @@ export const downloadFileWithBlob = (file, name) => {
     document.body.removeChild(a);
     window.URL.revokeObjectURL(blobUrl);
   }, 100);
+};
+
+/**
+ * 将HTML字符串下载为文件
+ * @param {string} htmlContent - HTML内容
+ * @param {string} filename - 文件名
+ * @example
+ * downloadAsHTML('<div>Hello, world!</div>', 'hello.html');
+ */
+export const downloadAsHTML = (htmlContent, filename) => {
+  const blob = new Blob([htmlContent], { type: 'text/html' });
+  const blobUrl = window.URL.createObjectURL(blob);
+  downloadFile(blobUrl, `${filename}.html`);
+  window.URL.revokeObjectURL(blobUrl);
+  return true;
 };

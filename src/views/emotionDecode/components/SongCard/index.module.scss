@@ -1,0 +1,105 @@
+.song-header-wrapper {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+
+  .song-header {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+
+    .cover-wrapper {
+      flex: 0 0 auto;
+
+      :global {
+        .ant-image {
+          border-radius: 8px;
+          overflow: hidden;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+
+
+        }
+      }
+
+      .cover {
+        border-radius: 8px;
+
+        &:not([src]) {
+          display: none;
+        }
+      }
+    }
+
+    .song-basic-info {
+      flex: 1;
+      min-width: 0;
+
+      .name-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+
+        .name {
+          font-size: 18px;
+          font-weight: 600;
+          color: #262626;
+        }
+      }
+
+      .artists {
+        margin-bottom: 8px;
+        color: #8c8c8c;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .album {
+        margin-bottom: 0;
+        color: #8c8c8c;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.song-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    .stat-value {
+      font-size: 20px;
+      font-weight: 600;
+      color: #262626;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #8c8c8c;
+    }
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background-color: #f0f0f0;
+  }
+}
+
+.descriptions {
+  padding: 16px;
+}
