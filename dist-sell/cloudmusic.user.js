@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-BBuj0kA4.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-COfOYe2t.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,9 +44,9 @@ System.register("./__entry.js", ['./__monkey.entry-BBuj0kA4.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-BBuj0kA4.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-COfOYe2t.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message$1, Modal, Table, Upload, Button, Tag, Input, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Form, Pagination, ConfigProvider, Select, Checkbox, Avatar, Tooltip, Empty, List, Card, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, UserOutlined, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, CommentOutlined, DatabaseOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, HeartOutlined, InfoCircleOutlined, CloudOutlined;
+  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Form, Row, Col, Typography, Spin, Descriptions, Space, Image, Progress, Tabs, Pagination, ConfigProvider, Select, Checkbox, Avatar, Tooltip, Empty, List, Card, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, UserOutlined, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, CommentOutlined, DatabaseOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, HeartOutlined, InfoCircleOutlined, CloudOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
@@ -60,13 +60,16 @@ System.register("./__monkey.entry-BBuj0kA4.js", ['react', 'antd', 'react-dom', '
       useCallback = module.useCallback;
       useLayoutEffect = module.useLayoutEffect;
     }, module => {
-      message$1 = module.message;
+      message = module.message;
       Modal = module.Modal;
       Table = module.Table;
       Upload = module.Upload;
       Button = module.Button;
       Tag = module.Tag;
       Input = module.Input;
+      Form = module.Form;
+      Row = module.Row;
+      Col = module.Col;
       Typography = module.Typography;
       Spin = module.Spin;
       Descriptions = module.Descriptions;
@@ -74,7 +77,6 @@ System.register("./__monkey.entry-BBuj0kA4.js", ['react', 'antd', 'react-dom', '
       Image = module.Image;
       Progress = module.Progress;
       Tabs = module.Tabs;
-      Form = module.Form;
       Pagination = module.Pagination;
       ConfigProvider = module.ConfigProvider;
       Select = module.Select;
@@ -143,7 +145,7 @@ System.register("./__monkey.entry-BBuj0kA4.js", ['react', 'antd', 'react-dom', '
 
       const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
-      importCSS(' ._search-form_1aabt_1{padding:16px 0}._songInfoColumn_19zpd_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_19zpd_1 ._songIndex_19zpd_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_19zpd_1 ._songCover_19zpd_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover{transform:scale(1.05)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._btnWrapper_19zpd_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._songCoverImg_19zpd_33{filter:brightness(.85)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._songCoverImg_19zpd_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._songName_19zpd_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84,._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84{max-width:160px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_19zpd_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_19zpd_1 10s linear infinite}._currentSong_19zpd_102 td{background:var(--background)!important;animation:_rotate_19zpd_1 10s linear infinite}@keyframes _rotate_19zpd_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_19zpd_121{background-color:#f06161}._matchError_19zpd_121 td{background-color:#f06161!important}._footer_19zpd_128{margin-top:16px;display:flex;align-items:center;gap:16px;border-top:1px solid #f0f0f0;padding:16px 0}._footer_19zpd_128 ._actions_19zpd_136{margin-left:auto;display:flex;gap:8px}._stats_19zpd_142{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_19zpd_142 ._size_19zpd_150{color:#666}._stats_19zpd_142 ._divider_19zpd_153{color:#999;margin:0 4px}._stats_19zpd_142 .ant-tag{margin:0}._playlist_19zpd_161 .ant-modal-body{padding-bottom:0}._autoAddContent_19zpd_165 ._title_19zpd_165{font-size:16px;margin-bottom:8px}._autoAddContent_19zpd_165 ._statsWrapper_19zpd_169{margin-bottom:16px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._label_19zpd_179{color:#666}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._value_19zpd_182{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_19zpd_165 ._listHeader_19zpd_187{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_19zpd_165 ._listItem_19zpd_214{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_19zpd_165 ._listItem_19zpd_214:hover{background:#f5f5f5}._autoAddContent_19zpd_165 ._listItem_19zpd_214:last-child{margin-bottom:0}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemName_19zpd_230{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemCount_19zpd_236{color:#1890ff;margin-left:8px}._deleteConfirmation_19zpd_241{font-size:14px}._deleteConfirmation_19zpd_241 ._title_19zpd_165{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_19zpd_241 ._title_19zpd_165 ._count_19zpd_249{color:#1890ff}._deleteConfirmation_19zpd_241 ._songs_19zpd_252{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:hover{background:#f0f0f0}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:not(:last-child){margin-bottom:4px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._text_19zpd_281{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._icon_19zpd_288{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_19zpd_302{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_19zpd_302 ._singer-option-content_19zpd_315{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-name_19zpd_330{font-size:14px}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-id_19zpd_333{font-size:13px}._singer-option_19zpd_302:hover ._singer-option-content_19zpd_315{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_19zpd_341{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_19zpd_341 ._song-name_19zpd_347{font-size:14px;color:#333;font-weight:500}._song-label_19zpd_341 ._tag-group_19zpd_352{display:flex;gap:8px;flex-wrap:wrap}._song-option_19zpd_358{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_19zpd_358:hover{background-color:#f5f5f5}._song-option_19zpd_358 ._song-info_19zpd_371{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_19zpd_358 ._song-name_19zpd_347{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_19zpd_358 ._tag-group_19zpd_352{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_19zpd_358 ._tag-group_19zpd_352 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_19zpd_358 ._album-cover_19zpd_400{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_19zpd_358 ._album-cover_19zpd_400:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_19zpd_416{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_19zpd_416 ._song-info_19zpd_371{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._artist-info_19zpd_432{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._album-info_19zpd_440{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._copy-text_yqw94_1{display:flex;align-items:center;width:100%}._copy-text_yqw94_1 ._text_yqw94_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_yqw94_1 ._copy-btn_yqw94_12{flex-shrink:0;padding:0;height:fit-content}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._song-info-render_1piqa_1{display:flex;align-items:center;gap:12px;min-width:0}._song-info-render_1piqa_1 ._cover-wrapper_1piqa_7{flex:0 0 60px;border-radius:6px;overflow:hidden;cursor:pointer}._song-info-render_1piqa_1 ._cover-wrapper_1piqa_7 ._cover-placeholder_1piqa_13{width:60px;height:60px;background-color:#f0f0f0;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._name_1piqa_31{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._name_1piqa_31._no-source_1piqa_39{color:#bfbfbf}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._alias_1piqa_42{font-size:12px;color:#8c8c8c;font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._id_1piqa_50{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_1tg5n_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_1tg5n_1 ._cover_1tg5n_8{flex:0 0 fit-content;border-radius:6px;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_1tg5n_1 ._cover_1tg5n_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover:before{opacity:1}._playlist-info_1tg5n_1 ._cover_1tg5n_8:active{transform:scale(1.02)}._playlist-info_1tg5n_1 ._info_1tg5n_38{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._name_1tg5n_45{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56{display:flex;align-items:center;gap:4px;font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56 .ant-avatar{flex:0 0 20px}._playlist-item_1tg5n_73{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_1tg5n_73:hover{background-color:#fafafa!important}._playlist-item_1tg5n_73:active,._playlist-item_1tg5n_73:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_17qrr_22 ._select_17qrr_22{width:100%}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26{display:flex;flex-direction:column;height:400px}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26 ._btn-group_17qrr_31{display:flex;justify-content:flex-end;gap:16px}._singer-choose_17qrr_26 ._option-label_17qrr_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._singer-name_17qrr_43{font-weight:500}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._tag-group_17qrr_46 ._tag_17qrr_46:not(:last-child){margin-right:8px}._upload-list_17qrr_50 .ant-table{margin:16px 0}._upload-footer_17qrr_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_17qrr_62{flex:1 0 450px;display:flex;align-items:center;color:#666;font-size:13px;margin-right:auto;gap:3px}._upload-stats_17qrr_62 ._size-text_17qrr_71{color:#999}._upload-stats_17qrr_62 ._divider_17qrr_74{margin:0 8px;color:#d9d9d9}._upload-confirm_17qrr_79{padding:16px 0;font-size:14px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83:last-child{margin-bottom:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._label_17qrr_91{color:#666;width:80px;flex-shrink:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96{color:#333;font-weight:500}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96 ._size_17qrr_71{margin-left:4px;color:#999;font-weight:400}._upload-progress_17qrr_106 ._progress-header_17qrr_106{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._progress-info_17qrr_113{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._percentage_17qrr_117{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_17qrr_106 ._progress-list_17qrr_122{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127:last-child{border-bottom:none}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137{flex:1;min-width:0;padding-right:16px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._name_17qrr_142{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._artist_17qrr_146{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_17qrr_152 .ant-modal-body{padding:24px}._uploadProgressModal_17qrr_152 ._progressContent_17qrr_155{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._detail_17qrr_171{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._label_17qrr_91{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._value_17qrr_96 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197{width:100%}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedTitle_17qrr_200{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._songName_17qrr_212{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._errorMsg_17qrr_217{font-size:12px;color:#ff4d4f}._uploadModal_17qrr_222 .ant-modal-body{padding:24px}._progressSection_17qrr_226{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._progressInfo_17qrr_161 ._count_17qrr_245{font-size:14px;color:#666;margin-top:4px}._statsContainer_17qrr_176{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._statsContainer_17qrr_176 ._statsTag_17qrr_260{padding:4px 12px;font-size:14px}._songList_17qrr_265{max-height:300px;overflow-y:auto;padding-right:4px}._songList_17qrr_265::-webkit-scrollbar{width:6px}._songList_17qrr_265::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_17qrr_265::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_17qrr_281{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_17qrr_281:not(:last-child){margin-bottom:8px}._songItem_17qrr_281:hover{background:#f5f5f5}._songInfo_17qrr_296{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_17qrr_296 ._songName_17qrr_212{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_17qrr_296 ._artistName_17qrr_310{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._details_1f8uq_1{display:flex;flex-direction:column;gap:2px}._name_1f8uq_7{font-size:13px;font-weight:500;color:#262626}._id_1f8uq_13{font-size:12px;color:#8c8c8c}._album-list-modal_oa7mi_1 .ant-modal-body{padding:16px 0 0}._modal-title_oa7mi_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_oa7mi_12{display:flex;align-items:center;gap:16px}._title-text_oa7mi_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_oa7mi_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_oa7mi_32{display:flex;align-items:center;gap:4px}._stat-label_oa7mi_38{color:#8c8c8c}._stat-value_oa7mi_42{font-weight:600;color:#262626}._album-info_oa7mi_47{display:flex;align-items:center;gap:12px}._album-cover_oa7mi_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_oa7mi_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_oa7mi_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_oa7mi_68:hover{color:#1890ff}._album-alias_oa7mi_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_oa7mi_89{display:flex;align-items:center;gap:8px}._album-tag_oa7mi_95{margin:0}._album-company_oa7mi_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-id_oa7mi_109{font-size:12px}._album-table_oa7mi_113 .ant-table-body{scrollbar-width:thin}._search-area_oa7mi_117{padding:0 24px 16px}._modal-footer_oa7mi_121{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_oa7mi_128{font-size:13px;color:#595959}._selected-extra_oa7mi_133{margin-left:4px;color:#8c8c8c}._button-group_dcsms_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999}._button-group_dcsms_1::-webkit-scrollbar{width:0;background:transparent}._button-group_dcsms_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_dcsms_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_dcsms_1 .ant-btn:active{transform:scale(.95)}._button-group_dcsms_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_dcsms_1 .ant-btn:hover .anticon{color:#fff}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_dcsms_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
+      importCSS(' ._search-form_1aabt_1{padding:16px 0}._songInfoColumn_19zpd_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_19zpd_1 ._songIndex_19zpd_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_19zpd_1 ._songCover_19zpd_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover{transform:scale(1.05)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._btnWrapper_19zpd_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._songCoverImg_19zpd_33{filter:brightness(.85)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._songCoverImg_19zpd_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._songName_19zpd_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84,._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84{max-width:160px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_19zpd_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_19zpd_1 10s linear infinite}._currentSong_19zpd_102 td{background:var(--background)!important;animation:_rotate_19zpd_1 10s linear infinite}@keyframes _rotate_19zpd_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_19zpd_121{background-color:#f06161}._matchError_19zpd_121 td{background-color:#f06161!important}._footer_19zpd_128{margin-top:16px;display:flex;align-items:center;gap:16px;border-top:1px solid #f0f0f0;padding:16px 0}._footer_19zpd_128 ._actions_19zpd_136{margin-left:auto;display:flex;gap:8px}._stats_19zpd_142{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_19zpd_142 ._size_19zpd_150{color:#666}._stats_19zpd_142 ._divider_19zpd_153{color:#999;margin:0 4px}._stats_19zpd_142 .ant-tag{margin:0}._playlist_19zpd_161 .ant-modal-body{padding-bottom:0}._autoAddContent_19zpd_165 ._title_19zpd_165{font-size:16px;margin-bottom:8px}._autoAddContent_19zpd_165 ._statsWrapper_19zpd_169{margin-bottom:16px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._label_19zpd_179{color:#666}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._value_19zpd_182{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_19zpd_165 ._listHeader_19zpd_187{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_19zpd_165 ._listItem_19zpd_214{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_19zpd_165 ._listItem_19zpd_214:hover{background:#f5f5f5}._autoAddContent_19zpd_165 ._listItem_19zpd_214:last-child{margin-bottom:0}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemName_19zpd_230{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemCount_19zpd_236{color:#1890ff;margin-left:8px}._deleteConfirmation_19zpd_241{font-size:14px}._deleteConfirmation_19zpd_241 ._title_19zpd_165{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_19zpd_241 ._title_19zpd_165 ._count_19zpd_249{color:#1890ff}._deleteConfirmation_19zpd_241 ._songs_19zpd_252{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:hover{background:#f0f0f0}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:not(:last-child){margin-bottom:4px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._text_19zpd_281{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._icon_19zpd_288{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_19zpd_302{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_19zpd_302 ._singer-option-content_19zpd_315{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-name_19zpd_330{font-size:14px}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-id_19zpd_333{font-size:13px}._singer-option_19zpd_302:hover ._singer-option-content_19zpd_315{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_19zpd_341{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_19zpd_341 ._song-name_19zpd_347{font-size:14px;color:#333;font-weight:500}._song-label_19zpd_341 ._tag-group_19zpd_352{display:flex;gap:8px;flex-wrap:wrap}._song-option_19zpd_358{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_19zpd_358:hover{background-color:#f5f5f5}._song-option_19zpd_358 ._song-info_19zpd_371{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_19zpd_358 ._song-name_19zpd_347{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_19zpd_358 ._tag-group_19zpd_352{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_19zpd_358 ._tag-group_19zpd_352 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_19zpd_358 ._album-cover_19zpd_400{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_19zpd_358 ._album-cover_19zpd_400:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_19zpd_416{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_19zpd_416 ._song-info_19zpd_371{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._artist-info_19zpd_432{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._album-info_19zpd_440{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._copy-text_yqw94_1{display:flex;align-items:center;width:100%}._copy-text_yqw94_1 ._text_yqw94_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_yqw94_1 ._copy-btn_yqw94_12{flex-shrink:0;padding:0;height:fit-content}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._button-group_1rls2_1{display:flex;justify-content:center;gap:20px;margin-top:20px}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._song-info-render_1piqa_1{display:flex;align-items:center;gap:12px;min-width:0}._song-info-render_1piqa_1 ._cover-wrapper_1piqa_7{flex:0 0 60px;border-radius:6px;overflow:hidden;cursor:pointer}._song-info-render_1piqa_1 ._cover-wrapper_1piqa_7 ._cover-placeholder_1piqa_13{width:60px;height:60px;background-color:#f0f0f0;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._name_1piqa_31{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._name_1piqa_31._no-source_1piqa_39{color:#bfbfbf}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._alias_1piqa_42{font-size:12px;color:#8c8c8c;font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._id_1piqa_50{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_1tg5n_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_1tg5n_1 ._cover_1tg5n_8{flex:0 0 fit-content;border-radius:6px;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_1tg5n_1 ._cover_1tg5n_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover:before{opacity:1}._playlist-info_1tg5n_1 ._cover_1tg5n_8:active{transform:scale(1.02)}._playlist-info_1tg5n_1 ._info_1tg5n_38{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._name_1tg5n_45{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56{display:flex;align-items:center;gap:4px;font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56 .ant-avatar{flex:0 0 20px}._playlist-item_1tg5n_73{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_1tg5n_73:hover{background-color:#fafafa!important}._playlist-item_1tg5n_73:active,._playlist-item_1tg5n_73:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_17qrr_22 ._select_17qrr_22{width:100%}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26{display:flex;flex-direction:column;height:400px}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26 ._btn-group_17qrr_31{display:flex;justify-content:flex-end;gap:16px}._singer-choose_17qrr_26 ._option-label_17qrr_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._singer-name_17qrr_43{font-weight:500}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._tag-group_17qrr_46 ._tag_17qrr_46:not(:last-child){margin-right:8px}._upload-list_17qrr_50 .ant-table{margin:16px 0}._upload-footer_17qrr_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_17qrr_62{flex:1 0 450px;display:flex;align-items:center;color:#666;font-size:13px;margin-right:auto;gap:3px}._upload-stats_17qrr_62 ._size-text_17qrr_71{color:#999}._upload-stats_17qrr_62 ._divider_17qrr_74{margin:0 8px;color:#d9d9d9}._upload-confirm_17qrr_79{padding:16px 0;font-size:14px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83:last-child{margin-bottom:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._label_17qrr_91{color:#666;width:80px;flex-shrink:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96{color:#333;font-weight:500}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96 ._size_17qrr_71{margin-left:4px;color:#999;font-weight:400}._upload-progress_17qrr_106 ._progress-header_17qrr_106{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._progress-info_17qrr_113{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._percentage_17qrr_117{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_17qrr_106 ._progress-list_17qrr_122{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127:last-child{border-bottom:none}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137{flex:1;min-width:0;padding-right:16px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._name_17qrr_142{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._artist_17qrr_146{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_17qrr_152 .ant-modal-body{padding:24px}._uploadProgressModal_17qrr_152 ._progressContent_17qrr_155{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._detail_17qrr_171{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._label_17qrr_91{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._value_17qrr_96 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197{width:100%}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedTitle_17qrr_200{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._songName_17qrr_212{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._errorMsg_17qrr_217{font-size:12px;color:#ff4d4f}._uploadModal_17qrr_222 .ant-modal-body{padding:24px}._progressSection_17qrr_226{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._progressInfo_17qrr_161 ._count_17qrr_245{font-size:14px;color:#666;margin-top:4px}._statsContainer_17qrr_176{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._statsContainer_17qrr_176 ._statsTag_17qrr_260{padding:4px 12px;font-size:14px}._songList_17qrr_265{max-height:300px;overflow-y:auto;padding-right:4px}._songList_17qrr_265::-webkit-scrollbar{width:6px}._songList_17qrr_265::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_17qrr_265::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_17qrr_281{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_17qrr_281:not(:last-child){margin-bottom:8px}._songItem_17qrr_281:hover{background:#f5f5f5}._songInfo_17qrr_296{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_17qrr_296 ._songName_17qrr_212{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_17qrr_296 ._artistName_17qrr_310{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._details_1f8uq_1{display:flex;flex-direction:column;gap:2px}._name_1f8uq_7{font-size:13px;font-weight:500;color:#262626}._id_1f8uq_13{font-size:12px;color:#8c8c8c}._album-list-modal_oa7mi_1 .ant-modal-body{padding:16px 0 0}._modal-title_oa7mi_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_oa7mi_12{display:flex;align-items:center;gap:16px}._title-text_oa7mi_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_oa7mi_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_oa7mi_32{display:flex;align-items:center;gap:4px}._stat-label_oa7mi_38{color:#8c8c8c}._stat-value_oa7mi_42{font-weight:600;color:#262626}._album-info_oa7mi_47{display:flex;align-items:center;gap:12px}._album-cover_oa7mi_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_oa7mi_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_oa7mi_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_oa7mi_68:hover{color:#1890ff}._album-alias_oa7mi_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_oa7mi_89{display:flex;align-items:center;gap:8px}._album-tag_oa7mi_95{margin:0}._album-company_oa7mi_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-id_oa7mi_109{font-size:12px}._album-table_oa7mi_113 .ant-table-body{scrollbar-width:thin}._search-area_oa7mi_117{padding:0 24px 16px}._modal-footer_oa7mi_121{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_oa7mi_128{font-size:13px;color:#595959}._selected-extra_oa7mi_133{margin-left:4px;color:#8c8c8c}._button-group_5ww7y_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999;transform:translateY(-20%)}._button-group_5ww7y_1::-webkit-scrollbar{width:0;background:transparent}._button-group_5ww7y_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_5ww7y_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_5ww7y_1 .ant-btn:active{transform:scale(.95)}._button-group_5ww7y_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_5ww7y_1 .ant-btn:hover .anticon{color:#fff}._button-group_5ww7y_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_5ww7y_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
 
       var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
       function getDefaultExportFromCjs(x) {
@@ -1322,7 +1324,18 @@ get: function() {
         歌单: "1000",
         用户: "1002",
         MV: "1004",
-        歌词: "1006"
+        歌词: "1006",
+        电台: "1009",
+        视频: "1014",
+        1: "单曲",
+        10: "专辑",
+        100: "歌手",
+        1e3: "歌单",
+        1002: "用户",
+        1004: "MV",
+        1006: "歌词",
+        1009: "电台",
+        1014: "视频"
       };
       const FLAC_TAGS = {
         title: "标题",
@@ -7382,7 +7395,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-BrlpJLU8-BnWmt2-V.js');
+            const { MpegParser } = await module.import('./MpegParser-Bk7y4DAx-D70qPym6.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7404,7 +7417,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-C1BnzIe_-B0TjRBmO.js');
+            const { AsfParser } = await module.import('./AsfParser-BLsTNAO8-CMIJkIZJ.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7415,7 +7428,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-dTFox4B4-CbIQh1Gr.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-jQqZhio---LTxPFTG.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7426,7 +7439,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-BykVm2zO-CEGTrOba.js');
+            const { AIFFParser } = await module.import('./AiffParser-BFiSZ6kI-B9s_buaS.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7437,7 +7450,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-BS-jv-jA-DJ1AMUW6.js');
+            const { DsfParser } = await module.import('./DsfParser-gtXZYR8Z-Dl9HdfHZ.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7448,7 +7461,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-CH9bhYK5-oAu9iH-9.js');
+            const { FlacParser } = await module.import('./FlacParser-Cj7SL6Mu-Cl6_vMX6.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7459,7 +7472,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-LidVFBq3-Dh0IrR-o.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-Bxk2scNk-CCzKVTgX.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7470,7 +7483,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-DbEqw0H1-D5ilwBL2.js');
+            const { MP4Parser } = await module.import('./MP4Parser-D3FOvkGA-Eh4taf9J.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7481,7 +7494,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-G_Q4hgBP-C_aJZeEe.js');
+            const { MusepackParser } = await module.import('./MusepackParser-DTu9gqV1-6k2MkpqH.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7492,7 +7505,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-DJgfB5Hs-C10i7yZ9.js');
+            const { OggParser } = await module.import('./OggParser-BKVIeU2U-BUv9J2fz.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7503,7 +7516,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-wBTOp0zK-BVilI6ku.js');
+            const { WavPackParser } = await module.import('./WavPackParser-D6f5AIXy-CA1DAlXB.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7514,7 +7527,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-B483qZKQ-BzWjsMMr.js');
+            const { WaveParser } = await module.import('./WaveParser-BdgSlinl-xoEgA9HE.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -8241,7 +8254,7 @@ track: UINT8.get(buf, off2 + 126),
         });
       };
       const promiseLimit = (promiseArray, limit = 6, options) => {
-        const { wait = 0 } = {};
+        const { wait = 0 } = options || {};
         if (!Array.isArray(promiseArray)) {
           throw new Error("第一个参数必须是数组");
         }
@@ -8369,26 +8382,26 @@ track: UINT8.get(buf, off2 + 126),
         }
         return id2;
       };
-      message$1.config({
+      message.config({
         top: 100
       });
       const msgSuccess$1 = (content) => {
-        message$1.success(content);
+        message.success(content);
       };
       const msgWarning = (content) => {
-        message$1.warning(content);
+        message.warning(content);
       };
       const msgError = (content) => {
-        message$1.error(content);
+        message.error(content);
       };
       const msgLoading = (loadingContent, completeCallBack) => {
         const key = nanoid();
-        message$1.loading({
+        message.loading({
           key,
           content: loadingContent
         }).then(() => {
         });
-        return () => message$1.destroy(key);
+        return () => message.destroy(key);
       };
       const confirm = (content, title2, otherOptions = {}) => {
         return new Promise((resolve, reject) => {
@@ -8679,7 +8692,7 @@ cursor: before,
             });
           }
         );
-        const res = await promiseLimit(taskList, 1);
+        const res = await promiseLimit(taskList, 1, { wait: 1e3 });
         return res;
       };
       const getQualityTags = (song) => {
@@ -12328,7 +12341,16 @@ op: "update"
         }
         return result;
       };
-      const styles$c = {
+      const getUserPlayRecord = (uid, type = 0) => {
+        const data = {
+          uid,
+          type
+        };
+        return weapiRequest("/api/v1/play/record", {
+          data
+        });
+      };
+      const styles$d = {
         "search-form": "_search-form_1aabt_1"
       };
       const SearchForm = ({ onSearch, data = [], options = [] }) => {
@@ -12349,7 +12371,7 @@ op: "update"
           form.resetFields();
           onSearch({});
         };
-        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$c["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$d["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
           options.map((item) => {
             return jsxRuntimeExports.jsx(
               Form.Item,
@@ -12506,7 +12528,7 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
           const importMessageKey = "import-song";
           try {
             setLoading(true);
-            message$1.loading({
+            message.loading({
               content: `开始导入歌曲，请稍候...`,
               duration: 0,
               key: importMessageKey
@@ -12517,7 +12539,7 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
                 filename: item.name || "未知",
                 artists: item.artists?.join?.(",")
               });
-              message$1.loading({
+              message.loading({
                 content: `第${index2 + 1}首歌曲导入完成: ${item.name}`,
                 key: importMessageKey,
                 duration: 0
@@ -12529,7 +12551,7 @@ jsxRuntimeExports.jsx(Button, { onClick: handleReset, children: "重置" })
           } catch (error) {
             console.log("error", error);
           } finally {
-            message$1.destroy(importMessageKey);
+            message.destroy(importMessageKey);
             setLoading(false);
           }
         };
@@ -12672,9 +12694,9 @@ jsxRuntimeExports.jsx(
                         try {
                           const jsonData = JSON.parse(e.target.result);
                           setTableData(jsonData?.data || jsonData || []);
-                          message$1.success("JSON文件解析成功");
+                          message.success("JSON文件解析成功");
                         } catch (error) {
-                          message$1.error("JSON文件解析失败");
+                          message.error("JSON文件解析失败");
                         }
                       };
                       reader.readAsText(file);
@@ -12922,7 +12944,7 @@ singerIds
       const warning = "_warning_19zpd_274";
       const text = "_text_19zpd_281";
       const icon = "_icon_19zpd_288";
-      const styles$b = {
+      const styles$c = {
         songInfoColumn,
         songIndex,
         songCover,
@@ -13087,13 +13109,13 @@ jsxRuntimeExports.jsx(
                     return jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: styles$b["singer-option"],
+                        className: styles$c["singer-option"],
                         style: {
                           "--avatar-url": `url(${artistAvatarPicUrl})`
                         },
-                        children: jsxRuntimeExports.jsxs("div", { className: styles$b["singer-option-content"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$b["singer-option-name"], children: artistName2 }),
-jsxRuntimeExports.jsx("div", { className: styles$b["singer-option-id"], children: artistId })
+                        children: jsxRuntimeExports.jsxs("div", { className: styles$c["singer-option-content"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$c["singer-option-name"], children: artistName2 }),
+jsxRuntimeExports.jsx("div", { className: styles$c["singer-option-id"], children: artistId })
                         ] })
                       }
                     );
@@ -13142,12 +13164,12 @@ jsxRuntimeExports.jsx(
                     return jsxRuntimeExports.jsxs(
                       "div",
                       {
-                        className: styles$b["song-option"],
+                        className: styles$c["song-option"],
                         onClick: () => console.log("option", data2, option, singerMap),
                         children: [
-jsxRuntimeExports.jsxs("div", { className: styles$b["song-info"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$b["song-name"], children: option.label }),
-jsxRuntimeExports.jsxs("div", { className: styles$b["tag-group"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$c["song-info"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$c["song-name"], children: option.label }),
+jsxRuntimeExports.jsxs("div", { className: styles$c["tag-group"], children: [
                               data2.al?.name && jsxRuntimeExports.jsx(Tag, { color: "blue", children: data2.al?.name }),
                               data2.ar?.length && data2.ar?.map((artist2, index2) => jsxRuntimeExports.jsx(Tag, { color: "green", children: artist2.name }, index2))
                             ] })
@@ -13155,7 +13177,7 @@ jsxRuntimeExports.jsxs("div", { className: styles$b["tag-group"], children: [
                           singerMap[currentSelectSinger]?.albumMap?.[data2.al?.id]?.picUrl && jsxRuntimeExports.jsx(
                             "img",
                             {
-                              className: styles$b["album-cover"],
+                              className: styles$c["album-cover"],
                               src: singerMap[currentSelectSinger]?.albumMap[data2.al?.id]?.picUrl,
                               alt: data2.al?.name
                             }
@@ -13305,7 +13327,7 @@ jsxRuntimeExports.jsx(
           );
         }
       };
-      const styles$a = {
+      const styles$b = {
         "copy-text": "_copy-text_yqw94_1",
         "copy-btn": "_copy-btn_yqw94_12"
       };
@@ -13369,7 +13391,7 @@ var hasRequiredClassnames;
       }
       var classnamesExports = requireClassnames();
       const classNames = getDefaultExportFromCjs(classnamesExports);
-      const styles$9 = {
+      const styles$a = {
         "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
       };
       function TextOverflowShowTips({
@@ -13397,7 +13419,7 @@ var hasRequiredClassnames;
           "div",
           {
             ...restProps,
-            className: classNames(styles$9["text-overflow-show-tips-container"], className),
+            className: classNames(styles$a["text-overflow-show-tips-container"], className),
             children: jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text2 })
           }
         ) }) : jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text2 });
@@ -13422,7 +13444,7 @@ var hasRequiredClassnames;
           copy(text2);
           msgSuccess$1("复制成功");
         };
-        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$a["copy-text"], className), ...rest, children: [
+        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$b["copy-text"], className), ...rest, children: [
 jsxRuntimeExports.jsx(
             TextOverflowShowTips,
             {
@@ -13440,7 +13462,7 @@ jsxRuntimeExports.jsx(
               type: "link",
               icon: jsxRuntimeExports.jsx(CopyOutlined, {}),
               onClick: handleCopy,
-              className: styles$a["copy-btn"]
+              className: styles$b["copy-btn"]
             }
           )
         ] });
@@ -13841,21 +13863,21 @@ default:
           try {
             const songs2 = await getAlbumSongListData(id2);
             const songIds = songs2.map((song) => song.id);
-            message$1.loading({
+            message.loading({
               content: "开始上传专辑歌曲到云盘，请稍候...",
               key: uploadMessageKey2,
               duration: 0
             });
             await neteaseMusicToCloud(songIds, {
               onChange: (progress) => {
-                message$1.loading({
+                message.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message$1.destroy(uploadMessageKey2);
+                message.destroy(uploadMessageKey2);
                 msgSuccess$1(
                   `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
@@ -13866,7 +13888,7 @@ default:
             throw error;
           } finally {
             setTimeout(() => {
-              message$1.destroy(uploadMessageKey2);
+              message.destroy(uploadMessageKey2);
             }, 3e3);
           }
         };
@@ -19485,21 +19507,21 @@ isIndex(key, length)))) {
           try {
             const songs2 = await getPlaylistAllData(playlistId);
             const songIds = songs2.map((song) => song.id);
-            message$1.loading({
+            message.loading({
               content: "开始上传歌单歌曲到云盘，请稍候...",
               key: uploadMessageKey2,
               duration: 0
             });
             const res = await neteaseMusicToCloud(songIds, {
               onChange: (progress) => {
-                message$1.loading({
+                message.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message$1.destroy(uploadMessageKey2);
+                message.destroy(uploadMessageKey2);
                 console.log("result", result);
                 msgSuccess$1(
                   `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
@@ -19511,7 +19533,7 @@ isIndex(key, length)))) {
             console.log("error", error);
             msgError("歌曲转存云盘失败");
           } finally {
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           }
         };
         return {
@@ -19585,7 +19607,7 @@ isIndex(key, length)))) {
           setLoading(true);
           try {
             const user = getUser();
-            if (!user) return message$1.error("请先登录");
+            if (!user) return message.error("请先登录");
             const res2 = await getPlaylistList();
             console.log("res", res2);
             if (res2.code === 200) {
@@ -19818,7 +19840,7 @@ jsxRuntimeExports.jsx(
                     rowSelection
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$b.footer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$c.footer, children: [
 jsxRuntimeExports.jsxs("div", { children: [
                     "已选择 ",
                     selectedRows.length,
@@ -19832,7 +19854,7 @@ jsxRuntimeExports.jsx(
                       children: "添加后自动排序"
                     }
                   ),
-jsxRuntimeExports.jsxs(Space, { className: styles$b.actions, children: [
+jsxRuntimeExports.jsxs(Space, { className: styles$c.actions, children: [
 jsxRuntimeExports.jsx(MyButton, { onClick: () => setCreateModalVisible(true), children: "新建歌单" }),
 jsxRuntimeExports.jsx(
                       MyButton,
@@ -19909,20 +19931,20 @@ jsxRuntimeExports.jsx(Space, { wrap: true, children: createPlaylistShortcut.map(
         ] });
       };
       const DeleteConfirmContent = ({ playlists }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$b.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$b.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$b.title, children: "总计：" }),
-jsxRuntimeExports.jsx("div", { className: styles$b.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$b.label, children: "删除数量：" }),
-jsxRuntimeExports.jsx("span", { className: styles$b.value, children: playlists.length }),
-jsxRuntimeExports.jsx("span", { className: styles$b.label, children: " 个歌单" })
+        return jsxRuntimeExports.jsxs("div", { className: styles$c.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$c.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$c.title, children: "总计：" }),
+jsxRuntimeExports.jsx("div", { className: styles$c.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsx("span", { className: styles$c.label, children: "删除数量：" }),
+jsxRuntimeExports.jsx("span", { className: styles$c.value, children: playlists.length }),
+jsxRuntimeExports.jsx("span", { className: styles$c.label, children: " 个歌单" })
             ] }) })
           ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("div", { className: styles$b.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$b.title, children: "即将删除的歌单：" }) }),
-jsxRuntimeExports.jsx("ul", { className: styles$b.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$b.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$b.itemName, children: item.name }),
-              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$b.itemCount, children: [
+jsxRuntimeExports.jsx("div", { className: styles$c.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$c.title, children: "即将删除的歌单：" }) }),
+jsxRuntimeExports.jsx("ul", { className: styles$c.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$c.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$c.itemName, children: item.name }),
+              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$c.itemCount, children: [
                 item.trackCount,
                 "首"
               ] })
@@ -19932,15 +19954,15 @@ jsxRuntimeExports.jsx("span", { className: styles$b.itemName, children: item.nam
       };
       const PlayList$3 = forwardRef(PlayList$2);
       const Stats = memo(({ selectedRows = [], filteredSongList = [] }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$b.stats, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$c.stats, children: [
           "已选择 ",
 jsxRuntimeExports.jsxs(Tag, { color: "blue", children: [
             selectedRows.length,
             " 首"
           ] }),
           " ",
-jsxRuntimeExports.jsx("span", { className: styles$b.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
-jsxRuntimeExports.jsx("span", { className: styles$b.divider, children: "/" }),
+jsxRuntimeExports.jsx("span", { className: styles$c.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
+jsxRuntimeExports.jsx("span", { className: styles$c.divider, children: "/" }),
           "共",
           " ",
 jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
@@ -19948,7 +19970,7 @@ jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
             " 首"
           ] }),
           " ",
-jsxRuntimeExports.jsx("span", { className: styles$b.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
+jsxRuntimeExports.jsx("span", { className: styles$c.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
         ] });
       });
       Stats.displayName = "Stats";
@@ -20094,24 +20116,24 @@ jsxRuntimeExports.jsx("span", { className: styles$b.size, children: filteredSong
           const albumName = getAlbumName(record);
           const songName2 = record.simpleSong?.name;
           const albumPic = record.simpleSong?.al?.picUrl;
-          return jsxRuntimeExports.jsxs("div", { className: styles$b.songInfoColumn, children: [
-jsxRuntimeExports.jsx("div", { className: styles$b.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
+          return jsxRuntimeExports.jsxs("div", { className: styles$c.songInfoColumn, children: [
+jsxRuntimeExports.jsx("div", { className: styles$c.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
 jsxRuntimeExports.jsxs(
               "div",
               {
-                className: `${styles$b.songCover} ${isCurrentSong ? styles$b.playing : ""}`,
+                className: `${styles$c.songCover} ${isCurrentSong ? styles$c.playing : ""}`,
                 onClick: () => handlePlaySong(record.simpleSong),
                 children: [
-jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$b.songCoverImg }),
-jsxRuntimeExports.jsx("div", { className: styles$b.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
+jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$c.songCoverImg }),
+jsxRuntimeExports.jsx("div", { className: styles$c.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
                 ]
               }
             ),
-jsxRuntimeExports.jsxs("div", { className: styles$b.songInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$b.songName, children: songName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$b.subInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$b.artist, children: artistName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$b.album, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$c.songInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$c.songName, children: songName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$c.subInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$c.artist, children: artistName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$c.album, children: [
                   albumName && " - ",
                   albumName
                 ] })
@@ -20171,13 +20193,13 @@ jsxRuntimeExports.jsxs("div", { className: styles$b.album, children: [
             sortDirections: ["ascend", "descend"],
             render: (_, record) => {
               const { song, album: album2, artist: artist2 } = getOriginalInfo(record);
-              return jsxRuntimeExports.jsxs("div", { className: styles$b["original-album"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$b["song-info"], title: song, children: [
+              return jsxRuntimeExports.jsxs("div", { className: styles$c["original-album"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$c["song-info"], title: song, children: [
                   song,
                   " ",
                   artist2 && `· ${artist2}`
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$b["album-info"], title: album2, children: album2 })
+jsxRuntimeExports.jsx("div", { className: styles$c["album-info"], title: album2, children: album2 })
               ] });
             }
           },
@@ -20488,13 +20510,13 @@ jsxRuntimeExports.jsx(
                     const { songId } = record;
                     const classNames2 = [];
                     if (songId === playSong?.id) {
-                      classNames2.push(styles$b.currentSong);
+                      classNames2.push(styles$c.currentSong);
                     }
                     const isMatch = record.matchType === "matched";
                     const album2 = normalizeString(getAlbumName(record));
                     const originalAlbum = normalizeString(getOriginalInfo(record)?.album);
                     if (isMatch && !album2.includes(originalAlbum.slice(0, 3))) {
-                      classNames2.push(styles$b.matchError);
+                      classNames2.push(styles$c.matchError);
                     }
                     return classNames2.join(" ");
                   },
@@ -20507,7 +20529,7 @@ jsxRuntimeExports.jsx(
                   }
                 }
               ),
-jsxRuntimeExports.jsxs("div", { className: styles$b.footer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$c.footer, children: [
 jsxRuntimeExports.jsx(
                   Stats,
                   {
@@ -20515,7 +20537,7 @@ jsxRuntimeExports.jsx(
                     filteredSongList
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$b.actions, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$c.actions, children: [
 jsxRuntimeExports.jsx(
                     Input,
                     {
@@ -20609,28 +20631,28 @@ jsxRuntimeExports.jsx(PlayList$3, { ref: playListRef })
         const handleCopy = () => {
           const text2 = albums.map(([name2, songs2]) => `${name2}（${songs2.length}首）`).join("\n");
           navigator.clipboard.writeText(text2).then(() => {
-            message$1.success("复制成功");
+            message.success("复制成功");
           });
         };
-        return jsxRuntimeExports.jsxs("div", { className: styles$b.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$b.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$b.title, children: "总计：" }),
-jsxRuntimeExports.jsxs("div", { className: styles$b.statsContent, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$c.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$c.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$c.title, children: "总计：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$c.statsContent, children: [
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$b.label, children: "歌曲数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$b.value, children: totalSongs }),
-jsxRuntimeExports.jsx("span", { className: styles$b.label, children: " 首" })
+jsxRuntimeExports.jsx("span", { className: styles$c.label, children: "歌曲数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$c.value, children: totalSongs }),
+jsxRuntimeExports.jsx("span", { className: styles$c.label, children: " 首" })
               ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$b.label, children: "歌单数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$b.value, children: albums.length }),
-jsxRuntimeExports.jsx("span", { className: styles$b.label, children: " 个" })
+jsxRuntimeExports.jsx("span", { className: styles$c.label, children: "歌单数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$c.value, children: albums.length }),
+jsxRuntimeExports.jsx("span", { className: styles$c.label, children: " 个" })
               ] })
             ] })
           ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsxs("div", { className: styles$b.listHeader, children: [
-jsxRuntimeExports.jsx("div", { className: styles$b.title, children: "即将创建的歌单：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$c.listHeader, children: [
+jsxRuntimeExports.jsx("div", { className: styles$c.title, children: "即将创建的歌单：" }),
 jsxRuntimeExports.jsx(
                 Button,
                 {
@@ -20642,9 +20664,9 @@ jsxRuntimeExports.jsx(
                 }
               )
             ] }),
-jsxRuntimeExports.jsx("ul", { className: styles$b.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$b.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$b.itemName, children: name2 }),
-jsxRuntimeExports.jsxs("span", { className: styles$b.itemCount, children: [
+jsxRuntimeExports.jsx("ul", { className: styles$c.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$c.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$c.itemName, children: name2 }),
+jsxRuntimeExports.jsxs("span", { className: styles$c.itemCount, children: [
                 songs2.length,
                 "首"
               ] })
@@ -20653,16 +20675,16 @@ jsxRuntimeExports.jsxs("span", { className: styles$b.itemCount, children: [
         ] });
       };
       const DeleteConfirmation = ({ selectedCount, songNames }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$b.deleteConfirmation, children: [
-jsxRuntimeExports.jsxs("p", { className: styles$b.title, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$c.deleteConfirmation, children: [
+jsxRuntimeExports.jsxs("p", { className: styles$c.title, children: [
             "您确定要删除以下 ",
-jsxRuntimeExports.jsx("span", { className: styles$b.count, children: selectedCount }),
+jsxRuntimeExports.jsx("span", { className: styles$c.count, children: selectedCount }),
             " ",
             "首歌曲吗？"
           ] }),
-jsxRuntimeExports.jsx("div", { className: styles$b.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$b.songItem, children: name2 }, index2)) }),
-jsxRuntimeExports.jsx("div", { className: styles$b.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$b.text, children: [
-jsxRuntimeExports.jsx("span", { className: styles$b.icon, children: "!" }),
+jsxRuntimeExports.jsx("div", { className: styles$c.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$c.songItem, children: name2 }, index2)) }),
+jsxRuntimeExports.jsx("div", { className: styles$c.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$c.text, children: [
+jsxRuntimeExports.jsx("span", { className: styles$c.icon, children: "!" }),
             "注意：此操作不可恢复，删除后歌曲将从您的网易云音乐云盘中永久移除。"
           ] }) })
         ] });
@@ -20678,8 +20700,330 @@ jsxRuntimeExports.jsx("span", { className: styles$b.icon, children: "!" }),
         const { song, album: album2, artist: artist2 } = simpleSong.privilege?.pc || {};
         return { song, album: album2, artist: artist2 };
       };
+      function SongSelect(props) {
+        const { onChange, value: value2 } = props;
+        const [_value, setValue] = useState();
+        useEffect(() => {
+          setValue(value2);
+        }, [value2]);
+        const handleChange = (_, data) => {
+          setValue(data);
+          onChange?.(data);
+        };
+        const [options, setOptions] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const handleSearch = async (value22) => {
+          try {
+            setLoading(true);
+            const res = await cloudSearch(value22, {
+              type: SEARCH_TYPES.单曲,
+              limit: 40
+            });
+            console.log("res", res);
+            if (res.code === 200) {
+              setOptions(res.result.songs);
+            }
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const debouncedHandleSearch = lodashExports.debounce(handleSearch, 500);
+        return jsxRuntimeExports.jsx(
+          Select,
+          {
+            placeholder: "请选择歌曲",
+            options,
+            fieldNames: { label: "name", value: "id" },
+            value: _value?.id,
+            onChange: handleChange,
+            showSearch: true,
+            allowClear: true,
+            onSearch: debouncedHandleSearch,
+            style: { width: "100%" },
+            loading,
+            filterOption: false,
+            optionRender: (option) => {
+              const { data } = option;
+              const artists = data.ar?.map((a) => a.name).join(" / ") || "未知艺术家";
+              const albumName = data.al?.name || "未知专辑";
+              const duration2 = formatDuration$1(data.dt);
+              return jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 12,
+                    minWidth: 0
+                  },
+                  children: [
+jsxRuntimeExports.jsx(
+                      "img",
+                      {
+                        src: data.al?.picUrl,
+                        alt: data.name,
+                        style: {
+                          width: 48,
+                          height: 48,
+                          borderRadius: 6,
+                          objectFit: "cover",
+                          flexShrink: 0,
+                          border: "1px solid #eee"
+                        }
+                      }
+                    ),
+jsxRuntimeExports.jsxs("div", { style: { flex: 1, minWidth: 0 }, children: [
+jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          style: {
+                            fontWeight: 500,
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            marginBottom: 4,
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 8
+                          },
+                          children: [
+jsxRuntimeExports.jsx("span", { children: data.name }),
+jsxRuntimeExports.jsxs("span", { style: { color: "#999", fontSize: 12 }, children: [
+                              "（ID: ",
+                              data.id,
+                              "）"
+                            ] })
+                          ]
+                        }
+                      ),
+jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          style: {
+                            color: "#888",
+                            fontSize: 12,
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            marginBottom: 2
+                          },
+                          children: artists
+                        }
+                      ),
+jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          style: {
+                            color: "#999",
+                            fontSize: 11,
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 8
+                          },
+                          children: [
+jsxRuntimeExports.jsx("span", { children: albumName }),
+                            duration2 && jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+jsxRuntimeExports.jsx("span", { style: { color: "#ccc" }, children: "•" }),
+jsxRuntimeExports.jsx("span", { children: duration2 })
+                            ] })
+                          ]
+                        }
+                      )
+                    ] })
+                  ]
+                }
+              );
+            },
+            popupRender: (menu) => {
+              return loading ? jsxRuntimeExports.jsx(
+                Spin,
+                {
+                  style: {
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 150
+                  }
+                }
+              ) : menu;
+            }
+          }
+        );
+      }
+      function UserSelect(props) {
+        const { onChange, value: value2 } = props;
+        const [_value, setValue] = useState();
+        useEffect(() => {
+          setValue(value2);
+        }, [value2]);
+        const handleChange = (_, data) => {
+          setValue(data);
+          onChange?.(data);
+        };
+        const [options, setOptions] = useState([]);
+        const [loading, setLoading] = useState(false);
+        const handleSearch = async (value22) => {
+          try {
+            setLoading(true);
+            const res = await cloudSearch(value22, {
+              type: SEARCH_TYPES.用户,
+              limit: 40
+            });
+            console.log("res", res);
+            if (res.code === 200) {
+              setOptions(res.result.userprofiles);
+            }
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const debouncedHandleSearch = lodashExports.debounce(handleSearch, 500);
+        return jsxRuntimeExports.jsx(
+          Select,
+          {
+            placeholder: "请选择用户",
+            options,
+            fieldNames: { label: "nickname", value: "userId" },
+            value: _value?.userId,
+            onChange: handleChange,
+            showSearch: true,
+            allowClear: true,
+            onSearch: debouncedHandleSearch,
+            style: { width: "100%" },
+            loading,
+            filterOption: false,
+            optionRender: (option) => {
+              const { data } = option;
+              return jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  style: {
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                    minWidth: 0
+                  },
+                  children: [
+jsxRuntimeExports.jsx(
+                      "img",
+                      {
+                        src: data.avatarUrl,
+                        alt: data.nickname,
+                        style: {
+                          width: 32,
+                          height: 32,
+                          borderRadius: "50%",
+                          objectFit: "cover",
+                          marginRight: 8,
+                          border: data.avatarDetail ? "2px solid #ffd700" : "1px solid #eee"
+                        }
+                      }
+                    ),
+jsxRuntimeExports.jsxs("div", { style: { flex: 1, minWidth: 0 }, children: [
+jsxRuntimeExports.jsxs(
+                        "div",
+                        {
+                          style: {
+                            fontWeight: 500,
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 4
+                          },
+                          children: [
+jsxRuntimeExports.jsx("span", { children: data.nickname }),
+jsxRuntimeExports.jsxs("span", { style: { color: "#999", fontSize: 12 }, children: [
+                              "（ID: ",
+                              data.userId,
+                              "）"
+                            ] }),
+                            data.avatarDetail?.identityIconUrl && jsxRuntimeExports.jsx(
+                              "img",
+                              {
+                                src: data.avatarDetail.identityIconUrl,
+                                alt: "认证",
+                                title: "认证用户",
+                                style: { width: 16, height: 16, marginLeft: 2 }
+                              }
+                            )
+                          ]
+                        }
+                      ),
+                      data.signature && jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          style: {
+                            color: "#888",
+                            fontSize: 12,
+                            whiteSpace: "nowrap",
+                            overflow: "hidden",
+                            textOverflow: "ellipsis"
+                          },
+                          children: data.signature
+                        }
+                      )
+                    ] })
+                  ]
+                }
+              );
+            },
+            popupRender: (menu) => {
+              return loading ? jsxRuntimeExports.jsx(
+                Spin,
+                {
+                  style: {
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 150
+                  }
+                }
+              ) : menu;
+            }
+          }
+        );
+      }
+      const styles$9 = {
+        "button-group": "_button-group_1rls2_1"
+      };
       const EmotionDecode = forwardRef((props, ref) => {
-        const { visible, close } = useVisible({}, ref);
+        const { visible, close } = useVisible(
+          {
+            onOpen() {
+            },
+            onReset() {
+              formRef.resetFields();
+            }
+          },
+          ref
+        );
+        const { getSongAllComments: getSongAllComments2 } = usePlayMusic();
+        const [formRef] = Form.useForm();
+        const handleEmotionDecode = async () => {
+          try {
+            await formRef.validateFields();
+            const values = await formRef.getFieldsValue();
+            console.log("values", values);
+            const { userId, songId } = values;
+            const comments = await getSongAllComments2(songId);
+            console.log("comments", comments);
+            const userComments = comments.filter(
+              (comment) => comment.user.userId === userId
+            );
+            console.log("userComments", userComments);
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
         return jsxRuntimeExports.jsx(
           Modal,
           {
@@ -20688,7 +21032,42 @@ jsxRuntimeExports.jsx("span", { className: styles$b.icon, children: "!" }),
             onCancel: close,
             width: 800,
             footer: null,
-            centered: true
+            centered: true,
+            children: jsxRuntimeExports.jsxs(Form, { form: formRef, children: [
+jsxRuntimeExports.jsxs(Row, { style: { marginBottom: 16 }, gutter: 16, children: [
+jsxRuntimeExports.jsx(Col, { span: 12, children: jsxRuntimeExports.jsx(Form.Item, { label: "搜索用户", name: "user", children: jsxRuntimeExports.jsx(
+                  UserSelect,
+                  {
+                    onChange: (value2) => {
+                      formRef.setFieldsValue({
+                        userId: value2?.userId
+                      });
+                    }
+                  }
+                ) }) }),
+jsxRuntimeExports.jsx(Col, { span: 12, children: jsxRuntimeExports.jsx(Form.Item, { label: "搜索歌曲", name: "song", children: jsxRuntimeExports.jsx(
+                  SongSelect,
+                  {
+                    onChange: (value2) => {
+                      formRef.setFieldsValue({
+                        songId: value2?.id
+                      });
+                    }
+                  }
+                ) }) })
+              ] }),
+jsxRuntimeExports.jsx(
+                Form.Item,
+                {
+                  label: "用户ID",
+                  name: "userId",
+                  rules: [{ required: true, message: "请选择用户" }],
+                  children: jsxRuntimeExports.jsx(Input, { placeholder: "请输入用户ID" })
+                }
+              ),
+jsxRuntimeExports.jsx(Form.Item, { label: "歌曲ID", name: "songId", children: jsxRuntimeExports.jsx(Input, { placeholder: "请输入歌曲ID" }) }),
+jsxRuntimeExports.jsx("div", { className: styles$9["button-group"], children: jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleEmotionDecode, size: "large", children: "开始解码" }) })
+            ] })
           }
         );
       });
@@ -21421,14 +21800,14 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
             }
             const res = await neteaseMusicToCloud([record.id], {
               onChange: (progress) => {
-                message$1.loading({
+                message.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message$1.destroy(uploadMessageKey2);
+                message.destroy(uploadMessageKey2);
                 msgSuccess$1(
                   `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
@@ -21438,7 +21817,7 @@ jsxRuntimeExports.jsx(Typography.Text, { copyable: true, style: { fontSize: "12p
             console.log("error", error);
             msgError(`歌曲转存云盘失败: ${error.message}`);
           } finally {
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           }
         };
         const columns = [
@@ -21756,14 +22135,14 @@ jsxRuntimeExports.jsx(
               filteredSongList.map((song) => song.id),
               {
                 onChange: (progress) => {
-                  message$1.loading({
+                  message.loading({
                     content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                     key: uploadMessageKey2,
                     duration: 0
                   });
                 },
                 onComplete: (result) => {
-                  message$1.destroy(uploadMessageKey2);
+                  message.destroy(uploadMessageKey2);
                   msgSuccess$1(
                     `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                   );
@@ -21775,7 +22154,7 @@ jsxRuntimeExports.jsx(
             console.error("转存云盘全部失败:", error);
             msgError(`歌曲转存云盘失败: ${error.message}`);
           } finally {
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           }
         };
         const renderFooter = () => {
@@ -22498,7 +22877,7 @@ dt: formatDuration$1(0),
             setSongList(songList22);
           } catch (error) {
             console.log("error", error);
-            message$1.error("获取歌曲信息失败", error.message);
+            message.error("获取歌曲信息失败", error.message);
           } finally {
             setLoading(false);
           }
@@ -22721,7 +23100,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
                 successCount++;
                 song.uploaded = true;
                 setUploadedSongList((list) => [...list, song]);
-                message$1.loading({
+                message.loading({
                   content: `第${successCount}首歌曲上传完成: ${song.name}。共${songs2.length}首, 已上传${successCount}首, 上传失败${failedCount}首`,
                   key: uploadMessageKey,
                   color: "green",
@@ -22732,7 +23111,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
                 song.uploaded = true;
                 setUploadFailedSongList((list) => [...list, song]);
                 failedCount++;
-                message$1.loading({
+                message.loading({
                   content: `第${failedCount}首歌曲上传失败: ${song.name}。共${songs2.length}首, 已上传${successCount}首, 上传失败${failedCount}首`,
                   color: "red",
                   key: uploadMessageKey,
@@ -22749,7 +23128,7 @@ jsxRuntimeExports.jsx("div", { children: text2 }),
             msgError(`上传失败: ${error.message}`);
           } finally {
             setUploading(false);
-            message$1.destroy(uploadMessageKey);
+            message.destroy(uploadMessageKey);
           }
         };
         const handleUploadAll = async () => {
@@ -23050,14 +23429,14 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
           try {
             const res = await neteaseMusicToCloud([record.id], {
               onChange: (progress) => {
-                message$1.loading({
+                message.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message$1.destroy(uploadMessageKey2);
+                message.destroy(uploadMessageKey2);
                 msgSuccess$1(
                   `歌曲转存云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
@@ -23067,7 +23446,7 @@ jsxRuntimeExports.jsx(TabPane, { tab: "上传列表", children: jsxRuntimeExport
             console.log("error", error);
             msgError(`歌曲转存云盘失败: ${error.message}`);
           } finally {
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           }
         };
         const columns = [
@@ -23463,7 +23842,7 @@ jsxRuntimeExports.jsx("div", { className: styles$2["id"], title: String(id2 || "
               await neteaseMusicToCloud(songIds, {
                 onChange: (progress) => {
                   console.log("progress", progress);
-                  message$1.loading({
+                  message.loading({
                     content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                     key: uploadMessageKey2,
                     duration: 0
@@ -23471,7 +23850,7 @@ jsxRuntimeExports.jsx("div", { className: styles$2["id"], title: String(id2 || "
                 },
                 onComplete: (result) => {
                   console.log("result", result);
-                  message$1.destroy(uploadMessageKey2);
+                  message.destroy(uploadMessageKey2);
                   msgSuccess$1(
                     `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                   );
@@ -23481,7 +23860,7 @@ jsxRuntimeExports.jsx("div", { className: styles$2["id"], title: String(id2 || "
           } catch (error) {
             console.log("error", error);
           } finally {
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           }
         };
         const columns = [
@@ -23979,7 +24358,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           const key = `album-json-${Date.now()}`;
           try {
             setDownloadingBatchJson(true);
-            message$1.loading({
+            message.loading({
               content: `正在导出 ${selectedRows.length} 张专辑的JSON，请稍候...`,
               key,
               duration: 0
@@ -24000,13 +24379,13 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
               });
             }
             downloadAsJson(result, `${singerInfo?.singerName || "歌手"}-专辑合集`);
-            message$1.success({
+            message.success({
               content: `成功导出 ${selectedRows.length} 张专辑`,
               key
             });
           } catch (error) {
             console.error("批量导出JSON失败:", error);
-            message$1.error({
+            message.error({
               content: `批量导出失败: ${error?.message || error}`,
               key
             });
@@ -24020,7 +24399,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
             return;
           }
           const uploadMessageKey2 = "album-to-cloud-batch";
-          message$1.loading({
+          message.loading({
             content: `正在准备转存 ${selectedRows.length} 张专辑到云盘，请稍候...`,
             key: uploadMessageKey2,
             duration: 0
@@ -24028,7 +24407,7 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
           try {
             let index2 = 1;
             for (const album2 of selectedRows) {
-              message$1.loading({
+              message.loading({
                 content: `正在转存第${index2}/${selectedRows.length}张专辑《${album2.name}》到云盘，请稍候...`,
                 key: uploadMessageKey2,
                 duration: 0
@@ -24036,21 +24415,21 @@ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
               await albumToCloud(album2.id);
               index2++;
             }
-            message$1.success({
+            message.success({
               content: `成功转存 ${selectedRows.length} 张专辑`,
               key: uploadMessageKey2,
               duration: 3e3
             });
           } catch (error) {
             console.error("批量转存失败:", error);
-            message$1.error({
+            message.error({
               content: `批量转存失败: ${error?.message || error}`,
               key: uploadMessageKey2,
               duration: 3e3
             });
             msgError(`批量转存失败: ${error?.message || error}`);
           } finally {
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           }
         };
         const handleSelectAll = () => {
@@ -24668,7 +25047,7 @@ jsxRuntimeExports.jsx(
               await neteaseMusicToCloud(songIds, {
                 onChange: (progress) => {
                   console.log("progress", progress);
-                  message$1.loading({
+                  message.loading({
                     content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                     key: uploadMessageKey2,
                     duration: 0
@@ -24676,7 +25055,7 @@ jsxRuntimeExports.jsx(
                 },
                 onComplete: (result) => {
                   console.log("result", result);
-                  message$1.destroy(uploadMessageKey2);
+                  message.destroy(uploadMessageKey2);
                   msgSuccess$1(
                     `专辑歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                   );
@@ -24686,7 +25065,7 @@ jsxRuntimeExports.jsx(
           } catch (error) {
             console.log("error", error);
           } finally {
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           }
         };
         return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取专辑歌曲列表", children: jsxRuntimeExports.jsxs(Space, { children: [
@@ -24770,21 +25149,21 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             }
             const songs2 = songRes.songs;
             const songIds = songs2.map((song) => song.id);
-            message$1.loading({
+            message.loading({
               content: "开始上传歌手全部歌曲到云盘，请稍候...",
               key: uploadMessageKey2,
               duration: 0
             });
             const res = await neteaseMusicToCloud(songIds, {
               onChange: (progress) => {
-                message$1.loading({
+                message.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message$1.destroy(uploadMessageKey2);
+                message.destroy(uploadMessageKey2);
                 msgSuccess$1(
                   `歌手全部歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
                 );
@@ -24793,9 +25172,9 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleNeteaseMusicTo
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           } finally {
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           }
         };
         return jsxRuntimeExports.jsx(Form, { children: jsxRuntimeExports.jsx(Form.Item, { label: "获取歌手歌曲列表", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
@@ -25447,21 +25826,21 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCopyUserCookie
           try {
             const songs2 = await getPlaylistAllData(playlistId);
             const songIds = songs2.map((song) => song.id);
-            message$1.loading({
+            message.loading({
               content: "开始上传歌单歌曲到云盘，请稍候...",
               key: uploadMessageKey2,
               duration: 0
             });
             const res = await neteaseMusicToCloud(songIds, {
               onChange: (progress) => {
-                message$1.loading({
+                message.loading({
                   content: `第${progress.current}首歌曲上传完成: ${progress.song.name}, 共${progress.total}首, 已上传${progress.successCount}首, 上传失败${progress.errorCount}首`,
                   key: uploadMessageKey2,
                   duration: 0
                 });
               },
               onComplete: (result) => {
-                message$1.destroy(uploadMessageKey2);
+                message.destroy(uploadMessageKey2);
                 console.log("result", result);
                 msgSuccess$1(
                   `歌单歌曲转云盘完成, 共${result.total}首歌曲, 已上传${result.successCount}首, 上传失败${result.errorCount}首`
@@ -25471,9 +25850,9 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleCopyUserCookie
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           } finally {
-            message$1.destroy(uploadMessageKey2);
+            message.destroy(uploadMessageKey2);
           }
         };
         const [sorterRuleValue, setSorterRuleValue] = useState(
@@ -25827,7 +26206,7 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
         };
         const handleGetSongAllComments = async () => {
           const loadingMessageKey = "get-song-all-comments";
-          message$1.loading({
+          message.loading({
             content: "开始获取歌曲所有评论，请稍候...",
             key: loadingMessageKey,
             duration: 0
@@ -25836,7 +26215,7 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             const res = await getSongAllComments(songId.split(",")[0], {
               onChange: (progress) => {
                 const { page, totalPage, total, allComments } = progress;
-                message$1.loading({
+                message.loading({
                   content: `当前正在获取第${page}/${totalPage}页评论，已获取${allComments.length}条评论，共${total}条评论`,
                   key: loadingMessageKey,
                   duration: 0
@@ -25847,8 +26226,8 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
           } catch (error) {
             console.log("error", error);
           } finally {
-            message$1.destroy(loadingMessageKey);
-            message$1.success({
+            message.destroy(loadingMessageKey);
+            message.success({
               content: "获取歌曲所有评论完成。",
               duration: 3e3
             });
@@ -25997,6 +26376,21 @@ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleListenSongChec
           if (!time) return "-";
           return dayjs(time).format("YYYY-MM-DD HH:mm:ss");
         };
+        const handleGetUserPlayRecord = async () => {
+          try {
+            const values = await form.validateFields();
+            const { uid } = values;
+            if (!uid) {
+              return msgError("请输入用户ID");
+            }
+            const userPlayRecord = await getUserPlayRecord(uid, 1);
+            console.log("userPlayRecord", userPlayRecord);
+            msgSuccess$1("获取用户播放记录成功");
+          } catch (error) {
+            console.error("获取用户播放记录失败:", error);
+            msgError(error.message || "获取用户播放记录失败");
+          }
+        };
         const parseResourceInfo = (resourceInfo, threadId) => {
           if (resourceInfo && resourceInfo !== "null" && typeof resourceInfo === "string") {
             try {
@@ -26073,6 +26467,16 @@ jsxRuntimeExports.jsx(Form.Item, { children: jsxRuntimeExports.jsx(
                 onClick: handleGetUserSubCount,
                 loading,
                 children: "获取用户云盘数据"
+              }
+            ) }),
+jsxRuntimeExports.jsx(Form.Item, { children: jsxRuntimeExports.jsx(
+              MyButton,
+              {
+                type: "primary",
+                icon: jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
+                onClick: handleGetUserPlayRecord,
+                loading,
+                children: "获取用户播放记录"
               }
             ) })
           ] }),
@@ -26290,7 +26694,7 @@ jsxRuntimeExports.jsx(
         );
       });
       const styles = {
-        "button-group": "_button-group_dcsms_1"
+        "button-group": "_button-group_5ww7y_1"
       };
       const ButtonGroup = () => {
         const { functionConfig } = useConfig();
@@ -26983,7 +27387,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-BrlpJLU8-BnWmt2-V.js", ['./__monkey.entry-BBuj0kA4.js', './AbstractID3Parser-hLgvTdw1-Bk7FeV9z.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-D-KSEeER-Dc9HJD1v.js'], (function (exports, module) {
+System.register("./MpegParser-Bk7y4DAx-D70qPym6.js", ['./__monkey.entry-COfOYe2t.js', './AbstractID3Parser-CADeZ8JN-BEi1YRh3.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DbxayTsB-B6_Nuzy8.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -27578,7 +27982,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-C1BnzIe_-B0TjRBmO.js", ['./__monkey.entry-BBuj0kA4.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-BLsTNAO8-CMIJkIZJ.js", ['./__monkey.entry-COfOYe2t.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -28085,7 +28489,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-dTFox4B4-CbIQh1Gr.js", ['./__monkey.entry-BBuj0kA4.js', './ID3v2Parser-D-KSEeER-Dc9HJD1v.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-jQqZhio---LTxPFTG.js", ['./__monkey.entry-COfOYe2t.js', './ID3v2Parser-DbxayTsB-B6_Nuzy8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -28259,7 +28663,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-BykVm2zO-CEGTrOba.js", ['./__monkey.entry-BBuj0kA4.js', './ID3v2Parser-D-KSEeER-Dc9HJD1v.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-BFiSZ6kI-B9s_buaS.js", ['./__monkey.entry-COfOYe2t.js', './ID3v2Parser-DbxayTsB-B6_Nuzy8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -28430,7 +28834,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-BS-jv-jA-DJ1AMUW6.js", ['./__monkey.entry-BBuj0kA4.js', './AbstractID3Parser-hLgvTdw1-Bk7FeV9z.js', './ID3v2Parser-D-KSEeER-Dc9HJD1v.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-gtXZYR8Z-Dl9HdfHZ.js", ['./__monkey.entry-COfOYe2t.js', './AbstractID3Parser-CADeZ8JN-BEi1YRh3.js', './ID3v2Parser-DbxayTsB-B6_Nuzy8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -28528,7 +28932,7 @@ System.register("./DsfParser-BS-jv-jA-DJ1AMUW6.js", ['./__monkey.entry-BBuj0kA4.
   };
 }));
 
-System.register("./FlacParser-CH9bhYK5-oAu9iH-9.js", ['./__monkey.entry-BBuj0kA4.js', './VorbisParser-C4GOPyZD-B5iaAgOH.js', './AbstractID3Parser-hLgvTdw1-Bk7FeV9z.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-D-KSEeER-Dc9HJD1v.js'], (function (exports, module) {
+System.register("./FlacParser-Cj7SL6Mu-Cl6_vMX6.js", ['./__monkey.entry-COfOYe2t.js', './VorbisParser-Dp5U_9C7-BjMQpqhA.js', './AbstractID3Parser-CADeZ8JN-BEi1YRh3.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DbxayTsB-B6_Nuzy8.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -28680,7 +29084,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-LidVFBq3-Dh0IrR-o.js", ['./__monkey.entry-BBuj0kA4.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-Bxk2scNk-CCzKVTgX.js", ['./__monkey.entry-COfOYe2t.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -29287,7 +29691,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-DbEqw0H1-D5ilwBL2.js", ['./__monkey.entry-BBuj0kA4.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-D3FOvkGA-Eh4taf9J.js", ['./__monkey.entry-COfOYe2t.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -30118,7 +30522,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-G_Q4hgBP-C_aJZeEe.js", ['./__monkey.entry-BBuj0kA4.js', './AbstractID3Parser-hLgvTdw1-Bk7FeV9z.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-D-KSEeER-Dc9HJD1v.js'], (function (exports, module) {
+System.register("./MusepackParser-DTu9gqV1-6k2MkpqH.js", ['./__monkey.entry-COfOYe2t.js', './AbstractID3Parser-CADeZ8JN-BEi1YRh3.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DbxayTsB-B6_Nuzy8.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -30395,7 +30799,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-hLgvTdw1-Bk7FeV9z.js", ['./__monkey.entry-BBuj0kA4.js', './ID3v2Parser-D-KSEeER-Dc9HJD1v.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-CADeZ8JN-BEi1YRh3.js", ['./__monkey.entry-COfOYe2t.js', './ID3v2Parser-DbxayTsB-B6_Nuzy8.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -30459,7 +30863,7 @@ System.register("./AbstractID3Parser-hLgvTdw1-Bk7FeV9z.js", ['./__monkey.entry-B
   };
 }));
 
-System.register("./OggParser-DJgfB5Hs-C10i7yZ9.js", ['./__monkey.entry-BBuj0kA4.js', './VorbisParser-C4GOPyZD-B5iaAgOH.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-BKVIeU2U-BUv9J2fz.js", ['./__monkey.entry-COfOYe2t.js', './VorbisParser-Dp5U_9C7-BjMQpqhA.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -30734,7 +31138,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-C4GOPyZD-B5iaAgOH.js", ['./__monkey.entry-BBuj0kA4.js'], (function (exports, module) {
+System.register("./VorbisParser-Dp5U_9C7-BjMQpqhA.js", ['./__monkey.entry-COfOYe2t.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -30950,7 +31354,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-wBTOp0zK-BVilI6ku.js", ['./__monkey.entry-BBuj0kA4.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-D6f5AIXy-CA1DAlXB.js", ['./__monkey.entry-COfOYe2t.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -31130,7 +31534,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-B483qZKQ-BzWjsMMr.js", ['./__monkey.entry-BBuj0kA4.js', './ID3v2Parser-D-KSEeER-Dc9HJD1v.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-BdgSlinl-xoEgA9HE.js", ['./__monkey.entry-COfOYe2t.js', './ID3v2Parser-DbxayTsB-B6_Nuzy8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -31403,7 +31807,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-D-KSEeER-Dc9HJD1v.js", ['./__monkey.entry-BBuj0kA4.js'], (function (exports, module) {
+System.register("./ID3v2Parser-DbxayTsB-B6_Nuzy8.js", ['./__monkey.entry-COfOYe2t.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
