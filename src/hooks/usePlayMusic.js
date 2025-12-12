@@ -11,11 +11,11 @@ import {
   downloadFileWithBlob,
   getFileBlob,
 } from '@/utils/download';
-import { msgError } from '@/utils/modal';
+import { msgError, msgSuccess } from '@/utils/modal';
 import { getDownloadQuality } from '@/utils/music';
+import { message } from 'antd';
 import { useRef, useState } from 'react';
 import { useConfig } from './useConfig';
-import { message } from 'antd';
 
 /** 全局音频对象 */
 const audio = new Audio();
@@ -237,7 +237,7 @@ export const usePlayMusic = () => {
       duration: 0,
     });
     try {
-      const allComments = await getSongAllCommentsApi(id, {
+      const res = await getSongAllCommentsApi(id, {
         onChange: (progress) => {
           const { page, totalPage, total, allComments } = progress;
           message.loading({
@@ -247,11 +247,14 @@ export const usePlayMusic = () => {
           });
         },
       });
-      message.success({
-        content: '获取歌曲评论完成。',
-        duration: 3000,
-      });
-      return allComments;
+      console.log('res', res);
+      if (res.code !== 200) {
+        msgError(res.message || res.msg || '获取歌曲评论失败');
+        throw new Error(res.message || res.msg || '获取歌曲评论失败');
+      }
+      const { allComments, hotComments } = res;
+      msgSuccess('获取歌曲评论完成');
+      return { allComments, hotComments };
     } catch (error) {
       console.log('error', error);
     } finally {

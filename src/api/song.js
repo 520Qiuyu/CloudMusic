@@ -167,6 +167,7 @@ export const getSongComment1 = (id, options = {}) => {
 export const getSongAllComments = async (id, options = {}) => {
   const { onChange } = options;
   const allComments = [];
+  let hotComments = [];
   const limit = 1000; // 最大单次请求官方支持100，若不支持可改为更小值
   let hasMore = true;
   let before;
@@ -178,10 +179,11 @@ export const getSongAllComments = async (id, options = {}) => {
       throw new Error(res.message || res.msg || '获取歌曲评论失败');
     }
     console.log('res', res);
-    const { comments, totalCount, cursor } = res.data;
+    const { comments, totalCount, cursor, hotComments: hotCommentsData } = res.data;
     allTotal ||= totalCount;
     hasMore = comments.length > 0;
     allComments.push(...comments);
+    hotComments = hotCommentsData;
     onChange?.({
       limit,
       page: Math.ceil(allComments.length / limit) + 1,
@@ -189,6 +191,7 @@ export const getSongAllComments = async (id, options = {}) => {
       totalPage: Math.ceil(allTotal / limit),
       comments,
       allComments,
+      hotComments,
     });
     if (hasMore) {
       // 网易云分页有2种模式，这里采用before方式以最大化获取全部评论
@@ -196,7 +199,11 @@ export const getSongAllComments = async (id, options = {}) => {
     }
   }
   // downloadAsJson(allComments, `${id}-评论.json`);
-  return allComments;
+  return {
+    code: 200,
+    allComments,
+    hotComments,
+  };
 };
 
 /**

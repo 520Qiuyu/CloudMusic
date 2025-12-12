@@ -41,6 +41,11 @@ const FUNCTION_SWITCH_STRATEGIES = [
     type: 'switch',
   },
   {
+    label: '情感解码',
+    key: 'enableEmotionDecode',
+    type: 'switch',
+  },
+  {
     label: 'GitHub信息',
     key: 'enableGithubInfo',
     type: 'switch',

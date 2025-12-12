@@ -808,6 +808,28 @@
             ]
         };
 
+        // 模拟热评数据
+        window.mockHotCommentsData = [{
+            "user": {
+                "userId": 1606893193,
+                "nickname": "落樱何寻",
+                "avatarUrl": "http://p4.music.126.net/QTGndpdDMSlYiTc-jLwIaw==/109951172228808897.jpg",
+                "vipType": 11,
+                "authStatus": 0
+            },
+            "commentId": 9414581646,
+            "threadId": "R_SO_4_1333006961",
+            "content": "这首歌让我想起了很多往事，旋律真的很动人",
+            "time": 1765412099137,
+            "likedCount": 15,
+            "replyCount": 3,
+            "liked": false,
+            "ipLocation": {
+                "location": "广东",
+                "userId": 1606893193
+            }
+        }];
+
         // 模拟评论数据 - 包含多个用户的评论，其中部分是该用户的
         window.mockCommentsData = [{
             "user": {
@@ -1039,6 +1061,22 @@
                 </div>
             </div>
         </div>
+
+        <div id="hotCommentsCard" class="card" style="display: none;">
+            <div class="comments-section">
+                <div class="comments-header">
+                    <h2>🔥 热门评论</h2>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="hotCommentsCount">0</div>
+                            <div class="stat-label">热评数量</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="hotCommentsList" class="comment-list"></div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -1211,6 +1249,67 @@
         }
 
         /**
+         * 渲染热评列表
+         */
+        function renderHotComments(hotComments) {
+            const hotCommentsList = document.getElementById('hotCommentsList');
+            const hotCommentsCountEl = document.getElementById('hotCommentsCount');
+
+            if (!hotComments || hotComments.length === 0) {
+                hotCommentsCountEl.textContent = 0;
+                hotCommentsList.innerHTML = `
+                    <div class="empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <p>暂无热门评论</p>
+                    </div>
+                `;
+                document.getElementById('hotCommentsCard').style.display = 'none';
+                return;
+            }
+
+            hotCommentsCountEl.textContent = hotComments.length;
+
+            hotCommentsList.innerHTML = hotComments.map(comment => {
+                const vipTag = comment.user?.vipType > 0
+                    ? `<span class="tag tag-vip">VIP${comment.user.vipType}</span>`
+                    : '';
+                const likedTag = comment.likedCount > 0
+                    ? `<span class="tag tag-liked">👍 ${comment.likedCount}</span>`
+                    : '';
+                const locationTag = comment.ipLocation?.location
+                    ? `<span class="tag tag-location">📍 ${comment.ipLocation.location}</span>`
+                    : '';
+
+                return `
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <img src="${comment.user?.avatarUrl || ''}" alt="${comment.user?.nickname || ''}" class="avatar" style="width: 40px; height: 40px;">
+                            <div class="comment-user-info">
+                                <div class="comment-user-name">${comment.user?.nickname || '未知用户'}</div>
+                                <div class="comment-meta">
+                                    <span>${formatTime(comment.time)}</span>
+                                    ${locationTag}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-content">${comment.content || '-'}</div>
+                        <div class="comment-footer">
+                            <div class="comment-tags">
+                                ${vipTag}
+                                ${likedTag}
+                                ${comment.replyCount > 0 ? `<span class="tag tag-location">💬 ${comment.replyCount}条回复</span>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('hotCommentsCard').style.display = 'block';
+        }
+
+        /**
          * 处理搜索
          */
         async function handleSearch() {
@@ -1261,6 +1360,10 @@
                 renderComments(userComments, commentsData.length);
                 document.getElementById('commentsCard').style.display = 'block';
 
+                // 显示热评
+                const hotCommentsData = window.mockHotCommentsData || [];
+                renderHotComments(hotCommentsData);
+
             } catch (error) {
                 showError('获取数据失败：' + error.message);
             } finally {
@@ -1277,6 +1380,7 @@
             document.getElementById('songId').value = '';
             document.getElementById('userInfoCard').style.display = 'none';
             document.getElementById('commentsCard').style.display = 'none';
+            document.getElementById('hotCommentsCard').style.display = 'none';
             document.getElementById('errorContainer').innerHTML = '';
         }
 

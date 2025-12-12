@@ -35,15 +35,59 @@ const EmotionDecode = forwardRef((props, ref) => {
       const values = await formRef.getFieldsValue();
       console.log('values', values);
       const { userId, songId, user, song } = values;
-      // 获取所有评论
-      const comments = await getSongAllComments(songId);
-      console.log('comments', comments);
+      const { allComments, hotComments } = await getSongAllComments(songId);
 
+      const mapRule = (comment) => {
+        const {
+          commentId,
+          content,
+          ipLocation,
+          replyCount,
+          likedCount,
+          liked,
+          time,
+          threadId,
+          timeStr,
+          user,
+        } = comment;
+        return {
+          commentId,
+          content,
+          ipLocation,
+          replyCount,
+          likedCount,
+          liked,
+          time,
+          threadId,
+          timeStr,
+          user: {
+            userId: user.userId,
+            nickname: user.nickname,
+            avatarUrl: user.avatarUrl,
+            vipType: user.vipType,
+            authStatus: user.authStatus,
+            followed: user.followed,
+            isHug: user.isHug,
+          },
+        };
+      };
+
+      // 获取所有评论
+      const comments = allComments?.map(mapRule);
+      // 获取热评
+      const hComments = hotComments?.map(mapRule);
       // 获取用户发送评论
       const userComments = comments.filter(
         (comment) => comment.user.userId === userId,
       );
-      console.log('userComments', userComments);
+
+      console.log('comments', comments);
+      console.log('hotComments', hotComments);
+
+      console.log(
+        `${user.nickname}-${song.name}-userComments`,
+        JSON.stringify(userComments, null, 2),
+      );
 
       // 注入内容
       const content = template.replace(
@@ -52,6 +96,7 @@ const EmotionDecode = forwardRef((props, ref) => {
         window.mockUserData = ${JSON.stringify(user)};
         window.mockSongData = ${JSON.stringify(song)};
         window.mockCommentsData = ${JSON.stringify(comments)};
+        window.mockHotCommentsData = ${JSON.stringify(hComments)};
       `,
       );
 
@@ -68,12 +113,19 @@ const EmotionDecode = forwardRef((props, ref) => {
       open={visible}
       onCancel={close}
       width={1000}
+      styles={{
+        body: {
+          maxHeight: '75vh',
+          overflowY: 'auto',
+          padding: '0 16px',
+        },
+      }}
       footer={null}
       centered>
       {/* TODO: 实现情感解码功能 */}
       <Form form={formRef}>
-        <Row style={{ marginBottom: 16 }} gutter={16}>
-          <Col span={12}>
+        <Row style={{ marginBottom: 16 }} gutter={16} sm={0}>
+          <Col span={24} lg={12}>
             <Form.Item label='搜索用户' name='user'>
               <UserSelect
                 onChange={(value) => {
@@ -84,7 +136,7 @@ const EmotionDecode = forwardRef((props, ref) => {
               />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col span={24} lg={12}>
             <Form.Item label='搜索歌曲' name='song'>
               <SongSelect
                 onChange={(value) => {
@@ -98,7 +150,7 @@ const EmotionDecode = forwardRef((props, ref) => {
         </Row>
 
         <Row gutter={16}>
-          <Col span={12}>
+          <Col span={24} lg={12} style={{ marginBottom: 24 }}>
             <Form.Item
               noStyle
               name='userId'
@@ -106,7 +158,7 @@ const EmotionDecode = forwardRef((props, ref) => {
               <UserCard />
             </Form.Item>
           </Col>
-          <Col span={12}>
+          <Col span={24} lg={12}>
             <Form.Item
               noStyle
               name='songId'
