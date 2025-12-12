@@ -32,7 +32,7 @@ System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 System.set("user:node-forge", (()=>{const _=forge;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-CKUYfb6m.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-BBWv1z3R.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -44,9 +44,9 @@ System.register("./__entry.js", ['./__monkey.entry-CKUYfb6m.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-CKUYfb6m.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-BBWv1z3R.js", ['react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
-  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Form, Row, Col, Spin, Descriptions, Space, Image, Progress, Tabs, Pagination, ConfigProvider, Select, Checkbox, Card, Badge, Avatar, Tooltip, Empty, List, Switch, TimePicker, DatePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, UserOutlined, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, CommentOutlined, DatabaseOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, HeartOutlined, InfoCircleOutlined, CloudOutlined;
+  var forwardRef, useState, memo, useEffect, useMemo, useRef, useImperativeHandle, require$$0, useCallback, useLayoutEffect, message, Modal, Table, Upload, Button, Tag, Input, Typography, Form, Row, Col, DatePicker, InputNumber, Spin, Descriptions, Space, Image, Progress, Tabs, Pagination, ConfigProvider, Select, Checkbox, Card, Badge, Avatar, Tooltip, Empty, List, Switch, TimePicker, Radio, require$$0$1, forge, UploadOutlined, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, InboxOutlined, PauseCircleOutlined, PlayCircleOutlined, SaveOutlined, DownloadOutlined, CloudUploadOutlined, PauseCircleFilled, PlayCircleFilled, UserOutlined, CopyOutlined, CopyrightOutlined, FileOutlined, SortAscendingOutlined, DeleteOutlined, CommentOutlined, DatabaseOutlined, PictureOutlined, CheckOutlined, CustomerServiceOutlined, CodeOutlined, OrderedListOutlined, SearchOutlined, HeartOutlined, InfoCircleOutlined, CloudOutlined;
   return {
     setters: [module => {
       forwardRef = module.forwardRef;
@@ -71,6 +71,8 @@ System.register("./__monkey.entry-CKUYfb6m.js", ['react', 'antd', 'react-dom', '
       Form = module.Form;
       Row = module.Row;
       Col = module.Col;
+      DatePicker = module.DatePicker;
+      InputNumber = module.InputNumber;
       Spin = module.Spin;
       Descriptions = module.Descriptions;
       Space = module.Space;
@@ -89,7 +91,6 @@ System.register("./__monkey.entry-CKUYfb6m.js", ['react', 'antd', 'react-dom', '
       List = module.List;
       Switch = module.Switch;
       TimePicker = module.TimePicker;
-      DatePicker = module.DatePicker;
       Radio = module.Radio;
     }, module => {
       require$$0$1 = module.default;
@@ -146,7 +147,7 @@ System.register("./__monkey.entry-CKUYfb6m.js", ['react', 'antd', 'react-dom', '
 
       const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
-      importCSS(' ._search-form_1aabt_1{padding:16px 0}._songInfoColumn_19zpd_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_19zpd_1 ._songIndex_19zpd_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_19zpd_1 ._songCover_19zpd_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover{transform:scale(1.05)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._btnWrapper_19zpd_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._songCoverImg_19zpd_33{filter:brightness(.85)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._songCoverImg_19zpd_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._songName_19zpd_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84,._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84{max-width:160px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_19zpd_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_19zpd_1 10s linear infinite}._currentSong_19zpd_102 td{background:var(--background)!important;animation:_rotate_19zpd_1 10s linear infinite}@keyframes _rotate_19zpd_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_19zpd_121{background-color:#f06161}._matchError_19zpd_121 td{background-color:#f06161!important}._footer_19zpd_128{margin-top:16px;display:flex;align-items:center;gap:16px;border-top:1px solid #f0f0f0;padding:16px 0}._footer_19zpd_128 ._actions_19zpd_136{margin-left:auto;display:flex;gap:8px}._stats_19zpd_142{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_19zpd_142 ._size_19zpd_150{color:#666}._stats_19zpd_142 ._divider_19zpd_153{color:#999;margin:0 4px}._stats_19zpd_142 .ant-tag{margin:0}._playlist_19zpd_161 .ant-modal-body{padding-bottom:0}._autoAddContent_19zpd_165 ._title_19zpd_165{font-size:16px;margin-bottom:8px}._autoAddContent_19zpd_165 ._statsWrapper_19zpd_169{margin-bottom:16px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._label_19zpd_179{color:#666}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._value_19zpd_182{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_19zpd_165 ._listHeader_19zpd_187{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_19zpd_165 ._listItem_19zpd_214{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_19zpd_165 ._listItem_19zpd_214:hover{background:#f5f5f5}._autoAddContent_19zpd_165 ._listItem_19zpd_214:last-child{margin-bottom:0}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemName_19zpd_230{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemCount_19zpd_236{color:#1890ff;margin-left:8px}._deleteConfirmation_19zpd_241{font-size:14px}._deleteConfirmation_19zpd_241 ._title_19zpd_165{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_19zpd_241 ._title_19zpd_165 ._count_19zpd_249{color:#1890ff}._deleteConfirmation_19zpd_241 ._songs_19zpd_252{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:hover{background:#f0f0f0}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:not(:last-child){margin-bottom:4px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._text_19zpd_281{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._icon_19zpd_288{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_19zpd_302{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_19zpd_302 ._singer-option-content_19zpd_315{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-name_19zpd_330{font-size:14px}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-id_19zpd_333{font-size:13px}._singer-option_19zpd_302:hover ._singer-option-content_19zpd_315{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_19zpd_341{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_19zpd_341 ._song-name_19zpd_347{font-size:14px;color:#333;font-weight:500}._song-label_19zpd_341 ._tag-group_19zpd_352{display:flex;gap:8px;flex-wrap:wrap}._song-option_19zpd_358{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_19zpd_358:hover{background-color:#f5f5f5}._song-option_19zpd_358 ._song-info_19zpd_371{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_19zpd_358 ._song-name_19zpd_347{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_19zpd_358 ._tag-group_19zpd_352{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_19zpd_358 ._tag-group_19zpd_352 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_19zpd_358 ._album-cover_19zpd_400{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_19zpd_358 ._album-cover_19zpd_400:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_19zpd_416{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_19zpd_416 ._song-info_19zpd_371{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._artist-info_19zpd_432{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._album-info_19zpd_440{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._copy-text_yqw94_1{display:flex;align-items:center;width:100%}._copy-text_yqw94_1 ._text_yqw94_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_yqw94_1 ._copy-btn_yqw94_12{flex-shrink:0;padding:0;height:fit-content}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._song-header-wrapper_17ywg_1{position:relative;z-index:1;border-bottom:1px solid #f0f0f0;border-radius:8px 8px 0 0;overflow:hidden}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1{display:flex;gap:16px;padding:16px;background-color:#ffffff1a;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._cover-wrapper_17ywg_15{flex:0 0 auto}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._cover-wrapper_17ywg_15 .ant-image{border-radius:8px;overflow:hidden;border:2px solid rgba(255,255,255,.2)}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._cover-wrapper_17ywg_15 ._cover_17ywg_15{border-radius:8px}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._cover-wrapper_17ywg_15 ._cover_17ywg_15:not([src]){display:none}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._song-basic-info_17ywg_29{flex:1;min-width:0}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._song-basic-info_17ywg_29 ._name-row_17ywg_33{display:flex;align-items:center;gap:8px;margin-bottom:8px}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._song-basic-info_17ywg_29 ._name-row_17ywg_33 ._name_17ywg_33{font-size:18px;font-weight:600;color:#262626}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._song-basic-info_17ywg_29 ._artists_17ywg_44{margin-bottom:8px;color:#8c8c8c;font-size:14px;line-height:1.5}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._song-basic-info_17ywg_29 ._album_17ywg_50{margin-bottom:0;color:#8c8c8c;font-size:12px;line-height:1.5}._song-stats_17ywg_57{display:flex;align-items:center;justify-content:space-around;padding:16px 0;border-bottom:1px solid #f0f0f0}._song-stats_17ywg_57 ._stat-item_17ywg_64{display:flex;flex-direction:column;align-items:center;gap:4px}._song-stats_17ywg_57 ._stat-item_17ywg_64 ._stat-value_17ywg_70{font-size:20px;font-weight:600;color:#262626}._song-stats_17ywg_57 ._stat-item_17ywg_64 ._stat-label_17ywg_75{font-size:12px;color:#8c8c8c}._song-stats_17ywg_57 ._stat-divider_17ywg_79{width:1px;height:40px;background-color:#f0f0f0}._descriptions_17ywg_85{padding:16px}._user-header-wrapper_kph0i_1{position:relative;z-index:1;border-bottom:1px solid #f0f0f0;border-radius:8px 8px 0 0;overflow:hidden}._user-header-wrapper_kph0i_1 ._background-image_kph0i_8{position:absolute;width:100%;height:100%;inset:0;z-index:-1;object-fit:cover}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1{display:flex;gap:16px;padding:16px;background-color:#ffffff1a;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._avatar-wrapper_kph0i_23{flex:0 0 auto}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._avatar-wrapper_kph0i_23 .ant-image{border:2px solid #f0f0f0;border-radius:50%;overflow:hidden}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._avatar-wrapper_kph0i_23 ._avatar_kph0i_23:not([src]){display:none}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._user-basic-info_kph0i_34{flex:1;min-width:0}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._user-basic-info_kph0i_34 ._nickname-row_kph0i_38{display:flex;align-items:center;gap:8px;margin-bottom:8px}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._user-basic-info_kph0i_34 ._nickname-row_kph0i_38 ._nickname_kph0i_38{font-size:18px;font-weight:600;color:#262626}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._user-basic-info_kph0i_34 ._signature_kph0i_49{margin-bottom:8px;color:#8c8c8c;font-size:14px;line-height:1.5}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._user-basic-info_kph0i_34 ._description_kph0i_55{margin-bottom:0;color:#8c8c8c;font-size:12px;line-height:1.5}._user-stats_kph0i_62{display:flex;align-items:center;justify-content:space-around;padding:16px 0;border-bottom:1px solid #f0f0f0}._user-stats_kph0i_62 ._stat-item_kph0i_69{display:flex;flex-direction:column;align-items:center;gap:4px}._user-stats_kph0i_62 ._stat-item_kph0i_69 ._stat-value_kph0i_75{font-size:20px;font-weight:600;color:#262626}._user-stats_kph0i_62 ._stat-item_kph0i_69 ._stat-label_kph0i_80{font-size:12px;color:#8c8c8c}._user-stats_kph0i_62 ._stat-divider_kph0i_84{width:1px;height:40px;background-color:#f0f0f0}._descriptions_kph0i_90{padding:16px}._skeleton-descriptions_kph0i_94{margin-bottom:16px}._skeleton-descriptions_kph0i_94 ._skeleton-description-item_kph0i_97{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:8px 0}._button-group_1rls2_1{display:flex;justify-content:center;gap:20px;margin-top:20px}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._song-info-render_1piqa_1{display:flex;align-items:center;gap:12px;min-width:0}._song-info-render_1piqa_1 ._cover-wrapper_1piqa_7{flex:0 0 60px;border-radius:6px;overflow:hidden;cursor:pointer}._song-info-render_1piqa_1 ._cover-wrapper_1piqa_7 ._cover-placeholder_1piqa_13{width:60px;height:60px;background-color:#f0f0f0;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._name_1piqa_31{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._name_1piqa_31._no-source_1piqa_39{color:#bfbfbf}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._alias_1piqa_42{font-size:12px;color:#8c8c8c;font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._id_1piqa_50{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_1tg5n_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_1tg5n_1 ._cover_1tg5n_8{flex:0 0 fit-content;border-radius:6px;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_1tg5n_1 ._cover_1tg5n_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover:before{opacity:1}._playlist-info_1tg5n_1 ._cover_1tg5n_8:active{transform:scale(1.02)}._playlist-info_1tg5n_1 ._info_1tg5n_38{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._name_1tg5n_45{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56{display:flex;align-items:center;gap:4px;font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56 .ant-avatar{flex:0 0 20px}._playlist-item_1tg5n_73{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_1tg5n_73:hover{background-color:#fafafa!important}._playlist-item_1tg5n_73:active,._playlist-item_1tg5n_73:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_17qrr_22 ._select_17qrr_22{width:100%}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26{display:flex;flex-direction:column;height:400px}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26 ._btn-group_17qrr_31{display:flex;justify-content:flex-end;gap:16px}._singer-choose_17qrr_26 ._option-label_17qrr_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._singer-name_17qrr_43{font-weight:500}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._tag-group_17qrr_46 ._tag_17qrr_46:not(:last-child){margin-right:8px}._upload-list_17qrr_50 .ant-table{margin:16px 0}._upload-footer_17qrr_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_17qrr_62{flex:1 0 450px;display:flex;align-items:center;color:#666;font-size:13px;margin-right:auto;gap:3px}._upload-stats_17qrr_62 ._size-text_17qrr_71{color:#999}._upload-stats_17qrr_62 ._divider_17qrr_74{margin:0 8px;color:#d9d9d9}._upload-confirm_17qrr_79{padding:16px 0;font-size:14px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83:last-child{margin-bottom:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._label_17qrr_91{color:#666;width:80px;flex-shrink:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96{color:#333;font-weight:500}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96 ._size_17qrr_71{margin-left:4px;color:#999;font-weight:400}._upload-progress_17qrr_106 ._progress-header_17qrr_106{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._progress-info_17qrr_113{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._percentage_17qrr_117{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_17qrr_106 ._progress-list_17qrr_122{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127:last-child{border-bottom:none}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137{flex:1;min-width:0;padding-right:16px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._name_17qrr_142{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._artist_17qrr_146{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_17qrr_152 .ant-modal-body{padding:24px}._uploadProgressModal_17qrr_152 ._progressContent_17qrr_155{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._detail_17qrr_171{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._label_17qrr_91{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._value_17qrr_96 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197{width:100%}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedTitle_17qrr_200{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._songName_17qrr_212{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._errorMsg_17qrr_217{font-size:12px;color:#ff4d4f}._uploadModal_17qrr_222 .ant-modal-body{padding:24px}._progressSection_17qrr_226{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._progressInfo_17qrr_161 ._count_17qrr_245{font-size:14px;color:#666;margin-top:4px}._statsContainer_17qrr_176{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._statsContainer_17qrr_176 ._statsTag_17qrr_260{padding:4px 12px;font-size:14px}._songList_17qrr_265{max-height:300px;overflow-y:auto;padding-right:4px}._songList_17qrr_265::-webkit-scrollbar{width:6px}._songList_17qrr_265::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_17qrr_265::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_17qrr_281{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_17qrr_281:not(:last-child){margin-bottom:8px}._songItem_17qrr_281:hover{background:#f5f5f5}._songInfo_17qrr_296{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_17qrr_296 ._songName_17qrr_212{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_17qrr_296 ._artistName_17qrr_310{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._details_1f8uq_1{display:flex;flex-direction:column;gap:2px}._name_1f8uq_7{font-size:13px;font-weight:500;color:#262626}._id_1f8uq_13{font-size:12px;color:#8c8c8c}._album-list-modal_oa7mi_1 .ant-modal-body{padding:16px 0 0}._modal-title_oa7mi_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_oa7mi_12{display:flex;align-items:center;gap:16px}._title-text_oa7mi_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_oa7mi_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_oa7mi_32{display:flex;align-items:center;gap:4px}._stat-label_oa7mi_38{color:#8c8c8c}._stat-value_oa7mi_42{font-weight:600;color:#262626}._album-info_oa7mi_47{display:flex;align-items:center;gap:12px}._album-cover_oa7mi_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_oa7mi_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_oa7mi_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_oa7mi_68:hover{color:#1890ff}._album-alias_oa7mi_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_oa7mi_89{display:flex;align-items:center;gap:8px}._album-tag_oa7mi_95{margin:0}._album-company_oa7mi_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-id_oa7mi_109{font-size:12px}._album-table_oa7mi_113 .ant-table-body{scrollbar-width:thin}._search-area_oa7mi_117{padding:0 24px 16px}._modal-footer_oa7mi_121{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_oa7mi_128{font-size:13px;color:#595959}._selected-extra_oa7mi_133{margin-left:4px;color:#8c8c8c}._button-group_5ww7y_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999;transform:translateY(-20%)}._button-group_5ww7y_1::-webkit-scrollbar{width:0;background:transparent}._button-group_5ww7y_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_5ww7y_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_5ww7y_1 .ant-btn:active{transform:scale(.95)}._button-group_5ww7y_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_5ww7y_1 .ant-btn:hover .anticon{color:#fff}._button-group_5ww7y_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_5ww7y_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
+      importCSS(' ._search-form_1aabt_1{padding:16px 0}._songInfoColumn_19zpd_1{display:flex;align-items:center;gap:12px;padding:8px 0}._songInfoColumn_19zpd_1 ._songIndex_19zpd_7{font-size:15px;text-align:center;color:#666;font-weight:500;background-color:#f5f5f5;border-radius:6px;padding:2px 4px}._songInfoColumn_19zpd_1 ._songCover_19zpd_16{width:56px;height:56px;border-radius:6px;position:relative;cursor:pointer;overflow:hidden;transition:transform .2s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover{transform:scale(1.05)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._btnWrapper_19zpd_28{opacity:1;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);background-color:#0000004d}._songInfoColumn_19zpd_1 ._songCover_19zpd_16:hover ._songCoverImg_19zpd_33{filter:brightness(.85)}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._songCoverImg_19zpd_33{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:6px;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28{position:absolute;inset:0;z-index:9;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s ease}._songInfoColumn_19zpd_1 ._songCover_19zpd_16 ._btnWrapper_19zpd_28 .anticon{font-size:28px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1{flex:1 1 0px;overflow:hidden;display:flex;flex-direction:column;gap:4px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._songName_19zpd_67{font-size:15px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76{display:flex;align-items:center;flex-wrap:wrap;gap:3px;font-size:13px;color:#666}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84,._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{text-overflow:ellipsis;white-space:nowrap}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._artist_19zpd_84{max-width:160px}._songInfoColumn_19zpd_1 ._songInfo_19zpd_1 ._subInfo_19zpd_76 ._album_19zpd_85{position:relative;max-width:140px}@property --degree{syntax: "<angle>"; inherits: false; initial-value: 0deg;}._currentSong_19zpd_102{--degree: 0deg;--background: linear-gradient(var(--degree), #84fab0, #8fd3f4);background:var(--background);animation:_rotate_19zpd_1 10s linear infinite}._currentSong_19zpd_102 td{background:var(--background)!important;animation:_rotate_19zpd_1 10s linear infinite}@keyframes _rotate_19zpd_1{0%{--degree: 0deg}to{--degree: 360deg}}._matchError_19zpd_121{background-color:#f06161}._matchError_19zpd_121 td{background-color:#f06161!important}._footer_19zpd_128{margin-top:16px;display:flex;align-items:center;gap:16px;border-top:1px solid #f0f0f0;padding:16px 0}._footer_19zpd_128 ._actions_19zpd_136{margin-left:auto;display:flex;gap:8px}._stats_19zpd_142{display:flex;align-items:center;gap:8px;width:fit-content;white-space:nowrap;margin-right:20px}._stats_19zpd_142 ._size_19zpd_150{color:#666}._stats_19zpd_142 ._divider_19zpd_153{color:#999;margin:0 4px}._stats_19zpd_142 .ant-tag{margin:0}._playlist_19zpd_161 .ant-modal-body{padding-bottom:0}._autoAddContent_19zpd_165 ._title_19zpd_165{font-size:16px;margin-bottom:8px}._autoAddContent_19zpd_165 ._statsWrapper_19zpd_169{margin-bottom:16px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172{display:flex;gap:16px;background:#f5f5f5;padding:12px 16px;border-radius:8px}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._label_19zpd_179{color:#666}._autoAddContent_19zpd_165 ._statsContent_19zpd_172 ._value_19zpd_182{color:#1890ff;font-size:18px;font-weight:700}._autoAddContent_19zpd_165 ._listHeader_19zpd_187{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193{margin:8px 0;max-height:200px;overflow-y:auto;padding:12px;border:1px solid #d9d9d9;border-radius:8px;background:#fff}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar{width:6px;height:6px}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-thumb{border-radius:3px;background:#0003}._autoAddContent_19zpd_165 ._listWrapper_19zpd_193::-webkit-scrollbar-track{border-radius:3px;background:#0000001a}._autoAddContent_19zpd_165 ._listItem_19zpd_214{margin-bottom:8px;display:flex;justify-content:space-between;padding:4px 8px;border-radius:4px;transition:all .3s;cursor:default;background:#fff}._autoAddContent_19zpd_165 ._listItem_19zpd_214:hover{background:#f5f5f5}._autoAddContent_19zpd_165 ._listItem_19zpd_214:last-child{margin-bottom:0}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemName_19zpd_230{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._autoAddContent_19zpd_165 ._listItem_19zpd_214 ._itemCount_19zpd_236{color:#1890ff;margin-left:8px}._deleteConfirmation_19zpd_241{font-size:14px}._deleteConfirmation_19zpd_241 ._title_19zpd_165{font-size:16px;font-weight:700;margin-bottom:12px}._deleteConfirmation_19zpd_241 ._title_19zpd_165 ._count_19zpd_249{color:#1890ff}._deleteConfirmation_19zpd_241 ._songs_19zpd_252{max-height:220px;overflow-y:auto;margin:12px 0;padding:8px;background:#f8f8f8;border-radius:6px;border:1px solid #e8e8e8;line-height:1.6;color:#666}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263{padding:4px 8px;border-radius:4px;transition:all .3s}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:hover{background:#f0f0f0}._deleteConfirmation_19zpd_241 ._songs_19zpd_252 ._songItem_19zpd_263:not(:last-child){margin-bottom:4px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274{background:#fff2f0;border:1px solid #ffccc7;border-radius:6px;padding:5px;margin-top:12px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._text_19zpd_281{color:#ff4d4f;margin:0;display:flex;align-items:center;gap:8px}._deleteConfirmation_19zpd_241 ._warning_19zpd_274 ._icon_19zpd_288{flex:0 0 20px;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:#ff4d4f;color:#fff;font-size:14px;font-weight:700}._singer-option_19zpd_302{display:flex;align-items:center;gap:8px;position:relative;background-image:var(--avatar-url);background-size:cover;background-position:center;background-repeat:no-repeat;height:90px;border-radius:8px;overflow:hidden}._singer-option_19zpd_302 ._singer-option-content_19zpd_315{display:flex;align-items:center;gap:8px;position:absolute;bottom:-30px;left:0;width:100%;height:30px;padding:0 12px;background-color:#00000080;color:#fff;border-radius:4px;transition:all .3s ease}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-name_19zpd_330{font-size:14px}._singer-option_19zpd_302 ._singer-option-content_19zpd_315 ._singer-option-id_19zpd_333{font-size:13px}._singer-option_19zpd_302:hover ._singer-option-content_19zpd_315{bottom:0;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._song-label_19zpd_341{display:flex;flex-direction:column;gap:8px;padding:8px 0}._song-label_19zpd_341 ._song-name_19zpd_347{font-size:14px;color:#333;font-weight:500}._song-label_19zpd_341 ._tag-group_19zpd_352{display:flex;gap:8px;flex-wrap:wrap}._song-option_19zpd_358{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 12px;border-radius:6px;transition:all .2s ease;cursor:pointer}._song-option_19zpd_358:hover{background-color:#f5f5f5}._song-option_19zpd_358 ._song-info_19zpd_371{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}._song-option_19zpd_358 ._song-name_19zpd_347{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-option_19zpd_358 ._tag-group_19zpd_352{display:flex;gap:4px;flex-wrap:wrap;align-items:center}._song-option_19zpd_358 ._tag-group_19zpd_352 .ant-tag{margin:0;font-size:11px;line-height:1.2;padding:1px 6px;border-radius:3px}._song-option_19zpd_358 ._album-cover_19zpd_400{flex-shrink:0;width:32px;height:32px;margin-right:20px;border-radius:4px;object-fit:cover;border:1px solid #f0f0f0;margin-left:12px;transition:all .2s ease}._song-option_19zpd_358 ._album-cover_19zpd_400:hover{transform:scale(1.05);box-shadow:0 2px 8px #0000001a}._original-album_19zpd_416{display:flex;flex-direction:column;gap:4px;padding:8px 12px;transition:all .2s ease}._original-album_19zpd_416 ._song-info_19zpd_371{font-size:14px;font-weight:500;color:#262626;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._artist-info_19zpd_432{font-size:12px;color:#8c8c8c;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._original-album_19zpd_416 ._album-info_19zpd_440{font-size:12px;color:#595959;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px;padding-top:2px}._copy-text_yqw94_1{display:flex;align-items:center;width:100%}._copy-text_yqw94_1 ._text_yqw94_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_yqw94_1 ._copy-btn_yqw94_12{flex-shrink:0;padding:0;height:fit-content}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._song-header-wrapper_17ywg_1{position:relative;z-index:1;border-bottom:1px solid #f0f0f0;border-radius:8px 8px 0 0;overflow:hidden}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1{display:flex;gap:16px;padding:16px;background-color:#ffffff1a;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._cover-wrapper_17ywg_15{flex:0 0 auto}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._cover-wrapper_17ywg_15 .ant-image{border-radius:8px;overflow:hidden;border:2px solid rgba(255,255,255,.2)}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._cover-wrapper_17ywg_15 ._cover_17ywg_15{border-radius:8px}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._cover-wrapper_17ywg_15 ._cover_17ywg_15:not([src]){display:none}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._song-basic-info_17ywg_29{flex:1;min-width:0}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._song-basic-info_17ywg_29 ._name-row_17ywg_33{display:flex;align-items:center;gap:8px;margin-bottom:8px}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._song-basic-info_17ywg_29 ._name-row_17ywg_33 ._name_17ywg_33{font-size:18px;font-weight:600;color:#262626}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._song-basic-info_17ywg_29 ._artists_17ywg_44{margin-bottom:8px;color:#8c8c8c;font-size:14px;line-height:1.5}._song-header-wrapper_17ywg_1 ._song-header_17ywg_1 ._song-basic-info_17ywg_29 ._album_17ywg_50{margin-bottom:0;color:#8c8c8c;font-size:12px;line-height:1.5}._song-stats_17ywg_57{display:flex;align-items:center;justify-content:space-around;padding:16px 0;border-bottom:1px solid #f0f0f0}._song-stats_17ywg_57 ._stat-item_17ywg_64{display:flex;flex-direction:column;align-items:center;gap:4px}._song-stats_17ywg_57 ._stat-item_17ywg_64 ._stat-value_17ywg_70{font-size:20px;font-weight:600;color:#262626}._song-stats_17ywg_57 ._stat-item_17ywg_64 ._stat-label_17ywg_75{font-size:12px;color:#8c8c8c}._song-stats_17ywg_57 ._stat-divider_17ywg_79{width:1px;height:40px;background-color:#f0f0f0}._descriptions_17ywg_85{padding:16px}._user-header-wrapper_kph0i_1{position:relative;z-index:1;border-bottom:1px solid #f0f0f0;border-radius:8px 8px 0 0;overflow:hidden}._user-header-wrapper_kph0i_1 ._background-image_kph0i_8{position:absolute;width:100%;height:100%;inset:0;z-index:-1;object-fit:cover}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1{display:flex;gap:16px;padding:16px;background-color:#ffffff1a;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._avatar-wrapper_kph0i_23{flex:0 0 auto}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._avatar-wrapper_kph0i_23 .ant-image{border:2px solid #f0f0f0;border-radius:50%;overflow:hidden}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._avatar-wrapper_kph0i_23 ._avatar_kph0i_23:not([src]){display:none}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._user-basic-info_kph0i_34{flex:1;min-width:0}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._user-basic-info_kph0i_34 ._nickname-row_kph0i_38{display:flex;align-items:center;gap:8px;margin-bottom:8px}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._user-basic-info_kph0i_34 ._nickname-row_kph0i_38 ._nickname_kph0i_38{font-size:18px;font-weight:600;color:#262626}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._user-basic-info_kph0i_34 ._signature_kph0i_49{margin-bottom:8px;color:#8c8c8c;font-size:14px;line-height:1.5}._user-header-wrapper_kph0i_1 ._user-header_kph0i_1 ._user-basic-info_kph0i_34 ._description_kph0i_55{margin-bottom:0;color:#8c8c8c;font-size:12px;line-height:1.5}._user-stats_kph0i_62{display:flex;align-items:center;justify-content:space-around;padding:16px 0;border-bottom:1px solid #f0f0f0}._user-stats_kph0i_62 ._stat-item_kph0i_69{display:flex;flex-direction:column;align-items:center;gap:4px}._user-stats_kph0i_62 ._stat-item_kph0i_69 ._stat-value_kph0i_75{font-size:20px;font-weight:600;color:#262626}._user-stats_kph0i_62 ._stat-item_kph0i_69 ._stat-label_kph0i_80{font-size:12px;color:#8c8c8c}._user-stats_kph0i_62 ._stat-divider_kph0i_84{width:1px;height:40px;background-color:#f0f0f0}._descriptions_kph0i_90{padding:16px}._skeleton-descriptions_kph0i_94{margin-bottom:16px}._skeleton-descriptions_kph0i_94 ._skeleton-description-item_kph0i_97{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:8px 0}._comments-section_1em4j_1{margin:24px 0}._comments-card_1em4j_5{border-radius:12px;overflow:visible;box-shadow:0 2px 8px #00000014}._comments-card_1em4j_5 .ant-card-head{border-bottom:1px solid #f0f0f0;padding:0 16px;border-radius:12px 12px 0 0}._comments-card_1em4j_5 .ant-card-body{padding:16px;overflow:visible}._comments-header_1em4j_20{display:flex;align-items:center;justify-content:space-between;font-size:16px;font-weight:600;color:#262626}._total-tag_1em4j_29{margin-left:8px;font-size:12px;border-radius:12px}._comments-list_1em4j_35{display:flex;flex-direction:row;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scroll-padding-left:16px;scroll-padding-right:16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(102,126,234,.3) transparent}._comments-list_1em4j_35::-webkit-scrollbar{height:6px}._comments-list_1em4j_35::-webkit-scrollbar-track{background:transparent;border-radius:3px}._comments-list_1em4j_35::-webkit-scrollbar-thumb{background:#667eea4d;border-radius:3px}._comments-list_1em4j_35::-webkit-scrollbar-thumb:hover{background:#667eea80}._comment-item_1em4j_63{flex:0 0 calc(100% - 32px);min-width:calc(100% - 32px);width:calc(100% - 32px);background:#fff9;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:12px;padding:16px;border:1px solid rgba(0,0,0,.06);border-left:3px solid #667eea;transition:all .3s cubic-bezier(.4,0,.2,1);scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box;margin-right:16px}._comment-item_1em4j_63:first-child{margin-left:16px}._comment-item_1em4j_63:last-child{margin-right:16px}._comment-item_1em4j_63:hover{background:#ffffffe6;box-shadow:0 4px 12px #667eea26;border-left-color:#764ba2}._comment-header_1em4j_91{display:flex;align-items:center;gap:12px;margin-bottom:12px}._comment-avatar_1em4j_98{flex:0 0 auto;border:2px solid rgba(102,126,234,.2)}._comment-user-info_1em4j_103{flex:1;min-width:0}._comment-user-name_1em4j_108{display:flex;align-items:center;gap:8px;font-weight:500;font-size:14px;color:#1d1d1f;margin-bottom:4px}._vip-tag_1em4j_118{margin:0;font-size:11px;border-radius:8px}._comment-meta_1em4j_124{display:flex;align-items:center;gap:8px;font-size:12px;color:#8c8c8c}._location-tag_1em4j_132{margin:0;font-size:11px;border-radius:8px;background:#667eea1a;color:#667eea;border:none}._comment-content_1em4j_141{color:#1d1d1f;line-height:1.6;margin-bottom:12px;font-size:14px;white-space:pre-wrap;word-break:break-word}._comment-content_1em4j_141 .ant-typography{margin-bottom:0;color:#1d1d1f}._comment-footer_1em4j_154{display:flex;align-items:center;gap:8px;padding-top:12px;border-top:1px solid #f0f0f0}._liked-tag_1em4j_162{margin:0;font-size:11px;border-radius:8px;background:#ff98001a;color:#ff9800;border:none}._reply-tag_1em4j_171{margin:0;font-size:11px;border-radius:8px;background:#667eea1a;color:#667eea;border:none}._button-group_1rls2_1{display:flex;justify-content:center;gap:20px;margin-top:20px}._local-upload_1latm_1{display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6{flex:0 0 170px;display:flex;flex-direction:column;gap:16px}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:2px dashed #d9d9d9;border-radius:8px;background:#fafafa;transition:border-color .3s}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12:hover{border-color:#c20c0c}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-icon_1latm_26{font-size:48px;color:#999}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-text_1latm_30{margin-top:16px;color:#666}._local-upload_1latm_1 ._upload-section_1latm_6 ._dragger_1latm_12 ._upload-hint_1latm_34{margin-top:8px;color:#999;font-size:13px}._local-upload_1latm_1 ._file-list_1latm_39{flex:1;display:flex;flex-direction:column;gap:16px;overflow:hidden}._local-upload_1latm_1 ._file-list_1latm_39 .ant-table{flex:1}._local-upload_1latm_1 ._upload-stats_1latm_49{display:flex;align-items:center;color:#666;font-size:13px}._local-upload_1latm_1 ._upload-stats_1latm_49 ._size-text_1latm_55{color:#999}._local-upload_1latm_1 ._upload-stats_1latm_49 ._divider_1latm_58{margin:0 8px;color:#d9d9d9}._local-upload_1latm_1 ._upload-stats_1latm_49 button{margin-left:10px}._song-info-render_1piqa_1{display:flex;align-items:center;gap:12px;min-width:0}._song-info-render_1piqa_1 ._cover-wrapper_1piqa_7{flex:0 0 60px;border-radius:6px;overflow:hidden;cursor:pointer}._song-info-render_1piqa_1 ._cover-wrapper_1piqa_7 ._cover-placeholder_1piqa_13{width:60px;height:60px;background-color:#f0f0f0;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._name_1piqa_31{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._name_1piqa_31._no-source_1piqa_39{color:#bfbfbf}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._alias_1piqa_42{font-size:12px;color:#8c8c8c;font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-info-render_1piqa_1 ._info-wrapper_1piqa_24 ._id_1piqa_50{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songList_1r0t2_1 ._ant-table_1r0t2_1 ._ant-table-thead_1r0t2_1>tr>th{background-color:#f5f5f5}._playlist-id-input_1r0t2_5{margin-bottom:10px}._playlist-info_1tg5n_1{display:flex;align-items:center;gap:12px;min-width:0;padding:8px 0}._playlist-info_1tg5n_1 ._cover_1tg5n_8{flex:0 0 fit-content;border-radius:6px;overflow:hidden;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 2px 8px #00000014;position:relative}._playlist-info_1tg5n_1 ._cover_1tg5n_8:before{content:"";position:absolute;inset:0;border-radius:6px;background:linear-gradient(135deg,#ffffff1a,#0000000d);opacity:0;transition:opacity .3s ease;z-index:1;pointer-events:none}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover{transform:scale(1.05);box-shadow:0 4px 16px #0000001f}._playlist-info_1tg5n_1 ._cover_1tg5n_8:hover:before{opacity:1}._playlist-info_1tg5n_1 ._cover_1tg5n_8:active{transform:scale(1.02)}._playlist-info_1tg5n_1 ._info_1tg5n_38{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._name_1tg5n_45{font-weight:500;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#262626;line-height:1.4;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56{display:flex;align-items:center;gap:4px;font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.3;transition:color .2s ease;cursor:default}._playlist-info_1tg5n_1 ._info_1tg5n_38 ._creator_1tg5n_56 .ant-avatar{flex:0 0 20px}._playlist-item_1tg5n_73{transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer}._playlist-item_1tg5n_73:hover{background-color:#fafafa!important}._playlist-item_1tg5n_73:active,._playlist-item_1tg5n_73:active td{background-color:#f0f0f0!important}.ant-spin{width:100%;height:100%}.ant-modal-footer .ant-btn-default{border-color:#d9d9d9;color:#333}.ant-modal-footer .ant-btn-default:hover{border-color:#c20c0c;color:#c20c0c}.ant-modal-footer .ant-btn-primary{background:#c20c0c;border-color:#c20c0c}.ant-modal-footer .ant-btn-primary:hover{background:#a40a0a;border-color:#a40a0a}._quick-upload-tabs_17qrr_22 ._select_17qrr_22{width:100%}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26{display:flex;flex-direction:column;height:400px}._singer-choose_17qrr_26 ._singer-choose-form_17qrr_26 ._btn-group_17qrr_31{display:flex;justify-content:flex-end;gap:16px}._singer-choose_17qrr_26 ._option-label_17qrr_36{display:flex;align-items:center;gap:8px;justify-content:space-between;width:100%}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._singer-name_17qrr_43{font-weight:500}._singer-choose_17qrr_26 ._option-label_17qrr_36 ._tag-group_17qrr_46 ._tag_17qrr_46:not(:last-child){margin-right:8px}._upload-list_17qrr_50 .ant-table{margin:16px 0}._upload-footer_17qrr_54{width:100%;display:flex;justify-content:flex-end;align-items:center;gap:8px}._upload-stats_17qrr_62{flex:1 0 450px;display:flex;align-items:center;color:#666;font-size:13px;margin-right:auto;gap:3px}._upload-stats_17qrr_62 ._size-text_17qrr_71{color:#999}._upload-stats_17qrr_62 ._divider_17qrr_74{margin:0 8px;color:#d9d9d9}._upload-confirm_17qrr_79{padding:16px 0;font-size:14px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83{display:flex;align-items:center;margin-bottom:12px}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83:last-child{margin-bottom:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._label_17qrr_91{color:#666;width:80px;flex-shrink:0}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96{color:#333;font-weight:500}._upload-confirm_17qrr_79 ._confirm-item_17qrr_83 ._value_17qrr_96 ._size_17qrr_71{margin-left:4px;color:#999;font-weight:400}._upload-progress_17qrr_106 ._progress-header_17qrr_106{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding:0 4px}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._progress-info_17qrr_113{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-header_17qrr_106 ._percentage_17qrr_117{font-size:14px;font-weight:500;color:#1890ff}._upload-progress_17qrr_106 ._progress-list_17qrr_122{max-height:300px;overflow-y:auto;padding:0 4px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127:last-child{border-bottom:none}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137{flex:1;min-width:0;padding-right:16px}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._name_17qrr_142{font-size:14px;color:#333}._upload-progress_17qrr_106 ._progress-list_17qrr_122 ._progress-item_17qrr_127 ._song-info_17qrr_137 ._artist_17qrr_146{font-size:14px;color:#666;margin-left:4px}._uploadProgressModal_17qrr_152 .ant-modal-body{padding:24px}._uploadProgressModal_17qrr_152 ._progressContent_17qrr_155{display:flex;flex-direction:column;align-items:center;gap:24px}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._uploadProgressModal_17qrr_152 ._progressInfo_17qrr_161 ._detail_17qrr_171{font-size:14px;color:#666;margin-top:4px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176{display:flex;justify-content:space-around;width:100%;padding:16px 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._label_17qrr_91{font-size:14px;color:#666;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._statsContainer_17qrr_176 ._statsItem_17qrr_184 ._value_17qrr_96 .ant-tag{margin:0;font-size:14px;padding:4px 12px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197{width:100%}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedTitle_17qrr_200{font-size:14px;color:#333;margin-bottom:12px;font-weight:500}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206{padding:8px 12px;background:#fff1f0;border-radius:4px;margin-bottom:8px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._songName_17qrr_212{font-size:14px;color:#333;margin-bottom:4px}._uploadProgressModal_17qrr_152 ._failedList_17qrr_197 ._failedItem_17qrr_206 ._errorMsg_17qrr_217{font-size:12px;color:#ff4d4f}._uploadModal_17qrr_222 .ant-modal-body{padding:24px}._progressSection_17qrr_226{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #f0f0f0}._progressInfo_17qrr_161{display:flex;flex-direction:column;align-items:center}._progressInfo_17qrr_161 ._percentage_17qrr_117{font-size:24px;font-weight:500;color:#333}._progressInfo_17qrr_161 ._count_17qrr_245{font-size:14px;color:#666;margin-top:4px}._statsContainer_17qrr_176{display:flex;justify-content:center;gap:16px;margin-top:20px}._statsContainer_17qrr_176 ._statsItem_17qrr_184{text-align:center}._statsContainer_17qrr_176 ._statsTag_17qrr_260{padding:4px 12px;font-size:14px}._songList_17qrr_265{max-height:300px;overflow-y:auto;padding-right:4px}._songList_17qrr_265::-webkit-scrollbar{width:6px}._songList_17qrr_265::-webkit-scrollbar-thumb{background-color:#d9d9d9;border-radius:3px}._songList_17qrr_265::-webkit-scrollbar-thumb:hover{background-color:#bfbfbf}._songItem_17qrr_281{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:4px;background:#fafafa}._songItem_17qrr_281:not(:last-child){margin-bottom:8px}._songItem_17qrr_281:hover{background:#f5f5f5}._songInfo_17qrr_296{display:flex;align-items:center;gap:8px;flex:1;min-width:0}._songInfo_17qrr_296 ._songName_17qrr_212{font-weight:500;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._songInfo_17qrr_296 ._artistName_17qrr_310{color:#666;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._details_1f8uq_1{display:flex;flex-direction:column;gap:2px}._name_1f8uq_7{font-size:13px;font-weight:500;color:#262626}._id_1f8uq_13{font-size:12px;color:#8c8c8c}._album-list-modal_oa7mi_1 .ant-modal-body{padding:16px 0 0}._modal-title_oa7mi_5{display:flex;align-items:center;justify-content:space-between;padding-right:8px}._title-content_oa7mi_12{display:flex;align-items:center;gap:16px}._title-text_oa7mi_18{margin:0;font-weight:600;color:#1f1f1f}._title-stats_oa7mi_24{display:flex;align-items:center;gap:12px;font-size:13px;color:#595959}._stat-item_oa7mi_32{display:flex;align-items:center;gap:4px}._stat-label_oa7mi_38{color:#8c8c8c}._stat-value_oa7mi_42{font-weight:600;color:#262626}._album-info_oa7mi_47{display:flex;align-items:center;gap:12px}._album-cover_oa7mi_53{width:60px;height:60px;border-radius:6px;overflow:hidden;background:#f5f5f5}._album-details_oa7mi_61{display:flex;flex-direction:column;gap:4px;min-width:0}._album-name_oa7mi_68{font-size:14px;font-weight:500;color:#262626;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-name_oa7mi_68:hover{color:#1890ff}._album-alias_oa7mi_81{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-meta_oa7mi_89{display:flex;align-items:center;gap:8px}._album-tag_oa7mi_95{margin:0}._album-company_oa7mi_99{font-size:12px;color:#8c8c8c;max-width:160px;display:inline-block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-id_oa7mi_109{font-size:12px}._album-table_oa7mi_113 .ant-table-body{scrollbar-width:thin}._search-area_oa7mi_117{padding:0 24px 16px}._modal-footer_oa7mi_121{display:flex;align-items:center;justify-content:space-between;width:100%}._selected-info_oa7mi_128{font-size:13px;color:#595959}._selected-extra_oa7mi_133{margin-left:4px;color:#8c8c8c}._button-group_5ww7y_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#ffffffe6;border-radius:22px;box-shadow:0 2px 10px #0000001a;padding:10px 0;z-index:999;transform:translateY(-20%)}._button-group_5ww7y_1::-webkit-scrollbar{width:0;background:transparent}._button-group_5ww7y_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_5ww7y_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_5ww7y_1 .ant-btn:active{transform:scale(.95)}._button-group_5ww7y_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_5ww7y_1 .ant-btn:hover .anticon{color:#fff}._button-group_5ww7y_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_5ww7y_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
 
       var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
       function getDefaultExportFromCjs(x) {
@@ -7396,7 +7397,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-BPFdr7r8-Cc3oGmyl.js');
+            const { MpegParser } = await module.import('./MpegParser-CvSrisn--BVVfNmIg.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7418,7 +7419,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-Dy8rXlyU-CJ5Z6TK-.js');
+            const { AsfParser } = await module.import('./AsfParser-lakau8sS-D5fSJ-tC.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7429,7 +7430,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-BiJEUn6l-C3cdSnvh.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-BkeK_0ir-DH2oy-Y0.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7440,7 +7441,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-CaTFNfNA-BiDa_p89.js');
+            const { AIFFParser } = await module.import('./AiffParser-gYZBS82G-Af4u1w--.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7451,7 +7452,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CrtPLbTk-CSqX8VRT.js');
+            const { DsfParser } = await module.import('./DsfParser-BIVvhYhl-DWrctjT9.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7462,7 +7463,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-NN_3v3Ri-Cq7J8YSP.js');
+            const { FlacParser } = await module.import('./FlacParser-BQC1VmSc-Dv3oW_Cn.js');
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7473,7 +7474,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-CeLCRSic-zevyPrrg.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-DZzwb-J--D0D6QFtV.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7484,7 +7485,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-CDF6dQAG-BLYJDh3C.js');
+            const { MP4Parser } = await module.import('./MP4Parser-DSg7cb00-9DhWsidC.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7495,7 +7496,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-BtYdKtU--BUKYo4lu.js');
+            const { MusepackParser } = await module.import('./MusepackParser-B8ui8Vw0-DMnZi3dW.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7506,7 +7507,7 @@ setGenericTag(tagType2, tag2) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-D4ojavP8-CVKiU0kI.js');
+            const { OggParser } = await module.import('./OggParser-BiHadQeT-BZkN-x6f.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7517,7 +7518,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-dPTsvV7u-HGIMdDPE.js');
+            const { WavPackParser } = await module.import('./WavPackParser-2NxykyxM-BYjHLk-6.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7528,7 +7529,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-B7KCH1Li-CRBiQUaR.js');
+            const { WaveParser } = await module.import('./WaveParser-BF3f_l_J-o8I8zVDm.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -8625,35 +8626,60 @@ cursor: before,
         });
       };
       const getSongAllComments = async (id2, options = {}) => {
-        const { onChange } = options;
+        const {
+          onChange,
+          timeRange = {},
+          wait = 0,
+          onStop,
+          mapRule = (comment) => comment
+        } = options;
+        const { start, end } = timeRange;
         const allComments = [];
-        let hotComments = [];
+        const hotComments = [];
         const limit = 1e3;
         let hasMore = true;
-        let before;
+        let before = end && dayjs(end).endOf("day").valueOf();
         let allTotal = 0;
-        while (hasMore) {
+        let stopFlag = false;
+        onStop?.(() => {
+          stopFlag = true;
+        });
+        while (hasMore && !stopFlag) {
           const res = await getSongComment1(id2, { before });
           if (!res || res.code !== 200) {
             throw new Error(res.message || res.msg || "获取歌曲评论失败");
           }
-          console.log("res", res);
-          const { comments, totalCount, cursor, hotComments: hotCommentsData } = res.data;
+          const {
+            comments,
+            totalCount,
+            cursor,
+            hotComments: hotCommentsData
+          } = res.data;
+          console.log(
+            `${comments[0]?.timeStr} 至 ${comments[comments.length - 1]?.timeStr}`,
+            res
+          );
           allTotal ||= totalCount;
           hasMore = comments.length > 0;
-          allComments.push(...comments);
-          hotComments = hotCommentsData;
+          allComments.push(...comments.map(mapRule));
+          !hotComments?.length && hotComments.push(...hotCommentsData.map(mapRule));
           onChange?.({
             limit,
             page: Math.ceil(allComments.length / limit) + 1,
             total: allTotal,
             totalPage: Math.ceil(allTotal / limit),
-            comments,
+            comments: comments.map(mapRule),
             allComments,
             hotComments
           });
-          if (hasMore) {
+          if (hasMore && (start ? dayjs(start).startOf("day").valueOf() < cursor : true)) {
             before = cursor;
+            if (wait) {
+              await sleep(wait);
+              console.log("等待", wait, "毫秒");
+            }
+          } else {
+            break;
           }
         }
         return {
@@ -8667,30 +8693,18 @@ cursor: before,
           id: id2,
           sourceId = getUser().userId + "",
           time,
-          checkInCount = 1
+          checkInCount = 1,
+          wait = 1e3
         } = params;
         const taskList = Array.from(
           { length: checkInCount },
           (_, index2) => async () => {
-            const startLog = {
-              action: "startplay",
-              json: {
-                content: "id=" + id2,
-                id: id2,
-                mainsite: "1",
-                mainsiteWeb: "1",
-                type: "song"
-              }
-            };
-            await weapiFetch(`/api/feedback/weblog`, {
-              data: { logs: JSON.stringify([startLog]) }
-            });
             const log = {
               action: "play",
               json: {
                 content: "id=" + id2,
                 download: 0,
-                end: "ui",
+                end: "playend",
                 id: id2,
                 mainsite: "1",
                 mainsiteWeb: "1",
@@ -8707,7 +8721,7 @@ cursor: before,
             });
           }
         );
-        const res = await promiseLimit(taskList, 1, { wait: 1e3 });
+        const res = await promiseLimit(taskList, 1, { wait });
         return res;
       };
       const getQualityTags = (song) => {
@@ -12365,7 +12379,7 @@ op: "update"
           data
         });
       };
-      const styles$f = {
+      const styles$g = {
         "search-form": "_search-form_1aabt_1"
       };
       const SearchForm = ({ onSearch, data = [], options = [] }) => {
@@ -12386,7 +12400,7 @@ op: "update"
           form.resetFields();
           onSearch({});
         };
-        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$f["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+        return jsxRuntimeExports.jsx(Form, { form, layout: "inline", className: styles$g["search-form"], children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
           options.map((item) => {
             return jsxRuntimeExports.jsx(
               Form.Item,
@@ -12959,7 +12973,7 @@ singerIds
       const warning = "_warning_19zpd_274";
       const text = "_text_19zpd_281";
       const icon = "_icon_19zpd_288";
-      const styles$e = {
+      const styles$f = {
         songInfoColumn,
         songIndex,
         songCover,
@@ -13124,13 +13138,13 @@ jsxRuntimeExports.jsx(
                     return jsxRuntimeExports.jsx(
                       "div",
                       {
-                        className: styles$e["singer-option"],
+                        className: styles$f["singer-option"],
                         style: {
                           "--avatar-url": `url(${artistAvatarPicUrl})`
                         },
-                        children: jsxRuntimeExports.jsxs("div", { className: styles$e["singer-option-content"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$e["singer-option-name"], children: artistName2 }),
-jsxRuntimeExports.jsx("div", { className: styles$e["singer-option-id"], children: artistId })
+                        children: jsxRuntimeExports.jsxs("div", { className: styles$f["singer-option-content"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$f["singer-option-name"], children: artistName2 }),
+jsxRuntimeExports.jsx("div", { className: styles$f["singer-option-id"], children: artistId })
                         ] })
                       }
                     );
@@ -13179,12 +13193,12 @@ jsxRuntimeExports.jsx(
                     return jsxRuntimeExports.jsxs(
                       "div",
                       {
-                        className: styles$e["song-option"],
+                        className: styles$f["song-option"],
                         onClick: () => console.log("option", data2, option, singerMap),
                         children: [
-jsxRuntimeExports.jsxs("div", { className: styles$e["song-info"], children: [
-jsxRuntimeExports.jsx("span", { className: styles$e["song-name"], children: option.label }),
-jsxRuntimeExports.jsxs("div", { className: styles$e["tag-group"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$f["song-info"], children: [
+jsxRuntimeExports.jsx("span", { className: styles$f["song-name"], children: option.label }),
+jsxRuntimeExports.jsxs("div", { className: styles$f["tag-group"], children: [
                               data2.al?.name && jsxRuntimeExports.jsx(Tag, { color: "blue", children: data2.al?.name }),
                               data2.ar?.length && data2.ar?.map((artist2, index2) => jsxRuntimeExports.jsx(Tag, { color: "green", children: artist2.name }, index2))
                             ] })
@@ -13192,7 +13206,7 @@ jsxRuntimeExports.jsxs("div", { className: styles$e["tag-group"], children: [
                           singerMap[currentSelectSinger]?.albumMap?.[data2.al?.id]?.picUrl && jsxRuntimeExports.jsx(
                             "img",
                             {
-                              className: styles$e["album-cover"],
+                              className: styles$f["album-cover"],
                               src: singerMap[currentSelectSinger]?.albumMap[data2.al?.id]?.picUrl,
                               alt: data2.al?.name
                             }
@@ -13342,7 +13356,7 @@ jsxRuntimeExports.jsx(
           );
         }
       };
-      const styles$d = {
+      const styles$e = {
         "copy-text": "_copy-text_yqw94_1",
         "copy-btn": "_copy-btn_yqw94_12"
       };
@@ -13406,7 +13420,7 @@ var hasRequiredClassnames;
       }
       var classnamesExports = requireClassnames();
       const classNames = getDefaultExportFromCjs(classnamesExports);
-      const styles$c = {
+      const styles$d = {
         "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
       };
       function TextOverflowShowTips({
@@ -13434,7 +13448,7 @@ var hasRequiredClassnames;
           "div",
           {
             ...restProps,
-            className: classNames(styles$c["text-overflow-show-tips-container"], className),
+            className: classNames(styles$d["text-overflow-show-tips-container"], className),
             children: jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text2 })
           }
         ) }) : jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text2 });
@@ -13459,7 +13473,7 @@ var hasRequiredClassnames;
           copy(text2);
           msgSuccess("复制成功");
         };
-        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$d["copy-text"], className), ...rest, children: [
+        return jsxRuntimeExports.jsxs("div", { className: classNames(styles$e["copy-text"], className), ...rest, children: [
 jsxRuntimeExports.jsx(
             TextOverflowShowTips,
             {
@@ -13477,7 +13491,7 @@ jsxRuntimeExports.jsx(
               type: "link",
               icon: jsxRuntimeExports.jsx(CopyOutlined, {}),
               onClick: handleCopy,
-              className: styles$d["copy-btn"]
+              className: styles$e["copy-btn"]
             }
           )
         ] });
@@ -13667,7 +13681,7 @@ default:
           audio.pause();
           setIsPlaying(false);
         };
-        const getSongAllComments$1 = async (id2) => {
+        const getSongAllComments$1 = async (id2, options = {}) => {
           const loadingMessageKey = "get-song-all-comments";
           message.loading({
             content: "开始获取歌曲所有评论，请稍候...",
@@ -13676,6 +13690,7 @@ default:
           });
           try {
             const res = await getSongAllComments(id2, {
+              ...options,
               onChange: (progress) => {
                 const { page, totalPage, total, allComments: allComments2 } = progress;
                 message.loading({
@@ -13683,6 +13698,7 @@ default:
                   key: loadingMessageKey,
                   duration: 0
                 });
+                options?.onChange(progress);
               }
             });
             console.log("res", res);
@@ -19858,7 +19874,7 @@ jsxRuntimeExports.jsx(
                     rowSelection
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$e.footer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$f.footer, children: [
 jsxRuntimeExports.jsxs("div", { children: [
                     "已选择 ",
                     selectedRows.length,
@@ -19872,7 +19888,7 @@ jsxRuntimeExports.jsx(
                       children: "添加后自动排序"
                     }
                   ),
-jsxRuntimeExports.jsxs(Space, { className: styles$e.actions, children: [
+jsxRuntimeExports.jsxs(Space, { className: styles$f.actions, children: [
 jsxRuntimeExports.jsx(MyButton, { onClick: () => setCreateModalVisible(true), children: "新建歌单" }),
 jsxRuntimeExports.jsx(
                       MyButton,
@@ -19949,20 +19965,20 @@ jsxRuntimeExports.jsx(Space, { wrap: true, children: createPlaylistShortcut.map(
         ] });
       };
       const DeleteConfirmContent = ({ playlists }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$e.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$e.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$e.title, children: "总计：" }),
-jsxRuntimeExports.jsx("div", { className: styles$e.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$e.label, children: "删除数量：" }),
-jsxRuntimeExports.jsx("span", { className: styles$e.value, children: playlists.length }),
-jsxRuntimeExports.jsx("span", { className: styles$e.label, children: " 个歌单" })
+        return jsxRuntimeExports.jsxs("div", { className: styles$f.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$f.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$f.title, children: "总计：" }),
+jsxRuntimeExports.jsx("div", { className: styles$f.statsContent, children: jsxRuntimeExports.jsxs("div", { children: [
+jsxRuntimeExports.jsx("span", { className: styles$f.label, children: "删除数量：" }),
+jsxRuntimeExports.jsx("span", { className: styles$f.value, children: playlists.length }),
+jsxRuntimeExports.jsx("span", { className: styles$f.label, children: " 个歌单" })
             ] }) })
           ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("div", { className: styles$e.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$e.title, children: "即将删除的歌单：" }) }),
-jsxRuntimeExports.jsx("ul", { className: styles$e.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$e.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$e.itemName, children: item.name }),
-              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$e.itemCount, children: [
+jsxRuntimeExports.jsx("div", { className: styles$f.listHeader, children: jsxRuntimeExports.jsx("div", { className: styles$f.title, children: "即将删除的歌单：" }) }),
+jsxRuntimeExports.jsx("ul", { className: styles$f.listWrapper, children: playlists.map((item) => jsxRuntimeExports.jsxs("li", { className: styles$f.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$f.itemName, children: item.name }),
+              item.trackCount > 0 && jsxRuntimeExports.jsxs("span", { className: styles$f.itemCount, children: [
                 item.trackCount,
                 "首"
               ] })
@@ -19972,15 +19988,15 @@ jsxRuntimeExports.jsx("span", { className: styles$e.itemName, children: item.nam
       };
       const PlayList$3 = forwardRef(PlayList$2);
       const Stats = memo(({ selectedRows = [], filteredSongList = [] }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$e.stats, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$f.stats, children: [
           "已选择 ",
 jsxRuntimeExports.jsxs(Tag, { color: "blue", children: [
             selectedRows.length,
             " 首"
           ] }),
           " ",
-jsxRuntimeExports.jsx("span", { className: styles$e.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
-jsxRuntimeExports.jsx("span", { className: styles$e.divider, children: "/" }),
+jsxRuntimeExports.jsx("span", { className: styles$f.size, children: selectedRows.length > 0 && `${(selectedRows.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` }),
+jsxRuntimeExports.jsx("span", { className: styles$f.divider, children: "/" }),
           "共",
           " ",
 jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
@@ -19988,7 +20004,7 @@ jsxRuntimeExports.jsxs(Tag, { color: "green", children: [
             " 首"
           ] }),
           " ",
-jsxRuntimeExports.jsx("span", { className: styles$e.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
+jsxRuntimeExports.jsx("span", { className: styles$f.size, children: filteredSongList.length > 0 && `${(filteredSongList.reduce((acc, cur) => acc + cur.fileSize, 0) / 1024 / 1024).toFixed(2)}MB` })
         ] });
       });
       Stats.displayName = "Stats";
@@ -20134,24 +20150,24 @@ jsxRuntimeExports.jsx("span", { className: styles$e.size, children: filteredSong
           const albumName = getAlbumName(record);
           const songName2 = record.simpleSong?.name;
           const albumPic = record.simpleSong?.al?.picUrl;
-          return jsxRuntimeExports.jsxs("div", { className: styles$e.songInfoColumn, children: [
-jsxRuntimeExports.jsx("div", { className: styles$e.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
+          return jsxRuntimeExports.jsxs("div", { className: styles$f.songInfoColumn, children: [
+jsxRuntimeExports.jsx("div", { className: styles$f.songIndex, children: (pageParams.page - 1) * pageParams.pageSize + index2 + 1 }),
 jsxRuntimeExports.jsxs(
               "div",
               {
-                className: `${styles$e.songCover} ${isCurrentSong ? styles$e.playing : ""}`,
+                className: `${styles$f.songCover} ${isCurrentSong ? styles$f.playing : ""}`,
                 onClick: () => handlePlaySong(record.simpleSong),
                 children: [
-jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$e.songCoverImg }),
-jsxRuntimeExports.jsx("div", { className: styles$e.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
+jsxRuntimeExports.jsx("img", { src: albumPic, alt: albumName, className: styles$f.songCoverImg }),
+jsxRuntimeExports.jsx("div", { className: styles$f.btnWrapper, children: isCurrentSong && playing ? jsxRuntimeExports.jsx(PauseCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) : jsxRuntimeExports.jsx(PlayCircleFilled, { style: { fontSize: "24px", color: "#fff" } }) })
                 ]
               }
             ),
-jsxRuntimeExports.jsxs("div", { className: styles$e.songInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$e.songName, children: songName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$e.subInfo, children: [
-jsxRuntimeExports.jsx("div", { className: styles$e.artist, children: artistName2 }),
-jsxRuntimeExports.jsxs("div", { className: styles$e.album, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$f.songInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$f.songName, children: songName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$f.subInfo, children: [
+jsxRuntimeExports.jsx("div", { className: styles$f.artist, children: artistName2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$f.album, children: [
                   albumName && " - ",
                   albumName
                 ] })
@@ -20211,13 +20227,13 @@ jsxRuntimeExports.jsxs("div", { className: styles$e.album, children: [
             sortDirections: ["ascend", "descend"],
             render: (_, record) => {
               const { song, album: album2, artist: artist2 } = getOriginalInfo(record);
-              return jsxRuntimeExports.jsxs("div", { className: styles$e["original-album"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$e["song-info"], title: song, children: [
+              return jsxRuntimeExports.jsxs("div", { className: styles$f["original-album"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$f["song-info"], title: song, children: [
                   song,
                   " ",
                   artist2 && `· ${artist2}`
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$e["album-info"], title: album2, children: album2 })
+jsxRuntimeExports.jsx("div", { className: styles$f["album-info"], title: album2, children: album2 })
               ] });
             }
           },
@@ -20528,13 +20544,13 @@ jsxRuntimeExports.jsx(
                     const { songId } = record;
                     const classNames2 = [];
                     if (songId === playSong?.id) {
-                      classNames2.push(styles$e.currentSong);
+                      classNames2.push(styles$f.currentSong);
                     }
                     const isMatch = record.matchType === "matched";
                     const album2 = normalizeString(getAlbumName(record));
                     const originalAlbum = normalizeString(getOriginalInfo(record)?.album);
                     if (isMatch && !album2.includes(originalAlbum.slice(0, 3))) {
-                      classNames2.push(styles$e.matchError);
+                      classNames2.push(styles$f.matchError);
                     }
                     return classNames2.join(" ");
                   },
@@ -20547,7 +20563,7 @@ jsxRuntimeExports.jsx(
                   }
                 }
               ),
-jsxRuntimeExports.jsxs("div", { className: styles$e.footer, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$f.footer, children: [
 jsxRuntimeExports.jsx(
                   Stats,
                   {
@@ -20555,7 +20571,7 @@ jsxRuntimeExports.jsx(
                     filteredSongList
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$e.actions, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$f.actions, children: [
 jsxRuntimeExports.jsx(
                     Input,
                     {
@@ -20652,25 +20668,25 @@ jsxRuntimeExports.jsx(PlayList$3, { ref: playListRef })
             message.success("复制成功");
           });
         };
-        return jsxRuntimeExports.jsxs("div", { className: styles$e.autoAddContent, children: [
-jsxRuntimeExports.jsxs("div", { className: styles$e.statsWrapper, children: [
-jsxRuntimeExports.jsx("div", { className: styles$e.title, children: "总计：" }),
-jsxRuntimeExports.jsxs("div", { className: styles$e.statsContent, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$f.autoAddContent, children: [
+jsxRuntimeExports.jsxs("div", { className: styles$f.statsWrapper, children: [
+jsxRuntimeExports.jsx("div", { className: styles$f.title, children: "总计：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$f.statsContent, children: [
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$e.label, children: "歌曲数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$e.value, children: totalSongs }),
-jsxRuntimeExports.jsx("span", { className: styles$e.label, children: " 首" })
+jsxRuntimeExports.jsx("span", { className: styles$f.label, children: "歌曲数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$f.value, children: totalSongs }),
+jsxRuntimeExports.jsx("span", { className: styles$f.label, children: " 首" })
               ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsx("span", { className: styles$e.label, children: "歌单数：" }),
-jsxRuntimeExports.jsx("span", { className: styles$e.value, children: albums.length }),
-jsxRuntimeExports.jsx("span", { className: styles$e.label, children: " 个" })
+jsxRuntimeExports.jsx("span", { className: styles$f.label, children: "歌单数：" }),
+jsxRuntimeExports.jsx("span", { className: styles$f.value, children: albums.length }),
+jsxRuntimeExports.jsx("span", { className: styles$f.label, children: " 个" })
               ] })
             ] })
           ] }),
 jsxRuntimeExports.jsxs("div", { children: [
-jsxRuntimeExports.jsxs("div", { className: styles$e.listHeader, children: [
-jsxRuntimeExports.jsx("div", { className: styles$e.title, children: "即将创建的歌单：" }),
+jsxRuntimeExports.jsxs("div", { className: styles$f.listHeader, children: [
+jsxRuntimeExports.jsx("div", { className: styles$f.title, children: "即将创建的歌单：" }),
 jsxRuntimeExports.jsx(
                 Button,
                 {
@@ -20682,9 +20698,9 @@ jsxRuntimeExports.jsx(
                 }
               )
             ] }),
-jsxRuntimeExports.jsx("ul", { className: styles$e.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$e.listItem, children: [
-jsxRuntimeExports.jsx("span", { className: styles$e.itemName, children: name2 }),
-jsxRuntimeExports.jsxs("span", { className: styles$e.itemCount, children: [
+jsxRuntimeExports.jsx("ul", { className: styles$f.listWrapper, children: albums.map(([name2, songs2]) => jsxRuntimeExports.jsxs("li", { className: styles$f.listItem, children: [
+jsxRuntimeExports.jsx("span", { className: styles$f.itemName, children: name2 }),
+jsxRuntimeExports.jsxs("span", { className: styles$f.itemCount, children: [
                 songs2.length,
                 "首"
               ] })
@@ -20693,16 +20709,16 @@ jsxRuntimeExports.jsxs("span", { className: styles$e.itemCount, children: [
         ] });
       };
       const DeleteConfirmation = ({ selectedCount, songNames }) => {
-        return jsxRuntimeExports.jsxs("div", { className: styles$e.deleteConfirmation, children: [
-jsxRuntimeExports.jsxs("p", { className: styles$e.title, children: [
+        return jsxRuntimeExports.jsxs("div", { className: styles$f.deleteConfirmation, children: [
+jsxRuntimeExports.jsxs("p", { className: styles$f.title, children: [
             "您确定要删除以下 ",
-jsxRuntimeExports.jsx("span", { className: styles$e.count, children: selectedCount }),
+jsxRuntimeExports.jsx("span", { className: styles$f.count, children: selectedCount }),
             " ",
             "首歌曲吗？"
           ] }),
-jsxRuntimeExports.jsx("div", { className: styles$e.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$e.songItem, children: name2 }, index2)) }),
-jsxRuntimeExports.jsx("div", { className: styles$e.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$e.text, children: [
-jsxRuntimeExports.jsx("span", { className: styles$e.icon, children: "!" }),
+jsxRuntimeExports.jsx("div", { className: styles$f.songs, children: songNames.map((name2, index2) => jsxRuntimeExports.jsx("div", { className: styles$f.songItem, children: name2 }, index2)) }),
+jsxRuntimeExports.jsx("div", { className: styles$f.warning, children: jsxRuntimeExports.jsxs("p", { className: styles$f.text, children: [
+jsxRuntimeExports.jsx("span", { className: styles$f.icon, children: "!" }),
             "注意：此操作不可恢复，删除后歌曲将从您的网易云音乐云盘中永久移除。"
           ] }) })
         ] });
@@ -21015,7 +21031,7 @@ jsxRuntimeExports.jsxs("span", { style: { color: "#999", fontSize: 12 }, childre
       const artists = "_artists_17ywg_44";
       const album = "_album_17ywg_50";
       const descriptions$1 = "_descriptions_17ywg_85";
-      const styles$b = {
+      const styles$c = {
         "song-header-wrapper": "_song-header-wrapper_17ywg_1",
         "song-header": "_song-header_17ywg_1",
         "cover-wrapper": "_cover-wrapper_17ywg_15",
@@ -21034,7 +21050,7 @@ jsxRuntimeExports.jsxs("span", { style: { color: "#999", fontSize: 12 }, childre
       };
       const { Text: Text$4, Paragraph: Paragraph$1 } = Typography;
       function SongCard(props) {
-        const { value: value2, onChange } = props;
+        const { value: value2, onChange, onInfoChange } = props;
         const [songId, setSongId] = useState(value2);
         useEffect(() => {
           if (!value2) return;
@@ -21046,6 +21062,9 @@ jsxRuntimeExports.jsxs("span", { style: { color: "#999", fontSize: 12 }, childre
         };
         const [songInfo2, setSongInfo] = useState();
         const [loading, setLoading] = useState(false);
+        useEffect(() => {
+          onInfoChange?.(songInfo2);
+        }, [songInfo2]);
         useEffect(() => {
           const getSongInfo = async () => {
             try {
@@ -21088,20 +21107,20 @@ jsxRuntimeExports.jsxs("span", { style: { color: "#999", fontSize: 12 }, childre
               }
             },
             children: [
-jsxRuntimeExports.jsx("div", { className: styles$b["song-header-wrapper"], children: jsxRuntimeExports.jsxs("div", { className: styles$b["song-header"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$b["cover-wrapper"], children: jsxRuntimeExports.jsx(
+jsxRuntimeExports.jsx("div", { className: styles$c["song-header-wrapper"], children: jsxRuntimeExports.jsxs("div", { className: styles$c["song-header"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$c["cover-wrapper"], children: jsxRuntimeExports.jsx(
                   Image,
                   {
                     src: al?.picUrl,
                     width: 100,
                     height: 100,
-                    className: styles$b["cover"],
+                    className: styles$c["cover"],
                     preview: false
                   }
                 ) }),
-jsxRuntimeExports.jsxs("div", { className: styles$b["song-basic-info"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$b["name-row"], children: [
-jsxRuntimeExports.jsx(Text$4, { strong: true, className: styles$b.name, children: name2 || "-" }),
+jsxRuntimeExports.jsxs("div", { className: styles$c["song-basic-info"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$c["name-row"], children: [
+jsxRuntimeExports.jsx(Text$4, { strong: true, className: styles$c.name, children: name2 || "-" }),
                     fee === 1 && jsxRuntimeExports.jsx(Tag, { color: "red", children: "VIP" }),
                     mv > 0 && jsxRuntimeExports.jsx(Tag, { color: "blue", children: "MV" })
                   ] }),
@@ -21109,7 +21128,7 @@ jsxRuntimeExports.jsxs(
                     Paragraph$1,
                     {
                       ellipsis: { rows: 1, expandable: false },
-                      className: styles$b["artists"],
+                      className: styles$c["artists"],
                       children: [
                         "艺术家：",
                         ar.map((a) => a.name).join(" / ") || "-"
@@ -21120,7 +21139,7 @@ jsxRuntimeExports.jsxs(
                     Paragraph$1,
                     {
                       ellipsis: { rows: 1, expandable: false },
-                      className: styles$b["album"],
+                      className: styles$c["album"],
                       children: [
                         "专辑：",
                         al?.name || "-"
@@ -21129,25 +21148,25 @@ jsxRuntimeExports.jsxs(
                   )
                 ] })
               ] }) }),
-jsxRuntimeExports.jsxs("div", { className: styles$b["song-stats"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$b["stat-item"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-value"], children: formatDuration$1(dt) || "-" }),
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-label"], children: "时长" })
+jsxRuntimeExports.jsxs("div", { className: styles$c["song-stats"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$c["stat-item"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-value"], children: formatDuration$1(dt) || "-" }),
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-label"], children: "时长" })
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-divider"] }),
-jsxRuntimeExports.jsxs("div", { className: styles$b["stat-item"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-value"], children: pop || 0 }),
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-label"], children: "热度" })
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-divider"] }),
+jsxRuntimeExports.jsxs("div", { className: styles$c["stat-item"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-value"], children: pop || 0 }),
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-label"], children: "热度" })
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-divider"] }),
-jsxRuntimeExports.jsxs("div", { className: styles$b["stat-item"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-value"], children: highestQuality ? formatFileSize(highestQuality.size) : "-" }),
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-label"], children: "文件大小" })
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-divider"] }),
+jsxRuntimeExports.jsxs("div", { className: styles$c["stat-item"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-value"], children: highestQuality ? formatFileSize(highestQuality.size) : "-" }),
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-label"], children: "文件大小" })
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-divider"] }),
-jsxRuntimeExports.jsxs("div", { className: styles$b["stat-item"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-value"], children: highestQuality ? `${(highestQuality.br / 1e3).toFixed(0)}kbps` : "-" }),
-jsxRuntimeExports.jsx("div", { className: styles$b["stat-label"], children: "最高音质" })
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-divider"] }),
+jsxRuntimeExports.jsxs("div", { className: styles$c["stat-item"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-value"], children: highestQuality ? `${(highestQuality.br / 1e3).toFixed(0)}kbps` : "-" }),
+jsxRuntimeExports.jsx("div", { className: styles$c["stat-label"], children: "最高音质" })
                 ] })
               ] }),
 jsxRuntimeExports.jsxs(
@@ -21155,7 +21174,7 @@ jsxRuntimeExports.jsxs(
                 {
                   column: 1,
                   size: "small",
-                  className: styles$b["descriptions"],
+                  className: styles$c["descriptions"],
                   labelStyle: {},
                   children: [
 jsxRuntimeExports.jsx(Descriptions.Item, { label: "歌曲ID", children: jsxRuntimeExports.jsx(
@@ -21230,7 +21249,7 @@ jsxRuntimeExports.jsxs("span", { style: { marginLeft: 8 }, children: [
       const signature = "_signature_kph0i_49";
       const description = "_description_kph0i_55";
       const descriptions = "_descriptions_kph0i_90";
-      const styles$a = {
+      const styles$b = {
         "user-header-wrapper": "_user-header-wrapper_kph0i_1",
         "background-image": "_background-image_kph0i_8",
         "user-header": "_user-header_kph0i_1",
@@ -21312,17 +21331,17 @@ jsxRuntimeExports.jsxs("span", { style: { marginLeft: 8 }, children: [
               }
             },
             children: [
-jsxRuntimeExports.jsxs("div", { className: styles$a["user-header-wrapper"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b["user-header-wrapper"], children: [
                 backgroundUrl && jsxRuntimeExports.jsx(
                   "img",
                   {
                     src: backgroundUrl,
                     alt: "背景图",
-                    className: styles$a["background-image"]
+                    className: styles$b["background-image"]
                   }
                 ),
-jsxRuntimeExports.jsxs("div", { className: styles$a["user-header"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$a["avatar-wrapper"], children: jsxRuntimeExports.jsx(
+jsxRuntimeExports.jsxs("div", { className: styles$b["user-header"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$b["avatar-wrapper"], children: jsxRuntimeExports.jsx(
                     Badge,
                     {
                       count: vipType === 11 ? "VIP" : 0,
@@ -21334,22 +21353,22 @@ jsxRuntimeExports.jsx("div", { className: styles$a["avatar-wrapper"], children: 
                           src: avatarUrl,
                           width: 100,
                           height: 100,
-                          className: styles$a["avatar"],
+                          className: styles$b["avatar"],
                           fallback: defaultAvatar
                         }
                       )
                     }
                   ) }),
-jsxRuntimeExports.jsxs("div", { className: styles$a["user-basic-info"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$a["nickname-row"], children: [
-jsxRuntimeExports.jsx(Text$3, { strong: true, className: styles$a.nickname, children: nickname2 }),
+jsxRuntimeExports.jsxs("div", { className: styles$b["user-basic-info"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b["nickname-row"], children: [
+jsxRuntimeExports.jsx(Text$3, { strong: true, className: styles$b.nickname, children: nickname2 }),
                       authStatus === 1 && jsxRuntimeExports.jsx(Tag, { color: "blue", children: "认证用户" })
                     ] }),
 jsxRuntimeExports.jsxs(
                       Paragraph,
                       {
                         ellipsis: { rows: 2, expandable: false },
-                        className: styles$a["signature"],
+                        className: styles$b["signature"],
                         children: [
                           "签名：",
                           signature2 || "-"
@@ -21360,7 +21379,7 @@ jsxRuntimeExports.jsxs(
                       Paragraph,
                       {
                         ellipsis: { rows: 1, expandable: false },
-                        className: styles$a.description,
+                        className: styles$b.description,
                         children: [
                           "描述：",
                           description2 || "-"
@@ -21370,25 +21389,25 @@ jsxRuntimeExports.jsxs(
                   ] })
                 ] })
               ] }),
-jsxRuntimeExports.jsxs("div", { className: styles$a["user-stats"], children: [
-jsxRuntimeExports.jsxs("div", { className: styles$a["stat-item"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-value"], children: follows || 0 }),
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-label"], children: "关注" })
+jsxRuntimeExports.jsxs("div", { className: styles$b["user-stats"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$b["stat-item"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-value"], children: follows || 0 }),
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-label"], children: "关注" })
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-divider"] }),
-jsxRuntimeExports.jsxs("div", { className: styles$a["stat-item"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-value"], children: followeds || 0 }),
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-label"], children: "粉丝" })
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-divider"] }),
+jsxRuntimeExports.jsxs("div", { className: styles$b["stat-item"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-value"], children: followeds || 0 }),
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-label"], children: "粉丝" })
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-divider"] }),
-jsxRuntimeExports.jsxs("div", { className: styles$a["stat-item"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-value"], children: playlistCount || 0 }),
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-label"], children: "歌单" })
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-divider"] }),
+jsxRuntimeExports.jsxs("div", { className: styles$b["stat-item"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-value"], children: playlistCount || 0 }),
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-label"], children: "歌单" })
                 ] }),
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-divider"] }),
-jsxRuntimeExports.jsxs("div", { className: styles$a["stat-item"], children: [
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-value"], children: eventCount || 0 }),
-jsxRuntimeExports.jsx("div", { className: styles$a["stat-label"], children: "动态" })
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-divider"] }),
+jsxRuntimeExports.jsxs("div", { className: styles$b["stat-item"], children: [
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-value"], children: eventCount || 0 }),
+jsxRuntimeExports.jsx("div", { className: styles$b["stat-label"], children: "动态" })
                 ] })
               ] }),
 jsxRuntimeExports.jsxs(
@@ -21396,7 +21415,7 @@ jsxRuntimeExports.jsxs(
                 {
                   column: 1,
                   size: "small",
-                  className: styles$a["descriptions"],
+                  className: styles$b["descriptions"],
                   labelStyle: {
 },
                   children: [
@@ -21445,6 +21464,455 @@ jsxRuntimeExports.jsx(Descriptions.Item, { label: "性别", children: getGenderT
         const genderMap = { 0: "未知", 1: "男", 2: "女" };
         return genderMap[gender] || "未知";
       };
+      const styles$a = {
+        "comments-section": "_comments-section_1em4j_1",
+        "comments-card": "_comments-card_1em4j_5",
+        "comments-header": "_comments-header_1em4j_20",
+        "total-tag": "_total-tag_1em4j_29",
+        "comments-list": "_comments-list_1em4j_35",
+        "comment-item": "_comment-item_1em4j_63",
+        "comment-header": "_comment-header_1em4j_91",
+        "comment-avatar": "_comment-avatar_1em4j_98",
+        "comment-user-info": "_comment-user-info_1em4j_103",
+        "comment-user-name": "_comment-user-name_1em4j_108",
+        "vip-tag": "_vip-tag_1em4j_118",
+        "comment-meta": "_comment-meta_1em4j_124",
+        "location-tag": "_location-tag_1em4j_132",
+        "comment-content": "_comment-content_1em4j_141",
+        "comment-footer": "_comment-footer_1em4j_154",
+        "liked-tag": "_liked-tag_1em4j_162",
+        "reply-tag": "_reply-tag_1em4j_171"
+      };
+      function UserComments(props) {
+        const { comments = [
+          {
+            "commentId": 5928599,
+            "content": "副歌的惊艳程度如何？我把它写进我高三的一次作文里 然后老师把这一句抄在了黑板上。",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 1764,
+            "likedCount": 145327,
+            "liked": false,
+            "time": 1416224312409,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2014-11-17",
+            "user": {
+              "userId": 5807720,
+              "nickname": "一只瓶子__",
+              "avatarUrl": "http://p4.music.126.net/GWZVwk-_4B6xX0sOHaMEEA==/2539871861864255.jpg",
+              "vipType": 11,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 48731267,
+            "content": "09年听这首歌，当时我们在网恋，15年又在听这首歌，不过我们中间躺着个可爱又磨人的小丫头[爱心]",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 1902,
+            "likedCount": 78921,
+            "liked": false,
+            "time": 1448261951460,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2015-11-23",
+            "user": {
+              "userId": 72139956,
+              "nickname": "时光淡人心",
+              "avatarUrl": "http://p3.music.126.net/rlVEyAsTnFhc_kHqnWx01w==/109951164918562028.jpg",
+              "vipType": 0,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 4147239,
+            "content": "红雨瓢泼泛起了回忆怎么潜，你美目如当年，流转我心间，渡口边最后一面洒下了句点，与你若只如初见，何须感伤离别。",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 443,
+            "likedCount": 74946,
+            "liked": false,
+            "time": 1409885138914,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2014-09-05",
+            "user": {
+              "userId": 17447222,
+              "nickname": "Independencer",
+              "avatarUrl": "http://p3.music.126.net/y-zDnmGUx1FrNYFQ1VVaQw==/2899412162481433.jpg",
+              "vipType": 0,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 222162961,
+            "content": "估计很多人都是   突然想听许嵩  。",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 907,
+            "likedCount": 49511,
+            "liked": false,
+            "time": 1475217987121,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2016-09-30",
+            "user": {
+              "userId": 115493405,
+              "nickname": "南音喏",
+              "avatarUrl": "http://p4.music.126.net/hIIpxAYlHD96mjd0EP4Tow==/109951166869692591.jpg",
+              "vipType": 0,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 5522914,
+            "content": "突然想听许嵩，于是坐着一首首的听。许嵩于我而言，是一种怀旧，那时的人、那时的事，现在想起依然历历在目，虽然不是回忆的全部，但却也构成了我的大部分生活。现在的我早已不习惯怀旧，因为我选择忘的太快。或许，对某些人而言，只是记忆罢了。也不知道今晚自己唧唧歪歪都说了些什么",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 249,
+            "likedCount": 41340,
+            "liked": false,
+            "time": 1415280737301,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2014-11-06",
+            "user": {
+              "userId": 16137105,
+              "nickname": "Koala_小呆",
+              "avatarUrl": "http://p3.music.126.net/WdKvTvF8R_WD2bIiq89wkw==/1379887099241878.jpg",
+              "vipType": 11,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 48323347,
+            "content": "真的  许嵩的歌词  挽救了我多少作文",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 230,
+            "likedCount": 30901,
+            "liked": false,
+            "time": 1448095822477,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2015-11-21",
+            "user": {
+              "userId": 55121576,
+              "nickname": "看什么不如听什么",
+              "avatarUrl": "http://p3.music.126.net/Mdm8X2drMAQVGNxu799bag==/3315027559529810.jpg",
+              "vipType": 0,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 157029791,
+            "content": "我会说我这昵称用了7年？",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 5906,
+            "likedCount": 29710,
+            "liked": false,
+            "time": 1463670933624,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2016-05-19",
+            "user": {
+              "userId": 248301558,
+              "nickname": "泛起回忆怎么潜",
+              "avatarUrl": "http://p3.music.126.net/3pWlFXDyA54ue5KdxMG66Q==/109951167832171824.jpg",
+              "vipType": 11,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 8866955,
+            "content": "副歌部分简直不能听，不能忍。一出来就要跪。两相映衬之下，我有多幸运那年听到了许嵩。❤",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 56,
+            "likedCount": 22583,
+            "liked": false,
+            "time": 1421410159436,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2015-01-16",
+            "user": {
+              "userId": 42100526,
+              "nickname": "朝流暮坠",
+              "avatarUrl": "http://p4.music.126.net/6P5ak-xPtNvKtYHw3rzRvA==/109951172345425350.jpg",
+              "vipType": 11,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 6565955,
+            "content": "是惊鸿一面不减多年深情的风景还是飘摇山水之间的美丽？是隐隐约约发香好似江水连天还是能写的一手眉清目秀的正楷？这世间女子千万种，我却实在想不出什么样的配你刚刚好。许公子许公子，能不能告诉我们你最喜欢怎样的女子？",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 135,
+            "likedCount": 18834,
+            "liked": false,
+            "time": 1417487886483,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2014-12-02",
+            "user": {
+              "userId": 18195689,
+              "nickname": "尘暮雪",
+              "avatarUrl": "http://p3.music.126.net/SUeqMM8HOIpHv9Nhl9qt9w==/109951165647004069.jpg",
+              "vipType": 0,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 6564056,
+            "content": "在知乎看到关于许嵩的争论，多是调侃和鄙视，很无奈的感觉。好久不听回来找几首过过耳朵，听着这些歌就仿佛回到了几年前的高中岁月，还是老歌好听。现在有些人就像出生就是30岁一样，谁都看不起，逼格高的很。",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 17,
+            "likedCount": 17719,
+            "liked": false,
+            "time": 1417448097786,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2014-12-01",
+            "user": {
+              "userId": 39492557,
+              "nickname": "子不烦",
+              "avatarUrl": "http://p4.music.126.net/vvv71jD5ALuyahmnlIBrEw==/109951163468406971.jpg",
+              "vipType": 0,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 46706547,
+            "content": "那次英语课，班里的同学都因为下午第一节课昏昏欲睡，老师让我唱首歌给大家提提神[流泪]，结果我唱了这首歌，大家听得很安静，我心里也很紧张，结果唱完后，班里炸开了，我也成了新的文艺班长，这可能是我高中最珍贵的一次记忆了，以至于现在我还忘不了，我心里的她看我的目光，当天晚上我就表白了…",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 287,
+            "likedCount": 15018,
+            "liked": false,
+            "time": 1447452468760,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2015-11-14",
+            "user": {
+              "userId": 64408049,
+              "nickname": "那一座孤城",
+              "avatarUrl": "http://p4.music.126.net/AUjqVyWCqvEhE0QWZtZelQ==/109951162855404900.jpg",
+              "vipType": 0,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 1332513078,
+            "content": "老哥这不对啊，我也写了。老师说我语法错误。。。",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 0,
+            "likedCount": 11507,
+            "liked": false,
+            "time": 1545308440134,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2018-12-20",
+            "user": {
+              "userId": 554911338,
+              "nickname": "超爱笑的糖QAQ",
+              "avatarUrl": "http://p4.music.126.net/zLi24qnrKhy9fFB-R8RdZw==/109951164392062363.jpg",
+              "vipType": 11,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 22206064,
+            "content": "[憨笑][憨笑]32岁的大叔表示灰常喜欢许嵩的歌",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 1204,
+            "likedCount": 9593,
+            "liked": false,
+            "time": 1434340600517,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2015-06-15",
+            "user": {
+              "userId": 60297721,
+              "nickname": "大菠萝O",
+              "avatarUrl": "http://p4.music.126.net/_UmEDjs-YFHNvJgzY1rW9A==/7696581395881329.jpg",
+              "vipType": 0,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 1333272186,
+            "content": "你就说是王维写的！试试看老师的反应[大哭]",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 0,
+            "likedCount": 7865,
+            "liked": false,
+            "time": 1545371170843,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2018-12-21",
+            "user": {
+              "userId": 279482289,
+              "nickname": "思夕颜画",
+              "avatarUrl": "http://p4.music.126.net/PMGfjSaYokNPSQPpc-fTMw==/109951164006378222.jpg",
+              "vipType": 11,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          },
+          {
+            "commentId": 5167711,
+            "content": "因为这首歌，高三认识了一个女孩，可惜现在都不敢打扰。也因为这首歌，让一个初二的同学又记起了我，不知是喜是悲。与你若只如初见，何须感伤离别。致曾经一起听歌的你们。",
+            "ipLocation": {
+              "ip": null,
+              "location": "",
+              "userId": null
+            },
+            "replyCount": 15,
+            "likedCount": 6906,
+            "liked": false,
+            "time": 1414257971569,
+            "threadId": "R_SO_4_167870",
+            "timeStr": "2014-10-26",
+            "user": {
+              "userId": 32718832,
+              "nickname": "一面仰望",
+              "avatarUrl": "http://p3.music.126.net/fGiAk_cT7KfL3T_qD0OrJQ==/6671836558384256.jpg",
+              "vipType": 0,
+              "authStatus": 0,
+              "followed": false,
+              "isHug": false
+            }
+          }
+        ] } = {};
+        if (!comments || comments.length === 0) {
+          return null;
+        }
+        const displayComments = comments.slice(0, 15);
+        return jsxRuntimeExports.jsx("div", { className: styles$a["comments-section"], children: jsxRuntimeExports.jsx(
+          Card,
+          {
+            title: jsxRuntimeExports.jsxs("div", { className: styles$a["comments-header"], children: [
+jsxRuntimeExports.jsx("span", { children: "用户评论" }),
+jsxRuntimeExports.jsxs(Tag, { color: "blue", className: styles$a["total-tag"], children: [
+                "共 ",
+                comments.length,
+                " 条"
+              ] })
+            ] }),
+            className: styles$a["comments-card"],
+            children: jsxRuntimeExports.jsx("div", { className: styles$a["comments-list"], children: displayComments.map((comment, index2) => jsxRuntimeExports.jsxs("div", { className: styles$a["comment-item"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$a["comment-header"], children: [
+jsxRuntimeExports.jsx(
+                  Avatar,
+                  {
+                    src: comment.user?.avatarUrl,
+                    size: 40,
+                    className: styles$a["comment-avatar"],
+                    children: comment.user?.nickname?.[0] || "U"
+                  }
+                ),
+jsxRuntimeExports.jsxs("div", { className: styles$a["comment-user-info"], children: [
+jsxRuntimeExports.jsxs("div", { className: styles$a["comment-user-name"], children: [
+                    comment.user?.nickname || "未知用户",
+                    comment.user?.vipType > 0 && jsxRuntimeExports.jsxs(Tag, { color: "red", size: "small", className: styles$a["vip-tag"], children: [
+                      "VIP",
+                      comment.user.vipType
+                    ] })
+                  ] }),
+jsxRuntimeExports.jsxs("div", { className: styles$a["comment-meta"], children: [
+jsxRuntimeExports.jsx("span", { children: comment.timeStr || "-" }),
+                    comment.ipLocation?.location && jsxRuntimeExports.jsxs(Tag, { size: "small", className: styles$a["location-tag"], children: [
+                      "📍 ",
+                      comment.ipLocation.location
+                    ] })
+                  ] })
+                ] })
+              ] }),
+jsxRuntimeExports.jsx(
+                Typography.Paragraph,
+                {
+                  ellipsis: { rows: 3, expandable: true },
+                  className: styles$a["comment-content"],
+                  children: comment.content || "-"
+                }
+              ),
+jsxRuntimeExports.jsxs("div", { className: styles$a["comment-footer"], children: [
+                comment.likedCount > 0 && jsxRuntimeExports.jsxs(Tag, { color: "orange", className: styles$a["liked-tag"], children: [
+                  "👍 ",
+                  comment.likedCount
+                ] }),
+                comment.replyCount > 0 && jsxRuntimeExports.jsxs(Tag, { className: styles$a["reply-tag"], children: [
+                  "💬 ",
+                  comment.replyCount,
+                  " 条回复"
+                ] })
+              ] })
+            ] }, comment.commentId || index2)) })
+          }
+        ) });
+      }
       const styles$9 = {
         "button-group": "_button-group_1rls2_1"
       };
@@ -22656,7 +23124,7 @@ jsxRuntimeExports.jsx(Descriptions.Item, { label: "性别", children: getGenderT
                             <div class="comment-user-info">
                                 <div class="comment-user-name">\${comment.user?.nickname || '未知用户'}</div>
                                 <div class="comment-meta">
-                                    <span>\${formatTime(comment.time)}</span>
+                                    <span>\${comment.timeStr}</span>
                                     \${locationTag}
                                 </div>
                             </div>
@@ -22853,20 +23321,21 @@ jsxRuntimeExports.jsx(Descriptions.Item, { label: "性别", children: getGenderT
             },
             onReset() {
               formRef.resetFields();
+              setUserComments([]);
             }
           },
           ref
         );
         const { getSongAllComments: getSongAllComments2 } = usePlayMusic();
+        const [userComments, setUserComments] = useState([]);
         const [formRef] = Form.useForm();
-        Form.useWatch("song", formRef);
+        const stopFn = useRef(null);
         const handleEmotionDecode = async () => {
           try {
             await formRef.validateFields();
             const values = await formRef.getFieldsValue();
             console.log("values", values);
-            const { userId, songId, user, song } = values;
-            const { allComments, hotComments } = await getSongAllComments2(songId);
+            const { userId, songId, user, song, timeRange, wait } = values;
             const mapRule = (comment) => {
               const {
                 commentId,
@@ -22901,16 +23370,35 @@ jsxRuntimeExports.jsx(Descriptions.Item, { label: "性别", children: getGenderT
                 }
               };
             };
+            const { allComments, hotComments } = await getSongAllComments2(songId, {
+              timeRange: timeRange?.length ? {
+                start: timeRange[0],
+                end: timeRange[1]
+              } : void 0,
+              wait: wait ? Number(wait) : 0,
+              onStop: (stop) => {
+                stopFn.current = stop;
+              },
+              mapRule,
+              onChange: (progress) => {
+                const { comments: comments2 } = progress;
+                const filteredComments = comments2.filter(
+                  (comment) => comment.user.userId === userId
+                );
+                setUserComments((prev) => [...prev, ...filteredComments]);
+              }
+            });
             const comments = allComments?.map(mapRule);
             const hComments = hotComments?.map(mapRule);
-            const userComments = comments.filter(
+            const finalUserComments = comments.filter(
               (comment) => comment.user.userId === userId
             );
+            setUserComments(finalUserComments);
             console.log("comments", comments);
             console.log("hotComments", hotComments);
             console.log(
               `${user.nickname}-${song.name}-userComments`,
-              JSON.stringify(userComments, null, 2)
+              JSON.stringify(finalUserComments, null, 2)
             );
             const content = template.replace(
               "// ## 注入内容",
@@ -22924,7 +23412,11 @@ jsxRuntimeExports.jsx(Descriptions.Item, { label: "性别", children: getGenderT
             downloadAsHTML(content, `${user.nickname}-${song.name}`);
           } catch (error) {
             console.log("error", error);
+            msgError(error.message || error.msg || "情感解码失败");
           }
+        };
+        const handleStopGetComments = () => {
+          stopFn.current?.();
         };
         return jsxRuntimeExports.jsx(
           Modal,
@@ -22966,6 +23458,16 @@ jsxRuntimeExports.jsx(Col, { span: 24, lg: 12, children: jsxRuntimeExports.jsx(F
                 ) }) })
               ] }),
 jsxRuntimeExports.jsxs(Row, { gutter: 16, children: [
+jsxRuntimeExports.jsx(Col, { span: 24, lg: 12, children: jsxRuntimeExports.jsx(Form.Item, { label: "时间范围", name: "timeRange", children: jsxRuntimeExports.jsx(DatePicker.RangePicker, { style: { width: "100%" } }) }) }),
+jsxRuntimeExports.jsx(Col, { span: 24, lg: 12, children: jsxRuntimeExports.jsx(Form.Item, { label: "等待时间", name: "wait", children: jsxRuntimeExports.jsx(
+                  InputNumber,
+                  {
+                    placeholder: "请输入等待时间(毫秒)",
+                    style: { width: "100%" }
+                  }
+                ) }) })
+              ] }),
+jsxRuntimeExports.jsxs(Row, { gutter: 16, children: [
 jsxRuntimeExports.jsx(Col, { span: 24, lg: 12, style: { marginBottom: 24 }, children: jsxRuntimeExports.jsx(
                   Form.Item,
                   {
@@ -22981,11 +23483,24 @@ jsxRuntimeExports.jsx(Col, { span: 24, lg: 12, children: jsxRuntimeExports.jsx(
                     noStyle: true,
                     name: "songId",
                     rules: [{ required: true, message: "请选择歌曲" }],
-                    children: jsxRuntimeExports.jsx(SongCard, {})
+                    children: jsxRuntimeExports.jsx(
+                      SongCard,
+                      {
+                        onInfoChange: (value2) => {
+                          formRef.setFieldsValue({
+                            song: value2
+                          });
+                        }
+                      }
+                    )
                   }
                 ) })
               ] }),
-jsxRuntimeExports.jsx("div", { className: styles$9["button-group"], children: jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleEmotionDecode, size: "large", children: "开始解码" }) })
+jsxRuntimeExports.jsx(UserComments, { comments: userComments }),
+jsxRuntimeExports.jsxs("div", { className: styles$9["button-group"], children: [
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleEmotionDecode, size: "large", children: "开始解码" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleStopGetComments, size: "large", children: "停止获取" })
+              ] })
             ] })
           }
         );
@@ -28112,9 +28627,13 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             console.log("error", error);
           }
         };
+        const [commentData, setCommentData] = useState({
+          songId: "386005",
+          timeRange: [dayjs("2015-01-01"), dayjs("2016-01-02")]
+        });
         const handleGetSongComment = async () => {
           try {
-            const res = await getSongComment(songId.split(",")[0]);
+            const res = await getSongComment(commentData.songId);
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
@@ -28122,13 +28641,15 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
         };
         const handleGetSongComment1 = async () => {
           try {
-            const res = await getSongComment1(songId.split(",")[0]);
+            const res = await getSongComment1(commentData.songId);
             console.log("res", res);
           } catch (error) {
             console.log("error", error);
           }
         };
+        const stopFn = useRef(null);
         const handleGetSongAllComments = async () => {
+          console.log("commentData", commentData);
           const loadingMessageKey = "get-song-all-comments";
           message.loading({
             content: "开始获取歌曲所有评论，请稍候...",
@@ -28136,7 +28657,11 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             duration: 0
           });
           try {
-            const res = await getSongAllComments(songId.split(",")[0], {
+            const res = await getSongAllComments(commentData.songId, {
+              timeRange: {
+                start: commentData.timeRange[0],
+                end: commentData.timeRange[1]
+              },
               onChange: (progress) => {
                 const { page, totalPage, total, allComments } = progress;
                 message.loading({
@@ -28144,6 +28669,9 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
                   key: loadingMessageKey,
                   duration: 0
                 });
+              },
+              onStop: (stop) => {
+                stopFn.current = stop;
               }
             });
             console.log("res", res);
@@ -28157,25 +28685,46 @@ jsxRuntimeExports.jsx(GithubInfo, { ref: githubInfoRef })
             });
           }
         };
+        const handleStopGetComments = () => {
+          stopFn.current?.();
+        };
         const [checkInData, setCheckInData] = useState({
-          songId: "386005",
+          songId: "386005,2673175226,65681",
           checkInCount: 100
         });
         const handleListenSongCheckIn = async () => {
           try {
             const { songId: songId2, checkInCount } = checkInData;
-            const songRes = await getSongInfoList(songId2.split(","));
+            const songIds = songId2.split(",");
+            const songRes = await getSongInfoList(songIds);
             if (songRes.code !== 200) {
               return msgError("获取歌曲信息失败");
             }
-            const songInfo2 = songRes.songs[0];
-            const { id: id2, al, dt } = songInfo2;
-            const res = await listenSongCheckIn$1({
-              id: id2,
-              time: Math.floor(dt / 1e3),
-              checkInCount: +checkInCount
-            });
+            const songsMap = Object.fromEntries(
+              songRes.songs.map((song) => [song.id, song])
+            );
+            const taskList = Array.from(
+              { length: checkInCount },
+              (_, index2) => async () => {
+                for (const songId3 of songIds) {
+                  const songInfo2 = songsMap[songId3];
+                  if (!songInfo2) {
+                    return null;
+                  }
+                  const { id: id2, al, dt } = songInfo2;
+                  listenSongCheckIn$1({
+                    id: id2,
+                    time: Math.floor(dt / 1e3),
+                    wait: 1e3
+                  });
+                  await sleep(1e3);
+                }
+              }
+            );
+            msgSuccess("开始听歌打卡，请稍候...");
+            const res = await promiseLimit(taskList, 1, { wait: 1e3 });
             console.log("res", res);
+            msgSuccess("听歌打卡完成");
           } catch (error) {
             console.error("听歌打卡失败:", error);
             msgError(error.message || "听歌打卡失败");
@@ -28196,10 +28745,30 @@ jsxRuntimeExports.jsx(
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongUrl, children: "获取歌曲URL" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongInfo, children: "获取歌曲信息" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongLyric, children: "获取歌曲歌词" }),
-jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongDynamicCover, children: "获取歌曲动态封面" })
+          ] }) }),
+jsxRuntimeExports.jsx(Form.Item, { label: "获取评论", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
+jsxRuntimeExports.jsx(
+              Input,
+              {
+                placeholder: "请输入歌曲Id",
+                addonBefore: "歌曲Id",
+                value: commentData.songId,
+                onChange: (e) => setCommentData({ ...commentData, songId: e.target.value })
+              }
+            ),
+jsxRuntimeExports.jsx(
+              DatePicker.RangePicker,
+              {
+                placeholder: ["开始时间", "结束时间"],
+                value: commentData.timeRange,
+                onChange: (value2) => setCommentData({ ...commentData, timeRange: value2 })
+              }
+            ),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongComment, children: "获取歌曲评论" }),
 jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongComment1, children: "获取歌曲评论1" }),
-jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongAllComments, children: "获取歌曲所有评论" })
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSongAllComments, children: "获取歌曲所有评论" }),
+jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleStopGetComments, children: "停止获取" })
           ] }) }),
 jsxRuntimeExports.jsx(Form.Item, { label: "听歌打卡", children: jsxRuntimeExports.jsxs(Space, { wrap: true, children: [
 jsxRuntimeExports.jsx(
@@ -29311,7 +29880,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(C
   };
 }));
 
-System.register("./MpegParser-BPFdr7r8-Cc3oGmyl.js", ['./__monkey.entry-CKUYfb6m.js', './AbstractID3Parser-BPmFaFlD-CaghSKNl.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DH3gbj2Y-Dm4ifUa6.js'], (function (exports, module) {
+System.register("./MpegParser-CvSrisn--BVVfNmIg.js", ['./__monkey.entry-BBWv1z3R.js', './AbstractID3Parser-CcK32SY4-CWkTO1ju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-mVWZGK5Y-h9-MBp5R.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -29906,7 +30475,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-Dy8rXlyU-CJ5Z6TK-.js", ['./__monkey.entry-CKUYfb6m.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-lakau8sS-D5fSJ-tC.js", ['./__monkey.entry-BBWv1z3R.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -30413,7 +30982,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-BiJEUn6l-C3cdSnvh.js", ['./__monkey.entry-CKUYfb6m.js', './ID3v2Parser-DH3gbj2Y-Dm4ifUa6.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-BkeK_0ir-DH2oy-Y0.js", ['./__monkey.entry-BBWv1z3R.js', './ID3v2Parser-mVWZGK5Y-h9-MBp5R.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -30587,7 +31156,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-CaTFNfNA-BiDa_p89.js", ['./__monkey.entry-CKUYfb6m.js', './ID3v2Parser-DH3gbj2Y-Dm4ifUa6.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-gYZBS82G-Af4u1w--.js", ['./__monkey.entry-BBWv1z3R.js', './ID3v2Parser-mVWZGK5Y-h9-MBp5R.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -30758,7 +31327,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-CrtPLbTk-CSqX8VRT.js", ['./__monkey.entry-CKUYfb6m.js', './AbstractID3Parser-BPmFaFlD-CaghSKNl.js', './ID3v2Parser-DH3gbj2Y-Dm4ifUa6.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-BIVvhYhl-DWrctjT9.js", ['./__monkey.entry-BBWv1z3R.js', './AbstractID3Parser-CcK32SY4-CWkTO1ju.js', './ID3v2Parser-mVWZGK5Y-h9-MBp5R.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -30856,7 +31425,7 @@ System.register("./DsfParser-CrtPLbTk-CSqX8VRT.js", ['./__monkey.entry-CKUYfb6m.
   };
 }));
 
-System.register("./FlacParser-NN_3v3Ri-Cq7J8YSP.js", ['./__monkey.entry-CKUYfb6m.js', './VorbisParser-K2CgEer--DM0ZpDUM.js', './AbstractID3Parser-BPmFaFlD-CaghSKNl.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DH3gbj2Y-Dm4ifUa6.js'], (function (exports, module) {
+System.register("./FlacParser-BQC1VmSc-Dv3oW_Cn.js", ['./__monkey.entry-BBWv1z3R.js', './VorbisParser-C4d2ygeJ-CxZ_JSV8.js', './AbstractID3Parser-CcK32SY4-CWkTO1ju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-mVWZGK5Y-h9-MBp5R.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, VorbisParser, VorbisDecoder, VorbisPictureToken, AbstractID3Parser;
   return {
@@ -31008,7 +31577,7 @@ fileMD5: new Uint8ArrayType(16).get(buf, off + 18)
   };
 }));
 
-System.register("./MatroskaParser-CeLCRSic-zevyPrrg.js", ['./__monkey.entry-CKUYfb6m.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-DZzwb-J--D0D6QFtV.js", ['./__monkey.entry-BBWv1z3R.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -31615,7 +32184,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-CDF6dQAG-BLYJDh3C.js", ['./__monkey.entry-CKUYfb6m.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-DSg7cb00-9DhWsidC.js", ['./__monkey.entry-BBWv1z3R.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, uint8ArrayToString, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, INT16_BE;
   return {
@@ -32446,7 +33015,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-BtYdKtU--BUKYo4lu.js", ['./__monkey.entry-CKUYfb6m.js', './AbstractID3Parser-BPmFaFlD-CaghSKNl.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-DH3gbj2Y-Dm4ifUa6.js'], (function (exports, module) {
+System.register("./MusepackParser-B8ui8Vw0-DMnZi3dW.js", ['./__monkey.entry-BBWv1z3R.js', './AbstractID3Parser-CcK32SY4-CWkTO1ju.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons', './ID3v2Parser-mVWZGK5Y-h9-MBp5R.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, APEv2Parser, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, AbstractID3Parser;
   return {
@@ -32723,7 +33292,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./AbstractID3Parser-BPmFaFlD-CaghSKNl.js", ['./__monkey.entry-CKUYfb6m.js', './ID3v2Parser-DH3gbj2Y-Dm4ifUa6.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-CcK32SY4-CWkTO1ju.js", ['./__monkey.entry-BBWv1z3R.js', './ID3v2Parser-mVWZGK5Y-h9-MBp5R.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -32787,7 +33356,7 @@ System.register("./AbstractID3Parser-BPmFaFlD-CaghSKNl.js", ['./__monkey.entry-C
   };
 }));
 
-System.register("./OggParser-D4ojavP8-CVKiU0kI.js", ['./__monkey.entry-CKUYfb6m.js', './VorbisParser-K2CgEer--DM0ZpDUM.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./OggParser-BiHadQeT-BZkN-x6f.js", ['./__monkey.entry-BBWv1z3R.js', './VorbisParser-C4d2ygeJ-CxZ_JSV8.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, Uint8ArrayType, EndOfStreamError, makeUnexpectedFileContentError, StringType, UINT8, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, UINT32_LE, getBit, FourCcToken, UINT64_LE, VorbisParser;
   return {
@@ -33062,7 +33631,7 @@ absoluteGranulePosition: Number(UINT64_LE.get(buf, off + 6)),
   };
 }));
 
-System.register("./VorbisParser-K2CgEer--DM0ZpDUM.js", ['./__monkey.entry-CKUYfb6m.js'], (function (exports, module) {
+System.register("./VorbisParser-C4d2ygeJ-CxZ_JSV8.js", ['./__monkey.entry-BBWv1z3R.js'], (function (exports, module) {
   'use strict';
   var initDebug, UINT32_LE, AttachedPictureType, UINT32_BE, StringType, makeUnexpectedFileContentError, UINT8;
   return {
@@ -33278,7 +33847,7 @@ async parseUserCommentList(pageData, offset) {
   };
 }));
 
-System.register("./WavPackParser-dPTsvV7u-HGIMdDPE.js", ['./__monkey.entry-CKUYfb6m.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-2NxykyxM-BYjHLk-6.js", ['./__monkey.entry-BBWv1z3R.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, APEv2Parser, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -33458,7 +34027,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-B7KCH1Li-CRBiQUaR.js", ['./__monkey.entry-CKUYfb6m.js', './ID3v2Parser-DH3gbj2Y-Dm4ifUa6.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-BF3f_l_J-o8I8zVDm.js", ['./__monkey.entry-BBWv1z3R.js', './ID3v2Parser-mVWZGK5Y-h9-MBp5R.js', 'react', 'antd', 'react-dom', 'node-forge', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -33731,7 +34300,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-DH3gbj2Y-Dm4ifUa6.js", ['./__monkey.entry-CKUYfb6m.js'], (function (exports, module) {
+System.register("./ID3v2Parser-mVWZGK5Y-h9-MBp5R.js", ['./__monkey.entry-BBWv1z3R.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
