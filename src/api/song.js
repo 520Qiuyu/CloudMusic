@@ -1,7 +1,8 @@
 import { downloadAsJson } from '@/utils/download';
 import { QUALITY_LEVELS } from '../constant';
-import { chunkArray, getUser, promiseLimit } from '../utils';
+import { chunkArray, getUser, promiseLimit, sleep } from '../utils';
 import { weapiFetch, weapiRequest } from '../utils/request';
+import dayjs from 'dayjs';
 
 /**
  * 获取歌曲信息
@@ -160,42 +161,78 @@ export const getSongComment1 = (id, options = {}) => {
 /**
  * 获取歌曲所有评论
  * @param {number} id 歌曲ID
+ * @param {object} options 选项
+ * @param {object} options.timeRange 时间范围
+ * @param {string} options.timeRange.start 开始时间 2025-01-01 dayjs
+ * @param {string} options.timeRange.end 结束时间 2025-01-01 dayjs
+ * @param {number} options.wait 等待时间(毫秒)，默认0
+ * @param {function} options.onStop 停止回调函数
+ * @param {function} options.mapRule(comment) 映射规则
+ * @param {function} options.onChange 回调函数
  * @returns {Promise<Array>} 返回所有评论数组
  * @example
  * const allComments = await getSongAllComments(123456);
  */
 export const getSongAllComments = async (id, options = {}) => {
-  const { onChange } = options;
+  const {
+    onChange,
+    timeRange = {},
+    wait = 0,
+    onStop,
+    mapRule = (comment) => comment,
+  } = options;
+  const { start, end } = timeRange;
   const allComments = [];
-  let hotComments = [];
+  const hotComments = [];
   const limit = 1000; // 最大单次请求官方支持100，若不支持可改为更小值
   let hasMore = true;
-  let before;
+  let before = end && dayjs(end).endOf('day').valueOf();
   let allTotal = 0;
+  let stopFlag = false;
+  onStop?.(() => {
+    stopFlag = true;
+  });
 
-  while (hasMore) {
+  while (hasMore && !stopFlag) {
     const res = await getSongComment1(id, { before });
     if (!res || res.code !== 200) {
       throw new Error(res.message || res.msg || '获取歌曲评论失败');
     }
-    console.log('res', res);
-    const { comments, totalCount, cursor, hotComments: hotCommentsData } = res.data;
+    const {
+      comments,
+      totalCount,
+      cursor,
+      hotComments: hotCommentsData,
+    } = res.data;
+    console.log(
+      `${comments[0]?.timeStr} 至 ${comments[comments.length - 1]?.timeStr}`,
+      res,
+    );
     allTotal ||= totalCount;
     hasMore = comments.length > 0;
-    allComments.push(...comments);
-    hotComments = hotCommentsData;
+    allComments.push(...comments.map(mapRule));
+    !hotComments?.length && hotComments.push(...hotCommentsData.map(mapRule));
     onChange?.({
       limit,
       page: Math.ceil(allComments.length / limit) + 1,
       total: allTotal,
       totalPage: Math.ceil(allTotal / limit),
-      comments,
+      comments: comments.map(mapRule),
       allComments,
       hotComments,
     });
-    if (hasMore) {
+    if (
+      hasMore &&
+      (start ? dayjs(start).startOf('day').valueOf() < cursor : true)
+    ) {
       // 网易云分页有2种模式，这里采用before方式以最大化获取全部评论
       before = cursor;
+      if (wait) {
+        await sleep(wait);
+        console.log('等待', wait, '毫秒');
+      }
+    } else {
+      break;
     }
   }
   // downloadAsJson(allComments, `${id}-评论.json`);
@@ -223,13 +260,14 @@ export const listenSongCheckIn = async (params) => {
     sourceId = getUser().userId + '',
     time,
     checkInCount = 1,
+    wait = 1000,
   } = params;
 
   const taskList = Array.from(
     { length: checkInCount },
     (_, index) => async () => {
       // startlog
-      const startLog = {
+      /*       const startLog = {
         action: 'startplay',
         json: {
           content: 'id=' + id,
@@ -241,14 +279,14 @@ export const listenSongCheckIn = async (params) => {
       };
       await weapiFetch(`/api/feedback/weblog`, {
         data: { logs: JSON.stringify([startLog]) },
-      });
+      }); */
       // endLog
       const log = {
         action: 'play',
         json: {
           content: 'id=' + id,
           download: 0,
-          end: 'ui',
+          end: 'playend',
           id,
           mainsite: '1',
           mainsiteWeb: '1',
@@ -265,6 +303,6 @@ export const listenSongCheckIn = async (params) => {
       });
     },
   );
-  const res = await promiseLimit(taskList, 1, { wait: 1000 });
+  const res = await promiseLimit(taskList, 1, { wait });
   return res;
 };

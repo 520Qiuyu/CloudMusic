@@ -14,7 +14,7 @@ const { Text, Paragraph } = Typography;
  * @param {Function} props.onChange - 歌曲ID变化回调
  */
 export default function SongCard(props) {
-  const { value, onChange } = props;
+  const { value, onChange,onInfoChange } = props;
 
   // 组件内部歌曲ID 受控
   const [songId, setSongId] = useState(value);
@@ -29,6 +29,9 @@ export default function SongCard(props) {
 
   const [songInfo, setSongInfo] = useState();
   const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    onInfoChange?.(songInfo);
+  }, [songInfo]);
 
   useEffect(() => {
     /** 获取歌曲信息 */

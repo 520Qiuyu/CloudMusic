@@ -229,7 +229,7 @@ export const usePlayMusic = () => {
   };
 
   /** 获取歌曲评论 */
-  const getSongAllComments = async (id) => {
+  const getSongAllComments = async (id, options = {}) => {
     const loadingMessageKey = 'get-song-all-comments';
     message.loading({
       content: '开始获取歌曲所有评论，请稍候...',
@@ -238,6 +238,7 @@ export const usePlayMusic = () => {
     });
     try {
       const res = await getSongAllCommentsApi(id, {
+        ...options,
         onChange: (progress) => {
           const { page, totalPage, total, allComments } = progress;
           message.loading({
@@ -245,6 +246,7 @@ export const usePlayMusic = () => {
             key: loadingMessageKey,
             duration: 0,
           });
+          options?.onChange(progress);
         },
       });
       console.log('res', res);

@@ -9,8 +9,12 @@ import {
   listenSongCheckIn,
 } from '@/api/song';
 import { MyButton } from '@/components';
+import { promiseLimit, sleep } from '@/utils';
 import { msgError, msgSuccess } from '@/utils/modal';
+import { DatePicker } from 'antd';
 import { Form, Input, InputNumber, message, Space } from 'antd';
+import dayjs from 'dayjs';
+import { useRef } from 'react';
 import { useState } from 'react';
 
 /**
@@ -71,10 +75,15 @@ const SongTab = () => {
     }
   };
 
+  // 评论数据
+  const [commentData, setCommentData] = useState({
+    songId: '386005',
+    timeRange: [dayjs('2015-01-01'), dayjs('2016-01-02')],
+  });
   // 获取歌曲评论
   const handleGetSongComment = async () => {
     try {
-      const res = await getSongComment(songId.split(',')[0]);
+      const res = await getSongComment(commentData.songId);
       console.log('res', res);
     } catch (error) {
       console.log('error', error);
@@ -84,7 +93,7 @@ const SongTab = () => {
   // 获取歌曲评论1
   const handleGetSongComment1 = async () => {
     try {
-      const res = await getSongComment1(songId.split(',')[0]);
+      const res = await getSongComment1(commentData.songId);
       console.log('res', res);
     } catch (error) {
       console.log('error', error);
@@ -92,7 +101,9 @@ const SongTab = () => {
   };
 
   // 获取歌曲所有评论
+  const stopFn = useRef(null);
   const handleGetSongAllComments = async () => {
+    console.log('commentData', commentData);
     const loadingMessageKey = 'get-song-all-comments';
     message.loading({
       content: '开始获取歌曲所有评论，请稍候...',
@@ -100,7 +111,11 @@ const SongTab = () => {
       duration: 0,
     });
     try {
-      const res = await getSongAllComments(songId.split(',')[0], {
+      const res = await getSongAllComments(commentData.songId, {
+        timeRange: {
+          start: commentData.timeRange[0],
+          end: commentData.timeRange[1],
+        },
         onChange: (progress) => {
           const { page, totalPage, total, allComments } = progress;
           message.loading({
@@ -108,6 +123,9 @@ const SongTab = () => {
             key: loadingMessageKey,
             duration: 0,
           });
+        },
+        onStop: (stop) => {
+          stopFn.current = stop;
         },
       });
       console.log('res', res);
@@ -121,27 +139,48 @@ const SongTab = () => {
       });
     }
   };
+  const handleStopGetComments = () => {
+    stopFn.current?.();
+  };
 
   // 听歌打卡
   const [checkInData, setCheckInData] = useState({
-    songId: '386005',
+    songId: '386005,2673175226,65681',
     checkInCount: 100,
   });
   const handleListenSongCheckIn = async () => {
     try {
       const { songId, checkInCount } = checkInData;
-      const songRes = await getSongInfoList(songId.split(','));
+      const songIds = songId.split(',');
+      const songRes = await getSongInfoList(songIds);
       if (songRes.code !== 200) {
         return msgError('获取歌曲信息失败');
       }
-      const songInfo = songRes.songs[0];
-      const { id, al, dt } = songInfo;
-      const res = await listenSongCheckIn({
-        id,
-        time: Math.floor(dt / 1000),
-        checkInCount: +checkInCount,
-      });
+      const songsMap = Object.fromEntries(
+        songRes.songs.map((song) => [song.id, song]),
+      );
+      const taskList = Array.from(
+        { length: checkInCount },
+        (_, index) => async () => {
+          for (const songId of songIds) {
+            const songInfo = songsMap[songId];
+            if (!songInfo) {
+              return null;
+            }
+            const { id, al, dt } = songInfo;
+            listenSongCheckIn({
+              id,
+              time: Math.floor(dt / 1000),
+              wait: 1000,
+            });
+            await sleep(1000);
+          }
+        },
+      );
+      msgSuccess('开始听歌打卡，请稍候...');
+      const res = await promiseLimit(taskList, 1, { wait: 1000 });
       console.log('res', res);
+      msgSuccess('听歌打卡完成');
     } catch (error) {
       console.error('听歌打卡失败:', error);
       msgError(error.message || '听歌打卡失败');
@@ -175,6 +214,26 @@ const SongTab = () => {
           <MyButton type='primary' onClick={handleGetSongDynamicCover}>
             获取歌曲动态封面
           </MyButton>
+        </Space>
+      </Form.Item>
+      {/* 获取评论 */}
+      <Form.Item label='获取评论'>
+        <Space wrap>
+          <Input
+            placeholder='请输入歌曲Id'
+            addonBefore='歌曲Id'
+            value={commentData.songId}
+            onChange={(e) =>
+              setCommentData({ ...commentData, songId: e.target.value })
+            }
+          />
+          <DatePicker.RangePicker
+            placeholder={['开始时间', '结束时间']}
+            value={commentData.timeRange}
+            onChange={(value) =>
+              setCommentData({ ...commentData, timeRange: value })
+            }
+          />
           {/* 获取歌曲评论 */}
           <MyButton type='primary' onClick={handleGetSongComment}>
             获取歌曲评论
@@ -187,8 +246,12 @@ const SongTab = () => {
           <MyButton type='primary' onClick={handleGetSongAllComments}>
             获取歌曲所有评论
           </MyButton>
+          <MyButton type='primary' onClick={handleStopGetComments}>
+            停止获取
+          </MyButton>
         </Space>
       </Form.Item>
+      {/* 听歌打卡 */}
       <Form.Item label='听歌打卡'>
         <Space wrap>
           <Input
